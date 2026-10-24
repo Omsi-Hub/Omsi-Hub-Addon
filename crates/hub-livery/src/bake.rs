@@ -516,8 +516,17 @@ impl Sample {
     }
 }
 
+/// Whether two places of a texel are one part repeated along the bus or up it (more than 25 cm
+/// apart there: the four door posts on one bit of the texture), not the two sides of the bus
+/// sharing a texture (apart across it only). The studio's mask marks it the same way
+/// (`MASK_FS`, bit 32).
+pub fn repeated_at(a: &Sample, b: &Sample) -> bool {
+    Vec2::new(b.p.y - a.p.y, b.p.z - a.p.z).length() > 0.25
+}
+
 /// The texels of rows `y0..y1` of a `w` x `h` texture: their first place on the bus, and a second
-/// where the texture is used twice (left and right sharing it), and for the texels no triangle
+/// where the texture is used twice (left and right sharing it, or a part the model repeats - then
+/// one of its repeats, whatever else shares it), and for the texels no triangle
 /// covers but one lies near, where to take their colour from (the seams' bleed).
 #[derive(Clone)]
 pub struct Bake {
@@ -611,9 +620,14 @@ impl Bake {
                         } else if pass == 0 {
                             // (a wheel or a window on a texel the body shares keeps it as it is)
                             first[i].flags |= class;
-                            if second[i] == u32::MAX && first[i].p.distance(p) > 0.25 {
-                                second[i] = extra.len() as u32;
-                                extra.push(Sample::of(p, nn));
+                            if first[i].p.distance(p) > 0.25 {
+                                let s = Sample::of(p, nn);
+                                if second[i] == u32::MAX {
+                                    second[i] = extra.len() as u32;
+                                    extra.push(s);
+                                } else if !repeated_at(&first[i], &extra[second[i] as usize]) && repeated_at(&first[i], &s) {
+                                    extra[second[i] as usize] = s;
+                                }
                             }
                         }
                     }

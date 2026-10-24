@@ -8,7 +8,7 @@
 //! While editing this runs on a worker at the editing size; the export runs the same at the full
 //! size, a band of rows at a time.
 
-use super::bake::{Bake, Sample, Zones, BLACK, COVERED, GLASS, KEEP, OUTSIDE, SEE_THROUGH};
+use super::bake::{repeated_at, Bake, Sample, Zones, BLACK, COVERED, GLASS, KEEP, OUTSIDE, SEE_THROUGH};
 use super::colour::{self, to_linear, to_srgb};
 use super::model::{self, BusDims, Gradient, Kind, Layer, Place};
 use super::shapes::{self, Raster};
@@ -727,6 +727,9 @@ pub fn composite(cv: &Canvas, ops: &[Prepared], dims: &BusDims, from: Option<(&[
             // (on a window's see-through map every texel is the window's)
             let glass = s1.flags & SEE_THROUGH != 0 || (s1.flags & GLASS != 0 && !(cv.alpha && b[3] >= 240));
             let outside = |s: &Sample| if s.flags & OUTSIDE != 0 { 1.0 } else { 0.0 };
+            // (a part the model repeats along the bus or up it - the four door posts on one bit
+            // of the texture -: what the player put on one of them would be on all of them)
+            let repeated = s2.as_ref().is_some_and(|s2| repeated_at(&s1, s2));
             let ratio = cv.detail[i] as f32 / 100.0;
             for (j, p) in ops.iter().enumerate().skip(first_op) {
                 if let (Some(stop), Some(k)) = (keep, kk.as_deref_mut()) {
@@ -742,7 +745,11 @@ pub fn composite(cv: &Canvas, ops: &[Prepared], dims: &BusDims, from: Option<(&[
                 if let Some(s2) = &s2 {
                     let (a2, c2) = eval(&p.op, s2, dims, aa);
                     let a2 = a2 * outside(s2);
-                    if a2 > a {
+                    // both sides sharing the texel: the side it lies on wins; a repeated part
+                    // takes a text, a shape, a picture or the brush only where it lies on both
+                    let placed = matches!(p.op, Op::Mask { .. } | Op::Picture { .. } | Op::Brush { .. });
+                    let second_wins = if repeated && placed { a2 < a } else { a2 > a };
+                    if second_wins {
                         (a, cc) = (a2, c2);
                     }
                 }
@@ -993,6 +1000,49 @@ mod tests {
         let ops = prepare(&[l], &cx(dims), &mut RasterCache::default());
         let (rgba, _) = composite(&cv, &ops, &dims, None, None);
         assert_eq!(px(&rgba, 128, xl, y), [30, 60, 160, 100]);
+    }
+
+    #[test]
+    fn a_decal_on_one_of_a_repeated_part_is_not_on_the_others() {
+        // the box bus, its sides on the upper three quarters of the texture, and door posts on
+        // the right side sharing one bit of the rest (u 0.6..0.7, v 0.8..1): one beside the
+        // decal, one 5 m behind it
+        let canvas = |posts: &[f32]| {
+            let mut g = box_bus();
+            for t in g.tris.iter_mut().filter(|t| t.target == Some(0)) {
+                for uv in t.uv.iter_mut() {
+                    uv.y *= 0.75;
+                }
+            }
+            for &y in posts {
+                let (a, b, c, d) = (Vec3::new(1.3, y, 0.5), Vec3::new(1.3, y + 0.3, 0.5), Vec3::new(1.3, y + 0.3, 2.5), Vec3::new(1.3, y, 2.5));
+                let uv = [Vec2::new(0.6, 1.0), Vec2::new(0.7, 1.0), Vec2::new(0.7, 0.8), Vec2::new(0.6, 0.8)];
+                let n = Vec3::X;
+                let tri = |p: [Vec3; 3], uv: [Vec2; 3]| super::super::bake::Tri { p, vn: [n; 3], uv, n, target: Some(0), glass: false, keep: false, trans: None };
+                g.tris.push(tri([a, b, c], [uv[0], uv[1], uv[2]]));
+                g.tris.push(tri([a, c, d], [uv[0], uv[2], uv[3]]));
+            }
+            let out = Outside::build(&g.tris);
+            let (w, h) = (128, 64);
+            let base: Vec<u8> = (0..w * h).flat_map(|_| [30, 60, 160, 100]).collect();
+            let probe = Bake::build(&g.tris, 0, w, h, 0, h, &out);
+            let zones = Zones::of(&outside_colours(&probe, &base));
+            (Canvas::build(&g.tris, 0, w, h, 0, h, &base, &out, &zones), g.dims)
+        };
+        let mut place = Place::new(Side::R, Vec3::new(1.25, 1.15, 1.5), 1.0);
+        place.height_m = Some(1.0);
+        place.mirror = Coupling::Single;
+        let mut l = layer("Box", Kind::Shape { shape: "rechthoek".into(), colour: "#00ff00".into(), outline: None, gradient: None, place });
+        l.detail = 0.0;
+        let post = |posts: &[f32]| {
+            let (cv, dims) = canvas(posts);
+            let ops = prepare(std::slice::from_ref(&l), &cx(dims), &mut RasterCache::default());
+            let (rgba, _) = composite(&cv, &ops, &dims, None, None);
+            px(&rgba, 128, 83, 57)
+        };
+        assert_eq!(post(&[1.0]), [0, 255, 0, 100], "the post beside the decal alone takes it");
+        assert_eq!(post(&[1.0, -4.0]), [30, 60, 160, 100], "not when the post 5 m behind shares it");
+        assert_eq!(post(&[-4.0, 1.0]), [30, 60, 160, 100], "whichever comes first");
     }
 
     #[test]

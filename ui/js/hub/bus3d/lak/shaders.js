@@ -163,7 +163,8 @@ void main() {
 `;
 
 /** The texels' mask, put together: R outside, G the classes (1 glass, 2 kept, 4 see-through map,
- * 8 covered, 16 shared), B the bleed's source (dx·9 + dy, 255: none), A covered. */
+ * 8 covered, 16 shared, 32 shared by a part repeated along the bus or up it - not the two sides
+ * of the bus -, paint::repeated_at), B the bleed's source (dx·9 + dy, 255: none), A covered. */
 export const MASK_FS = `#version 300 es
 precision highp float;
 uniform sampler2D uClass;
@@ -181,7 +182,9 @@ void main() {
   vec3 hi = texelFetch(uHiTex, p, 0).rgb;
   bool covered = c.r > 0.5;
   bool shared = covered && length((hi - lo) * uSize) > 0.25;
-  int bits = (c.g > 0.5 ? 1 : 0) | (c.b > 0.5 ? 2 : 0) | (c.a > 0.5 ? 4 : 0) | (covered ? 8 : 0) | (shared ? 16 : 0);
+  // (o3d frame: y up, z forward)
+  bool repeated = shared && length(((hi - lo) * uSize).yz) > 0.25;
+  int bits = (c.g > 0.5 ? 1 : 0) | (c.b > 0.5 ? 2 : 0) | (c.a > 0.5 ? 4 : 0) | (covered ? 8 : 0) | (shared ? 16 : 0) | (repeated ? 32 : 0);
   vec4 b = texelFetch(uBleed, p, 0);
   float code = 255.0;
   if (!covered && b.b > 0.5) {
@@ -364,7 +367,9 @@ export const MAX_OPS = 1024;
  *  5: decal: v, flip | brush: its layer in uBrush
  *  6: decal: n, sin   7: decal: lo, cos   8: decal: hi   9: decal: the atlas's rectangle
  * The fragment writes as its depth how much of the decals lies on it: on a texel both sides of
- * the bus share, the side a decal lies on wins (paint::composite takes the larger of both).
+ * the bus share, the side a decal lies on wins (paint::composite takes the larger of both); on a
+ * texel of a part repeated along the bus or up it (bit 32: the door posts), the place with the
+ * least of them - a decal on one door post is not on all of them (paint::composite the smaller).
  */
 export const PAINT_FS = `#version 300 es
 precision highp float;
@@ -587,7 +592,8 @@ void main() {
   if (seeThrough) col = base.rgb;
   float alpha = glassCover <= 0.0 ? base.a : base.a + (1.0 - base.a) * min(glassCover, 1.0);
   o = vec4(col, alpha);
-  gl_FragDepth = 1.0 - clamp(decals * 0.25, 0.0, 0.999);
+  float most = clamp(decals * 0.25, 0.0, 0.999);
+  gl_FragDepth = (bits & 32) != 0 ? most : 1.0 - most;
 }
 `;
 
