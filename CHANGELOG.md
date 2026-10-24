@@ -26,10 +26,8 @@ never changes their files.
   Only the taps and keys of the bus's devices can be pressed. This is a port of the device
   pipeline of Luc's career add-on for OMSI 2 (github.com/Luc-nbr/Omsi-career-addon); the plugin
   is 1.13.0.
-- **Omsi-Hub is no longer open source**: from this version it is proprietary software, free to
-  download and use (`LICENSE`); the code up to 19 October 2026 was MIT. The releases and the
-  updates come from the public `Omsi-Hub/Omsi-Hub-Addon`, and the libraries' licences travel
-  with the app (`third-party-licenses.txt`).
+- **Releases and updates** come from the public `Omsi-Hub/Omsi-Hub-Addon`, and the libraries'
+  licences travel with the app (`third-party-licenses.txt`).
 - **The welcome** on the first start, as in the old Omsi-Hub: the language, the animations, your
   openOMSI folder and your OMSI 2 folder (it suggests the ones it finds, on Steam too, and checks
   openOMSI's version), your **account** - sign in, or continue locally without sync -, your driver
@@ -162,7 +160,7 @@ never changes their files.
 
 ### Good to know
 
-- **Updates.** This pre-release does not install updates itself yet: when a newer Omsi-Hub is out,
+- **Updates.** Omsi-Hub 1.0 does not install updates itself yet: when a newer Omsi-Hub is out,
   the app says so and opens its page to download it.
 - **macOS.** The app is not notarised: the first time, right-click it and choose Open.
 - **Something wrong?** Tell us at [info@omsihub.com](mailto:info@omsihub.com) or in an issue, with

@@ -5,8 +5,8 @@
 # players.
 #
 # A pre-release (for testers) is the same draft with GitHub's pre-release mark: run by hand with
-# "pre-release" on (the default), or a tag whose version has a `-` in it. Published, it stays a
-# pre-release: players download it themselves, and the app offers it to nobody.
+# "pre-release" on (off by default since 1.0), or a tag whose version has a `-` in it. Published, it
+# stays a pre-release: players download it themselves, and the app offers it to nobody.
 #
 # The updater files are signed and `latest.json` is attached only once the signing key is set up
 # (the secrets TAURI_SIGNING_PRIVATE_KEY and TAURI_SIGNING_PRIVATE_KEY_PASSWORD, and the public key
@@ -25,7 +25,7 @@ on:
       prerelease:
         description: "A pre-release (for testers; the app offers it to nobody)"
         type: boolean
-        default: true
+        default: false
 
 concurrency:
   group: release-${{ github.ref }}

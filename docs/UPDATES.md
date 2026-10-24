@@ -146,7 +146,7 @@ matches the processor in the name: `x64`, `amd64` or `x86_64`; `aarch64` or `arm
 ## A pre-release (for testers)
 
 1. **Write what is in it** in `CHANGELOG.md` (the release links there), under the version.
-2. **Build it:** Actions → Release → Run workflow, on `main`, with "pre-release" on (the default).
+2. **Build it:** Actions → Release → Run workflow, on `main`, with "pre-release" on (it is off by default).
    The workflow checks that `Cargo.toml` and `app/tauri.conf.json` have the same version, and makes
    a draft named `Omsi-Hub <version>` with the pre-release mark and the installers of the four
    builds. Run it again after a fix: it uploads to the same draft.
