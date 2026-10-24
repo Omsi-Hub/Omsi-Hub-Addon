@@ -7,6 +7,7 @@ _version: 2
   ru: "План"
   uk: "План"
   pl: "Plan"
+  es: "Previsto"
 "Arr.":
   nl: "Aank."
   de: "An"
@@ -14,6 +15,7 @@ _version: 2
   ru: "Приб."
   uk: "Приб."
   pl: "Przyj."
+  es: "Lleg."
 "Dep.":
   nl: "Vertr."
   de: "Ab"
@@ -21,6 +23,7 @@ _version: 2
   ru: "Отпр."
   uk: "Відпр."
   pl: "Odj."
+  es: "Sal."
 "±":
   nl: "±"
   de: "±"
@@ -28,6 +31,7 @@ _version: 2
   ru: "±"
   uk: "±"
   pl: "±"
+  es: "±"
 "Not served":
   nl: "Niet bediend"
   de: "Nicht bedient"
@@ -35,6 +39,7 @@ _version: 2
   ru: "Не обслужена"
   uk: "Не обслуговано"
   pl: "Nieobsłużony"
+  es: "Sin servicio"
 "Click to keep it open":
   nl: "Klik om open te houden"
   de: "Klicken zum Offenhalten"
@@ -42,6 +47,7 @@ _version: 2
   ru: "Щёлкните, чтобы оставить открытым"
   uk: "Клацніть, щоб залишити відкритим"
   pl: "Kliknij, aby pozostawić otwarte"
+  es: "Haz clic para mantenerlo abierto"
 "Enter or × to close":
   nl: "Enter of × om te sluiten"
   de: "Enter oder × zum Schließen"
@@ -49,3 +55,4 @@ _version: 2
   ru: "Enter или × — закрыть"
   uk: "Enter або × — закрити"
   pl: "Enter lub ×, aby zamknąć"
+  es: "Enter o × para cerrar"

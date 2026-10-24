@@ -7,6 +7,7 @@ _version: 2
   fr: "Cette date seulement"
   nl: "Alleen deze datum"
   pl: "Tylko ta data"
+  es: "Solo esta fecha"
   ru: "Только эта дата"
   uk: "Лише ця дата"
 "Follows %{day}":
@@ -14,6 +15,7 @@ _version: 2
   fr: "Suit %{day}"
   nl: "Volgt %{day}"
   pl: "Według %{day}"
+  es: "Sigue a %{day}"
   ru: "Следует %{day}"
   uk: "Слідує %{day}"
 "Own changes":
@@ -21,6 +23,7 @@ _version: 2
   fr: "Modifications propres"
   nl: "Eigen wijzigingen"
   pl: "Własne zmiany"
+  es: "Cambios propios"
   ru: "Свои изменения"
   uk: "Власні зміни"
 "%{n} trips to plan by hand":
@@ -28,6 +31,7 @@ _version: 2
   fr: "%{n} courses à planifier à la main"
   nl: "%{n} ritten met de hand plannen"
   pl: "%{n} kursów do zaplanowania ręcznie"
+  es: "%{n} viajes por planificar a mano"
   ru: "%{n} рейсов спланировать вручную"
   uk: "%{n} рейсів спланувати вручну"
 "Pattern: %{days}":
@@ -35,6 +39,7 @@ _version: 2
   fr: "Modèle de : %{days}"
   nl: "Patroon voor: %{days}"
   pl: "Wzorzec dla: %{days}"
+  es: "Patrón: %{days}"
   ru: "Шаблон для: %{days}"
   uk: "Шаблон для: %{days}"
 "Choose what to copy: the vehicles, the drivers or both.":
@@ -42,6 +47,7 @@ _version: 2
   fr: "Choisissez ce qu'il faut copier : les véhicules, les conducteurs ou les deux."
   nl: "Kies wat er gekopieerd wordt: de voertuigen, de chauffeurs of beide."
   pl: "Wybierz, co skopiować: pojazdy, kierowców albo jedno i drugie."
+  es: "Elige qué copiar: los vehículos, los conductores o ambos."
   ru: "Выберите, что копировать: машины, водителей или и то, и другое."
   uk: "Виберіть, що копіювати: машини, водіїв або те й інше."
 "Saved for %{day} only: its weekday's planning stays as it was.":
@@ -49,6 +55,7 @@ _version: 2
   fr: "Enregistré pour %{day} seulement : la planification de son jour de semaine reste telle quelle."
   nl: "Alleen voor %{day} opgeslagen: de planning van zijn weekdag blijft zoals ze was."
   pl: "Zapisano tylko dla %{day}: plan jego dnia tygodnia zostaje bez zmian."
+  es: "Guardado solo para %{day}: la planificación de su día de la semana se queda como estaba."
   ru: "Сохранено только для %{day}: план его дня недели остаётся прежним."
   uk: "Збережено лише для %{day}: план його дня тижня лишається як був."
 "Copied to %{days}: the roster, those days and the game run it now.":
@@ -56,6 +63,7 @@ _version: 2
   fr: "Copié vers %{days} : le roulement, ces jours et le jeu la suivent maintenant."
   nl: "Gekopieerd naar %{days}: het rooster, die dagen en het spel rijden haar nu."
   pl: "Skopiowano na %{days}: grafik, te dni i gra działają teraz według niego."
+  es: "Copiado a %{days}: el cuadrante, esos días y el juego ya lo usan."
   ru: "Скопировано на %{days}: график, эти дни и игра теперь работают по нему."
   uk: "Скопійовано на %{days}: графік, ці дні й гра тепер працюють за ним."
 "%{n} trips matched nothing: they run as their timetable has them, to plan by hand.":
@@ -63,6 +71,7 @@ _version: 2
   fr: "%{n} courses ne correspondent à rien : elles roulent comme leur horaire les prévoit, à planifier à la main."
   nl: "%{n} ritten pasten nergens bij: ze rijden zoals hun dienstregeling ze heeft, met de hand te plannen."
   pl: "%{n} kursów niczego nie odpowiada: jadą tak, jak ma je ich rozkład - do zaplanowania ręcznie."
+  es: "%{n} viajes no coincidieron con nada: funcionan como los tiene su horario, para planificar a mano."
   ru: "%{n} рейсов ни с чем не совпали: они идут по своему расписанию, спланируйте их вручную."
   uk: "%{n} рейсів ні з чим не збіглися: вони йдуть за своїм розкладом, сплануйте їх вручну."
 "Not copied, their timetable is still being read: %{days}.":
@@ -70,6 +79,7 @@ _version: 2
   fr: "Non copié, leur horaire est encore en lecture : %{days}."
   nl: "Niet gekopieerd, hun dienstregeling wordt nog gelezen: %{days}."
   pl: "Nie skopiowano, ich rozkład jest jeszcze wczytywany: %{days}."
+  es: "No copiado, su horario aún se está leyendo: %{days}."
   ru: "Не скопировано, их расписание ещё читается: %{days}."
   uk: "Не скопійовано, їхній розклад ще читається: %{days}."
 "%{day} runs its weekday's planning again.":
@@ -77,6 +87,7 @@ _version: 2
   fr: "%{day} suit de nouveau la planification de son jour de semaine."
   nl: "%{day} rijdt weer de planning van zijn weekdag."
   pl: "%{day} znów działa według planu swojego dnia tygodnia."
+  es: "%{day} vuelve a usar la planificación de su día de la semana."
   ru: "%{day} снова работает по плану своего дня недели."
   uk: "%{day} знову працює за планом свого дня тижня."
 "The day this one follows is not in the coming week: apply its planning again from there.":
@@ -84,6 +95,7 @@ _version: 2
   fr: "Le jour que celui-ci suit n'est pas dans la semaine à venir : appliquez de nouveau sa planification depuis ce jour."
   nl: "De dag die deze volgt valt niet in de komende week: pas zijn planning van daaruit opnieuw toe."
   pl: "Dnia, według którego działa ten dzień, nie ma w nadchodzącym tygodniu: zastosuj jego plan ponownie stamtąd."
+  es: "El día al que sigue este no está en la próxima semana: vuelve a aplicar su planificación desde allí."
   ru: "День, которому следует этот, не входит в ближайшую неделю: примените его план заново оттуда."
   uk: "День, якому слідує цей, не входить у найближчий тиждень: застосуйте його план знову звідти."
 "%{day} follows %{pattern} again: %{a} of %{b} trips as it has them.":
@@ -91,6 +103,7 @@ _version: 2
   fr: "%{day} suit de nouveau %{pattern} : %{a} courses sur %{b} comme là-bas."
   nl: "%{day} volgt weer %{pattern}: %{a} van %{b} ritten zoals daar."
   pl: "%{day} znów działa według %{pattern}: %{a} z %{b} kursów jak tam."
+  es: "%{day} vuelve a seguir a %{pattern}: %{a} de %{b} viajes como los tiene."
   ru: "%{day} снова следует %{pattern}: %{a} из %{b} рейсов как там."
   uk: "%{day} знову слідує %{pattern}: %{a} з %{b} рейсів як там."
 "%{day} keeps its planning as it is: it follows no other day now.":
@@ -98,6 +111,7 @@ _version: 2
   fr: "%{day} garde sa planification telle quelle : il ne suit plus aucun autre jour."
   nl: "%{day} houdt zijn planning zoals ze is: hij volgt nu geen andere dag."
   pl: "%{day} zachowuje swój plan bez zmian: nie działa już według innego dnia."
+  es: "%{day} conserva su planificación tal como está: ya no sigue a ningún otro día."
   ru: "%{day} сохраняет свой план как есть: он больше не следует другому дню."
   uk: "%{day} зберігає свій план як є: він більше не слідує іншому дню."
 "No trips of this line on this day":
@@ -105,6 +119,7 @@ _version: 2
   fr: "Aucune course de cette ligne ce jour-là"
   nl: "Geen ritten van deze lijn op deze dag"
   pl: "Brak kursów tej linii w tym dniu"
+  es: "Ningún viaje de esta línea en este día"
   ru: "В этот день нет рейсов этой линии"
   uk: "Цього дня немає рейсів цієї лінії"
 "Runs the %{days} timetable":
@@ -112,6 +127,7 @@ _version: 2
   fr: "Roule selon l'horaire %{days}"
   nl: "Rijdt de dienstregeling %{days}"
   pl: "Jeździ według rozkładu %{days}"
+  es: "Usa el horario de %{days}"
   ru: "Работает по расписанию «%{days}»"
   uk: "Працює за розкладом «%{days}»"
 "Runs the %{days} timetable, not its weekday's: a holiday or another day":
@@ -119,6 +135,7 @@ _version: 2
   fr: "Roule selon l'horaire %{days}, pas celui de son jour de semaine : un jour férié ou un jour particulier"
   nl: "Rijdt de dienstregeling %{days}, niet die van zijn weekdag: een feestdag of een andere dag"
   pl: "Jeździ według rozkładu %{days}, nie swojego dnia tygodnia: święto albo inny dzień"
+  es: "Usa el horario de %{days}, no el de su día de la semana: un festivo u otro día"
   ru: "Работает по расписанию «%{days}», а не своего дня недели: праздник или особый день"
   uk: "Працює за розкладом «%{days}», а не свого дня тижня: свято або особливий день"
 "This day only":
@@ -126,6 +143,7 @@ _version: 2
   fr: "Ce jour seulement"
   nl: "Alleen deze dag"
   pl: "Tylko ten dzień"
+  es: "Solo este día"
   ru: "Только этот день"
   uk: "Лише цей день"
 "Every day of this day type":
@@ -133,6 +151,7 @@ _version: 2
   fr: "Chaque jour de ce type de jour"
   nl: "Elke dag van dit dagtype"
   pl: "Każdy dzień tego typu"
+  es: "Todos los días de este tipo de día"
   ru: "Каждый день этого типа"
   uk: "Кожен день цього типу"
 "Every day with the same timetable":
@@ -140,6 +159,7 @@ _version: 2
   fr: "Chaque jour avec le même horaire"
   nl: "Elke dag met dezelfde dienstregeling"
   pl: "Każdy dzień z tym samym rozkładem"
+  es: "Todos los días con el mismo horario"
   ru: "Каждый день с тем же расписанием"
   uk: "Кожен день з тим самим розкладом"
 "From a date until a date":
@@ -147,6 +167,7 @@ _version: 2
   fr: "D'une date à une date"
   nl: "Van een datum tot een datum"
   pl: "Od daty do daty"
+  es: "Desde una fecha hasta una fecha"
   ru: "С даты по дату"
   uk: "З дати по дату"
 "Same timetable: an exact copy":
@@ -154,6 +175,7 @@ _version: 2
   fr: "Même horaire : une copie exacte"
   nl: "Dezelfde dienstregeling: een exacte kopie"
   pl: "Ten sam rozkład: dokładna kopia"
+  es: "Mismo horario: una copia exacta"
   ru: "То же расписание: точная копия"
   uk: "Той самий розклад: точна копія"
 "Another timetable: %{a} of %{b} trips match":
@@ -161,6 +183,7 @@ _version: 2
   fr: "Autre horaire : %{a} courses sur %{b} correspondent"
   nl: "Andere dienstregeling: %{a} van %{b} ritten passen"
   pl: "Inny rozkład: pasuje %{a} z %{b} kursów"
+  es: "Otro horario: coinciden %{a} de %{b} viajes"
   ru: "Другое расписание: совпадают %{a} из %{b} рейсов"
   uk: "Інший розклад: збігаються %{a} з %{b} рейсів"
 "%{n} to plan by hand":
@@ -168,6 +191,7 @@ _version: 2
   fr: "%{n} à planifier à la main"
   nl: "%{n} met de hand te plannen"
   pl: "%{n} do zaplanowania ręcznie"
+  es: "%{n} por planificar a mano"
   ru: "%{n} спланировать вручную"
   uk: "%{n} спланувати вручну"
 "Save and apply to other days":
@@ -175,6 +199,7 @@ _version: 2
   fr: "Enregistrer et appliquer à d'autres jours"
   nl: "Opslaan en op andere dagen toepassen"
   pl: "Zapisz i zastosuj do innych dni"
+  es: "Guardar y aplicar a otros días"
   ru: "Сохранить и применить к другим дням"
   uk: "Зберегти й застосувати до інших днів"
 "Save and apply":
@@ -182,6 +207,7 @@ _version: 2
   fr: "Enregistrer et appliquer"
   nl: "Opslaan en toepassen"
   pl: "Zapisz i zastosuj"
+  es: "Guardar y aplicar"
   ru: "Сохранить и применить"
   uk: "Зберегти й застосувати"
 "Save for this date":
@@ -189,6 +215,7 @@ _version: 2
   fr: "Enregistrer pour cette date"
   nl: "Opslaan voor deze datum"
   pl: "Zapisz dla tej daty"
+  es: "Guardar para esta fecha"
   ru: "Сохранить для этой даты"
   uk: "Зберегти для цієї дати"
 "Every %{day}":
@@ -196,6 +223,7 @@ _version: 2
   fr: "Chaque %{day}"
   nl: "Elke %{day}"
   pl: "Co %{day}"
+  es: "Cada %{day}"
   ru: "Каждый %{day}"
   uk: "Кожен %{day}"
 "Only %{date}":
@@ -203,6 +231,7 @@ _version: 2
   fr: "Seulement %{date}"
   nl: "Alleen %{date}"
   pl: "Tylko %{date}"
+  es: "Solo %{date}"
   ru: "Только %{date}"
   uk: "Лише %{date}"
 "Saved for this date only: its weekday keeps the planning it had (an exception for one day).":
@@ -210,6 +239,7 @@ _version: 2
   fr: "Enregistré pour cette date seulement : son jour de semaine garde sa planification (une exception d'un jour)."
   nl: "Alleen voor deze datum opgeslagen: zijn weekdag houdt de planning die hij had (een uitzondering voor één dag)."
   pl: "Zapis tylko dla tej daty: jej dzień tygodnia zachowuje swój plan (wyjątek na jeden dzień)."
+  es: "Guardado solo para esta fecha: su día de la semana conserva la planificación que tenía (una excepción para un día)."
   ru: "Сохраняется только для этой даты: её день недели сохраняет прежний план (исключение на один день)."
   uk: "Зберігається лише для цієї дати: її день тижня зберігає попередній план (виняток на один день)."
 "Saved for this weekday: its planning holds every week.":
@@ -217,6 +247,7 @@ _version: 2
   fr: "Enregistré pour ce jour de semaine : sa planification vaut chaque semaine."
   nl: "Opgeslagen voor deze weekdag: zijn planning geldt elke week."
   pl: "Zapis dla tego dnia tygodnia: jego plan obowiązuje co tydzień."
+  es: "Guardado para este día de la semana: su planificación vale todas las semanas."
   ru: "Сохраняется для этого дня недели: его план действует каждую неделю."
   uk: "Зберігається для цього дня тижня: його план діє щотижня."
 "Apply to":
@@ -224,6 +255,7 @@ _version: 2
   fr: "Appliquer à"
   nl: "Toepassen op"
   pl: "Zastosuj do"
+  es: "Aplicar a"
   ru: "Применить к"
   uk: "Застосувати до"
 "until":
@@ -231,6 +263,7 @@ _version: 2
   fr: "jusqu'au"
   nl: "tot en met"
   pl: "do"
+  es: "hasta"
   ru: "по"
   uk: "по"
 "These dates only: afterwards each runs its weekday's planning again.":
@@ -238,6 +271,7 @@ _version: 2
   fr: "Ces dates seulement : ensuite chacune suit de nouveau la planification de son jour de semaine."
   nl: "Alleen deze data: daarna rijdt elke dag weer de planning van zijn weekdag."
   pl: "Tylko te daty: potem każda znów działa według planu swojego dnia tygodnia."
+  es: "Solo estas fechas: después, cada una vuelve a usar la planificación de su día de la semana."
   ru: "Только эти даты: потом каждая снова работает по плану своего дня недели."
   uk: "Лише ці дати: потім кожна знову працює за планом свого дня тижня."
 "Vehicles (the buses' blocks)":
@@ -245,6 +279,7 @@ _version: 2
   fr: "Véhicules (les blocs des bus)"
   nl: "Voertuigen (de omlopen van de bussen)"
   pl: "Pojazdy (obiegi autobusów)"
+  es: "Vehículos (los recorridos de los autobuses)"
   ru: "Машины (выпуски автобусов)"
   uk: "Машини (випуски автобусів)"
 "Drivers (the duties)":
@@ -252,6 +287,7 @@ _version: 2
   fr: "Conducteurs (les services)"
   nl: "Chauffeurs (de diensten)"
   pl: "Kierowcy (służby)"
+  es: "Conductores (los servicios)"
   ru: "Водители (смены)"
   uk: "Водії (зміни)"
 "Every week":
@@ -259,6 +295,7 @@ _version: 2
   fr: "Chaque semaine"
   nl: "Elke week"
   pl: "Co tydzień"
+  es: "Cada semana"
   ru: "Каждую неделю"
   uk: "Щотижня"
 "Its own changes are replaced by the copy":
@@ -266,6 +303,7 @@ _version: 2
   fr: "Ses propres modifications sont remplacées par la copie"
   nl: "Zijn eigen wijzigingen worden door de kopie vervangen"
   pl: "Jego własne zmiany zastąpi kopia"
+  es: "Sus propios cambios se sustituyen por la copia"
   ru: "Его собственные изменения заменит копия"
   uk: "Його власні зміни замінить копія"
 "A day of another timetable takes only the trips that match (same line, way, departure and stops). The rest run as its timetable has them and are listed, to plan by hand.":
@@ -273,6 +311,7 @@ _version: 2
   fr: "Un jour d'un autre horaire ne prend que les courses qui correspondent (même ligne, sens, départ et arrêts). Les autres roulent comme son horaire les prévoit et sont listées, à planifier à la main."
   nl: "Een dag met een andere dienstregeling neemt alleen de ritten over die passen (zelfde lijn, richting, vertrek en haltes). De rest rijdt zoals zijn dienstregeling hem heeft en wordt opgesomd, om met de hand te plannen."
   pl: "Dzień z innym rozkładem przejmuje tylko pasujące kursy (ta sama linia, kierunek, odjazd i przystanki). Reszta jedzie tak, jak ma ją jego rozkład, i trafia na listę do zaplanowania ręcznie."
+  es: "Un día de otro horario solo recibe los viajes que coinciden (misma línea, sentido, salida y paradas). El resto funciona como lo tiene su horario y se muestra en una lista, para planificarlo a mano."
   ru: "День с другим расписанием берёт только совпадающие рейсы (та же линия, направление, отправление и остановки). Остальные идут по его расписанию и перечислены, чтобы спланировать их вручную."
   uk: "День з іншим розкладом бере лише рейси, що збігаються (та сама лінія, напрямок, відправлення й зупинки). Решта йде за його розкладом і перелічена, щоб спланувати її вручну."
 "Your changes on %{days} are saved too.":
@@ -280,6 +319,7 @@ _version: 2
   fr: "Vos modifications de %{days} sont enregistrées aussi."
   nl: "Uw wijzigingen op %{days} worden ook opgeslagen."
   pl: "Twoje zmiany w %{days} też zostaną zapisane."
+  es: "Tus cambios en %{days} también se guardan."
   ru: "Ваши изменения в %{days} тоже сохраняются."
   uk: "Ваші зміни в %{days} теж зберігаються."
 "Copied from %{day}":
@@ -287,6 +327,7 @@ _version: 2
   fr: "Copié depuis %{day}"
   nl: "Gekopieerd van %{day}"
   pl: "Skopiowano z %{day}"
+  es: "Copiado de %{day}"
   ru: "Скопировано с %{day}"
   uk: "Скопійовано з %{day}"
 "Exact copy":
@@ -294,6 +335,7 @@ _version: 2
   fr: "Copie exacte"
   nl: "Exacte kopie"
   pl: "Dokładna kopia"
+  es: "Copia exacta"
   ru: "Точная копия"
   uk: "Точна копія"
 "%{a} of %{b} trips as copied":
@@ -301,6 +343,7 @@ _version: 2
   fr: "%{a} courses sur %{b} comme copiées"
   nl: "%{a} van %{b} ritten zoals gekopieerd"
   pl: "%{a} z %{b} kursów jak w kopii"
+  es: "%{a} de %{b} viajes como se copiaron"
   ru: "%{a} из %{b} рейсов как в копии"
   uk: "%{a} з %{b} рейсів як у копії"
 "%{n} trips of the pattern do not run that day.":
@@ -308,6 +351,7 @@ _version: 2
   fr: "%{n} courses du modèle ne roulent pas ce jour-là."
   nl: "%{n} ritten van het patroon rijden die dag niet."
   pl: "%{n} kursów wzorca nie jeździ tego dnia."
+  es: "%{n} viajes del patrón no circulan ese día."
   ru: "%{n} рейсов шаблона в этот день не ходят."
   uk: "%{n} рейсів шаблону цього дня не ходять."
 "To plan by hand: they run as the day's timetable has them.":
@@ -315,6 +359,7 @@ _version: 2
   fr: "À planifier à la main : elles roulent comme l'horaire du jour les prévoit."
   nl: "Met de hand te plannen: ze rijden zoals de dienstregeling van de dag ze heeft."
   pl: "Do zaplanowania ręcznie: jadą tak, jak ma je rozkład tego dnia."
+  es: "Por planificar a mano: funcionan como los tiene el horario del día."
   ru: "Спланировать вручную: они идут по расписанию этого дня."
   uk: "Спланувати вручну: вони йдуть за розкладом цього дня."
 "Show the trip on its day":
@@ -322,6 +367,7 @@ _version: 2
   fr: "Montrer la course à son jour"
   nl: "De rit op zijn dag tonen"
   pl: "Pokaż kurs w jego dniu"
+  es: "Mostrar el viaje en su día"
   ru: "Показать рейс в его день"
   uk: "Показати рейс у його день"
 "The trips to plan by hand, each a link to it":
@@ -329,6 +375,7 @@ _version: 2
   fr: "Les courses à planifier à la main, chacune avec un lien vers elle"
   nl: "De met de hand te plannen ritten, elk met een link ernaartoe"
   pl: "Kursy do zaplanowania ręcznie, każdy z odnośnikiem"
+  es: "Los viajes por planificar a mano, cada uno con un enlace"
   ru: "Рейсы для ручного планирования, у каждого ссылка на него"
   uk: "Рейси для ручного планування, у кожного посилання на нього"
 "Make this day as its pattern is again: its own changes go":
@@ -336,6 +383,7 @@ _version: 2
   fr: "Rendre ce jour à nouveau comme son modèle : ses propres modifications disparaissent"
   nl: "Deze dag weer maken zoals zijn patroon is: zijn eigen wijzigingen vervallen"
   pl: "Przywróć ten dzień do wzorca: jego własne zmiany przepadną"
+  es: "Volver a dejar este día como su patrón: sus propios cambios se pierden"
   ru: "Сделать этот день снова как его шаблон: собственные изменения пропадут"
   uk: "Зробити цей день знову як його шаблон: власні зміни зникнуть"
 "Reset to pattern":
@@ -343,6 +391,7 @@ _version: 2
   fr: "Revenir au modèle"
   nl: "Terug naar patroon"
   pl: "Przywróć wzorzec"
+  es: "Restablecer al patrón"
   ru: "Вернуть к шаблону"
   uk: "Повернути до шаблону"
 "Its pattern changed since it was copied: copy it again":
@@ -350,6 +399,7 @@ _version: 2
   fr: "Son modèle a changé depuis la copie : le copier de nouveau"
   nl: "Zijn patroon is sinds het kopiëren veranderd: opnieuw kopiëren"
   pl: "Jego wzorzec zmienił się od skopiowania: skopiuj ponownie"
+  es: "Su patrón ha cambiado desde que se copió: cópialo de nuevo"
   ru: "Шаблон изменился после копирования: скопировать заново"
   uk: "Шаблон змінився після копіювання: скопіювати знову"
 "Stop following: this day keeps its planning as it is":
@@ -357,6 +407,7 @@ _version: 2
   fr: "Ne plus suivre : ce jour garde sa planification telle quelle"
   nl: "Niet meer volgen: deze dag houdt zijn planning zoals ze is"
   pl: "Przestań podążać: ten dzień zachowa swój plan bez zmian"
+  es: "Dejar de seguir: este día conserva su planificación tal como está"
   ru: "Больше не следовать: этот день сохраняет свой план как есть"
   uk: "Більше не слідувати: цей день зберігає свій план як є"
 "Save and apply to other days: every day of this day type, the days with the same timetable, or from a date until a date":
@@ -364,6 +415,7 @@ _version: 2
   fr: "Enregistrer et appliquer à d'autres jours : chaque jour de ce type, les jours avec le même horaire, ou d'une date à une date"
   nl: "Opslaan en op andere dagen toepassen: elke dag van dit dagtype, de dagen met dezelfde dienstregeling, of van een datum tot een datum"
   pl: "Zapisz i zastosuj do innych dni: każdy dzień tego typu, dni z tym samym rozkładem albo od daty do daty"
+  es: "Guardar y aplicar a otros días: todos los días de este tipo de día, los días con el mismo horario o desde una fecha hasta una fecha"
   ru: "Сохранить и применить к другим дням: каждый день этого типа, дни с тем же расписанием или с даты по дату"
   uk: "Зберегти й застосувати до інших днів: кожен день цього типу, дні з тим самим розкладом або з дати по дату"
 "The days of the coming week that run this timetable":
@@ -371,6 +423,7 @@ _version: 2
   fr: "Les jours de la semaine à venir qui suivent cet horaire"
   nl: "De dagen van de komende week die deze dienstregeling rijden"
   pl: "Dni nadchodzącego tygodnia, które jeżdżą według tego rozkładu"
+  es: "Los días de la próxima semana que usan este horario"
   ru: "Дни ближайшей недели, работающие по этому расписанию"
   uk: "Дні найближчого тижня, що працюють за цим розкладом"
 "Another timetable: all %{n} of its trips match":
@@ -378,6 +431,7 @@ _version: 2
   fr: "Autre horaire : ses %{n} courses correspondent toutes"
   nl: "Andere dienstregeling: alle %{n} ritten passen"
   pl: "Inny rozkład: pasują wszystkie jego %{n} kursy"
+  es: "Otro horario: coinciden los %{n} viajes"
   ru: "Другое расписание: совпадают все его %{n} рейсов"
   uk: "Інший розклад: збігаються всі його %{n} рейсів"
 "%{n} of this day's trips do not run there":
@@ -385,6 +439,7 @@ _version: 2
   fr: "%{n} courses de ce jour n'y roulent pas"
   nl: "%{n} ritten van deze dag rijden daar niet"
   pl: "%{n} kursów tego dnia tam nie jeździ"
+  es: "%{n} viajes de este día no circulan allí"
   ru: "%{n} рейсов этого дня там не ходят"
   uk: "%{n} рейсів цього дня там не ходять"
 # a copy that could not be made says why, and what to do instead (testers: "sometimes it works,
@@ -394,6 +449,7 @@ _version: 2
   fr: "%{days} suivent déjà cette planification : rien à y copier."
   nl: "%{days} rijden deze planning al: daar valt niets te kopiëren."
   pl: "%{days} jeżdżą już według tego planu: nie ma tam czego kopiować."
+  es: "%{days} ya usan esta planificación: no hay nada que copiar allí."
   ru: "%{days} уже работают по этому плану: туда нечего копировать."
   uk: "%{days} вже працюють за цим планом: туди нічого копіювати."
 "%{days} have no trips of the company's lines: there was nothing to copy onto.":
@@ -401,6 +457,7 @@ _version: 2
   fr: "%{days} n'ont aucune course des lignes de l'entreprise : il n'y avait rien sur quoi copier."
   nl: "%{days} hebben geen ritten van de lijnen van het bedrijf: er was niets om op te kopiëren."
   pl: "%{days} nie mają kursów linii firmy: nie było na co kopiować."
+  es: "%{days} no tienen viajes de las líneas de la empresa: no había nada sobre lo que copiar."
   ru: "У %{days} нет рейсов линий компании: копировать было не на что."
   uk: "У %{days} немає рейсів ліній компанії: копіювати було нікуди."
 "Nothing of the planning matched on %{days}: no trip there is one of this day's (same line, way, departure and stops), so they run as their timetable has them.":
@@ -408,6 +465,7 @@ _version: 2
   fr: "Rien de la planification ne correspondait pour %{days} : aucune course là-bas n'est une de ce jour (même ligne, sens, départ et arrêts), elles roulent donc selon leur horaire."
   nl: "Niets van de planning paste op %{days}: geen rit daar is er een van deze dag (zelfde lijn, richting, vertrek en haltes), dus ze rijden zoals hun dienstregeling ze heeft."
   pl: "Nic z planu nie pasowało w %{days}: żaden kurs tam nie jest kursem tego dnia (ta sama linia, kierunek, odjazd i przystanki), więc jeżdżą według swojego rozkładu."
+  es: "Nada de la planificación coincidió en %{days}: ningún viaje de allí es uno de este día (misma línea, sentido, salida y paradas), así que funcionan como los tiene su horario."
   ru: "Ничего из плана не совпало в %{days}: ни один рейс там не является рейсом этого дня (та же линия, направление, отправление и остановки), поэтому они идут по своему расписанию."
   uk: "Нічого з плану не збіглося в %{days}: жоден рейс там не є рейсом цього дня (та сама лінія, напрямок, відправлення й зупинки), тож вони йдуть за своїм розкладом."
 "This day follows no other day: there is nothing to reset it to.":
@@ -415,6 +473,7 @@ _version: 2
   fr: "Ce jour ne suit aucun autre jour : il n'y a rien vers quoi le réinitialiser."
   nl: "Deze dag volgt geen andere dag: er is niets om hem naar terug te zetten."
   pl: "Ten dzień nie podąża za żadnym innym dniem: nie ma do czego go przywrócić."
+  es: "Este día no sigue a ningún otro día: no hay nada a lo que restablecerlo."
   ru: "Этот день не следует никакому другому дню: сбрасывать его не к чему."
   uk: "Цей день не слідує жодному іншому дню: скидати його нема до чого."
 "%{day} has changes not saved: SAVE them first - a copy takes the saved planning - then try again.":
@@ -422,6 +481,7 @@ _version: 2
   fr: "%{day} a des modifications non enregistrées : ENREGISTRER d'abord - une copie prend la planification enregistrée - puis réessayer."
   nl: "%{day} heeft wijzigingen die niet zijn opgeslagen: eerst OPSLAAN - een kopie neemt de opgeslagen planning - en dan opnieuw proberen."
   pl: "%{day} ma niezapisane zmiany: najpierw ZAPISZ - kopia bierze zapisany plan - a potem spróbuj ponownie."
+  es: "%{day} tiene cambios sin guardar: GUÁRDALOS primero (una copia toma la planificación guardada) y vuelve a intentarlo."
   ru: "У %{day} есть несохранённые изменения: сначала СОХРАНИТЬ - копия берёт сохранённый план - и попробовать снова."
   uk: "У %{day} є незбережені зміни: спершу ЗБЕРЕГТИ - копія бере збережений план - і спробувати знову."
 "The rows to copy are no longer on %{day}: tick them again there and copy.":
@@ -429,6 +489,7 @@ _version: 2
   fr: "Les lignes à copier ne sont plus sur %{day} : coche-les à nouveau là-bas et copie."
   nl: "De rijen om te kopiëren staan niet meer op %{day}: vink ze daar opnieuw aan en kopieer."
   pl: "Wierszy do skopiowania nie ma już w %{day}: zaznacz je tam ponownie i skopiuj."
+  es: "Las filas que copiar ya no están en %{day}: vuelve a marcarlas allí y cópialas."
   ru: "Строк для копирования больше нет в %{day}: отметь их там снова и скопируй."
   uk: "Рядків для копіювання більше немає в %{day}: познач їх там знову й скопіюй."
 "Nothing was copied: a locked vehicle or duty there holds those trips. Unlock it there and copy again.":
@@ -436,6 +497,7 @@ _version: 2
   fr: "Rien n'a été copié : un véhicule ou un service verrouillé là-bas a ces courses. Déverrouille-le là-bas et copie à nouveau."
   nl: "Er is niets gekopieerd: een vergrendeld voertuig of een vergrendelde dienst daar heeft die ritten. Ontgrendel het daar en kopieer opnieuw."
   pl: "Nic nie skopiowano: te kursy ma tam zablokowany pojazd lub służba. Odblokuj je tam i skopiuj ponownie."
+  es: "No se ha copiado nada: un vehículo o servicio bloqueado allí tiene esos viajes. Desbloquéalo allí y vuelve a copiar."
   ru: "Ничего не скопировано: эти рейсы у заблокированной там машины или смены. Разблокируй её там и скопируй снова."
   uk: "Нічого не скопійовано: ці рейси в заблокованої там машини чи зміни. Розблокуй її там і скопіюй знову."
 "Nothing was copied: no trip of those days matches the rows' trips (same line, way, departure and stops).":
@@ -443,6 +505,7 @@ _version: 2
   fr: "Rien n'a été copié : aucune course de ces jours ne correspond aux courses des lignes (même ligne, sens, départ et arrêts)."
   nl: "Er is niets gekopieerd: geen rit van die dagen past bij de ritten van de rijen (zelfde lijn, richting, vertrek en haltes)."
   pl: "Nic nie skopiowano: żaden kurs tych dni nie pasuje do kursów wierszy (ta sama linia, kierunek, odjazd i przystanki)."
+  es: "No se ha copiado nada: ningún viaje de esos días coincide con los viajes de las filas (misma línea, sentido, salida y paradas)."
   ru: "Ничего не скопировано: ни один рейс этих дней не совпадает с рейсами строк (та же линия, направление, отправление и остановки)."
   uk: "Нічого не скопійовано: жоден рейс цих днів не збігається з рейсами рядків (та сама лінія, напрямок, відправлення й зупинки)."
 "%{n} of their trips are held by a locked vehicle or duty there: unlock it there and copy again to take them.":
@@ -450,6 +513,7 @@ _version: 2
   fr: "%{n} de leurs courses sont tenues par un véhicule ou un service verrouillé là-bas : déverrouille-le là-bas et copie à nouveau pour les prendre."
   nl: "%{n} van hun ritten heeft een vergrendeld voertuig of een vergrendelde dienst daar: ontgrendel het daar en kopieer opnieuw om ze mee te nemen."
   pl: "%{n} ich kursów ma tam zablokowany pojazd lub służba: odblokuj je tam i skopiuj ponownie, aby je przenieść."
+  es: "%{n} de sus viajes los tiene un vehículo o servicio bloqueado allí: desbloquéalo allí y vuelve a copiar para llevártelos."
   ru: "%{n} их рейсов у заблокированной там машины или смены: разблокируй её там и скопируй снова, чтобы их забрать."
   uk: "%{n} їхніх рейсів у заблокованої там машини чи зміни: розблокуй її там і скопіюй знову, щоб їх забрати."
 "%{days} run a planning of their own for that date: the rows went into the planning of every week, which that date does not run. Copy again with “This date only” to change that date.":
@@ -457,6 +521,7 @@ _version: 2
   fr: "%{days} suivent une planification propre à cette date : les lignes sont allées dans la planification de chaque semaine, que cette date ne suit pas. Copie à nouveau avec « Cette date seulement » pour changer cette date."
   nl: "%{days} rijden voor die datum een eigen planning: de rijen gingen naar de planning van elke week, die die datum niet rijdt. Kopieer opnieuw met „Alleen deze datum” om die datum te wijzigen."
   pl: "%{days} mają własny plan na tę datę: wiersze trafiły do planu każdego tygodnia, którego ta data nie używa. Skopiuj ponownie z „Tylko ta data”, aby zmienić tę datę."
+  es: "%{days} tienen una planificación propia para esa fecha: las filas han ido a la planificación de todas las semanas, que esa fecha no usa. Vuelve a copiar con “Solo esta fecha” para cambiar esa fecha."
   ru: "У %{days} свой план на эту дату: строки попали в план каждой недели, по которому эта дата не работает. Скопируй снова с «Только эта дата», чтобы изменить эту дату."
   uk: "У %{days} власний план на цю дату: рядки потрапили в план кожного тижня, за яким ця дата не працює. Скопіюй знову з «Лише ця дата», щоб змінити цю дату."
 # The days and months short, as the day switcher and every date of RosterFlow say them ("MON 19
@@ -466,6 +531,7 @@ _version: 2
   fr: "lun."
   nl: "ma"
   pl: "pon."
+  es: "Lun"
   ru: "Пн"
   uk: "Пн"
 "Tue":
@@ -473,6 +539,7 @@ _version: 2
   fr: "mar."
   nl: "di"
   pl: "wt."
+  es: "Mar"
   ru: "Вт"
   uk: "Вт"
 "Wed":
@@ -480,6 +547,7 @@ _version: 2
   fr: "mer."
   nl: "wo"
   pl: "śr."
+  es: "Mié"
   ru: "Ср"
   uk: "Ср"
 "Thu":
@@ -487,6 +555,7 @@ _version: 2
   fr: "jeu."
   nl: "do"
   pl: "czw."
+  es: "Jue"
   ru: "Чт"
   uk: "Чт"
 "Fri":
@@ -494,6 +563,7 @@ _version: 2
   fr: "ven."
   nl: "vr"
   pl: "pt."
+  es: "Vie"
   ru: "Пт"
   uk: "Пт"
 "Sat":
@@ -501,6 +571,7 @@ _version: 2
   fr: "sam."
   nl: "za"
   pl: "sob."
+  es: "Sáb"
   ru: "Сб"
   uk: "Сб"
 "Sun":
@@ -508,6 +579,7 @@ _version: 2
   fr: "dim."
   nl: "zo"
   pl: "niedz."
+  es: "Dom"
   ru: "Вс"
   uk: "Нд"
 "Jan":
@@ -515,6 +587,7 @@ _version: 2
   fr: "janv."
   nl: "jan"
   pl: "sty"
+  es: "Ene"
   ru: "янв."
   uk: "січ."
 "Feb":
@@ -522,6 +595,7 @@ _version: 2
   fr: "févr."
   nl: "feb"
   pl: "lut"
+  es: "Feb"
   ru: "февр."
   uk: "лют."
 "Mar":
@@ -529,6 +603,7 @@ _version: 2
   fr: "mars"
   nl: "mrt"
   pl: "mar"
+  es: "Mar"
   ru: "мар."
   uk: "бер."
 "Apr":
@@ -536,6 +611,7 @@ _version: 2
   fr: "avr."
   nl: "apr"
   pl: "kwi"
+  es: "Abr"
   ru: "апр."
   uk: "квіт."
 "May":
@@ -543,6 +619,7 @@ _version: 2
   fr: "mai"
   nl: "mei"
   pl: "maj"
+  es: "May"
   ru: "мая"
   uk: "трав."
 "Jun":
@@ -550,6 +627,7 @@ _version: 2
   fr: "juin"
   nl: "jun"
   pl: "cze"
+  es: "Jun"
   ru: "июн."
   uk: "черв."
 "Jul":
@@ -557,6 +635,7 @@ _version: 2
   fr: "juil."
   nl: "jul"
   pl: "lip"
+  es: "Jul"
   ru: "июл."
   uk: "лип."
 "Aug":
@@ -564,6 +643,7 @@ _version: 2
   fr: "août"
   nl: "aug"
   pl: "sie"
+  es: "Ago"
   ru: "авг."
   uk: "серп."
 "Sep":
@@ -571,6 +651,7 @@ _version: 2
   fr: "sept."
   nl: "sep"
   pl: "wrz"
+  es: "Sept"
   ru: "сент."
   uk: "вер."
 "Oct":
@@ -578,6 +659,7 @@ _version: 2
   fr: "oct."
   nl: "okt"
   pl: "paź"
+  es: "Oct"
   ru: "окт."
   uk: "жовт."
 "Nov":
@@ -585,6 +667,7 @@ _version: 2
   fr: "nov."
   nl: "nov"
   pl: "lis"
+  es: "Nov"
   ru: "нояб."
   uk: "лист."
 "Dec":
@@ -592,5 +675,6 @@ _version: 2
   fr: "déc."
   nl: "dec"
   pl: "gru"
+  es: "Dic"
   ru: "дек."
   uk: "груд."

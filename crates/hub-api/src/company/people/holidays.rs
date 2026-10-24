@@ -262,7 +262,7 @@ mod tests {
     use super::*;
 
     /// Every text of the holidays - the core's (`holidays::texts`), this tab's, and the words the
-    /// staff page, the inbox and the confirmation add - in the six languages.
+    /// staff page, the inbox and the confirmation add - in the seven languages.
     #[test]
     fn every_holiday_text_is_translated() {
         let src = include_str!("holidays.rs");
@@ -279,7 +279,7 @@ mod tests {
         texts.extend(hd::texts().into_iter().chain(MODES).chain(STATES).map(String::from));
         texts.extend(["Holidays", "Asks for a holiday", "Not planned yet", "Holidays rejected this year", "Approve anyway", "To the holiday planner"].map(String::from));
         let mut missing = Vec::new();
-        for lang in ["nl", "de", "fr", "ru", "uk", "pl"] {
+        for lang in ["nl", "de", "fr", "ru", "uk", "pl", "es"] {
             let table = crate::launcher::i18n::table(lang);
             for t in &texts {
                 if !table.contains_key(t) {

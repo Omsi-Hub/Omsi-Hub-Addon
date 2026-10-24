@@ -10,6 +10,7 @@ _version: 2
   fr: "Veuillez d'abord confirmer votre adresse e-mail, avec le code ou le lien de l'e-mail que nous vous avons envoyé."
   nl: "Bevestigt u eerst uw e-mailadres, met de code of de link uit de e-mail die wij u hebben gestuurd."
   pl: "Prosimy najpierw potwierdzić adres e-mail kodem lub linkiem z wiadomości, którą wysłaliśmy."
+  es: "Confirma primero tu dirección de correo electrónico, con el código o el enlace del correo que te hemos enviado."
   ru: "Сначала подтвердите адрес электронной почты кодом или ссылкой из письма, которое мы Вам отправили."
   uk: "Спершу підтвердьте адресу електронної пошти кодом або посиланням із листа, який ми Вам надіслали."
 "A new email is on its way.":
@@ -17,6 +18,7 @@ _version: 2
   fr: "Un nouvel e-mail est en route."
   nl: "Er is een nieuwe e-mail onderweg."
   pl: "Nowa wiadomość e-mail jest w drodze."
+  es: "Va de camino un nuevo correo."
   ru: "Новое письмо уже в пути."
   uk: "Новий лист уже в дорозі."
 "If an account has this address, an email is on its way to it.":
@@ -24,6 +26,7 @@ _version: 2
   fr: "Si un compte utilise cette adresse, un e-mail y est en route."
   nl: "Als een account dit adres heeft, is er een e-mail naar onderweg."
   pl: "Jeśli do tego adresu jest przypisane konto, wysłaliśmy na niego wiadomość e-mail."
+  es: "Si hay una cuenta con esta dirección, va de camino un correo a ella."
   ru: "Если к этому адресу привязан аккаунт, на него уже отправлено письмо."
   uk: "Якщо до цієї адреси прив'язано обліковий запис, на неї вже надіслано листа."
 "Enter the code from the email we sent to %{email}. If the email has a link instead, open it, then choose \"I have opened the link\".":
@@ -31,6 +34,7 @@ _version: 2
   fr: "Saisissez le code de l'e-mail que nous avons envoyé à %{email}. Si l'e-mail contient plutôt un lien, ouvrez-le, puis choisissez « J'ai ouvert le lien »."
   nl: "Voer de code in uit de e-mail die wij naar %{email} hebben gestuurd. Bevat de e-mail in plaats daarvan een link, open die dan en kies daarna „Ik heb de link geopend”."
   pl: "Wpisz kod z wiadomości wysłanej na adres %{email}. Jeśli zamiast kodu wiadomość zawiera link, otwórz go, a następnie wybierz „Otworzyłem(-am) link”."
+  es: "Introduce el código del correo que hemos enviado a %{email}. Si el correo trae un enlace, ábrelo y luego elige «He abierto el enlace»."
   ru: "Введите код из письма, отправленного на %{email}. Если в письме вместо кода ссылка, откройте её, затем выберите «Я открыл(а) ссылку»."
   uk: "Введіть код із листа, надісланого на %{email}. Якщо в листі замість коду посилання, відкрийте його, а потім виберіть «Я відкрив(-ла) посилання»."
 "I have opened the link":
@@ -38,6 +42,7 @@ _version: 2
   fr: "J'ai ouvert le lien"
   nl: "Ik heb de link geopend"
   pl: "Otworzyłem(-am) link"
+  es: "He abierto el enlace"
   ru: "Я открыл(а) ссылку"
   uk: "Я відкрив(-ла) посилання"
 "Send the email again":
@@ -45,6 +50,7 @@ _version: 2
   fr: "Renvoyer l'e-mail"
   nl: "E-mail opnieuw sturen"
   pl: "Wyślij wiadomość ponownie"
+  es: "Enviar el correo de nuevo"
   ru: "Отправить письмо ещё раз"
   uk: "Надіслати листа ще раз"
 "We send an email to %{email}. With its code you choose a new password here.":
@@ -52,6 +58,7 @@ _version: 2
   fr: "Nous envoyons un e-mail à %{email}. Avec son code, vous choisissez ici un nouveau mot de passe."
   nl: "Wij sturen een e-mail naar %{email}. Met de code daaruit kiest u hier een nieuw wachtwoord."
   pl: "Wyślemy wiadomość na adres %{email}. Kodem z niej ustawisz tutaj nowe hasło."
+  es: "Enviamos un correo a %{email}. Con su código eliges aquí una nueva contraseña."
   ru: "Мы отправим письмо на %{email}. С кодом из него Вы зададите здесь новый пароль."
   uk: "Ми надішлемо листа на %{email}. З кодом із нього Ви встановите тут новий пароль."
 "We send an email to your email address. With its code you choose a new password here.":
@@ -59,6 +66,7 @@ _version: 2
   fr: "Nous envoyons un e-mail à votre adresse e-mail. Avec son code, vous choisissez ici un nouveau mot de passe."
   nl: "Wij sturen een e-mail naar uw e-mailadres. Met de code daaruit kiest u hier een nieuw wachtwoord."
   pl: "Wyślemy wiadomość na Twój adres e-mail. Kodem z niej ustawisz tutaj nowe hasło."
+  es: "Enviamos un correo a tu dirección de correo electrónico. Con su código eliges aquí una nueva contraseña."
   ru: "Мы отправим письмо на Ваш адрес электронной почты. С кодом из него Вы зададите здесь новый пароль."
   uk: "Ми надішлемо листа на Вашу адресу електронної пошти. З кодом із нього Ви встановите тут новий пароль."
 "Use another address":
@@ -66,6 +74,7 @@ _version: 2
   fr: "Utiliser une autre adresse"
   nl: "Een ander adres gebruiken"
   pl: "Użyj innego adresu"
+  es: "Usar otra dirección"
   ru: "Использовать другой адрес"
   uk: "Використати іншу адресу"
 "Send the email":
@@ -73,6 +82,7 @@ _version: 2
   fr: "Envoyer l'e-mail"
   nl: "E-mail sturen"
   pl: "Wyślij wiadomość"
+  es: "Enviar el correo"
   ru: "Отправить письмо"
   uk: "Надіслати листа"
 "Enter the code from the email we sent to %{email}. If the email has a link instead, open it and choose your new password there.":
@@ -80,5 +90,6 @@ _version: 2
   fr: "Saisissez le code de l'e-mail que nous avons envoyé à %{email}. Si l'e-mail contient plutôt un lien, ouvrez-le et choisissez-y votre nouveau mot de passe."
   nl: "Voer de code in uit de e-mail die wij naar %{email} hebben gestuurd. Bevat de e-mail in plaats daarvan een link, open die dan en kies daar uw nieuwe wachtwoord."
   pl: "Wpisz kod z wiadomości wysłanej na adres %{email}. Jeśli zamiast kodu wiadomość zawiera link, otwórz go i ustaw tam nowe hasło."
+  es: "Introduce el código del correo que hemos enviado a %{email}. Si el correo trae un enlace, ábrelo y elige allí tu nueva contraseña."
   ru: "Введите код из письма, отправленного на %{email}. Если в письме вместо кода ссылка, откройте её и задайте там новый пароль."
   uk: "Введіть код із листа, надісланого на %{email}. Якщо в листі замість коду посилання, відкрийте його та встановіть там новий пароль."

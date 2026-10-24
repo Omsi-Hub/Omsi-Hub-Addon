@@ -6,6 +6,7 @@ _version: 2
   fr: "J'ai attendu la ligne %{line} de %{time} à l'arrêt et le bus est arrivé en retard. J'ai raté ma correspondance !"
   nl: "Ik stond bij de halte te wachten op lijn %{line} van %{time} en de bus kwam te laat. Ik heb mijn aansluiting gemist!"
   pl: "Czekałem na przystanku na linię %{line} o %{time}, a autobus się spóźnił. Uciekła mi przesiadka!"
+  es: "Esperé en la parada de la línea %{line} a las %{time} y el autobús llegó tarde. ¡Perdí mi enlace!"
   ru: "Я ждал на остановке линию %{line} в %{time}, а автобус опоздал. Я пропустил пересадку!"
   uk: "Я чекав на зупинці лінію %{line} о %{time}, а автобус запізнився. Я пропустив пересадку!"
 "Your line %{line} at %{time} was late again. I was late for work because of it.":
@@ -13,6 +14,7 @@ _version: 2
   fr: "Votre ligne %{line} de %{time} était encore en retard. Je suis arrivé en retard au travail à cause d'elle."
   nl: "Uw lijn %{line} van %{time} was weer te laat. Daardoor kwam ik te laat op mijn werk."
   pl: "Wasza linia %{line} o %{time} znowu się spóźniła. Przez to spóźniłem się do pracy."
+  es: "Vuestra línea %{line} de las %{time} volvió a llegar tarde. Por su culpa llegué tarde al trabajo."
   ru: "Ваша линия %{line} в %{time} снова опоздала. Из-за неё я опоздал на работу."
   uk: "Ваша лінія %{line} о %{time} знову запізнилася. Через неї я запізнився на роботу."
 "The %{time} bus of line %{line} never came. Nobody told us anything.":
@@ -20,6 +22,7 @@ _version: 2
   fr: "Le bus de %{time} de la ligne %{line} n'est jamais venu. Personne ne nous a rien dit."
   nl: "De bus van %{time} van lijn %{line} is nooit gekomen. Niemand heeft ons iets verteld."
   pl: "Autobus linii %{line} o %{time} w ogóle nie przyjechał. Nikt nam nic nie powiedział."
+  es: "El autobús de las %{time} de la línea %{line} nunca llegó. Nadie nos dijo nada."
   ru: "Автобус линии %{line} в %{time} так и не пришёл. Нам никто ничего не сказал."
   uk: "Автобус лінії %{line} о %{time} так і не прийшов. Нам ніхто нічого не сказав."
 "I stood at the stop for nothing: line %{line} at %{time} simply did not run!":
@@ -27,6 +30,7 @@ _version: 2
   fr: "J'ai attendu pour rien : la ligne %{line} de %{time} n'a tout simplement pas circulé !"
   nl: "Ik stond voor niets bij de halte: lijn %{line} van %{time} reed gewoon niet!"
   pl: "Stałem na przystanku na próżno: linia %{line} o %{time} po prostu nie pojechała!"
+  es: "Esperé en la parada para nada: ¡la línea %{line} de las %{time} simplemente no pasó!"
   ru: "Я зря простоял на остановке: линия %{line} в %{time} просто не вышла!"
   uk: "Я марно простояв на зупинці: лінія %{line} о %{time} просто не вийшла!"
 "My bus on line %{line} broke down at %{time} and we were stuck for ages.":
@@ -34,6 +38,7 @@ _version: 2
   fr: "Mon bus de la ligne %{line} est tombé en panne à %{time} et nous sommes restés bloqués une éternité."
   nl: "Mijn bus op lijn %{line} kreeg om %{time} pech en we stonden eindeloos stil."
   pl: "Mój autobus linii %{line} zepsuł się o %{time} i utknęliśmy na wieki."
+  es: "Mi autobús de la línea %{line} se averió a las %{time} y nos quedamos tirados una eternidad."
   ru: "Мой автобус линии %{line} сломался в %{time}, и мы застряли надолго."
   uk: "Мій автобус лінії %{line} зламався о %{time}, і ми застрягли надовго."
 "Line %{line} broke down at %{time}. Does anyone ever look after your buses?":
@@ -41,6 +46,7 @@ _version: 2
   fr: "La ligne %{line} est tombée en panne à %{time}. Quelqu'un s'occupe-t-il jamais de vos bus ?"
   nl: "Lijn %{line} kreeg om %{time} pech. Kijkt er ooit iemand naar uw bussen?"
   pl: "Linia %{line} zepsuła się o %{time}. Czy ktoś w ogóle dba o wasze autobusy?"
+  es: "La línea %{line} se averió a las %{time}. ¿Alguien cuida alguna vez de vuestros autobuses?"
   ru: "Линия %{line} сломалась в %{time}. Кто-нибудь вообще следит за вашими автобусами?"
   uk: "Лінія %{line} зламалася о %{time}. Хтось узагалі доглядає ваші автобуси?"
 "The bus on line %{line} at %{time} was so full that it drove past me.":
@@ -48,6 +54,7 @@ _version: 2
   fr: "Le bus de la ligne %{line} de %{time} était si plein qu'il ne s'est pas arrêté."
   nl: "De bus op lijn %{line} van %{time} was zo vol dat hij me voorbijreed."
   pl: "Autobus linii %{line} o %{time} był tak pełny, że mnie minął."
+  es: "El autobús de la línea %{line} de las %{time} iba tan lleno que pasó de largo."
   ru: "Автобус линии %{line} в %{time} был так переполнен, что проехал мимо меня."
   uk: "Автобус лінії %{line} о %{time} був такий повний, що проїхав повз мене."
 "Line %{line} at %{time} was packed like a tin of sardines.":
@@ -55,6 +62,7 @@ _version: 2
   fr: "La ligne %{line} de %{time} était bondée comme une boîte de sardines."
   nl: "Lijn %{line} van %{time} zat zo vol als een blik sardientjes."
   pl: "Linia %{line} o %{time} była zapchana jak puszka sardynek."
+  es: "La línea %{line} de las %{time} iba como una lata de sardinas."
   ru: "Линия %{line} в %{time} была набита как банка сардин."
   uk: "Лінія %{line} о %{time} була напхана, як банка сардин."
 "The bus I took on line %{line} at %{time} was filthy: rubbish on the seats.":
@@ -62,6 +70,7 @@ _version: 2
   fr: "Le bus que j'ai pris sur la ligne %{line} à %{time} était crasseux : des déchets sur les sièges."
   nl: "De bus die ik op lijn %{line} om %{time} nam was smerig: afval op de stoelen."
   pl: "Autobus linii %{line} o %{time} był brudny: śmieci na siedzeniach."
+  es: "El autobús que cogí en la línea %{line} a las %{time} estaba asqueroso: basura en los asientos."
   ru: "Автобус линии %{line} в %{time} был грязный: мусор на сиденьях."
   uk: "Автобус лінії %{line} о %{time} був брудний: сміття на сидіннях."
 "Line %{line} today: a sticky floor and dirty windows. Disgusting.":
@@ -69,6 +78,7 @@ _version: 2
   fr: "La ligne %{line} aujourd'hui : un sol collant et des vitres sales. Dégoûtant."
   nl: "Lijn %{line} vandaag: een plakkerige vloer en vuile ramen. Walgelijk."
   pl: "Linia %{line} dziś: lepka podłoga i brudne okna. Obrzydliwe."
+  es: "La línea %{line} hoy: suelo pegajoso y ventanas sucias. Qué asco."
   ru: "Линия %{line} сегодня: липкий пол и грязные окна. Отвратительно."
   uk: "Лінія %{line} сьогодні: липка підлога і брудні вікна. Огидно."
 "The driver on line %{line} at %{time} was rude to me when I asked about my ticket.":
@@ -76,6 +86,7 @@ _version: 2
   fr: "Le conducteur de la ligne %{line} à %{time} a été grossier quand j'ai posé une question sur mon billet."
   nl: "De chauffeur op lijn %{line} om %{time} was onbeschoft toen ik iets over mijn kaartje vroeg."
   pl: "Kierowca linii %{line} o %{time} był niegrzeczny, gdy zapytałem o bilet."
+  es: "El conductor de la línea %{line} de las %{time} fue grosero conmigo cuando pregunté por mi billete."
   ru: "Водитель линии %{line} в %{time} нагрубил мне, когда я спросил о билете."
   uk: "Водій лінії %{line} о %{time} нагрубив мені, коли я спитав про квиток."
 "Your driver on line %{line} snapped at an old lady at %{time}. Unacceptable.":
@@ -83,6 +94,7 @@ _version: 2
   fr: "Votre conducteur de la ligne %{line} a rabroué une vieille dame à %{time}. Inacceptable."
   nl: "Uw chauffeur op lijn %{line} snauwde om %{time} een oude dame af. Onaanvaardbaar."
   pl: "Wasz kierowca linii %{line} nakrzyczał o %{time} na starszą panią. Niedopuszczalne."
+  es: "Vuestro conductor de la línea %{line} le contestó mal a una señora mayor a las %{time}. Inaceptable."
   ru: "Ваш водитель линии %{line} в %{time} нагрубил пожилой женщине. Недопустимо."
   uk: "Ваш водій лінії %{line} о %{time} нагрубив літній жінці. Неприпустимо."
 "Your fares on line %{line} are far above everyone else's. Why should I pay that?":
@@ -90,6 +102,7 @@ _version: 2
   fr: "Vos tarifs sur la ligne %{line} sont bien au-dessus de ceux des autres. Pourquoi devrais-je payer ça ?"
   nl: "Uw tarieven op lijn %{line} liggen ver boven die van iedereen. Waarom zou ik dat betalen?"
   pl: "Wasze taryfy na linii %{line} są dużo wyższe niż u innych. Dlaczego mam tyle płacić?"
+  es: "Vuestras tarifas en la línea %{line} están muy por encima de las de los demás. ¿Por qué tendría que pagar eso?"
   ru: "Ваши тарифы на линии %{line} намного выше, чем у всех. Почему я должен столько платить?"
   uk: "Ваші тарифи на лінії %{line} значно вищі, ніж у всіх. Чому я маю стільки платити?"
 "%{fare} for a single ticket on line %{line}? That is daylight robbery.":
@@ -97,6 +110,7 @@ _version: 2
   fr: "%{fare} pour un ticket simple sur la ligne %{line} ? C'est du vol."
   nl: "%{fare} voor een enkeltje op lijn %{line}? Dat is diefstal."
   pl: "%{fare} za bilet jednorazowy na linii %{line}? To rozbój w biały dzień."
+  es: "¿%{fare} por un billete sencillo en la línea %{line}? Eso es un robo a mano armada."
   ru: "%{fare} за разовый билет на линии %{line}? Это грабёж средь бела дня."
   uk: "%{fare} за разовий квиток на лінії %{line}? Це грабіж серед білого дня."
 "We are sorry. We had no bus for that trip; we are working on our reserve.":
@@ -104,6 +118,7 @@ _version: 2
   fr: "Nous sommes désolés. Nous n'avions pas de bus pour ce trajet ; nous renforçons notre réserve."
   nl: "Het spijt ons. We hadden geen bus voor die rit; we werken aan onze reserve."
   pl: "Przepraszamy. Nie mieliśmy autobusu na ten kurs; pracujemy nad rezerwą."
+  es: "Lo sentimos. No teníamos autobús para ese viaje; estamos trabajando en nuestra reserva."
   ru: "Нам жаль. У нас не было автобуса на этот рейс; мы работаем над резервом."
   uk: "Нам шкода. У нас не було автобуса на цей рейс; ми працюємо над резервом."
 "We are sorry. We had no driver for that duty; it should not have happened.":
@@ -111,6 +126,7 @@ _version: 2
   fr: "Nous sommes désolés. Nous n'avions pas de conducteur pour ce service ; cela n'aurait pas dû arriver."
   nl: "Het spijt ons. We hadden geen chauffeur voor die dienst; dat had niet mogen gebeuren."
   pl: "Przepraszamy. Nie mieliśmy kierowcy na tę służbę; to nie powinno się zdarzyć."
+  es: "Lo sentimos. No teníamos conductor para ese servicio; no debería haber pasado."
   ru: "Нам жаль. У нас не было водителя на эту смену; такого не должно было случиться."
   uk: "Нам шкода. У нас не було водія на цю зміну; такого не мало статися."
 "We are sorry. The driver came late to his duty and the trip was lost.":
@@ -118,6 +134,7 @@ _version: 2
   fr: "Nous sommes désolés. Le conducteur est arrivé en retard et le trajet a été perdu."
   nl: "Het spijt ons. De chauffeur kwam te laat voor zijn dienst en de rit viel uit."
   pl: "Przepraszamy. Kierowca spóźnił się na służbę i kurs przepadł."
+  es: "Lo sentimos. El conductor llegó tarde a su servicio y se perdió el viaje."
   ru: "Нам жаль. Водитель опоздал на смену, и рейс сорвался."
   uk: "Нам шкода. Водій запізнився на зміну, і рейс зірвався."
 "We are sorry. That trip slipped through our planning.":
@@ -125,6 +142,7 @@ _version: 2
   fr: "Nous sommes désolés. Ce trajet nous a échappé dans la planification."
   nl: "Het spijt ons. Die rit is door onze planning geglipt."
   pl: "Przepraszamy. Ten kurs umknął naszemu planowaniu."
+  es: "Lo sentimos. Ese viaje se nos escapó en la planificación."
   ru: "Нам жаль. Этот рейс выпал из нашего планирования."
   uk: "Нам шкода. Цей рейс випав із нашого планування."
 "We are sorry. That trip could not run, and we should have told you.":
@@ -132,6 +150,7 @@ _version: 2
   fr: "Nous sommes désolés. Ce trajet n'a pas pu circuler, et nous aurions dû vous prévenir."
   nl: "Het spijt ons. Die rit kon niet rijden, en we hadden het u moeten laten weten."
   pl: "Przepraszamy. Ten kurs nie mógł się odbyć i powinniśmy byli to zakomunikować."
+  es: "Lo sentimos. Ese viaje no pudo hacerse, y deberíamos haberle avisado."
   ru: "Нам жаль. Этот рейс не смог выйти, и нам следовало предупредить."
   uk: "Нам шкода. Цей рейс не зміг вийти, і нам слід було попередити."
 "We are sorry. The bus was in an accident; we are glad nobody was hurt.":
@@ -139,6 +158,7 @@ _version: 2
   fr: "Nous sommes désolés. Le bus a eu un accident ; heureusement, personne n'a été blessé."
   nl: "Het spijt ons. De bus had een ongeval; we zijn blij dat niemand gewond raakte."
   pl: "Przepraszamy. Autobus miał wypadek; cieszymy się, że nikt nie ucierpiał."
+  es: "Lo sentimos. El autobús tuvo un accidente; nos alegra que nadie resultara herido."
   ru: "Нам жаль. Автобус попал в аварию; к счастью, никто не пострадал."
   uk: "Нам шкода. Автобус потрапив в аварію; на щастя, ніхто не постраждав."
 "We are sorry. The bus broke down, and help took too long to come.":
@@ -146,6 +166,7 @@ _version: 2
   fr: "Nous sommes désolés. Le bus est tombé en panne et les secours ont mis trop de temps."
   nl: "Het spijt ons. De bus kreeg pech en de hulp duurde te lang."
   pl: "Przepraszamy. Autobus się zepsuł, a pomoc jechała zbyt długo."
+  es: "Lo sentimos. El autobús se averió y la ayuda tardó demasiado en llegar."
   ru: "Нам жаль. Автобус сломался, и помощь шла слишком долго."
   uk: "Нам шкода. Автобус зламався, і допомога йшла задовго."
 "We are sorry. Traffic and a timetable that was too tight held the bus up.":
@@ -153,6 +174,7 @@ _version: 2
   fr: "Nous sommes désolés. La circulation et un horaire trop serré ont retardé le bus."
   nl: "Het spijt ons. Verkeer en een te krappe dienstregeling hielden de bus op."
   pl: "Przepraszamy. Korki i zbyt napięty rozkład opóźniły autobus."
+  es: "Lo sentimos. El tráfico y un horario demasiado ajustado retrasaron el autobús."
   ru: "Нам жаль. Пробки и слишком плотное расписание задержали автобус."
   uk: "Нам шкода. Затори і надто щільний розклад затримали автобус."
 "We are sorry. More people rode than we had places for.":
@@ -160,6 +182,7 @@ _version: 2
   fr: "Nous sommes désolés. Il y avait plus de voyageurs que de places."
   nl: "Het spijt ons. Er reden meer mensen mee dan we plaatsen hadden."
   pl: "Przepraszamy. Pasażerów było więcej niż miejsc."
+  es: "Lo sentimos. Viajó más gente de la que teníamos plazas."
   ru: "Нам жаль. Пассажиров было больше, чем мест."
   uk: "Нам шкода. Пасажирів було більше, ніж місць."
 "We are sorry. That bus should never have gone out like that.":
@@ -167,6 +190,7 @@ _version: 2
   fr: "Nous sommes désolés. Ce bus n'aurait jamais dû sortir dans cet état."
   nl: "Het spijt ons. Zo had die bus nooit de weg op mogen gaan."
   pl: "Przepraszamy. Ten autobus nigdy nie powinien był tak wyjechać."
+  es: "Lo sentimos. Ese autobús nunca debería haber salido así."
   ru: "Нам жаль. Этот автобус никогда не должен был выйти в таком виде."
   uk: "Нам шкода. Цей автобус ніколи не мав виїжджати в такому стані."
 "We are sorry. That is not how our drivers should treat anyone.":
@@ -174,6 +198,7 @@ _version: 2
   fr: "Nous sommes désolés. Ce n'est pas ainsi que nos conducteurs doivent traiter quiconque."
   nl: "Het spijt ons. Zo horen onze chauffeurs niemand te behandelen."
   pl: "Przepraszamy. Nasi kierowcy nie powinni nikogo tak traktować."
+  es: "Lo sentimos. Nuestros conductores no deben tratar así a nadie."
   ru: "Нам жаль. Наши водители не должны так обращаться ни с кем."
   uk: "Нам шкода. Наші водії не повинні так поводитися ні з ким."
 "We understand. The fare pays for the service, but we hear you.":
@@ -181,6 +206,7 @@ _version: 2
   fr: "Nous comprenons. Le tarif paie le service, mais nous vous entendons."
   nl: "We begrijpen het. Het tarief betaalt de dienst, maar we horen u."
   pl: "Rozumiemy. Taryfa opłaca usługę, ale słyszymy pana."
+  es: "Lo entendemos. La tarifa paga el servicio, pero tomamos nota."
   ru: "Мы понимаем. Тариф оплачивает работу, но мы вас услышали."
   uk: "Ми розуміємо. Тариф оплачує роботу, але ми вас почули."
 "We will give line %{line} more layover so the buses keep to time.":
@@ -188,6 +214,7 @@ _version: 2
   fr: "Nous donnerons plus de battement à la ligne %{line} pour que les bus soient à l'heure."
   nl: "We geven lijn %{line} meer keertijd zodat de bussen op tijd rijden."
   pl: "Damy linii %{line} więcej czasu postoju, by autobusy trzymały rozkład."
+  es: "Daremos más tiempo de regulación a la línea %{line} para que los autobuses vayan puntuales."
   ru: "Мы дадим линии %{line} больше отстоя, чтобы автобусы шли по графику."
   uk: "Ми дамо лінії %{line} більше відстою, щоб автобуси йшли за графіком."
 "We will keep spare drivers and buses ready for line %{line}.":
@@ -195,6 +222,7 @@ _version: 2
   fr: "Nous garderons des conducteurs et des bus de réserve pour la ligne %{line}."
   nl: "We houden reservechauffeurs en -bussen klaar voor lijn %{line}."
   pl: "Będziemy trzymać rezerwowych kierowców i autobusy dla linii %{line}."
+  es: "Tendremos conductores y autobuses de reserva preparados para la línea %{line}."
   ru: "Мы будем держать резервных водителей и автобусы для линии %{line}."
   uk: "Ми триматимемо резервних водіїв і автобуси для лінії %{line}."
 "We will have our buses serviced more often.":
@@ -202,6 +230,7 @@ _version: 2
   fr: "Nous ferons entretenir nos bus plus souvent."
   nl: "We laten onze bussen vaker onderhouden."
   pl: "Będziemy częściej serwisować autobusy."
+  es: "Haremos la revisión de nuestros autobuses más a menudo."
   ru: "Мы будем чаще обслуживать автобусы."
   uk: "Ми частіше обслуговуватимемо автобуси."
 "We will put a bigger bus or more trips on line %{line}.":
@@ -209,6 +238,7 @@ _version: 2
   fr: "Nous mettrons un bus plus grand ou plus de trajets sur la ligne %{line}."
   nl: "We zetten een grotere bus of meer ritten in op lijn %{line}."
   pl: "Damy większy autobus lub więcej kursów na linii %{line}."
+  es: "Pondremos un autobús más grande o más viajes en la línea %{line}."
   ru: "Мы пустим на линию %{line} автобус побольше или больше рейсов."
   uk: "Ми пустимо на лінію %{line} більший автобус або більше рейсів."
 "We will have every bus cleaned each night.":
@@ -216,6 +246,7 @@ _version: 2
   fr: "Nous ferons nettoyer chaque bus tous les soirs."
   nl: "We laten elke bus elke nacht schoonmaken."
   pl: "Każdy autobus będzie sprzątany co noc."
+  es: "Limpiaremos todos los autobuses cada noche."
   ru: "Каждый автобус будут убирать каждую ночь."
   uk: "Кожен автобус прибиратимуть щоночі."
 "The driver will go on a customer-service course.":
@@ -223,6 +254,7 @@ _version: 2
   fr: "Le conducteur suivra un cours de service client."
   nl: "De chauffeur gaat op cursus klantvriendelijkheid."
   pl: "Kierowca pójdzie na kurs obsługi klienta."
+  es: "El conductor hará un curso de atención al cliente."
   ru: "Водитель пройдёт курс обслуживания клиентов."
   uk: "Водій пройде курс обслуговування клієнтів."
 "We will look at the fares of line %{line} again.":
@@ -230,6 +262,7 @@ _version: 2
   fr: "Nous reverrons les tarifs de la ligne %{line}."
   nl: "We kijken nog eens naar de tarieven van lijn %{line}."
   pl: "Przyjrzymy się ponownie taryfom linii %{line}."
+  es: "Revisaremos de nuevo las tarifas de la línea %{line}."
   ru: "Мы пересмотрим тарифы линии %{line}."
   uk: "Ми переглянемо тарифи лінії %{line}."
 "We will refund you %{amount}.":
@@ -237,6 +270,7 @@ _version: 2
   fr: "Nous vous remboursons %{amount}."
   nl: "We betalen u %{amount} terug."
   pl: "Zwrócimy panu %{amount}."
+  es: "Le devolveremos %{amount}."
   ru: "Мы вернём вам %{amount}."
   uk: "Ми повернемо вам %{amount}."
 "Please accept a free day pass worth %{amount}.":
@@ -244,6 +278,7 @@ _version: 2
   fr: "Acceptez un pass journée gratuit d'une valeur de %{amount}."
   nl: "Aanvaard alstublieft een gratis dagkaart ter waarde van %{amount}."
   pl: "Prosimy przyjąć darmowy bilet dobowy wart %{amount}."
+  es: "Acepte un abono de un día gratis por valor de %{amount}."
   ru: "Примите, пожалуйста, бесплатный дневной билет стоимостью %{amount}."
   uk: "Прийміть, будь ласка, безкоштовний денний квиток вартістю %{amount}."
 "The traffic is not our fault. There is nothing we can do.":
@@ -251,6 +286,7 @@ _version: 2
   fr: "La circulation n'est pas de notre faute. Nous n'y pouvons rien."
   nl: "Het verkeer is niet onze schuld. Daar kunnen we niets aan doen."
   pl: "Korki to nie nasza wina. Nic nie możemy zrobić."
+  es: "El tráfico no es culpa nuestra. No podemos hacer nada."
   ru: "Пробки — не наша вина. Мы ничего не можем сделать."
   uk: "Затори — не наша провина. Ми нічого не можемо вдіяти."
 "We do not see what we did wrong.":
@@ -258,6 +294,7 @@ _version: 2
   fr: "Nous ne voyons pas ce que nous avons fait de mal."
   nl: "We zien niet wat we verkeerd hebben gedaan."
   pl: "Nie widzimy, co zrobiliśmy źle."
+  es: "No vemos qué hemos hecho mal."
   ru: "Мы не видим, в чём наша ошибка."
   uk: "Ми не бачимо, у чому наша помилка."
 "Apologise and explain":
@@ -265,6 +302,7 @@ _version: 2
   fr: "S'excuser et expliquer"
   nl: "Excuses aanbieden en uitleggen"
   pl: "Przeproś i wyjaśnij"
+  es: "Disculparse y explicar"
   ru: "Извиниться и объяснить"
   uk: "Вибачитися й пояснити"
 "Offer a refund (%{amount})":
@@ -272,6 +310,7 @@ _version: 2
   fr: "Proposer un remboursement (%{amount})"
   nl: "Terugbetaling aanbieden (%{amount})"
   pl: "Zaproponuj zwrot (%{amount})"
+  es: "Ofrecer un reembolso (%{amount})"
   ru: "Предложить возврат (%{amount})"
   uk: "Запропонувати повернення (%{amount})"
 "Offer a free day pass (%{amount})":
@@ -279,6 +318,7 @@ _version: 2
   fr: "Proposer un pass journée gratuit (%{amount})"
   nl: "Gratis dagkaart aanbieden (%{amount})"
   pl: "Zaproponuj darmowy bilet dobowy (%{amount})"
+  es: "Ofrecer un abono de un día gratis (%{amount})"
   ru: "Предложить бесплатный дневной билет (%{amount})"
   uk: "Запропонувати безкоштовний денний квиток (%{amount})"
 "Promise a fix":
@@ -286,6 +326,7 @@ _version: 2
   fr: "Promettre une solution"
   nl: "Een oplossing beloven"
   pl: "Obiecaj poprawę"
+  es: "Prometer una solución"
   ru: "Пообещать исправить"
   uk: "Пообіцяти виправити"
 "Dismiss it":
@@ -293,6 +334,7 @@ _version: 2
   fr: "Balayer la plainte"
   nl: "Wegwuiven"
   pl: "Zbyć to"
+  es: "Desestimarla"
   ru: "Отмахнуться"
   uk: "Відмахнутися"
 "Well, that is decent of you.":
@@ -300,6 +342,7 @@ _version: 2
   fr: "Bon, c'est correct de votre part."
   nl: "Nou, dat is netjes van u."
   pl: "No, to przyzwoicie z waszej strony."
+  es: "Bueno, es todo un detalle."
   ru: "Что ж, это порядочно с вашей стороны."
   uk: "Що ж, це порядно з вашого боку."
 "Thank you, that does help.":
@@ -307,6 +350,7 @@ _version: 2
   fr: "Merci, ça aide vraiment."
   nl: "Dank u, dat helpt echt."
   pl: "Dziękuję, to naprawdę pomaga."
+  es: "Gracias, eso sí ayuda."
   ru: "Спасибо, это действительно помогает."
   uk: "Дякую, це справді допомагає."
 "Hm. I suppose so.":
@@ -314,6 +358,7 @@ _version: 2
   fr: "Hum. Admettons."
   nl: "Hm. Vooruit dan."
   pl: "Hm. Niech będzie."
+  es: "Mmm. Supongo que sí."
   ru: "Хм. Допустим."
   uk: "Хм. Припустимо."
 "That is something, at least.":
@@ -321,6 +366,7 @@ _version: 2
   fr: "C'est déjà ça."
   nl: "Dat is tenminste iets."
   pl: "To przynajmniej coś."
+  es: "Algo es algo."
   ru: "Это хоть что-то."
   uk: "Це хоч щось."
 "That is all you have to say?":
@@ -328,6 +374,7 @@ _version: 2
   fr: "C'est tout ce que vous avez à dire ?"
   nl: "Is dat alles wat u te zeggen hebt?"
   pl: "To wszystko, co macie do powiedzenia?"
+  es: "¿Eso es todo lo que tenéis que decir?"
   ru: "И это всё, что вы можете сказать?"
   uk: "І це все, що ви можете сказати?"
 "Unbelievable. I will tell everyone about this.":
@@ -335,6 +382,7 @@ _version: 2
   fr: "Incroyable. Je vais le raconter à tout le monde."
   nl: "Ongelooflijk. Dit ga ik iedereen vertellen."
   pl: "Niewiarygodne. Opowiem o tym wszystkim."
+  es: "Increíble. Se lo voy a contar a todo el mundo."
   ru: "Невероятно. Я всем об этом расскажу."
   uk: "Неймовірно. Я всім про це розповім."
 "Is that all?":
@@ -342,6 +390,7 @@ _version: 2
   fr: "C'est tout ?"
   nl: "Is dat alles?"
   pl: "To wszystko?"
+  es: "¿Eso es todo?"
   ru: "Это всё?"
   uk: "Це все?"
 "And what will you do so it does not happen again?":
@@ -349,6 +398,7 @@ _version: 2
   fr: "Et que ferez-vous pour que cela ne se reproduise pas ?"
   nl: "En wat gaat u doen zodat het niet weer gebeurt?"
   pl: "A co zrobicie, żeby to się nie powtórzyło?"
+  es: "¿Y qué vais a hacer para que no vuelva a pasar?"
   ru: "А что вы сделаете, чтобы это не повторилось?"
   uk: "А що ви зробите, щоб це не повторилося?"
 "Thank you. I will give your buses another chance.":
@@ -356,6 +406,7 @@ _version: 2
   fr: "Merci. Je laisserai encore une chance à vos bus."
   nl: "Dank u. Ik geef uw bussen nog een kans."
   pl: "Dziękuję. Dam waszym autobusom jeszcze jedną szansę."
+  es: "Gracias. Daré otra oportunidad a vuestros autobuses."
   ru: "Спасибо. Я дам вашим автобусам ещё один шанс."
   uk: "Дякую. Я дам вашим автобусам ще один шанс."
 "Fine. Let us leave it at that.":
@@ -363,6 +414,7 @@ _version: 2
   fr: "Bien. Restons-en là."
   nl: "Goed. Laten we het daarbij laten."
   pl: "Dobrze. Zostawmy to tak."
+  es: "Vale. Dejémoslo ahí."
   ru: "Ладно. На этом и остановимся."
   uk: "Гаразд. На цьому й зупинимося."
 "I am done with your company.":
@@ -370,6 +422,7 @@ _version: 2
   fr: "J'en ai fini avec votre entreprise."
   nl: "Ik ben klaar met uw bedrijf."
   pl: "Mam dość waszej firmy."
+  es: "Se acabó, no quiero saber nada más de vuestra empresa."
   ru: "С вашей компанией я покончил."
   uk: "З вашою компанією я покінчив."
 "Late trip":
@@ -377,6 +430,7 @@ _version: 2
   fr: "Retard"
   nl: "Te late rit"
   pl: "Spóźniony kurs"
+  es: "Viaje con retraso"
   ru: "Опоздание"
   uk: "Запізнення"
 "Dropped trip":
@@ -384,6 +438,7 @@ _version: 2
   fr: "Trajet supprimé"
   nl: "Uitgevallen rit"
   pl: "Odwołany kurs"
+  es: "Viaje suprimido"
   ru: "Отменённый рейс"
   uk: "Скасований рейс"
 "Full bus":
@@ -391,6 +446,7 @@ _version: 2
   fr: "Bus plein"
   nl: "Volle bus"
   pl: "Pełny autobus"
+  es: "Autobús lleno"
   ru: "Полный автобус"
   uk: "Повний автобус"
 "Dirty bus":
@@ -398,6 +454,7 @@ _version: 2
   fr: "Bus sale"
   nl: "Vuile bus"
   pl: "Brudny autobus"
+  es: "Autobús sucio"
   ru: "Грязный автобус"
   uk: "Брудний автобус"
 "Rude driver":
@@ -405,6 +462,7 @@ _version: 2
   fr: "Conducteur grossier"
   nl: "Onbeschofte chauffeur"
   pl: "Niegrzeczny kierowca"
+  es: "Conductor grosero"
   ru: "Грубый водитель"
   uk: "Грубий водій"
 "minor":
@@ -412,6 +470,7 @@ _version: 2
   fr: "mineure"
   nl: "klein"
   pl: "drobna"
+  es: "leve"
   ru: "мелкая"
   uk: "дрібна"
 "serious":
@@ -419,6 +478,7 @@ _version: 2
   fr: "sérieuse"
   nl: "ernstig"
   pl: "poważna"
+  es: "grave"
   ru: "серьёзная"
   uk: "серйозна"
 "severe":
@@ -426,6 +486,7 @@ _version: 2
   fr: "grave"
   nl: "zwaar"
   pl: "ciężka"
+  es: "muy grave"
   ru: "тяжёлая"
   uk: "тяжка"
 "Happy, and thanked you on social media (%{p})":
@@ -433,6 +494,7 @@ _version: 2
   fr: "Satisfait, et vous a remercié sur les réseaux sociaux (%{p})"
   nl: "Tevreden, en bedankte u op sociale media (%{p})"
   pl: "Zadowolony i podziękował w mediach społecznościowych (%{p})"
+  es: "Contento, y te dio las gracias en redes sociales (%{p})"
   ru: "Доволен и поблагодарил в соцсетях (%{p})"
   uk: "Задоволений і подякував у соцмережах (%{p})"
 "Resolved: the passenger is happy (%{p})":
@@ -440,6 +502,7 @@ _version: 2
   fr: "Résolu : le voyageur est satisfait (%{p})"
   nl: "Opgelost: de reiziger is tevreden (%{p})"
   pl: "Załatwione: pasażer jest zadowolony (%{p})"
+  es: "Resuelta: el pasajero está contento (%{p})"
   ru: "Решено: пассажир доволен (%{p})"
   uk: "Вирішено: пасажир задоволений (%{p})"
 "Left it at that (%{p})":
@@ -447,6 +510,7 @@ _version: 2
   fr: "En est resté là (%{p})"
   nl: "Liet het daarbij (%{p})"
   pl: "Zostawił to tak (%{p})"
+  es: "Lo dejó estar (%{p})"
   ru: "На этом остановились (%{p})"
   uk: "На цьому зупинилися (%{p})"
 "Angry, and wrote a bad review (%{p})":
@@ -454,6 +518,7 @@ _version: 2
   fr: "En colère, et a écrit un mauvais avis (%{p})"
   nl: "Boos, en schreef een slechte recensie (%{p})"
   pl: "Zły, napisał złą opinię (%{p})"
+  es: "Enfadado, y escribió una mala reseña (%{p})"
   ru: "Зол и написал плохой отзыв (%{p})"
   uk: "Злий і написав поганий відгук (%{p})"
 "Angry (%{p})":
@@ -461,6 +526,7 @@ _version: 2
   fr: "En colère (%{p})"
   nl: "Boos (%{p})"
   pl: "Zły (%{p})"
+  es: "Enfadado (%{p})"
   ru: "Зол (%{p})"
   uk: "Злий (%{p})"
 "Not answered in time (%{p})":
@@ -468,6 +534,7 @@ _version: 2
   fr: "Sans réponse à temps (%{p})"
   nl: "Niet op tijd beantwoord (%{p})"
   pl: "Bez odpowiedzi w terminie (%{p})"
+  es: "Sin respuesta a tiempo (%{p})"
   ru: "Не ответили вовремя (%{p})"
   uk: "Не відповіли вчасно (%{p})"
 "Answered by the company (%{p})":
@@ -475,6 +542,7 @@ _version: 2
   fr: "Traitée par l'entreprise (%{p})"
   nl: "Door het bedrijf beantwoord (%{p})"
   pl: "Odpowiedziała firma (%{p})"
+  es: "Respondida por la empresa (%{p})"
   ru: "Ответила компания (%{p})"
   uk: "Відповіла компанія (%{p})"
 "Line %{line} at %{time}, %{date}":
@@ -482,6 +550,7 @@ _version: 2
   fr: "Ligne %{line} à %{time}, %{date}"
   nl: "Lijn %{line} om %{time}, %{date}"
   pl: "Linia %{line} o %{time}, %{date}"
+  es: "Línea %{line} a las %{time}, %{date}"
   ru: "Линия %{line} в %{time}, %{date}"
   uk: "Лінія %{line} о %{time}, %{date}"
 "Mood":
@@ -489,6 +558,7 @@ _version: 2
   fr: "Humeur"
   nl: "Stemming"
   pl: "Nastrój"
+  es: "Estado de ánimo"
   ru: "Настроение"
   uk: "Настрій"
 "Do it now":
@@ -496,6 +566,7 @@ _version: 2
   fr: "Le faire maintenant"
   nl: "Nu doen"
   pl: "Zrób to teraz"
+  es: "Hacerlo ahora"
   ru: "Сделать сейчас"
   uk: "Зробити зараз"
 "No complaints. Passengers complain when trips are dropped or late, buses break down, are full or dirty, a driver is rude, or a fare is too high.":
@@ -503,6 +574,7 @@ _version: 2
   fr: "Aucune plainte. Les voyageurs se plaignent quand des trajets sont supprimés ou en retard, que des bus tombent en panne, sont pleins ou sales, qu'un conducteur est grossier ou qu'un tarif est trop élevé."
   nl: "Geen klachten. Reizigers klagen als ritten uitvallen of te laat zijn, bussen pech krijgen, vol of vuil zijn, een chauffeur onbeschoft is of een tarief te hoog."
   pl: "Brak skarg. Pasażerowie skarżą się, gdy kursy są odwołane lub spóźnione, autobusy się psują, są pełne lub brudne, kierowca jest niegrzeczny albo taryfa zbyt wysoka."
+  es: "No hay quejas. Los pasajeros se quejan cuando se suprimen viajes o van con retraso, los autobuses se averían, van llenos o sucios, un conductor es grosero o una tarifa es demasiado alta."
   ru: "Жалоб нет. Пассажиры жалуются, когда рейсы отменяются или опаздывают, автобусы ломаются, переполнены или грязны, водитель груб или тариф слишком высок."
   uk: "Скарг немає. Пасажири скаржаться, коли рейси скасовуються чи запізнюються, автобуси ламаються, переповнені чи брудні, водій грубий або тариф зависокий."
 "Answer each before its deadline: apologise and explain, offer a refund or a day pass, promise a fix - or dismiss it, and the passenger gets angry.":
@@ -510,6 +582,7 @@ _version: 2
   fr: "Répondez à chacune avant son échéance : vous excuser et expliquer, proposer un remboursement ou un pass journée, promettre une solution - ou la balayer, et le voyageur se fâche."
   nl: "Beantwoord elke klacht vóór de termijn: excuses aanbieden en uitleggen, een terugbetaling of dagkaart aanbieden, een oplossing beloven - of wegwuiven, en de reiziger wordt boos."
   pl: "Odpowiedz na każdą przed terminem: przeproś i wyjaśnij, zaproponuj zwrot lub bilet dobowy, obiecaj poprawę - albo ją zbądź, a pasażer się zezłości."
+  es: "Responde a cada una antes de su plazo: discúlpate y explica, ofrece un reembolso o un abono de un día, promete una solución - o desestímala, y el pasajero se enfada."
   ru: "Ответьте на каждую до срока: извинитесь и объясните, предложите возврат или дневной билет, пообещайте исправить — или отмахнитесь, и пассажир разозлится."
   uk: "Відповідайте на кожну до терміну: вибачтеся й поясніть, запропонуйте повернення чи денний квиток, пообіцяйте виправити — або відмахніться, і пасажир розлютиться."
 
@@ -519,6 +592,7 @@ _version: 2
   fr: "J'ai attendu la ligne %{line} de %{time} et le bus est arrivé avec %{minutes} minutes de retard. J'ai raté ma correspondance !"
   nl: "Ik stond te wachten op lijn %{line} van %{time} en de bus kwam %{minutes} minuten te laat. Ik heb mijn aansluiting gemist!"
   pl: "Czekałem na linię %{line} o %{time}, a autobus spóźnił się %{minutes} minut. Uciekła mi przesiadka!"
+  es: "Esperé en la parada de la línea %{line} a las %{time} y el autobús llegó con %{minutes} minutos de retraso. ¡Perdí mi enlace!"
   ru: "Я ждал линию %{line} в %{time}, а автобус опоздал на %{minutes} минут. Я пропустил пересадку!"
   uk: "Я чекав лінію %{line} о %{time}, а автобус запізнився на %{minutes} хвилин. Я пропустив пересадку!"
 "Your line %{line} at %{time} was %{minutes} minutes late. I was late for work because of it.":
@@ -526,6 +600,7 @@ _version: 2
   fr: "Votre ligne %{line} de %{time} avait %{minutes} minutes de retard. Je suis arrivé en retard au travail."
   nl: "Uw lijn %{line} van %{time} was %{minutes} minuten te laat. Daardoor kwam ik te laat op mijn werk."
   pl: "Wasza linia %{line} o %{time} spóźniła się %{minutes} minut. Przez to spóźniłem się do pracy."
+  es: "Vuestra línea %{line} de las %{time} llegó con %{minutes} minutos de retraso. Por su culpa llegué tarde al trabajo."
   ru: "Ваша линия %{line} в %{time} опоздала на %{minutes} минут. Из-за неё я опоздал на работу."
   uk: "Ваша лінія %{line} о %{time} запізнилася на %{minutes} хвилин. Через неї я запізнився на роботу."
 "We are sorry. The driver signed on late, so the bus left late.":
@@ -533,6 +608,7 @@ _version: 2
   fr: "Nous sommes désolés. Le conducteur a pris son service en retard, donc le bus est parti en retard."
   nl: "Het spijt ons. De chauffeur meldde zich te laat, dus de bus vertrok te laat."
   pl: "Przepraszamy. Kierowca spóźnił się na służbę, więc autobus wyjechał z opóźnieniem."
+  es: "Lo sentimos. El conductor tomó servicio tarde, así que el autobús salió tarde."
   ru: "Нам жаль. Водитель поздно заступил на смену, и автобус отправился с опозданием."
   uk: "Нам шкода. Водій пізно заступив на зміну, тож автобус вирушив із запізненням."
 "We are sorry. The bus came in late from its trip before and had too little layover to catch up.":
@@ -540,6 +616,7 @@ _version: 2
   fr: "Nous sommes désolés. Le bus est arrivé en retard de son trajet précédent et n'avait pas assez de battement pour rattraper."
   nl: "Het spijt ons. De bus kwam te laat binnen van de rit ervoor en had te weinig keertijd om in te lopen."
   pl: "Przepraszamy. Autobus przyjechał spóźniony z poprzedniego kursu i miał za mało postoju, by nadrobić."
+  es: "Lo sentimos. El autobús llegó tarde de su viaje anterior y tenía muy poco tiempo de regulación para recuperarlo."
   ru: "Нам жаль. Автобус пришёл с опозданием с предыдущего рейса, и отстоя не хватило, чтобы нагнать."
   uk: "Нам шкода. Автобус прийшов із запізненням з попереднього рейсу, і відстою не вистачило, щоб надолужити."
 "We are sorry. The driver came from another duty that ran late.":
@@ -547,6 +624,7 @@ _version: 2
   fr: "Nous sommes désolés. Le conducteur venait d'un autre service qui avait du retard."
   nl: "Het spijt ons. De chauffeur kwam van een andere dienst die uitliep."
   pl: "Przepraszamy. Kierowca przyszedł z innej służby, która się przeciągnęła."
+  es: "Lo sentimos. El conductor venía de otro servicio que se retrasó."
   ru: "Нам жаль. Водитель пришёл с другой смены, которая затянулась."
   uk: "Нам шкода. Водій прийшов з іншої зміни, яка затягнулася."
 "We are sorry. A bus broke down and the one sent for it took time.":
@@ -554,6 +632,7 @@ _version: 2
   fr: "Nous sommes désolés. Un bus est tombé en panne et celui envoyé pour le remplacer a mis du temps."
   nl: "Het spijt ons. Een bus kreeg pech en de vervangende bus had tijd nodig."
   pl: "Przepraszamy. Autobus się zepsuł, a zastępczy jechał długo."
+  es: "Lo sentimos. Un autobús se averió y el que se envió en su lugar tardó."
   ru: "Нам жаль. Автобус сломался, и замена шла долго."
   uk: "Нам шкода. Автобус зламався, і заміна їхала довго."
 "We are sorry. The rush-hour traffic held the bus up more than the timetable allows.":
@@ -561,6 +640,7 @@ _version: 2
   fr: "Nous sommes désolés. La circulation de l'heure de pointe a retardé le bus plus que l'horaire ne le permet."
   nl: "Het spijt ons. Het spitsverkeer hield de bus meer op dan de dienstregeling toelaat."
   pl: "Przepraszamy. Korki w godzinach szczytu opóźniły autobus bardziej, niż pozwala rozkład."
+  es: "Lo sentimos. El tráfico de la hora punta retrasó el autobús más de lo que permite el horario."
   ru: "Нам жаль. Пробки в час пик задержали автобус сильнее, чем позволяет расписание."
   uk: "Нам шкода. Затори в годину пік затримали автобус сильніше, ніж дозволяє розклад."
 "We are sorry. Traffic held the bus up.":
@@ -568,6 +648,7 @@ _version: 2
   fr: "Nous sommes désolés. La circulation a retardé le bus."
   nl: "Het spijt ons. Het verkeer hield de bus op."
   pl: "Przepraszamy. Korki opóźniły autobus."
+  es: "Lo sentimos. El tráfico retrasó el autobús."
   ru: "Нам жаль. Автобус задержали пробки."
   uk: "Нам шкода. Автобус затримали затори."
 "We are sorry. The driver drove more slowly than the timetable needs.":
@@ -575,6 +656,7 @@ _version: 2
   fr: "Nous sommes désolés. Le conducteur a roulé plus lentement que l'horaire ne l'exige."
   nl: "Het spijt ons. De chauffeur reed langzamer dan de dienstregeling vraagt."
   pl: "Przepraszamy. Kierowca jechał wolniej, niż wymaga rozkład."
+  es: "Lo sentimos. El conductor condujo más despacio de lo que pide el horario."
   ru: "Нам жаль. Водитель ехал медленнее, чем требует расписание."
   uk: "Нам шкода. Водій їхав повільніше, ніж вимагає розклад."
 "We are sorry. The bus was in poor condition and could not keep to time.":
@@ -582,6 +664,7 @@ _version: 2
   fr: "Nous sommes désolés. Le bus était en mauvais état et n'a pas pu tenir l'horaire."
   nl: "Het spijt ons. De bus was in slechte staat en kon de tijd niet halen."
   pl: "Przepraszamy. Autobus był w złym stanie i nie mógł utrzymać rozkładu."
+  es: "Lo sentimos. El autobús estaba en mal estado y no pudo cumplir el horario."
   ru: "Нам жаль. Автобус был в плохом состоянии и не мог держать график."
   uk: "Нам шкода. Автобус був у поганому стані й не міг тримати графік."
 "We are sorry. Roadworks or a diversion on the line held the bus up.":
@@ -589,6 +672,7 @@ _version: 2
   fr: "Nous sommes désolés. Des travaux ou une déviation sur la ligne ont retardé le bus."
   nl: "Het spijt ons. Werkzaamheden of een omleiding op de lijn hielden de bus op."
   pl: "Przepraszamy. Roboty drogowe lub objazd na linii opóźniły autobus."
+  es: "Lo sentimos. Unas obras o un desvío en la línea retrasaron el autobús."
   ru: "Нам жаль. Ремонт дороги или объезд на линии задержали автобус."
   uk: "Нам шкода. Ремонт дороги чи об'їзд на лінії затримали автобус."
 "We will make sure our drivers sign on in time.":
@@ -596,6 +680,7 @@ _version: 2
   fr: "Nous veillerons à ce que nos conducteurs prennent leur service à l'heure."
   nl: "We zorgen dat onze chauffeurs zich op tijd melden."
   pl: "Dopilnujemy, by nasi kierowcy zaczynali służbę na czas."
+  es: "Nos aseguraremos de que nuestros conductores tomen servicio a tiempo."
   ru: "Мы проследим, чтобы водители заступали на смену вовремя."
   uk: "Ми простежимо, щоб водії заступали на зміну вчасно."
 "The driver will get more training on the route.":
@@ -603,6 +688,7 @@ _version: 2
   fr: "Le conducteur sera davantage formé sur le parcours."
   nl: "De chauffeur krijgt meer training op de route."
   pl: "Kierowca przejdzie dodatkowe szkolenie na trasie."
+  es: "El conductor recibirá más formación sobre la ruta."
   ru: "Водитель пройдёт дополнительное обучение на маршруте."
   uk: "Водій пройде додаткове навчання на маршруті."
 "We will plan more time on line %{line} while the works last.":
@@ -610,6 +696,7 @@ _version: 2
   fr: "Nous prévoirons plus de temps sur la ligne %{line} pendant les travaux."
   nl: "We plannen meer tijd in op lijn %{line} zolang de werkzaamheden duren."
   pl: "Zaplanujemy więcej czasu na linii %{line}, póki trwają roboty."
+  es: "Planificaremos más tiempo en la línea %{line} mientras duren las obras."
   ru: "Мы заложим больше времени на линии %{line}, пока идут работы."
   uk: "Ми закладемо більше часу на лінії %{line}, поки тривають роботи."
 # What answering a complaint says when it cannot be done (complaints::reply, through the popup of a refusal).
@@ -618,6 +705,7 @@ _version: 2
   fr: "Cette réclamation n'existe pas."
   nl: "Die klacht bestaat niet."
   pl: "Nie ma takiej skargi."
+  es: "No existe esa queja."
   ru: "Такой жалобы нет."
   uk: "Такої скарги немає."
 "This complaint is closed.":
@@ -625,6 +713,7 @@ _version: 2
   fr: "Cette réclamation est close."
   nl: "Deze klacht is afgesloten."
   pl: "Ta skarga jest zamknięta."
+  es: "Esta queja está cerrada."
   ru: "Эта жалоба закрыта."
   uk: "Цю скаргу закрито."
 "That answer was given already.":
@@ -632,5 +721,6 @@ _version: 2
   fr: "Cette réponse a déjà été donnée."
   nl: "Dat antwoord is al gegeven."
   pl: "Ta odpowiedź została już udzielona."
+  es: "Esa respuesta ya se dio."
   ru: "Этот ответ уже дан."
   uk: "Цю відповідь уже надано."

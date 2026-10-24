@@ -1134,7 +1134,7 @@ mod tests {
             "Every stop has its stop across the road, and every leg a way over the roads",
             "The line's changes are not saved: choose the map again to leave them",
         ];
-        for lang in ["nl", "de", "fr", "ru", "uk", "pl"] {
+        for lang in ["nl", "de", "fr", "ru", "uk", "pl", "es"] {
             for k in keys {
                 assert!(crate::launcher::i18n::table(lang).contains_key(k), "{lang}: {k}");
             }

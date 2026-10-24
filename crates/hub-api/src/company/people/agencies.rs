@@ -258,7 +258,7 @@ mod tests {
         assert_eq!(hours(0, 0), Some((0, 1440)));
     }
 
-    /// Every text of the Agencies tab - its own and the core's (`agency::texts`) - in the six
+    /// Every text of the Agencies tab - its own and the core's (`agency::texts`) - in the seven
     /// languages.
     #[test]
     fn every_agency_text_is_translated() {
@@ -276,7 +276,7 @@ mod tests {
         texts.extend(ag::texts().into_iter().chain(MODES).map(String::from));
         texts.extend(["Agencies", "Agency drivers"].map(String::from));
         let mut missing = Vec::new();
-        for lang in ["nl", "de", "fr", "ru", "uk", "pl"] {
+        for lang in ["nl", "de", "fr", "ru", "uk", "pl", "es"] {
             let table = crate::launcher::i18n::table(lang);
             for t in &texts {
                 if !table.contains_key(t) {

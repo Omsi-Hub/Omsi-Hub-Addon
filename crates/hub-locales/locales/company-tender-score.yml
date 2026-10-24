@@ -6,6 +6,7 @@ _version: 2
   fr: "Remporté avec une offre de %{amount}"
   nl: "Gewonnen met een vraagprijs van %{amount}"
   pl: "Wygrany z ofertą %{amount}"
+  es: "Ganada con una oferta de %{amount}"
   ru: "Выигран с заявкой %{amount}"
   uk: "Виграно із заявкою %{amount}"
 "Lost to %{who}, who asked %{amount}":
@@ -13,6 +14,7 @@ _version: 2
   fr: "Perdu face à %{who}, qui demandait %{amount}"
   nl: "Verloren aan %{who}, die %{amount} vroeg"
   pl: "Przegrany z %{who}, który zaproponował %{amount}"
+  es: "Perdida frente a %{who}, que ofreció %{amount}"
   ru: "Проигран %{who}, заявка %{amount}"
   uk: "Програно %{who}, заявка %{amount}"
 "Scored 70 % price, 30 % quality: the lowest ask gets all 70 price points, others lowest ÷ ask of them. Your quality %{q} of 100 (reputation, punctuality, fleet) is worth %{p} points. The best total wins.":
@@ -20,6 +22,7 @@ _version: 2
   fr: "Noté à 70 % sur le prix, 30 % sur la qualité : l'offre la plus basse obtient les 70 points de prix, les autres la plus basse ÷ la leur. Votre qualité %{q} sur 100 (réputation, ponctualité, flotte) vaut %{p} points. Le meilleur total gagne."
   nl: "Beoordeeld op 70 % prijs, 30 % kwaliteit: de laagste vraagprijs krijgt alle 70 prijspunten, de andere laagste ÷ eigen deel ervan. Je kwaliteit %{q} van 100 (reputatie, stiptheid, vloot) is %{p} punten waard. Het beste totaal wint."
   pl: "Ocena: 70 % cena, 30 % jakość: najniższa oferta dostaje wszystkie 70 punktów za cenę, pozostałe najniższa ÷ własna. Twoja jakość %{q} na 100 (reputacja, punktualność, flota) daje %{p} pkt. Wygrywa najlepsza suma."
+  es: "Puntuación: 70 % precio, 30 % calidad: la oferta más baja recibe los 70 puntos de precio; las demás, la proporción más baja ÷ su oferta de ellos. Tu calidad de %{q} sobre 100 (reputación, puntualidad, flota) vale %{p} puntos. Gana el mejor total."
   ru: "Оценка: 70 % цена, 30 % качество: самая низкая заявка получает все 70 ценовых баллов, остальные — наименьшая ÷ своя. Ваше качество %{q} из 100 (репутация, пунктуальность, парк) даёт %{p} баллов. Побеждает лучшая сумма."
   uk: "Оцінка: 70 % ціна, 30 % якість: найнижча заявка отримує всі 70 цінових балів, інші — найменша ÷ своя. Ваша якість %{q} зі 100 (репутація, пунктуальність, парк) дає %{p} балів. Перемагає найкраща сума."
 "The reference":
@@ -27,6 +30,7 @@ _version: 2
   fr: "Référence"
   nl: "De referentie"
   pl: "Referencja"
+  es: "La referencia"
   ru: "Эталон"
   uk: "Еталон"
 "Ask at most now":
@@ -34,6 +38,7 @@ _version: 2
   fr: "Au plus maintenant"
   nl: "Nu hoogstens"
   pl: "Teraz najwyżej"
+  es: "Oferta máxima ahora"
   ru: "Сейчас не выше"
   uk: "Зараз не вище"
 "%{p} price + %{q} quality = %{t} points":
@@ -41,6 +46,7 @@ _version: 2
   fr: "%{p} prix + %{q} qualité = %{t} points"
   nl: "%{p} prijs + %{q} kwaliteit = %{t} punten"
   pl: "%{p} cena + %{q} jakość = %{t} pkt"
+  es: "%{p} precio + %{q} calidad = %{t} puntos"
   ru: "%{p} цена + %{q} качество = %{t} баллов"
   uk: "%{p} ціна + %{q} якість = %{t} балів"
 "quality %{q}":
@@ -48,6 +54,7 @@ _version: 2
   fr: "qualité %{q}"
   nl: "kwaliteit %{q}"
   pl: "jakość %{q}"
+  es: "calidad %{q}"
   ru: "качество %{q}"
   uk: "якість %{q}"
 "your quality %{q}":
@@ -55,6 +62,7 @@ _version: 2
   fr: "votre qualité %{q}"
   nl: "je kwaliteit %{q}"
   pl: "twoja jakość %{q}"
+  es: "tu calidad %{q}"
   ru: "ваше качество %{q}"
   uk: "ваша якість %{q}"
 "Your ask":
@@ -62,6 +70,7 @@ _version: 2
   fr: "Votre offre"
   nl: "Je vraagprijs"
   pl: "Twoja oferta"
+  es: "Tu oferta"
   ru: "Ваша заявка"
   uk: "Ваша заявка"
 "%{s} % of the reference  ·  chance to win, as it looks now: about %{p} %":
@@ -69,6 +78,7 @@ _version: 2
   fr: "%{s} % de la référence  ·  chance de gagner, en l'état : environ %{p} %"
   nl: "%{s} % van de referentie  ·  kans om te winnen, zoals het er nu uitziet: ongeveer %{p} %"
   pl: "%{s} % referencji  ·  szansa na wygraną, jak teraz wygląda: około %{p} %"
+  es: "%{s} % de la referencia  ·  probabilidad de ganar, tal como está ahora: aproximadamente %{p} %"
   ru: "%{s} % эталона  ·  шанс на победу сейчас: около %{p} %"
   uk: "%{s} % еталона  ·  шанс на перемогу зараз: близько %{p} %"
 "Recommended: %{amount} (%{s} % of the reference), about %{p} % to win":
@@ -76,6 +86,7 @@ _version: 2
   fr: "Recommandé : %{amount} (%{s} % de la référence), environ %{p} % de chance"
   nl: "Aanbevolen: %{amount} (%{s} % van de referentie), ongeveer %{p} % kans"
   pl: "Zalecane: %{amount} (%{s} % referencji), około %{p} % szans"
+  es: "Recomendado: %{amount} (%{s} % de la referencia), aproximadamente %{p} % de probabilidad de ganar"
   ru: "Рекомендуется: %{amount} (%{s} % эталона), около %{p} % на победу"
   uk: "Рекомендовано: %{amount} (%{s} % еталона), близько %{p} % на перемогу"
 "%{who} won the line with an ask of %{amount}.":
@@ -83,6 +94,7 @@ _version: 2
   fr: "%{who} a remporté la ligne avec une offre de %{amount}."
   nl: "%{who} won de lijn met een vraagprijs van %{amount}."
   pl: "%{who} wygrał linię z ofertą %{amount}."
+  es: "%{who} ha ganado la línea con una oferta de %{amount}."
   ru: "%{who} выиграл линию с заявкой %{amount}."
   uk: "%{who} виграв лінію із заявкою %{amount}."
 "The concession runs until %{date}, at %{p} % of the reference.":
@@ -90,6 +102,7 @@ _version: 2
   fr: "La concession court jusqu'au %{date}, à %{p} % de la référence."
   nl: "De concessie loopt tot %{date}, tegen %{p} % van de referentie."
   pl: "Koncesja trwa do %{date}, po %{p} % referencji."
+  es: "La concesión dura hasta el %{date}, al %{p} % de la referencia."
   ru: "Концессия действует до %{date}, по %{p} % эталона."
   uk: "Концесія діє до %{date}, за %{p} % еталона."
 "Ask %{amount}":
@@ -97,6 +110,7 @@ _version: 2
   fr: "Proposer %{amount}"
   nl: "%{amount} vragen"
   pl: "Zaproponuj %{amount}"
+  es: "Ofrecer %{amount}"
   ru: "Заявить %{amount}"
   uk: "Заявити %{amount}"
 "Bids until %{time} (%{left} from now), scored 70 % price and 30 % quality. Ask at most %{amount} to lead now; buying it outright: %{buy}.":
@@ -104,6 +118,7 @@ _version: 2
   fr: "Offres jusqu'à %{time} (dans %{left}), notées à 70 % prix et 30 % qualité. Demandez au plus %{amount} pour mener ; l'acheter directement : %{buy}."
   nl: "Biedingen tot %{time} (nog %{left}), beoordeeld op 70 % prijs en 30 % kwaliteit. Vraag hoogstens %{amount} om nu voor te liggen; direct kopen: %{buy}."
   pl: "Oferty do %{time} (za %{left}), ocena 70 % cena i 30 % jakość. Zaproponuj najwyżej %{amount}, by teraz prowadzić; kupno od razu: %{buy}."
+  es: "Ofertas hasta las %{time} (dentro de %{left}), puntuadas con un 70 % de precio y un 30 % de calidad. Ofrece como mucho %{amount} para ir en cabeza ahora; comprarla directamente: %{buy}."
   ru: "Заявки до %{time} (через %{left}), оценка 70 % цена и 30 % качество. Заявите не больше %{amount}, чтобы лидировать; купить сразу: %{buy}."
   uk: "Заявки до %{time} (через %{left}), оцінка 70 % ціна і 30 % якість. Заявіть не більше %{amount}, щоб лідирувати; купити одразу: %{buy}."
 "Ask at least 100 €.":
@@ -111,6 +126,7 @@ _version: 2
   fr: "Demandez au moins 100 €."
   nl: "Vraag minstens 100 €."
   pl: "Zaproponuj co najmniej 100 €."
+  es: "Ofrece al menos 100 €."
   ru: "Заявите не меньше 100 €."
   uk: "Заявіть не менше 100 €."
 "Another bid scores better: ask at most the bid that leads.":
@@ -118,5 +134,6 @@ _version: 2
   fr: "Une autre offre a un meilleur score : demandez au plus l'offre qui mène."
   nl: "Een ander bod scoort beter: vraag hoogstens het bod dat leidt."
   pl: "Inna oferta ma lepszy wynik: zaproponuj najwyżej prowadzącą kwotę."
+  es: "Otra oferta puntúa mejor: ofrece como mucho la oferta que va en cabeza."
   ru: "Другая заявка набирает больше: заявите не больше лидирующей суммы."
   uk: "Інша заявка набирає більше: заявіть не більше суми, що лідирує."

@@ -607,7 +607,7 @@ mod tests {
     const SPECIALS_OF_OMSI: [&str; 6] = ["Betriebsfahrt", "Leerfahrt", "Dienstfahrt", "Nicht einsteigen", "Sonderfahrt", "Schulbus"];
 
     /// Every text of the depot editor, the bus's depot files, the Timetable page and the editor's
-    /// tiles - the pages' and the depot file's problems - in the six languages.
+    /// tiles - the pages' and the depot file's problems - in the seven languages.
     #[test]
     fn every_depot_and_timetable_editor_text_is_translated() {
         use crate::online::{texts_in, untranslated};

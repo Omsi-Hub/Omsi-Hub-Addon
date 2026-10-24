@@ -7,6 +7,7 @@ _version: 2
   fr: "Prenez votre service, voyez votre service, l'itinéraire et les messages du poste de contrôle, et utilisez l'IBIS et l'imprimante à billets du bus sur un téléphone ou une tablette de votre réseau : dans son navigateur, sans app."
   nl: "Meld je aan, zie je dienst, de route en de berichten van de verkeersleiding, en bedien de IBIS en de kaartautomaat van de bus op een telefoon of tablet in je netwerk: in de browser, zonder app."
   pl: "Zaloguj się, zobacz służbę, trasę i wiadomości dyspozytorni oraz obsługuj IBIS i drukarkę biletów autobusu na telefonie lub tablecie w twojej sieci: w przeglądarce, bez aplikacji."
+  es: "Toma servicio, consulta tu servicio, la ruta y los mensajes del puesto de control, y maneja el IBIS y la impresora de billetes del autobús en un móvil o tableta de tu red: en su navegador, sin necesidad de app."
   ru: "Отмечайтесь, смотрите наряд, маршрут и сообщения диспетчерской и управляйте IBIS и билетным принтером автобуса на телефоне или планшете в вашей сети: в браузере, без приложения."
   uk: "Відмічайтеся, дивіться наряд, маршрут і повідомлення диспетчерської та керуйте IBIS і квитковим принтером автобуса на телефоні чи планшеті у вашій мережі: у браузері, без застосунку."
 "QR code for pairing":
@@ -14,6 +15,7 @@ _version: 2
   fr: "QR code d'appairage"
   nl: "QR-code om te koppelen"
   pl: "Kod QR do parowania"
+  es: "Código QR para emparejar"
   ru: "QR-код для сопряжения"
   uk: "QR-код для з'єднання"
 "Scan the code with the phone's camera, or open the address in its browser and type the pairing code:":
@@ -21,6 +23,7 @@ _version: 2
   fr: "Scannez le code avec l'appareil photo du téléphone, ou ouvrez l'adresse dans son navigateur et saisissez le code d'appairage :"
   nl: "Scan de code met de camera van de telefoon, of open het adres in de browser en typ de koppelcode:"
   pl: "Zeskanuj kod aparatem telefonu albo otwórz adres w jego przeglądarce i wpisz kod parowania:"
+  es: "Escanea el código con la cámara del móvil, o abre la dirección en su navegador y escribe el código de emparejamiento:"
   ru: "Отсканируйте код камерой телефона или откройте адрес в его браузере и введите код сопряжения:"
   uk: "Відскануйте код камерою телефона або відкрийте адресу в його браузері та введіть код з'єднання:"
 "Address":
@@ -28,6 +31,7 @@ _version: 2
   fr: "Adresse"
   nl: "Adres"
   pl: "Adres"
+  es: "Dirección"
   ru: "Адрес"
   uk: "Адреса"
 "Pairing code":
@@ -35,6 +39,7 @@ _version: 2
   fr: "Code d'appairage"
   nl: "Koppelcode"
   pl: "Kod parowania"
+  es: "Código de emparejamiento"
   ru: "Код сопряжения"
   uk: "Код з'єднання"
 "Another code":
@@ -42,6 +47,7 @@ _version: 2
   fr: "Autre code"
   nl: "Andere code"
   pl: "Inny kod"
+  es: "Otro código"
   ru: "Другой код"
   uk: "Інший код"
 "The game is connected.":
@@ -49,6 +55,7 @@ _version: 2
   fr: "Le jeu est connecté."
   nl: "De game is verbonden."
   pl: "Gra jest połączona."
+  es: "El juego está conectado."
   ru: "Игра подключена."
   uk: "Гру під'єднано."
 "The phone shows the game as soon as you drive.":
@@ -56,6 +63,7 @@ _version: 2
   fr: "Le téléphone affiche le jeu dès que vous conduisez."
   nl: "De telefoon toont de game zodra je rijdt."
   pl: "Telefon pokaże grę, gdy tylko zaczniesz jechać."
+  es: "El móvil muestra el juego en cuanto conduces."
   ru: "Телефон покажет игру, как только вы поедете."
   uk: "Телефон покаже гру, щойно ви поїдете."
 "Paired devices":
@@ -63,6 +71,7 @@ _version: 2
   fr: "Appareils appairés"
   nl: "Gekoppelde apparaten"
   pl: "Sparowane urządzenia"
+  es: "Dispositivos emparejados"
   ru: "Сопряжённые устройства"
   uk: "З'єднані пристрої"
 "None yet":
@@ -70,6 +79,7 @@ _version: 2
   fr: "Aucun pour l'instant"
   nl: "Nog geen"
   pl: "Jeszcze żadnych"
+  es: "Ninguno aún"
   ru: "Пока нет"
   uk: "Поки немає"
 "Last seen %{when}":
@@ -77,6 +87,7 @@ _version: 2
   fr: "Vu pour la dernière fois %{when}"
   nl: "Laatst gezien %{when}"
   pl: "Ostatnio widziane %{when}"
+  es: "Visto por última vez %{when}"
   ru: "Последний раз %{when}"
   uk: "Востаннє %{when}"
 "%{n} days ago":
@@ -84,6 +95,7 @@ _version: 2
   fr: "il y a %{n} jours"
   nl: "%{n} dagen geleden"
   pl: "%{n} dni temu"
+  es: "Hace %{n} días"
   ru: "%{n} дн. назад"
   uk: "%{n} дн. тому"
 "Only devices in your own network reach it, and only with a pairing code. Your firewall may ask to let Omsi-Hub take connections: allow it for private networks.":
@@ -91,5 +103,6 @@ _version: 2
   fr: "Seuls les appareils de votre propre réseau y accèdent, et seulement avec un code d'appairage. Votre pare-feu peut demander d'autoriser les connexions d'Omsi-Hub : autorisez-les pour les réseaux privés."
   nl: "Alleen apparaten in je eigen netwerk bereiken het, en alleen met een koppelcode. Je firewall vraagt misschien of Omsi-Hub verbindingen mag aannemen: sta het toe voor privénetwerken."
   pl: "Dostęp mają tylko urządzenia z twojej sieci i tylko z kodem parowania. Zapora może zapytać, czy Omsi-Hub może przyjmować połączenia: zezwól na to w sieciach prywatnych."
+  es: "Solo los dispositivos de tu propia red llegan a él, y solo con un código de emparejamiento. Puede que tu cortafuegos pida permitir conexiones a Omsi-Hub: permítelo para redes privadas."
   ru: "Доступ есть только у устройств вашей сети и только с кодом сопряжения. Брандмауэр может спросить, разрешить ли Omsi-Hub принимать подключения: разрешите для частных сетей."
   uk: "Доступ мають лише пристрої вашої мережі й лише з кодом з'єднання. Брандмауер може запитати, чи дозволити Omsi-Hub приймати з'єднання: дозвольте для приватних мереж."

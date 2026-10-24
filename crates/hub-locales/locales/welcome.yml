@@ -11,6 +11,7 @@ _version: 2
   ru: "Далее"
   uk: "Далі"
   pl: "Dalej"
+  es: "Siguiente"
 "Skip":
   nl: "Overslaan"
   de: "Überspringen"
@@ -18,6 +19,7 @@ _version: 2
   ru: "Пропустить"
   uk: "Пропустити"
   pl: "Pomiń"
+  es: "Omitir"
 "Browse":
   nl: "Bladeren"
   de: "Durchsuchen"
@@ -25,6 +27,7 @@ _version: 2
   ru: "Обзор"
   uk: "Огляд"
   pl: "Przeglądaj"
+  es: "Examinar"
 "OMSI 2 folder":
   nl: "OMSI 2-map"
   de: "OMSI-2-Ordner"
@@ -32,6 +35,7 @@ _version: 2
   ru: "Папка OMSI 2"
   uk: "Тека OMSI 2"
   pl: "Folder OMSI 2"
+  es: "Carpeta de OMSI 2"
 "openOMSI folder":
   nl: "openOMSI-map"
   de: "openOMSI-Ordner"
@@ -39,6 +43,7 @@ _version: 2
   ru: "Папка openOMSI"
   uk: "Тека openOMSI"
   pl: "Folder openOMSI"
+  es: "Carpeta de openOMSI"
 "Game folders":
   nl: "Spelmappen"
   de: "Spielordner"
@@ -46,6 +51,7 @@ _version: 2
   ru: "Папки игры"
   uk: "Теки гри"
   pl: "Foldery gry"
+  es: "Carpetas del juego"
 "Where are openOMSI and OMSI 2?":
   nl: "Waar staan openOMSI en OMSI 2?"
   de: "Wo sind openOMSI und OMSI 2?"
@@ -53,6 +59,7 @@ _version: 2
   ru: "Где находятся openOMSI и OMSI 2?"
   uk: "Де знаходяться openOMSI та OMSI 2?"
   pl: "Gdzie są openOMSI i OMSI 2?"
+  es: "¿Dónde están openOMSI y OMSI 2?"
 "Omsi-Hub starts the openOMSI you have installed, on the maps and buses of the original OMSI 2. Point once to both folders.":
   nl: "Omsi-Hub start de openOMSI die je hebt geïnstalleerd, op de kaarten en bussen van het originele OMSI 2. Wijs eenmalig beide mappen aan."
   de: "Omsi-Hub startet das installierte openOMSI auf den Karten und Bussen des originalen OMSI 2. Zeige einmal auf beide Ordner."
@@ -60,6 +67,7 @@ _version: 2
   ru: "Omsi-Hub запускает установленный openOMSI на картах и автобусах оригинального OMSI 2. Укажите один раз обе папки."
   uk: "Omsi-Hub запускає встановлений openOMSI на картах і автобусах оригінального OMSI 2. Укажіть один раз обидві теки."
   pl: "Omsi-Hub uruchamia zainstalowany openOMSI na mapach i autobusach oryginalnego OMSI 2. Wskaż raz oba foldery."
+  es: "Omsi-Hub inicia el openOMSI que tienes instalado, con los mapas y autobuses del OMSI 2 original. Indica una sola vez las dos carpetas."
 "openOMSI 0.2.22 or newer. Steam, the box version, a folder you moved yourself - all fine. Omsi-Hub only reads them and never writes into the OMSI 2 folder.":
   nl: "openOMSI 0.2.22 of nieuwer. Steam, de doosversie, een map die je zelf hebt verplaatst - alles is goed. Omsi-Hub leest ze alleen en schrijft nooit in de OMSI 2-map."
   de: "openOMSI 0.2.22 oder neuer. Steam, die Boxversion, ein selbst verschobener Ordner - alles in Ordnung. Omsi-Hub liest sie nur und schreibt nie in den OMSI-2-Ordner."
@@ -67,6 +75,7 @@ _version: 2
   ru: "openOMSI 0.2.22 или новее. Steam, коробочная версия, перенесённая вами папка - всё подходит. Omsi-Hub только читает их и никогда не пишет в папку OMSI 2."
   uk: "openOMSI 0.2.22 або новіший. Steam, коробкова версія, тека, яку ви перемістили самі, - усе підходить. Omsi-Hub лише читає їх і ніколи не пише в теку OMSI 2."
   pl: "openOMSI 0.2.22 lub nowszy. Steam, wersja pudełkowa, folder przeniesiony samodzielnie - wszystko w porządku. Omsi-Hub tylko je czyta i nigdy nie zapisuje w folderze OMSI 2."
+  es: "openOMSI 0.2.22 o posterior. Steam, la versión en caja, una carpeta que moviste tú mismo - todo vale. Omsi-Hub solo las lee y nunca escribe en la carpeta de OMSI 2."
 "Use these folders":
   nl: "Deze mappen gebruiken"
   de: "Diese Ordner verwenden"
@@ -74,6 +83,7 @@ _version: 2
   ru: "Использовать эти папки"
   uk: "Використати ці теки"
   pl: "Użyj tych folderów"
+  es: "Usar estas carpetas"
 "Choose your openOMSI and OMSI 2 folders first.":
   nl: "Kies eerst je openOMSI- en OMSI 2-map."
   de: "Wähle zuerst deinen openOMSI- und OMSI-2-Ordner."
@@ -81,6 +91,7 @@ _version: 2
   ru: "Сначала выберите папки openOMSI и OMSI 2."
   uk: "Спершу виберіть теки openOMSI та OMSI 2."
   pl: "Najpierw wybierz foldery openOMSI i OMSI 2."
+  es: "Elige primero tus carpetas de openOMSI y OMSI 2."
 "Sign in, or play locally?":
   nl: "Inloggen, of lokaal spelen?"
   de: "Anmelden oder lokal spielen?"
@@ -88,6 +99,7 @@ _version: 2
   ru: "Войти или играть локально?"
   uk: "Увійти чи грати локально?"
   pl: "Zalogować się czy grać lokalnie?"
+  es: "¿Iniciar sesión o jugar en local?"
 "With an account your driver has friends, the leaderboard and cloud saves on every computer. Without one, everything stays on this computer.":
   nl: "Met een account heeft je chauffeur vrienden, het klassement en cloud-saves op elke computer. Zonder account blijft alles op deze computer."
   de: "Mit einem Konto hat dein Fahrer Freunde, die Bestenliste und Cloud-Spielstände auf jedem Computer. Ohne Konto bleibt alles auf diesem Computer."
@@ -95,6 +107,7 @@ _version: 2
   ru: "С аккаунтом у вашего водителя есть друзья, таблица лидеров и облачные сохранения на любом компьютере. Без него всё остаётся на этом компьютере."
   uk: "З обліковим записом ваш водій має друзів, таблицю лідерів і хмарні збереження на будь-якому комп'ютері. Без нього все залишається на цьому комп'ютері."
   pl: "Z kontem twój kierowca ma znajomych, ranking i zapisy w chmurze na każdym komputerze. Bez konta wszystko zostaje na tym komputerze."
+  es: "Con una cuenta, tu conductor tiene amigos, la clasificación y partidas guardadas en la nube en cualquier ordenador. Sin ella, todo se queda en este ordenador."
 "Continue locally without sync":
   nl: "Doorgaan lokaal zonder sync"
   de: "Lokal ohne Synchronisierung weiter"
@@ -102,6 +115,7 @@ _version: 2
   ru: "Продолжить локально без синхронизации"
   uk: "Продовжити локально без синхронізації"
   pl: "Kontynuuj lokalnie bez synchronizacji"
+  es: "Continuar en local sin sincronizar"
 "Friends, the leaderboard and your cloud saves go with %{name}.":
   nl: "Vrienden, het klassement en je cloud-saves horen bij %{name}."
   de: "Freunde, die Bestenliste und deine Cloud-Spielstände gehören zu %{name}."
@@ -109,6 +123,7 @@ _version: 2
   ru: "Друзья, таблица лидеров и облачные сохранения принадлежат %{name}."
   uk: "Друзі, таблиця лідерів і хмарні збереження належать %{name}."
   pl: "Znajomi, ranking i zapisy w chmurze należą do %{name}."
+  es: "Los amigos, la clasificación y tus partidas en la nube van con %{name}."
 "Your display name is your driver's name too.":
   nl: "Je weergavenaam is ook de naam van je chauffeur."
   de: "Dein Anzeigename ist auch der Name deines Fahrers."
@@ -116,6 +131,7 @@ _version: 2
   ru: "Ваше отображаемое имя - это и имя вашего водителя."
   uk: "Ваше відображуване ім'я - це й ім'я вашого водія."
   pl: "Twoja nazwa wyświetlana jest też imieniem twojego kierowcy."
+  es: "Tu nombre visible es también el nombre de tu conductor."
 "Your account's driver: their duties, kilometres and level go with your account.":
   nl: "De chauffeur van je account: zijn diensten, kilometers en niveau gaan mee met je account."
   de: "Der Fahrer deines Kontos: seine Dienste, Kilometer und Stufe gehen mit deinem Konto."
@@ -123,6 +139,7 @@ _version: 2
   ru: "Водитель вашего аккаунта: его смены, километры и уровень привязаны к аккаунту."
   uk: "Водій вашого облікового запису: його наряди, кілометри й рівень прив'язані до облікового запису."
   pl: "Kierowca twojego konta: jego służby, kilometry i poziom idą z twoim kontem."
+  es: "El conductor de tu cuenta: sus servicios, kilómetros y nivel van con tu cuenta."
 "Your duties, kilometres and level are kept per driver, on this computer.":
   nl: "Je diensten, kilometers en niveau worden per chauffeur bijgehouden, op deze computer."
   de: "Deine Dienste, Kilometer und Stufe werden pro Fahrer gespeichert, auf diesem Computer."
@@ -130,6 +147,7 @@ _version: 2
   ru: "Смены, километры и уровень хранятся для каждого водителя на этом компьютере."
   uk: "Наряди, кілометри й рівень зберігаються для кожного водія на цьому комп'ютері."
   pl: "Służby, kilometry i poziom są zapisywane dla każdego kierowcy na tym komputerze."
+  es: "Tus servicios, kilómetros y nivel se guardan por conductor, en este ordenador."
 "This driver has the account on this computer":
   nl: "Deze chauffeur heeft het account op deze computer"
   de: "Dieser Fahrer hat das Konto auf diesem Computer"
@@ -137,6 +155,7 @@ _version: 2
   ru: "У этого водителя аккаунт на этом компьютере"
   uk: "У цього водія обліковий запис на цьому комп'ютері"
   pl: "Ten kierowca ma konto na tym komputerze"
+  es: "Este conductor tiene la cuenta en este ordenador"
 "This driver has your account: sign out first.":
   nl: "Deze chauffeur heeft je account: log eerst uit."
   de: "Dieser Fahrer hat dein Konto: melde dich zuerst ab."
@@ -144,6 +163,7 @@ _version: 2
   ru: "У этого водителя ваш аккаунт: сначала выйдите."
   uk: "У цього водія ваш обліковий запис: спершу вийдіть."
   pl: "Ten kierowca ma twoje konto: najpierw się wyloguj."
+  es: "Este conductor tiene tu cuenta: cierra sesión primero."
 "The account on this computer is %{name}'s. %{driver} plays locally, without friends, the leaderboard or cloud saves.":
   nl: "Het account op deze computer is van %{name}. %{driver} speelt lokaal, zonder vrienden, klassement of cloud-saves."
   de: "Das Konto auf diesem Computer gehört %{name}. %{driver} spielt lokal, ohne Freunde, Bestenliste oder Cloud-Spielstände."
@@ -151,6 +171,7 @@ _version: 2
   ru: "Аккаунт на этом компьютере принадлежит %{name}. %{driver} играет локально, без друзей, таблицы лидеров и облачных сохранений."
   uk: "Обліковий запис на цьому комп'ютері належить %{name}. %{driver} грає локально, без друзів, таблиці лідерів і хмарних збережень."
   pl: "Konto na tym komputerze należy do %{name}. %{driver} gra lokalnie, bez znajomych, rankingu i zapisów w chmurze."
+  es: "La cuenta de este ordenador es de %{name}. %{driver} juega en local, sin amigos, clasificación ni partidas en la nube."
 "Choose %{name} under \"Who is driving today?\" to use the account.":
   nl: "Kies %{name} bij \"Wie rijdt er vandaag?\" om het account te gebruiken."
   de: "Wähle %{name} unter „Wer fährt heute?“, um das Konto zu verwenden."
@@ -158,6 +179,7 @@ _version: 2
   ru: "Выберите %{name} в «Кто сегодня за рулём?», чтобы пользоваться аккаунтом."
   uk: "Виберіть %{name} у «Хто сьогодні за кермом?», щоб користуватися обліковим записом."
   pl: "Wybierz %{name} w „Kto dziś jedzie?”, aby korzystać z konta."
+  es: "Elige a %{name} en \"¿Quién conduce hoy?\" para usar la cuenta."
 "Dutch":
   nl: "Nederlands"
   de: "Niederländisch"
@@ -165,6 +187,7 @@ _version: 2
   ru: "Нидерландские"
   uk: "Нідерландські"
   pl: "Holenderskie"
+  es: "Neerlandés"
 "Polish":
   nl: "Pools"
   de: "Polnisch"
@@ -172,6 +195,7 @@ _version: 2
   ru: "Польские"
   uk: "Польські"
   pl: "Polskie"
+  es: "Polaco"
 "Russian":
   nl: "Russisch"
   de: "Russisch"
@@ -179,6 +203,7 @@ _version: 2
   ru: "Российские"
   uk: "Російські"
   pl: "Rosyjskie"
+  es: "Ruso"
 "Ukrainian":
   nl: "Oekraïens"
   de: "Ukrainisch"
@@ -186,6 +211,7 @@ _version: 2
   ru: "Украинские"
   uk: "Українські"
   pl: "Ukraińskie"
+  es: "Ucraniano"
 "Stop signs":
   nl: "Haltebordjes"
   de: "Haltestellenschilder"
@@ -193,6 +219,7 @@ _version: 2
   ru: "Знаки остановок"
   uk: "Знаки зупинок"
   pl: "Znaki przystanków"
+  es: "Señales de parada"
 "Which bus stop signs?":
   nl: "Welke haltebordjes?"
   de: "Welche Haltestellenschilder?"
@@ -200,6 +227,7 @@ _version: 2
   ru: "Какие знаки остановок?"
   uk: "Які знаки зупинок?"
   pl: "Jakie znaki przystanków?"
+  es: "¿Qué señales de parada?"
 "The maps mark every stop with a bus stop sign. Choose the ones you know; you can change them any time in the settings.":
   nl: "De kaarten tonen elke halte met een haltebordje. Kies de bordjes die je kent; je kunt ze altijd wijzigen in de instellingen."
   de: "Die Karten zeigen jede Haltestelle mit einem Haltestellenschild. Wähle die Schilder, die du kennst; du kannst sie jederzeit in den Einstellungen ändern."
@@ -207,6 +235,7 @@ _version: 2
   ru: "На картах каждая остановка отмечена знаком. Выберите привычные знаки; их можно изменить в настройках в любой момент."
   uk: "На картах кожна зупинка позначена знаком. Виберіть звичні знаки; їх можна змінити в налаштуваннях будь-коли."
   pl: "Mapy oznaczają każdy przystanek znakiem przystanku. Wybierz te, które znasz; możesz je zmienić w każdej chwili w ustawieniach."
+  es: "Los mapas marcan cada parada con una señal de parada de autobús. Elige las que conozcas; puedes cambiarlas cuando quieras en los ajustes."
 # The folders' checks and the errors of a drive started without them (hub.rs, addon.rs, drive.rs), the old saves' card (setup.js), a page not ported yet (ui.js), and the settings' tab of the controllers.
 "Choose the folder openOMSI is in":
   nl: "Kies de map waarin openOMSI staat"
@@ -215,6 +244,7 @@ _version: 2
   ru: "Выберите папку, в которой находится openOMSI"
   uk: "Виберіть теку, у якій лежить openOMSI"
   pl: "Wybierz folder, w którym jest openOMSI"
+  es: "Elige la carpeta donde está openOMSI"
 "This openOMSI is %{version}: Omsi-Hub needs %{needs} or newer. Update openOMSI.":
   nl: "Deze openOMSI is %{version}: Omsi-Hub heeft %{needs} of nieuwer nodig. Werk openOMSI bij."
   de: "Dieses openOMSI ist %{version}: Omsi-Hub braucht %{needs} oder neuer. Aktualisiere openOMSI."
@@ -222,6 +252,7 @@ _version: 2
   ru: "Этот openOMSI версии %{version}: Omsi-Hub нужна %{needs} или новее. Обновите openOMSI."
   uk: "Цей openOMSI версії %{version}: Omsi-Hub потрібна %{needs} або новіша. Оновіть openOMSI."
   pl: "Ten openOMSI to wersja %{version}: Omsi-Hub potrzebuje %{needs} lub nowszej. Zaktualizuj openOMSI."
+  es: "Este openOMSI es la %{version}: Omsi-Hub necesita la %{needs} o posterior. Actualiza openOMSI."
 "This is the old Omsi-Hub's own game: choose the folder of the official openOMSI":
   nl: "Dit is het eigen spel van de oude Omsi-Hub: kies de map van de officiële openOMSI"
   de: "Das ist das eigene Spiel des alten Omsi-Hub: Wähle den Ordner des offiziellen openOMSI"
@@ -229,6 +260,7 @@ _version: 2
   ru: "Это собственная игра старого Omsi-Hub: выберите папку официального openOMSI"
   uk: "Це власна гра старого Omsi-Hub: виберіть теку офіційного openOMSI"
   pl: "To własna gra starego Omsi-Hub: wybierz folder oficjalnego openOMSI"
+  es: "Este es el juego propio del antiguo Omsi-Hub: elige la carpeta del openOMSI oficial"
 "This is not the OMSI 2 folder: %{missing} not found":
   nl: "Dit is niet de map van OMSI 2: %{missing} niet gevonden"
   de: "Das ist nicht der OMSI-2-Ordner: %{missing} nicht gefunden"
@@ -236,6 +268,7 @@ _version: 2
   ru: "Это не папка OMSI 2: не найдено %{missing}"
   uk: "Це не тека OMSI 2: не знайдено %{missing}"
   pl: "To nie jest folder OMSI 2: nie znaleziono %{missing}"
+  es: "Esta no es la carpeta de OMSI 2: no se encuentra %{missing}"
 "Choose your openOMSI folder first":
   nl: "Kies eerst je openOMSI-map"
   de: "Wähle zuerst deinen openOMSI-Ordner"
@@ -243,6 +276,7 @@ _version: 2
   ru: "Сначала выберите папку openOMSI"
   uk: "Спершу виберіть теку openOMSI"
   pl: "Najpierw wybierz folder openOMSI"
+  es: "Elige primero tu carpeta de openOMSI"
 "Choose your openOMSI and OMSI 2 folders first":
   nl: "Kies eerst je mappen van openOMSI en OMSI 2"
   de: "Wähle zuerst deine Ordner von openOMSI und OMSI 2"
@@ -250,6 +284,7 @@ _version: 2
   ru: "Сначала выберите папки openOMSI и OMSI 2"
   uk: "Спершу виберіть теки openOMSI та OMSI 2"
   pl: "Najpierw wybierz foldery openOMSI i OMSI 2"
+  es: "Elige primero tus carpetas de openOMSI y OMSI 2"
 "This openOMSI is not supported":
   nl: "Deze openOMSI wordt niet ondersteund"
   de: "Dieses openOMSI wird nicht unterstützt"
@@ -257,6 +292,7 @@ _version: 2
   ru: "Этот openOMSI не поддерживается"
   uk: "Цей openOMSI не підтримується"
   pl: "Ten openOMSI nie jest obsługiwany"
+  es: "Este openOMSI no es compatible"
 "openOMSI is running already":
   nl: "openOMSI draait al"
   de: "openOMSI läuft bereits"
@@ -264,6 +300,7 @@ _version: 2
   ru: "openOMSI уже запущен"
   uk: "openOMSI уже запущено"
   pl: "openOMSI już działa"
+  es: "openOMSI ya está en marcha"
 "Your saves from the old Omsi-Hub":
   nl: "Je opslagen van de oude Omsi-Hub"
   de: "Deine Spielstände aus dem alten Omsi-Hub"
@@ -271,6 +308,7 @@ _version: 2
   ru: "Ваши сохранения из старого Omsi-Hub"
   uk: "Ваші збереження зі старого Omsi-Hub"
   pl: "Twoje zapisy ze starego Omsi-Hub"
+  es: "Tus partidas del antiguo Omsi-Hub"
 "Copied: %{n} files. Your companies are ready.":
   nl: "Gekopieerd: %{n} bestanden. Je bedrijven staan klaar."
   de: "Kopiert: %{n} Dateien. Deine Betriebe sind bereit."
@@ -278,6 +316,7 @@ _version: 2
   ru: "Скопировано файлов: %{n}. Ваши компании готовы."
   uk: "Скопійовано файлів: %{n}. Ваші компанії готові."
   pl: "Skopiowano plików: %{n}. Twoje firmy są gotowe."
+  es: "Copiados: %{n} archivos. Tus empresas están listas."
 "Omsi-Hub found saves of the old Omsi-Hub in %{folder}. They can be copied into the new app: the old folder is not moved or changed.":
   nl: "Omsi-Hub heeft opslagen van de oude Omsi-Hub gevonden in %{folder}. Ze kunnen naar de nieuwe app worden gekopieerd: de oude map wordt niet verplaatst of gewijzigd."
   de: "Omsi-Hub hat Spielstände des alten Omsi-Hub in %{folder} gefunden. Sie lassen sich in die neue App kopieren: Der alte Ordner wird weder verschoben noch geändert."
@@ -285,6 +324,7 @@ _version: 2
   ru: "Omsi-Hub нашёл сохранения старого Omsi-Hub в %{folder}. Их можно скопировать в новое приложение: старая папка не перемещается и не меняется."
   uk: "Omsi-Hub знайшов збереження старого Omsi-Hub у %{folder}. Їх можна скопіювати в новий застосунок: стару теку не буде переміщено чи змінено."
   pl: "Omsi-Hub znalazł zapisy starego Omsi-Hub w %{folder}. Można je skopiować do nowej aplikacji: stary folder nie zostanie przeniesiony ani zmieniony."
+  es: "Omsi-Hub ha encontrado partidas del antiguo Omsi-Hub en %{folder}. Se pueden copiar a la nueva app: la carpeta antigua no se mueve ni se cambia."
 "Companies":
   nl: "Bedrijven"
   de: "Betriebe"
@@ -292,6 +332,7 @@ _version: 2
   ru: "Компании"
   uk: "Компанії"
   pl: "Firmy"
+  es: "Empresas"
 "Careers":
   nl: "Carrières"
   de: "Karrieren"
@@ -299,6 +340,7 @@ _version: 2
   ru: "Карьеры"
   uk: "Кар'єри"
   pl: "Kariery"
+  es: "Carreras"
 "Own lines":
   nl: "Eigen lijnen"
   de: "Eigene Linien"
@@ -306,6 +348,7 @@ _version: 2
   ru: "Свои линии"
   uk: "Власні лінії"
   pl: "Własne linie"
+  es: "Líneas propias"
 "Depot files":
   nl: "Remisebestanden"
   de: "Betriebshofdateien"
@@ -313,6 +356,7 @@ _version: 2
   ru: "Файлы депо"
   uk: "Файли депо"
   pl: "Pliki zajezdni"
+  es: "Archivos de cochera"
 "%{n} settings (look, language, navigator)":
   nl: "%{n} instellingen (uiterlijk, taal, navigator)"
   de: "%{n} Einstellungen (Aussehen, Sprache, Navigator)"
@@ -320,6 +364,7 @@ _version: 2
   ru: "Настроек: %{n} (вид, язык, навигатор)"
   uk: "Налаштувань: %{n} (вигляд, мова, навігатор)"
   pl: "Ustawienia: %{n} (wygląd, język, nawigator)"
+  es: "%{n} ajustes (aspecto, idioma, navegador)"
 "%{n} files":
   nl: "%{n} bestanden"
   de: "%{n} Dateien"
@@ -327,6 +372,7 @@ _version: 2
   ru: "Файлов: %{n}"
   uk: "Файлів: %{n}"
   pl: "Pliki: %{n}"
+  es: "%{n} archivos"
 "Copying…":
   nl: "Kopiëren…"
   de: "Wird kopiert…"
@@ -334,6 +380,7 @@ _version: 2
   ru: "Копирование…"
   uk: "Копіювання…"
   pl: "Kopiowanie…"
+  es: "Copiando…"
 "Copy them":
   nl: "Kopiëren"
   de: "Kopieren"
@@ -341,6 +388,7 @@ _version: 2
   ru: "Скопировать"
   uk: "Скопіювати"
   pl: "Skopiuj"
+  es: "Copiarlas"
 "This part of Omsi-Hub is being moved to the new app.":
   nl: "Dit deel van Omsi-Hub wordt naar de nieuwe app overgezet."
   de: "Dieser Teil von Omsi-Hub wird gerade in die neue App übernommen."
@@ -348,6 +396,7 @@ _version: 2
   ru: "Эта часть Omsi-Hub переносится в новое приложение."
   uk: "Ця частина Omsi-Hub переноситься в новий застосунок."
   pl: "Ta część Omsi-Hub jest przenoszona do nowej aplikacji."
+  es: "Esta parte de Omsi-Hub se está trasladando a la nueva app."
 "Controllers":
   nl: "Controllers"
   de: "Controller"
@@ -355,6 +404,7 @@ _version: 2
   ru: "Контроллеры"
   uk: "Контролери"
   pl: "Kontrolery"
+  es: "Mandos"
 "Game controllers":
   nl: "Gamecontrollers"
   de: "Gamecontroller"
@@ -362,6 +412,7 @@ _version: 2
   ru: "Игровые контроллеры"
   uk: "Ігрові контролери"
   pl: "Kontrolery gier"
+  es: "Mandos de juego"
 "Friends, the leaderboard and cloud saves. Optional: everything works offline.":
   nl: "Vrienden, het klassement en opslag in de cloud. Optioneel: alles werkt ook offline."
   de: "Freunde, die Rangliste und Cloud-Spielstände. Optional: Alles funktioniert auch offline."
@@ -369,3 +420,4 @@ _version: 2
   ru: "Друзья, таблица лидеров и облачные сохранения. Необязательно: всё работает и офлайн."
   uk: "Друзі, таблиця лідерів і хмарні збереження. Необов'язково: усе працює й офлайн."
   pl: "Znajomi, ranking i zapisy w chmurze. Opcjonalnie: wszystko działa też offline."
+  es: "Amigos, la clasificación y partidas guardadas en la nube. Opcional: todo funciona sin conexión."

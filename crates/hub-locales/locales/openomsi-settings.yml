@@ -9,6 +9,7 @@ _version: 2
   ru: "Настройки openOMSI"
   uk: "Налаштування openOMSI"
   pl: "Ustawienia openOMSI"
+  es: "Ajustes de openOMSI"
 "openOMSI's own settings. Omsi-Hub changes only these; everything else in the file stays as it is. openOMSI reads them when it starts.":
   nl: "De eigen instellingen van openOMSI. Omsi-Hub past alleen deze aan; de rest van het bestand blijft zoals het is. openOMSI leest ze bij het starten."
   de: "Die eigenen Einstellungen von openOMSI. Omsi-Hub ändert nur diese; alles andere in der Datei bleibt, wie es ist. openOMSI liest sie beim Start."
@@ -16,6 +17,7 @@ _version: 2
   ru: "Собственные настройки openOMSI. Omsi-Hub меняет только их; всё остальное в файле остаётся как есть. openOMSI читает их при запуске."
   uk: "Власні налаштування openOMSI. Omsi-Hub змінює лише їх; усе інше у файлі лишається як є. openOMSI читає їх під час запуску."
   pl: "Własne ustawienia openOMSI. Omsi-Hub zmienia tylko te; reszta pliku zostaje bez zmian. openOMSI odczytuje je przy starcie."
+  es: "Los ajustes propios de openOMSI. Omsi-Hub solo cambia estos; todo lo demás del archivo se queda como está. openOMSI los lee al iniciarse."
 "openOMSI's default":
   nl: "Standaard van openOMSI"
   de: "Standard von openOMSI"
@@ -23,6 +25,7 @@ _version: 2
   ru: "По умолчанию openOMSI"
   uk: "Типово для openOMSI"
   pl: "Domyślne openOMSI"
+  es: "Predeterminado de openOMSI"
 "Not there yet: it is made with the first change.":
   nl: "Nog niet aanwezig: het wordt gemaakt bij de eerste wijziging."
   de: "Noch nicht vorhanden: sie wird bei der ersten Änderung angelegt."
@@ -30,6 +33,7 @@ _version: 2
   ru: "Пока не существует: файл будет создан при первом изменении."
   uk: "Поки не існує: файл буде створено під час першої зміни."
   pl: "Jeszcze go nie ma: powstanie przy pierwszej zmianie."
+  es: "Aún no existe: se crea con el primer cambio."
 "openOMSI is running: change its settings once it has ended":
   nl: "openOMSI draait: pas de instellingen aan als het gestopt is"
   de: "openOMSI läuft: ändere die Einstellungen, wenn es beendet ist"
@@ -37,6 +41,7 @@ _version: 2
   ru: "openOMSI запущен: измените настройки после его закрытия"
   uk: "openOMSI запущено: змініть налаштування після його закриття"
   pl: "openOMSI działa: zmień ustawienia, gdy zostanie zamknięty"
+  es: "openOMSI está en marcha: cambia sus ajustes cuando haya terminado"
 "Graphics":
   nl: "Grafisch"
   de: "Grafik"
@@ -44,6 +49,7 @@ _version: 2
   ru: "Графика"
   uk: "Графіка"
   pl: "Grafika"
+  es: "Gráficos"
 "Screen and navigator":
   nl: "Scherm en navigator"
   de: "Bildschirm und Navigator"
@@ -51,6 +57,7 @@ _version: 2
   ru: "Экран и навигатор"
   uk: "Екран і навігатор"
   pl: "Ekran i nawigator"
+  es: "Pantalla y navegador"
 "Driving and controls":
   nl: "Rijden en besturing"
   de: "Fahren und Steuerung"
@@ -58,6 +65,7 @@ _version: 2
   ru: "Вождение и управление"
   uk: "Водіння та керування"
   pl: "Jazda i sterowanie"
+  es: "Conducción y controles"
 "Graphics API":
   nl: "Grafische API"
   de: "Grafik-API"
@@ -65,6 +73,7 @@ _version: 2
   ru: "Графический API"
   uk: "Графічний API"
   pl: "API graficzne"
+  es: "API gráfica"
 "Full screen":
   nl: "Volledig scherm"
   de: "Vollbild"
@@ -72,6 +81,7 @@ _version: 2
   ru: "Полноэкранный режим"
   uk: "Повноекранний режим"
   pl: "Pełny ekran"
+  es: "Pantalla completa"
 "Vertical sync":
   nl: "Verticale synchronisatie"
   de: "Vertikale Synchronisation"
@@ -79,6 +89,7 @@ _version: 2
   ru: "Вертикальная синхронизация"
   uk: "Вертикальна синхронізація"
   pl: "Synchronizacja pionowa"
+  es: "Sincronización vertical"
 "Anti-aliasing (MSAA)":
   nl: "Anti-aliasing (MSAA)"
   de: "Kantenglättung (MSAA)"
@@ -86,6 +97,7 @@ _version: 2
   ru: "Сглаживание (MSAA)"
   uk: "Згладжування (MSAA)"
   pl: "Wygładzanie krawędzi (MSAA)"
+  es: "Antialiasing (MSAA)"
 "Smoothing after the picture (FXAA)":
   nl: "Nagladding van het beeld (FXAA)"
   de: "Glättung nach dem Bild (FXAA)"
@@ -93,6 +105,7 @@ _version: 2
   ru: "Сглаживание после кадра (FXAA)"
   uk: "Згладжування після кадру (FXAA)"
   pl: "Wygładzanie po obrazie (FXAA)"
+  es: "Suavizado sobre la imagen (FXAA)"
 "Texture filtering":
   nl: "Texturefiltering"
   de: "Texturfilterung"
@@ -100,6 +113,7 @@ _version: 2
   ru: "Фильтрация текстур"
   uk: "Фільтрація текстур"
   pl: "Filtrowanie tekstur"
+  es: "Filtrado de texturas"
 "Shadows":
   nl: "Schaduwen"
   de: "Schatten"
@@ -107,6 +121,7 @@ _version: 2
   ru: "Тени"
   uk: "Тіні"
   pl: "Cienie"
+  es: "Sombras"
 "Ambient occlusion":
   nl: "Ambient occlusion"
   de: "Umgebungsverdeckung"
@@ -114,6 +129,7 @@ _version: 2
   ru: "Затенение окружающей среды"
   uk: "Затінення навколишнього середовища"
   pl: "Okluzja otoczenia"
+  es: "Oclusión ambiental"
 "Detail textures":
   nl: "Detailtexturen"
   de: "Detailtexturen"
@@ -121,6 +137,7 @@ _version: 2
   ru: "Детальные текстуры"
   uk: "Деталізовані текстури"
   pl: "Tekstury szczegółów"
+  es: "Texturas de detalle"
 "Texture compression":
   nl: "Texturecompressie"
   de: "Texturkompression"
@@ -128,6 +145,7 @@ _version: 2
   ru: "Сжатие текстур"
   uk: "Стиснення текстур"
   pl: "Kompresja tekstur"
+  es: "Compresión de texturas"
 "Size of the game's menus":
   nl: "Grootte van de menu's van de game"
   de: "Größe der Spielmenüs"
@@ -135,6 +153,7 @@ _version: 2
   ru: "Размер меню игры"
   uk: "Розмір меню гри"
   pl: "Rozmiar menu gry"
+  es: "Tamaño de los menús del juego"
 "Opacity of the game's panels":
   nl: "Dekking van de panelen van de game"
   de: "Deckkraft der Spielfenster"
@@ -142,6 +161,7 @@ _version: 2
   ru: "Непрозрачность панелей игры"
   uk: "Непрозорість панелей гри"
   pl: "Krycie paneli gry"
+  es: "Opacidad de los paneles del juego"
 "Navigator":
   nl: "Navigator"
   de: "Navigator"
@@ -149,6 +169,7 @@ _version: 2
   ru: "Навигатор"
   uk: "Навігатор"
   pl: "Nawigator"
+  es: "Navegador"
 "Navigator's corner":
   nl: "Hoek van de navigator"
   de: "Ecke des Navigators"
@@ -156,6 +177,7 @@ _version: 2
   ru: "Угол навигатора"
   uk: "Кут навігатора"
   pl: "Róg nawigatora"
+  es: "Esquina del navegador"
 "Navigator in a light look":
   nl: "Navigator in een lichte weergave"
   de: "Navigator im hellen Aussehen"
@@ -163,6 +185,7 @@ _version: 2
   ru: "Светлый вид навигатора"
   uk: "Світлий вигляд навігатора"
   pl: "Nawigator w jasnym wyglądzie"
+  es: "Navegador con aspecto claro"
 "The game's language":
   nl: "Taal van de game"
   de: "Sprache des Spiels"
@@ -170,6 +193,7 @@ _version: 2
   ru: "Язык игры"
   uk: "Мова гри"
   pl: "Język gry"
+  es: "Idioma del juego"
 "Driving keys":
   nl: "Rijtoetsen"
   de: "Fahrtasten"
@@ -177,6 +201,7 @@ _version: 2
   ru: "Клавиши вождения"
   uk: "Клавіші водіння"
   pl: "Klawisze jazdy"
+  es: "Teclas de conducción"
 "As in OMSI 2":
   nl: "Zoals in OMSI 2"
   de: "Wie in OMSI 2"
@@ -184,6 +209,7 @@ _version: 2
   ru: "Как в OMSI 2"
   uk: "Як в OMSI 2"
   pl: "Jak w OMSI 2"
+  es: "Como en OMSI 2"
 "Steering wheel's turn (degrees)":
   nl: "Draaibereik van het stuur (graden)"
   de: "Lenkradeinschlag (Grad)"
@@ -191,6 +217,7 @@ _version: 2
   ru: "Угол поворота руля (градусы)"
   uk: "Кут повороту керма (градуси)"
   pl: "Obrót kierownicy (stopnie)"
+  es: "Giro del volante (grados)"
 "Linear steering":
   nl: "Lineair sturen"
   de: "Lineare Lenkung"
@@ -198,6 +225,7 @@ _version: 2
   ru: "Линейное рулевое управление"
   uk: "Лінійне кермування"
   pl: "Liniowe sterowanie"
+  es: "Dirección lineal"
 "Force feedback the other way":
   nl: "Force feedback andersom"
   de: "Force Feedback umgekehrt"
@@ -205,6 +233,7 @@ _version: 2
   ru: "Обратная связь в другую сторону"
   uk: "Віддача в інший бік"
   pl: "Force feedback odwrotnie"
+  es: "Force feedback invertido"
 "Mouse sensitivity (1: as in OMSI 2)":
   nl: "Muisgevoeligheid (1: zoals in OMSI 2)"
   de: "Mausempfindlichkeit (1: wie in OMSI 2)"
@@ -212,6 +241,7 @@ _version: 2
   ru: "Чувствительность мыши (1: как в OMSI 2)"
   uk: "Чутливість миші (1: як в OMSI 2)"
   pl: "Czułość myszy (1: jak w OMSI 2)"
+  es: "Sensibilidad del ratón (1: como en OMSI 2)"
 "Look round with the right stick":
   nl: "Rondkijken met de rechterstick"
   de: "Mit dem rechten Stick umsehen"
@@ -219,6 +249,7 @@ _version: 2
   ru: "Осматриваться правым стиком"
   uk: "Роззиратися правим стиком"
   pl: "Rozglądanie się prawą gałką"
+  es: "Mirar alrededor con el stick derecho"
 "Field of view (degrees; 0: the bus's cameras)":
   nl: "Blikveld (graden; 0: de camera's van de bus)"
   de: "Sichtfeld (Grad; 0: die Kameras des Busses)"
@@ -226,6 +257,7 @@ _version: 2
   ru: "Поле зрения (градусы; 0: камеры автобуса)"
   uk: "Поле зору (градуси; 0: камери автобуса)"
   pl: "Pole widzenia (stopnie; 0: kamery autobusu)"
+  es: "Campo de visión (grados; 0: las cámaras del autobús)"
 "Collisions with objects":
   nl: "Botsingen met objecten"
   de: "Kollisionen mit Objekten"
@@ -233,6 +265,7 @@ _version: 2
   ru: "Столкновения с объектами"
   uk: "Зіткнення з об’єктами"
   pl: "Kolizje z obiektami"
+  es: "Colisiones con objetos"
 "Collisions with vehicles":
   nl: "Botsingen met voertuigen"
   de: "Kollisionen mit Fahrzeugen"
@@ -240,6 +273,7 @@ _version: 2
   ru: "Столкновения с транспортом"
   uk: "Зіткнення з транспортом"
   pl: "Kolizje z pojazdami"
+  es: "Colisiones con vehículos"
 "Boarding":
   nl: "Instappen"
   de: "Einsteigen"
@@ -247,6 +281,7 @@ _version: 2
   ru: "Посадка"
   uk: "Посадка"
   pl: "Wsiadanie"
+  es: "Subida de pasajeros"
 "Passengers pay at the driver":
   nl: "Reizigers betalen bij de chauffeur"
   de: "Fahrgäste zahlen beim Fahrer"
@@ -254,6 +289,7 @@ _version: 2
   ru: "Пассажиры платят водителю"
   uk: "Пасажири платять водієві"
   pl: "Pasażerowie płacą u kierowcy"
+  es: "Los pasajeros pagan al conductor"
 "Passengers walk in":
   nl: "Reizigers lopen door"
   de: "Fahrgäste gehen durch"
@@ -261,6 +297,7 @@ _version: 2
   ru: "Пассажиры проходят сразу"
   uk: "Пасажири проходять одразу"
   pl: "Pasażerowie wchodzą od razu"
+  es: "Los pasajeros suben sin pagar al conductor"
 "Passengers pay the exact fare":
   nl: "Reizigers betalen gepast"
   de: "Fahrgäste zahlen passend"
@@ -268,6 +305,7 @@ _version: 2
   ru: "Пассажиры платят без сдачи"
   uk: "Пасажири платять без решти"
   pl: "Pasażerowie płacą odliczoną kwotą"
+  es: "Los pasajeros pagan el importe exacto"
 "Passengers mind bad driving":
   nl: "Reizigers letten op slecht rijden"
   de: "Fahrgäste stören sich an schlechtem Fahren"
@@ -275,6 +313,7 @@ _version: 2
   ru: "Пассажиры замечают плохое вождение"
   uk: "Пасажири помічають погане водіння"
   pl: "Pasażerowie zwracają uwagę na złą jazdę"
+  es: "A los pasajeros les molesta la mala conducción"
 "Simple":
   nl: "Eenvoudig"
   de: "Einfach"
@@ -282,6 +321,7 @@ _version: 2
   ru: "Простые"
   uk: "Прості"
   pl: "Proste"
+  es: "Simple"
 "Automatic":
   nl: "Automatisch"
   de: "Automatisch"
@@ -289,6 +329,7 @@ _version: 2
   ru: "Автоматически"
   uk: "Автоматично"
   pl: "Automatycznie"
+  es: "Automático"
 "Both mirrors":
   nl: "Beide spiegels"
   de: "Beide Spiegel"
@@ -296,6 +337,7 @@ _version: 2
   ru: "Оба зеркала"
   uk: "Обидва дзеркала"
   pl: "Oba lusterka"
+  es: "Ambos retrovisores"
 "Cloud quality":
   nl: "Kwaliteit van de wolken"
   de: "Wolkenqualität"
@@ -303,6 +345,7 @@ _version: 2
   ru: "Качество облаков"
   uk: "Якість хмар"
   pl: "Jakość chmur"
+  es: "Calidad de las nubes"
 "Compressed textures kept on the graphics card":
   nl: "Gecomprimeerde texturen op de videokaart houden"
   de: "Komprimierte Texturen auf der Grafikkarte behalten"
@@ -310,6 +353,7 @@ _version: 2
   ru: "Хранить сжатые текстуры на видеокарте"
   uk: "Зберігати стиснені текстури на відеокарті"
   pl: "Skompresowane tekstury na karcie graficznej"
+  es: "Mantener las texturas comprimidas en la tarjeta gráfica"
 "Controllers switched off":
   nl: "Uitgeschakelde controllers"
   de: "Abgeschaltete Controller"
@@ -317,6 +361,7 @@ _version: 2
   ru: "Отключённые контроллеры"
   uk: "Вимкнені контролери"
   pl: "Wyłączone kontrolery"
+  es: "Mandos desactivados"
 "Enhanced graphics (physically based)":
   nl: "Verbeterde graphics (fysiek gebaseerd)"
   de: "Verbesserte Grafik (physikalisch basiert)"
@@ -324,6 +369,7 @@ _version: 2
   ru: "Улучшенная графика (физически корректная)"
   uk: "Покращена графіка (фізично коректна)"
   pl: "Ulepszona grafika (oparta na fizyce)"
+  es: "Gráficos mejorados (basados en la física)"
 "Glow of LED displays (0: off)":
   nl: "Gloed van ledschermen (0: uit)"
   de: "Leuchten der LED-Anzeigen (0: aus)"
@@ -331,6 +377,7 @@ _version: 2
   ru: "Свечение LED-табло (0: выкл.)"
   uk: "Світіння LED-табло (0: вимк.)"
   pl: "Poświata wyświetlaczy LED (0: wył.)"
+  es: "Brillo de los indicadores LED (0: desactivado)"
 "Graphics mode":
   nl: "Grafische modus"
   de: "Grafikmodus"
@@ -338,6 +385,7 @@ _version: 2
   ru: "Графический режим"
   uk: "Графічний режим"
   pl: "Tryb grafiki"
+  es: "Modo gráfico"
 "Head sway":
   nl: "Hoofdbeweging"
   de: "Kopfbewegung"
@@ -345,6 +393,7 @@ _version: 2
   ru: "Покачивание головы"
   uk: "Похитування голови"
   pl: "Kołysanie głowy"
+  es: "Balanceo de la cabeza"
 "High, Low or Off":
   nl: "High, Low of Off"
   de: "High, Low oder Off"
@@ -352,6 +401,7 @@ _version: 2
   ru: "High, Low или Off"
   uk: "High, Low або Off"
   pl: "High, Low lub Off"
+  es: "High, Low u Off"
 "High, Medium or Low":
   nl: "High, Medium of Low"
   de: "High, Medium oder Low"
@@ -359,6 +409,7 @@ _version: 2
   ru: "High, Medium или Low"
   uk: "High, Medium або Low"
   pl: "High, Medium lub Low"
+  es: "High, Medium o Low"
 "Hold the cursor while the mouse steers":
   nl: "Cursor vasthouden terwijl de muis stuurt"
   de: "Mauszeiger festhalten, während die Maus lenkt"
@@ -366,6 +417,7 @@ _version: 2
   ru: "Удерживать курсор при рулении мышью"
   uk: "Утримувати курсор під час кермування мишею"
   pl: "Przytrzymuj kursor podczas sterowania myszą"
+  es: "Retener el cursor mientras el ratón dirige"
 "Menus grow with large windows":
   nl: "Menu's groeien mee met grote vensters"
   de: "Menüs wachsen mit großen Fenstern"
@@ -373,6 +425,7 @@ _version: 2
   ru: "Меню растут вместе с большими окнами"
   uk: "Меню збільшуються з великими вікнами"
   pl: "Menu rosną wraz z dużymi oknami"
+  es: "Los menús crecen con las ventanas grandes"
 "Mirror panels":
   nl: "Spiegelpanelen"
   de: "Spiegelfelder"
@@ -380,6 +433,7 @@ _version: 2
   ru: "Панели зеркал"
   uk: "Панелі дзеркал"
   pl: "Panele lusterek"
+  es: "Paneles de retrovisores"
 "Mirror panels drawn every frame":
   nl: "Spiegelpanelen elk beeld tekenen"
   de: "Spiegelfelder in jedem Bild zeichnen"
@@ -387,6 +441,7 @@ _version: 2
   ru: "Панели зеркал в каждом кадре"
   uk: "Панелі дзеркал у кожному кадрі"
   pl: "Panele lusterek w każdej klatce"
+  es: "Dibujar los paneles de retrovisores en cada fotograma"
 "Mirror refresh":
   nl: "Verversing van de spiegels"
   de: "Spiegelaktualisierung"
@@ -394,6 +449,7 @@ _version: 2
   ru: "Обновление зеркал"
   uk: "Оновлення дзеркал"
   pl: "Odświeżanie lusterek"
+  es: "Actualización de los retrovisores"
 "Mirror size (0: no mirrors)":
   nl: "Grootte van de spiegels (0: geen spiegels)"
   de: "Spiegelgröße (0: keine Spiegel)"
@@ -401,6 +457,7 @@ _version: 2
   ru: "Размер зеркал (0: без зеркал)"
   uk: "Розмір дзеркал (0: без дзеркал)"
   pl: "Rozmiar lusterek (0: bez lusterek)"
+  es: "Tamaño de los retrovisores (0: sin retrovisores)"
 "Notes in the top left corner":
   nl: "Notities linksboven"
   de: "Hinweise oben links"
@@ -408,6 +465,7 @@ _version: 2
   ru: "Заметки в левом верхнем углу"
   uk: "Нотатки у верхньому лівому куті"
   pl: "Notatki w lewym górnym rogu"
+  es: "Avisos en la esquina superior izquierda"
 "Old steering (the wheel stays where you leave it)":
   nl: "Oude besturing (het stuur blijft staan waar je het laat)"
   de: "Alte Lenkung (das Lenkrad bleibt, wo du es lässt)"
@@ -415,6 +473,7 @@ _version: 2
   ru: "Старое рулевое управление (руль остаётся где оставлен)"
   uk: "Старе кермування (кермо лишається там, де залишили)"
   pl: "Stare sterowanie (kierownica zostaje tam, gdzie ją zostawisz)"
+  es: "Dirección antigua (el volante se queda donde lo dejas)"
 "Other vehicles on the navigator":
   nl: "Andere voertuigen op de navigator"
   de: "Andere Fahrzeuge im Navigator"
@@ -422,6 +481,7 @@ _version: 2
   ru: "Другие машины на навигаторе"
   uk: "Інші машини на навігаторі"
   pl: "Inne pojazdy na nawigatorze"
+  es: "Otros vehículos en el navegador"
 "Pace of the head sway":
   nl: "Tempo van de hoofdbeweging"
   de: "Tempo der Kopfbewegung"
@@ -429,6 +489,7 @@ _version: 2
   ru: "Темп покачивания головы"
   uk: "Темп похитування голови"
   pl: "Tempo kołysania głowy"
+  es: "Ritmo del balanceo de la cabeza"
 "Passengers and traffic":
   nl: "Reizigers en verkeer"
   de: "Fahrgäste und Verkehr"
@@ -436,6 +497,7 @@ _version: 2
   ru: "Пассажиры и движение"
   uk: "Пасажири та рух"
   pl: "Pasażerowie i ruch"
+  es: "Pasajeros y tráfico"
 "Puddles":
   nl: "Plassen"
   de: "Pfützen"
@@ -443,6 +505,7 @@ _version: 2
   ru: "Лужи"
   uk: "Калюжі"
   pl: "Kałuże"
+  es: "Charcos"
 "Radio through a small speaker":
   nl: "Radio door een klein speakertje"
   de: "Radio über einen kleinen Lautsprecher"
@@ -450,6 +513,7 @@ _version: 2
   ru: "Радио через маленький динамик"
   uk: "Радіо через маленький динамік"
   pl: "Radio przez mały głośnik"
+  es: "Radio por un altavoz pequeño"
 "Radio: FM hiss":
   nl: "Radio: FM-ruis"
   de: "Radio: UKW-Rauschen"
@@ -457,6 +521,7 @@ _version: 2
   ru: "Радио: шум FM"
   uk: "Радіо: шум FM"
   pl: "Radio: szum FM"
+  es: "Radio: ruido de FM"
 "Radio: signal dropouts":
   nl: "Radio: signaaluitval"
   de: "Radio: Signalaussetzer"
@@ -464,6 +529,7 @@ _version: 2
   ru: "Радио: пропадание сигнала"
   uk: "Радіо: пропадання сигналу"
   pl: "Radio: zaniki sygnału"
+  es: "Radio: cortes de señal"
 "Reflections (0: off)":
   nl: "Reflecties (0: uit)"
   de: "Spiegelungen (0: aus)"
@@ -471,6 +537,7 @@ _version: 2
   ru: "Отражения (0: выкл.)"
   uk: "Відбиття (0: вимк.)"
   pl: "Odbicia (0: wył.)"
+  es: "Reflejos (0: desactivados)"
 "Render scale":
   nl: "Renderschaal"
   de: "Renderskalierung"
@@ -478,6 +545,7 @@ _version: 2
   ru: "Масштаб рендеринга"
   uk: "Масштаб рендерингу"
   pl: "Skala renderowania"
+  es: "Escala de renderizado"
 "Shadow map size":
   nl: "Grootte van de schaduwkaart"
   de: "Größe der Schattenkarte"
@@ -485,6 +553,7 @@ _version: 2
   ru: "Размер карты теней"
   uk: "Розмір карти тіней"
   pl: "Rozmiar mapy cieni"
+  es: "Tamaño del mapa de sombras"
 "Shadow meshes and blobs under vehicles":
   nl: "Schaduwvormen en vlekken onder voertuigen"
   de: "Schattennetze und -flecken unter Fahrzeugen"
@@ -492,6 +561,7 @@ _version: 2
   ru: "Теневые сетки и пятна под машинами"
   uk: "Тіньові сітки та плями під машинами"
   pl: "Siatki i plamy cieni pod pojazdami"
+  es: "Mallas y manchas de sombra bajo los vehículos"
 "Sharpness of LED displays (mip level)":
   nl: "Scherpte van ledschermen (mipniveau)"
   de: "Schärfe der LED-Anzeigen (Mip-Stufe)"
@@ -499,6 +569,7 @@ _version: 2
   ru: "Чёткость LED-табло (уровень MIP)"
   uk: "Чіткість LED-табло (рівень MIP)"
   pl: "Ostrość wyświetlaczy LED (poziom mip)"
+  es: "Nitidez de los indicadores LED (nivel de mip)"
 "Sound and radio":
   nl: "Geluid en radio"
   de: "Ton und Radio"
@@ -506,6 +577,7 @@ _version: 2
   ru: "Звук и радио"
   uk: "Звук і радіо"
   pl: "Dźwięk i radio"
+  es: "Sonido y radio"
 "The left mirror":
   nl: "De linkerspiegel"
   de: "Der linke Spiegel"
@@ -513,6 +585,7 @@ _version: 2
   ru: "Левое зеркало"
   uk: "Ліве дзеркало"
   pl: "Lewe lusterko"
+  es: "El retrovisor izquierdo"
 "The right mirror":
   nl: "De rechterspiegel"
   de: "Der rechte Spiegel"
@@ -520,6 +593,7 @@ _version: 2
   ru: "Правое зеркало"
   uk: "Праве дзеркало"
   pl: "Prawe lusterko"
+  es: "El retrovisor derecho"
 "Timetable buses wait only at timed stops":
   nl: "Dienstregelingbussen wachten alleen bij tijdhaltes"
   de: "Fahrplanbusse warten nur an Zeithaltestellen"
@@ -527,6 +601,7 @@ _version: 2
   ru: "Автобусы по расписанию ждут только на контрольных остановках"
   uk: "Автобуси за розкладом чекають лише на контрольних зупинках"
   pl: "Autobusy rozkładowe czekają tylko na przystankach z czasem"
+  es: "Los autobuses con horario solo esperan en las paradas de regulación"
 "Video memory (MB; default: nine tenths of the card's)":
   nl: "Videogeheugen (MB; standaard: negen tiende van de kaart)"
   de: "Videospeicher (MB; Standard: neun Zehntel der Karte)"
@@ -534,6 +609,7 @@ _version: 2
   ru: "Видеопамять (МБ; по умолчанию девять десятых карты)"
   uk: "Відеопам’ять (МБ; типово дев’ять десятих карти)"
   pl: "Pamięć wideo (MB; domyślnie dziewięć dziesiątych karty)"
+  es: "Memoria de vídeo (MB; por defecto: nueve décimas partes de la de la tarjeta)"
 "View distance (metres)":
   nl: "Zichtafstand (meter)"
   de: "Sichtweite (Meter)"
@@ -541,6 +617,7 @@ _version: 2
   ru: "Дальность обзора (метры)"
   uk: "Дальність огляду (метри)"
   pl: "Zasięg widzenia (metry)"
+  es: "Distancia de visión (metros)"
 "Volume":
   nl: "Volume"
   de: "Lautstärke"
@@ -548,6 +625,7 @@ _version: 2
   ru: "Громкость"
   uk: "Гучність"
   pl: "Głośność"
+  es: "Volumen"
 "Water, land and rail on the navigator":
   nl: "Water, land en spoor op de navigator"
   de: "Wasser, Land und Gleise im Navigator"
@@ -555,6 +633,7 @@ _version: 2
   ru: "Вода, суша и рельсы на навигаторе"
   uk: "Вода, суходіл і колії на навігаторі"
   pl: "Woda, ląd i tory na nawigatorze"
+  es: "Agua, tierra y vías en el navegador"
 "Wheel turn for the bus's full lock (degrees; 0: the whole wheel)":
   nl: "Stuuruitslag voor de volle draai van de bus (graden; 0: het hele stuur)"
   de: "Lenkradeinschlag für den vollen Einschlag des Busses (Grad; 0: das ganze Lenkrad)"
@@ -562,6 +641,7 @@ _version: 2
   ru: "Поворот руля до полного поворота автобуса (градусы; 0: весь руль)"
   uk: "Поворот керма до повного повороту автобуса (градуси; 0: усе кермо)"
   pl: "Obrót kierownicy do pełnego skrętu autobusu (stopnie; 0: cała kierownica)"
+  es: "Giro del volante para el giro máximo del autobús (grados; 0: el volante entero)"
 "a rate, as openOMSI's Settings page writes it":
   nl: "een frequentie, zoals de instellingenpagina van openOMSI hem schrijft"
   de: "eine Rate, wie die Einstellungsseite von openOMSI sie schreibt"
@@ -569,6 +649,7 @@ _version: 2
   ru: "частота, как её пишет страница настроек openOMSI"
   uk: "частота, як її пише сторінка налаштувань openOMSI"
   pl: "częstotliwość, tak jak zapisuje ją strona ustawień openOMSI"
+  es: "una frecuencia, tal como la escribe la página de ajustes de openOMSI"
 "a size, as openOMSI's Settings page writes it":
   nl: "een grootte, zoals de instellingenpagina van openOMSI hem schrijft"
   de: "eine Größe, wie die Einstellungsseite von openOMSI sie schreibt"
@@ -576,6 +657,7 @@ _version: 2
   ru: "размер, как его пишет страница настроек openOMSI"
   uk: "розмір, як його пише сторінка налаштувань openOMSI"
   pl: "rozmiar, tak jak zapisuje go strona ustawień openOMSI"
+  es: "un tamaño, tal como lo escribe la página de ajustes de openOMSI"
 "as openOMSI's Settings page writes it":
   nl: "zoals de instellingenpagina van openOMSI hem schrijft"
   de: "wie die Einstellungsseite von openOMSI ihn schreibt"
@@ -583,6 +665,7 @@ _version: 2
   ru: "как его пишет страница настроек openOMSI"
   uk: "як його пише сторінка налаштувань openOMSI"
   pl: "tak jak zapisuje go strona ustawień openOMSI"
+  es: "tal como lo escribe la página de ajustes de openOMSI"
 "auto, or a fraction such as 0.75":
   nl: "auto, of een breuk zoals 0.75"
   de: "auto oder ein Bruch wie 0.75"
@@ -590,6 +673,7 @@ _version: 2
   ru: "auto или дробь, например 0.75"
   uk: "auto або дріб, наприклад 0.75"
   pl: "auto lub ułamek, np. 0.75"
+  es: "auto, o una fracción como 0.75"
 "their names, separated by |":
   nl: "hun namen, gescheiden door |"
   de: "ihre Namen, getrennt durch |"
@@ -597,3 +681,4 @@ _version: 2
   ru: "их имена через |"
   uk: "їхні назви через |"
   pl: "ich nazwy oddzielone |"
+  es: "sus nombres, separados por |"

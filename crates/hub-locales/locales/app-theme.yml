@@ -5,6 +5,7 @@ _version: 2
   fr: "Passer au mode sombre"
   nl: "Overschakelen naar de donkere modus"
   pl: "Przełącz na tryb ciemny"
+  es: "Cambiar al modo oscuro"
   ru: "Переключиться на тёмный режим"
   uk: "Перемкнутися на темний режим"
 "Switch to the light mode":
@@ -12,5 +13,6 @@ _version: 2
   fr: "Passer au mode clair"
   nl: "Overschakelen naar de lichte modus"
   pl: "Przełącz na tryb jasny"
+  es: "Cambiar al modo claro"
   ru: "Переключиться на светлый режим"
   uk: "Перемкнутися на світлий режим"

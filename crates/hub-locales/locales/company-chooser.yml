@@ -5,6 +5,7 @@ _version: 2
   fr: "Comment veux-tu jouer ?"
   nl: "Hoe wil je spelen?"
   pl: "Jak chcesz grać?"
+  es: "¿Cómo quieres jugar?"
   ru: "Как вы хотите играть?"
   uk: "Як ви хочете грати?"
 "Your own company in a time of its own, or one run together with others.":
@@ -12,6 +13,7 @@ _version: 2
   fr: "Ta propre entreprise dans son propre temps, ou une entreprise menée avec d'autres."
   nl: "Je eigen bedrijf in een eigen tijd, of een bedrijf dat je samen met anderen runt."
   pl: "Własna firma we własnym czasie albo firma prowadzona razem z innymi."
+  es: "Tu propia empresa con su propio tiempo, o una que lleváis entre varios."
   ru: "Собственная компания в своём времени или компания, которой вы управляете вместе с другими."
   uk: "Власна компанія у своєму часі або компанія, якою ви керуєте разом з іншими."
 "Singleplayer":
@@ -19,6 +21,7 @@ _version: 2
   fr: "Solo"
   nl: "Singleplayer"
   pl: "Gra jednoosobowa"
+  es: "Un jugador"
   ru: "Одиночная игра"
   uk: "Одиночна гра"
 "Found and run your own companies, in a time of their own that runs while you play.":
@@ -26,6 +29,7 @@ _version: 2
   fr: "Fonde et dirige tes propres entreprises, dans un temps à elles qui avance pendant que tu joues."
   nl: "Richt je eigen bedrijven op en run ze, in een eigen tijd die doorloopt terwijl je speelt."
   pl: "Zakładaj i prowadź własne firmy, we własnym czasie, który płynie podczas gry."
+  es: "Funda y dirige tus propias empresas, con su propio tiempo que avanza mientras juegas."
   ru: "Основывайте свои компании и управляйте ими в их собственном времени, которое идёт, пока вы играете."
   uk: "Засновуйте власні компанії та керуйте ними у їхньому власному часі, що йде, поки ви граєте."
 "Run a company together on a server: an owner, planners and drivers who take its duties.":
@@ -33,6 +37,7 @@ _version: 2
   fr: "Dirigez ensemble une entreprise sur un serveur : un propriétaire, des planificateurs et des conducteurs qui prennent ses services."
   nl: "Run samen een bedrijf op een server: een eigenaar, planners en chauffeurs die de diensten rijden."
   pl: "Prowadźcie razem firmę na serwerze: właściciel, planiści i kierowcy, którzy biorą jej służby."
+  es: "Dirige una empresa en equipo en un servidor: un propietario, planificadores y conductores que hacen sus servicios."
   ru: "Управляйте компанией вместе на сервере: владелец, планировщики и водители, которые берут её смены."
   uk: "Керуйте компанією разом на сервері: власник, планувальники та водії, які беруть її зміни."
 "Coming later":
@@ -40,6 +45,7 @@ _version: 2
   fr: "Bientôt"
   nl: "Komt later"
   pl: "Wkrótce"
+  es: "Próximamente"
   ru: "Скоро"
   uk: "Згодом"
 "Multiplayer companies come in a later version.":
@@ -47,6 +53,7 @@ _version: 2
   fr: "Les entreprises multijoueur arrivent dans une version ultérieure."
   nl: "Multiplayer-bedrijven komen in een latere versie."
   pl: "Firmy wieloosobowe pojawią się w późniejszej wersji."
+  es: "Las empresas multijugador llegarán en una versión posterior."
   ru: "Многопользовательские компании появятся в следующей версии."
   uk: "Багатокористувацькі компанії з'являться в наступній версії."
 "1 company on this computer":
@@ -54,6 +61,7 @@ _version: 2
   fr: "1 entreprise sur cet ordinateur"
   nl: "1 bedrijf op deze computer"
   pl: "1 firma na tym komputerze"
+  es: "1 empresa en este ordenador"
   ru: "1 компания на этом компьютере"
   uk: "1 компанія на цьому комп'ютері"
 "%{n} companies on this computer":
@@ -61,6 +69,7 @@ _version: 2
   fr: "%{n} entreprises sur cet ordinateur"
   nl: "%{n} bedrijven op deze computer"
   pl: "Firmy na tym komputerze: %{n}"
+  es: "%{n} empresas en este ordenador"
   ru: "Компаний на этом компьютере: %{n}"
   uk: "Компаній на цьому комп'ютері: %{n}"
 "Play mode":
@@ -68,6 +77,7 @@ _version: 2
   fr: "Mode de jeu"
   nl: "Speelmodus"
   pl: "Tryb gry"
+  es: "Modo de juego"
   ru: "Режим игры"
   uk: "Режим гри"
 "Found your first company":
@@ -75,6 +85,7 @@ _version: 2
   fr: "Fonde ta première entreprise"
   nl: "Richt je eerste bedrijf op"
   pl: "Załóż swoją pierwszą firmę"
+  es: "Funda tu primera empresa"
   ru: "Основайте свою первую компанию"
   uk: "Заснуйте свою першу компанію"
 "You have no company yet: give it a name, colours, a map and a depot.":
@@ -82,6 +93,7 @@ _version: 2
   fr: "Tu n'as pas encore d'entreprise : donne-lui un nom, des couleurs, une carte et un dépôt."
   nl: "Je hebt nog geen bedrijf: geef het een naam, kleuren, een kaart en een remise."
   pl: "Nie masz jeszcze firmy: nadaj jej nazwę, kolory, mapę i zajezdnię."
+  es: "Aún no tienes empresa: dale un nombre, colores, un mapa y una cochera."
   ru: "У вас ещё нет компании: дайте ей название, цвета, карту и депо."
   uk: "У вас ще немає компанії: дайте їй назву, кольори, карту та депо."
 "Choose the company to open, or found a new one.":
@@ -89,6 +101,7 @@ _version: 2
   fr: "Choisis l'entreprise à ouvrir, ou fonde-en une nouvelle."
   nl: "Kies het bedrijf dat je wilt openen, of richt een nieuw bedrijf op."
   pl: "Wybierz firmę do otwarcia albo załóż nową."
+  es: "Elige la empresa que quieres abrir o funda una nueva."
   ru: "Выберите компанию, которую хотите открыть, или основайте новую."
   uk: "Виберіть компанію, яку хочете відкрити, або заснуйте нову."
 "New company":
@@ -96,6 +109,7 @@ _version: 2
   fr: "Nouvelle entreprise"
   nl: "Nieuw bedrijf"
   pl: "Nowa firma"
+  es: "Nueva empresa"
   ru: "Новая компания"
   uk: "Нова компанія"
 "Its name, colours, map and depot":
@@ -103,6 +117,7 @@ _version: 2
   fr: "Son nom, ses couleurs, sa carte et son dépôt"
   nl: "Naam, kleuren, kaart en remise"
   pl: "Nazwa, kolory, mapa i zajezdnia"
+  es: "Su nombre, colores, mapa y cochera"
   ru: "Название, цвета, карта и депо"
   uk: "Назва, кольори, карта та депо"
 "Other company":
@@ -110,6 +125,7 @@ _version: 2
   fr: "Autre entreprise"
   nl: "Ander bedrijf"
   pl: "Inna firma"
+  es: "Otra empresa"
   ru: "Другая компания"
   uk: "Інша компанія"
 "Delete this company":
@@ -117,5 +133,6 @@ _version: 2
   fr: "Supprimer cette entreprise"
   nl: "Dit bedrijf verwijderen"
   pl: "Usuń tę firmę"
+  es: "Eliminar esta empresa"
   ru: "Удалить эту компанию"
   uk: "Видалити цю компанію"

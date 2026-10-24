@@ -161,7 +161,7 @@ pub(crate) mod tests {
     }
 
     /// Every text of the tab "Controllers" (and of the openOMSI tab beside it), and openOMSI's
-    /// settings round the controllers, in the six languages (crates/hub-locales/locales/
+    /// settings round the controllers, in the seven languages (crates/hub-locales/locales/
     /// controllers.yml).
     #[test]
     fn every_controllers_text_is_translated() {
@@ -181,7 +181,7 @@ pub(crate) mod tests {
         let names = ["Xbox", "PlayStation 4", "PlayStation 5", "Steam, Steam with Proton, or retail"];
         let texts: Vec<String> = texts.into_iter().filter(|t| !names.contains(&t.as_str())).collect();
         let mut missing = Vec::new();
-        for lang in ["nl", "de", "fr", "ru", "uk", "pl"] {
+        for lang in ["nl", "de", "fr", "ru", "uk", "pl", "es"] {
             let table = hub_locales::texts(lang);
             for t in &texts {
                 match table.get(t) {

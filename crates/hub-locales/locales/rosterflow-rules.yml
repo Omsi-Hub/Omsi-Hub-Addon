@@ -6,6 +6,7 @@ _version: 2
   fr: "%{n} services n'ont pas de conducteur dans le roulement : leurs courses sont supprimées jusqu'à ce qu'ils en aient un (onglet Roulement, Remplir le roulement)."
   nl: "%{n} diensten hebben geen chauffeur in het rooster: hun ritten vallen uit tot ze er een krijgen (tabblad Rooster, Rooster vullen)."
   pl: "%{n} służb nie ma kierowcy w grafiku: ich kursy przepadają, dopóki go nie dostaną (karta Grafik, Wypełnij grafik)."
+  es: "%{n} servicios no tienen conductor en el cuadrante: sus viajes se suprimen hasta que tengan uno (pestaña Cuadrante, Completar el cuadrante)."
   ru: "У %{n} смен нет водителя в графике: их рейсы отменяются, пока он не будет назначен (вкладка «График», «Заполнить график»)."
   uk: "%{n} змін не мають водія в графіку: їхні рейси скасовуються, доки його не призначено (вкладка «Графік», «Заповнити графік»)."
 "RosterFlow had changes of this day that were not saved: the day ran the saved blocks and duties. Save them in RosterFlow (or discard them) so the day runs what it shows.":
@@ -13,6 +14,7 @@ _version: 2
   fr: "RosterFlow avait des modifications de ce jour non enregistrées : la journée a suivi les roulements et services enregistrés. Enregistrez-les (ou abandonnez-les) dans RosterFlow pour que la journée suive ce qu'il affiche."
   nl: "RosterFlow had wijzigingen voor deze dag die niet waren opgeslagen: de dag reed de opgeslagen omlopen en diensten. Sla ze op in RosterFlow (of verwerp ze), zodat de dag rijdt wat het laat zien."
   pl: "RosterFlow miał niezapisane zmiany tego dnia: dzień przebiegł według zapisanych obiegów i służb. Zapisz je w RosterFlow (lub odrzuć), aby dzień przebiegał tak, jak pokazuje."
+  es: "RosterFlow tenía cambios de este día sin guardar: el día ha usado los recorridos y servicios guardados. Guárdalos en RosterFlow (o descártalos) para que el día use lo que muestra."
   ru: "В RosterFlow были несохранённые изменения этого дня: день прошёл по сохранённым оборотам и сменам. Сохраните их в RosterFlow (или отмените), чтобы день шёл так, как он показывает."
   uk: "У RosterFlow були незбережені зміни цього дня: день пройшов за збереженими оборотами та змінами. Збережіть їх у RosterFlow (або скасуйте), щоб день ішов так, як він показує."
 "RosterFlow not saved":
@@ -20,6 +22,7 @@ _version: 2
   fr: "RosterFlow non enregistré"
   nl: "RosterFlow niet opgeslagen"
   pl: "RosterFlow niezapisany"
+  es: "RosterFlow sin guardar"
   ru: "RosterFlow не сохранён"
   uk: "RosterFlow не збережено"
 "Click one to see it in the planning":
@@ -27,6 +30,7 @@ _version: 2
   fr: "Cliquez sur une ligne pour la voir dans la planification"
   nl: "Klik er een aan om hem in de planning te zien"
   pl: "Kliknij, aby zobaczyć w planowaniu"
+  es: "Haz clic en uno para verlo en la planificación"
   ru: "Нажмите, чтобы увидеть в планировании"
   uk: "Натисніть, щоб побачити в плануванні"
 "and %{n} more":
@@ -34,6 +38,7 @@ _version: 2
   fr: "et %{n} de plus"
   nl: "en nog %{n}"
   pl: "i %{n} więcej"
+  es: "y %{n} más"
   ru: "и ещё %{n}"
   uk: "і ще %{n}"
 "none planned":
@@ -41,6 +46,7 @@ _version: 2
   fr: "aucun prévu"
   nl: "niet gepland"
   pl: "nic nie zaplanowano"
+  es: "ninguno planificado"
   ru: "не запланирован"
   uk: "не заплановано"
 "Line %{n}  ·  %{from}–%{to}  ·  %{k} trips":
@@ -48,6 +54,7 @@ _version: 2
   fr: "Ligne %{n}  ·  %{from}–%{to}  ·  %{k} courses"
   nl: "Lijn %{n}  ·  %{from}–%{to}  ·  %{k} ritten"
   pl: "Linia %{n}  ·  %{from}–%{to}  ·  kursy: %{k}"
+  es: "Línea %{n}  ·  %{from}–%{to}  ·  %{k} viajes"
   ru: "Линия %{n}  ·  %{from}–%{to}  ·  рейсов: %{k}"
   uk: "Лінія %{n}  ·  %{from}–%{to}  ·  рейсів: %{k}"
 "Line %{n}, vehicle %{block}  ·  %{from}–%{to}  ·  %{k} trips":
@@ -55,6 +62,7 @@ _version: 2
   fr: "Ligne %{n}, véhicule %{block}  ·  %{from}–%{to}  ·  %{k} courses"
   nl: "Lijn %{n}, omloop %{block}  ·  %{from}–%{to}  ·  %{k} ritten"
   pl: "Linia %{n}, obieg %{block}  ·  %{from}–%{to}  ·  kursy: %{k}"
+  es: "Línea %{n}, vehículo %{block}  ·  %{from}–%{to}  ·  %{k} viajes"
   ru: "Линия %{n}, оборот %{block}  ·  %{from}–%{to}  ·  рейсов: %{k}"
   uk: "Лінія %{n}, оборот %{block}  ·  %{from}–%{to}  ·  рейсів: %{k}"
 "The bus broke down on the way":
@@ -62,6 +70,7 @@ _version: 2
   fr: "Le bus est tombé en panne en route"
   nl: "De bus viel onderweg uit"
   pl: "Autobus zepsuł się w trasie"
+  es: "El autobús sufrió una avería por el camino"
   ru: "Автобус сломался в пути"
   uk: "Автобус зламався в дорозі"
 "The driver came late":
@@ -69,6 +78,7 @@ _version: 2
   fr: "Le conducteur est arrivé en retard"
   nl: "De chauffeur kwam te laat"
   pl: "Kierowca się spóźnił"
+  es: "El conductor llegó tarde"
   ru: "Водитель опоздал"
   uk: "Водій запізнився"
 "On no bus: the trips wait on RosterFlow's stack":
@@ -76,5 +86,6 @@ _version: 2
   fr: "Sur aucun bus : les courses attendent sur la pile de RosterFlow"
   nl: "Op geen bus: de ritten wachten op de stapel van RosterFlow"
   pl: "Bez autobusu: kursy czekają na stosie RosterFlow"
+  es: "En ningún autobús: los viajes esperan en la pila de RosterFlow"
   ru: "Без автобуса: рейсы ждут в стопке RosterFlow"
   uk: "Без автобуса: рейси чекають у стосі RosterFlow"

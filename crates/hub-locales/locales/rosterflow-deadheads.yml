@@ -10,6 +10,7 @@ _version: 2
   ru: "Сколько времени автобус едет порожним от одного места до другого и какое расстояние: между двумя пунктами смены или к одному и от него."
   uk: "Скільки часу автобус їде порожнім від одного місця до іншого і яку відстань: між двома пунктами зміни або до одного й від нього."
   pl: "Jak długo autobus jedzie pusty z jednego miejsca do drugiego i jak daleko: między dwoma punktami zmiany albo do jednego i z niego."
+  es: "Cuánto tarda un autobús en ir en vacío de un lugar a otro, y qué distancia: entre dos puntos de relevo, o hacia uno y desde uno."
 "A deadhead where nothing is set":
   en: "A deadhead where nothing is set"
   nl: "Een leegrit waar niets is ingesteld"
@@ -18,6 +19,7 @@ _version: 2
   ru: "Порожний рейс, где ничего не задано"
   uk: "Порожній рейс, де нічого не задано"
   pl: "Przejazd techniczny, gdzie nic nie ustawiono"
+  es: "Un viaje en vacío donde no hay nada configurado"
 "Its kilometres where nothing is set":
   en: "Its kilometres where nothing is set"
   nl: "De kilometers waar niets is ingesteld"
@@ -26,6 +28,7 @@ _version: 2
   ru: "Его километры, где ничего не задано"
   uk: "Його кілометри, де нічого не задано"
   pl: "Jego kilometry, gdzie nic nie ustawiono"
+  es: "Sus kilómetros donde no hay nada configurado"
 "Minutes":
   en: "Minutes"
   nl: "Minuten"
@@ -34,6 +37,7 @@ _version: 2
   ru: "Минуты"
   uk: "Хвилини"
   pl: "Minuty"
+  es: "Minutos"
 "to or from it":
   en: "to or from it"
   nl: "ernaartoe of ervandaan"
@@ -42,6 +46,7 @@ _version: 2
   ru: "к нему или от него"
   uk: "до нього або від нього"
   pl: "do niego lub z niego"
+  es: "hacia allí o desde allí"
 "The relief points show once the timetable is read.":
   en: "The relief points show once the timetable is read."
   nl: "De aflospunten verschijnen zodra de dienstregeling is gelezen."
@@ -50,6 +55,7 @@ _version: 2
   ru: "Пункты смены появятся, когда расписание будет прочитано."
   uk: "Пункти зміни з'являться, коли розклад буде прочитано."
   pl: "Punkty zmiany pojawią się po wczytaniu rozkładu."
+  es: "Los puntos de relevo aparecen en cuanto se lee el horario."
 "An empty field takes the way back's, else the relief points' own, else the line's quickest trip between the two, else the default. A deadhead whose time is set here is no longer estimated (no orange dot).":
   en: "An empty field takes the way back's, else the relief points' own, else the line's quickest trip between the two, else the default. A deadhead whose time is set here is no longer estimated (no orange dot)."
   nl: "Een leeg veld neemt die van de weg terug, anders die van de aflospunten zelf, anders de snelste rit van de lijn tussen de twee, anders de standaard. Een leegrit waarvan de tijd hier is ingesteld, is niet langer geschat (geen oranje stip)."
@@ -58,6 +64,7 @@ _version: 2
   ru: "Пустое поле берёт значение обратного пути, иначе собственное значение пунктов смены, иначе самый быстрый рейс линии между ними, иначе значение по умолчанию. Порожний рейс, время которого задано здесь, больше не оценивается (без оранжевой точки)."
   uk: "Порожнє поле бере значення зворотного шляху, інакше власне значення пунктів зміни, інакше найшвидший рейс лінії між ними, інакше значення за замовчуванням. Порожній рейс, час якого задано тут, більше не оцінюється (без помаранчевої крапки)."
   pl: "Puste pole bierze wartość drogi powrotnej, w przeciwnym razie własną punktów zmiany, w przeciwnym razie najszybszy kurs linii między nimi, w przeciwnym razie domyślną. Przejazd techniczny, którego czas ustawiono tutaj, nie jest już szacowany (bez pomarańczowej kropki)."
+  es: "Un campo vacío toma el del camino de vuelta, si no el de los propios puntos de relevo, si no el viaje más rápido de la línea entre los dos, y si no el valor por defecto. Un viaje en vacío cuyo tiempo se fija aquí ya no se estima (sin punto naranja)."
 "No deadhead's time is estimated now.":
   en: "No deadhead's time is estimated now."
   nl: "Van geen enkele leegrit wordt de tijd nu geschat."
@@ -66,6 +73,7 @@ _version: 2
   ru: "Сейчас время ни одного порожнего рейса не оценивается."
   uk: "Зараз час жодного порожнього рейсу не оцінюється."
   pl: "Teraz czas żadnego przejazdu technicznego nie jest szacowany."
+  es: "Ahora no se estima el tiempo de ningún viaje en vacío."
 "%{n} vehicles have a deadhead whose time is estimated now.":
   en: "%{n} vehicles have a deadhead whose time is estimated now."
   nl: "%{n} voertuigen hebben nu een leegrit met een geschatte tijd."
@@ -74,3 +82,4 @@ _version: 2
   ru: "Машин с порожним рейсом, время которого оценено: %{n}."
   uk: "Машин із порожнім рейсом, час якого оцінено: %{n}."
   pl: "Pojazdy z przejazdem technicznym o szacowanym czasie: %{n}."
+  es: "Ahora %{n} vehículos tienen un viaje en vacío con tiempo estimado."

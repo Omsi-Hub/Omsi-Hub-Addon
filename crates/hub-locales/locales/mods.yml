@@ -8,6 +8,7 @@ _version: 2
   ru: "Моды"
   uk: "Моди"
   pl: "Mody"
+  es: "Mods"
 "Mods in openOMSI":
   nl: "Mods in openOMSI"
   de: "Mods in openOMSI"
@@ -15,6 +16,7 @@ _version: 2
   ru: "Моды в openOMSI"
   uk: "Моди в openOMSI"
   pl: "Mody w openOMSI"
+  es: "Mods en openOMSI"
 "A bus, a map, scenery or a whole OMSI folder - as a .zip or .7z, or a folder (a .rar: unpack it first). openOMSI's own installer puts it into its content folder; the original OMSI 2 folder is never written to.":
   nl: "Een bus, een kaart, scenery of een hele OMSI-map - als .zip of .7z, of als map (een .rar: eerst uitpakken). De installer van openOMSI zelf zet hem in zijn contentmap; in de originele OMSI 2-map wordt nooit geschreven."
   de: "Ein Bus, eine Karte, Szenerie oder ein ganzer OMSI-Ordner - als .zip oder .7z oder als Ordner (eine .rar: zuerst entpacken). openOMSIs eigener Installer legt ihn in seinen Content-Ordner; in den originalen OMSI-2-Ordner wird nie geschrieben."
@@ -22,6 +24,7 @@ _version: 2
   ru: "Автобус, карта, декорации или целая папка OMSI - в виде .zip или .7z либо папки (.rar сначала распакуйте). Собственный установщик openOMSI помещает его в свою папку контента; в исходную папку OMSI 2 ничего не записывается."
   uk: "Автобус, карта, декорації або ціла тека OMSI - у вигляді .zip чи .7z або теки (.rar спершу розпакуйте). Власний інсталятор openOMSI розміщує його у своїй теці контенту; в оригінальну теку OMSI 2 нічого не записується."
   pl: "Autobus, mapa, sceneria albo cały folder OMSI - jako .zip lub .7z albo jako folder (plik .rar najpierw rozpakuj). Własny instalator openOMSI umieszcza go w swoim folderze zawartości; do oryginalnego folderu OMSI 2 nic nie jest zapisywane."
+  es: "Un autobús, un mapa, escenario o toda una carpeta de OMSI, como .zip o .7z, o una carpeta (un .rar: descomprímelo primero). El propio instalador de openOMSI lo pone en su carpeta de contenido; en la carpeta original de OMSI 2 nunca se escribe."
 "Install a mod file":
   nl: "Modbestand installeren"
   de: "Mod-Datei installieren"
@@ -29,6 +32,7 @@ _version: 2
   ru: "Установить файл мода"
   uk: "Встановити файл мода"
   pl: "Zainstaluj plik moda"
+  es: "Instalar un archivo de mod"
 "Install a mod folder":
   nl: "Modmap installeren"
   de: "Mod-Ordner installieren"
@@ -36,6 +40,7 @@ _version: 2
   ru: "Установить папку мода"
   uk: "Встановити теку мода"
   pl: "Zainstaluj folder moda"
+  es: "Instalar una carpeta de mod"
 "Content folder":
   nl: "Contentmap"
   de: "Content-Ordner"
@@ -43,6 +48,7 @@ _version: 2
   ru: "Папка контента"
   uk: "Тека контенту"
   pl: "Folder zawartości"
+  es: "Carpeta de contenido"
 "Choose a mod":
   nl: "Kies een mod"
   de: "Wähle einen Mod"
@@ -50,6 +56,7 @@ _version: 2
   ru: "Выберите мод"
   uk: "Виберіть мод"
   pl: "Wybierz moda"
+  es: "Elige un mod"
 "Choose a mod folder":
   nl: "Kies een modmap"
   de: "Wähle einen Mod-Ordner"
@@ -57,6 +64,7 @@ _version: 2
   ru: "Выберите папку мода"
   uk: "Виберіть теку мода"
   pl: "Wybierz folder moda"
+  es: "Elige una carpeta de mod"
 "Mod archives":
   nl: "Modarchieven"
   de: "Mod-Archive"
@@ -64,6 +72,7 @@ _version: 2
   ru: "Архивы модов"
   uk: "Архіви модів"
   pl: "Archiwa modów"
+  es: "Archivos de mods"
 "Clear the finished installs":
   nl: "Afgeronde installaties wissen"
   de: "Abgeschlossene Installationen entfernen"
@@ -71,6 +80,7 @@ _version: 2
   ru: "Убрать завершённые установки"
   uk: "Прибрати завершені встановлення"
   pl: "Wyczyść zakończone instalacje"
+  es: "Quitar las instalaciones terminadas"
 "Search the mods":
   nl: "Mods zoeken"
   de: "Mods durchsuchen"
@@ -78,6 +88,7 @@ _version: 2
   ru: "Поиск модов"
   uk: "Пошук модів"
   pl: "Szukaj modów"
+  es: "Buscar en los mods"
 "Close openOMSI to switch mods off or on, or to delete them.":
   nl: "Sluit openOMSI om mods uit of aan te zetten of te verwijderen."
   de: "Schließe openOMSI, um Mods aus- oder einzuschalten oder zu löschen."
@@ -85,6 +96,7 @@ _version: 2
   ru: "Закройте openOMSI, чтобы включать, выключать или удалять моды."
   uk: "Закрийте openOMSI, щоб вмикати, вимикати чи видаляти моди."
   pl: "Zamknij openOMSI, aby włączać, wyłączać lub usuwać mody."
+  es: "Cierra openOMSI para activar o desactivar mods, o para eliminarlos."
 "No mod matches.":
   nl: "Geen mod gevonden."
   de: "Kein Mod passt."
@@ -92,6 +104,7 @@ _version: 2
   ru: "Подходящих модов нет."
   uk: "Відповідних модів немає."
   pl: "Żaden mod nie pasuje."
+  es: "Ningún mod coincide."
 "No mods are installed yet.":
   nl: "Er zijn nog geen mods geïnstalleerd."
   de: "Es sind noch keine Mods installiert."
@@ -99,6 +112,7 @@ _version: 2
   ru: "Моды ещё не установлены."
   uk: "Моди ще не встановлено."
   pl: "Nie zainstalowano jeszcze żadnych modów."
+  es: "Aún no hay mods instalados."
 "Archive":
   nl: "Archief"
   de: "Archiv"
@@ -106,6 +120,7 @@ _version: 2
   ru: "Архив"
   uk: "Архів"
   pl: "Archiwum"
+  es: "Archivo comprimido"
 "Waiting":
   nl: "Wacht"
   de: "Wartet"
@@ -113,6 +128,7 @@ _version: 2
   ru: "Ожидание"
   uk: "Очікування"
   pl: "Oczekuje"
+  es: "En espera"
 "Looking at the mod":
   nl: "Mod bekijken"
   de: "Mod wird geprüft"
@@ -120,6 +136,7 @@ _version: 2
   ru: "Просмотр мода"
   uk: "Перегляд мода"
   pl: "Sprawdzanie moda"
+  es: "Examinando el mod"
 "Checking the free space":
   nl: "Vrije ruimte controleren"
   de: "Freier Speicher wird geprüft"
@@ -127,6 +144,7 @@ _version: 2
   ru: "Проверка свободного места"
   uk: "Перевірка вільного місця"
   pl: "Sprawdzanie wolnego miejsca"
+  es: "Comprobando el espacio libre"
 "Unpacking":
   nl: "Uitpakken"
   de: "Entpacken"
@@ -134,6 +152,7 @@ _version: 2
   ru: "Распаковка"
   uk: "Розпакування"
   pl: "Rozpakowywanie"
+  es: "Descomprimiendo"
 "Copying":
   nl: "Kopiëren"
   de: "Kopieren"
@@ -141,6 +160,7 @@ _version: 2
   ru: "Копирование"
   uk: "Копіювання"
   pl: "Kopiowanie"
+  es: "Copiando"
 "Putting it in place":
   nl: "Op zijn plek zetten"
   de: "Wird an seinen Platz gelegt"
@@ -148,6 +168,7 @@ _version: 2
   ru: "Размещение"
   uk: "Розміщення"
   pl: "Umieszczanie na miejscu"
+  es: "Colocándolo en su sitio"
 "Installed":
   nl: "Geïnstalleerd"
   de: "Installiert"
@@ -155,6 +176,7 @@ _version: 2
   ru: "Установлено"
   uk: "Встановлено"
   pl: "Zainstalowano"
+  es: "Instalado"
 "Failed":
   nl: "Mislukt"
   de: "Fehlgeschlagen"
@@ -162,6 +184,7 @@ _version: 2
   ru: "Не удалось"
   uk: "Не вдалося"
   pl: "Nie powiodło się"
+  es: "Error"
 "Cancelled":
   nl: "Geannuleerd"
   de: "Abgebrochen"
@@ -169,6 +192,7 @@ _version: 2
   ru: "Отменено"
   uk: "Скасовано"
   pl: "Anulowano"
+  es: "Cancelado"
 "Put in place: %{what}":
   nl: "Op zijn plek gezet: %{what}"
   de: "An seinen Platz gelegt: %{what}"
@@ -176,6 +200,7 @@ _version: 2
   ru: "Размещено: %{what}"
   uk: "Розміщено: %{what}"
   pl: "Umieszczono: %{what}"
+  es: "Colocado en su sitio: %{what}"
 "Kept aside until their bus is installed: %{what}":
   nl: "Apart gezet tot hun bus is geïnstalleerd: %{what}"
   de: "Beiseitegelegt, bis ihr Bus installiert ist: %{what}"
@@ -183,6 +208,7 @@ _version: 2
   ru: "Отложено до установки их автобуса: %{what}"
   uk: "Відкладено до встановлення їхнього автобуса: %{what}"
   pl: "Odłożono do czasu instalacji ich autobusu: %{what}"
+  es: "Apartado hasta que se instale su autobús: %{what}"
 "A mod is a folder, or a .zip or .7z file":
   nl: "Een mod is een map, of een .zip- of .7z-bestand"
   de: "Ein Mod ist ein Ordner oder eine .zip- oder .7z-Datei"
@@ -190,6 +216,7 @@ _version: 2
   ru: "Мод - это папка или файл .zip или .7z"
   uk: "Мод - це тека або файл .zip чи .7z"
   pl: "Mod to folder albo plik .zip lub .7z"
+  es: "Un mod es una carpeta, o un archivo .zip o .7z"
 "A .rar cannot be installed here: unpack it first (with 7-Zip or WinRAR) and install the folder, or use a .zip or .7z":
   nl: "Een .rar kan hier niet worden geïnstalleerd: pak hem eerst uit (met 7-Zip of WinRAR) en installeer de map, of gebruik een .zip of .7z"
   de: "Eine .rar kann hier nicht installiert werden: Entpacke sie zuerst (mit 7-Zip oder WinRAR) und installiere den Ordner, oder nimm eine .zip oder .7z"
@@ -197,6 +224,7 @@ _version: 2
   ru: "Файл .rar здесь установить нельзя: сначала распакуйте его (7-Zip или WinRAR) и установите папку либо используйте .zip или .7z"
   uk: "Файл .rar тут встановити не можна: спершу розпакуйте його (7-Zip або WinRAR) і встановіть теку або використайте .zip чи .7z"
   pl: "Pliku .rar nie można tu zainstalować: najpierw go rozpakuj (7-Zip lub WinRAR) i zainstaluj folder albo użyj pliku .zip lub .7z"
+  es: "Aquí no se puede instalar un .rar: descomprímelo primero (con 7-Zip o WinRAR) e instala la carpeta, o usa un .zip o .7z"
 "This mod is being installed already":
   nl: "Deze mod wordt al geïnstalleerd"
   de: "Dieser Mod wird bereits installiert"
@@ -204,6 +232,7 @@ _version: 2
   ru: "Этот мод уже устанавливается"
   uk: "Цей мод уже встановлюється"
   pl: "Ten mod jest już instalowany"
+  es: "Este mod ya se está instalando"
 "Close openOMSI first: the game has the mods' files open":
   nl: "Sluit eerst openOMSI: het spel heeft de bestanden van de mods open"
   de: "Schließe zuerst openOMSI: Das Spiel hat die Dateien der Mods geöffnet"
@@ -211,6 +240,7 @@ _version: 2
   ru: "Сначала закройте openOMSI: игра держит файлы модов открытыми"
   uk: "Спершу закрийте openOMSI: гра тримає файли модів відкритими"
   pl: "Najpierw zamknij openOMSI: gra ma otwarte pliki modów"
+  es: "Cierra openOMSI primero: el juego tiene abiertos los archivos de los mods"
 "%{name} is installed":
   nl: "%{name} is geïnstalleerd"
   de: "%{name} ist installiert"
@@ -218,6 +248,7 @@ _version: 2
   ru: "%{name} установлен"
   uk: "%{name} встановлено"
   pl: "Zainstalowano %{name}"
+  es: "%{name} está instalado"
 "%{name} could not be installed":
   nl: "%{name} kon niet worden geïnstalleerd"
   de: "%{name} konnte nicht installiert werden"
@@ -225,3 +256,4 @@ _version: 2
   ru: "Не удалось установить %{name}"
   uk: "Не вдалося встановити %{name}"
   pl: "Nie udało się zainstalować %{name}"
+  es: "No se ha podido instalar %{name}"

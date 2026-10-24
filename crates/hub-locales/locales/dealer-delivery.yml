@@ -5,6 +5,7 @@ _version: 2
   fr: "Livraison express"
   nl: "Snelle levering"
   pl: "Szybka dostawa"
+  es: "Entrega rápida"
   ru: "Быстрая доставка"
   uk: "Швидка доставка"
 "Regular: a working week":
@@ -12,6 +13,7 @@ _version: 2
   fr: "Normale : une semaine ouvrée"
   nl: "Gewoon: een werkweek"
   pl: "Zwykła: tydzień roboczy"
+  es: "Normal: una semana laborable"
   ru: "Обычная: рабочая неделя"
   uk: "Звичайна: робочий тиждень"
 "Quick: at once (+%{amount} a bus)":
@@ -19,6 +21,7 @@ _version: 2
   fr: "Express : tout de suite (+%{amount} par bus)"
   nl: "Snel: direct (+%{amount} per bus)"
   pl: "Szybka: od razu (+%{amount} za autobus)"
+  es: "Rápida: al momento (+%{amount} por autobús)"
   ru: "Быстрая: сразу (+%{amount} за автобус)"
   uk: "Швидка: одразу (+%{amount} за автобус)"
 "thrown in":
@@ -26,6 +29,7 @@ _version: 2
   fr: "offerte"
   nl: "inbegrepen"
   pl: "w cenie"
+  es: "incluida"
   ru: "в подарок"
   uk: "у подарунок"
 "Quick delivery a bus":
@@ -33,6 +37,7 @@ _version: 2
   fr: "Livraison express par bus"
   nl: "Snelle levering per bus"
   pl: "Szybka dostawa za autobus"
+  es: "Entrega rápida por autobús"
   ru: "Быстрая доставка за автобус"
   uk: "Швидка доставка за автобус"
 "in %{n} days, or at once with a quick delivery":
@@ -40,5 +45,6 @@ _version: 2
   fr: "dans %{n} jours, ou tout de suite en livraison express"
   nl: "over %{n} dagen, of direct met snelle levering"
   pl: "za %{n} dni albo od razu z szybką dostawą"
+  es: "en %{n} días, o al momento con entrega rápida"
   ru: "через %{n} дн., или сразу с быстрой доставкой"
   uk: "через %{n} дн., або одразу зі швидкою доставкою"

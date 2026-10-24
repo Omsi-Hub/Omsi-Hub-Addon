@@ -6,6 +6,7 @@ _version: 2
   fr: "Le trajet dure"
   nl: "Rit duurt"
   pl: "Kurs trwa"
+  es: "Duración del viaje"
   ru: "Рейс длится"
   uk: "Рейс триває"
 "Leaves as the outbound does":
@@ -13,6 +14,7 @@ _version: 2
   fr: "Part comme l'aller"
   nl: "Vertrekt zoals de heenrit"
   pl: "Odjeżdża jak kurs tam"
+  es: "Sale como la ida"
   ru: "Отправляется как прямой рейс"
   uk: "Відправляється як прямий рейс"
 "The return leaves at the outbound's times. Switch this off to give it departures of its own.":
@@ -20,6 +22,7 @@ _version: 2
   fr: "Le retour part aux horaires de l'aller. Désactive ceci pour lui donner ses propres départs."
   nl: "De terugrit vertrekt op de tijden van de heenrit. Zet dit uit om hem eigen vertrektijden te geven."
   pl: "Kurs powrotny odjeżdża o godzinach kursu tam. Wyłącz to, aby nadać mu własne odjazdy."
+  es: "La vuelta sale a las horas de la ida. Desactívalo para darle salidas propias."
   ru: "Обратный рейс отправляется по времени прямого. Выключите это, чтобы задать ему свои отправления."
   uk: "Зворотний рейс відправляється за часом прямого. Вимкніть це, щоб задати йому власні відправлення."
 "The return has departures of its own: choose Return above to change them.":
@@ -27,6 +30,7 @@ _version: 2
   fr: "Le retour a ses propres départs : choisis Retour ci-dessus pour les modifier."
   nl: "De terugrit heeft eigen vertrektijden: kies hierboven Terug om ze te wijzigen."
   pl: "Kurs powrotny ma własne odjazdy: wybierz powyżej Powrót, aby je zmienić."
+  es: "La vuelta tiene salidas propias: elige Vuelta arriba para cambiarlas."
   ru: "У обратного рейса свои отправления: выберите выше «Обратно», чтобы их изменить."
   uk: "Зворотний рейс має власні відправлення: виберіть вище «Назад», щоб їх змінити."
 "Close the loop: back to the first stop":
@@ -34,6 +38,7 @@ _version: 2
   fr: "Fermer la boucle : retour au premier arrêt"
   nl: "Lus sluiten: terug naar de eerste halte"
   pl: "Zamknij pętlę: powrót do pierwszego przystanku"
+  es: "Cerrar el circuito: volver a la primera parada"
   ru: "Замкнуть кольцо: обратно к первой остановке"
   uk: "Замкнути кільце: назад до першої зупинки"
 "Open the loop":
@@ -41,6 +46,7 @@ _version: 2
   fr: "Ouvrir la boucle"
   nl: "Lus openen"
   pl: "Otwórz pętlę"
+  es: "Abrir el circuito"
   ru: "Разомкнуть кольцо"
   uk: "Розімкнути кільце"
 "Loop: %{name}":
@@ -48,6 +54,7 @@ _version: 2
   fr: "Boucle : %{name}"
   nl: "Lus: %{name}"
   pl: "Pętla: %{name}"
+  es: "Circuito: %{name}"
   ru: "Кольцо: %{name}"
   uk: "Кільце: %{name}"
 "The loop is open: the line ends at its last stop again":
@@ -55,6 +62,7 @@ _version: 2
   fr: "La boucle est ouverte : la ligne se termine de nouveau à son dernier arrêt"
   nl: "De lus is open: de lijn eindigt weer bij haar laatste halte"
   pl: "Pętla jest otwarta: linia znów kończy się na ostatnim przystanku"
+  es: "El circuito está abierto: la línea vuelve a terminar en su última parada"
   ru: "Кольцо разомкнуто: линия снова заканчивается на последней остановке"
   uk: "Кільце розімкнуто: лінія знову закінчується на останній зупинці"
 "The loop is closed: the bus drives back to its first stop and starts again there":
@@ -62,6 +70,7 @@ _version: 2
   fr: "La boucle est fermée : le bus revient à son premier arrêt et y repart"
   nl: "De lus is gesloten: de bus rijdt terug naar de eerste halte en begint daar opnieuw"
   pl: "Pętla jest zamknięta: autobus wraca do pierwszego przystanku i tam zaczyna od nowa"
+  es: "El circuito está cerrado: el autobús vuelve a su primera parada y empieza de nuevo allí"
   ru: "Кольцо замкнуто: автобус возвращается к первой остановке и начинает оттуда снова"
   uk: "Кільце замкнуто: автобус повертається до першої зупинки й починає звідти знову"
 # The Timetable page (a map's lines, their tours and trips): its buttons and what it says.
@@ -72,6 +81,7 @@ _version: 2
   ru: "Сбросить расписание"
   uk: "Скинути розклад"
   pl: "Zresetuj rozkład"
+  es: "Restablecer horario"
 "Press again to reset":
   nl: "Druk nogmaals om te resetten"
   de: "Zum Zurücksetzen noch einmal drücken"
@@ -79,6 +89,7 @@ _version: 2
   ru: "Нажмите ещё раз для сброса"
   uk: "Натисніть ще раз, щоб скинути"
   pl: "Naciśnij ponownie, by zresetować"
+  es: "Pulsa otra vez para restablecer"
 "This map has no timetable (no TTData lines).":
   nl: "Deze kaart heeft geen dienstregeling (geen TTData-lijnen)."
   de: "Diese Karte hat keinen Fahrplan (keine TTData-Linien)."
@@ -86,6 +97,7 @@ _version: 2
   ru: "У этой карты нет расписания (нет линий TTData)."
   uk: "Ця мапа не має розкладу (немає ліній TTData)."
   pl: "Ta mapa nie ma rozkładu (brak linii TTData)."
+  es: "Este mapa no tiene horario (no hay líneas TTData)."
 "New line (name)":
   nl: "Nieuwe lijn (naam)"
   de: "Neue Linie (Name)"
@@ -93,6 +105,7 @@ _version: 2
   ru: "Новая линия (название)"
   uk: "Нова лінія (назва)"
   pl: "Nowa linia (nazwa)"
+  es: "Nueva línea (nombre)"
 "New tour":
   nl: "Nieuwe omloop"
   de: "Neuer Umlauf"
@@ -100,6 +113,7 @@ _version: 2
   ru: "Новый выход"
   uk: "Новий оборот"
   pl: "Nowa brygada"
+  es: "Nuevo recorrido"
 "Copy +min":
   nl: "Kopie +min"
   de: "Kopie +Min."
@@ -107,6 +121,7 @@ _version: 2
   ru: "Копия +мин"
   uk: "Копія +хв"
   pl: "Kopia +min"
+  es: "Copiar +min"
 "until h:mm":
   nl: "tot h:mm"
   de: "bis h:mm"
@@ -114,6 +129,7 @@ _version: 2
   ru: "до h:mm"
   uk: "до h:mm"
   pl: "do h:mm"
+  es: "hasta h:mm"
 "Repeat":
   nl: "Herhalen"
   de: "Wiederholen"
@@ -121,6 +137,7 @@ _version: 2
   ru: "Повторить"
   uk: "Повторити"
   pl: "Powtórz"
+  es: "Repetir"
 "Delete tour":
   nl: "Omloop verwijderen"
   de: "Umlauf löschen"
@@ -128,6 +145,7 @@ _version: 2
   ru: "Удалить выход"
   uk: "Видалити оборот"
   pl: "Usuń brygadę"
+  es: "Borrar recorrido"
 "Add trip":
   nl: "Rit toevoegen"
   de: "Fahrt hinzufügen"
@@ -135,6 +153,7 @@ _version: 2
   ru: "Добавить рейс"
   uk: "Додати рейс"
   pl: "Dodaj kurs"
+  es: "Añadir viaje"
 "Remove this trip":
   nl: "Deze rit verwijderen"
   de: "Diese Fahrt entfernen"
@@ -142,6 +161,7 @@ _version: 2
   ru: "Убрать этот рейс"
   uk: "Прибрати цей рейс"
   pl: "Usuń ten kurs"
+  es: "Quitar este viaje"
 "A departure is not a time (h:mm).":
   nl: "Een vertrek is geen tijd (h:mm)."
   de: "Eine Abfahrt ist keine Uhrzeit (h:mm)."
@@ -149,6 +169,7 @@ _version: 2
   ru: "Одно из отправлений — не время (h:mm)."
   uk: "Одне з відправлень — не час (h:mm)."
   pl: "Jeden z odjazdów nie jest godziną (h:mm)."
+  es: "Una salida no es una hora (h:mm)."
 "Type the minutes the copy runs later (negative for earlier).":
   nl: "Typ hoeveel minuten later de kopie rijdt (negatief voor eerder)."
   de: "Gib ein, wie viele Minuten später die Kopie fährt (negativ für früher)."
@@ -156,6 +177,7 @@ _version: 2
   ru: "Введите, на сколько минут позже идёт копия (отрицательное число — раньше)."
   uk: "Введіть, на скільки хвилин пізніше йде копія (від'ємне число — раніше)."
   pl: "Wpisz, o ile minut później jedzie kopia (liczba ujemna — wcześniej)."
+  es: "Escribe los minutos que la copia circula más tarde (negativo para antes)."
 "Type the minutes between the tours (1 or more) in the field above":
   nl: "Typ de minuten tussen de omlopen (1 of meer) in het veld erboven"
   de: "Gib die Minuten zwischen den Umläufen (1 oder mehr) im Feld darüber ein"
@@ -163,6 +185,7 @@ _version: 2
   ru: "Введите минуты между выходами (1 или больше) в поле выше"
   uk: "Введіть хвилини між оборотами (1 або більше) в полі вище"
   pl: "Wpisz minuty między brygadami (1 lub więcej) w polu powyżej"
+  es: "Escribe los minutos entre los recorridos (1 o más) en el campo de arriba"
 "Type the last departure as h:mm":
   nl: "Typ het laatste vertrek als h:mm"
   de: "Gib die letzte Abfahrt als h:mm ein"
@@ -170,6 +193,7 @@ _version: 2
   ru: "Введите последнее отправление как h:mm"
   uk: "Введіть останнє відправлення як h:mm"
   pl: "Wpisz ostatni odjazd jako h:mm"
+  es: "Escribe la última salida como h:mm"
 "The line has no tour yet: make one with New tour":
   nl: "De lijn heeft nog geen omloop: maak er een met Nieuwe omloop"
   de: "Die Linie hat noch keinen Umlauf: lege einen mit Neuer Umlauf an"
@@ -177,6 +201,7 @@ _version: 2
   ru: "У линии ещё нет выхода: создайте его кнопкой «Новый выход»"
   uk: "У лінії ще немає обороту: створіть його кнопкою «Новий оборот»"
   pl: "Linia nie ma jeszcze brygady: utwórz ją przyciskiem Nowa brygada"
+  es: "La línea aún no tiene recorridos: crea uno con Nuevo recorrido"
 "Type the minutes to shift by":
   nl: "Typ met hoeveel minuten te verschuiven"
   de: "Gib die Minuten ein, um die verschoben wird"
@@ -184,6 +209,7 @@ _version: 2
   ru: "Введите, на сколько минут сдвинуть"
   uk: "Введіть, на скільки хвилин зсунути"
   pl: "Wpisz, o ile minut przesunąć"
+  es: "Escribe los minutos que desplazar"
 "openOMSI's content folder is not there: choose the openOMSI folder in the Settings":
   nl: "De contentmap van openOMSI is er niet: kies de openOMSI-map in de Instellingen"
   de: "Der Inhaltsordner von openOMSI ist nicht da: wähle den openOMSI-Ordner in den Einstellungen"
@@ -191,6 +217,7 @@ _version: 2
   ru: "Папки контента openOMSI нет: выберите папку openOMSI в настройках"
   uk: "Теки контенту openOMSI немає: виберіть теку openOMSI в налаштуваннях"
   pl: "Brak folderu zawartości openOMSI: wybierz folder openOMSI w Ustawieniach"
+  es: "La carpeta de contenido de openOMSI no está: elige la carpeta de openOMSI en los Ajustes"
 "The tour has no trips yet: give it one with Add trip":
   nl: "De omloop heeft nog geen ritten: geef hem er een met Rit toevoegen"
   de: "Der Umlauf hat noch keine Fahrten: gib ihm eine mit Fahrt hinzufügen"
@@ -198,6 +225,7 @@ _version: 2
   ru: "У выхода ещё нет рейсов: добавьте рейс кнопкой «Добавить рейс»"
   uk: "В обороту ще немає рейсів: додайте рейс кнопкою «Додати рейс»"
   pl: "Brygada nie ma jeszcze kursów: dodaj kurs przyciskiem Dodaj kurs"
+  es: "El recorrido aún no tiene viajes: dale uno con Añadir viaje"
 "The timetable of %{map} is the map's own again (the edited copy was removed)":
   nl: "De dienstregeling van %{map} is weer die van de kaart (de bewerkte kopie is verwijderd)"
   de: "Der Fahrplan von %{map} ist wieder der der Karte (die bearbeitete Kopie wurde entfernt)"
@@ -205,6 +233,7 @@ _version: 2
   ru: "Расписание %{map} снова как на карте (изменённая копия удалена)"
   uk: "Розклад %{map} знову як на мапі (змінену копію видалено)"
   pl: "Rozkład %{map} jest znów rozkładem mapy (edytowana kopia została usunięta)"
+  es: "El horario de %{map} vuelve a ser el propio del mapa (se ha quitado la copia editada)"
 "%{n} line(s) of %{map} put back as they were":
   nl: "%{n} lijn(en) van %{map} teruggezet zoals ze waren"
   de: "%{n} Linie(n) von %{map} wiederhergestellt, wie sie waren"
@@ -212,6 +241,7 @@ _version: 2
   ru: "%{n} лини(й) %{map} возвращено как было"
   uk: "%{n} лінію(ї) %{map} повернуто як було"
   pl: "%{n} lini(e) mapy %{map} przywrócono do stanu sprzed zmian"
+  es: "%{n} línea(s) de %{map} restaurada(s) como estaban"
 "The timetable of this map has not been changed here":
   nl: "De dienstregeling van deze kaart is hier niet gewijzigd"
   de: "Der Fahrplan dieser Karte wurde hier nicht geändert"
@@ -219,3 +249,4 @@ _version: 2
   ru: "Расписание этой карты здесь не изменялось"
   uk: "Розклад цієї мапи тут не змінювався"
   pl: "Rozkład tej mapy nie był tu zmieniany"
+  es: "El horario de este mapa no se ha cambiado aquí"

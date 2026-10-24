@@ -6,6 +6,7 @@ _version: 2
   fr: "Définissez les temps de parcours et les départs, enregistrez, puis Actualiser pour faire les bus et les services"
   nl: "Stel de rijtijden en vertrektijden in, sla op en kies dan Vernieuwen om de bussen en diensten te maken"
   pl: "Ustaw czasy przejazdu i odjazdy, zapisz, a potem Odśwież, aby utworzyć autobusy i służby"
+  es: "Fija los tiempos de recorrido y las salidas, guarda y luego pulsa Actualizar para crear los autobuses y servicios"
   ru: "Задайте время хода и отправления, сохраните, затем нажмите «Обновить», чтобы составить автобусы и смены"
   uk: "Задайте час руху й відправлення, збережіть, потім натисніть «Оновити», щоб скласти автобуси й зміни"
 "The timetable is made in RosterFlow's Timeplan after you confirm":
@@ -13,6 +14,7 @@ _version: 2
   fr: "L'horaire se fait dans le Plan horaire de RosterFlow une fois la ligne confirmée"
   nl: "De dienstregeling maak je na het bevestigen in het Dienstregelingsplan van RosterFlow"
   pl: "Rozkład powstaje w Planie rozkładu RosterFlow po zatwierdzeniu"
+  es: "El horario se hace en el Plan horario de RosterFlow después de confirmar"
   ru: "Расписание составляется в «Плане расписания» RosterFlow после подтверждения"
   uk: "Розклад складається в «Плані розкладу» RosterFlow після підтвердження"
 "The line's timetable is made in RosterFlow's Timeplan.":
@@ -20,6 +22,7 @@ _version: 2
   fr: "L'horaire de la ligne se fait dans le Plan horaire de RosterFlow."
   nl: "De dienstregeling van de lijn maak je in het Dienstregelingsplan van RosterFlow."
   pl: "Rozkład linii powstaje w Planie rozkładu RosterFlow."
+  es: "El horario de la línea se hace en el Plan horario de RosterFlow."
   ru: "Расписание линии составляется в «Плане расписания» RosterFlow."
   uk: "Розклад лінії складається в «Плані розкладу» RosterFlow."
 "Confirm the route here: the line runs no tour until its timetable is saved there.":
@@ -27,6 +30,7 @@ _version: 2
   fr: "Confirmez ici l'itinéraire : la ligne ne fait aucun service tant que son horaire n'y est pas enregistré."
   nl: "Bevestig hier de route: de lijn rijdt geen omloop tot haar dienstregeling daar is opgeslagen."
   pl: "Zatwierdź tutaj trasę: linia nie obsługuje żadnego kursu, dopóki jej rozkład nie zostanie tam zapisany."
+  es: "Confirma aquí la ruta: la línea no hace ningún recorrido hasta que su horario se guarde allí."
   ru: "Подтвердите здесь маршрут: линия не выполняет ни одного оборота, пока там не сохранено её расписание."
   uk: "Підтвердьте тут маршрут: лінія не виконує жодного обороту, доки там не збережено її розклад."
 "No timetable yet":
@@ -34,6 +38,7 @@ _version: 2
   fr: "Pas encore d'horaire"
   nl: "Nog geen dienstregeling"
   pl: "Jeszcze bez rozkładu"
+  es: "Aún sin horario"
   ru: "Расписания пока нет"
   uk: "Розкладу ще немає"
 "Open in the Timeplan":
@@ -41,6 +46,7 @@ _version: 2
   fr: "Ouvrir dans le Plan horaire"
   nl: "Openen in het Dienstregelingsplan"
   pl: "Otwórz w Planie rozkładu"
+  es: "Abrir en el Plan horario"
   ru: "Открыть в «Плане расписания»"
   uk: "Відкрити в «Плані розкладу»"
 "Save the line's changes first (or undo them): the Timeplan opens the line as it is saved.":
@@ -48,6 +54,7 @@ _version: 2
   fr: "Enregistrez d'abord les modifications de la ligne (ou annulez-les) : le Plan horaire ouvre la ligne telle qu'elle est enregistrée."
   nl: "Sla eerst de wijzigingen van de lijn op (of maak ze ongedaan): het Dienstregelingsplan opent de lijn zoals ze is opgeslagen."
   pl: "Najpierw zapisz zmiany linii (albo je cofnij): Plan rozkładu otwiera linię w zapisanej postaci."
+  es: "Guarda primero los cambios de la línea (o deshazlos): el Plan horario abre la línea tal como está guardada."
   ru: "Сначала сохраните изменения линии (или отмените их): «План расписания» открывает линию в сохранённом виде."
   uk: "Спершу збережіть зміни лінії (або скасуйте їх): «План розкладу» відкриває лінію в збереженому вигляді."
 "Estimated with a usual timetable: you make the line's own in RosterFlow's Timeplan":
@@ -55,6 +62,7 @@ _version: 2
   fr: "Estimé avec un horaire habituel : celui de la ligne se fait dans le Plan horaire de RosterFlow"
   nl: "Geschat met een gebruikelijke dienstregeling: die van de lijn zelf maak je in het Dienstregelingsplan van RosterFlow"
   pl: "Szacunek dla zwykłego rozkładu: właściwy rozkład linii tworzysz w Planie rozkładu RosterFlow"
+  es: "Estimado con un horario habitual: el horario propio de la línea lo haces en el Plan horario de RosterFlow"
   ru: "Оценка по обычному расписанию: собственное расписание линии составляется в «Плане расписания» RosterFlow"
   uk: "Оцінка за звичайним розкладом: власний розклад лінії складається в «Плані розкладу» RosterFlow"
 "Line %{n} is the company's now: %{amount} paid. Make its timetable in RosterFlow's Timeplan.":
@@ -62,6 +70,7 @@ _version: 2
   fr: "La ligne %{n} appartient maintenant à l'entreprise : %{amount} payés. Faites son horaire dans le Plan horaire de RosterFlow."
   nl: "Lijn %{n} is nu van het bedrijf: %{amount} betaald. Maak haar dienstregeling in het Dienstregelingsplan van RosterFlow."
   pl: "Linia %{n} należy teraz do firmy: zapłacono %{amount}. Utwórz jej rozkład w Planie rozkładu RosterFlow."
+  es: "La línea %{n} ya es de la empresa: %{amount} pagados. Haz su horario en el Plan horario de RosterFlow."
   ru: "Линия %{n} теперь принадлежит компании: оплачено %{amount}. Составьте её расписание в «Плане расписания» RosterFlow."
   uk: "Лінія %{n} тепер належить компанії: сплачено %{amount}. Складіть її розклад у «Плані розкладу» RosterFlow."
 "The line keeps the map's timetable: change it here if you like, save, then Refresh":
@@ -69,6 +78,7 @@ _version: 2
   fr: "La ligne garde l'horaire de la carte : modifiez-le ici si vous voulez, enregistrez, puis Actualiser"
   nl: "De lijn houdt de dienstregeling van de kaart: pas hem hier aan als je wilt, sla op en kies dan Vernieuwen"
   pl: "Linia zachowuje rozkład z mapy: zmień go tutaj, jeśli chcesz, zapisz, a potem Odśwież"
+  es: "La línea mantiene el horario del mapa: cámbialo aquí si quieres, guarda y luego pulsa Actualizar"
   ru: "Линия сохраняет расписание карты: измените его здесь, если хотите, сохраните, затем «Обновить»"
   uk: "Лінія зберігає розклад карти: змініть його тут, якщо хочете, збережіть, потім «Оновити»"
 "New line: draw its route in the line editor, then make its timetable here":
@@ -76,6 +86,7 @@ _version: 2
   fr: "Nouvelle ligne : tracez son itinéraire dans l'éditeur de lignes, puis faites son horaire ici"
   nl: "Nieuwe lijn: teken haar route in de lijneditor en maak dan hier haar dienstregeling"
   pl: "Nowa linia: narysuj jej trasę w edytorze linii, a potem utwórz tu jej rozkład"
+  es: "Línea nueva: dibuja su ruta en el editor de líneas y luego haz aquí su horario"
   ru: "Новая линия: проложите её маршрут в редакторе линий, затем составьте здесь её расписание"
   uk: "Нова лінія: прокладіть її маршрут у редакторі ліній, потім складіть тут її розклад"
 "Timetable: the line's running times and departures in RosterFlow's Timeplan":
@@ -83,6 +94,7 @@ _version: 2
   fr: "Horaire : les temps de parcours et les départs de la ligne dans le Plan horaire de RosterFlow"
   nl: "Dienstregeling: de rijtijden en vertrektijden van de lijn in het Dienstregelingsplan van RosterFlow"
   pl: "Rozkład: czasy przejazdu i odjazdy linii w Planie rozkładu RosterFlow"
+  es: "Horario: los tiempos de recorrido y las salidas de la línea en el Plan horario de RosterFlow"
   ru: "Расписание: время хода и отправления линии в «Плане расписания» RosterFlow"
   uk: "Розклад: час руху й відправлення лінії в «Плані розкладу» RosterFlow"
 "Edit the line in the line editor: its route and displays":
@@ -90,6 +102,7 @@ _version: 2
   fr: "Modifier la ligne dans l'éditeur de lignes : son itinéraire et ses girouettes"
   nl: "Bewerk de lijn in de lijneditor: haar route en displays"
   pl: "Edytuj linię w edytorze linii: jej trasę i wyświetlacze"
+  es: "Editar la línea en el editor de líneas: su ruta y sus indicadores"
   ru: "Изменить линию в редакторе линий: её маршрут и указатели"
   uk: "Змінити лінію в редакторі ліній: її маршрут і покажчики"
 "The line runs no tour until it has a timetable. Click to make it in RosterFlow's Timeplan.":
@@ -97,6 +110,7 @@ _version: 2
   fr: "La ligne ne fait aucun service tant qu'elle n'a pas d'horaire. Cliquez pour le faire dans le Plan horaire de RosterFlow."
   nl: "De lijn rijdt geen omloop tot ze een dienstregeling heeft. Klik om die te maken in het Dienstregelingsplan van RosterFlow."
   pl: "Linia nie obsługuje żadnego kursu, dopóki nie ma rozkładu. Kliknij, aby utworzyć go w Planie rozkładu RosterFlow."
+  es: "La línea no hace ningún recorrido hasta que tenga horario. Haz clic para crearlo en el Plan horario de RosterFlow."
   ru: "Линия не выполняет ни одного оборота, пока у неё нет расписания. Нажмите, чтобы составить его в «Плане расписания» RosterFlow."
   uk: "Лінія не виконує жодного обороту, доки в неї немає розкладу. Натисніть, щоб скласти його в «Плані розкладу» RosterFlow."
 "The line runs no tour until it has a timetable. Click to make it in the line editor.":
@@ -104,6 +118,7 @@ _version: 2
   fr: "La ligne ne fait aucun service tant qu'elle n'a pas d'horaire. Cliquez pour le faire dans l'éditeur de lignes."
   nl: "De lijn rijdt geen omloop tot ze een dienstregeling heeft. Klik om die te maken in de lijneditor."
   pl: "Linia nie obsługuje żadnego kursu, dopóki nie ma rozkładu. Kliknij, aby utworzyć go w edytorze linii."
+  es: "La línea no hace ningún recorrido hasta que tenga horario. Haz clic para crearlo en el editor de líneas."
   ru: "Линия не выполняет ни одного оборота, пока у неё нет расписания. Нажмите, чтобы составить его в редакторе линий."
   uk: "Лінія не виконує жодного обороту, доки в неї немає розкладу. Натисніть, щоб скласти його в редакторі ліній."
 "Draw a line of the company's own in the line editor: you confirm and pay for its route there, then make its timetable in RosterFlow's Timeplan":
@@ -111,6 +126,7 @@ _version: 2
   fr: "Tracez une ligne propre à l'entreprise dans l'éditeur de lignes : vous y confirmez et payez son itinéraire, puis faites son horaire dans le Plan horaire de RosterFlow"
   nl: "Teken een eigen lijn van het bedrijf in de lijneditor: daar bevestig en betaal je haar route, daarna maak je haar dienstregeling in het Dienstregelingsplan van RosterFlow"
   pl: "Narysuj własną linię firmy w edytorze linii: tam zatwierdzasz i opłacasz jej trasę, a potem tworzysz jej rozkład w Planie rozkładu RosterFlow"
+  es: "Dibuja una línea propia de la empresa en el editor de líneas: allí confirmas y pagas su ruta, y luego haces su horario en el Plan horario de RosterFlow"
   ru: "Проложите собственную линию компании в редакторе линий: там вы подтверждаете и оплачиваете её маршрут, затем составляете её расписание в «Плане расписания» RosterFlow"
   uk: "Прокладіть власну лінію компанії в редакторі ліній: там ви підтверджуєте й оплачуєте її маршрут, потім складаєте її розклад у «Плані розкладу» RosterFlow"
 "Line %{n} is the company's: here is its timetable. Plan its tours and start its service on the Roster tab.":
@@ -118,6 +134,7 @@ _version: 2
   fr: "La ligne %{n} appartient à l'entreprise : voici son horaire. Planifiez ses services et lancez son exploitation dans l'onglet Roulement."
   nl: "Lijn %{n} is van het bedrijf: hier is haar dienstregeling. Plan haar omlopen en start haar dienst op het tabblad Rooster."
   pl: "Linia %{n} należy do firmy: oto jej rozkład. Zaplanuj jej kursy i uruchom jej obsługę na karcie Grafik."
+  es: "La línea %{n} es de la empresa: aquí está su horario. Planifica sus recorridos e inicia su servicio en la pestaña Cuadrante."
   ru: "Линия %{n} принадлежит компании: вот её расписание. Спланируйте её обороты и запустите её работу на вкладке «График»."
   uk: "Лінія %{n} належить компанії: ось її розклад. Сплануйте її обороти й запустіть її роботу на вкладці «Графік»."
 "Line %{n} has no timetable yet: make it in the Timeplan":
@@ -125,6 +142,7 @@ _version: 2
   fr: "La ligne %{n} n'a pas encore d'horaire : faites-le dans le Plan horaire"
   nl: "Lijn %{n} heeft nog geen dienstregeling: maak die in het Dienstregelingsplan"
   pl: "Linia %{n} nie ma jeszcze rozkładu: utwórz go w Planie rozkładu"
+  es: "La línea %{n} aún no tiene horario: créalo en el Plan horario"
   ru: "У линии %{n} пока нет расписания: составьте его в «Плане расписания»"
   uk: "Лінія %{n} ще не має розкладу: складіть його в «Плані розкладу»"
 "Lines without a timetable":
@@ -132,5 +150,6 @@ _version: 2
   fr: "Lignes sans horaire"
   nl: "Lijnen zonder dienstregeling"
   pl: "Linie bez rozkładu"
+  es: "Líneas sin horario"
   ru: "Линии без расписания"
   uk: "Лінії без розкладу"

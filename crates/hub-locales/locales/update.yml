@@ -6,6 +6,7 @@ _version: 2
   fr: "%{done} sur %{total} depuis %{source}"
   nl: "%{done} van %{total} van %{source}"
   pl: "%{done} z %{total} z %{source}"
+  es: "%{done} de %{total} desde %{source}"
   ru: "%{done} из %{total} с %{source}"
   uk: "%{done} з %{total} з %{source}"
 "%{version} is a test build: it is not updated":
@@ -13,6 +14,7 @@ _version: 2
   fr: "%{version} est une version de test : elle n'est pas mise à jour"
   nl: "%{version} is een testversie: die wordt niet bijgewerkt"
   pl: "%{version} to wersja testowa: nie jest aktualizowana"
+  es: "%{version} es una versión de prueba: no se actualiza"
   ru: "%{version} — тестовая сборка: она не обновляется"
   uk: "%{version} — тестова збірка: вона не оновлюється"
 "%{version} is available":
@@ -20,6 +22,7 @@ _version: 2
   fr: "%{version} est disponible"
   nl: "%{version} is beschikbaar"
   pl: "Dostępna jest wersja %{version}"
+  es: "%{version} está disponible"
   ru: "Доступна версия %{version}"
   uk: "Доступна версія %{version}"
 "%{version} is the latest version":
@@ -27,6 +30,7 @@ _version: 2
   fr: "%{version} est la dernière version"
   nl: "%{version} is de nieuwste versie"
   pl: "%{version} to najnowsza wersja"
+  es: "%{version} es la última versión"
   ru: "%{version} — последняя версия"
   uk: "%{version} — остання версія"
 "Check now":
@@ -34,6 +38,7 @@ _version: 2
   fr: "Vérifier maintenant"
   nl: "Nu controleren"
   pl: "Sprawdź teraz"
+  es: "Comprobar ahora"
   ru: "Проверить сейчас"
   uk: "Перевірити зараз"
 "Checking for updates...":
@@ -41,6 +46,7 @@ _version: 2
   fr: "Recherche de mises à jour..."
   nl: "Zoeken naar updates..."
   pl: "Szukanie aktualizacji..."
+  es: "Buscando actualizaciones..."
   ru: "Поиск обновлений..."
   uk: "Пошук оновлень..."
 "Checking...":
@@ -48,6 +54,7 @@ _version: 2
   fr: "Vérification..."
   nl: "Bezig met controleren..."
   pl: "Sprawdzanie..."
+  es: "Comprobando..."
   ru: "Проверка..."
   uk: "Перевірка..."
 "Download from GitHub":
@@ -55,6 +62,7 @@ _version: 2
   fr: "Télécharger depuis GitHub"
   nl: "Downloaden van GitHub"
   pl: "Pobierz z GitHub"
+  es: "Descargar de GitHub"
   ru: "Скачать с GitHub"
   uk: "Завантажити з GitHub"
 "GitHub answered %{code}":
@@ -62,6 +70,7 @@ _version: 2
   fr: "GitHub a répondu %{code}"
   nl: "GitHub antwoordde %{code}"
   pl: "GitHub odpowiedział %{code}"
+  es: "GitHub ha respondido %{code}"
   ru: "GitHub ответил %{code}"
   uk: "GitHub відповів %{code}"
 "GitHub's answer could not be read":
@@ -69,6 +78,7 @@ _version: 2
   fr: "La réponse de GitHub n'a pas pu être lue"
   nl: "Het antwoord van GitHub kon niet worden gelezen"
   pl: "Nie udało się odczytać odpowiedzi GitHub"
+  es: "No se ha podido leer la respuesta de GitHub"
   ru: "Не удалось прочитать ответ GitHub"
   uk: "Не вдалося прочитати відповідь GitHub"
 "GitHub could not be reached. Are you online?":
@@ -76,6 +86,7 @@ _version: 2
   fr: "Impossible de joindre GitHub. Êtes-vous connecté ?"
   nl: "GitHub is niet bereikbaar. Ben je online?"
   pl: "Nie można połączyć się z GitHub. Czy jesteś online?"
+  es: "No se ha podido conectar con GitHub. ¿Tienes conexión?"
   ru: "Не удалось связаться с GitHub. Вы в сети?"
   uk: "Не вдалося з'єднатися з GitHub. Ви в мережі?"
 "Install updates without asking":
@@ -83,6 +94,7 @@ _version: 2
   fr: "Installer les mises à jour sans demander"
   nl: "Updates installeren zonder te vragen"
   pl: "Instaluj aktualizacje bez pytania"
+  es: "Instalar actualizaciones sin preguntar"
   ru: "Устанавливать обновления без запроса"
   uk: "Встановлювати оновлення без запитів"
 "Look for updates":
@@ -90,6 +102,7 @@ _version: 2
   fr: "Rechercher des mises à jour"
   nl: "Zoeken naar updates"
   pl: "Szukaj aktualizacji"
+  es: "Buscar actualizaciones"
   ru: "Искать обновления"
   uk: "Шукати оновлення"
 "Not now":
@@ -97,6 +110,7 @@ _version: 2
   fr: "Pas maintenant"
   nl: "Niet nu"
   pl: "Nie teraz"
+  es: "Ahora no"
   ru: "Не сейчас"
   uk: "Не зараз"
 "Not updated":
@@ -104,6 +118,7 @@ _version: 2
   fr: "Pas mis à jour"
   nl: "Niet bijgewerkt"
   pl: "Nie zaktualizowano"
+  es: "No actualizado"
   ru: "Не обновлено"
   uk: "Не оновлено"
 "The last check failed":
@@ -111,6 +126,7 @@ _version: 2
   fr: "La dernière vérification a échoué"
   nl: "De laatste controle is mislukt"
   pl: "Ostatnie sprawdzenie nie powiodło się"
+  es: "La última comprobación ha fallado"
   ru: "Последняя проверка не удалась"
   uk: "Остання перевірка не вдалася"
 "The new version is put in place; Omsi-Hub starts again in a moment.":
@@ -118,6 +134,7 @@ _version: 2
   fr: "La nouvelle version est mise en place ; Omsi-Hub redémarre dans un instant."
   nl: "De nieuwe versie wordt geplaatst; Omsi-Hub start zo opnieuw."
   pl: "Nowa wersja jest instalowana; Omsi-Hub za chwilę uruchomi się ponownie."
+  es: "Se está colocando la nueva versión; Omsi-Hub se reiniciará en un momento."
   ru: "Новая версия устанавливается; Omsi-Hub сейчас перезапустится."
   uk: "Нова версія встановлюється; Omsi-Hub зараз перезапуститься."
 "This version cannot be installed from within the app. Download it from its page on GitHub.":
@@ -125,6 +142,7 @@ _version: 2
   fr: "Cette version ne peut pas être installée depuis l'application. Téléchargez-la depuis sa page sur GitHub."
   nl: "Deze versie kan niet vanuit de app worden geïnstalleerd. Download hem van zijn pagina op GitHub."
   pl: "Tej wersji nie można zainstalować z poziomu aplikacji. Pobierz ją z jej strony na GitHub."
+  es: "Esta versión no se puede instalar desde la app. Descárgala desde su página en GitHub."
   ru: "Эту версию нельзя установить из приложения. Скачайте её со страницы на GitHub."
   uk: "Цю версію не можна встановити з програми. Завантажте її зі сторінки на GitHub."
 "You have %{current}. Update now? Omsi-Hub downloads the new version (%{size}) from GitHub, installs it and starts again. Your companies and settings stay as they are.":
@@ -132,5 +150,6 @@ _version: 2
   fr: "Vous avez %{current}. Mettre à jour maintenant ? Omsi-Hub télécharge la nouvelle version (%{size}) depuis GitHub, l'installe et redémarre. Vos entreprises et vos réglages restent tels quels."
   nl: "Je hebt %{current}. Nu bijwerken? Omsi-Hub downloadt de nieuwe versie (%{size}) van GitHub, installeert die en start opnieuw. Je bedrijven en instellingen blijven zoals ze zijn."
   pl: "Masz %{current}. Zaktualizować teraz? Omsi-Hub pobierze nową wersję (%{size}) z GitHub, zainstaluje ją i uruchomi się ponownie. Twoje firmy i ustawienia pozostaną bez zmian."
+  es: "Tienes %{current}. ¿Actualizar ahora? Omsi-Hub descarga la nueva versión (%{size}) de GitHub, la instala y se reinicia. Tus empresas y ajustes se quedan como están."
   ru: "У вас %{current}. Обновить сейчас? Omsi-Hub скачает новую версию (%{size}) с GitHub, установит её и перезапустится. Ваши компании и настройки останутся без изменений."
   uk: "У вас %{current}. Оновити зараз? Omsi-Hub завантажить нову версію (%{size}) з GitHub, встановить її та перезапуститься. Ваші компанії та налаштування залишаться без змін."

@@ -6,6 +6,7 @@ _version: 2
   fr: "Les chauffeurs intérimaires se réservent à partir de demain. Pour aujourd'hui, confiez un service à un intérimaire dans l'onglet Roulement."
   nl: "Uitzendkrachten boek je vanaf morgen. Geef voor vandaag een dienst aan een uitzendkracht in het tabblad Rooster."
   pl: "Kierowców z agencji rezerwuje się od jutra. Na dziś przydziel służbę kierowcy z agencji w karcie Grafik."
+  es: "Los conductores de agencia se reservan a partir de mañana. Para hoy, asigna un servicio a un conductor de agencia en la pestaña Cuadrante."
   ru: "Водителей из агентства бронируют начиная с завтра. На сегодня отдайте смену водителю из агентства на вкладке «График»."
   uk: "Водіїв з агентства бронюють починаючи із завтра. На сьогодні віддайте зміну водієві з агентства на вкладці «Графік»."
 "The agency takes bookings up to six weeks ahead.":
@@ -13,6 +14,7 @@ _version: 2
   fr: "L'agence accepte les réservations jusqu'à six semaines à l'avance."
   nl: "Het uitzendbureau neemt boekingen aan tot zes weken vooruit."
   pl: "Agencja przyjmuje rezerwacje do sześciu tygodni naprzód."
+  es: "La agencia acepta reservas con hasta seis semanas de antelación."
   ru: "Агентство принимает брони не более чем на шесть недель вперёд."
   uk: "Агентство приймає бронювання не більш ніж на шість тижнів наперед."
 "Book between 1 and 99 drivers at a time.":
@@ -20,6 +22,7 @@ _version: 2
   fr: "Réservez entre 1 et 99 chauffeurs à la fois."
   nl: "Boek 1 tot 99 chauffeurs tegelijk."
   pl: "Rezerwuj od 1 do 99 kierowców naraz."
+  es: "Reserva entre 1 y 99 conductores a la vez."
   ru: "Бронируйте от 1 до 99 водителей за раз."
   uk: "Бронюйте від 1 до 99 водіїв за раз."
 "The hours booked must last an hour at least, within the day.":
@@ -27,6 +30,7 @@ _version: 2
   fr: "Les heures réservées doivent durer au moins une heure, dans la journée."
   nl: "De geboekte uren moeten minstens een uur duren, binnen de dag."
   pl: "Zarezerwowane godziny muszą trwać co najmniej godzinę, w obrębie dnia."
+  es: "Las horas reservadas deben durar al menos una hora, dentro del día."
   ru: "Забронированные часы должны длиться не меньше часа, в пределах дня."
   uk: "Заброньовані години мають тривати щонайменше годину, у межах дня."
 "This booking's day is over: it can no longer be cancelled.":
@@ -34,6 +38,7 @@ _version: 2
   fr: "Le jour de cette réservation est passé : elle ne peut plus être annulée."
   nl: "De dag van deze boeking is voorbij: ze kan niet meer geannuleerd worden."
   pl: "Dzień tej rezerwacji minął: nie można jej już anulować."
+  es: "El día de esta reserva ya ha pasado: ya no se puede cancelar."
   ru: "День этой брони прошёл: отменить её уже нельзя."
   uk: "День цього бронювання минув: скасувати його вже не можна."
 "This booking is no longer there.":
@@ -41,6 +46,7 @@ _version: 2
   fr: "Cette réservation n'existe plus."
   nl: "Deze boeking bestaat niet meer."
   pl: "Tej rezerwacji już nie ma."
+  es: "Esta reserva ya no existe."
   ru: "Этой брони больше нет."
   uk: "Цього бронювання більше немає."
 "A whole day":
@@ -48,6 +54,7 @@ _version: 2
   fr: "Une journée entière"
   nl: "Een hele dag"
   pl: "Cały dzień"
+  es: "Todo el día"
   ru: "Весь день"
   uk: "Увесь день"
 "From – to":
@@ -55,6 +62,7 @@ _version: 2
   fr: "De – à"
   nl: "Van – tot"
   pl: "Od – do"
+  es: "De – a"
   ru: "С – до"
   uk: "З – до"
 "For duties":
@@ -62,6 +70,7 @@ _version: 2
   fr: "Pour des services"
   nl: "Voor diensten"
   pl: "Na służby"
+  es: "Para servicios"
   ru: "На смены"
   uk: "На зміни"
 "Agencies":
@@ -69,6 +78,7 @@ _version: 2
   fr: "Agences"
   nl: "Uitzendbureaus"
   pl: "Agencje"
+  es: "Agencias"
   ru: "Агентства"
   uk: "Агентства"
 "Agency drivers":
@@ -76,6 +86,7 @@ _version: 2
   fr: "Chauffeurs intérimaires"
   nl: "Uitzendkrachten"
   pl: "Kierowcy z agencji"
+  es: "Conductores de agencia"
   ru: "Водители из агентства"
   uk: "Водії з агентства"
 "%{n} agency drivers booked":
@@ -83,6 +94,7 @@ _version: 2
   fr: "%{n} chauffeurs intérimaires réservés"
   nl: "%{n} uitzendkrachten geboekt"
   pl: "Zarezerwowano kierowców z agencji: %{n}"
+  es: "%{n} conductores de agencia reservados"
   ru: "Забронировано водителей из агентства: %{n}"
   uk: "Заброньовано водіїв з агентства: %{n}"
 "%{n} drivers":
@@ -90,6 +102,7 @@ _version: 2
   fr: "%{n} chauffeurs"
   nl: "%{n} chauffeurs"
   pl: "Kierowcy: %{n}"
+  es: "%{n} conductores"
   ru: "Водителей: %{n}"
   uk: "Водіїв: %{n}"
 "1 driver":
@@ -97,6 +110,7 @@ _version: 2
   fr: "1 chauffeur"
   nl: "1 chauffeur"
   pl: "1 kierowca"
+  es: "1 conductor"
   ru: "1 водитель"
   uk: "1 водій"
 "%{n} duties given":
@@ -104,6 +118,7 @@ _version: 2
   fr: "%{n} services confiés"
   nl: "%{n} diensten gegeven"
   pl: "Przydzielone służby: %{n}"
+  es: "%{n} servicios asignados"
   ru: "Отдано смен: %{n}"
   uk: "Віддано змін: %{n}"
 "1 duty given":
@@ -111,6 +126,7 @@ _version: 2
   fr: "1 service confié"
   nl: "1 dienst gegeven"
   pl: "1 przydzielona służba"
+  es: "1 servicio asignado"
   ru: "Отдана 1 смена"
   uk: "Віддано 1 зміну"
 "%{n} of the duties do not fit them: book more drivers":
@@ -118,6 +134,7 @@ _version: 2
   fr: "%{n} des services ne leur conviennent pas : réservez plus de chauffeurs"
   nl: "%{n} van de diensten passen niet bij hen: boek meer chauffeurs"
   pl: "Służby, które się nie mieszczą: %{n} – zarezerwuj więcej kierowców"
+  es: "%{n} de los servicios no encajan: reserva más conductores"
   ru: "Не помещаются смены: %{n} – забронируйте больше водителей"
   uk: "Не вміщаються зміни: %{n} – забронюйте більше водіїв"
 "%{n} × %{rate} an hour: %{amount}":
@@ -125,6 +142,7 @@ _version: 2
   fr: "%{n} × %{rate} de l'heure : %{amount}"
   nl: "%{n} × %{rate} per uur: %{amount}"
   pl: "%{n} × %{rate} za godzinę: %{amount}"
+  es: "%{n} × %{rate} la hora: %{amount}"
   ru: "%{n} × %{rate} в час: %{amount}"
   uk: "%{n} × %{rate} на годину: %{amount}"
 "A booked driver is paid for what was booked even when he has no duty, as agencies bill. Cancelling is free until the day before; on the day itself the agency bills half.":
@@ -132,6 +150,7 @@ _version: 2
   fr: "Un chauffeur réservé est payé pour ce qui a été réservé même sans service, comme les agences facturent. L'annulation est gratuite jusqu'à la veille ; le jour même, l'agence facture la moitié."
   nl: "Een geboekte chauffeur wordt betaald voor wat geboekt is, ook zonder dienst, zoals uitzendbureaus rekenen. Annuleren is gratis tot de dag ervoor; op de dag zelf rekent het bureau de helft."
   pl: "Zarezerwowany kierowca dostaje zapłatę za to, co zarezerwowano, nawet bez służby – tak liczą agencje. Anulowanie jest bezpłatne do dnia poprzedniego; w sam dzień agencja liczy połowę."
+  es: "Un conductor reservado cobra lo reservado aunque no tenga servicio, como facturan las agencias. Cancelar es gratis hasta el día anterior; el mismo día la agencia factura la mitad."
   ru: "Забронированному водителю платят за забронированное, даже если у него нет смены, – так считают агентства. Отмена бесплатна до предыдущего дня; в сам день агентство берёт половину."
   uk: "Заброньованому водієві платять за заброньоване, навіть якщо в нього немає зміни, – так рахують агентства. Скасування безкоштовне до попереднього дня; у сам день агентство бере половину."
 "Agency driver %{n}":
@@ -139,6 +158,7 @@ _version: 2
   fr: "Intérimaire %{n}"
   nl: "Uitzendkracht %{n}"
   pl: "Kierowca z agencji %{n}"
+  es: "Conductor de agencia %{n}"
   ru: "Водитель агентства %{n}"
   uk: "Водій агентства %{n}"
 "Agency %{n}":
@@ -146,6 +166,7 @@ _version: 2
   fr: "Intérim %{n}"
   nl: "Uitzend %{n}"
   pl: "Agencja %{n}"
+  es: "Agencia %{n}"
   ru: "Агентство %{n}"
   uk: "Агентство %{n}"
 "Agency drivers %{a} – %{b}":
@@ -153,6 +174,7 @@ _version: 2
   fr: "Intérimaires %{a} – %{b}"
   nl: "Uitzendkrachten %{a} – %{b}"
   pl: "Kierowcy z agencji %{a} – %{b}"
+  es: "Conductores de agencia %{a} – %{b}"
   ru: "Водители агентства %{a} – %{b}"
   uk: "Водії агентства %{a} – %{b}"
 "Book agency drivers":
@@ -160,6 +182,7 @@ _version: 2
   fr: "Réserver des intérimaires"
   nl: "Uitzendkrachten boeken"
   pl: "Rezerwuj kierowców z agencji"
+  es: "Reservar conductores de agencia"
   ru: "Забронировать водителей из агентства"
   uk: "Забронювати водіїв з агентства"
 "Booked ahead an agency driver costs %{rate} an hour; one sent on the day itself %{same}.":
@@ -167,6 +190,7 @@ _version: 2
   fr: "Réservé à l'avance, un intérimaire coûte %{rate} de l'heure ; envoyé le jour même, %{same}."
   nl: "Vooruit geboekt kost een uitzendkracht %{rate} per uur; een die op de dag zelf komt %{same}."
   pl: "Zarezerwowany z wyprzedzeniem kierowca z agencji kosztuje %{rate} za godzinę; przysłany w sam dzień – %{same}."
+  es: "Reservado con antelación, un conductor de agencia cuesta %{rate} la hora; uno enviado el mismo día, %{same}."
   ru: "Водитель из агентства, забронированный заранее, стоит %{rate} в час; присланный в сам день – %{same}."
   uk: "Водій з агентства, заброньований заздалегідь, коштує %{rate} на годину; надісланий у сам день – %{same}."
 "Booked: %{n} agency drivers for %{date} (%{amount}).":
@@ -174,6 +198,7 @@ _version: 2
   fr: "Réservé : %{n} intérimaires pour le %{date} (%{amount})."
   nl: "Geboekt: %{n} uitzendkrachten voor %{date} (%{amount})."
   pl: "Zarezerwowano kierowców z agencji na %{date}: %{n} (%{amount})."
+  es: "Reservados: %{n} conductores de agencia para el %{date} (%{amount})."
   ru: "Забронировано водителей из агентства на %{date}: %{n} (%{amount})."
   uk: "Заброньовано водіїв з агентства на %{date}: %{n} (%{amount})."
 "Booked: %{n}":
@@ -181,6 +206,7 @@ _version: 2
   fr: "Réservé : %{n}"
   nl: "Geboekt: %{n}"
   pl: "Zarezerwowane: %{n}"
+  es: "Reservados: %{n}"
   ru: "Забронировано: %{n}"
   uk: "Заброньовано: %{n}"
 "Booking cancelled on its day: the agency bills %{amount}.":
@@ -188,6 +214,7 @@ _version: 2
   fr: "Réservation annulée le jour même : l'agence facture %{amount}."
   nl: "Boeking op de dag zelf geannuleerd: het bureau rekent %{amount}."
   pl: "Rezerwacja anulowana w jej dniu: agencja liczy %{amount}."
+  es: "Reserva cancelada en su día: la agencia factura %{amount}."
   ru: "Бронь отменена в её день: агентство берёт %{amount}."
   uk: "Бронювання скасовано в його день: агентство бере %{amount}."
 "Booking cancelled: it costs nothing.":
@@ -195,6 +222,7 @@ _version: 2
   fr: "Réservation annulée : cela ne coûte rien."
   nl: "Boeking geannuleerd: het kost niets."
   pl: "Rezerwacja anulowana: nic to nie kosztuje."
+  es: "Reserva cancelada: no cuesta nada."
   ru: "Бронь отменена: это ничего не стоит."
   uk: "Бронювання скасовано: це нічого не коштує."
 "Cancelled today the agency bills %{amount}":
@@ -202,6 +230,7 @@ _version: 2
   fr: "Annulée aujourd'hui, l'agence facture %{amount}"
   nl: "Vandaag geannuleerd rekent het bureau %{amount}"
   pl: "Anulowana dziś – agencja policzy %{amount}"
+  es: "Si cancelas hoy, la agencia cobra %{amount}"
   ru: "При отмене сегодня агентство возьмёт %{amount}"
   uk: "У разі скасування сьогодні агентство візьме %{amount}"
 "Days just gone":
@@ -209,6 +238,7 @@ _version: 2
   fr: "Les jours passés"
   nl: "De afgelopen dagen"
   pl: "Ostatnie dni"
+  es: "Últimos días"
   ru: "Прошедшие дни"
   uk: "Минулі дні"
 "Each is paid for %{h}, and for more when he drives more.":
@@ -216,6 +246,7 @@ _version: 2
   fr: "Chacun est payé pour %{h}, et davantage s'il conduit davantage."
   nl: "Elk wordt betaald voor %{h}, en voor meer als hij meer rijdt."
   pl: "Każdy dostaje zapłatę za %{h}, a za więcej, gdy jeździ więcej."
+  es: "Cada uno cobra %{h}, y más si conduce más."
   ru: "Каждому платят за %{h}, а если водит больше – за больше."
   uk: "Кожному платять за %{h}, а якщо водить більше – за більше."
 "Each is paid for these hours (%{h} at least) and drives only within them.":
@@ -223,6 +254,7 @@ _version: 2
   fr: "Chacun est payé pour ces heures (au moins %{h}) et ne conduit que pendant celles-ci."
   nl: "Elk wordt betaald voor deze uren (minstens %{h}) en rijdt alleen binnen die uren."
   pl: "Każdy dostaje zapłatę za te godziny (co najmniej %{h}) i jeździ tylko w ich obrębie."
+  es: "Cada uno cobra estas horas (%{h} como mínimo) y solo conduce dentro de ellas."
   ru: "Каждому платят за эти часы (не меньше %{h}), и водит он только в них."
   uk: "Кожному платять за ці години (щонайменше %{h}), і водить він лише в них."
 "How many drivers":
@@ -230,6 +262,7 @@ _version: 2
   fr: "Combien de chauffeurs"
   nl: "Hoeveel chauffeurs"
   pl: "Ilu kierowców"
+  es: "Cuántos conductores"
   ru: "Сколько водителей"
   uk: "Скільки водіїв"
 "No agency drivers are booked. Book them here for a day ahead, or send one on the day itself from the Roster tab.":
@@ -237,6 +270,7 @@ _version: 2
   fr: "Aucun intérimaire n'est réservé. Réservez-les ici pour un jour à venir, ou faites-en venir un le jour même depuis l'onglet Roulement."
   nl: "Er zijn geen uitzendkrachten geboekt. Boek ze hier voor een komende dag, of laat er op de dag zelf een komen via het tabblad Rooster."
   pl: "Nie zarezerwowano kierowców z agencji. Zarezerwuj ich tutaj na nadchodzący dzień albo wezwij jednego w sam dzień w karcie Grafik."
+  es: "No hay conductores de agencia reservados. Resérvalos aquí para un día próximo, o pide uno el mismo día desde la pestaña Cuadrante."
   ru: "Водители из агентства не забронированы. Забронируйте их здесь на день вперёд или вызовите одного в сам день на вкладке «График»."
   uk: "Водіїв з агентства не заброньовано. Забронюйте їх тут на день наперед або викличте одного в сам день на вкладці «Графік»."
 "No duty of this day is open.":
@@ -244,6 +278,7 @@ _version: 2
   fr: "Aucun service de ce jour n'est ouvert."
   nl: "Geen dienst van deze dag staat open."
   pl: "Żadna służba tego dnia nie jest otwarta."
+  es: "No hay ningún servicio libre este día."
   ru: "В этот день открытых смен нет."
   uk: "Цього дня відкритих змін немає."
 "On their day they are among the drivers of the Roster tab: give them duties there, or let the dispatcher and Fill the roster take them first for what is open.":
@@ -251,6 +286,7 @@ _version: 2
   fr: "Le jour venu, ils figurent parmi les chauffeurs de l'onglet Roulement : confiez-leur des services là-bas, ou laissez le régulateur et Remplir le roulement les prendre en premier pour ce qui est ouvert."
   nl: "Op hun dag staan ze tussen de chauffeurs van het tabblad Rooster: geef ze daar diensten, of laat de planner en Rooster vullen hen eerst nemen voor wat open staat."
   pl: "W swoim dniu są wśród kierowców w karcie Grafik: przydziel im tam służby albo pozwól dyspozytorowi i funkcji Wypełnij grafik brać ich najpierw do tego, co otwarte."
+  es: "Ese día aparecen entre los conductores de la pestaña Cuadrante: asígnales servicios allí, o deja que el regulador y Rellenar cuadrante los usen primero para lo que quede libre."
   ru: "В свой день они среди водителей вкладки «График»: дайте им там смены или пусть диспетчер и «Заполнить график» берут их первыми на открытое."
   uk: "У свій день вони серед водіїв вкладки «Графік»: дайте їм там зміни або нехай диспетчер і «Заповнити графік» беруть їх першими на відкрите."
 "Paid at the close: %{amount} booked":
@@ -258,6 +294,7 @@ _version: 2
   fr: "Payé à la clôture : %{amount} réservés"
   nl: "Betaald bij de afsluiting: %{amount} geboekt"
   pl: "Zapłacono przy zamknięciu: zarezerwowano za %{amount}"
+  es: "Se paga al cierre: %{amount} reservados"
   ru: "Оплачено при закрытии дня: забронировано на %{amount}"
   uk: "Оплачено під час закриття дня: заброньовано на %{amount}"
 "Pick the duties they come for.":
@@ -265,6 +302,7 @@ _version: 2
   fr: "Choisissez les services pour lesquels ils viennent."
   nl: "Kies de diensten waarvoor ze komen."
   pl: "Wybierz służby, na które przychodzą."
+  es: "Elige los servicios para los que vienen."
   ru: "Выберите смены, на которые они приходят."
   uk: "Виберіть зміни, на які вони приходять."
 "The duties are given to them by the working-time rules; each is paid for his duties' hours (%{h} at least).":
@@ -272,6 +310,7 @@ _version: 2
   fr: "Les services leur sont confiés selon les règles du temps de travail ; chacun est payé pour les heures de ses services (au moins %{h})."
   nl: "De diensten worden hun gegeven volgens de arbeidstijdregels; elk wordt betaald voor de uren van zijn diensten (minstens %{h})."
   pl: "Służby są im przydzielane według zasad czasu pracy; każdy dostaje zapłatę za godziny swoich służb (co najmniej %{h})."
+  es: "Los servicios se les asignan según las normas de jornada laboral; cada uno cobra las horas de sus servicios (%{h} como mínimo)."
   ru: "Смены раздаются им по правилам рабочего времени; каждому платят за часы его смен (не меньше %{h})."
   uk: "Зміни роздаються їм за правилами робочого часу; кожному платять за години його змін (щонайменше %{h})."
 "The duties of days more than a week ahead are not read yet: book them for a whole day or some hours.":
@@ -279,6 +318,7 @@ _version: 2
   fr: "Les services des jours à plus d'une semaine ne sont pas encore lus : réservez pour une journée entière ou quelques heures."
   nl: "De diensten van dagen meer dan een week vooruit zijn nog niet gelezen: boek voor een hele dag of een paar uur."
   pl: "Służby dni odległych o ponad tydzień nie są jeszcze wczytane: rezerwuj na cały dzień lub kilka godzin."
+  es: "Los servicios de los días a más de una semana vista aún no se han leído: resérvalos para un día entero o unas horas."
   ru: "Смены дней дальше чем через неделю ещё не прочитаны: бронируйте на весь день или на несколько часов."
   uk: "Зміни днів далі ніж за тиждень ще не прочитано: бронюйте на весь день або на кілька годин."
 "There is no limit to how many you book: only the cash.":
@@ -286,6 +326,7 @@ _version: 2
   fr: "Il n'y a pas de limite au nombre de réservations : seulement la trésorerie."
   nl: "Er is geen grens aan hoeveel je boekt: alleen het geld."
   pl: "Nie ma limitu, ilu zarezerwujesz: liczy się tylko gotówka."
+  es: "No hay límite de reservas: solo el dinero en caja."
   ru: "Ограничения на число броней нет: только деньги."
   uk: "Обмеження на кількість бронювань немає: лише гроші."
 "a whole day (%{h})":
@@ -293,6 +334,7 @@ _version: 2
   fr: "une journée entière (%{h})"
   nl: "een hele dag (%{h})"
   pl: "cały dzień (%{h})"
+  es: "un día entero (%{h})"
   ru: "весь день (%{h})"
   uk: "увесь день (%{h})"
 "for %{n} duties":
@@ -300,6 +342,7 @@ _version: 2
   fr: "pour %{n} services"
   nl: "voor %{n} diensten"
   pl: "na służby: %{n}"
+  es: "para %{n} servicios"
   ru: "на смены: %{n}"
   uk: "на зміни: %{n}"
 "Booked %{hours}  ·  %{driven} driven":
@@ -307,6 +350,7 @@ _version: 2
   fr: "Réservé %{hours}  ·  %{driven} conduits"
   nl: "Geboekt %{hours}  ·  %{driven} gereden"
   pl: "Zarezerwowano %{hours}  ·  przejechano %{driven}"
+  es: "Reservado %{hours}  ·  %{driven} conducido"
   ru: "Забронировано %{hours}  ·  отработано %{driven}"
   uk: "Заброньовано %{hours}  ·  відпрацьовано %{driven}"
 "%{amount} for this duty, today only (%{n} sent today)":
@@ -314,6 +358,7 @@ _version: 2
   fr: "%{amount} pour ce service, aujourd'hui seulement (%{n} envoyés aujourd'hui)"
   nl: "%{amount} voor deze dienst, alleen vandaag (vandaag %{n} gestuurd)"
   pl: "%{amount} za tę służbę, tylko dziś (dziś przysłano: %{n})"
+  es: "%{amount} por este servicio, solo hoy (%{n} enviados hoy)"
   ru: "%{amount} за эту смену, только сегодня (сегодня прислано: %{n})"
   uk: "%{amount} за цю зміну, лише сьогодні (сьогодні надіслано: %{n})"
 "Agency driver (%{n} sent today: as many as you ask for)":
@@ -321,5 +366,6 @@ _version: 2
   fr: "Chauffeur intérimaire (%{n} envoyés aujourd'hui : autant que vous voulez)"
   nl: "Uitzendkracht (vandaag %{n} gestuurd: zoveel als je vraagt)"
   pl: "Kierowca z agencji (dziś przysłano: %{n} – tylu, ilu chcesz)"
+  es: "Conductor de agencia (%{n} enviados hoy: tantos como pidas)"
   ru: "Водитель из агентства (сегодня прислано: %{n} – сколько попросите)"
   uk: "Водій з агентства (сьогодні надіслано: %{n} – скільки попросите)"

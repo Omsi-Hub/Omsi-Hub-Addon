@@ -8,6 +8,7 @@ _version: 2
   fr: "Le bus %{bus} a eu un accident sur la ligne %{n}"
   nl: "Bus %{bus} kreeg een ongeluk op lijn %{n}"
   pl: "Autobus %{bus} miał wypadek na linii %{n}"
+  es: "El autobús %{bus} ha tenido un accidente en la línea %{n}"
   ru: "Автобус %{bus} попал в аварию на линии %{n}"
   uk: "Автобус %{bus} потрапив в аварію на лінії %{n}"
 "Spare bus %{spare} takes over the trips of bus %{bus} on line %{n} from %{time} until %{until}":
@@ -15,6 +16,7 @@ _version: 2
   fr: "Le bus de réserve %{spare} reprend les courses du bus %{bus} sur la ligne %{n} de %{time} à %{until}"
   nl: "Reservebus %{spare} neemt van %{time} tot %{until} de ritten van bus %{bus} op lijn %{n} over"
   pl: "Autobus rezerwowy %{spare} przejmuje od %{time} do %{until} kursy autobusu %{bus} na linii %{n}"
+  es: "El autobús de reserva %{spare} asume los viajes del autobús %{bus} en la línea %{n} de %{time} a %{until}"
   ru: "Резервный автобус %{spare} с %{time} до %{until} берёт рейсы автобуса %{bus} на линии %{n}"
   uk: "Резервний автобус %{spare} з %{time} до %{until} бере рейси автобуса %{bus} на лінії %{n}"
 "Bus %{bus} broke down":
@@ -22,6 +24,7 @@ _version: 2
   fr: "Le bus %{bus} est tombé en panne"
   nl: "Bus %{bus} kreeg pech"
   pl: "Autobus %{bus} zepsuł się"
+  es: "El autobús %{bus} ha sufrido una avería"
   ru: "Автобус %{bus} сломался"
   uk: "Автобус %{bus} зламався"
 "Bus %{bus} had an accident":
@@ -29,6 +32,7 @@ _version: 2
   fr: "Le bus %{bus} a eu un accident"
   nl: "Bus %{bus} kreeg een ongeluk"
   pl: "Autobus %{bus} miał wypadek"
+  es: "El autobús %{bus} ha tenido un accidente"
   ru: "Автобус %{bus} попал в аварию"
   uk: "Автобус %{bus} потрапив в аварію"
 "On line %{n} at %{time}. Spare buses free now: %{spares}.":
@@ -36,6 +40,7 @@ _version: 2
   fr: "Sur la ligne %{n} à %{time}. Bus de réserve libres maintenant : %{spares}."
   nl: "Op lijn %{n} om %{time}. Nu vrije reservebussen: %{spares}."
   pl: "Na linii %{n} o %{time}. Wolne teraz autobusy rezerwowe: %{spares}."
+  es: "En la línea %{n} a las %{time}. Autobuses de reserva libres ahora: %{spares}."
   ru: "На линии %{n} в %{time}. Свободные сейчас резервные автобусы: %{spares}."
   uk: "На лінії %{n} о %{time}. Вільні зараз резервні автобуси: %{spares}."
 "On line %{n} at %{time}. No spare bus is free now: a rental bus can take over its trips from %{arrive} for %{amount}, or they are dropped.":
@@ -43,6 +48,7 @@ _version: 2
   fr: "Sur la ligne %{n} à %{time}. Aucun bus de réserve n'est libre maintenant : un bus de location peut reprendre ses courses à partir de %{arrive} pour %{amount}, sinon elles sont supprimées."
   nl: "Op lijn %{n} om %{time}. Er is nu geen reservebus vrij: een huurbus kan zijn ritten vanaf %{arrive} overnemen voor %{amount}, anders vallen ze uit."
   pl: "Na linii %{n} o %{time}. Żaden autobus rezerwowy nie jest teraz wolny: autobus z wynajmu może przejąć jego kursy od %{arrive} za %{amount}, inaczej przepadają."
+  es: "En la línea %{n} a las %{time}. Ahora no hay ningún autobús de reserva libre: uno de alquiler puede asumir sus viajes desde las %{arrive} por %{amount}; si no, se suprimen."
   ru: "На линии %{n} в %{time}. Свободных резервных автобусов сейчас нет: арендный автобус может взять его рейсы с %{arrive} за %{amount}, иначе они отменяются."
   uk: "На лінії %{n} о %{time}. Вільних резервних автобусів зараз немає: орендний автобус може взяти його рейси з %{arrive} за %{amount}, інакше вони скасовуються."
 "On line %{n} at %{time}. Spare bus %{spare} takes over its trips from %{arrive}.":
@@ -50,6 +56,7 @@ _version: 2
   fr: "Sur la ligne %{n} à %{time}. Le bus de réserve %{spare} reprend ses courses à partir de %{arrive}."
   nl: "Op lijn %{n} om %{time}. Reservebus %{spare} neemt zijn ritten vanaf %{arrive} over."
   pl: "Na linii %{n} o %{time}. Autobus rezerwowy %{spare} przejmuje jego kursy od %{arrive}."
+  es: "En la línea %{n} a las %{time}. El autobús de reserva %{spare} asume sus viajes desde las %{arrive}."
   ru: "На линии %{n} в %{time}. Резервный автобус %{spare} берёт его рейсы с %{arrive}."
   uk: "На лінії %{n} о %{time}. Резервний автобус %{spare} бере його рейси з %{arrive}."
 "On line %{n} at %{time}. Spare bus %{spare} takes over its trips from %{arrive} until %{leaves}, when it goes out on its own tour.":
@@ -57,6 +64,7 @@ _version: 2
   fr: "Sur la ligne %{n} à %{time}. Le bus de réserve %{spare} reprend ses courses de %{arrive} à %{leaves}, puis part pour son propre service."
   nl: "Op lijn %{n} om %{time}. Reservebus %{spare} neemt zijn ritten van %{arrive} tot %{leaves} over; dan rijdt hij zijn eigen omloop."
   pl: "Na linii %{n} o %{time}. Autobus rezerwowy %{spare} przejmuje jego kursy od %{arrive} do %{leaves}, potem rusza na własny obieg."
+  es: "En la línea %{n} a las %{time}. El autobús de reserva %{spare} asume sus viajes de %{arrive} a %{leaves}, cuando sale a hacer su propio recorrido."
   ru: "На линии %{n} в %{time}. Резервный автобус %{spare} берёт его рейсы с %{arrive} до %{leaves}, потом уходит на свой выпуск."
   uk: "На лінії %{n} о %{time}. Резервний автобус %{spare} бере його рейси з %{arrive} до %{leaves}, потім виходить на свій випуск."
 "On line %{n} at %{time}. A rental bus takes over its trips from %{arrive} for %{amount}.":
@@ -64,6 +72,7 @@ _version: 2
   fr: "Sur la ligne %{n} à %{time}. Un bus de location reprend ses courses à partir de %{arrive} pour %{amount}."
   nl: "Op lijn %{n} om %{time}. Een huurbus neemt zijn ritten vanaf %{arrive} over voor %{amount}."
   pl: "Na linii %{n} o %{time}. Autobus z wynajmu przejmuje jego kursy od %{arrive} za %{amount}."
+  es: "En la línea %{n} a las %{time}. Un autobús de alquiler asume sus viajes desde las %{arrive} por %{amount}."
   ru: "На линии %{n} в %{time}. Арендный автобус берёт его рейсы с %{arrive} за %{amount}."
   uk: "На лінії %{n} о %{time}. Орендний автобус бере його рейси з %{arrive} за %{amount}."
 "On line %{n} at %{time}. Its trips are dropped for the rest of the day.":
@@ -71,6 +80,7 @@ _version: 2
   fr: "Sur la ligne %{n} à %{time}. Ses courses sont supprimées pour le reste de la journée."
   nl: "Op lijn %{n} om %{time}. Zijn ritten vallen de rest van de dag uit."
   pl: "Na linii %{n} o %{time}. Jego kursy przepadają do końca dnia."
+  es: "En la línea %{n} a las %{time}. Sus viajes se suprimen durante el resto del día."
   ru: "На линии %{n} в %{time}. Его рейсы отменены до конца дня."
   uk: "На лінії %{n} о %{time}. Його рейси скасовано до кінця дня."
 "The bus had an accident on the way":
@@ -78,6 +88,7 @@ _version: 2
   fr: "Le bus a eu un accident en route"
   nl: "De bus kreeg onderweg een ongeluk"
   pl: "Autobus miał wypadek w trasie"
+  es: "El autobús ha tenido un accidente por el camino"
   ru: "Автобус попал в аварию в пути"
   uk: "Автобус потрапив в аварію в дорозі"
 "It had an accident on line %{n}: its damage is repaired in the workshop.":
@@ -85,6 +96,7 @@ _version: 2
   fr: "Il a eu un accident sur la ligne %{n} : ses dégâts sont réparés à l'atelier."
   nl: "Hij kreeg een ongeluk op lijn %{n}: zijn schade wordt in de werkplaats hersteld."
   pl: "Miał wypadek na linii %{n}: jego uszkodzenia są naprawiane w warsztacie."
+  es: "Ha tenido un accidente en la línea %{n}: sus daños se reparan en el taller."
   ru: "Он попал в аварию на линии %{n}: повреждения устраняют в мастерской."
   uk: "Він потрапив в аварію на лінії %{n}: пошкодження усувають у майстерні."
 "It was on line %{n}; it goes to the workshop.":
@@ -92,6 +104,7 @@ _version: 2
   fr: "Il était sur la ligne %{n} ; il part à l'atelier."
   nl: "Hij reed op lijn %{n}; hij gaat naar de werkplaats."
   pl: "Był na linii %{n}; jedzie do warsztatu."
+  es: "Estaba en la línea %{n}; va al taller."
   ru: "Он был на линии %{n}; он отправляется в мастерскую."
   uk: "Він був на лінії %{n}; він їде до майстерні."
 "No spare bus of the fleet is free now. A rental bus can take over its trips from %{time} for %{amount}; else its trips are dropped for the rest of the day, with the contract's penalty.":
@@ -99,6 +112,7 @@ _version: 2
   fr: "Aucun bus de réserve de la flotte n'est libre maintenant. Un bus de location peut reprendre ses courses à partir de %{time} pour %{amount} ; sinon ses courses sont supprimées pour le reste de la journée, avec la pénalité du contrat."
   nl: "Er is nu geen reservebus van de vloot vrij. Een huurbus kan zijn ritten vanaf %{time} overnemen voor %{amount}; anders vallen zijn ritten de rest van de dag uit, met de boete van het contract."
   pl: "Żaden autobus rezerwowy floty nie jest teraz wolny. Autobus z wynajmu może przejąć jego kursy od %{time} za %{amount}; inaczej jego kursy przepadają do końca dnia, z karą z umowy."
+  es: "Ahora no hay ningún autobús de reserva de la flota libre. Uno de alquiler puede asumir sus viajes desde las %{time} por %{amount}; si no, sus viajes se suprimen durante el resto del día, con la penalización del contrato."
   ru: "Свободных резервных автобусов парка сейчас нет. Арендный автобус может взять его рейсы с %{time} за %{amount}; иначе его рейсы отменяются до конца дня, со штрафом по договору."
   uk: "Вільних резервних автобусів парку зараз немає. Орендний автобус може взяти його рейси з %{time} за %{amount}; інакше його рейси скасовуються до кінця дня, зі штрафом за договором."
 "A spare bus of the fleet can take over its trips from %{spare}; a rental bus from %{time} for %{amount}; else its trips are dropped for the rest of the day, with the contract's penalty.":
@@ -106,6 +120,7 @@ _version: 2
   fr: "Un bus de réserve de la flotte peut reprendre ses courses à partir de %{spare}, un bus de location à partir de %{time} pour %{amount} ; sinon ses courses sont supprimées pour le reste de la journée, avec la pénalité du contrat."
   nl: "Een reservebus van de vloot kan zijn ritten vanaf %{spare} overnemen, een huurbus vanaf %{time} voor %{amount}; anders vallen zijn ritten de rest van de dag uit, met de boete van het contract."
   pl: "Autobus rezerwowy floty może przejąć jego kursy od %{spare}, autobus z wynajmu od %{time} za %{amount}; inaczej jego kursy przepadają do końca dnia, z karą z umowy."
+  es: "Un autobús de reserva de la flota puede asumir sus viajes desde las %{spare}; uno de alquiler, desde las %{time} por %{amount}; si no, sus viajes se suprimen durante el resto del día, con la penalización del contrato."
   ru: "Резервный автобус парка может взять его рейсы с %{spare}, арендный — с %{time} за %{amount}; иначе его рейсы отменяются до конца дня, со штрафом по договору."
   uk: "Резервний автобус парку може взяти його рейси з %{spare}, орендний — з %{time} за %{amount}; інакше його рейси скасовуються до кінця дня, зі штрафом за договором."
 "Send spare bus %{bus} (from %{time} until %{until}, no extra cost)":
@@ -113,6 +128,7 @@ _version: 2
   fr: "Envoyer le bus de réserve %{bus} (de %{time} à %{until}, sans surcoût)"
   nl: "Reservebus %{bus} sturen (van %{time} tot %{until}, geen extra kosten)"
   pl: "Wyślij autobus rezerwowy %{bus} (od %{time} do %{until}, bez dodatkowych kosztów)"
+  es: "Enviar el autobús de reserva %{bus} (de %{time} a %{until}, sin coste extra)"
   ru: "Отправить резервный автобус %{bus} (с %{time} до %{until}, без доп. затрат)"
   uk: "Надіслати резервний автобус %{bus} (з %{time} до %{until}, без додаткових витрат)"
 "%{time}  Bus %{bus} had an accident":
@@ -120,6 +136,7 @@ _version: 2
   fr: "%{time}  Le bus %{bus} a eu un accident"
   nl: "%{time}  Bus %{bus} kreeg een ongeluk"
   pl: "%{time}  Autobus %{bus} miał wypadek"
+  es: "%{time}  El autobús %{bus} ha tenido un accidente"
   ru: "%{time}  Автобус %{bus} попал в аварию"
   uk: "%{time}  Автобус %{bus} потрапив в аварію"
 "a bus sent ran its trips from %{from} until %{until}":
@@ -127,6 +144,7 @@ _version: 2
   fr: "un bus envoyé a assuré ses courses de %{from} à %{until}"
   nl: "een gestuurde bus reed zijn ritten van %{from} tot %{until}"
   pl: "wysłany autobus obsłużył jego kursy od %{from} do %{until}"
+  es: "un autobús enviado hizo sus viajes de %{from} a %{until}"
   ru: "присланный автобус выполнил его рейсы с %{from} до %{until}"
   uk: "надісланий автобус виконав його рейси з %{from} до %{until}"
 "a bus sent ran its trips from %{from}":
@@ -134,6 +152,7 @@ _version: 2
   fr: "un bus envoyé a assuré ses courses à partir de %{from}"
   nl: "een gestuurde bus reed zijn ritten vanaf %{from}"
   pl: "wysłany autobus obsłużył jego kursy od %{from}"
+  es: "un autobús enviado hizo sus viajes desde las %{from}"
   ru: "присланный автобус выполнил его рейсы с %{from}"
   uk: "надісланий автобус виконав його рейси з %{from}"
 "Free now":
@@ -141,6 +160,7 @@ _version: 2
   fr: "Libre maintenant"
   nl: "Nu vrij"
   pl: "Wolny teraz"
+  es: "Libre ahora"
   ru: "Свободен сейчас"
   uk: "Вільний зараз"
 "From %{time}":
@@ -148,6 +168,7 @@ _version: 2
   fr: "À partir de %{time}"
   nl: "Vanaf %{time}"
   pl: "Od %{time}"
+  es: "Desde las %{time}"
   ru: "С %{time}"
   uk: "З %{time}"
 "Send a bus for it":
@@ -155,6 +176,7 @@ _version: 2
   fr: "Envoyer un bus à sa place"
   nl: "Een bus ervoor sturen"
   pl: "Wyślij za niego autobus"
+  es: "Enviar un autobús en su lugar"
   ru: "Отправить автобус взамен"
   uk: "Надіслати автобус замість нього"
 "On the way today":
@@ -162,5 +184,6 @@ _version: 2
   fr: "En route aujourd'hui"
   nl: "Vandaag onderweg"
   pl: "Dziś w trasie"
+  es: "En camino hoy"
   ru: "Сегодня в пути"
   uk: "Сьогодні в дорозі"

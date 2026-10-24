@@ -7,6 +7,7 @@ _version: 2
   ru: "Скрипт матрицы этого автобуса (%{script}) сам пишет направление и номер маршрута шрифтами, которые запрашивает у игры по имени: выбранный шрифт занимает их место, каждый раз подогнанный по высоте, базовой линии и ширине заменяемых букв, так что матрица выбирает размеры, как со своими шрифтами."
   uk: "Скрипт матриці цього автобуса (%{script}) сам пише напрямок і номер маршруту шрифтами, які запитує в гри за назвою: вибраний шрифт займає їхнє місце, щоразу підігнаний за висотою, базовою лінією та шириною літер, які замінює, тож матриця вибирає розміри, як зі своїми шрифтами."
   pl: "Skrypt matrycy tego autobusu (%{script}) sam wypisuje kierunek i numer linii czcionkami, o które prosi grę po nazwie: wybrana czcionka zajmuje tam ich miejsce, za każdym razem dopasowana do wysokości, linii bazowej i szerokości liter, które zastępuje, więc matryca wybiera rozmiary jak przy własnych czcionkach."
+  es: "El script de la matriz de este autobús (%{script}) escribe él mismo su destino y su número de línea, con fuentes que pide al juego por su nombre: una fuente elegida ocupa allí su lugar, ajustada a la altura, la línea base y la anchura de las letras que sustituye, para que la matriz elija sus tamaños como con sus propias fuentes."
 "Drawn on its %{n} displays in their own grid, as tall and as wide as the letters of %{font} (capitals %{rows} dots high). Their symbols and pictograms stay the bus's own.":
   nl: "Getekend op zijn %{n} displays in hun eigen raster, even hoog en even breed als de letters van %{font} (hoofdletters %{rows} punten hoog). Hun symbolen en pictogrammen blijven die van de bus."
   de: "Auf seinen %{n} Anzeigen in deren eigenem Raster gezeichnet, so hoch und so breit wie die Buchstaben von %{font} (Großbuchstaben %{rows} Punkte hoch). Ihre Symbole und Piktogramme bleiben die des Busses."
@@ -14,6 +15,7 @@ _version: 2
   ru: "Рисуется на его табло (%{n}) в их собственной сетке, той же высоты и ширины, что и буквы %{font} (высота заглавных в точках: %{rows}). Их символы и пиктограммы остаются такими же, как у автобуса."
   uk: "Малюється на його табло (%{n}) у їхній власній сітці, тієї ж висоти й ширини, що й літери %{font} (висота великих літер у точках: %{rows}). Їхні символи й піктограми залишаються такими, як в автобуса."
   pl: "Rysowana na jego wyświetlaczach (%{n}) w ich własnej siatce, tak wysoka i tak szeroka jak litery %{font} (wysokość wielkich liter w punktach: %{rows}). Ich symbole i piktogramy pozostają takie jak w autobusie."
+  es: "Dibujada en sus %{n} indicadores con su propia cuadrícula, tan alta y tan ancha como las letras de %{font} (mayúsculas de %{rows} puntos de alto). Sus símbolos y pictogramas siguen siendo los del autobús."
 "Drawn in the display's own grid, as tall and as wide as the letters of %{font} (capitals %{rows} dots high). Its symbols and pictograms stay the bus's own.":
   nl: "Getekend in het eigen raster van het display, even hoog en even breed als de letters van %{font} (hoofdletters %{rows} punten hoog). Zijn symbolen en pictogrammen blijven die van de bus."
   de: "Im eigenen Raster der Anzeige gezeichnet, so hoch und so breit wie die Buchstaben von %{font} (Großbuchstaben %{rows} Punkte hoch). Ihre Symbole und Piktogramme bleiben die des Busses."
@@ -21,6 +23,7 @@ _version: 2
   ru: "Рисуется в собственной сетке табло, той же высоты и ширины, что и буквы %{font} (высота заглавных в точках: %{rows}). Его символы и пиктограммы остаются такими же, как у автобуса."
   uk: "Малюється у власній сітці табло, тієї ж висоти й ширини, що й літери %{font} (висота великих літер у точках: %{rows}). Його символи й піктограми залишаються такими, як в автобуса."
   pl: "Rysowana we własnej siatce wyświetlacza, tak wysoka i tak szeroka jak litery %{font} (wysokość wielkich liter w punktach: %{rows}). Jego symbole i piktogramy pozostają takie jak w autobusie."
+  es: "Dibujada con la propia cuadrícula del indicador, tan alta y tan ancha como las letras de %{font} (mayúsculas de %{rows} puntos de alto). Sus símbolos y pictogramas siguen siendo los del autobús."
 "%{n} dots":
   nl: "%{n} punten"
   de: "%{n} Punkte"
@@ -28,3 +31,4 @@ _version: 2
   ru: "Точек: %{n}"
   uk: "Точок: %{n}"
   pl: "Punktów: %{n}"
+  es: "%{n} puntos"

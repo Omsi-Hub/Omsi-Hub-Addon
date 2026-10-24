@@ -187,8 +187,9 @@ const companionState = () =>
 
 const answers = {
   hub_version: () => ({ app: '0.1.0', min_openomsi: '0.2.22', plugin: '1.8.0', bridge: 1 }),
-  hub_boot: () => ({ version: answers.hub_version(), data_dir: '(mock)', settings, setup_needed: !settings.setup_done, languages: ['en', 'nl', 'de', 'fr', 'pl'], intro: params.get('intro') || '', page: params.get('page') || '' }),
-  hub_texts: () => ({}),
+  hub_boot: () => ({ version: answers.hub_version(), data_dir: '(mock)', settings, setup_needed: !settings.setup_done, languages: ['en', 'nl', 'de', 'fr', 'ru', 'uk', 'pl', 'es'], intro: params.get('intro') || '', page: params.get('page') || '' }),
+  // (the tables of crates/hub-locales as `tools/serve-ui.mjs` reads them; none when the page is served otherwise)
+  hub_texts: async (a) => (await fetch(`/mock-texts/${encodeURIComponent(a.lang || 'en')}.json`).then((r) => (r.ok ? r.json() : {})).catch(() => ({}))),
   // (`?migrate` offers the old saves once, as `hub_setup_state` does when ~/.openomsi has some)
   hub_setup_state: () => ({ settings, openomsi: null, omsi2: null, migrate: oldSaves() }),
   hub_setup_suggest: () => ({ openomsi: [], omsi2: [] }),

@@ -8,6 +8,7 @@ _version: 2
   fr: "%{name} part en congé jusqu'au %{until}"
   nl: "%{name} gaat op vakantie tot en met %{until}"
   pl: "%{name} idzie na urlop do %{until}"
+  es: "%{name} se va de vacaciones hasta el %{until}"
   ru: "%{name} уходит в отпуск до %{until}"
   uk: "%{name} іде у відпустку до %{until}"
 "%{name} is back from holiday":
@@ -15,6 +16,7 @@ _version: 2
   fr: "%{name} rentre de congé"
   nl: "%{name} is terug van vakantie"
   pl: "%{name} wraca z urlopu"
+  es: "%{name} vuelve de vacaciones"
   ru: "%{name} возвращается из отпуска"
   uk: "%{name} повертається з відпустки"
 "%{name} asked for a holiday until %{until}":
@@ -22,6 +24,7 @@ _version: 2
   fr: "%{name} a demandé des congés jusqu'au %{until}"
   nl: "%{name} heeft vakantie aangevraagd tot en met %{until}"
   pl: "%{name} prosi o urlop do %{until}"
+  es: "%{name} ha pedido vacaciones hasta el %{until}"
   ru: "%{name} просит отпуск до %{until}"
   uk: "%{name} просить відпустку до %{until}"
 "Not answered yet":
@@ -29,6 +32,7 @@ _version: 2
   fr: "Pas encore de réponse"
   nl: "Nog niet beantwoord"
   pl: "Jeszcze bez odpowiedzi"
+  es: "Sin responder aún"
   ru: "Ответа ещё нет"
   uk: "Відповіді ще немає"
 "Answer %{name}'s holiday request":
@@ -36,6 +40,7 @@ _version: 2
   fr: "Répondre à la demande de congés de %{name}"
   nl: "Beantwoord de vakantieaanvraag van %{name}"
   pl: "Odpowiedz na wniosek urlopowy: %{name}"
+  es: "Responde a la solicitud de vacaciones de %{name}"
   ru: "Ответьте на просьбу об отпуске: %{name}"
   uk: "Дайте відповідь на прохання про відпустку: %{name}"
 "%{from} until %{until}: no answer, and the planner's suggestion holds":
@@ -43,6 +48,7 @@ _version: 2
   fr: "Du %{from} au %{until} : sans réponse, la proposition du planificateur s'applique"
   nl: "%{from} tot en met %{until}: zonder antwoord geldt het voorstel van de planner"
   pl: "%{from} – %{until}: bez odpowiedzi obowiązuje propozycja planisty"
+  es: "Del %{from} al %{until}: sin respuesta, vale la propuesta del planificador"
   ru: "С %{from} по %{until}: без ответа действует предложение планировщика"
   uk: "З %{from} по %{until}: без відповіді діє пропозиція планувальника"
 "%{from} until %{until}: no answer is a no":
@@ -50,6 +56,7 @@ _version: 2
   fr: "Du %{from} au %{until} : sans réponse, c'est non"
   nl: "%{from} tot en met %{until}: geen antwoord is nee"
   pl: "%{from} – %{until}: brak odpowiedzi oznacza odmowę"
+  es: "Del %{from} al %{until}: sin respuesta, es un no"
   ru: "С %{from} по %{until}: нет ответа — значит нет"
   uk: "З %{from} по %{until}: немає відповіді — означає ні"
 "%{name} is back after being ill":
@@ -57,6 +64,7 @@ _version: 2
   fr: "%{name} reprend après une maladie"
   nl: "%{name} is terug na ziekte"
   pl: "%{name} wraca po chorobie"
+  es: "%{name} vuelve tras estar de baja"
   ru: "%{name} возвращается после болезни"
   uk: "%{name} повертається після хвороби"
 "%{name} finishes the course %{what}":
@@ -64,6 +72,7 @@ _version: 2
   fr: "%{name} termine la formation %{what}"
   nl: "%{name} rondt de cursus %{what} af"
   pl: "%{name} kończy kurs %{what}"
+  es: "%{name} termina el curso %{what}"
   ru: "%{name} завершает курс «%{what}»"
   uk: "%{name} завершує курс «%{what}»"
 "%{name}'s course ends":
@@ -71,6 +80,7 @@ _version: 2
   fr: "La formation de %{name} se termine"
   nl: "De cursus van %{name} eindigt"
   pl: "Koniec kursu: %{name}"
+  es: "Termina el curso de %{name}"
   ru: "Окончание курса: %{name}"
   uk: "Закінчення курсу: %{name}"
 "You finish the course %{what}":
@@ -78,6 +88,7 @@ _version: 2
   fr: "Vous terminez la formation %{what}"
   nl: "Je rondt de cursus %{what} af"
   pl: "Kończysz kurs %{what}"
+  es: "Terminas el curso %{what}"
   ru: "Вы завершаете курс «%{what}»"
   uk: "Ви завершуєте курс «%{what}»"
 "%{name} starts as %{role}":
@@ -85,6 +96,7 @@ _version: 2
   fr: "%{name} commence comme %{role}"
   nl: "%{name} begint als %{role}"
   pl: "%{name} zaczyna pracę: %{role}"
+  es: "%{name} empieza como %{role}"
   ru: "%{name} начинает работу: %{role}"
   uk: "%{name} починає роботу: %{role}"
 "%{name}'s last day at the company":
@@ -92,6 +104,7 @@ _version: 2
   fr: "Dernier jour de %{name} dans l'entreprise"
   nl: "Laatste werkdag van %{name}"
   pl: "Ostatni dzień pracy: %{name}"
+  es: "Último día de %{name} en la empresa"
   ru: "Последний рабочий день: %{name}"
   uk: "Останній робочий день: %{name}"
 "Dismissed":
@@ -99,6 +112,7 @@ _version: 2
   fr: "Licencié(e)"
   nl: "Ontslagen"
   pl: "Zwolniony(a)"
+  es: "Despedido"
   ru: "Уволен(а)"
   uk: "Звільнений(а)"
 "Answer %{name}'s request for a raise":
@@ -106,6 +120,7 @@ _version: 2
   fr: "Répondre à la demande d'augmentation de %{name}"
   nl: "Beantwoord het loonverzoek van %{name}"
   pl: "Odpowiedz na prośbę o podwyżkę: %{name}"
+  es: "Responde a la petición de aumento de %{name}"
   ru: "Ответьте на просьбу о повышении зарплаты: %{name}"
   uk: "Дайте відповідь на прохання про підвищення зарплати: %{name}"
 "%{pct} % more: no answer by then is a no":
@@ -113,6 +128,7 @@ _version: 2
   fr: "%{pct} % de plus : sans réponse d'ici là, c'est non"
   nl: "%{pct} % meer: geen antwoord vóór die dag is nee"
   pl: "%{pct} % więcej: brak odpowiedzi do tego dnia oznacza odmowę"
+  es: "%{pct} % más: sin respuesta para entonces, es un no"
   ru: "На %{pct} % больше: нет ответа к этому дню — значит нет"
   uk: "На %{pct} % більше: немає відповіді до цього дня — означає ні"
 "Waiting for your decision":
@@ -120,6 +136,7 @@ _version: 2
   fr: "Attend votre décision"
   nl: "Wacht op je beslissing"
   pl: "Czeka na twoją decyzję"
+  es: "Espera tu decisión"
   ru: "Ждёт вашего решения"
   uk: "Чекає на ваше рішення"
 "Spare bus %{spare} took over its trips from %{arrive}":
@@ -127,6 +144,7 @@ _version: 2
   fr: "Le bus de réserve %{spare} a repris ses courses à partir de %{arrive}"
   nl: "Reservebus %{spare} heeft zijn ritten vanaf %{arrive} overgenomen"
   pl: "Autobus rezerwowy %{spare} przejął jego kursy od %{arrive}"
+  es: "El autobús de reserva %{spare} asumió sus viajes desde las %{arrive}"
   ru: "Резервный автобус %{spare} взял его рейсы с %{arrive}"
   uk: "Резервний автобус %{spare} узяв його рейси з %{arrive}"
 "A rental bus took over its trips from %{arrive}":
@@ -134,6 +152,7 @@ _version: 2
   fr: "Un bus de location a repris ses courses à partir de %{arrive}"
   nl: "Een huurbus heeft zijn ritten vanaf %{arrive} overgenomen"
   pl: "Wynajęty autobus przejął jego kursy od %{arrive}"
+  es: "Un autobús de alquiler asumió sus viajes desde las %{arrive}"
   ru: "Арендованный автобус взял его рейсы с %{arrive}"
   uk: "Орендований автобус узяв його рейси з %{arrive}"
 "Its trips were dropped":
@@ -141,6 +160,7 @@ _version: 2
   fr: "Ses courses ont été supprimées"
   nl: "Zijn ritten zijn uitgevallen"
   pl: "Jego kursy zostały odwołane"
+  es: "Sus viajes se suprimieron"
   ru: "Его рейсы отменены"
   uk: "Його рейси скасовано"
 "Bus %{bus} is back from the workshop":
@@ -148,6 +168,7 @@ _version: 2
   fr: "Le bus %{bus} sort de l'atelier"
   nl: "Bus %{bus} is terug uit de werkplaats"
   pl: "Autobus %{bus} wraca z warsztatu"
+  es: "El autobús %{bus} sale del taller"
   ru: "Автобус %{bus} возвращается из мастерской"
   uk: "Автобус %{bus} повертається з майстерні"
 "Job done: %{job}":
@@ -155,6 +176,7 @@ _version: 2
   fr: "Travail effectué : %{job}"
   nl: "Klaar: %{job}"
   pl: "Wykonano: %{job}"
+  es: "Trabajo hecho: %{job}"
   ru: "Выполнено: %{job}"
   uk: "Виконано: %{job}"
 "Repaired after its breakdown":
@@ -162,6 +184,7 @@ _version: 2
   fr: "Réparé après sa panne"
   nl: "Gerepareerd na zijn pech"
   pl: "Naprawiony po awarii"
+  es: "Reparado tras su avería"
   ru: "Отремонтирован после поломки"
   uk: "Відремонтований після поломки"
 "Repaired after its accident":
@@ -169,6 +192,7 @@ _version: 2
   fr: "Réparé après son accident"
   nl: "Gerepareerd na zijn ongeluk"
   pl: "Naprawiony po wypadku"
+  es: "Reparado tras su accidente"
   ru: "Отремонтирован после аварии"
   uk: "Відремонтований після аварії"
 "Bus %{bus} goes into the workshop: %{job}":
@@ -176,6 +200,7 @@ _version: 2
   fr: "Le bus %{bus} entre à l'atelier : %{job}"
   nl: "Bus %{bus} gaat de werkplaats in: %{job}"
   pl: "Autobus %{bus} trafia do warsztatu: %{job}"
+  es: "El autobús %{bus} entra en el taller: %{job}"
   ru: "Автобус %{bus} отправляется в мастерскую: %{job}"
   uk: "Автобус %{bus} іде в майстерню: %{job}"
 "Bus %{bus} waits for a free workshop bay: %{job}":
@@ -183,6 +208,7 @@ _version: 2
   fr: "Le bus %{bus} attend un poste d'atelier libre : %{job}"
   nl: "Bus %{bus} wacht op een vrije werkplaatsplek: %{job}"
   pl: "Autobus %{bus} czeka na wolne stanowisko w warsztacie: %{job}"
+  es: "El autobús %{bus} espera un puesto libre en el taller: %{job}"
   ru: "Автобус %{bus} ждёт свободного места в мастерской: %{job}"
   uk: "Автобус %{bus} чекає на вільне місце в майстерні: %{job}"
 "Bus %{bus} waits for spare parts":
@@ -190,6 +216,7 @@ _version: 2
   fr: "Le bus %{bus} attend des pièces détachées"
   nl: "Bus %{bus} wacht op onderdelen"
   pl: "Autobus %{bus} czeka na części zamienne"
+  es: "El autobús %{bus} espera recambios"
   ru: "Автобус %{bus} ждёт запчастей"
   uk: "Автобус %{bus} чекає на запчастини"
 "Since %{date}":
@@ -197,6 +224,7 @@ _version: 2
   fr: "Depuis le %{date}"
   nl: "Sinds %{date}"
   pl: "Od %{date}"
+  es: "Desde el %{date}"
   ru: "С %{date}"
   uk: "З %{date}"
 "Spare parts arrive":
@@ -204,6 +232,7 @@ _version: 2
   fr: "Les pièces détachées arrivent"
   nl: "Onderdelen komen binnen"
   pl: "Docierają części zamienne"
+  es: "Llegan los recambios"
   ru: "Прибывают запчасти"
   uk: "Прибувають запчастини"
 "%{count} parts":
@@ -211,6 +240,7 @@ _version: 2
   fr: "%{count} pièces"
   nl: "%{count} onderdelen"
   pl: "Części: %{count}"
+  es: "%{count} piezas"
   ru: "Запчастей: %{count}"
   uk: "Запчастин: %{count}"
 "Bus %{bus} is due for its service":
@@ -218,6 +248,7 @@ _version: 2
   fr: "Le bus %{bus} doit passer à l'entretien"
   nl: "Bus %{bus} is toe aan zijn onderhoudsbeurt"
   pl: "Autobus %{bus} wymaga przeglądu"
+  es: "Al autobús %{bus} le toca la revisión"
   ru: "Автобусу %{bus} пора на техобслуживание"
   uk: "Автобусу %{bus} час на техобслуговування"
 "Estimated from %{km} km a day":
@@ -225,6 +256,7 @@ _version: 2
   fr: "Estimé d'après %{km} km par jour"
   nl: "Geschat op %{km} km per dag"
   pl: "Szacunek przy %{km} km dziennie"
+  es: "Estimado con %{km} km al día"
   ru: "Оценка по %{km} км в день"
   uk: "Оцінка за %{km} км на день"
 "Bus %{bus}: its lease ends":
@@ -232,6 +264,7 @@ _version: 2
   fr: "Bus %{bus} : son leasing se termine"
   nl: "Bus %{bus}: de lease loopt af"
   pl: "Autobus %{bus}: kończy się leasing"
+  es: "Autobús %{bus}: termina su leasing"
   ru: "Автобус %{bus}: заканчивается лизинг"
   uk: "Автобус %{bus}: закінчується лізинг"
 "Bus %{bus}: its rental ends":
@@ -239,6 +272,7 @@ _version: 2
   fr: "Bus %{bus} : sa location se termine"
   nl: "Bus %{bus}: de huur loopt af"
   pl: "Autobus %{bus}: kończy się wynajem"
+  es: "Autobús %{bus}: termina su alquiler"
   ru: "Автобус %{bus}: заканчивается аренда"
   uk: "Автобус %{bus}: закінчується оренда"
 "It leaves the fleet after this day":
@@ -246,6 +280,7 @@ _version: 2
   fr: "Il quitte la flotte après ce jour"
   nl: "Na deze dag verlaat hij de vloot"
   pl: "Po tym dniu opuszcza flotę"
+  es: "Deja la flota después de este día"
   ru: "После этого дня он покидает парк"
   uk: "Після цього дня він залишає парк"
 "The dealer delivers %{count} × %{name}":
@@ -253,6 +288,7 @@ _version: 2
   fr: "Le concessionnaire livre %{count} × %{name}"
   nl: "De dealer levert %{count} × %{name}"
   pl: "Dealer dostarcza %{count} × %{name}"
+  es: "El concesionario entrega %{count} × %{name}"
   ru: "Дилер поставляет %{count} × %{name}"
   uk: "Дилер постачає %{count} × %{name}"
 "Bus %{bus}: its warranty ends":
@@ -260,6 +296,7 @@ _version: 2
   fr: "Bus %{bus} : sa garantie se termine"
   nl: "Bus %{bus}: de garantie loopt af"
   pl: "Autobus %{bus}: kończy się gwarancja"
+  es: "Autobús %{bus}: termina su garantía"
   ru: "Автобус %{bus}: заканчивается гарантия"
   uk: "Автобус %{bus}: закінчується гарантія"
 "Building work finishes: %{area}":
@@ -267,6 +304,7 @@ _version: 2
   fr: "Fin des travaux : %{area}"
   nl: "Bouwwerk wordt klaar: %{area}"
   pl: "Koniec budowy: %{area}"
+  es: "Terminan las obras: %{area}"
   ru: "Завершение строительства: %{area}"
   uk: "Завершення будівництва: %{area}"
 "%{count} tours not covered":
@@ -274,6 +312,7 @@ _version: 2
   fr: "%{count} services non assurés"
   nl: "%{count} omlopen niet gedekt"
   pl: "Nieobsadzone brygady: %{count}"
+  es: "%{count} recorridos sin cubrir"
   ru: "Не обеспечено выходов: %{count}"
   uk: "Не забезпечено оборотів: %{count}"
 "%{buses} without a bus, %{duties} duties without a driver":
@@ -281,6 +320,7 @@ _version: 2
   fr: "%{buses} sans bus, %{duties} postes sans conducteur"
   nl: "%{buses} zonder bus, %{duties} diensten zonder chauffeur"
   pl: "%{buses} bez autobusu, %{duties} zmian bez kierowcy"
+  es: "%{buses} sin autobús, %{duties} servicios sin conductor"
   ru: "%{buses} без автобуса, %{duties} смен без водителя"
   uk: "%{buses} без автобуса, %{duties} змін без водія"
 "Line %{n} is not in service yet":
@@ -288,6 +328,7 @@ _version: 2
   fr: "La ligne %{n} n'est pas encore en service"
   nl: "Lijn %{n} is nog niet in dienst"
   pl: "Linia %{n} jeszcze nie kursuje"
+  es: "La línea %{n} aún no está en servicio"
   ru: "Линия %{n} ещё не работает"
   uk: "Лінія %{n} ще не працює"
 "Plan its tours and start its service":
@@ -295,6 +336,7 @@ _version: 2
   fr: "Planifiez ses services et lancez son service"
   nl: "Plan de omlopen en start de dienst"
   pl: "Zaplanuj brygady i uruchom kursowanie"
+  es: "Planifica sus recorridos y ponla en servicio"
   ru: "Запланируйте обороты и запустите работу"
   uk: "Заплануйте обороти і запустіть роботу"
 "Line %{n} starts its service":
@@ -302,6 +344,7 @@ _version: 2
   fr: "La ligne %{n} entre en service"
   nl: "Lijn %{n} gaat in dienst"
   pl: "Linia %{n} zaczyna kursować"
+  es: "La línea %{n} entra en servicio"
   ru: "Линия %{n} начинает работу"
   uk: "Лінія %{n} починає роботу"
 "Line %{n}: its changes take effect":
@@ -309,6 +352,7 @@ _version: 2
   fr: "Ligne %{n} : ses modifications entrent en vigueur"
   nl: "Lijn %{n}: de wijzigingen gaan in"
   pl: "Linia %{n}: zmiany wchodzą w życie"
+  es: "Línea %{n}: entran en vigor sus cambios"
   ru: "Линия %{n}: изменения вступают в силу"
   uk: "Лінія %{n}: зміни набувають чинності"
 "Line %{n} is out to tender: the auction opens":
@@ -316,6 +360,7 @@ _version: 2
   fr: "La ligne %{n} est en appel d'offres : l'enchère s'ouvre"
   nl: "Lijn %{n} wordt aanbesteed: de veiling begint"
   pl: "Linia %{n} trafiła do przetargu: aukcja się zaczyna"
+  es: "La línea %{n} sale a licitación: se abre la subasta"
   ru: "Линия %{n} выставлена на торги: аукцион открывается"
   uk: "Лінію %{n} виставлено на торги: аукціон відкривається"
 "The renewal of line %{n} is out to tender: the auction opens":
@@ -323,6 +368,7 @@ _version: 2
   fr: "Le renouvellement de la ligne %{n} est en appel d'offres : l'enchère s'ouvre"
   nl: "De verlenging van lijn %{n} wordt aanbesteed: de veiling begint"
   pl: "Przedłużenie linii %{n} trafiło do przetargu: aukcja się zaczyna"
+  es: "La renovación de la línea %{n} sale a licitación: se abre la subasta"
   ru: "Продление линии %{n} выставлено на торги: аукцион открывается"
   uk: "Продовження лінії %{n} виставлено на торги: аукціон відкривається"
 "The auction for line %{n} closes":
@@ -330,6 +376,7 @@ _version: 2
   fr: "L'enchère pour la ligne %{n} se termine"
   nl: "De veiling voor lijn %{n} sluit"
   pl: "Aukcja na linię %{n} się kończy"
+  es: "Se cierra la subasta de la línea %{n}"
   ru: "Аукцион на линию %{n} закрывается"
   uk: "Аукціон на лінію %{n} закривається"
 "Your concession: bid to keep it":
@@ -337,6 +384,7 @@ _version: 2
   fr: "Votre concession : enchérissez pour la garder"
   nl: "Jouw concessie: bied om hem te houden"
   pl: "Twoja koncesja: licytuj, aby ją zachować"
+  es: "Tu concesión: puja para conservarla"
   ru: "Ваша концессия: делайте ставку, чтобы сохранить её"
   uk: "Ваша концесія: робіть ставку, щоб зберегти її"
 "The concession for line %{n} begins":
@@ -344,6 +392,7 @@ _version: 2
   fr: "La concession de la ligne %{n} commence"
   nl: "De concessie voor lijn %{n} begint"
   pl: "Zaczyna się koncesja na linię %{n}"
+  es: "Empieza la concesión de la línea %{n}"
   ru: "Начинается концессия на линию %{n}"
   uk: "Починається концесія на лінію %{n}"
 "The concession for line %{n} ends":
@@ -351,6 +400,7 @@ _version: 2
   fr: "La concession de la ligne %{n} se termine"
   nl: "De concessie voor lijn %{n} eindigt"
   pl: "Kończy się koncesja na linię %{n}"
+  es: "Termina la concesión de la línea %{n}"
   ru: "Заканчивается концессия на линию %{n}"
   uk: "Закінчується концесія на лінію %{n}"
 "Its renewal is out to tender":
@@ -358,6 +408,7 @@ _version: 2
   fr: "Son renouvellement est en appel d'offres"
   nl: "De verlenging wordt aanbesteed"
   pl: "Jej przedłużenie trafiło do przetargu"
+  es: "Su renovación sale a licitación"
   ru: "Её продление выставлено на торги"
   uk: "Її продовження виставлено на торги"
 "The goal's last day: %{done} % reached":
@@ -365,6 +416,7 @@ _version: 2
   fr: "Dernier jour de l'objectif : %{done} % atteint"
   nl: "Laatste dag van het doel: %{done} % gehaald"
   pl: "Ostatni dzień celu: osiągnięto %{done} %"
+  es: "Último día del objetivo: %{done} % alcanzado"
   ru: "Последний день цели: выполнено %{done} %"
   uk: "Останній день цілі: виконано %{done} %"
 "The fixed diesel price begins":
@@ -372,6 +424,7 @@ _version: 2
   fr: "Le prix fixe du gazole commence"
   nl: "De vaste dieselprijs gaat in"
   pl: "Zaczyna obowiązywać stała cena oleju napędowego"
+  es: "Empieza el precio fijo del gasóleo"
   ru: "Начинает действовать фиксированная цена дизеля"
   uk: "Починає діяти фіксована ціна дизеля"
 "The fixed diesel price ends":
@@ -379,6 +432,7 @@ _version: 2
   fr: "Le prix fixe du gazole se termine"
   nl: "De vaste dieselprijs loopt af"
   pl: "Kończy się stała cena oleju napędowego"
+  es: "Termina el precio fijo del gasóleo"
   ru: "Заканчивается фиксированная цена дизеля"
   uk: "Закінчується фіксована ціна дизеля"
 "The cleaning company starts on the buses":
@@ -386,6 +440,7 @@ _version: 2
   fr: "L'entreprise de nettoyage commence sur les bus"
   nl: "Het schoonmaakbedrijf begint aan de bussen"
   pl: "Firma sprzątająca zaczyna pracę przy autobusach"
+  es: "La empresa de limpieza empieza con los autobuses"
   ru: "Клининговая компания начинает работу с автобусами"
   uk: "Клінінгова компанія починає роботу з автобусами"
 "The cleaning company's contract ends":
@@ -393,6 +448,7 @@ _version: 2
   fr: "Le contrat de l'entreprise de nettoyage se termine"
   nl: "Het contract met het schoonmaakbedrijf loopt af"
   pl: "Kończy się umowa z firmą sprzątającą"
+  es: "Termina el contrato de la empresa de limpieza"
   ru: "Заканчивается договор с клининговой компанией"
   uk: "Закінчується договір із клінінговою компанією"
 "The buses' internet begins with %{who}":
@@ -400,6 +456,7 @@ _version: 2
   fr: "L'internet des bus commence avec %{who}"
   nl: "Het internet in de bussen begint bij %{who}"
   pl: "Internet w autobusach rusza z %{who}"
+  es: "Empieza el internet de los autobuses con %{who}"
   ru: "Интернет в автобусах начинает работать с %{who}"
   uk: "Інтернет в автобусах починає працювати з %{who}"
 "The buses' internet changes to %{who}":
@@ -407,6 +464,7 @@ _version: 2
   fr: "L'internet des bus passe chez %{who}"
   nl: "Het internet in de bussen gaat over naar %{who}"
   pl: "Internet w autobusach przechodzi do %{who}"
+  es: "El internet de los autobuses pasa a %{who}"
   ru: "Интернет в автобусах переходит к %{who}"
   uk: "Інтернет в автобусах переходить до %{who}"
 "The buses' internet ends":
@@ -414,6 +472,7 @@ _version: 2
   fr: "L'internet des bus se termine"
   nl: "Het internet in de bussen stopt"
   pl: "Internet w autobusach się kończy"
+  es: "Termina el internet de los autobuses"
   ru: "Интернет в автобусах отключается"
   uk: "Інтернет в автобусах вимикається"
 "The advertising for %{who} ends":
@@ -421,6 +480,7 @@ _version: 2
   fr: "La publicité pour %{who} se termine"
   nl: "De reclame voor %{who} loopt af"
   pl: "Kończy się reklama dla %{who}"
+  es: "Termina la publicidad de %{who}"
   ru: "Заканчивается реклама для %{who}"
   uk: "Закінчується реклама для %{who}"
 "The month closes: wages, leases and insurance are booked":
@@ -428,6 +488,7 @@ _version: 2
   fr: "Clôture du mois : salaires, leasings et assurances sont comptabilisés"
   nl: "Maandafsluiting: lonen, lease en verzekering worden geboekt"
   pl: "Zamknięcie miesiąca: księgowane są płace, leasingi i ubezpieczenia"
+  es: "Cierre del mes: se contabilizan sueldos, leasings y seguros"
   ru: "Закрытие месяца: проводятся зарплаты, лизинг и страховка"
   uk: "Закриття місяця: проводяться зарплати, лізинг і страхування"
 "Loan rates: %{amount}":
@@ -435,6 +496,7 @@ _version: 2
   fr: "Mensualités des prêts : %{amount}"
   nl: "Leningtermijnen: %{amount}"
   pl: "Raty kredytów: %{amount}"
+  es: "Cuotas de préstamos: %{amount}"
   ru: "Платежи по кредитам: %{amount}"
   uk: "Платежі за кредитами: %{amount}"
 "The last rate of the loan: %{name}":
@@ -442,6 +504,7 @@ _version: 2
   fr: "La dernière mensualité du prêt : %{name}"
   nl: "De laatste termijn van de lening: %{name}"
   pl: "Ostatnia rata kredytu: %{name}"
+  es: "Última cuota del préstamo: %{name}"
   ru: "Последний платёж по кредиту: %{name}"
   uk: "Останній платіж за кредитом: %{name}"
 "Research done: %{what}":
@@ -449,6 +512,7 @@ _version: 2
   fr: "Recherche terminée : %{what}"
   nl: "Onderzoek klaar: %{what}"
   pl: "Badanie zakończone: %{what}"
+  es: "Investigación terminada: %{what}"
   ru: "Исследование завершено: %{what}"
   uk: "Дослідження завершено: %{what}"
 "At today's pace":
@@ -456,6 +520,7 @@ _version: 2
   fr: "Au rythme d'aujourd'hui"
   nl: "In het tempo van vandaag"
   pl: "W dzisiejszym tempie"
+  es: "Al ritmo de hoy"
   ru: "В сегодняшнем темпе"
   uk: "У сьогоднішньому темпі"
 "Nobody works on the research: %{what}":
@@ -463,6 +528,7 @@ _version: 2
   fr: "Personne ne travaille sur la recherche : %{what}"
   nl: "Niemand werkt aan het onderzoek: %{what}"
   pl: "Nikt nie pracuje nad badaniem: %{what}"
+  es: "Nadie trabaja en la investigación: %{what}"
   ru: "Никто не работает над исследованием: %{what}"
   uk: "Ніхто не працює над дослідженням: %{what}"
 "Public holiday: %{what}":
@@ -470,6 +536,7 @@ _version: 2
   fr: "Jour férié : %{what}"
   nl: "Feestdag: %{what}"
   pl: "Święto: %{what}"
+  es: "Festivo: %{what}"
   ru: "Праздник: %{what}"
   uk: "Свято: %{what}"
 "School holidays begin: %{what}":
@@ -477,6 +544,7 @@ _version: 2
   fr: "Début des vacances scolaires : %{what}"
   nl: "De schoolvakantie begint: %{what}"
   pl: "Zaczynają się ferie szkolne: %{what}"
+  es: "Empiezan las vacaciones escolares: %{what}"
   ru: "Начинаются школьные каникулы: %{what}"
   uk: "Починаються шкільні канікули: %{what}"
 "Until %{until}":
@@ -484,6 +552,7 @@ _version: 2
   fr: "Jusqu'au %{until}"
   nl: "Tot en met %{until}"
   pl: "Do %{until}"
+  es: "Hasta el %{until}"
   ru: "До %{until}"
   uk: "До %{until}"
 "School starts again after %{what}":
@@ -491,6 +560,7 @@ _version: 2
   fr: "Reprise de l'école après : %{what}"
   nl: "De school begint weer na: %{what}"
   pl: "Szkoła znów zaczyna się po: %{what}"
+  es: "Vuelven las clases tras %{what}"
   ru: "Снова в школу после: %{what}"
   uk: "Знову до школи після: %{what}"
 "From %{from} until %{until}":
@@ -498,6 +568,7 @@ _version: 2
   fr: "Du %{from} au %{until}"
   nl: "Van %{from} tot en met %{until}"
   pl: "Od %{from} do %{until}"
+  es: "Del %{from} al %{until}"
   ru: "С %{from} по %{until}"
   uk: "З %{from} по %{until}"
 "New Year's Day":
@@ -505,6 +576,7 @@ _version: 2
   fr: "Jour de l'an"
   nl: "Nieuwjaarsdag"
   pl: "Nowy Rok"
+  es: "Año Nuevo"
   ru: "Новый год"
   uk: "Новий рік"
 "Good Friday":
@@ -512,6 +584,7 @@ _version: 2
   fr: "Vendredi saint"
   nl: "Goede Vrijdag"
   pl: "Wielki Piątek"
+  es: "Viernes Santo"
   ru: "Страстная пятница"
   uk: "Страсна п'ятниця"
 "Easter Monday":
@@ -519,6 +592,7 @@ _version: 2
   fr: "Lundi de Pâques"
   nl: "Tweede paasdag"
   pl: "Poniedziałek Wielkanocny"
+  es: "Lunes de Pascua"
   ru: "Пасхальный понедельник"
   uk: "Великодній понеділок"
 "Labour Day":
@@ -526,6 +600,7 @@ _version: 2
   fr: "Fête du Travail"
   nl: "Dag van de Arbeid"
   pl: "Święto Pracy"
+  es: "Día del Trabajo"
   ru: "День труда"
   uk: "День праці"
 "Ascension Day":
@@ -533,6 +608,7 @@ _version: 2
   fr: "Ascension"
   nl: "Hemelvaartsdag"
   pl: "Wniebowstąpienie"
+  es: "Día de la Ascensión"
   ru: "Вознесение"
   uk: "Вознесіння"
 "Whit Monday":
@@ -540,6 +616,7 @@ _version: 2
   fr: "Lundi de Pentecôte"
   nl: "Tweede pinksterdag"
   pl: "Poniedziałek Zielonych Świątek"
+  es: "Lunes de Pentecostés"
   ru: "Духов день"
   uk: "Духів день"
 "Christmas Day":
@@ -547,6 +624,7 @@ _version: 2
   fr: "Noël"
   nl: "Eerste kerstdag"
   pl: "Boże Narodzenie"
+  es: "Navidad"
   ru: "Рождество"
   uk: "Різдво"
 "Second Day of Christmas":
@@ -554,6 +632,7 @@ _version: 2
   fr: "Lendemain de Noël"
   nl: "Tweede kerstdag"
   pl: "Drugi dzień świąt"
+  es: "San Esteban"
   ru: "Второй день Рождества"
   uk: "Другий день Різдва"
 "Lines and contracts":
@@ -561,6 +640,7 @@ _version: 2
   fr: "Lignes et contrats"
   nl: "Lijnen en contracten"
   pl: "Linie i umowy"
+  es: "Líneas y contratos"
   ru: "Линии и договоры"
   uk: "Лінії та договори"
 "Money and other":
@@ -568,6 +648,7 @@ _version: 2
   fr: "Argent et autres"
   nl: "Geld en overig"
   pl: "Pieniądze i inne"
+  es: "Dinero y otros"
   ru: "Деньги и прочее"
   uk: "Гроші та інше"
 "Tomorrow":
@@ -575,6 +656,7 @@ _version: 2
   fr: "Demain"
   nl: "Morgen"
   pl: "Jutro"
+  es: "Mañana"
   ru: "Завтра"
   uk: "Завтра"
 "Yesterday":
@@ -582,6 +664,7 @@ _version: 2
   fr: "Hier"
   nl: "Gisteren"
   pl: "Wczoraj"
+  es: "Ayer"
   ru: "Вчера"
   uk: "Учора"
 "Nothing needs you":
@@ -589,6 +672,7 @@ _version: 2
   fr: "Rien ne vous attend"
   nl: "Niets wacht op jou"
   pl: "Nic na ciebie nie czeka"
+  es: "Nada te espera"
   ru: "Ничего не ждёт вас"
   uk: "Ніщо на вас не чекає"
 "1 needs you":
@@ -596,6 +680,7 @@ _version: 2
   fr: "1 vous attend"
   nl: "1 wacht op jou"
   pl: "1 czeka na ciebie"
+  es: "1 te espera"
   ru: "1 ждёт вас"
   uk: "1 чекає на вас"
 "%{n} need you":
@@ -603,6 +688,7 @@ _version: 2
   fr: "%{n} vous attendent"
   nl: "%{n} wachten op jou"
   pl: "Czeka na ciebie: %{n}"
+  es: "%{n} te esperan"
   ru: "Ждут вас: %{n}"
   uk: "Чекають на вас: %{n}"
 "Agenda":
@@ -610,6 +696,7 @@ _version: 2
   fr: "Agenda"
   nl: "Agenda"
   pl: "Terminarz"
+  es: "Agenda"
   ru: "Календарь"
   uk: "Календар"
 "Every holiday, breakdown, repair, delivery and deadline the company knows of":
@@ -617,6 +704,7 @@ _version: 2
   fr: "Chaque congé, panne, réparation, livraison et échéance que l'entreprise connaît"
   nl: "Elke vakantie, pech, reparatie, levering en deadline die het bedrijf kent"
   pl: "Każdy urlop, awaria, naprawa, dostawa i termin, o których wie firma"
+  es: "Todas las vacaciones, averías, reparaciones, entregas y plazos que conoce la empresa"
   ru: "Все отпуска, поломки, ремонты, поставки и сроки, известные компании"
   uk: "Усі відпустки, поломки, ремонти, поставки й терміни, відомі компанії"
 "Only what needs me":
@@ -624,6 +712,7 @@ _version: 2
   fr: "Seulement ce qui m'attend"
   nl: "Alleen wat op mij wacht"
   pl: "Tylko to, co na mnie czeka"
+  es: "Solo lo que me espera"
   ru: "Только то, что ждёт меня"
   uk: "Лише те, що чекає на мене"
 "Requests to answer and what has no cover":
@@ -631,6 +720,7 @@ _version: 2
   fr: "Les demandes à traiter et ce qui n'est pas couvert"
   nl: "Aanvragen om te beantwoorden en wat niet gedekt is"
   pl: "Prośby do rozpatrzenia i to, co nie jest obsadzone"
+  es: "Solicitudes por responder y lo que no está cubierto"
   ru: "Запросы, ждущие ответа, и то, что не обеспечено"
   uk: "Запити, що чекають на відповідь, і те, що не забезпечено"
 "Nothing on this day":
@@ -638,6 +728,7 @@ _version: 2
   fr: "Rien ce jour-là"
   nl: "Niets op deze dag"
   pl: "Nic tego dnia"
+  es: "Nada este día"
   ru: "В этот день ничего"
   uk: "Цього дня нічого"
 "Nothing in these days":
@@ -645,6 +736,7 @@ _version: 2
   fr: "Rien sur ces jours"
   nl: "Niets in deze dagen"
   pl: "Nic w tych dniach"
+  es: "Nada en estos días"
   ru: "В эти дни ничего"
   uk: "У ці дні нічого"
 "%{n} in the agenda":
@@ -652,6 +744,7 @@ _version: 2
   fr: "%{n} dans l'agenda"
   nl: "%{n} in de agenda"
   pl: "%{n} w terminarzu"
+  es: "%{n} en la agenda"
   ru: "%{n} в календаре"
   uk: "%{n} у календарі"
 "%{name}: plan its tours and start its service":
@@ -659,6 +752,7 @@ _version: 2
   fr: "%{name} : planifiez ses services et lancez son service"
   nl: "%{name}: plan de omlopen en start de dienst"
   pl: "%{name}: zaplanuj brygady i uruchom kursowanie"
+  es: "%{name}: planifica sus recorridos y ponla en servicio"
   ru: "%{name}: запланируйте обороты и запустите работу"
   uk: "%{name}: заплануйте обороти і запустіть роботу"
 "An agency driver booked (%{h} h)":
@@ -666,6 +760,7 @@ _version: 2
   fr: "Un conducteur intérimaire réservé (%{h} h)"
   nl: "Een uitzendchauffeur geboekt (%{h} u)"
   pl: "Zarezerwowany kierowca z agencji (%{h} godz.)"
+  es: "Un conductor de agencia reservado (%{h} h)"
   ru: "Забронирован водитель из агентства (%{h} ч)"
   uk: "Заброньовано водія з агентства (%{h} год)"
 "%{count} agency drivers booked (%{h} h)":
@@ -673,6 +768,7 @@ _version: 2
   fr: "%{count} conducteurs intérimaires réservés (%{h} h)"
   nl: "%{count} uitzendchauffeurs geboekt (%{h} u)"
   pl: "Zarezerwowani kierowcy z agencji: %{count} (%{h} godz.)"
+  es: "%{count} conductores de agencia reservados (%{h} h)"
   ru: "Забронировано водителей из агентства: %{count} (%{h} ч)"
   uk: "Заброньовано водіїв з агентства: %{count} (%{h} год)"
 "%{start}–%{end}, %{duties} duties given":
@@ -680,6 +776,7 @@ _version: 2
   fr: "%{start}–%{end}, %{duties} postes attribués"
   nl: "%{start}–%{end}, %{duties} diensten toegewezen"
   pl: "%{start}–%{end}, przydzielone zmiany: %{duties}"
+  es: "%{start}–%{end}, %{duties} servicios asignados"
   ru: "%{start}–%{end}, назначено смен: %{duties}"
   uk: "%{start}–%{end}, призначено змін: %{duties}"
 "When the day needs them, %{duties} duties given":
@@ -687,6 +784,7 @@ _version: 2
   fr: "Quand la journée en a besoin, %{duties} postes attribués"
   nl: "Wanneer de dag ze nodig heeft, %{duties} diensten toegewezen"
   pl: "Kiedy dzień ich potrzebuje, przydzielone zmiany: %{duties}"
+  es: "Cuando el día los necesite, %{duties} servicios asignados"
   ru: "Когда они нужны дню, назначено смен: %{duties}"
   uk: "Коли вони потрібні дню, призначено змін: %{duties}"
 "%{idle} of them have no duty yet":
@@ -694,5 +792,6 @@ _version: 2
   fr: "%{idle} d'entre eux n'ont pas encore de poste"
   nl: "%{idle} van hen hebben nog geen dienst"
   pl: "Bez zmiany jeszcze: %{idle}"
+  es: "%{idle} de ellos aún no tienen servicio"
   ru: "Ещё без смены: %{idle}"
   uk: "Ще без зміни: %{idle}"

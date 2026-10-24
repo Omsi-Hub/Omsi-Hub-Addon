@@ -6,6 +6,7 @@ _version: 2
   fr: "+%{m} min de retard"
   nl: "+%{m} min te laat"
   pl: "+%{m} min spóźnienia"
+  es: "+%{m} min de retraso"
   ru: "+%{m} мин опоздания"
   uk: "+%{m} хв запізнення"
 "−%{m} min early":
@@ -13,6 +14,7 @@ _version: 2
   fr: "−%{m} min d’avance"
   nl: "−%{m} min te vroeg"
   pl: "−%{m} min za wcześnie"
+  es: "−%{m} min de adelanto"
   ru: "−%{m} мин раньше"
   uk: "−%{m} хв раніше"
 "Duty %{duty}":
@@ -20,6 +22,7 @@ _version: 2
   fr: "Service %{duty}"
   nl: "Dienst %{duty}"
   pl: "Służba %{duty}"
+  es: "Servicio %{duty}"
   ru: "Смена %{duty}"
   uk: "Зміна %{duty}"
 "A drive of your own":
@@ -27,6 +30,7 @@ _version: 2
   fr: "Une conduite à vous"
   nl: "Een eigen rit"
   pl: "Własna jazda"
+  es: "Una conducción propia"
   ru: "Своя поездка"
   uk: "Власна поїздка"
 "Duty summary":
@@ -34,6 +38,7 @@ _version: 2
   fr: "Résumé du service"
   nl: "Dienstoverzicht"
   pl: "Podsumowanie służby"
+  es: "Resumen del servicio"
   ru: "Сводка смены"
   uk: "Зведення зміни"
 "Driving for":
@@ -41,6 +46,7 @@ _version: 2
   fr: "En route depuis"
   nl: "Onderweg sinds"
   pl: "W trasie od"
+  es: "Conduciendo desde hace"
   ru: "В пути"
   uk: "У дорозі"
 "Time elapsed":
@@ -48,6 +54,7 @@ _version: 2
   fr: "Temps écoulé"
   nl: "Verstreken tijd"
   pl: "Upłynęło"
+  es: "Tiempo transcurrido"
   ru: "Прошло времени"
   uk: "Минуло часу"
 "Trip %{n} of %{of}":
@@ -55,6 +62,7 @@ _version: 2
   fr: "Course %{n} sur %{of}"
   nl: "Rit %{n} van %{of}"
   pl: "Kurs %{n} z %{of}"
+  es: "Viaje %{n} de %{of}"
   ru: "Рейс %{n} из %{of}"
   uk: "Рейс %{n} з %{of}"
 "Ends %{time} at %{place}":
@@ -62,6 +70,7 @@ _version: 2
   fr: "Fin à %{time} à %{place}"
   nl: "Eindigt %{time} in %{place}"
   pl: "Koniec %{time} w %{place}"
+  es: "Termina a las %{time} en %{place}"
   ru: "Конец в %{time}, %{place}"
   uk: "Кінець о %{time}, %{place}"
 "Next layover":
@@ -69,6 +78,7 @@ _version: 2
   fr: "Prochain battement"
   nl: "Volgende keertijd"
   pl: "Następny postój"
+  es: "Próxima regulación"
   ru: "Следующий отстой"
   uk: "Наступний відстій"
 "in %{t}":
@@ -76,6 +86,7 @@ _version: 2
   fr: "dans %{t}"
   nl: "over %{t}"
   pl: "za %{t}"
+  es: "en %{t}"
   ru: "через %{t}"
   uk: "через %{t}"
 "now":
@@ -83,6 +94,7 @@ _version: 2
   fr: "maintenant"
   nl: "nu"
   pl: "teraz"
+  es: "ahora"
   ru: "сейчас"
   uk: "зараз"
 "None planned":
@@ -90,6 +102,7 @@ _version: 2
   fr: "Aucune prévue"
   nl: "Geen gepland"
   pl: "Brak w planie"
+  es: "Ninguna prevista"
   ru: "Не запланировано"
   uk: "Не заплановано"
 "Closer":
@@ -97,6 +110,7 @@ _version: 2
   fr: "Plus près"
   nl: "Dichterbij"
   pl: "Bliżej"
+  es: "Más cerca"
   ru: "Ближе"
   uk: "Ближче"
 "Further":
@@ -104,6 +118,7 @@ _version: 2
   fr: "Plus loin"
   nl: "Verder weg"
   pl: "Dalej"
+  es: "Más lejos"
   ru: "Дальше"
   uk: "Далі"
 "The whole way":
@@ -111,6 +126,7 @@ _version: 2
   fr: "Tout le trajet"
   nl: "De hele weg"
   pl: "Cała trasa"
+  es: "Todo el trayecto"
   ru: "Весь путь"
   uk: "Увесь шлях"
 "The map follows the bus once you drive.":
@@ -118,6 +134,7 @@ _version: 2
   fr: "La carte suit le bus dès que vous roulez."
   nl: "De kaart volgt de bus zodra je rijdt."
   pl: "Mapa podąży za autobusem, gdy ruszysz."
+  es: "El mapa sigue al autobús en cuanto conduces."
   ru: "Карта следует за автобусом, как только вы поедете."
   uk: "Мапа стежить за автобусом, щойно ви поїдете."
 "Where the bus is shows here once it moves.":
@@ -125,6 +142,7 @@ _version: 2
   fr: "La position du bus s’affiche ici dès qu’il roule."
   nl: "Waar de bus is, zie je hier zodra hij rijdt."
   pl: "Pozycja autobusu pojawi się tu, gdy ruszy."
+  es: "La posición del autobús aparece aquí en cuanto se mueve."
   ru: "Положение автобуса появится здесь, когда он поедет."
   uk: "Положення автобуса з’явиться тут, коли він поїде."
 "The bus on the map":
@@ -132,6 +150,7 @@ _version: 2
   fr: "Le bus sur la carte"
   nl: "De bus op de kaart"
   pl: "Autobus na mapie"
+  es: "El autobús en el mapa"
   ru: "Автобус на карте"
   uk: "Автобус на мапі"
 "Live position and route":
@@ -139,6 +158,7 @@ _version: 2
   fr: "Position en direct et itinéraire"
   nl: "Live positie en route"
   pl: "Pozycja na żywo i trasa"
+  es: "Posición en directo y ruta"
   ru: "Положение и маршрут в реальном времени"
   uk: "Положення і маршрут наживо"
 "The way the bus went":
@@ -146,6 +166,7 @@ _version: 2
   fr: "Le chemin du bus"
   nl: "De weg van de bus"
   pl: "Droga autobusu"
+  es: "El camino que ha seguido el autobús"
   ru: "Путь автобуса"
   uk: "Шлях автобуса"
 "Route map":
@@ -153,6 +174,7 @@ _version: 2
   fr: "Carte de l’itinéraire"
   nl: "Routekaart"
   pl: "Mapa trasy"
+  es: "Mapa de la ruta"
   ru: "Карта маршрута"
   uk: "Мапа маршруту"
 "Day mode":
@@ -160,6 +182,7 @@ _version: 2
   fr: "Mode jour"
   nl: "Dagmodus"
   pl: "Tryb dzienny"
+  es: "Modo día"
   ru: "Дневной режим"
   uk: "Денний режим"
 "Night mode":
@@ -167,6 +190,7 @@ _version: 2
   fr: "Mode nuit"
   nl: "Nachtmodus"
   pl: "Tryb nocny"
+  es: "Modo noche"
   ru: "Ночной режим"
   uk: "Нічний режим"
 "Open the route map":
@@ -174,6 +198,7 @@ _version: 2
   fr: "Ouvrir la carte de l’itinéraire"
   nl: "Routekaart openen"
   pl: "Otwórz mapę trasy"
+  es: "Abrir el mapa de la ruta"
   ru: "Открыть карту маршрута"
   uk: "Відкрити мапу маршруту"
 "%{n} pts":
@@ -181,6 +206,7 @@ _version: 2
   fr: "%{n} pts"
   nl: "%{n} ptn"
   pl: "%{n} pkt"
+  es: "%{n} ptos."
   ru: "%{n} п."
   uk: "%{n} п."
 "same":
@@ -188,6 +214,7 @@ _version: 2
   fr: "identique"
   nl: "gelijk"
   pl: "bez zmian"
+  es: "igual"
   ru: "так же"
   uk: "так само"
 "The speed over the drive shows here as you drive.":
@@ -195,6 +222,7 @@ _version: 2
   fr: "La vitesse du trajet s’affiche ici pendant que vous roulez."
   nl: "De snelheid van de rit verschijnt hier terwijl je rijdt."
   pl: "Prędkość jazdy pojawi się tu w trakcie jazdy."
+  es: "La velocidad a lo largo del trayecto aparece aquí mientras conduces."
   ru: "Скорость поездки появится здесь во время движения."
   uk: "Швидкість поїздки з’явиться тут під час руху."
 "Speed over the drive":
@@ -202,6 +230,7 @@ _version: 2
   fr: "Vitesse au fil du trajet"
   nl: "Snelheid tijdens de rit"
   pl: "Prędkość w trakcie jazdy"
+  es: "Velocidad a lo largo del trayecto"
   ru: "Скорость за поездку"
   uk: "Швидкість за поїздку"
 "%{n} on board":
@@ -209,6 +238,7 @@ _version: 2
   fr: "%{n} à bord"
   nl: "%{n} aan boord"
   pl: "%{n} na pokładzie"
+  es: "%{n} a bordo"
   ru: "%{n} на борту"
   uk: "%{n} на борту"
 "Distance a day":
@@ -216,6 +246,7 @@ _version: 2
   fr: "Distance par jour"
   nl: "Afstand per dag"
   pl: "Dystans dziennie"
+  es: "Distancia por día"
   ru: "Расстояние в день"
   uk: "Відстань за день"
 "This drive":
@@ -223,6 +254,7 @@ _version: 2
   fr: "Ce trajet"
   nl: "Deze rit"
   pl: "Ta jazda"
+  es: "Este trayecto"
   ru: "Эта поездка"
   uk: "Ця поїздка"
 "The last 7 days":
@@ -230,6 +262,7 @@ _version: 2
   fr: "Les 7 derniers jours"
   nl: "De laatste 7 dagen"
   pl: "Ostatnie 7 dni"
+  es: "Los últimos 7 días"
   ru: "Последние 7 дней"
   uk: "Останні 7 днів"
 "Statistics":
@@ -237,6 +270,7 @@ _version: 2
   fr: "Statistiques"
   nl: "Statistieken"
   pl: "Statystyki"
+  es: "Estadísticas"
   ru: "Статистика"
   uk: "Статистика"
 "Avg. speed":
@@ -244,6 +278,7 @@ _version: 2
   fr: "Vitesse moy."
   nl: "Gem. snelheid"
   pl: "Śr. prędkość"
+  es: "Vel. media"
   ru: "Ср. скорость"
   uk: "Сер. швидкість"
 "Upcoming stops on route %{route}":
@@ -251,6 +286,7 @@ _version: 2
   fr: "Prochains arrêts de la ligne %{route}"
   nl: "Volgende haltes van lijn %{route}"
   pl: "Najbliższe przystanki linii %{route}"
+  es: "Próximas paradas de la ruta %{route}"
   ru: "Ближайшие остановки маршрута %{route}"
   uk: "Найближчі зупинки маршруту %{route}"
 "Upcoming stops":
@@ -258,6 +294,7 @@ _version: 2
   fr: "Prochains arrêts"
   nl: "Volgende haltes"
   pl: "Najbliższe przystanki"
+  es: "Próximas paradas"
   ru: "Ближайшие остановки"
   uk: "Найближчі зупинки"
 "A free drive has no timetable to follow.":
@@ -265,6 +302,7 @@ _version: 2
   fr: "Une conduite libre n’a pas d’horaire à suivre."
   nl: "Een vrije rit heeft geen dienstregeling."
   pl: "Swobodna jazda nie ma rozkładu."
+  es: "Una conducción libre no tiene horario que seguir."
   ru: "У свободной поездки нет расписания."
   uk: "Вільна поїздка не має розкладу."
 "The trip is done: the next one starts at %{time}.":
@@ -272,6 +310,7 @@ _version: 2
   fr: "La course est terminée : la suivante part à %{time}."
   nl: "De rit is klaar: de volgende begint om %{time}."
   pl: "Kurs zakończony: następny rusza o %{time}."
+  es: "El viaje ha terminado: el siguiente empieza a las %{time}."
   ru: "Рейс окончен: следующий начинается в %{time}."
   uk: "Рейс завершено: наступний починається о %{time}."
 "Every trip of the duty is driven.":
@@ -279,6 +318,7 @@ _version: 2
   fr: "Toutes les courses du service sont faites."
   nl: "Alle ritten van de dienst zijn gereden."
   pl: "Wszystkie kursy służby przejechane."
+  es: "Todos los viajes del servicio están hechos."
   ru: "Все рейсы смены выполнены."
   uk: "Усі рейси зміни виконано."
 "The stops show here once the duty has started.":
@@ -286,6 +326,7 @@ _version: 2
   fr: "Les arrêts s’affichent ici dès que le service a commencé."
   nl: "De haltes verschijnen hier zodra de dienst begonnen is."
   pl: "Przystanki pojawią się tu po rozpoczęciu służby."
+  es: "Las paradas aparecen aquí en cuanto empieza el servicio."
   ru: "Остановки появятся здесь, когда смена начнётся."
   uk: "Зупинки з’являться тут, коли зміна почнеться."
 "Here":
@@ -293,6 +334,7 @@ _version: 2
   fr: "Ici"
   nl: "Hier"
   pl: "Tutaj"
+  es: "Aquí"
   ru: "Здесь"
   uk: "Тут"
 "due":
@@ -300,6 +342,7 @@ _version: 2
   fr: "prévu"
   nl: "nu"
   pl: "teraz"
+  es: "previsto"
   ru: "сейчас"
   uk: "зараз"
 "Departs %{time}":
@@ -307,6 +350,7 @@ _version: 2
   fr: "Départ %{time}"
   nl: "Vertrek %{time}"
   pl: "Odjazd %{time}"
+  es: "Sale a las %{time}"
   ru: "Отправление %{time}"
   uk: "Відправлення %{time}"
 "Arrive %{time}":
@@ -314,6 +358,7 @@ _version: 2
   fr: "Arrivée %{time}"
   nl: "Aankomst %{time}"
   pl: "Przyjazd %{time}"
+  es: "Llega a las %{time}"
   ru: "Прибытие %{time}"
   uk: "Прибуття %{time}"
 "Next stops":
@@ -321,6 +366,7 @@ _version: 2
   fr: "Prochains arrêts"
   nl: "Volgende haltes"
   pl: "Następne przystanki"
+  es: "Siguientes paradas"
   ru: "Следующие остановки"
   uk: "Наступні зупинки"
 "The Omsi-Hub plugin is off":
@@ -328,6 +374,7 @@ _version: 2
   fr: "Le plugin Omsi-Hub est désactivé"
   nl: "De Omsi-Hub-plug-in staat uit"
   pl: "Wtyczka Omsi-Hub jest wyłączona"
+  es: "El plugin de Omsi-Hub está desactivado"
   ru: "Плагин Omsi-Hub выключен"
   uk: "Плагін Omsi-Hub вимкнено"
 "Switch it on under Add-on to follow the drive here.":
@@ -335,6 +382,7 @@ _version: 2
   fr: "Activez-le sous Add-on pour suivre le trajet ici."
   nl: "Zet hem aan onder Add-on om de rit hier te volgen."
   pl: "Włącz ją w zakładce Add-on, aby śledzić jazdę tutaj."
+  es: "Actívalo en Complemento para seguir aquí el trayecto."
   ru: "Включите его в разделе Add-on, чтобы следить за поездкой здесь."
   uk: "Увімкніть його в розділі Add-on, щоб стежити за поїздкою тут."
 "Waiting for the game":
@@ -342,6 +390,7 @@ _version: 2
   fr: "En attente du jeu"
   nl: "Wachten op het spel"
   pl: "Czekam na grę"
+  es: "Esperando al juego"
   ru: "Ожидание игры"
   uk: "Очікування гри"
 "The dashboard fills in once you sit in the bus.":
@@ -349,6 +398,7 @@ _version: 2
   fr: "Le tableau de bord se remplit dès que vous êtes dans le bus."
   nl: "Het dashboard vult zich zodra je in de bus zit."
   pl: "Panel wypełni się, gdy usiądziesz w autobusie."
+  es: "El panel se rellena en cuanto te sientas en el autobús."
   ru: "Панель заполнится, как только вы сядете в автобус."
   uk: "Панель заповниться, щойно ви сядете в автобус."
 "Running %{m} min late":
@@ -356,6 +406,7 @@ _version: 2
   fr: "%{m} min de retard"
   nl: "%{m} min te laat"
   pl: "%{m} min spóźnienia"
+  es: "Vas %{m} min con retraso"
   ru: "Опоздание %{m} мин"
   uk: "Запізнення %{m} хв"
 "Expected at %{stop} at %{time}.":
@@ -363,6 +414,7 @@ _version: 2
   fr: "Attendu à %{stop} à %{time}."
   nl: "Verwacht bij %{stop} om %{time}."
   pl: "Spodziewany na %{stop} o %{time}."
+  es: "Llegada prevista a %{stop} a las %{time}."
   ru: "Ожидается на %{stop} в %{time}."
   uk: "Очікується на %{stop} о %{time}."
 "Running %{m} min early":
@@ -370,6 +422,7 @@ _version: 2
   fr: "%{m} min d’avance"
   nl: "%{m} min te vroeg"
   pl: "%{m} min za wcześnie"
+  es: "Vas %{m} min adelantado"
   ru: "Опережение %{m} мин"
   uk: "Випередження %{m} хв"
 "Wait at the stop until it is time to leave.":
@@ -377,6 +430,7 @@ _version: 2
   fr: "Attendez à l’arrêt jusqu’à l’heure du départ."
   nl: "Wacht bij de halte tot het tijd is om te vertrekken."
   pl: "Zaczekaj na przystanku do czasu odjazdu."
+  es: "Espera en la parada hasta la hora de salida."
   ru: "Ждите на остановке до времени отправления."
   uk: "Чекайте на зупинці до часу відправлення."
 "Layover at %{time}":
@@ -384,6 +438,7 @@ _version: 2
   fr: "Battement à %{time}"
   nl: "Keertijd om %{time}"
   pl: "Postój o %{time}"
+  es: "Regulación a las %{time}"
   ru: "Отстой в %{time}"
   uk: "Відстій о %{time}"
 "Break at %{time}":
@@ -391,6 +446,7 @@ _version: 2
   fr: "Pause à %{time}"
   nl: "Pauze om %{time}"
   pl: "Przerwa o %{time}"
+  es: "Pausa a las %{time}"
   ru: "Перерыв в %{time}"
   uk: "Перерва о %{time}"
 "At %{place}, until %{time}.":
@@ -398,6 +454,7 @@ _version: 2
   fr: "À %{place}, jusqu’à %{time}."
   nl: "In %{place}, tot %{time}."
   pl: "W %{place}, do %{time}."
+  es: "En %{place}, hasta las %{time}."
   ru: "%{place}, до %{time}."
   uk: "%{place}, до %{time}."
 "Depot reminder":
@@ -405,6 +462,7 @@ _version: 2
   fr: "Rappel dépôt"
   nl: "Herinnering: remise"
   pl: "Przypomnienie: zajezdnia"
+  es: "Recordatorio de cochera"
   ru: "Напоминание о депо"
   uk: "Нагадування про депо"
 "End of duty at %{time}. Return to %{place}.":
@@ -412,6 +470,7 @@ _version: 2
   fr: "Fin de service à %{time}. Retour à %{place}."
   nl: "Einde dienst om %{time}. Terug naar %{place}."
   pl: "Koniec służby o %{time}. Wróć do %{place}."
+  es: "Fin de servicio a las %{time}. Vuelve a %{place}."
   ru: "Конец смены в %{time}. Вернитесь в %{place}."
   uk: "Кінець зміни о %{time}. Поверніться до %{place}."
 "Last trip of the duty":
@@ -419,6 +478,7 @@ _version: 2
   fr: "Dernière course du service"
   nl: "Laatste rit van de dienst"
   pl: "Ostatni kurs służby"
+  es: "Último viaje del servicio"
   ru: "Последний рейс смены"
   uk: "Останній рейс зміни"
 "Your duty ends at %{place} at %{time}.":
@@ -426,6 +486,7 @@ _version: 2
   fr: "Votre service se termine à %{place} à %{time}."
   nl: "Je dienst eindigt in %{place} om %{time}."
   pl: "Twoja służba kończy się w %{place} o %{time}."
+  es: "Tu servicio termina en %{place} a las %{time}."
   ru: "Ваша смена заканчивается: %{place}, %{time}."
   uk: "Ваша зміна закінчується: %{place}, %{time}."
 "Alerts & updates":
@@ -433,6 +494,7 @@ _version: 2
   fr: "Alertes et nouvelles"
   nl: "Meldingen & updates"
   pl: "Alerty i aktualności"
+  es: "Avisos y novedades"
   ru: "Оповещения и новости"
   uk: "Сповіщення та новини"
 "Important information":
@@ -440,6 +502,7 @@ _version: 2
   fr: "Informations importantes"
   nl: "Belangrijke informatie"
   pl: "Ważne informacje"
+  es: "Información importante"
   ru: "Важная информация"
   uk: "Важлива інформація"
 "Nothing to report: a good drive.":
@@ -447,6 +510,7 @@ _version: 2
   fr: "Rien à signaler : bonne route."
   nl: "Niets te melden: goede rit."
   pl: "Nic do zgłoszenia: dobra jazda."
+  es: "Nada que comunicar: buen viaje."
   ru: "Без происшествий: хорошая поездка."
   uk: "Без пригод: гарна поїздка."
 "Quick actions":
@@ -454,6 +518,7 @@ _version: 2
   fr: "Actions rapides"
   nl: "Snelle acties"
   pl: "Szybkie akcje"
+  es: "Acciones rápidas"
   ru: "Быстрые действия"
   uk: "Швидкі дії"
 "Tools for your shift":
@@ -461,6 +526,7 @@ _version: 2
   fr: "Outils pour votre service"
   nl: "Hulpmiddelen voor je dienst"
   pl: "Narzędzia na twoją zmianę"
+  es: "Herramientas para tu turno"
   ru: "Инструменты для смены"
   uk: "Інструменти для зміни"
 "Open route map":
@@ -468,6 +534,7 @@ _version: 2
   fr: "Ouvrir la carte"
   nl: "Routekaart openen"
   pl: "Otwórz mapę trasy"
+  es: "Abrir mapa de la ruta"
   ru: "Открыть карту"
   uk: "Відкрити мапу"
 "View timetable":
@@ -475,6 +542,7 @@ _version: 2
   fr: "Voir l’horaire"
   nl: "Dienstregeling bekijken"
   pl: "Zobacz rozkład"
+  es: "Ver horario"
   ru: "Расписание"
   uk: "Розклад"
 "Stop":
@@ -482,6 +550,7 @@ _version: 2
   fr: "Arrêt"
   nl: "Halte"
   pl: "Przystanek"
+  es: "Parada"
   ru: "Остановка"
   uk: "Зупинка"
 "Expected":
@@ -489,6 +558,7 @@ _version: 2
   fr: "Prévu"
   nl: "Verwacht"
   pl: "Spodziewany"
+  es: "Prevista"
   ru: "Ожидается"
   uk: "Очікується"
 "Departs":
@@ -496,6 +566,7 @@ _version: 2
   fr: "Départ"
   nl: "Vertrek"
   pl: "Odjazd"
+  es: "Sale"
   ru: "Отпр."
   uk: "Відпр."
 "The timetable is still being read.":
@@ -503,6 +574,7 @@ _version: 2
   fr: "L’horaire est encore en lecture."
   nl: "De dienstregeling wordt nog gelezen."
   pl: "Rozkład jest jeszcze wczytywany."
+  es: "Todavía se está leyendo el horario."
   ru: "Расписание ещё читается."
   uk: "Розклад ще зчитується."
 "No messages yet.":
@@ -510,6 +582,7 @@ _version: 2
   fr: "Pas encore de messages."
   nl: "Nog geen berichten."
   pl: "Brak wiadomości."
+  es: "Aún no hay mensajes."
   ru: "Сообщений пока нет."
   uk: "Повідомлень поки немає."
 "Answer the control room in the game: F10 gives the panels the mouse.":
@@ -517,6 +590,7 @@ _version: 2
   fr: "Répondez au poste de contrôle dans le jeu : F10 donne la souris aux panneaux."
   nl: "Antwoord de verkeersleiding in het spel: F10 geeft de panelen de muis."
   pl: "Odpowiadaj dyspozytorni w grze: F10 przekazuje mysz panelom."
+  es: "Responde al puesto de mando en el juego: F10 da el ratón a los paneles."
   ru: "Отвечайте диспетчерской в игре: F10 даёт панелям мышь."
   uk: "Відповідайте диспетчерській у грі: F10 дає панелям мишу."
 "End the drive?":
@@ -524,6 +598,7 @@ _version: 2
   fr: "Terminer le trajet ?"
   nl: "Rit beëindigen?"
   pl: "Zakończyć jazdę?"
+  es: "¿Terminar el trayecto?"
   ru: "Завершить поездку?"
   uk: "Завершити поїздку?"
 "Keep driving":
@@ -531,6 +606,7 @@ _version: 2
   fr: "Continuer"
   nl: "Doorrijden"
   pl: "Jedź dalej"
+  es: "Seguir conduciendo"
   ru: "Продолжить"
   uk: "Продовжити"
 "End the drive":
@@ -538,6 +614,7 @@ _version: 2
   fr: "Terminer le trajet"
   nl: "Rit beëindigen"
   pl: "Zakończ jazdę"
+  es: "Terminar el trayecto"
   ru: "Завершить поездку"
   uk: "Завершити поїздку"
 "openOMSI is closed. The trips you finished are kept; the one under way is not.":
@@ -545,6 +622,7 @@ _version: 2
   fr: "openOMSI est fermé. Les courses terminées sont gardées, celle en cours non."
   nl: "openOMSI wordt gesloten. Afgeronde ritten blijven bewaard, de lopende niet."
   pl: "openOMSI zostanie zamknięty. Ukończone kursy zostaną zachowane, bieżący nie."
+  es: "openOMSI se ha cerrado. Los viajes terminados se conservan; el que estaba en curso, no."
   ru: "openOMSI будет закрыт. Завершённые рейсы сохранятся, текущий — нет."
   uk: "openOMSI буде закрито. Завершені рейси збережуться, поточний — ні."
 "Back to the launcher":
@@ -552,6 +630,7 @@ _version: 2
   fr: "Retour au lanceur"
   nl: "Terug naar de launcher"
   pl: "Powrót do launchera"
+  es: "Volver al lanzador"
   ru: "Назад в лаунчер"
   uk: "Назад до лаунчера"
 "Here's your duty overview and what's ahead.":
@@ -559,6 +638,7 @@ _version: 2
   fr: "Voici votre service et ce qui vous attend."
   nl: "Hier is je dienst en wat er nog komt."
   pl: "Oto twoja służba i co cię czeka."
+  es: "Aquí tienes el resumen de tu servicio y lo que te espera."
   ru: "Вот ваша смена и что впереди."
   uk: "Ось ваша зміна і що попереду."
 "Live duty":
@@ -566,6 +646,7 @@ _version: 2
   fr: "Service en direct"
   nl: "Live dienst"
   pl: "Służba na żywo"
+  es: "Servicio en directo"
   ru: "Текущая смена"
   uk: "Поточна зміна"
 "At a stop":
@@ -573,6 +654,7 @@ _version: 2
   fr: "À l’arrêt"
   nl: "Bij een halte"
   pl: "Na przystanku"
+  es: "En la parada"
   ru: "На остановке"
   uk: "На зупинці"
 "Duty done":
@@ -580,6 +662,7 @@ _version: 2
   fr: "Service terminé"
   nl: "Dienst klaar"
   pl: "Służba zakończona"
+  es: "Servicio terminado"
   ru: "Смена выполнена"
   uk: "Зміну виконано"
 "Good morning, %{name}!":
@@ -587,6 +670,7 @@ _version: 2
   fr: "Bonjour, %{name} !"
   nl: "Goedemorgen, %{name}!"
   pl: "Dzień dobry, %{name}!"
+  es: "¡Buenos días, %{name}!"
   ru: "Доброе утро, %{name}!"
   uk: "Доброго ранку, %{name}!"
 "Good afternoon, %{name}!":
@@ -594,6 +678,7 @@ _version: 2
   fr: "Bon après-midi, %{name} !"
   nl: "Goedemiddag, %{name}!"
   pl: "Dzień dobry, %{name}!"
+  es: "¡Buenas tardes, %{name}!"
   ru: "Добрый день, %{name}!"
   uk: "Добрий день, %{name}!"
 "Good evening, %{name}!":
@@ -601,6 +686,7 @@ _version: 2
   fr: "Bonsoir, %{name} !"
   nl: "Goedenavond, %{name}!"
   pl: "Dobry wieczór, %{name}!"
+  es: "¡Buenas noches, %{name}!"
   ru: "Добрый вечер, %{name}!"
   uk: "Добрий вечір, %{name}!"
 # The trip's IBIS and the navigator (2026-10-20). The IBIS's own keys - Linie/Kurs, Route, Ziel,
@@ -610,6 +696,7 @@ _version: 2
   fr: "Prochain trajet, %{time}"
   nl: "Volgende rit, %{time}"
   pl: "Następny kurs, %{time}"
+  es: "Próximo viaje, %{time}"
   ru: "Следующий рейс, %{time}"
   uk: "Наступний рейс, %{time}"
 "First trip, %{time}":
@@ -617,6 +704,7 @@ _version: 2
   fr: "Premier trajet, %{time}"
   nl: "Eerste rit, %{time}"
   pl: "Pierwszy kurs, %{time}"
+  es: "Primer viaje, %{time}"
   ru: "Первый рейс, %{time}"
   uk: "Перший рейс, %{time}"
 "Next trip %{time}":
@@ -624,6 +712,7 @@ _version: 2
   fr: "Prochain trajet %{time}"
   nl: "Volgende rit %{time}"
   pl: "Następny kurs %{time}"
+  es: "Próximo viaje %{time}"
   ru: "Следующий рейс %{time}"
   uk: "Наступний рейс %{time}"
 "IBIS set":
@@ -631,6 +720,7 @@ _version: 2
   fr: "IBIS réglé"
   nl: "IBIS ingesteld"
   pl: "IBIS ustawiony"
+  es: "IBIS configurado"
   ru: "IBIS настроен"
   uk: "IBIS налаштовано"
 "Check the IBIS":
@@ -638,6 +728,7 @@ _version: 2
   fr: "Vérifiez l’IBIS"
   nl: "Controleer de IBIS"
   pl: "Sprawdź IBIS"
+  es: "Comprueba el IBIS"
   ru: "Проверьте IBIS"
   uk: "Перевірте IBIS"
 "The bus names no depot file, so its IBIS knows no destination.":
@@ -645,6 +736,7 @@ _version: 2
   fr: "Le bus n’indique aucun fichier de dépôt : son IBIS ne connaît aucune destination."
   nl: "De bus noemt geen hof-bestand, dus zijn IBIS kent geen bestemming."
   pl: "Autobus nie wskazuje pliku zajezdni, więc jego IBIS nie zna żadnego celu."
+  es: "El autobús no indica ningún archivo de cochera, así que su IBIS no conoce ningún destino."
   ru: "У автобуса не указан файл депо, поэтому его IBIS не знает ни одного направления."
   uk: "В автобуса не вказано файл депо, тож його IBIS не знає жодного напрямку."
 "The bus has no depot file %{hof}: its IBIS knows no destination.":
@@ -652,6 +744,7 @@ _version: 2
   fr: "Le bus n’a pas de fichier de dépôt %{hof} : son IBIS ne connaît aucune destination."
   nl: "De bus heeft geen hof-bestand %{hof}: zijn IBIS kent geen bestemming."
   pl: "Autobus nie ma pliku zajezdni %{hof}: jego IBIS nie zna żadnego celu."
+  es: "El autobús no tiene el archivo de cochera %{hof}: su IBIS no conoce ningún destino."
   ru: "У автобуса нет файла депо %{hof}: его IBIS не знает ни одного направления."
   uk: "В автобуса немає файлу депо %{hof}: його IBIS не знає жодного напрямку."
 "The depot file %{hof} has no destination for this trip.":
@@ -659,6 +752,7 @@ _version: 2
   fr: "Le fichier de dépôt %{hof} n’a pas de destination pour ce trajet."
   nl: "Het hof-bestand %{hof} heeft geen bestemming voor deze rit."
   pl: "Plik zajezdni %{hof} nie ma celu dla tego kursu."
+  es: "El archivo de cochera %{hof} no tiene destino para este viaje."
   ru: "В файле депо %{hof} нет направления для этого рейса."
   uk: "У файлі депо %{hof} немає напрямку для цього рейсу."
 "stop %{n}":
@@ -666,6 +760,7 @@ _version: 2
   fr: "arrêt %{n}"
   nl: "halte %{n}"
   pl: "przystanek %{n}"
+  es: "parada %{n}"
   ru: "остановка %{n}"
   uk: "зупинка %{n}"
 "The IBIS shows line %{line}, destination %{dest}.":
@@ -673,6 +768,7 @@ _version: 2
   fr: "L’IBIS affiche la ligne %{line}, destination %{dest}."
   nl: "De IBIS toont lijn %{line}, bestemming %{dest}."
   pl: "IBIS pokazuje linię %{line}, cel %{dest}."
+  es: "El IBIS muestra la línea %{line}, destino %{dest}."
   ru: "IBIS показывает маршрут %{line}, направление %{dest}."
   uk: "IBIS показує маршрут %{line}, напрямок %{dest}."
 "Set the IBIS for this trip":
@@ -680,6 +776,7 @@ _version: 2
   fr: "Réglez l’IBIS pour ce trajet"
   nl: "Stel de IBIS in voor deze rit"
   pl: "Ustaw IBIS dla tego kursu"
+  es: "Configura el IBIS para este viaje"
   ru: "Настройте IBIS на этот рейс"
   uk: "Налаштуйте IBIS на цей рейс"
 "Set the IBIS for the next trip":
@@ -687,6 +784,7 @@ _version: 2
   fr: "Réglez l’IBIS pour le prochain trajet"
   nl: "Stel de IBIS in voor de volgende rit"
   pl: "Ustaw IBIS dla następnego kursu"
+  es: "Configura el IBIS para el próximo viaje"
   ru: "Настройте IBIS на следующий рейс"
   uk: "Налаштуйте IBIS на наступний рейс"
 "from %{place}":
@@ -694,6 +792,7 @@ _version: 2
   fr: "depuis %{place}"
   nl: "vanaf %{place}"
   pl: "z %{place}"
+  es: "desde %{place}"
   ru: "от %{place}"
   uk: "від %{place}"
 "No break planned":
@@ -701,6 +800,7 @@ _version: 2
   fr: "Aucune pause prévue"
   nl: "Geen pauze gepland"
   pl: "Brak zaplanowanej przerwy"
+  es: "No hay pausa prevista"
   ru: "Перерыв не запланирован"
   uk: "Перерву не заплановано"
 "Back to the navigator":
@@ -708,6 +808,7 @@ _version: 2
   fr: "Retour au navigateur"
   nl: "Terug naar de navigator"
   pl: "Wróć do nawigacji"
+  es: "Volver al navegador"
   ru: "Назад к навигатору"
   uk: "Назад до навігатора"
 "Route %{route} to %{place}":
@@ -715,6 +816,7 @@ _version: 2
   fr: "Ligne %{route} vers %{place}"
   nl: "Lijn %{route} naar %{place}"
   pl: "Linia %{route} do %{place}"
+  es: "Ruta %{route} a %{place}"
   ru: "Маршрут %{route} до %{place}"
   uk: "Маршрут %{route} до %{place}"
 "Following the bus":
@@ -722,6 +824,7 @@ _version: 2
   fr: "Suit le bus"
   nl: "Volgt de bus"
   pl: "Podąża za autobusem"
+  es: "Siguiendo al autobús"
   ru: "Следует за автобусом"
   uk: "Слідує за автобусом"
 "The duty’s routes; it follows the bus once you drive":
@@ -729,6 +832,7 @@ _version: 2
   fr: "Les itinéraires du service ; suit le bus dès que vous roulez"
   nl: "De routes van de dienst; volgt de bus zodra je rijdt"
   pl: "Trasy służby; podąża za autobusem, gdy ruszysz"
+  es: "Las rutas del servicio; sigue al autobús en cuanto conduces"
   ru: "Маршруты смены; карта следует за автобусом, когда вы едете"
   uk: "Маршрути зміни; мапа слідує за автобусом, коли ви їдете"
 "Open the navigator":
@@ -736,6 +840,7 @@ _version: 2
   fr: "Ouvrir le navigateur"
   nl: "De navigator openen"
   pl: "Otwórz nawigację"
+  es: "Abrir el navegador"
   ru: "Открыть навигатор"
   uk: "Відкрити навігатор"
 "Open navigator":
@@ -743,6 +848,7 @@ _version: 2
   fr: "Ouvrir le navigateur"
   nl: "Navigator openen"
   pl: "Otwórz nawigację"
+  es: "Abrir navegador"
   ru: "Открыть навигатор"
   uk: "Відкрити навігатор"
 "Stops to %{place}":
@@ -750,6 +856,7 @@ _version: 2
   fr: "Arrêts jusqu’à %{place}"
   nl: "Haltes naar %{place}"
   pl: "Przystanki do %{place}"
+  es: "Paradas hasta %{place}"
   ru: "Остановки до %{place}"
   uk: "Зупинки до %{place}"
 "Turn round":
@@ -757,6 +864,7 @@ _version: 2
   fr: "Faites demi-tour"
   nl: "Keren"
   pl: "Zawróć"
+  es: "Da la vuelta"
   ru: "Развернитесь"
   uk: "Розверніться"
 "Turn left":
@@ -764,6 +872,7 @@ _version: 2
   fr: "Tournez à gauche"
   nl: "Linksaf"
   pl: "Skręć w lewo"
+  es: "Gira a la izquierda"
   ru: "Поверните налево"
   uk: "Поверніть ліворуч"
 "Turn right":
@@ -771,6 +880,7 @@ _version: 2
   fr: "Tournez à droite"
   nl: "Rechtsaf"
   pl: "Skręć w prawo"
+  es: "Gira a la derecha"
   ru: "Поверните направо"
   uk: "Поверніть праворуч"
 "Straight on":
@@ -778,6 +888,7 @@ _version: 2
   fr: "Tout droit"
   nl: "Rechtdoor"
   pl: "Prosto"
+  es: "Sigue recto"
   ru: "Прямо"
   uk: "Прямо"
 "Off the route":
@@ -785,6 +896,7 @@ _version: 2
   fr: "Hors de l’itinéraire"
   nl: "Van de route af"
   pl: "Poza trasą"
+  es: "Fuera de la ruta"
   ru: "Вне маршрута"
   uk: "Поза маршрутом"
 "North up":
@@ -792,6 +904,7 @@ _version: 2
   fr: "Nord en haut"
   nl: "Noorden boven"
   pl: "Północ u góry"
+  es: "Norte arriba"
   ru: "Север вверху"
   uk: "Північ угорі"
 "Heading up":
@@ -799,6 +912,7 @@ _version: 2
   fr: "Direction en haut"
   nl: "Rijrichting boven"
   pl: "Kierunek jazdy u góry"
+  es: "Sentido de marcha arriba"
   ru: "По направлению движения"
   uk: "За напрямком руху"
 "The whole duty":
@@ -806,6 +920,7 @@ _version: 2
   fr: "Tout le service"
   nl: "De hele dienst"
   pl: "Cała służba"
+  es: "Todo el servicio"
   ru: "Вся смена"
   uk: "Уся зміна"
 "At the stop":
@@ -813,17 +928,20 @@ _version: 2
   fr: "À l’arrêt"
   nl: "Bij de halte"
   pl: "Na przystanku"
+  es: "En la parada"
   ru: "На остановке"
   uk: "На зупинці"
 "Launcher":
   de: "Launcher"
   ru: "Лаунчер"
+  es: "Launcher"
 # The IBIS card's keys (dash.js): named after the device's own German keys.
 "Linie/Kurs":
   de: "Linie/Kurs"
   fr: "Ligne/service"
   nl: "Lijn/omloop"
   pl: "Linia/brygada"
+  es: "Línea/Recorrido"
   ru: "Линия/выход"
   uk: "Лінія/оборот"
 "Kurs %{kurs}":
@@ -831,6 +949,7 @@ _version: 2
   fr: "Service %{kurs}"
   nl: "Omloop %{kurs}"
   pl: "Brygada %{kurs}"
+  es: "Recorrido %{kurs}"
   ru: "Выход %{kurs}"
   uk: "Оборот %{kurs}"
 "Ziel":
@@ -838,6 +957,7 @@ _version: 2
   fr: "Destination"
   nl: "Bestemming"
   pl: "Cel"
+  es: "Destino"
   ru: "Пункт назначения"
   uk: "Пункт призначення"
 "Ziel %{code}":
@@ -845,5 +965,6 @@ _version: 2
   fr: "Destination %{code}"
   nl: "Bestemming %{code}"
   pl: "Cel %{code}"
+  es: "Destino %{code}"
   ru: "Пункт назначения %{code}"
   uk: "Пункт призначення %{code}"

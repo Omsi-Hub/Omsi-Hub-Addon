@@ -13,6 +13,7 @@ _version: 2
   ru: "Автобус, загруженный так, как его загружает игра: все предупреждения о его файлах, моделях и скриптах и недостающие текстуры."
   uk: "Автобус, завантажений так, як його завантажує гра: усі попередження щодо його файлів, моделей і скриптів та відсутні текстури."
   pl: "Autobus wczytany tak, jak wczytuje go gra: każde ostrzeżenie o jego plikach, modelach i skryptach oraz brakujące tekstury."
+  es: "Un autobús cargado como lo carga el juego: cada aviso sobre sus archivos, modelos y scripts, y las texturas que faltan."
 "Model test":
   nl: "Modeltest"
   de: "Modelltest"
@@ -20,6 +21,7 @@ _version: 2
   ru: "Проверка модели"
   uk: "Перевірка моделі"
   pl: "Test modelu"
+  es: "Prueba de modelo"
 
 # --- the map and where a free drive starts ------------------------------------------------------
 "Year":
@@ -30,6 +32,7 @@ _version: 2
   ru: "Год"
   uk: "Рік"
   pl: "Rok"
+  es: "Año"
 "Entry points":
   en: "Entry points"
   nl: "Startpunten"
@@ -38,6 +41,7 @@ _version: 2
   ru: "Точки входа"
   uk: "Точки входу"
   pl: "Punkty wejścia"
+  es: "Puntos de entrada"
 "The map's first entry point":
   en: "The map's first entry point"
   nl: "Het eerste startpunt van de kaart"
@@ -46,6 +50,7 @@ _version: 2
   ru: "Первая точка входа карты"
   uk: "Перша точка входу мапи"
   pl: "Pierwszy punkt wejścia mapy"
+  es: "El primer punto de entrada del mapa"
 "Click an entry point on the map to start there.":
   en: "Click an entry point on the map to start there."
   nl: "Klik op een startpunt op de kaart om daar te beginnen."
@@ -54,6 +59,7 @@ _version: 2
   ru: "Щёлкните точку входа на карте, чтобы начать там."
   uk: "Клацніть точку входу на мапі, щоб почати там."
   pl: "Kliknij punkt wejścia na mapie, aby tam zacząć."
+  es: "Haz clic en un punto de entrada del mapa para empezar allí."
 
 # --- the bus -------------------------------------------------------------------------------------
 "Change bus":
@@ -64,6 +70,7 @@ _version: 2
   ru: "Сменить автобус"
   uk: "Змінити автобус"
   pl: "Zmień autobus"
+  es: "Cambiar de autobús"
 "No bus found":
   en: "No bus found"
   nl: "Geen bus gevonden"
@@ -72,6 +79,7 @@ _version: 2
   ru: "Автобус не найден"
   uk: "Автобус не знайдено"
   pl: "Nie znaleziono autobusu"
+  es: "No se ha encontrado ningún autobús"
 "No starred bus":
   en: "No starred bus"
   nl: "Geen bus met een ster"
@@ -80,6 +88,7 @@ _version: 2
   ru: "Нет отмеченных автобусов"
   uk: "Немає позначених автобусів"
   pl: "Brak oznaczonych autobusów"
+  es: "Ningún autobús marcado con estrella"
 "Reading the buses… {done} of {total}":
   en: "Reading the buses… {done} of {total}"
   nl: "Bussen inlezen… {done} van {total}"
@@ -88,6 +97,7 @@ _version: 2
   ru: "Чтение автобусов… {done} из {total}"
   uk: "Читання автобусів… {done} з {total}"
   pl: "Wczytywanie autobusów… {done} z {total}"
+  es: "Leyendo los autobuses… {done} de {total}"
 
 # --- the driver ----------------------------------------------------------------------------------
 "Personnel file of {name} deleted.":
@@ -98,6 +108,7 @@ _version: 2
   ru: "Личное дело {name} удалено."
   uk: "Особову справу {name} видалено."
   pl: "Akta osobowe {name} usunięte."
+  es: "Expediente personal de {name} eliminado."
 
 # --- texts upstream's table lost with its game-drawn launcher (0.2.47) --------------------------
 # (the languages of them that app.yml no longer has; the page and the game merge both tables)
@@ -122,6 +133,7 @@ _version: 2
   zh: "只显示收藏的车辆"
   zh-tw: "只顯示收藏的車輛"
   pl: "Tylko ulubione"
+  es: "Solo favoritos"
   fr: "Favoris uniquement"
   nl: "Alleen favorieten"
   ru: "Только избранные"
@@ -136,6 +148,7 @@ _version: 2
   ru: "Выбрать готовую погоду"
   uk: "Обрати готову погоду"
   pl: "Wybierz gotową pogodę"
+  es: "Elige un tiempo predefinido"
   zh-tw: "選擇天氣預設"
   pt: "Escolher uma predefinição de clima"
   pt-pt: "Escolher uma predefinição de meteorologia"
@@ -359,6 +372,7 @@ _version: 2
   ru: "Выберите, как долго и когда вы хотите ездить: Omsi-Hub составит смену из настоящих рейсов расписания, с переходом на другую линию там, где линии встречаются."
   uk: "Виберіть, як довго і коли ви хочете їздити: Omsi-Hub складе зміну зі справжніх рейсів розкладу, з переходом на іншу лінію там, де лінії зустрічаються."
   pl: "Wybierz, jak długo i kiedy chcesz jeździć: Omsi-Hub ułoży zmianę z prawdziwych kursów rozkładu, z przejściem na inną linię tam, gdzie linie się spotykają."
+  es: "Elige cuánto tiempo quieres conducir y cuándo: Omsi-Hub compone un turno con viajes reales del horario, siguiendo con otra línea donde las líneas se cruzan."
 "Omsi-Hub puts real duties together from the timetables of your own OMSI maps and gets the game ready for you. In a minute you'll know where everything is.":
   nl: "Omsi-Hub maakt echte diensten uit de dienstregelingen van je eigen OMSI-kaarten en zet het spel voor je klaar. In een minuut weet je waar alles zit."
   de: "Omsi-Hub baut echte Dienste aus den Fahrplänen deiner eigenen OMSI-Karten und richtet das Spiel für dich ein. In einer Minute weißt du, wo alles ist."
@@ -366,6 +380,7 @@ _version: 2
   ru: "Omsi-Hub составляет настоящие смены из расписаний твоих карт OMSI и готовит для тебя игру. Через минуту ты будешь знать, где что находится."
   uk: "Omsi-Hub складає справжні зміни з розкладів твоїх мап OMSI і готує для тебе гру. За хвилину ти знатимеш, де що є."
   pl: "Omsi-Hub układa prawdziwe zmiany z rozkładów twoich własnych map OMSI i przygotowuje dla ciebie grę. Za minutę będziesz wiedzieć, gdzie co jest."
+  es: "Omsi-Hub crea servicios reales a partir de los horarios de tus propios mapas de OMSI y te prepara el juego. En un minuto sabrás dónde está todo."
 "Say how long your shift is and in which part of the day it starts. Omsi-Hub looks for shifts like that among the timetable's real trips.":
   nl: "Zeg hoe lang je dienst duurt en in welk deel van de dag hij begint. Omsi-Hub zoekt zulke diensten tussen de echte ritten van de dienstregeling."
   de: "Sag, wie lang dein Dienst ist und zu welcher Tageszeit er beginnt. Omsi-Hub sucht solche Dienste unter den echten Fahrten des Fahrplans."
@@ -373,6 +388,7 @@ _version: 2
   ru: "Укажи, сколько длится твоя смена и в какое время дня она начинается. Omsi-Hub найдёт такие смены среди настоящих рейсов расписания."
   uk: "Вкажи, скільки триває твоя зміна і в яку пору дня вона починається. Omsi-Hub знайде такі зміни серед справжніх рейсів розкладу."
   pl: "Powiedz, ile trwa twoja zmiana i o jakiej porze dnia się zaczyna. Omsi-Hub szuka takich zmian wśród prawdziwych kursów rozkładu."
+  es: "Di cuánto dura tu turno y en qué parte del día empieza. Omsi-Hub busca turnos así entre los viajes reales del horario."
 "Omsi-Hub drives on the maps and buses of the original OMSI 2. Point once to the folder you play from.":
   nl: "Omsi-Hub rijdt op de kaarten en met de bussen van het originele OMSI 2. Wijs eenmaal de map aan waaruit je speelt."
   de: "Omsi-Hub fährt auf den Karten und mit den Bussen des originalen OMSI 2. Zeig einmal auf den Ordner, aus dem du spielst."
@@ -380,6 +396,7 @@ _version: 2
   ru: "Omsi-Hub ездит по картам и на автобусах оригинального OMSI 2. Один раз укажи папку, из которой ты играешь."
   uk: "Omsi-Hub їздить мапами й автобусами оригінального OMSI 2. Один раз вкажи теку, з якої ти граєш."
   pl: "Omsi-Hub jeździ po mapach i autobusami oryginalnego OMSI 2. Wskaż raz folder, z którego grasz."
+  es: "Omsi-Hub circula por los mapas y con los autobuses del OMSI 2 original. Indica una sola vez la carpeta desde la que juegas."
 "Welcome to Omsi-Hub":
   nl: "Welkom bij Omsi-Hub"
   de: "Willkommen bei Omsi-Hub"
@@ -387,6 +404,7 @@ _version: 2
   ru: "Добро пожаловать в Omsi-Hub"
   uk: "Ласкаво просимо до Omsi-Hub"
   pl: "Witaj w Omsi-Hub"
+  es: "Bienvenido a Omsi-Hub"
 "Omsi-Hub did not find OMSI 2 by itself. Choose the folder with Omsi.exe in it.":
   nl: "Omsi-Hub heeft OMSI 2 niet zelf gevonden. Kies de map waar Omsi.exe in staat."
   de: "Omsi-Hub hat OMSI 2 nicht selbst gefunden. Wähle den Ordner, in dem die Omsi.exe liegt."
@@ -394,6 +412,7 @@ _version: 2
   ru: "Omsi-Hub не нашёл OMSI 2 сам. Выбери папку, в которой лежит Omsi.exe."
   uk: "Omsi-Hub не знайшов OMSI 2 сам. Обери теку, у якій лежить Omsi.exe."
   pl: "Omsi-Hub nie znalazł OMSI 2 sam. Wybierz folder, w którym jest Omsi.exe."
+  es: "Omsi-Hub no ha encontrado OMSI 2 por sí solo. Elige la carpeta que contiene Omsi.exe."
 "That is Omsi-Hub's own folder. Choose the original OMSI 2, the one with Omsi.exe in it.":
   nl: "Dat is de eigen map van Omsi-Hub. Kies het originele OMSI 2, die met Omsi.exe erin."
   de: "Das ist der eigene Ordner von Omsi-Hub. Wähle das originale OMSI 2, das mit der Omsi.exe darin."
@@ -401,6 +420,7 @@ _version: 2
   ru: "Это собственная папка Omsi-Hub. Выбери оригинальный OMSI 2 — тот, где лежит Omsi.exe."
   uk: "Це власна тека Omsi-Hub. Обери оригінальний OMSI 2 — той, де лежить Omsi.exe."
   pl: "To własny folder Omsi-Hub. Wybierz oryginalne OMSI 2, to z Omsi.exe w środku."
+  es: "Esa es la carpeta propia de Omsi-Hub. Elige el OMSI 2 original, el que contiene Omsi.exe."
 "Steam, the box version, a folder you moved yourself - all fine. Omsi-Hub only reads it and never writes into it.":
   nl: "Steam, de doosversie, een map die je zelf hebt verplaatst - allemaal goed. Omsi-Hub leest er alleen uit en schrijft er nooit in."
   de: "Steam, die Box-Version, ein selbst verschobener Ordner - alles recht. Omsi-Hub liest nur daraus und schreibt nie hinein."
@@ -408,11 +428,13 @@ _version: 2
   ru: "Steam, коробочная версия, папка, которую ты перенёс сам, - всё подходит. Omsi-Hub только читает её и никогда в неё не пишет."
   uk: "Steam, коробкова версія, тека, яку ти переніс сам, - усе підходить. Omsi-Hub лише читає її й ніколи в неї не пише."
   pl: "Steam, wersja pudełkowa, folder przeniesiony samodzielnie - wszystko w porządku. Omsi-Hub tylko z niego czyta i nigdy do niego nie zapisuje."
+  es: "Steam, la versión en caja, una carpeta que moviste tú mismo - todo vale. Omsi-Hub solo lee de ella y nunca escribe en ella."
 "Run with the real clock, also while Omsi-Hub is closed":
   de: "Mit der echten Uhr laufen, auch wenn Omsi-Hub geschlossen ist"
   fr: "Suivre l'horloge réelle, même quand Omsi-Hub est fermé"
   nl: "Met de echte klok meelopen, ook als Omsi-Hub dicht is"
   pl: "Płyń z prawdziwym zegarem, także gdy Omsi-Hub jest zamknięty"
+  es: "Seguir el reloj real, también con Omsi-Hub cerrado"
   ru: "Идти вместе с реальными часами, даже когда Omsi-Hub закрыт"
   uk: "Іти разом із реальним годинником, навіть коли Omsi-Hub закрито"
 "In step with the real clock: the company's time goes on while Omsi-Hub is closed, and is caught up when you open the company.":
@@ -420,6 +442,7 @@ _version: 2
   fr: "Au rythme de l'horloge réelle : le temps de l'entreprise continue quand Omsi-Hub est fermé, et il est rattrapé quand tu ouvres l'entreprise."
   nl: "In de pas met de echte klok: de bedrijfstijd loopt door terwijl Omsi-Hub dicht is, en wordt ingehaald als je het bedrijf opent."
   pl: "Zgodnie z prawdziwym zegarem: czas firmy płynie dalej, gdy Omsi-Hub jest zamknięty, i jest nadrabiany, gdy otworzysz firmę."
+  es: "Al ritmo del reloj real: el tiempo de la empresa sigue corriendo mientras Omsi-Hub está cerrado, y se pone al día cuando abres la empresa."
   ru: "В такт с реальными часами: время компании идёт, пока Omsi-Hub закрыт, и наверстывается, когда вы открываете компанию."
   uk: "У такт із реальним годинником: час компанії йде, поки Omsi-Hub закрито, і надолужується, коли ви відкриваєте компанію."
 "Omsi-Hub %{version} is installed; start it again yourself (%{error}).":
@@ -429,6 +452,7 @@ _version: 2
   ru: "Omsi-Hub %{version} установлен; запустите его заново сами (%{error})."
   uk: "Omsi-Hub %{version} встановлено; запустіть його знову самі (%{error})."
   pl: "Omsi-Hub %{version} jest zainstalowany; uruchom go ponownie sam (%{error})."
+  es: "Omsi-Hub %{version} está instalado; vuelve a iniciarlo tú mismo (%{error})."
 "Omsi-Hub %{version} is available":
   nl: "Omsi-Hub %{version} is beschikbaar"
   de: "Omsi-Hub %{version} ist verfügbar"
@@ -436,6 +460,7 @@ _version: 2
   ru: "Доступен Omsi-Hub %{version}"
   uk: "Доступний Omsi-Hub %{version}"
   pl: "Dostępny jest Omsi-Hub %{version}"
+  es: "Omsi-Hub %{version} está disponible"
 "Downloading Omsi-Hub %{version}":
   nl: "Omsi-Hub %{version} downloaden"
   de: "Omsi-Hub %{version} wird heruntergeladen"
@@ -443,6 +468,7 @@ _version: 2
   ru: "Загрузка Omsi-Hub %{version}"
   uk: "Завантаження Omsi-Hub %{version}"
   pl: "Pobieranie Omsi-Hub %{version}"
+  es: "Descargando Omsi-Hub %{version}"
 "Installing Omsi-Hub %{version}":
   nl: "Omsi-Hub %{version} installeren"
   de: "Omsi-Hub %{version} wird installiert"
@@ -450,6 +476,7 @@ _version: 2
   ru: "Установка Omsi-Hub %{version}"
   uk: "Встановлення Omsi-Hub %{version}"
   pl: "Instalowanie Omsi-Hub %{version}"
+  es: "Instalando Omsi-Hub %{version}"
 "This is Omsi-Hub %{version}":
   nl: "Dit is Omsi-Hub %{version}"
   de: "Dies ist Omsi-Hub %{version}"
@@ -457,6 +484,7 @@ _version: 2
   ru: "Это Omsi-Hub %{version}"
   uk: "Це Omsi-Hub %{version}"
   pl: "To jest Omsi-Hub %{version}"
+  es: "Esto es Omsi-Hub %{version}"
 "Updated to Omsi-Hub %{version}":
   nl: "Bijgewerkt naar Omsi-Hub %{version}"
   de: "Aktualisiert auf Omsi-Hub %{version}"
@@ -464,6 +492,7 @@ _version: 2
   ru: "Обновлено до Omsi-Hub %{version}"
   uk: "Оновлено до Omsi-Hub %{version}"
   pl: "Zaktualizowano do Omsi-Hub %{version}"
+  es: "Actualizado a Omsi-Hub %{version}"
 "Omsi-Hub is built on openOMSI, the open rebuild of OMSI 2's engine.":
   nl: "Omsi-Hub is gebouwd op openOMSI, de open nabouw van de engine van OMSI 2."
   de: "Omsi-Hub baut auf openOMSI auf, dem offenen Nachbau der Engine von OMSI 2."
@@ -471,6 +500,7 @@ _version: 2
   ru: "Omsi-Hub основан на openOMSI — открытой реконструкции движка OMSI 2."
   uk: "Omsi-Hub побудовано на openOMSI — відкритій реконструкції рушія OMSI 2."
   pl: "Omsi-Hub powstał na bazie openOMSI, otwartej odbudowy silnika OMSI 2."
+  es: "Omsi-Hub se basa en openOMSI, la reconstrucción abierta del motor de OMSI 2."
 "On a Mac: copy the whole OMSI 2 folder (with Omsi.exe, maps and Vehicles) from a Windows PC to this Mac, then choose it here.":
   nl: "Op een Mac: kopieer de hele OMSI 2-map (met Omsi.exe, maps en Vehicles) van een Windows-pc naar deze Mac en kies hem hier."
   de: "Auf einem Mac: Kopiere den ganzen OMSI-2-Ordner (mit Omsi.exe, maps und Vehicles) von einem Windows-PC auf diesen Mac und wähle ihn hier."
@@ -478,6 +508,7 @@ _version: 2
   ru: "На Mac: скопируйте всю папку OMSI 2 (с Omsi.exe, maps и Vehicles) с ПК на Windows на этот Mac и выберите её здесь."
   uk: "На Mac: скопіюйте всю теку OMSI 2 (з Omsi.exe, maps і Vehicles) з ПК на Windows на цей Mac і виберіть її тут."
   pl: "Na Macu: skopiuj cały folder OMSI 2 (z Omsi.exe, maps i Vehicles) z komputera z Windows na tego Maca i wybierz go tutaj."
+  es: "En un Mac: copia toda la carpeta de OMSI 2 (con Omsi.exe, maps y Vehicles) de un PC con Windows a este Mac y luego elígela aquí."
 "as large as this window allows: %{pct}":
   nl: "zo groot als dit venster toelaat: %{pct}"
   de: "so groß, wie dieses Fenster es zulässt: %{pct}"
@@ -485,6 +516,7 @@ _version: 2
   ru: "насколько позволяет это окно: %{pct}"
   uk: "наскільки дозволяє це вікно: %{pct}"
   pl: "tak duży, jak pozwala to okno: %{pct}"
+  es: "tan grande como permite esta ventana: %{pct}"
 
 # --- the livery studio on the page (js/omsihub/bus3d/lak) ----------------------------------------
 "At an angle":
@@ -494,6 +526,7 @@ _version: 2
   ru: "Под углом"
   uk: "Під кутом"
   pl: "Pod kątem"
+  es: "En ángulo"
 "Before and after":
   nl: "Ervoor en erna"
   de: "Vorher und nachher"
@@ -501,6 +534,7 @@ _version: 2
   ru: "До и после"
   uk: "До і після"
   pl: "Przed i po"
+  es: "Antes y después"
 "Begin":
   nl: "Beginnen"
   de: "Beginnen"
@@ -508,6 +542,7 @@ _version: 2
   ru: "Начать"
   uk: "Почати"
   pl: "Zacznij"
+  es: "Empezar"
 "Fit":
   nl: "Passend"
   de: "Einpassen"
@@ -515,6 +550,7 @@ _version: 2
   ru: "Вписать"
   uk: "Вписати"
   pl: "Dopasuj"
+  es: "Ajustar"
 "Font":
   nl: "Lettertype"
   de: "Schriftart"
@@ -522,6 +558,7 @@ _version: 2
   ru: "Шрифт"
   uk: "Шрифт"
   pl: "Czcionka"
+  es: "Fuente"
 "Hide":
   nl: "Verbergen"
   de: "Ausblenden"
@@ -529,6 +566,7 @@ _version: 2
   ru: "Скрыть"
   uk: "Сховати"
   pl: "Ukryj"
+  es: "Ocultar"
 "Show":
   nl: "Tonen"
   de: "Zeigen"
@@ -536,6 +574,7 @@ _version: 2
   ru: "Показать"
   uk: "Показати"
   pl: "Pokaż"
+  es: "Mostrar"
 "How":
   nl: "Hoe"
   de: "Wie"
@@ -543,6 +582,7 @@ _version: 2
   ru: "Как"
   uk: "Як"
   pl: "Jak"
+  es: "Cómo"
 "Layer":
   nl: "Laag"
   de: "Ebene"
@@ -550,6 +590,7 @@ _version: 2
   ru: "Слой"
   uk: "Шар"
   pl: "Warstwa"
+  es: "Capa"
 "Liveries begun":
   nl: "Begonnen lakken"
   de: "Begonnene Lackierungen"
@@ -557,6 +598,7 @@ _version: 2
   ru: "Начатые окраски"
   uk: "Розпочаті фарбування"
   pl: "Rozpoczęte malowania"
+  es: "Libreas empezadas"
 "New livery":
   nl: "Nieuwe lak"
   de: "Neue Lackierung"
@@ -564,6 +606,7 @@ _version: 2
   ru: "Новая окраска"
   uk: "Нове фарбування"
   pl: "Nowe malowanie"
+  es: "Nueva librea"
 "No layers yet: the quick livery on the right, or Create layer.":
   nl: "Nog geen lagen: de snelle lak rechts, of Laag maken."
   de: "Noch keine Ebenen: die schnelle Lackierung rechts oder Ebene erstellen."
@@ -571,6 +614,7 @@ _version: 2
   ru: "Слоёв пока нет: быстрая окраска справа или «Создать слой»."
   uk: "Шарів поки немає: швидке фарбування праворуч або «Створити шар»."
   pl: "Brak warstw: szybkie malowanie po prawej albo Utwórz warstwę."
+  es: "Aún no hay capas: la librea rápida de la derecha, o Crear capa."
 "The same on the other side":
   nl: "Hetzelfde aan de andere kant"
   de: "Gleich auf der anderen Seite"
@@ -578,6 +622,7 @@ _version: 2
   ru: "То же с другой стороны"
   uk: "Те саме з іншого боку"
   pl: "To samo po drugiej stronie"
+  es: "Igual en el otro lado"
 "Unlock":
   nl: "Ontgrendelen"
   de: "Entsperren"
@@ -585,6 +630,7 @@ _version: 2
   ru: "Разблокировать"
   uk: "Розблокувати"
   pl: "Odblokuj"
+  es: "Desbloquear"
 "in the game":
   nl: "in het spel"
   de: "im Spiel"
@@ -592,6 +638,7 @@ _version: 2
   ru: "в игре"
   uk: "у грі"
   pl: "w grze"
+  es: "en el juego"
 
 # --- the new app's shell (ui/js/hub, ui/js/pages): the words openOMSI's own tables gave the old
 # launcher, and what the add-on says of its folders, its plugin and the parts that come later ---
@@ -602,6 +649,7 @@ _version: 2
   ru: "Главная"
   uk: "Головна"
   pl: "Start"
+  es: "Inicio"
 "Settings":
   nl: "Instellingen"
   de: "Einstellungen"
@@ -609,6 +657,7 @@ _version: 2
   ru: "Настройки"
   uk: "Налаштування"
   pl: "Ustawienia"
+  es: "Ajustes"
 "Back":
   nl: "Terug"
   de: "Zurück"
@@ -616,6 +665,7 @@ _version: 2
   ru: "Назад"
   uk: "Назад"
   pl: "Wstecz"
+  es: "Atrás"
 "Bus company":
   nl: "Busbedrijf"
   de: "Busunternehmen"
@@ -623,6 +673,7 @@ _version: 2
   ru: "Автобусная компания"
   uk: "Автобусна компанія"
   pl: "Firma autobusowa"
+  es: "Empresa de autobuses"
 "Online":
   nl: "Online"
   de: "Online"
@@ -630,6 +681,7 @@ _version: 2
   ru: "Онлайн"
   uk: "Онлайн"
   pl: "Online"
+  es: "En línea"
 "Editor":
   nl: "Editor"
   de: "Editor"
@@ -637,6 +689,7 @@ _version: 2
   ru: "Редактор"
   uk: "Редактор"
   pl: "Edytor"
+  es: "Editor"
 "Editors":
   nl: "Editors"
   de: "Editoren"
@@ -644,6 +697,7 @@ _version: 2
   ru: "Редакторы"
   uk: "Редактори"
   pl: "Edytory"
+  es: "Editores"
 "Timetable":
   nl: "Dienstregeling"
   de: "Fahrplan"
@@ -651,6 +705,7 @@ _version: 2
   ru: "Расписание"
   uk: "Розклад"
   pl: "Rozkład jazdy"
+  es: "Horario"
 "Depot editor":
   nl: "Depoteditor"
   de: "Depot-Editor"
@@ -658,6 +713,7 @@ _version: 2
   ru: "Редактор депо"
   uk: "Редактор депо"
   pl: "Edytor zajezdni"
+  es: "Editor de archivos de cochera"
 "Line editor":
   nl: "Lijneditor"
   de: "Linieneditor"
@@ -665,6 +721,7 @@ _version: 2
   ru: "Редактор линий"
   uk: "Редактор ліній"
   pl: "Edytor linii"
+  es: "Editor de líneas"
 "Livery editor":
   nl: "Lakeditor"
   de: "Lackierungseditor"
@@ -672,6 +729,7 @@ _version: 2
   ru: "Редактор окраски"
   uk: "Редактор забарвлення"
   pl: "Edytor malowania"
+  es: "Editor de libreas"
 "Editor: the timetable and depot files":
   nl: "Editor: de dienstregeling en depotbestanden"
   de: "Editor: der Fahrplan und die Depotdateien"
@@ -679,6 +737,7 @@ _version: 2
   ru: "Редактор: расписание и файлы депо"
   uk: "Редактор: розклад і файли депо"
   pl: "Edytor: rozkład jazdy i pliki zajezdni"
+  es: "Editor: el horario y los archivos de cochera"
 "Start the object editor":
   nl: "Start de objecteditor"
   de: "Objekteditor starten"
@@ -686,6 +745,7 @@ _version: 2
   ru: "Запустить редактор объектов"
   uk: "Запустити редактор об'єктів"
   pl: "Uruchom edytor obiektów"
+  es: "Iniciar el editor de objetos"
 "No maps found.":
   nl: "Geen kaarten gevonden."
   de: "Keine Karten gefunden."
@@ -693,6 +753,7 @@ _version: 2
   ru: "Карты не найдены."
   uk: "Мапи не знайдено."
   pl: "Nie znaleziono map."
+  es: "No se han encontrado mapas."
 "How do you want to drive today?":
   nl: "Hoe wil je vandaag rijden?"
   de: "Wie möchtest du heute fahren?"
@@ -700,6 +761,7 @@ _version: 2
   ru: "Как вы хотите ездить сегодня?"
   uk: "Як ви хочете їздити сьогодні?"
   pl: "Jak chcesz dziś jeździć?"
+  es: "¿Cómo quieres conducir hoy?"
 "Reading the timetable…":
   nl: "De dienstregeling wordt gelezen…"
   de: "Der Fahrplan wird gelesen…"
@@ -707,6 +769,7 @@ _version: 2
   ru: "Чтение расписания…"
   uk: "Читання розкладу…"
   pl: "Wczytywanie rozkładu…"
+  es: "Leyendo el horario…"
 "The game is starting…":
   nl: "Het spel start…"
   de: "Das Spiel startet…"
@@ -714,6 +777,7 @@ _version: 2
   ru: "Игра запускается…"
   uk: "Гра запускається…"
   pl: "Gra się uruchamia…"
+  es: "El juego se está iniciando…"
 "openOMSI is running":
   nl: "openOMSI draait"
   de: "openOMSI läuft"
@@ -721,6 +785,7 @@ _version: 2
   ru: "openOMSI запущен"
   uk: "openOMSI запущено"
   pl: "openOMSI działa"
+  es: "openOMSI está en marcha"
 "The launcher rests while you drive, so that the game has the graphics card to itself. It is back as soon as the game ends.":
   nl: "De launcher rust terwijl je rijdt, zodat het spel de videokaart voor zichzelf heeft. Hij is terug zodra het spel stopt."
   de: "Der Launcher ruht, während du fährst, damit das Spiel die Grafikkarte für sich hat. Er ist zurück, sobald das Spiel endet."
@@ -728,6 +793,7 @@ _version: 2
   ru: "Лаунчер отдыхает, пока вы едете, чтобы видеокарта была в распоряжении игры. Он вернётся, как только игра закончится."
   uk: "Лаунчер відпочиває, поки ви їдете, щоб відеокарта була в розпорядженні гри. Він повернеться, щойно гра завершиться."
   pl: "Launcher odpoczywa, gdy jeździsz, aby gra miała kartę graficzną dla siebie. Wraca, gdy tylko gra się skończy."
+  es: "El lanzador descansa mientras conduces, para que el juego tenga la tarjeta gráfica para él solo. Vuelve en cuanto termina el juego."
 "Show the tour":
   nl: "Toon de rondleiding"
   de: "Die Tour zeigen"
@@ -735,6 +801,7 @@ _version: 2
   ru: "Показать тур"
   uk: "Показати тур"
   pl: "Pokaż przewodnik"
+  es: "Mostrar la visita guiada"
 "Start the tour":
   nl: "Start de rondleiding"
   de: "Die Tour starten"
@@ -742,6 +809,7 @@ _version: 2
   ru: "Начать тур"
   uk: "Почати тур"
   pl: "Rozpocznij przewodnik"
+  es: "Empezar la visita guiada"
 "Other languages":
   nl: "Andere talen"
   de: "Andere Sprachen"
@@ -749,6 +817,7 @@ _version: 2
   ru: "Другие языки"
   uk: "Інші мови"
   pl: "Inne języki"
+  es: "Otros idiomas"
 "Accent colour":
   nl: "Accentkleur"
   de: "Akzentfarbe"
@@ -756,6 +825,7 @@ _version: 2
   ru: "Акцентный цвет"
   uk: "Акцентний колір"
   pl: "Kolor akcentu"
+  es: "Color de acento"
 "Custom…":
   nl: "Eigen…"
   de: "Eigene…"
@@ -763,6 +833,7 @@ _version: 2
   ru: "Свой…"
   uk: "Свій…"
   pl: "Własny…"
+  es: "Personalizado…"
 "Dark mode":
   nl: "Donkere modus"
   de: "Dunkler Modus"
@@ -770,6 +841,7 @@ _version: 2
   ru: "Тёмный режим"
   uk: "Темний режим"
   pl: "Tryb ciemny"
+  es: "Modo oscuro"
 "Animations":
   nl: "Animaties"
   de: "Animationen"
@@ -777,6 +849,7 @@ _version: 2
   ru: "Анимации"
   uk: "Анімації"
   pl: "Animacje"
+  es: "Animaciones"
 "Launcher size":
   nl: "Grootte van de launcher"
   de: "Größe des Launchers"
@@ -784,6 +857,7 @@ _version: 2
   ru: "Размер лаунчера"
   uk: "Розмір лаунчера"
   pl: "Rozmiar launchera"
+  es: "Tamaño del lanzador"
 "Language":
   nl: "Taal"
   de: "Sprache"
@@ -791,6 +865,7 @@ _version: 2
   ru: "Язык"
   uk: "Мова"
   pl: "Język"
+  es: "Idioma"
 "General":
   nl: "Algemeen"
   de: "Allgemein"
@@ -798,6 +873,7 @@ _version: 2
   ru: "Общие"
   uk: "Загальні"
   pl: "Ogólne"
+  es: "General"
 "Look":
   nl: "Uiterlijk"
   de: "Aussehen"
@@ -805,6 +881,7 @@ _version: 2
   ru: "Внешний вид"
   uk: "Вигляд"
   pl: "Wygląd"
+  es: "Ver"
 "Updates":
   nl: "Updates"
   de: "Updates"
@@ -812,6 +889,7 @@ _version: 2
   ru: "Обновления"
   uk: "Оновлення"
   pl: "Aktualizacje"
+  es: "Actualizaciones"
 "Vehicles":
   nl: "Voertuigen"
   de: "Fahrzeuge"
@@ -819,6 +897,7 @@ _version: 2
   ru: "Транспорт"
   uk: "Транспорт"
   pl: "Pojazdy"
+  es: "Vehículos"
 "openOMSI and OMSI 2":
   nl: "openOMSI en OMSI 2"
   de: "openOMSI und OMSI 2"
@@ -826,6 +905,7 @@ _version: 2
   ru: "openOMSI и OMSI 2"
   uk: "openOMSI і OMSI 2"
   pl: "openOMSI i OMSI 2"
+  es: "openOMSI y OMSI 2"
 "Your openOMSI and OMSI 2":
   nl: "Je openOMSI en OMSI 2"
   de: "Dein openOMSI und OMSI 2"
@@ -833,6 +913,7 @@ _version: 2
   ru: "Ваш openOMSI и OMSI 2"
   uk: "Ваш openOMSI і OMSI 2"
   pl: "Twój openOMSI i OMSI 2"
+  es: "Tu openOMSI y OMSI 2"
 "Choose the folders again":
   nl: "Kies de mappen opnieuw"
   de: "Die Ordner neu wählen"
@@ -840,6 +921,7 @@ _version: 2
   ru: "Выбрать папки заново"
   uk: "Вибрати теки знову"
   pl: "Wybierz foldery ponownie"
+  es: "Volver a elegir las carpetas"
 "Omsi-Hub's data folder":
   nl: "De gegevensmap van Omsi-Hub"
   de: "Der Datenordner von Omsi-Hub"
@@ -847,6 +929,7 @@ _version: 2
   ru: "Папка данных Omsi-Hub"
   uk: "Тека даних Omsi-Hub"
   pl: "Folder danych Omsi-Hub"
+  es: "Carpeta de datos de Omsi-Hub"
 "Not chosen":
   nl: "Niet gekozen"
   de: "Nicht gewählt"
@@ -854,6 +937,7 @@ _version: 2
   ru: "Не выбрано"
   uk: "Не вибрано"
   pl: "Nie wybrano"
+  es: "Sin elegir"
 "Omsi-Hub works with the openOMSI you have installed and your original OMSI 2. It keeps its own data and never changes their files.":
   nl: "Omsi-Hub werkt met de openOMSI die je hebt geïnstalleerd en je originele OMSI 2. Het houdt zijn eigen gegevens bij en verandert hun bestanden nooit."
   de: "Omsi-Hub arbeitet mit dem openOMSI, das du installiert hast, und deinem originalen OMSI 2. Es hat eigene Daten und ändert deren Dateien nie."
@@ -861,6 +945,7 @@ _version: 2
   ru: "Omsi-Hub работает с установленным у вас openOMSI и оригинальной OMSI 2. Он хранит свои данные отдельно и никогда не меняет их файлы."
   uk: "Omsi-Hub працює з установленим у вас openOMSI та оригінальною OMSI 2. Він зберігає власні дані й ніколи не змінює їхніх файлів."
   pl: "Omsi-Hub działa z zainstalowanym przez ciebie openOMSI i oryginalnym OMSI 2. Przechowuje własne dane i nigdy nie zmienia ich plików."
+  es: "Omsi-Hub funciona con el openOMSI que tienes instalado y tu OMSI 2 original. Guarda sus propios datos y nunca cambia sus archivos."
 "Version not found":
   nl: "Versie niet gevonden"
   de: "Version nicht gefunden"
@@ -868,6 +953,7 @@ _version: 2
   ru: "Версия не найдена"
   uk: "Версію не знайдено"
   pl: "Nie znaleziono wersji"
+  es: "Versión no encontrada"
 "Checked with this openOMSI":
   nl: "Gecontroleerd met deze openOMSI"
   de: "Mit diesem openOMSI geprüft"
@@ -875,6 +961,7 @@ _version: 2
   ru: "Проверено с этим openOMSI"
   uk: "Перевірено з цим openOMSI"
   pl: "Sprawdzono z tym openOMSI"
+  es: "Comprobado con este openOMSI"
 "Estimated from the version":
   nl: "Geschat aan de hand van de versie"
   de: "Anhand der Version geschätzt"
@@ -882,6 +969,7 @@ _version: 2
   ru: "Оценено по версии"
   uk: "Оцінено за версією"
   pl: "Oszacowano na podstawie wersji"
+  es: "Estimado a partir de la versión"
 "Omsi-Hub plugin in this openOMSI":
   nl: "Omsi-Hub-plug-in in deze openOMSI"
   de: "Omsi-Hub-Plugin in diesem openOMSI"
@@ -889,6 +977,7 @@ _version: 2
   ru: "Плагин Omsi-Hub в этом openOMSI"
   uk: "Плагін Omsi-Hub у цьому openOMSI"
   pl: "Wtyczka Omsi-Hub w tym openOMSI"
+  es: "Plugin de Omsi-Hub en este openOMSI"
 "Update the plugin":
   nl: "Werk de plug-in bij"
   de: "Das Plugin aktualisieren"
@@ -896,6 +985,7 @@ _version: 2
   ru: "Обновить плагин"
   uk: "Оновити плагін"
   pl: "Zaktualizuj wtyczkę"
+  es: "Actualizar el plugin"
 "Not installed":
   nl: "Niet geïnstalleerd"
   de: "Nicht installiert"
@@ -903,6 +993,7 @@ _version: 2
   ru: "Не установлен"
   uk: "Не встановлено"
   pl: "Nie zainstalowano"
+  es: "No instalado"
 "Switched off in this openOMSI":
   nl: "Uitgeschakeld in deze openOMSI"
   de: "In diesem openOMSI ausgeschaltet"
@@ -910,6 +1001,7 @@ _version: 2
   ru: "Выключен в этом openOMSI"
   uk: "Вимкнено в цьому openOMSI"
   pl: "Wyłączona w tym openOMSI"
+  es: "Desactivado en este openOMSI"
 "Version %{version} installed":
   nl: "Versie %{version} geïnstalleerd"
   de: "Version %{version} installiert"
@@ -917,6 +1009,7 @@ _version: 2
   ru: "Установлена версия %{version}"
   uk: "Встановлено версію %{version}"
   pl: "Zainstalowano wersję %{version}"
+  es: "Versión %{version} instalada"
 "Version %{version} installed, this Omsi-Hub has %{ours}":
   nl: "Versie %{version} geïnstalleerd, deze Omsi-Hub heeft %{ours}"
   de: "Version %{version} installiert, dieses Omsi-Hub hat %{ours}"
@@ -924,6 +1017,7 @@ _version: 2
   ru: "Установлена версия %{version}, в этом Omsi-Hub — %{ours}"
   uk: "Встановлено версію %{version}, у цьому Omsi-Hub — %{ours}"
   pl: "Zainstalowano wersję %{version}, ten Omsi-Hub ma %{ours}"
+  es: "Versión %{version} instalada, este Omsi-Hub tiene la %{ours}"
 "Plugins folder: %{dir}":
   nl: "Map met plug-ins: %{dir}"
   de: "Plugin-Ordner: %{dir}"
@@ -931,6 +1025,7 @@ _version: 2
   ru: "Папка плагинов: %{dir}"
   uk: "Тека плагінів: %{dir}"
   pl: "Folder wtyczek: %{dir}"
+  es: "Carpeta de plugins: %{dir}"
 "Omsi-Hub uses the openOMSI that openOMSI's own launcher plays, with the mods you installed there. Chosen here: %{chosen}":
   nl: "Omsi-Hub gebruikt de openOMSI die de launcher van openOMSI zelf start, met de mods die je daar hebt geïnstalleerd. Hier gekozen: %{chosen}"
   de: "Omsi-Hub nutzt das openOMSI, das openOMSIs eigener Launcher startet, mit den Mods, die du dort installiert hast. Hier gewählt: %{chosen}"
@@ -938,6 +1033,7 @@ _version: 2
   ru: "Omsi-Hub использует тот openOMSI, который запускает собственный лаунчер openOMSI, с установленными там модами. Выбрано здесь: %{chosen}"
   uk: "Omsi-Hub використовує той openOMSI, який запускає власний лаунчер openOMSI, з модами, які ви там встановили. Вибрано тут: %{chosen}"
   pl: "Omsi-Hub używa tego openOMSI, który uruchamia własny launcher openOMSI, z modami zainstalowanymi właśnie tam. Wybrano tutaj: %{chosen}"
+  es: "Omsi-Hub usa el openOMSI que inicia el propio lanzador de openOMSI, con los mods que instalaste allí. Elegido aquí: %{chosen}"
 "The game closed on an error":
   nl: "Het spel is met een fout gestopt"
   de: "Das Spiel wurde mit einem Fehler beendet"
@@ -945,6 +1041,7 @@ _version: 2
   ru: "Игра закрылась с ошибкой"
   uk: "Гра закрилася з помилкою"
   pl: "Gra zamknęła się z błędem"
+  es: "El juego se ha cerrado con un error"
 "Exit code %{code}":
   nl: "Afsluitcode %{code}"
   de: "Exit-Code %{code}"
@@ -952,6 +1049,7 @@ _version: 2
   ru: "Код завершения %{code}"
   uk: "Код завершення %{code}"
   pl: "Kod wyjścia %{code}"
+  es: "Código de salida %{code}"
 "Copy the log":
   nl: "Kopieer het logboek"
   de: "Das Protokoll kopieren"
@@ -959,6 +1057,7 @@ _version: 2
   ru: "Скопировать журнал"
   uk: "Скопіювати журнал"
   pl: "Skopiuj dziennik"
+  es: "Copiar el registro"
 "The map is not drawn yet.":
   nl: "De kaart is nog niet getekend."
   de: "Die Karte ist noch nicht gezeichnet."
@@ -966,6 +1065,7 @@ _version: 2
   ru: "Карта ещё не нарисована."
   uk: "Мапу ще не намальовано."
   pl: "Mapa nie jest jeszcze narysowana."
+  es: "El mapa aún no está dibujado."
 "This part of Omsi-Hub comes to the new app later.":
   nl: "Dit deel van Omsi-Hub komt later naar de nieuwe app."
   de: "Dieser Teil von Omsi-Hub kommt später in die neue App."
@@ -973,6 +1073,7 @@ _version: 2
   ru: "Эта часть Omsi-Hub появится в новом приложении позже."
   uk: "Ця частина Omsi-Hub з'явиться в новому застосунку пізніше."
   pl: "Ta część Omsi-Hub trafi do nowej aplikacji później."
+  es: "Esta parte de Omsi-Hub llegará más adelante a la nueva app."
 "The line editor comes to the new app later: it needs our own reader of the map's roads.":
   nl: "De lijneditor komt later naar de nieuwe app: hij heeft onze eigen lezer van de wegen van de kaart nodig."
   de: "Der Linieneditor kommt später in die neue App: Er braucht unseren eigenen Leser für die Straßen der Karte."
@@ -980,6 +1081,7 @@ _version: 2
   ru: "Редактор линий появится в новом приложении позже: ему нужен наш собственный считыватель дорог карты."
   uk: "Редактор ліній з'явиться в новому застосунку пізніше: йому потрібен наш власний зчитувач доріг мапи."
   pl: "Edytor linii trafi do nowej aplikacji później: potrzebuje naszego własnego czytnika dróg mapy."
+  es: "El editor de líneas llegará más adelante a la nueva app: necesita nuestro propio lector de las carreteras del mapa."
 "The livery studio comes to the new app later.":
   nl: "De lakstudio komt later naar de nieuwe app."
   de: "Das Lackierungsstudio kommt später in die neue App."
@@ -987,6 +1089,7 @@ _version: 2
   ru: "Студия окраски появится в новом приложении позже."
   uk: "Студія забарвлення з'явиться в новому застосунку пізніше."
   pl: "Studio malowania trafi do nowej aplikacji później."
+  es: "El estudio de libreas llegará más adelante a la nueva app."
 "The bus in 3D comes to the new app later.":
   nl: "De bus in 3D komt later naar de nieuwe app."
   de: "Der Bus in 3D kommt später in die neue App."
@@ -994,6 +1097,7 @@ _version: 2
   ru: "Автобус в 3D появится в новом приложении позже."
   uk: "Автобус у 3D з'явиться в новому застосунку пізніше."
   pl: "Autobus w 3D trafi do nowej aplikacji później."
+  es: "El autobús en 3D llegará más adelante a la nueva app."
 "3D preview":
   nl: "3D-weergave"
   de: "3D-Ansicht"
@@ -1001,6 +1105,7 @@ _version: 2
   ru: "3D-просмотр"
   uk: "3D-перегляд"
   pl: "Podgląd 3D"
+  es: "Vista previa 3D"
 "Your service record":
   nl: "Je dienstboek"
   de: "Dein Dienstbuch"
@@ -1008,6 +1113,7 @@ _version: 2
   ru: "Ваш послужной список"
   uk: "Ваш службовий журнал"
   pl: "Twój dziennik służby"
+  es: "Tu historial de servicio"
 "Open the service record":
   nl: "Open het dienstboek"
   de: "Das Dienstbuch öffnen"
@@ -1015,6 +1121,7 @@ _version: 2
   ru: "Открыть послужной список"
   uk: "Відкрити службовий журнал"
   pl: "Otwórz dziennik służby"
+  es: "Abrir el historial de servicio"
 "Level %{level} · %{xp} of %{next} points":
   nl: "Niveau %{level} · %{xp} van %{next} punten"
   de: "Stufe %{level} · %{xp} von %{next} Punkten"
@@ -1022,6 +1129,7 @@ _version: 2
   ru: "Уровень %{level} · %{xp} из %{next} очков"
   uk: "Рівень %{level} · %{xp} з %{next} балів"
   pl: "Poziom %{level} · %{xp} z %{next} punktów"
+  es: "Nivel %{level} · %{xp} de %{next} puntos"
 "duties":
   nl: "diensten"
   de: "Dienste"
@@ -1029,6 +1137,7 @@ _version: 2
   ru: "смен"
   uk: "змін"
   pl: "służb"
+  es: "servicios"
 "driven":
   nl: "gereden"
   de: "gefahren"
@@ -1036,6 +1145,7 @@ _version: 2
   ru: "в пути"
   uk: "у дорозі"
   pl: "przejechane"
+  es: "recorridos"
 "level":
   nl: "niveau"
   de: "Stufe"
@@ -1043,6 +1153,7 @@ _version: 2
   ru: "уровень"
   uk: "рівень"
   pl: "poziom"
+  es: "nivel"
 "Omsi-Hub works with openOMSI, the open rebuild of OMSI 2's engine.":
   nl: "Omsi-Hub werkt met openOMSI, de open herbouw van de engine van OMSI 2."
   de: "Omsi-Hub arbeitet mit openOMSI, dem offenen Nachbau der Engine von OMSI 2."
@@ -1050,6 +1161,7 @@ _version: 2
   ru: "Omsi-Hub работает с openOMSI — открытой переработкой движка OMSI 2."
   uk: "Omsi-Hub працює з openOMSI — відкритою переробкою рушія OMSI 2."
   pl: "Omsi-Hub działa z openOMSI, otwartą przebudową silnika OMSI 2."
+  es: "Omsi-Hub funciona con openOMSI, la reconstrucción abierta del motor de OMSI 2."
 # (the first-run setup, ui/js/setup.js, and the folders in Settings)
 "Your openOMSI folder":
   nl: "Je openOMSI-map"
@@ -1058,6 +1170,7 @@ _version: 2
   ru: "Ваша папка openOMSI"
   uk: "Ваша тека openOMSI"
   pl: "Twój folder openOMSI"
+  es: "Tu carpeta de openOMSI"
 "The folder openOMSI is in (openOMSI 0.2.22 or newer).":
   nl: "De map waarin openOMSI staat (openOMSI 0.2.22 of nieuwer)."
   de: "Der Ordner, in dem openOMSI liegt (openOMSI 0.2.22 oder neuer)."
@@ -1065,6 +1178,7 @@ _version: 2
   ru: "Папка, в которой находится openOMSI (openOMSI 0.2.22 или новее)."
   uk: "Тека, у якій лежить openOMSI (openOMSI 0.2.22 або новіший)."
   pl: "Folder, w którym jest openOMSI (openOMSI 0.2.22 lub nowszy)."
+  es: "La carpeta donde está openOMSI (openOMSI 0.2.22 o posterior)."
 "Your OMSI 2 folder":
   nl: "Je OMSI 2-map"
   de: "Dein OMSI-2-Ordner"
@@ -1072,6 +1186,7 @@ _version: 2
   ru: "Ваша папка OMSI 2"
   uk: "Ваша тека OMSI 2"
   pl: "Twój folder OMSI 2"
+  es: "Tu carpeta de OMSI 2"
 "The original OMSI 2 with its maps and buses: from Steam (on Linux, Steam with Proton) or the retail disc.":
   nl: "De originele OMSI 2 met zijn kaarten en bussen: van Steam (op Linux Steam met Proton) of de winkel-dvd."
   de: "Das originale OMSI 2 mit seinen Karten und Bussen: von Steam (unter Linux Steam mit Proton) oder von der Kauf-DVD."
@@ -1079,6 +1194,7 @@ _version: 2
   ru: "Оригинальная OMSI 2 с её картами и автобусами: из Steam (в Linux — Steam с Proton) или с диска."
   uk: "Оригінальна OMSI 2 з її мапами й автобусами: зі Steam (у Linux — Steam із Proton) або з диска."
   pl: "Oryginalny OMSI 2 z jego mapami i autobusami: ze Steam (w Linuksie Steam z Protonem) lub z płyty."
+  es: "El OMSI 2 original con sus mapas y autobuses: de Steam (en Linux, Steam con Proton) o el disco comercial."
 "0.2.22 or newer":
   nl: "0.2.22 of nieuwer"
   de: "0.2.22 oder neuer"
@@ -1086,6 +1202,7 @@ _version: 2
   ru: "0.2.22 или новее"
   uk: "0.2.22 або новіший"
   pl: "0.2.22 lub nowszy"
+  es: "0.2.22 o posterior"
 "Steam, Steam with Proton, or retail":
   nl: "Steam, Steam met Proton, of winkelversie"
   de: "Steam, Steam mit Proton oder Kaufversion"
@@ -1093,6 +1210,7 @@ _version: 2
   ru: "Steam, Steam с Proton или коробочная версия"
   uk: "Steam, Steam із Proton або коробкова версія"
   pl: "Steam, Steam z Protonem lub wersja pudełkowa"
+  es: "Steam, Steam con Proton o versión en caja"
 "Folder":
   nl: "Map"
   de: "Ordner"
@@ -1100,6 +1218,7 @@ _version: 2
   ru: "Папка"
   uk: "Тека"
   pl: "Folder"
+  es: "Carpeta"
 "Choose…":
   nl: "Kiezen…"
   de: "Wählen…"
@@ -1107,6 +1226,7 @@ _version: 2
   ru: "Выбрать…"
   uk: "Вибрати…"
   pl: "Wybierz…"
+  es: "Elegir…"
 "Found":
   nl: "Gevonden"
   de: "Gefunden"
@@ -1114,6 +1234,7 @@ _version: 2
   ru: "Найдено"
   uk: "Знайдено"
   pl: "Znaleziono"
+  es: "Encontrado"
 "Start":
   nl: "Starten"
   de: "Starten"
@@ -1121,6 +1242,7 @@ _version: 2
   ru: "Начать"
   uk: "Почати"
   pl: "Start"
+  es: "Empezar"
 
 # --- the units (Settings, General: the live dashboard's speeds and distances) ---------------------
 "Units":
@@ -1128,6 +1250,7 @@ _version: 2
   fr: "Unités"
   nl: "Eenheden"
   pl: "Jednostki"
+  es: "Unidades"
   ru: "Единицы"
   uk: "Одиниці"
 "Metric (km/h, km)":
@@ -1135,6 +1258,7 @@ _version: 2
   fr: "Métrique (km/h, km)"
   nl: "Metrisch (km/h, km)"
   pl: "Metryczne (km/h, km)"
+  es: "Métrico (km/h, km)"
   ru: "Метрические (км/ч, км)"
   uk: "Метричні (км/год, км)"
 "Imperial (mph, miles)":
@@ -1142,5 +1266,6 @@ _version: 2
   fr: "Impérial (mph, miles)"
   nl: "Imperiaal (mph, mijlen)"
   pl: "Imperialne (mph, mile)"
+  es: "Imperial (mph, millas)"
   ru: "Имперские (миль/ч, мили)"
   uk: "Імперські (миль/год, милі)"

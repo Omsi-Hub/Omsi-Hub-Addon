@@ -1283,7 +1283,7 @@ mod tests {
         for p in service::default_school_holidays() {
             keys.push(Box::leak(p.name.into_boxed_str()));
         }
-        for lang in ["nl", "de", "fr", "ru", "uk", "pl"] {
+        for lang in ["nl", "de", "fr", "ru", "uk", "pl", "es"] {
             for k in &keys {
                 assert!(crate::launcher::i18n::table(lang).contains_key(*k), "{lang}: {k}");
             }
@@ -1417,7 +1417,7 @@ mod tests {
             "Line %{n} is the company's: here is its timetable. Plan its tours and start its service on the Roster tab.",
         ]);
         keys.extend([co::rosterflow::I_NO_TIMETABLE, co::rosterflow::issue_title(co::rosterflow::I_NO_TIMETABLE)]);
-        for lang in ["nl", "de", "fr", "ru", "uk", "pl"] {
+        for lang in ["nl", "de", "fr", "ru", "uk", "pl", "es"] {
             for k in &keys {
                 assert!(crate::launcher::i18n::table(lang).contains_key(*k), "{lang}: {k}");
             }

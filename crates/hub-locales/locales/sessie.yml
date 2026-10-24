@@ -8,6 +8,7 @@ _version: 2
   ru: "Готово к подключению"
   uk: "Готово до приєднання"
   pl: "Gotowe do dołączenia"
+  es: "Listo para unirte"
 "Now choose how you want to drive: a duty, a tour or a free drive. You join the others when the game starts.":
   nl: "Kies nu hoe je wilt rijden: een dienst, een omloop of vrij rijden. Je komt bij de anderen zodra het spel start."
   de: "Wähle jetzt, wie du fahren willst: einen Dienst, einen Umlauf oder freie Fahrt. Du kommst zu den anderen, sobald das Spiel startet."
@@ -15,6 +16,7 @@ _version: 2
   ru: "Теперь выберите, как ехать: смена, выход или свободная езда. Вы присоединитесь к остальным при запуске игры."
   uk: "Тепер виберіть, як їхати: наряд, оборот або вільна поїздка. Ви приєднаєтеся до інших під час запуску гри."
   pl: "Wybierz teraz, jak chcesz jechać: służba, brygada albo jazda swobodna. Dołączysz do innych, gdy gra się uruchomi."
+  es: "Ahora elige cómo quieres conducir: un servicio, un recorrido o conducción libre. Te unes a los demás cuando empiece el juego."
 "Leave the session":
   nl: "Sessie verlaten"
   de: "Sitzung verlassen"
@@ -22,6 +24,7 @@ _version: 2
   ru: "Покинуть сессию"
   uk: "Залишити сесію"
   pl: "Opuść sesję"
+  es: "Salir de la sesión"
 "In a friend's game the map is the host's: your duty is chosen on it.":
   nl: "In het spel van een vriend is de kaart die van de host: je kiest je dienst daarop."
   de: "Im Spiel eines Freundes ist die Karte die des Hosts: Du wählst deinen Dienst darauf."
@@ -29,6 +32,7 @@ _version: 2
   ru: "В игре друга карта принадлежит хосту: вы выбираете смену на ней."
   uk: "У грі друга карта належить хосту: ви вибираєте наряд на ній."
   pl: "W grze znajomego mapa należy do hosta: na niej wybierasz służbę."
+  es: "En la partida de un amigo el mapa es el del anfitrión: tu servicio se elige en él."
 "In a friend's game the map, the time, the date and the weather are the host's: you choose your bus and your duty on them.":
   nl: "In het spel van een vriend zijn de kaart, de tijd, de datum en het weer die van de host: jij kiest daarbij je bus en je dienst."
   de: "Im Spiel eines Freundes sind Karte, Uhrzeit, Datum und Wetter die des Hosts: Du wählst dazu deinen Bus und deinen Dienst."
@@ -36,6 +40,7 @@ _version: 2
   ru: "В игре друга карта, время, дата и погода задаются хостом: вы выбираете к ним свой автобус и смену."
   uk: "У грі друга карта, час, дата й погода задаються хостом: ви вибираєте до них свій автобус і наряд."
   pl: "W grze znajomego mapa, godzina, data i pogoda należą do hosta: wybierasz do nich swój autobus i służbę."
+  es: "En la partida de un amigo, el mapa, la hora, la fecha y el clima son los del anfitrión: eliges tu autobús y tu servicio en ellos."
 "Waiting for the host to say its map and day - a moment…":
   nl: "Wachten tot de host zijn kaart en dag doorgeeft - een moment…"
   de: "Warte, bis der Host Karte und Tag mitteilt - einen Moment…"
@@ -43,6 +48,7 @@ _version: 2
   ru: "Ждём, пока хост сообщит карту и день - секунду…"
   uk: "Чекаємо, поки хост повідомить карту й день - хвилинку…"
   pl: "Czekam, aż host poda mapę i dzień - chwileczkę…"
+  es: "Esperando a que el anfitrión indique su mapa y su día - un momento…"
 "The host has not said which map it drives: your duty only runs if it is on the host's map. Click again to start anyway.":
   nl: "De host heeft niet doorgegeven op welke kaart hij rijdt: je dienst werkt alleen als hij op de kaart van de host ligt. Klik nog eens om toch te starten."
   de: "Der Host hat nicht mitgeteilt, auf welcher Karte er fährt: Dein Dienst läuft nur, wenn er auf der Karte des Hosts liegt. Klicke noch einmal, um trotzdem zu starten."
@@ -50,6 +56,7 @@ _version: 2
   ru: "Хост не сообщил, на какой карте он едет: ваша смена сработает, только если она на карте хоста. Нажмите ещё раз, чтобы всё равно начать."
   uk: "Хост не повідомив, на якій карті він їде: ваш наряд спрацює, лише якщо він на карті хоста. Натисніть ще раз, щоб усе одно почати."
   pl: "Host nie podał, na której mapie jeździ: twoja służba zadziała tylko wtedy, gdy jest na mapie hosta. Kliknij ponownie, aby mimo to zacząć."
+  es: "El anfitrión no ha indicado en qué mapa conduce: tu servicio solo funciona si está en el mapa del anfitrión. Haz clic otra vez para empezar de todos modos."
 "The host drives on %{map}, which is not installed here: your duty cannot run there and you join on a free drive. Click again to start anyway.":
   nl: "De host rijdt op %{map}, die hier niet geïnstalleerd is: je dienst kan daar niet rijden en je doet mee met vrij rijden. Klik nog eens om toch te starten."
   de: "Der Host fährt auf %{map}, die hier nicht installiert ist: Dein Dienst kann dort nicht laufen, du fährst frei mit. Klicke noch einmal, um trotzdem zu starten."
@@ -57,6 +64,7 @@ _version: 2
   ru: "Хост едет на карте %{map}, которая здесь не установлена: ваша смена там не пойдёт, вы присоединитесь в свободной езде. Нажмите ещё раз, чтобы всё равно начать."
   uk: "Хост їде на карті %{map}, яку тут не встановлено: ваш наряд там не піде, ви приєднаєтеся у вільній поїздці. Натисніть ще раз, щоб усе одно почати."
   pl: "Host jeździ na mapie %{map}, której tu nie zainstalowano: twoja służba tam nie ruszy, dołączysz w jeździe swobodnej. Kliknij ponownie, aby mimo to zacząć."
+  es: "El anfitrión conduce en %{map}, que no está instalado aquí: tu servicio no puede funcionar ahí y te unes en conducción libre. Haz clic otra vez para empezar de todos modos."
 "Choose your duty again":
   nl: "Kies je dienst opnieuw"
   de: "Wähle deinen Dienst neu"
@@ -64,6 +72,7 @@ _version: 2
   ru: "Выберите смену заново"
   uk: "Виберіть наряд знову"
   pl: "Wybierz służbę ponownie"
+  es: "Elige de nuevo tu servicio"
 "The host drives on another map or day than the one your duty was on. Its map and day are set now: pick your duty on them.":
   nl: "De host rijdt op een andere kaart of dag dan waar je dienst op lag. Zijn kaart en dag staan nu ingesteld: kies je dienst daarop."
   de: "Der Host fährt auf einer anderen Karte oder an einem anderen Tag als dein Dienst. Seine Karte und sein Tag sind jetzt eingestellt: Wähle deinen Dienst darauf."
@@ -71,3 +80,4 @@ _version: 2
   ru: "Хост едет на другой карте или в другой день, чем ваша смена. Его карта и день уже выбраны: выберите смену на них."
   uk: "Хост їде на іншій карті або в інший день, ніж ваш наряд. Його карту й день уже вибрано: виберіть наряд на них."
   pl: "Host jeździ na innej mapie lub w inny dzień niż twoja służba. Jego mapa i dzień są już ustawione: wybierz na nich służbę."
+  es: "El anfitrión conduce en otro mapa u otro día que el de tu servicio. Su mapa y su día ya están fijados: elige tu servicio en ellos."

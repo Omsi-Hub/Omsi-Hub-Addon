@@ -13,6 +13,7 @@ _version: 2
   ru: "Эта часть автобусной компании пока открывается в нашем собственном лаунчере."
   uk: "Ця частина автобусної компанії поки що відкривається в нашому власному лаунчері."
   pl: "Ta część firmy autobusowej na razie otwiera się w naszym własnym launcherze."
+  es: "Esta parte de la empresa de autobuses se abre de momento en nuestro propio lanzador."
 
 # --- a view still on its way -------------------------------------------------------------------
 "Reading…":
@@ -23,6 +24,7 @@ _version: 2
   ru: "Чтение…"
   uk: "Читання…"
   pl: "Wczytywanie…"
+  es: "Leyendo…"
 
 # --- the buses the company works with, the models' categories and regions (Beta 54) ----------
 "UK":
@@ -33,6 +35,7 @@ _version: 2
   ru: "Великобритания"
   uk: "Велика Британія"
   pl: "Wielka Brytania"
+  es: "R. U."
 "Europe":
   en: "Europe"
   nl: "Europa"
@@ -41,6 +44,7 @@ _version: 2
   ru: "Европа"
   uk: "Європа"
   pl: "Europa"
+  es: "Europa"
 "European":
   en: "European"
   nl: "Europees"
@@ -49,6 +53,7 @@ _version: 2
   ru: "европейской"
   uk: "європейською"
   pl: "europejska"
+  es: "europeo"
 "Right-hand drive":
   en: "Right-hand drive"
   nl: "Rechts gestuurd"
@@ -57,6 +62,7 @@ _version: 2
   ru: "Правый руль"
   uk: "Праве кермо"
   pl: "Kierownica po prawej"
+  es: "Volante a la derecha"
 "Left-hand drive":
   en: "Left-hand drive"
   nl: "Links gestuurd"
@@ -65,6 +71,7 @@ _version: 2
   ru: "Левый руль"
   uk: "Ліве кермо"
   pl: "Kierownica po lewej"
+  es: "Volante a la izquierda"
 "UK buses only":
   en: "UK buses only"
   nl: "Alleen Britse bussen"
@@ -73,6 +80,7 @@ _version: 2
   ru: "Только британские автобусы"
   uk: "Лише британські автобуси"
   pl: "Tylko autobusy brytyjskie"
+  es: "Solo autobuses británicos"
 "European buses only":
   en: "European buses only"
   nl: "Alleen Europese bussen"
@@ -81,6 +89,7 @@ _version: 2
   ru: "Только европейские автобусы"
   uk: "Лише європейські автобуси"
   pl: "Tylko autobusy europejskie"
+  es: "Solo autobuses europeos"
 "My own selection":
   en: "My own selection"
   nl: "Mijn eigen selectie"
@@ -89,6 +98,7 @@ _version: 2
   ru: "Мой собственный выбор"
   uk: "Мій власний вибір"
   pl: "Mój własny wybór"
+  es: "Mi propia selección"
 "%{n} of %{of} models":
   en: "%{n} of %{of} models"
   nl: "%{n} van %{of} modellen"
@@ -97,6 +107,7 @@ _version: 2
   ru: "%{n} из %{of} моделей"
   uk: "%{n} з %{of} моделей"
   pl: "%{n} z %{of} modeli"
+  es: "%{n} de %{of} modelos"
 "%{n} models shown":
   en: "%{n} models shown"
   nl: "%{n} modellen getoond"
@@ -105,6 +116,7 @@ _version: 2
   ru: "Показано моделей: %{n}"
   uk: "Показано моделей: %{n}"
   pl: "Pokazane modele: %{n}"
+  es: "%{n} modelos mostrados"
 "Detected: %{cat}, %{region}":
   en: "Detected: %{cat}, %{region}"
   nl: "Herkend: %{cat}, %{region}"
@@ -113,6 +125,7 @@ _version: 2
   ru: "Определено: %{cat}, %{region}"
   uk: "Визначено: %{cat}, %{region}"
   pl: "Rozpoznano: %{cat}, %{region}"
+  es: "Detectado: %{cat}, %{region}"
 "Every category":
   en: "Every category"
   nl: "Elke categorie"
@@ -121,6 +134,7 @@ _version: 2
   ru: "Все категории"
   uk: "Усі категорії"
   pl: "Każda kategoria"
+  es: "Todas las categorías"
 "Every region":
   en: "Every region"
   nl: "Elke regio"
@@ -129,6 +143,7 @@ _version: 2
   ru: "Все регионы"
   uk: "Усі регіони"
   pl: "Każdy region"
+  es: "Todas las regiones"
 "as detected":
   en: "as detected"
   nl: "zoals herkend"
@@ -137,6 +152,7 @@ _version: 2
   ru: "как определено"
   uk: "як визначено"
   pl: "jak rozpoznano"
+  es: "según lo detectado"
 "No bus model fits the search.":
   en: "No bus model fits the search."
   nl: "Geen busmodel past bij de zoekopdracht."
@@ -145,6 +161,7 @@ _version: 2
   ru: "Ни одна модель автобуса не подходит под поиск."
   uk: "Жодна модель автобуса не відповідає пошуку."
   pl: "Żaden model autobusu nie pasuje do wyszukiwania."
+  es: "Ningún modelo de autobús coincide con la búsqueda."
 "Corrected by you: for every company. Choose \"as detected\" to undo it.":
   en: "Corrected by you: for every company. Choose \"as detected\" to undo it."
   nl: "Door jou verbeterd: voor elk bedrijf. Kies \"zoals herkend\" om het ongedaan te maken."
@@ -153,6 +170,7 @@ _version: 2
   ru: "Исправлено вами: для каждой компании. Выберите «как определено», чтобы отменить."
   uk: "Виправлено вами: для кожної компанії. Виберіть «як визначено», щоб скасувати."
   pl: "Poprawione przez ciebie: dla każdej firmy. Wybierz „jak rozpoznano”, aby cofnąć."
+  es: "Corregido por ti: para todas las empresas. Elige \"según lo detectado\" para deshacerlo."
 "The company has buses of this model: they stay, even when the model is switched off.":
   en: "The company has buses of this model: they stay, even when the model is switched off."
   nl: "Het bedrijf heeft bussen van dit model: die blijven, ook als het model uit staat."
@@ -161,6 +179,7 @@ _version: 2
   ru: "У компании есть автобусы этой модели: они остаются, даже если модель отключена."
   uk: "Компанія має автобуси цієї моделі: вони залишаються, навіть якщо модель вимкнено."
   pl: "Firma ma autobusy tego modelu: zostają, nawet gdy model jest wyłączony."
+  es: "La empresa tiene autobuses de este modelo: se quedan, aunque el modelo esté desactivado."
 "Bus categories and regions":
   en: "Bus categories and regions"
   nl: "Buscategorieën en regio's"
@@ -169,6 +188,7 @@ _version: 2
   ru: "Категории и регионы автобусов"
   uk: "Категорії та регіони автобусів"
   pl: "Kategorie i regiony autobusów"
+  es: "Categorías y regiones de los autobuses"
 "What kind of bus each installed model is, and where it is built for: detected from its files (the side its driver sits on), corrected here for every company - the dealer, the market, the shop and the bus company's lists use it.":
   en: "What kind of bus each installed model is, and where it is built for: detected from its files (the side its driver sits on), corrected here for every company - the dealer, the market, the shop and the bus company's lists use it."
   nl: "Wat voor bus elk geïnstalleerd model is en waarvoor het gebouwd is: herkend uit zijn bestanden (de kant waar de chauffeur zit), hier verbeterd voor elk bedrijf - de dealer, de markt, de winkel en de lijsten van het busbedrijf gebruiken het."
@@ -177,6 +197,7 @@ _version: 2
   ru: "Какой автобус каждая установленная модель и для какого рынка она построена: определено по её файлам (сторона, где сидит водитель), исправляется здесь для каждой компании - дилер, рынок, магазин и списки автобусной компании используют это."
   uk: "Який автобус кожна встановлена модель і для якого ринку її збудовано: визначено за її файлами (бік, де сидить водій), виправляється тут для кожної компанії - дилер, ринок, магазин і списки автобусної компанії використовують це."
   pl: "Jakim autobusem jest każdy zainstalowany model i dla jakiego rynku go zbudowano: rozpoznane z jego plików (strona, po której siedzi kierowca), poprawiane tutaj dla każdej firmy - dealer, rynek, sklep i listy firmy autobusowej z tego korzystają."
+  es: "Qué tipo de autobús es cada modelo instalado y para dónde está construido: detectado a partir de sus archivos (el lado en que se sienta el conductor), corregido aquí para todas las empresas - el concesionario, el mercado, la tienda y las listas de la empresa de autobuses lo usan."
 "Your vehicles":
   en: "Your vehicles"
   nl: "Je voertuigen"
@@ -185,6 +206,7 @@ _version: 2
   ru: "Ваши автобусы"
   uk: "Ваші автобуси"
   pl: "Twoje pojazdy"
+  es: "Tus vehículos"
 "The buses the company works with: the dealer, the used market, the day's offers, leasing and renting and the shop offer only these. Buses the company has already stay.":
   en: "The buses the company works with: the dealer, the used market, the day's offers, leasing and renting and the shop offer only these. Buses the company has already stay."
   nl: "De bussen waarmee het bedrijf werkt: de dealer, de tweedehandsmarkt, de aanbiedingen van de dag, leasen en huren en de winkel bieden alleen deze aan. Bussen die het bedrijf al heeft, blijven."
@@ -193,6 +215,7 @@ _version: 2
   ru: "Автобусы, с которыми работает компания: дилер, рынок подержанных, предложения дня, лизинг, аренда и магазин предлагают только их. Автобусы, которые у компании уже есть, остаются."
   uk: "Автобуси, з якими працює компанія: дилер, ринок вживаних, пропозиції дня, лізинг, оренда й магазин пропонують лише їх. Автобуси, які компанія вже має, залишаються."
   pl: "Autobusy, z którymi pracuje firma: dealer, rynek używanych, oferty dnia, leasing, wynajem i sklep oferują tylko te. Autobusy, które firma już ma, zostają."
+  es: "Los autobuses con los que trabaja la empresa: el concesionario, el mercado de segunda mano, las ofertas del día, el leasing, el alquiler y la tienda solo ofrecen estos. Los autobuses que la empresa ya tiene se quedan."
 "UK only":
   en: "UK only"
   nl: "Alleen VK"
@@ -201,6 +224,7 @@ _version: 2
   ru: "Только Великобритания"
   uk: "Лише Велика Британія"
   pl: "Tylko Wielka Brytania"
+  es: "Solo Reino Unido"
 "Europe only":
   en: "Europe only"
   nl: "Alleen Europa"
@@ -209,6 +233,7 @@ _version: 2
   ru: "Только Европа"
   uk: "Лише Європа"
   pl: "Tylko Europa"
+  es: "Solo Europa"
 "Only buses that fit my map (%{region})":
   en: "Only buses that fit my map (%{region})"
   nl: "Alleen bussen die bij mijn kaart passen (%{region})"
@@ -217,6 +242,7 @@ _version: 2
   ru: "Только автобусы для моей карты (%{region})"
   uk: "Лише автобуси для моєї мапи (%{region})"
   pl: "Tylko autobusy pasujące do mojej mapy (%{region})"
+  es: "Solo autobuses que encajan con mi mapa (%{region})"
 "Switch the shown on":
   en: "Switch the shown on"
   nl: "De getoonde aanzetten"
@@ -225,6 +251,7 @@ _version: 2
   ru: "Включить показанные"
   uk: "Увімкнути показані"
   pl: "Włącz pokazane"
+  es: "Activar los mostrados"
 "Switch the shown off":
   en: "Switch the shown off"
   nl: "De getoonde uitzetten"
@@ -233,6 +260,7 @@ _version: 2
   ru: "Отключить показанные"
   uk: "Вимкнути показані"
   pl: "Wyłącz pokazane"
+  es: "Desactivar los mostrados"
 "Choose the models…":
   en: "Choose the models…"
   nl: "Kies de modellen…"
@@ -241,6 +269,7 @@ _version: 2
   ru: "Выбрать модели…"
   uk: "Вибрати моделі…"
   pl: "Wybierz modele…"
+  es: "Elegir los modelos…"
 "The dealer, the market and the shop offer only the buses the company works with.":
   en: "The dealer, the market and the shop offer only the buses the company works with."
   nl: "De dealer, de markt en de winkel bieden alleen de bussen aan waarmee het bedrijf werkt."
@@ -249,6 +278,7 @@ _version: 2
   ru: "Дилер, рынок и магазин предлагают только автобусы, с которыми работает компания."
   uk: "Дилер, ринок і магазин пропонують лише автобуси, з якими працює компанія."
   pl: "Dealer, rynek i sklep oferują tylko autobusy, z którymi pracuje firma."
+  es: "El concesionario, el mercado y la tienda solo ofrecen los autobuses con los que trabaja la empresa."
 "The map looks %{region}: the company proposes its buses. Change it at any time in the company's settings.":
   en: "The map looks %{region}: the company proposes its buses. Change it at any time in the company's settings."
   nl: "De kaart lijkt %{region}: het bedrijf stelt die bussen voor. Wijzig het altijd in de instellingen van het bedrijf."
@@ -257,6 +287,7 @@ _version: 2
   ru: "Карта выглядит %{region}: компания предлагает такие автобусы. Это можно изменить в любой момент в настройках компании."
   uk: "Мапа виглядає %{region}: компанія пропонує такі автобуси. Це можна змінити будь-коли в налаштуваннях компанії."
   pl: "Mapa wygląda na %{region}: firma proponuje takie autobusy. Zmień to w dowolnej chwili w ustawieniach firmy."
+  es: "El mapa parece %{region}: la empresa propone esos autobuses. Cámbialo cuando quieras en los ajustes de la empresa."
 "not in your selection":
   en: "not in your selection"
   nl: "niet in je selectie"
@@ -265,6 +296,7 @@ _version: 2
   ru: "не в вашем выборе"
   uk: "не у вашому виборі"
   pl: "poza twoim wyborem"
+  es: "fuera de tu selección"
 "%{n} in the fleet":
   en: "%{n} in the fleet"
   nl: "%{n} in de vloot"
@@ -273,3 +305,4 @@ _version: 2
   ru: "%{n} в парке"
   uk: "%{n} у парку"
   pl: "%{n} we flocie"
+  es: "%{n} en la flota"

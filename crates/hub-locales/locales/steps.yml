@@ -9,6 +9,7 @@ _version: 2
   ru: "Профиль"
   uk: "Профіль"
   pl: "Profil"
+  es: "Perfil"
 "Mode":
   nl: "Modus"
   de: "Modus"
@@ -16,6 +17,7 @@ _version: 2
   ru: "Режим"
   uk: "Режим"
   pl: "Tryb"
+  es: "Modo"
 "Map":
   nl: "Kaart"
   de: "Karte"
@@ -23,6 +25,7 @@ _version: 2
   ru: "Карта"
   uk: "Мапа"
   pl: "Mapa"
+  es: "Mapa"
 "Day & weather":
   nl: "Dag & weer"
   de: "Tag & Wetter"
@@ -30,6 +33,7 @@ _version: 2
   ru: "День и погода"
   uk: "День і погода"
   pl: "Dzień i pogoda"
+  es: "Día y clima"
 # The drive's steps' own texts (the bus, the day and the weather, the duty, the map, the start
 # point): where another table has a text in some languages only, the others here.
 "Depot file":
@@ -37,6 +41,7 @@ _version: 2
   de: "Depotdatei"
   fr: "Fichier de dépôt"
   pl: "Plik zajezdni"
+  es: "Archivo de cochera"
   ru: "Файл депо"
   uk: "Файл депо"
 "Standard":
@@ -44,6 +49,7 @@ _version: 2
   de: "Standard"
   fr: "Standard"
   pl: "Standardowe"
+  es: "Estándar"
   ru: "Стандартная"
   uk: "Стандартне"
 "Livery":
@@ -51,6 +57,7 @@ _version: 2
   de: "Lackierung"
   fr: "Livrée"
   pl: "Malowanie"
+  es: "Librea"
   ru: "Окраска"
   uk: "Фарбування"
 "Preview previous livery":
@@ -58,6 +65,7 @@ _version: 2
   de: "Vorherige Lackierung ansehen"
   fr: "Voir la livrée précédente"
   pl: "Pokaż poprzednie malowanie"
+  es: "Ver la librea anterior"
   ru: "Показать предыдущую окраску"
   uk: "Показати попереднє фарбування"
 "Preview next livery":
@@ -65,6 +73,7 @@ _version: 2
   de: "Nächste Lackierung ansehen"
   fr: "Voir la livrée suivante"
   pl: "Pokaż następne malowanie"
+  es: "Ver la librea siguiente"
   ru: "Показать следующую окраску"
   uk: "Показати наступне фарбування"
 "Fleet number":
@@ -72,6 +81,7 @@ _version: 2
   de: "Wagennummer"
   fr: "Numéro de parc"
   pl: "Numer taborowy"
+  es: "Número de flota"
   ru: "Бортовой номер"
   uk: "Бортовий номер"
 "Number plate":
@@ -79,6 +89,7 @@ _version: 2
   de: "Kennzeichen"
   fr: "Plaque d’immatriculation"
   pl: "Tablica rejestracyjna"
+  es: "Matrícula"
   ru: "Номерной знак"
   uk: "Номерний знак"
 "Parts missing: needs %{packs}":
@@ -86,6 +97,7 @@ _version: 2
   de: "Teile fehlen: braucht %{packs}"
   fr: "Pièces manquantes : nécessite %{packs}"
   pl: "Brak części: wymaga %{packs}"
+  es: "Faltan piezas: necesita %{packs}"
   ru: "Не хватает частей: нужно %{packs}"
   uk: "Бракує частин: потрібно %{packs}"
 "Start the duty":
@@ -93,23 +105,27 @@ _version: 2
   de: "Dienst starten"
   fr: "Commencer le service"
   pl: "Rozpocznij służbę"
+  es: "Empezar el servicio"
   ru: "Начать смену"
   uk: "Почати зміну"
 "Remove from the favourites":
   de: "Aus den Favoriten entfernen"
   fr: "Retirer des favoris"
   pl: "Usuń z ulubionych"
+  es: "Quitar de favoritos"
   ru: "Убрать из избранного"
 "Add to the favourites":
   de: "Zu den Favoriten hinzufügen"
   fr: "Ajouter aux favoris"
   pl: "Dodaj do ulubionych"
+  es: "Añadir a favoritos"
   ru: "Добавить в избранное"
 "January":
   nl: "januari"
   de: "Januar"
   fr: "janvier"
   pl: "stycznia"
+  es: "enero"
   ru: "января"
   uk: "січня"
 "February":
@@ -117,6 +133,7 @@ _version: 2
   de: "Februar"
   fr: "février"
   pl: "lutego"
+  es: "febrero"
   ru: "февраля"
   uk: "лютого"
 "March":
@@ -124,6 +141,7 @@ _version: 2
   de: "März"
   fr: "mars"
   pl: "marca"
+  es: "marzo"
   ru: "марта"
   uk: "березня"
 "April":
@@ -131,6 +149,7 @@ _version: 2
   de: "April"
   fr: "avril"
   pl: "kwietnia"
+  es: "abril"
   ru: "апреля"
   uk: "квітня"
 "June":
@@ -138,6 +157,7 @@ _version: 2
   de: "Juni"
   fr: "juin"
   pl: "czerwca"
+  es: "junio"
   ru: "июня"
   uk: "червня"
 "July":
@@ -145,6 +165,7 @@ _version: 2
   de: "Juli"
   fr: "juillet"
   pl: "lipca"
+  es: "julio"
   ru: "июля"
   uk: "липня"
 "August":
@@ -152,6 +173,7 @@ _version: 2
   de: "August"
   fr: "août"
   pl: "sierpnia"
+  es: "agosto"
   ru: "августа"
   uk: "серпня"
 "September":
@@ -159,6 +181,7 @@ _version: 2
   de: "September"
   fr: "septembre"
   pl: "września"
+  es: "septiembre"
   ru: "сентября"
   uk: "вересня"
 "October":
@@ -166,6 +189,7 @@ _version: 2
   de: "Oktober"
   fr: "octobre"
   pl: "października"
+  es: "octubre"
   ru: "октября"
   uk: "жовтня"
 "November":
@@ -173,6 +197,7 @@ _version: 2
   de: "November"
   fr: "novembre"
   pl: "listopada"
+  es: "noviembre"
   ru: "ноября"
   uk: "листопада"
 "December":
@@ -180,21 +205,25 @@ _version: 2
   de: "Dezember"
   fr: "décembre"
   pl: "grudnia"
+  es: "diciembre"
   ru: "декабря"
   uk: "грудня"
 "When":
   de: "Wann"
   ru: "Когда"
+  es: "Cuándo"
 "Season":
   nl: "Seizoen"
   de: "Jahreszeit"
   fr: "Saison"
   pl: "Pora roku"
+  es: "Estación"
 "By date":
   nl: "Volgens datum"
   de: "Nach Datum"
   fr: "Selon la date"
   pl: "Według daty"
+  es: "Según la fecha"
   ru: "По дате"
   uk: "За датою"
 "Spring":
@@ -202,6 +231,7 @@ _version: 2
   de: "Frühling"
   fr: "Printemps"
   pl: "Wiosna"
+  es: "Primavera"
   ru: "Весна"
   uk: "Весна"
 "Summer":
@@ -209,6 +239,7 @@ _version: 2
   de: "Sommer"
   fr: "Été"
   pl: "Lato"
+  es: "Verano"
   ru: "Лето"
   uk: "Літо"
 "Autumn":
@@ -216,6 +247,7 @@ _version: 2
   de: "Herbst"
   fr: "Automne"
   pl: "Jesień"
+  es: "Otoño"
   ru: "Осень"
   uk: "Осінь"
 "Winter":
@@ -223,6 +255,7 @@ _version: 2
   de: "Winter"
   fr: "Hiver"
   pl: "Zima"
+  es: "Invierno"
   ru: "Зима"
   uk: "Зима"
 "Traffic":
@@ -230,6 +263,7 @@ _version: 2
   de: "Verkehr"
   fr: "Circulation"
   pl: "Ruch drogowy"
+  es: "Tráfico"
   ru: "Движение"
   uk: "Рух"
 "Cars around":
@@ -237,6 +271,7 @@ _version: 2
   de: "Autos ringsum"
   fr: "Voitures autour"
   pl: "Samochody wokół"
+  es: "Coches alrededor"
   ru: "Машин вокруг"
   uk: "Машин довкола"
 "Timetable buses":
@@ -244,6 +279,7 @@ _version: 2
   de: "Fahrplanbusse"
   fr: "Bus de l’horaire"
   pl: "Autobusy rozkładowe"
+  es: "Autobuses del horario"
   ru: "Автобусы по расписанию"
   uk: "Автобуси за розкладом"
 "Put the bus into service on start (Shift+U)":
@@ -251,6 +287,7 @@ _version: 2
   de: "Den Bus beim Start in Betrieb nehmen (Shift+U)"
   fr: "Mettre le bus en service au départ (Shift+U)"
   pl: "Przy starcie włącz autobus do służby (Shift+U)"
+  es: "Poner el autobús en servicio al empezar (Shift+U)"
   ru: "Перевести автобус в рабочий режим при старте (Shift+U)"
   uk: "Перевести автобус у робочий режим на старті (Shift+U)"
 "Start on foot (place a bus from the game menu)":
@@ -258,6 +295,7 @@ _version: 2
   de: "Zu Fuß beginnen (einen Bus über das Spielmenü einsetzen)"
   fr: "Commencer à pied (placer un bus depuis le menu du jeu)"
   pl: "Zacznij pieszo (postaw autobus z menu gry)"
+  es: "Empezar a pie (coloca un autobús desde el menú del juego)"
   ru: "Начать пешком (поставить автобус из меню игры)"
   uk: "Почати пішки (поставити автобус з меню гри)"
 "Weather":
@@ -265,6 +303,7 @@ _version: 2
   de: "Wetter"
   fr: "Météo"
   pl: "Pogoda"
+  es: "Clima"
   ru: "Погода"
   uk: "Погода"
 "Map default":
@@ -272,6 +311,7 @@ _version: 2
   de: "Wie auf der Karte"
   fr: "Comme sur la carte"
   pl: "Jak na mapie"
+  es: "Según el mapa"
   ru: "Как на карте"
   uk: "Як на мапі"
 "Whatever the map starts with":
@@ -279,6 +319,7 @@ _version: 2
   de: "Womit die Karte beginnt"
   fr: "Celle avec laquelle la carte commence"
   pl: "Ta, z którą startuje mapa"
+  es: "El que tenga el mapa al empezar"
   ru: "Та, с которой начинается карта"
   uk: "Та, з якою починається мапа"
 "Current weather":
@@ -286,21 +327,25 @@ _version: 2
   de: "Aktuelles Wetter"
   fr: "Météo actuelle"
   pl: "Aktualna pogoda"
+  es: "Clima actual"
   ru: "Текущая погода"
   uk: "Поточна погода"
 "Weather cycle":
   de: "Wetterzyklus"
   fr: "Cycle météo"
   pl: "Cykl pogody"
+  es: "Ciclo del clima"
   ru: "Цикл погоды"
   uk: "Цикл погоди"
 "Changes every 25-60 minutes, as the month allows":
   fr: "Change toutes les 25 à 60 minutes, selon ce que permet le mois"
+  es: "Cambia cada 25-60 minutos, según lo permita el mes"
 "Airport":
   nl: "Luchthaven"
   de: "Flughafen"
   fr: "Aéroport"
   pl: "Lotnisko"
+  es: "Aeropuerto"
   ru: "Аэропорт"
   uk: "Аеропорт"
 "clear air":
@@ -308,6 +353,7 @@ _version: 2
   de: "klare Luft"
   fr: "air limpide"
   pl: "przejrzyste powietrze"
+  es: "aire limpio"
   ru: "чистый воздух"
   uk: "чисте повітря"
 "Dry":
@@ -315,6 +361,7 @@ _version: 2
   de: "Trocken"
   fr: "Sec"
   pl: "Sucho"
+  es: "Seco"
   ru: "Сухо"
   uk: "Сухо"
 "Rain":
@@ -322,6 +369,7 @@ _version: 2
   de: "Regen"
   fr: "Pluie"
   pl: "Deszcz"
+  es: "Lluvia"
   ru: "Дождь"
   uk: "Дощ"
 "Snow":
@@ -329,19 +377,24 @@ _version: 2
   de: "Schnee"
   fr: "Neige"
   pl: "Śnieg"
+  es: "Nieve"
   ru: "Снег"
   uk: "Сніг"
 "Custom weather":
   fr: "Météo personnalisée"
   pl: "Własna pogoda"
+  es: "Clima personalizado"
   ru: "Своя погода"
 "Set visibility, wind, clouds, rain, temperature and road state":
   fr: "Réglez la visibilité, le vent, les nuages, la pluie, la température et l’état de la route"
+  es: "Ajusta la visibilidad, el viento, las nubes, la lluvia, la temperatura y el estado de la calzada"
 "Edit selected weather as custom":
   fr: "Modifier la météo choisie comme météo personnalisée"
+  es: "Editar el clima elegido como personalizado"
 "Visibility":
   fr: "Visibilité"
   pl: "Widoczność"
+  es: "Visibilidad"
   ru: "Видимость"
   uk: "Видимість"
 "Brightness":
@@ -349,6 +402,7 @@ _version: 2
   de: "Helligkeit"
   fr: "Luminosité"
   pl: "Jasność"
+  es: "Luminosidad"
   ru: "Яркость"
   uk: "Яскравість"
 "Wind direction":
@@ -356,6 +410,7 @@ _version: 2
   de: "Windrichtung"
   fr: "Direction du vent"
   pl: "Kierunek wiatru"
+  es: "Dirección del viento"
   ru: "Направление ветра"
   uk: "Напрямок вітру"
 "Wind speed":
@@ -363,6 +418,7 @@ _version: 2
   de: "Windgeschwindigkeit"
   fr: "Vitesse du vent"
   pl: "Prędkość wiatru"
+  es: "Velocidad del viento"
   ru: "Скорость ветра"
   uk: "Швидкість вітру"
 "Temperature":
@@ -370,6 +426,7 @@ _version: 2
   de: "Temperatur"
   fr: "Température"
   pl: "Temperatura"
+  es: "Temperatura"
   ru: "Температура"
   uk: "Температура"
 "Humidity":
@@ -377,6 +434,7 @@ _version: 2
   de: "Luftfeuchtigkeit"
   fr: "Humidité"
   pl: "Wilgotność"
+  es: "Humedad"
   ru: "Влажность"
   uk: "Вологість"
 "Cloud cover":
@@ -384,6 +442,7 @@ _version: 2
   de: "Bewölkung"
   fr: "Couverture nuageuse"
   pl: "Zachmurzenie"
+  es: "Nubosidad"
   ru: "Облачность"
   uk: "Хмарність"
 "Clear sky":
@@ -391,6 +450,7 @@ _version: 2
   de: "Wolkenlos"
   fr: "Ciel dégagé"
   pl: "Bezchmurnie"
+  es: "Cielo despejado"
   ru: "Ясное небо"
   uk: "Ясне небо"
 "Precipitation":
@@ -398,6 +458,7 @@ _version: 2
   de: "Niederschlag"
   fr: "Précipitations"
   pl: "Opady"
+  es: "Precipitación"
   ru: "Осадки"
   uk: "Опади"
 "Precipitation intensity":
@@ -405,6 +466,7 @@ _version: 2
   de: "Niederschlagsstärke"
   fr: "Intensité des précipitations"
   pl: "Natężenie opadów"
+  es: "Intensidad de la precipitación"
   ru: "Интенсивность осадков"
   uk: "Інтенсивність опадів"
 "Road wetness":
@@ -412,6 +474,7 @@ _version: 2
   de: "Nässe der Straße"
   fr: "Humidité de la chaussée"
   pl: "Wilgotność nawierzchni"
+  es: "Humedad de la calzada"
   ru: "Влажность дороги"
   uk: "Вологість дороги"
 "Snow cover":
@@ -419,6 +482,7 @@ _version: 2
   de: "Schneedecke"
   fr: "Couverture neigeuse"
   pl: "Pokrywa śnieżna"
+  es: "Capa de nieve"
   ru: "Снежный покров"
   uk: "Сніговий покрив"
 "Snow on road":
@@ -426,6 +490,7 @@ _version: 2
   de: "Schnee auf der Straße"
   fr: "Neige sur la route"
   pl: "Śnieg na drodze"
+  es: "Nieve en la calzada"
   ru: "Снег на дороге"
   uk: "Сніг на дорозі"
 "Roadbook":
@@ -433,6 +498,7 @@ _version: 2
   de: "Fahrtenbuch"
   fr: "Feuille de route"
   pl: "Karta drogowa"
+  es: "Hoja de ruta"
   ru: "Путевой лист"
   uk: "Маршрутний лист"
 "Your first trip":
@@ -440,6 +506,7 @@ _version: 2
   de: "Deine erste Fahrt"
   fr: "Votre premier trajet"
   pl: "Twój pierwszy kurs"
+  es: "Tu primer viaje"
   ru: "Ваш первый рейс"
   uk: "Ваш перший рейс"
 "Then":
@@ -447,6 +514,7 @@ _version: 2
   de: "Dann"
   fr: "Ensuite"
   pl: "Potem"
+  es: "Después"
   ru: "Затем"
   uk: "Потім"
 "Click a trip to start the tour there.":
@@ -454,6 +522,7 @@ _version: 2
   de: "Klicke auf eine Fahrt, um den Umlauf dort zu beginnen."
   fr: "Cliquez sur un trajet pour commencer la tournée à cet endroit."
   pl: "Kliknij kurs, aby zacząć brygadę od niego."
+  es: "Haz clic en un viaje para empezar el recorrido ahí."
   ru: "Нажмите на рейс, чтобы начать выход с него."
   uk: "Натисніть на рейс, щоб почати вихід з нього."
 "depot run":
@@ -461,6 +530,7 @@ _version: 2
   de: "Betriebsfahrt"
   fr: "trajet haut-le-pied"
   pl: "zjazd do zajezdni"
+  es: "viaje a cochera"
   ru: "служебный рейс"
   uk: "службовий рейс"
 "line":
@@ -468,6 +538,7 @@ _version: 2
   de: "Linie"
   fr: "ligne"
   pl: "linia"
+  es: "línea"
   ru: "линия"
   uk: "лінія"
 "route":
@@ -475,22 +546,27 @@ _version: 2
   de: "Route"
   fr: "itinéraire"
   pl: "trasa"
+  es: "ruta"
   ru: "маршрут"
   uk: "маршрут"
 "Morning":
   nl: "Ochtend"
   de: "Morgen"
   fr: "Matin"
+  es: "Mañana"
 "Evening":
   nl: "Avond"
   fr: "Soir"
+  es: "Tarde"
 "Night":
   nl: "Nacht"
   de: "Nacht"
   fr: "Nuit"
+  es: "Noche"
 "Time of day":
   de: "Tageszeit"
   pl: "Pora dnia"
+  es: "Franja horaria"
   ru: "Время суток"
   uk: "Час доби"
 "No lines on this date.":
@@ -498,6 +574,7 @@ _version: 2
   de: "Keine Linien an diesem Datum."
   fr: "Aucune ligne à cette date."
   pl: "Brak linii w tym dniu."
+  es: "No hay líneas en esta fecha."
   ru: "В этот день нет маршрутов."
   uk: "У цей день немає маршрутів."
 "Pick a line first. As in OMSI, the start time and date then say where in the tour the bus is: the trip under way, or the next to leave.":
@@ -505,6 +582,7 @@ _version: 2
   de: "Wähle zuerst eine Linie. Wie in OMSI sagen Startzeit und Datum dann, wo im Umlauf der Bus ist: die laufende Fahrt oder die nächste, die abfährt."
   fr: "Choisissez d’abord une ligne. Comme dans OMSI, l’heure et la date de départ disent alors où en est le bus dans la tournée : le trajet en cours, ou le prochain à partir."
   pl: "Najpierw wybierz linię. Jak w OMSI, godzina i data startu mówią wtedy, gdzie w brygadzie jest autobus: kurs w trakcie albo następny do odjazdu."
+  es: "Elige primero una línea. Como en OMSI, la hora y la fecha de inicio indican en qué punto del recorrido está el autobús: el viaje en curso o el siguiente en salir."
   ru: "Сначала выберите маршрут. Как в OMSI, время и дата старта тогда определяют, где на выходе автобус: текущий рейс или следующий к отправлению."
   uk: "Спочатку виберіть маршрут. Як в OMSI, час і дата старту тоді визначають, де на виході автобус: поточний рейс або наступний до відправлення."
 "Automatic (nearest to the first stop)":
@@ -512,6 +590,7 @@ _version: 2
   de: "Automatisch (am nächsten zur ersten Haltestelle)"
   fr: "Automatique (le plus proche du premier arrêt)"
   pl: "Automatycznie (najbliżej pierwszego przystanku)"
+  es: "Automático (el más cercano a la primera parada)"
   ru: "Автоматически (ближайшая к первой остановке)"
   uk: "Автоматично (найближча до першої зупинки)"
 "Start at":
@@ -519,6 +598,7 @@ _version: 2
   de: "Start bei"
   fr: "Départ à"
   pl: "Start w"
+  es: "Empezar en"
   ru: "Старт в"
   uk: "Старт у"
 "Maps":
@@ -526,15 +606,18 @@ _version: 2
   de: "Karten"
   fr: "Cartes"
   pl: "Mapy"
+  es: "Mapas"
   ru: "Карты"
 "Automatic (the map's first)":
   nl: "Automatisch (het eerste van de kaart)"
   de: "Automatisch (der erste der Karte)"
   fr: "Automatique (le premier de la carte)"
   pl: "Automatycznie (pierwszy na mapie)"
+  es: "Automático (el primero del mapa)"
   ru: "Автоматически (первая на карте)"
   uk: "Автоматично (перша на мапі)"
 "entry":
   de: "Einsetzpunkt"
   fr: "point d’entrée"
   pl: "punkt wjazdu"
+  es: "punto de entrada"

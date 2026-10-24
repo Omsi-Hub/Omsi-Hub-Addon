@@ -7,6 +7,7 @@ _version: 2
   fr: "%{n} sans bus"
   nl: "%{n} zonder bus"
   pl: "%{n} bez autobusu"
+  es: "%{n} sin autobús"
   ru: "%{n} без автобуса"
   uk: "%{n} без автобуса"
 "%{n} without a driver":
@@ -14,6 +15,7 @@ _version: 2
   fr: "%{n} sans conducteur"
   nl: "%{n} zonder chauffeur"
   pl: "%{n} bez kierowcy"
+  es: "%{n} sin conductor"
   ru: "%{n} без водителя"
   uk: "%{n} без водія"
 "Collapse all":
@@ -21,6 +23,7 @@ _version: 2
   fr: "Tout replier"
   nl: "Alles inklappen"
   pl: "Zwiń wszystkie"
+  es: "Contraer todo"
   ru: "Свернуть все"
   uk: "Згорнути всі"
 "Expand all":
@@ -28,6 +31,7 @@ _version: 2
   fr: "Tout déplier"
   nl: "Alles uitklappen"
   pl: "Rozwiń wszystkie"
+  es: "Expandir todo"
   ru: "Развернуть все"
   uk: "Розгорнути всі"
 "Collapse the line to its heading":
@@ -35,6 +39,7 @@ _version: 2
   fr: "Replier la ligne sur son en-tête"
   nl: "De lijn inklappen tot haar kop"
   pl: "Zwiń linię do nagłówka"
+  es: "Contraer la línea a su encabezado"
   ru: "Свернуть линию до заголовка"
   uk: "Згорнути лінію до заголовка"
 "Expand the line: its tours":
@@ -42,6 +47,7 @@ _version: 2
   fr: "Déplier la ligne : ses services"
   nl: "De lijn uitklappen: haar omlopen"
   pl: "Rozwiń linię: jej brygady"
+  es: "Expandir la línea: sus recorridos"
   ru: "Развернуть линию: её выходы"
   uk: "Розгорнути лінію: її обороти"
 "Show every line's tours":
@@ -49,6 +55,7 @@ _version: 2
   fr: "Afficher les services de chaque ligne"
   nl: "De omlopen van elke lijn tonen"
   pl: "Pokaż brygady każdej linii"
+  es: "Mostrar los recorridos de cada línea"
   ru: "Показать выходы каждой линии"
   uk: "Показати обороти кожної лінії"
 "Fold every line to its heading: what it has planned, and what is open":
@@ -56,6 +63,7 @@ _version: 2
   fr: "Replier chaque ligne sur son en-tête : ce qui est planifié et ce qui reste ouvert"
   nl: "Elke lijn inklappen tot haar kop: wat gepland is en wat open staat"
   pl: "Zwiń każdą linię do nagłówka: co zaplanowane, a co otwarte"
+  es: "Contraer cada línea a su encabezado: lo que tiene planificado y lo que está abierto"
   ru: "Свернуть каждую линию до заголовка: что запланировано и что открыто"
   uk: "Згорнути кожну лінію до заголовка: що заплановано і що відкрито"
 "The tour's bus: tap a bus in the list, then here - or drag it here. Tap it twice: the line's timetable":
@@ -63,6 +71,7 @@ _version: 2
   fr: "Le bus du service : touchez un bus dans la liste, puis ici - ou faites-le glisser ici. Deux fois : l'horaire de la ligne"
   nl: "De bus van de omloop: tik een bus in de lijst aan en dan hier - of sleep hem hierheen. Twee keer tikken: de dienstregeling van de lijn"
   pl: "Autobus brygady: dotknij autobusu na liście, potem tutaj - albo przeciągnij go tutaj. Dotknij dwa razy: rozkład linii"
+  es: "El autobús del recorrido: toca un autobús en la lista y luego aquí, o arrástralo aquí. Tócalo dos veces: el horario de la línea"
   ru: "Автобус выхода: коснитесь автобуса в списке, затем здесь - или перетащите его сюда. Дважды: расписание линии"
   uk: "Автобус обороту: торкніться автобуса в списку, потім тут - або перетягніть його сюди. Двічі: розклад лінії"
 "The line's trips and timetable":
@@ -70,6 +79,7 @@ _version: 2
   fr: "Courses et horaire de la ligne"
   nl: "Ritten en dienstregeling van de lijn"
   pl: "Kursy i rozkład linii"
+  es: "Los viajes y el horario de la línea"
   ru: "Рейсы и расписание линии"
   uk: "Рейси й розклад лінії"
 "The line's trips and timetable: see them and change them here":
@@ -77,6 +87,7 @@ _version: 2
   fr: "Courses et horaire de la ligne : les voir et les modifier ici"
   nl: "Ritten en dienstregeling van de lijn: hier bekijken en wijzigen"
   pl: "Kursy i rozkład linii: zobacz je i zmień tutaj"
+  es: "Los viajes y el horario de la línea: consúltalos y cámbialos aquí"
   ru: "Рейсы и расписание линии: посмотреть и изменить здесь"
   uk: "Рейси й розклад лінії: переглянути та змінити тут"
 "See the line's departures and the tours they make, and change them":
@@ -84,6 +95,7 @@ _version: 2
   fr: "Voir les départs de la ligne et les services qu'ils forment, et les modifier"
   nl: "De vertrekken van de lijn en de omlopen die ze vormen bekijken en wijzigen"
   pl: "Zobacz odjazdy linii i brygady, które tworzą, i zmień je"
+  es: "Consulta las salidas de la línea y los recorridos que forman, y cámbialos"
   ru: "Посмотреть отправления линии и выходы, которые они дают, и изменить их"
   uk: "Переглянути відправлення лінії та обороти, які вони утворюють, і змінити їх"
 # The line's trips and timetable over the planning (plan_edit).
@@ -92,6 +104,7 @@ _version: 2
   fr: "Courses et horaire de la ligne %{n}"
   nl: "Ritten en dienstregeling van lijn %{n}"
   pl: "Kursy i rozkład linii %{n}"
+  es: "Viajes y horario de la línea %{n}"
   ru: "Рейсы и расписание линии %{n}"
   uk: "Рейси й розклад лінії %{n}"
 "A line of the map's timetable: its trips are the map's own and are not changed here.":
@@ -99,6 +112,7 @@ _version: 2
   fr: "Une ligne de l'horaire de la carte : ses courses sont celles de la carte et ne se modifient pas ici."
   nl: "Een lijn uit de dienstregeling van de kaart: haar ritten zijn van de kaart zelf en worden hier niet gewijzigd."
   pl: "Linia z rozkładu mapy: jej kursy należą do mapy i nie są tu zmieniane."
+  es: "Una línea del horario del mapa: sus viajes son los del propio mapa y no se cambian aquí."
   ru: "Линия из расписания карты: её рейсы принадлежат карте и здесь не меняются."
   uk: "Лінія з розкладу карти: її рейси належать карті й тут не змінюються."
 "The line was not found among the line editor's lines of the company's map: its trips are shown as they run.":
@@ -106,6 +120,7 @@ _version: 2
   fr: "La ligne est introuvable parmi les lignes de l'éditeur de lignes sur la carte de l'entreprise : ses courses sont affichées telles qu'elles roulent."
   nl: "De lijn is niet gevonden bij de lijnen van de lijneditor op de kaart van het bedrijf: haar ritten staan hier zoals ze rijden."
   pl: "Linii nie znaleziono wśród linii edytora linii na mapie firmy: jej kursy są pokazane tak, jak kursują."
+  es: "La línea no se encontró entre las líneas del editor de líneas del mapa de la empresa: sus viajes se muestran tal como circulan."
   ru: "Линия не найдена среди линий редактора линий на карте компании: её рейсы показаны так, как они ходят."
   uk: "Лінію не знайдено серед ліній редактора ліній на карті компанії: її рейси показано так, як вони ходять."
 "A new timetable waits for %{date}: it is the one shown, against the tours that run until then.":
@@ -113,6 +128,7 @@ _version: 2
   fr: "Un nouvel horaire attend le %{date} : c'est lui qui est affiché, face aux services qui roulent jusque-là."
   nl: "Een nieuwe dienstregeling wacht op %{date}: die staat hier, tegenover de omlopen die tot dan rijden."
   pl: "Nowy rozkład czeka na %{date}: to on jest pokazany, wobec brygad kursujących do tego czasu."
+  es: "Un nuevo horario espera al %{date}: es el que se muestra, frente a los recorridos que circulan hasta entonces."
   ru: "Новое расписание ждёт %{date}: показано оно, в сравнении с выходами, которые ходят до тех пор."
   uk: "Новий розклад чекає на %{date}: показано саме його, у порівнянні з оборотами, що ходять доти."
 "Moved by hand, the timetable is a table of trips now (the line editor's \"As a table\"): every departure on its own.":
@@ -120,6 +136,7 @@ _version: 2
   fr: "Déplacé à la main, l'horaire est désormais un tableau de courses (« Sous forme de tableau » dans l'éditeur de lignes) : chaque départ à part."
   nl: "Met de hand verschoven is de dienstregeling nu een rittentabel (\"Als tabel\" in de lijneditor): elk vertrek op zichzelf."
   pl: "Przesunięty ręcznie rozkład jest teraz tabelą kursów (\"Jako tabela\" w edytorze linii): każdy odjazd osobno."
+  es: "Al moverse a mano, el horario es ahora una tabla de viajes (\"Como tabla\" del editor de líneas): cada salida por separado."
   ru: "После ручного сдвига расписание стало таблицей рейсов («Как таблица» в редакторе линий): каждое отправление отдельно."
   uk: "Після ручного зсуву розклад став таблицею рейсів («Як таблиця» в редакторі ліній): кожне відправлення окремо."
 "In service: today's tours run as they are; a change begins on the day you choose, tomorrow at the soonest.":
@@ -127,6 +144,7 @@ _version: 2
   fr: "En service : les services d'aujourd'hui roulent tels quels ; une modification commence le jour choisi, demain au plus tôt."
   nl: "In dienst: de omlopen van vandaag rijden zoals ze zijn; een wijziging begint op de dag die je kiest, op zijn vroegst morgen."
   pl: "W obsłudze: dzisiejsze brygady kursują bez zmian; zmiana zaczyna się w wybranym dniu, najwcześniej jutro."
+  es: "En servicio: los recorridos de hoy circulan tal como están; un cambio empieza el día que elijas, como pronto mañana."
   ru: "На линии: сегодняшние выходы идут как есть; изменение начнётся в выбранный день, не раньше завтрашнего."
   uk: "На лінії: сьогоднішні обороти йдуть як є; зміна почнеться у вибраний день, не раніше завтрашнього."
 "Not in service yet: a change counts at once.":
@@ -134,6 +152,7 @@ _version: 2
   fr: "Pas encore en service : une modification vaut tout de suite."
   nl: "Nog niet in dienst: een wijziging telt meteen."
   pl: "Jeszcze nie w obsłudze: zmiana obowiązuje od razu."
+  es: "Aún no está en servicio: un cambio cuenta de inmediato."
   ru: "Ещё не на линии: изменение действует сразу."
   uk: "Ще не на лінії: зміна діє одразу."
 "Drag a departure to move it · click the axis to add one · Delete takes the one chosen out · the wheel zooms":
@@ -141,6 +160,7 @@ _version: 2
   fr: "Faites glisser un départ pour le déplacer · cliquez sur l'axe pour en ajouter un · Suppr retire celui choisi · la molette zoome"
   nl: "Sleep een vertrek om het te verschuiven · klik op de as om er een toe te voegen · Delete haalt het gekozen vertrek weg · het wieltje zoomt"
   pl: "Przeciągnij odjazd, aby go przesunąć · kliknij oś, aby dodać nowy · Delete usuwa wybrany · kółko przybliża"
+  es: "Arrastra una salida para moverla · haz clic en el eje para añadir una · Supr quita la elegida · la rueda hace zoom"
   ru: "Перетащите отправление, чтобы сдвинуть его · щёлкните по оси, чтобы добавить · Delete убирает выбранное · колёсико меняет масштаб"
   uk: "Перетягніть відправлення, щоб зсунути його · клацніть по осі, щоб додати · Delete прибирає вибране · коліщатко змінює масштаб"
 "The wheel over the departures zooms into the hours":
@@ -148,6 +168,7 @@ _version: 2
   fr: "La molette sur les départs zoome sur les heures"
   nl: "Het wieltje boven de vertrekken zoomt in op de uren"
   pl: "Kółko nad odjazdami przybliża godziny"
+  es: "La rueda sobre las salidas amplía las horas"
   ru: "Колёсико над отправлениями приближает часы"
   uk: "Коліщатко над відправленнями наближає години"
 "Whole day":
@@ -155,6 +176,7 @@ _version: 2
   fr: "Journée entière"
   nl: "Hele dag"
   pl: "Cały dzień"
+  es: "Todo el día"
   ru: "Весь день"
   uk: "Увесь день"
 "%{n} departures":
@@ -162,6 +184,7 @@ _version: 2
   fr: "%{n} départs"
   nl: "%{n} vertrekken"
   pl: "%{n} odjazdów"
+  es: "%{n} salidas"
   ru: "%{n} отправлений"
   uk: "%{n} відправлень"
 "Other trips":
@@ -169,6 +192,7 @@ _version: 2
   fr: "Autres courses"
   nl: "Overige ritten"
   pl: "Inne kursy"
+  es: "Otros viajes"
   ru: "Другие рейсы"
   uk: "Інші рейси"
 "Choose a departure on the axis or in the list: drag it, type its time, or take it out.":
@@ -176,6 +200,7 @@ _version: 2
   fr: "Choisissez un départ sur l'axe ou dans la liste : faites-le glisser, tapez son heure ou retirez-le."
   nl: "Kies een vertrek op de as of in de lijst: sleep het, typ de tijd of haal het weg."
   pl: "Wybierz odjazd na osi lub na liście: przeciągnij go, wpisz godzinę albo go usuń."
+  es: "Elige una salida en el eje o en la lista: arrástrala, escribe su hora o quítala."
   ru: "Выберите отправление на оси или в списке: перетащите его, введите время или уберите его."
   uk: "Виберіть відправлення на осі або в списку: перетягніть його, введіть час або приберіть його."
 "Tours: the buses it needs (%{n})":
@@ -183,6 +208,7 @@ _version: 2
   fr: "Services : les bus qu'il lui faut (%{n})"
   nl: "Omlopen: de bussen die ze nodig heeft (%{n})"
   pl: "Brygady: autobusy, których potrzebuje (%{n})"
+  es: "Recorridos: los autobuses que necesita (%{n})"
   ru: "Выходы: нужные ей автобусы (%{n})"
   uk: "Обороти: потрібні їй автобуси (%{n})"
 "changed":
@@ -190,6 +216,7 @@ _version: 2
   fr: "modifié"
   nl: "gewijzigd"
   pl: "zmieniona"
+  es: "cambiado"
   ru: "изменён"
   uk: "змінено"
 "new":
@@ -197,6 +224,7 @@ _version: 2
   fr: "nouveau"
   nl: "nieuw"
   pl: "nowa"
+  es: "nuevo"
   ru: "новый"
   uk: "новий"
 "dropped":
@@ -204,6 +232,7 @@ _version: 2
   fr: "supprimé"
   nl: "vervalt"
   pl: "usunięta"
+  es: "suprimido"
   ru: "отменён"
   uk: "скасовано"
 "No tours on these days.":
@@ -211,6 +240,7 @@ _version: 2
   fr: "Aucun service ces jours-là."
   nl: "Op deze dagen geen omlopen."
   pl: "Brak brygad w te dni."
+  es: "No hay recorridos en estos días."
   ru: "В эти дни выходов нет."
   uk: "У ці дні оборотів немає."
 "loses %{bus}":
@@ -218,6 +248,7 @@ _version: 2
   fr: "perd le %{bus}"
   nl: "verliest %{bus}"
   pl: "traci %{bus}"
+  es: "pierde %{bus}"
   ru: "теряет %{bus}"
   uk: "втрачає %{bus}"
 "Runs as it does now":
@@ -225,6 +256,7 @@ _version: 2
   fr: "Roule comme maintenant"
   nl: "Rijdt zoals nu"
   pl: "Kursuje jak teraz"
+  es: "Circula como ahora"
   ru: "Ходит как сейчас"
   uk: "Ходить як зараз"
 "Its trips change: its bus and drivers are given anew":
@@ -232,6 +264,7 @@ _version: 2
   fr: "Ses courses changent : son bus et ses conducteurs sont attribués à nouveau"
   nl: "Zijn ritten veranderen: bus en chauffeurs worden opnieuw toegewezen"
   pl: "Jej kursy się zmieniają: autobus i kierowcy są przydzielani od nowa"
+  es: "Sus viajes cambian: se le asignan de nuevo autobús y conductores"
   ru: "Его рейсы меняются: автобус и водители назначаются заново"
   uk: "Його рейси змінюються: автобус і водіїв призначають заново"
 "A tour more: a bus and drivers to give":
@@ -239,6 +272,7 @@ _version: 2
   fr: "Un service de plus : un bus et des conducteurs à attribuer"
   nl: "Een omloop meer: bus en chauffeurs toe te wijzen"
   pl: "Jedna brygada więcej: autobus i kierowcy do przydzielenia"
+  es: "Un recorrido más: hay que asignar autobús y conductores"
   ru: "На выход больше: нужно назначить автобус и водителей"
   uk: "На оборот більше: треба призначити автобус і водіїв"
 "No longer driven: its bus and drivers are free":
@@ -246,6 +280,7 @@ _version: 2
   fr: "N'est plus assuré : son bus et ses conducteurs sont libres"
   nl: "Rijdt niet meer: bus en chauffeurs zijn vrij"
   pl: "Już nie kursuje: autobus i kierowcy są wolni"
+  es: "Ya no se circula: su autobús y sus conductores quedan libres"
   ru: "Больше не ходит: автобус и водители свободны"
   uk: "Більше не ходить: автобус і водії вільні"
 "In one go":
@@ -253,6 +288,7 @@ _version: 2
   fr: "D'un coup"
   nl: "In één keer"
   pl: "Za jednym razem"
+  es: "De una vez"
   ru: "Разом"
   uk: "Разом"
 "Runs on these days":
@@ -260,6 +296,7 @@ _version: 2
   fr: "Roule ces jours-là"
   nl: "Rijdt op deze dagen"
   pl: "Kursuje w te dni"
+  es: "Circula estos días"
   ru: "Ходит в эти дни"
   uk: "Ходить у ці дні"
 "A change here makes these days' trips anew from the pattern: the departures moved by hand on these days go.":
@@ -267,6 +304,7 @@ _version: 2
   fr: "Une modification ici refait les courses de ces jours à partir du modèle : les départs déplacés à la main ces jours-là sont perdus."
   nl: "Een wijziging hier maakt de ritten van deze dagen opnieuw uit het patroon: met de hand verschoven vertrekken op deze dagen vervallen."
   pl: "Zmiana tutaj tworzy kursy tych dni od nowa według wzorca: odjazdy przesunięte ręcznie w tych dniach przepadają."
+  es: "Un cambio aquí rehace los viajes de estos días a partir del patrón: se pierden las salidas movidas a mano en estos días."
   ru: "Изменение здесь заново создаёт рейсы этих дней по шаблону: отправления, сдвинутые вручную в эти дни, пропадут."
   uk: "Зміна тут заново створює рейси цих днів за шаблоном: відправлення, зсунуті вручну в ці дні, зникнуть."
 "What it needs":
@@ -274,6 +312,7 @@ _version: 2
   fr: "Ce qu'il lui faut"
   nl: "Wat ze nodig heeft"
   pl: "Czego potrzebuje"
+  es: "Lo que necesita"
   ru: "Что ей нужно"
   uk: "Що їй потрібно"
 "Changed":
@@ -281,6 +320,7 @@ _version: 2
   fr: "Modifié"
   nl: "Gewijzigd"
   pl: "Po zmianie"
+  es: "Cambiado"
   ru: "После изменения"
   uk: "Після зміни"
 "Buses at the busiest hour":
@@ -288,6 +328,7 @@ _version: 2
   fr: "Bus à l'heure de pointe"
   nl: "Bussen op het drukste uur"
   pl: "Autobusy w godzinie szczytu"
+  es: "Autobuses en la hora punta"
   ru: "Автобусы в час пик"
   uk: "Автобуси в годину пік"
 "Duties for drivers":
@@ -295,6 +336,7 @@ _version: 2
   fr: "Services de conduite"
   nl: "Diensten voor chauffeurs"
   pl: "Służby dla kierowców"
+  es: "Servicios para conductores"
   ru: "Смены для водителей"
   uk: "Зміни для водіїв"
 "Kilometres a day":
@@ -302,6 +344,7 @@ _version: 2
   fr: "Kilomètres par jour"
   nl: "Kilometers per dag"
   pl: "Kilometry dziennie"
+  es: "Kilómetros al día"
   ru: "Километров в день"
   uk: "Кілометрів на день"
 "At the busiest it needs %{n} buses; the fleet has %{have} for the line.":
@@ -309,6 +352,7 @@ _version: 2
   fr: "Au plus fort, il lui faut %{n} bus ; la flotte en a %{have} pour la ligne."
   nl: "Op het drukst heeft ze %{n} bussen nodig; de vloot heeft er %{have} voor de lijn."
   pl: "W szczycie potrzebuje %{n} autobusów; flota ma %{have} dla tej linii."
+  es: "En la hora punta necesita %{n} autobuses; la flota tiene %{have} para la línea."
   ru: "В пик ей нужно автобусов: %{n}; у парка для линии: %{have}."
   uk: "У пік їй потрібно автобусів: %{n}; у парку для лінії: %{have}."
 "The fleet has %{have} buses for the line.":
@@ -316,6 +360,7 @@ _version: 2
   fr: "La flotte a %{have} bus pour la ligne."
   nl: "De vloot heeft %{have} bussen voor de lijn."
   pl: "Flota ma %{have} autobusów dla tej linii."
+  es: "La flota tiene %{have} autobuses para la línea."
   ru: "У парка для линии автобусов: %{have}."
   uk: "У парку для лінії автобусів: %{have}."
 "Tours of every day":
@@ -323,6 +368,7 @@ _version: 2
   fr: "Services de tous les jours"
   nl: "Omlopen van alle dagen"
   pl: "Brygady wszystkich dni"
+  es: "Recorridos de todos los días"
   ru: "Выходы всех дней"
   uk: "Обороти всіх днів"
 "Given their bus and drivers anew: tours %{list}":
@@ -330,6 +376,7 @@ _version: 2
   fr: "Bus et conducteurs attribués à nouveau : services %{list}"
   nl: "Bus en chauffeurs opnieuw toegewezen: omlopen %{list}"
   pl: "Autobus i kierowcy przydzielani od nowa: brygady %{list}"
+  es: "Se les asignan de nuevo autobús y conductores: recorridos %{list}"
   ru: "Автобус и водители назначаются заново: выходы %{list}"
   uk: "Автобус і водіїв призначають заново: обороти %{list}"
 "As a list":
@@ -337,6 +384,7 @@ _version: 2
   fr: "En liste"
   nl: "Als lijst"
   pl: "Jako lista"
+  es: "Como lista"
   ru: "Списком"
   uk: "Списком"
 "Close without saving the changes?":
@@ -344,6 +392,7 @@ _version: 2
   fr: "Fermer sans enregistrer les modifications ?"
   nl: "Sluiten zonder de wijzigingen op te slaan?"
   pl: "Zamknąć bez zapisywania zmian?"
+  es: "¿Cerrar sin guardar los cambios?"
   ru: "Закрыть, не сохранив изменения?"
   uk: "Закрити, не зберігши зміни?"
 "Close without saving":
@@ -351,6 +400,7 @@ _version: 2
   fr: "Fermer sans enregistrer"
   nl: "Sluiten zonder opslaan"
   pl: "Zamknij bez zapisu"
+  es: "Cerrar sin guardar"
   ru: "Закрыть без сохранения"
   uk: "Закрити без збереження"
 "Keep changing":
@@ -358,6 +408,7 @@ _version: 2
   fr: "Continuer à modifier"
   nl: "Verder wijzigen"
   pl: "Zmieniaj dalej"
+  es: "Seguir editando"
   ru: "Продолжить изменять"
   uk: "Продовжити змінювати"
 "Save from %{date}":
@@ -365,6 +416,7 @@ _version: 2
   fr: "Enregistrer à partir du %{date}"
   nl: "Opslaan vanaf %{date}"
   pl: "Zapisz od %{date}"
+  es: "Guardar desde el %{date}"
   ru: "Сохранить с %{date}"
   uk: "Зберегти з %{date}"
 "Undo":
@@ -372,6 +424,7 @@ _version: 2
   fr: "Annuler"
   nl: "Ongedaan maken"
   pl: "Cofnij"
+  es: "Deshacer"
   ru: "Отменить"
   uk: "Скасувати"
 "Start again":
@@ -379,6 +432,7 @@ _version: 2
   fr: "Recommencer"
   nl: "Opnieuw beginnen"
   pl: "Zacznij od nowa"
+  es: "Empezar de nuevo"
   ru: "Начать заново"
   uk: "Почати знову"
 "The line's timetable as it is saved":
@@ -386,6 +440,7 @@ _version: 2
   fr: "L'horaire de la ligne tel qu'il est enregistré"
   nl: "De dienstregeling van de lijn zoals die is opgeslagen"
   pl: "Rozkład linii w zapisanej postaci"
+  es: "El horario de la línea tal como está guardado"
   ru: "Расписание линии в сохранённом виде"
   uk: "Розклад лінії у збереженому вигляді"
 "No changes yet.":
@@ -393,6 +448,7 @@ _version: 2
   fr: "Aucune modification pour l'instant."
   nl: "Nog geen wijzigingen."
   pl: "Na razie bez zmian."
+  es: "Aún no hay cambios."
   ru: "Изменений пока нет."
   uk: "Змін поки немає."
 "Today's tours run as they are.":
@@ -400,6 +456,7 @@ _version: 2
   fr: "Les services d'aujourd'hui roulent tels quels."
   nl: "De omlopen van vandaag rijden zoals ze zijn."
   pl: "Dzisiejsze brygady kursują bez zmian."
+  es: "Los recorridos de hoy circulan tal como están."
   ru: "Сегодняшние выходы идут как есть."
   uk: "Сьогоднішні обороти йдуть як є."
 "Saved, it counts at once.":
@@ -407,6 +464,7 @@ _version: 2
   fr: "Une fois enregistré, cela vaut tout de suite."
   nl: "Opgeslagen telt het meteen."
   pl: "Po zapisaniu obowiązuje od razu."
+  es: "Al guardarlo, cuenta de inmediato."
   ru: "После сохранения действует сразу."
   uk: "Після збереження діє одразу."
 "Changed meanwhile":
@@ -414,6 +472,7 @@ _version: 2
   fr: "Modifié entre-temps"
   nl: "Intussen gewijzigd"
   pl: "W międzyczasie zmieniono"
+  es: "Cambiado mientras tanto"
   ru: "Изменено тем временем"
   uk: "Тим часом змінено"
 "The line's timetable was changed meanwhile - in the line editor, or its new timetable began: it is shown as it is now.":
@@ -421,6 +480,7 @@ _version: 2
   fr: "L'horaire de la ligne a été modifié entre-temps - dans l'éditeur de lignes, ou son nouvel horaire a commencé : il est affiché tel qu'il est maintenant."
   nl: "De dienstregeling van de lijn is intussen gewijzigd - in de lijneditor, of haar nieuwe dienstregeling is begonnen: hij staat hier zoals hij nu is."
   pl: "Rozkład linii zmieniono w międzyczasie - w edytorze linii albo zaczął się jej nowy rozkład: pokazano go w obecnej postaci."
+  es: "El horario de la línea se ha cambiado mientras tanto (en el editor de líneas, o ha empezado su nuevo horario): se muestra tal como está ahora."
   ru: "Расписание линии тем временем изменилось - в редакторе линий, или началось её новое расписание: оно показано таким, как сейчас."
   uk: "Розклад лінії тим часом змінився - у редакторі ліній, або почався її новий розклад: його показано таким, як зараз."
 "There is no content folder to write the timetable into.":
@@ -428,6 +488,7 @@ _version: 2
   fr: "Il n'y a pas de dossier de contenu où écrire l'horaire."
   nl: "Er is geen inhoudsmap om de dienstregeling in te schrijven."
   pl: "Brak folderu zawartości, do którego można zapisać rozkład."
+  es: "No hay carpeta de contenido en la que escribir el horario."
   ru: "Нет папки содержимого, куда записать расписание."
   uk: "Немає теки вмісту, куди записати розклад."
 "Line %{n} saved.":
@@ -435,6 +496,7 @@ _version: 2
   fr: "Ligne %{n} enregistrée."
   nl: "Lijn %{n} opgeslagen."
   pl: "Linia %{n} zapisana."
+  es: "Línea %{n} guardada."
   ru: "Линия %{n} сохранена."
   uk: "Лінію %{n} збережено."
 "Line %{n} saved: %{k} of its tours to plan anew.":
@@ -442,5 +504,6 @@ _version: 2
   fr: "Ligne %{n} enregistrée : %{k} de ses services à planifier à nouveau."
   nl: "Lijn %{n} opgeslagen: %{k} van haar omlopen opnieuw te plannen."
   pl: "Linia %{n} zapisana: %{k} jej brygad do zaplanowania od nowa."
+  es: "Línea %{n} guardada: %{k} de sus recorridos por planificar de nuevo."
   ru: "Линия %{n} сохранена: её выходов спланировать заново: %{k}."
   uk: "Лінію %{n} збережено: її оборотів спланувати заново: %{k}."

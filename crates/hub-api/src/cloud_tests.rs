@@ -418,7 +418,7 @@ fn signed_out_the_commands_are_quiet() {
     assert_eq!(millis(Some("1792144800000")), Some(1_792_144_800_000));
 }
 
-/// Every text of the cloud saves - this file's, the page's (`online/cloud.js`) - in the six
+/// Every text of the cloud saves - this file's, the page's (`online/cloud.js`) - in the seven
 /// languages.
 #[test]
 fn every_cloud_text_is_translated() {

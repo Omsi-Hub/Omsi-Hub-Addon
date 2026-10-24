@@ -7,6 +7,7 @@ _version: 2
   fr: "Demande d'ami envoyée."
   nl: "Vriendschapsverzoek verstuurd."
   pl: "Wysłano zaproszenie do znajomych."
+  es: "Solicitud de amistad enviada."
   ru: "Запрос в друзья отправлен."
   uk: "Запит у друзі надіслано."
 "You are friends now: they had asked you already.":
@@ -14,6 +15,7 @@ _version: 2
   fr: "Vous êtes amis maintenant : cette personne vous l'avait déjà demandé."
   nl: "Jullie zijn nu vrienden: zij hadden het jou al gevraagd."
   pl: "Jesteście teraz znajomymi: ta osoba już cię zaprosiła."
+  es: "Ahora sois amigos: ya te lo había pedido."
   ru: "Теперь вы друзья: этот игрок уже отправил вам запрос."
   uk: "Тепер ви друзі: цей гравець уже надіслав вам запит."
 "You are friends already, or a request is open.":
@@ -21,6 +23,7 @@ _version: 2
   fr: "Vous êtes déjà amis, ou une demande est en attente."
   nl: "Jullie zijn al vrienden, of er staat nog een verzoek open."
   pl: "Jesteście już znajomymi albo zaproszenie czeka na odpowiedź."
+  es: "Ya sois amigos, o hay una solicitud pendiente."
   ru: "Вы уже друзья, или запрос ещё ожидает ответа."
   uk: "Ви вже друзі, або запит ще чекає на відповідь."
 "That is your own friend code.":
@@ -28,6 +31,7 @@ _version: 2
   fr: "C'est votre propre code ami."
   nl: "Dat is je eigen vriendcode."
   pl: "To twój własny kod znajomego."
+  es: "Ese es tu propio código de amigo."
   ru: "Это ваш собственный код друга."
   uk: "Це ваш власний код друга."
 "No player has that friend code.":
@@ -35,6 +39,7 @@ _version: 2
   fr: "Aucun joueur n'a ce code ami."
   nl: "Geen speler heeft die vriendcode."
   pl: "Żaden gracz nie ma takiego kodu znajomego."
+  es: "Ningún jugador tiene ese código de amigo."
   ru: "Ни у одного игрока нет такого кода друга."
   uk: "Жоден гравець не має такого коду друга."
 "Choose your display name first.":
@@ -42,6 +47,7 @@ _version: 2
   fr: "Choisissez d'abord votre nom affiché."
   nl: "Kies eerst je weergavenaam."
   pl: "Najpierw wybierz swoją nazwę wyświetlaną."
+  es: "Elige primero tu nombre visible."
   ru: "Сначала выберите отображаемое имя."
   uk: "Спершу виберіть ім'я для показу."
 "Too many tries in a short time. Try again later.":
@@ -49,6 +55,7 @@ _version: 2
   fr: "Trop d'essais en peu de temps. Réessayez plus tard."
   nl: "Te veel pogingen in korte tijd. Probeer het later opnieuw."
   pl: "Za dużo prób w krótkim czasie. Spróbuj ponownie później."
+  es: "Demasiados intentos en poco tiempo. Inténtalo más tarde."
   ru: "Слишком много попыток за короткое время. Попробуйте позже."
   uk: "Забагато спроб за короткий час. Спробуйте пізніше."
 "The friends list is full.":
@@ -56,6 +63,7 @@ _version: 2
   fr: "La liste d'amis est pleine."
   nl: "De vriendenlijst is vol."
   pl: "Lista znajomych jest pełna."
+  es: "La lista de amigos está llena."
   ru: "Список друзей заполнен."
   uk: "Список друзів заповнений."
 "The email address or the password is not right.":
@@ -63,6 +71,7 @@ _version: 2
   fr: "L'adresse e-mail ou le mot de passe n'est pas correct."
   nl: "Het e-mailadres of het wachtwoord klopt niet."
   pl: "Adres e-mail lub hasło jest nieprawidłowe."
+  es: "La dirección de correo electrónico o la contraseña no son correctas."
   ru: "Неверный адрес электронной почты или пароль."
   uk: "Неправильна адреса електронної пошти або пароль."
 "The password is not right.":
@@ -70,6 +79,7 @@ _version: 2
   fr: "Le mot de passe n'est pas correct."
   nl: "Het wachtwoord klopt niet."
   pl: "Hasło jest nieprawidłowe."
+  es: "La contraseña no es correcta."
   ru: "Неверный пароль."
   uk: "Неправильний пароль."
 "There is an account with this email address already. Sign in, or reset its password.":
@@ -77,6 +87,7 @@ _version: 2
   fr: "Un compte existe déjà avec cette adresse e-mail. Connectez-vous, ou réinitialisez son mot de passe."
   nl: "Er is al een account met dit e-mailadres. Log in, of stel het wachtwoord opnieuw in."
   pl: "Konto z tym adresem e-mail już istnieje. Zaloguj się lub zresetuj hasło."
+  es: "Ya hay una cuenta con esta dirección de correo electrónico. Inicia sesión o restablece su contraseña."
   ru: "Аккаунт с этим адресом уже есть. Войдите или сбросьте пароль."
   uk: "Обліковий запис із цією адресою вже існує. Увійдіть або скиньте пароль."
 "That is not an email address.":
@@ -84,6 +95,7 @@ _version: 2
   fr: "Ce n'est pas une adresse e-mail."
   nl: "Dat is geen e-mailadres."
   pl: "To nie jest adres e-mail."
+  es: "Eso no es una dirección de correo electrónico."
   ru: "Это не адрес электронной почты."
   uk: "Це не адреса електронної пошти."
 "The password is too short: at least 8 characters.":
@@ -91,6 +103,7 @@ _version: 2
   fr: "Le mot de passe est trop court : au moins 8 caractères."
   nl: "Het wachtwoord is te kort: minstens 8 tekens."
   pl: "Hasło jest za krótkie: co najmniej 8 znaków."
+  es: "La contraseña es demasiado corta: al menos 8 caracteres."
   ru: "Пароль слишком короткий: не менее 8 символов."
   uk: "Пароль закороткий: щонайменше 8 символів."
 "The password is too long: at most 72 characters.":
@@ -98,6 +111,7 @@ _version: 2
   fr: "Le mot de passe est trop long : 72 caractères au plus."
   nl: "Het wachtwoord is te lang: hoogstens 72 tekens."
   pl: "Hasło jest za długie: najwyżej 72 znaki."
+  es: "La contraseña es demasiado larga: como máximo 72 caracteres."
   ru: "Пароль слишком длинный: не более 72 символов."
   uk: "Пароль задовгий: не більше 72 символів."
 "The password is too weak: choose a longer one, with letters, digits and symbols.":
@@ -105,6 +119,7 @@ _version: 2
   fr: "Le mot de passe est trop faible : choisissez-en un plus long, avec des lettres, des chiffres et des symboles."
   nl: "Het wachtwoord is te zwak: kies een langer wachtwoord, met letters, cijfers en tekens."
   pl: "Hasło jest za słabe: wybierz dłuższe, z literami, cyframi i symbolami."
+  es: "La contraseña es demasiado débil: elige una más larga, con letras, cifras y símbolos."
   ru: "Пароль слишком слабый: выберите более длинный, с буквами, цифрами и символами."
   uk: "Пароль заслабкий: виберіть довший, з літерами, цифрами та символами."
 "The new password is the one you have now: choose another.":
@@ -112,6 +127,7 @@ _version: 2
   fr: "Le nouveau mot de passe est celui que vous avez déjà : choisissez-en un autre."
   nl: "Het nieuwe wachtwoord is je huidige: kies een ander."
   pl: "Nowe hasło jest takie samo jak obecne: wybierz inne."
+  es: "La nueva contraseña es la que ya tienes: elige otra."
   ru: "Новый пароль совпадает с текущим: выберите другой."
   uk: "Новий пароль збігається з поточним: виберіть інший."
 "That code is not right.":
@@ -119,6 +135,7 @@ _version: 2
   fr: "Ce code n'est pas correct."
   nl: "Die code klopt niet."
   pl: "Ten kod jest nieprawidłowy."
+  es: "Ese código no es correcto."
   ru: "Неверный код."
   uk: "Неправильний код."
 "That code has expired. Ask for a new one.":
@@ -126,6 +143,7 @@ _version: 2
   fr: "Ce code a expiré. Demandez-en un nouveau."
   nl: "Die code is verlopen. Vraag een nieuwe aan."
   pl: "Ten kod wygasł. Poproś o nowy."
+  es: "Ese código ha caducado. Pide uno nuevo."
   ru: "Срок действия кода истёк. Запросите новый."
   uk: "Термін дії коду минув. Запросіть новий."
 "Too many wrong codes. Ask for a new one.":
@@ -133,6 +151,7 @@ _version: 2
   fr: "Trop de codes erronés. Demandez-en un nouveau."
   nl: "Te veel verkeerde codes. Vraag een nieuwe aan."
   pl: "Za dużo błędnych kodów. Poproś o nowy."
+  es: "Demasiados códigos erróneos. Pide uno nuevo."
   ru: "Слишком много неверных кодов. Запросите новый."
   uk: "Забагато неправильних кодів. Запросіть новий."
 "Sign in again first, then try once more.":
@@ -140,6 +159,7 @@ _version: 2
   fr: "Reconnectez-vous d'abord, puis réessayez."
   nl: "Log eerst opnieuw in en probeer het dan nog eens."
   pl: "Najpierw zaloguj się ponownie, potem spróbuj jeszcze raz."
+  es: "Vuelve a iniciar sesión primero y luego inténtalo otra vez."
   ru: "Сначала войдите снова, затем попробуйте ещё раз."
   uk: "Спершу увійдіть знову, потім спробуйте ще раз."
 "Another player has that display name already.":
@@ -147,6 +167,7 @@ _version: 2
   fr: "Un autre joueur a déjà ce nom affiché."
   nl: "Een andere speler heeft die weergavenaam al."
   pl: "Inny gracz ma już taką nazwę wyświetlaną."
+  es: "Otro jugador ya tiene ese nombre visible."
   ru: "Это отображаемое имя уже занято другим игроком."
   uk: "Це ім'я для показу вже має інший гравець."
 "A display name has 3 to 24 characters: letters A to Z, digits, spaces, _ . and -.":
@@ -154,6 +175,7 @@ _version: 2
   fr: "Un pseudo compte 3 à 24 caractères : lettres de A à Z, chiffres, espaces, _ . et -."
   nl: "Een weergavenaam heeft 3 tot 24 tekens: letters A tot Z, cijfers, spaties, _ . en -."
   pl: "Nazwa wyświetlana ma od 3 do 24 znaków: litery od A do Z, cyfry, spacje, _ . i -."
+  es: "Un nombre visible tiene de 3 a 24 caracteres: letras de la A a la Z, cifras, espacios, _ . y -."
   ru: "Отображаемое имя содержит от 3 до 24 символов: латинские буквы A–Z, цифры, пробелы, _ . и -."
   uk: "Відображуване ім'я має від 3 до 24 символів: латинські літери A–Z, цифри, пробіли, _ . і -."
 "A friend code has 8 letters and digits.":
@@ -161,6 +183,7 @@ _version: 2
   fr: "Un code ami compte 8 lettres et chiffres."
   nl: "Een vriendcode heeft 8 letters en cijfers."
   pl: "Kod znajomego ma 8 liter i cyfr."
+  es: "Un código de amigo tiene 8 letras y cifras."
   ru: "Код друга состоит из 8 букв и цифр."
   uk: "Код друга складається з 8 літер і цифр."
 "Something in it is too long or not allowed.":
@@ -168,6 +191,7 @@ _version: 2
   fr: "Quelque chose est trop long ou n'est pas autorisé."
   nl: "Iets erin is te lang of niet toegestaan."
   pl: "Coś jest za długie albo niedozwolone."
+  es: "Algo es demasiado largo o no está permitido."
   ru: "Что-то слишком длинное или недопустимое."
   uk: "Щось задовге або недопустиме."
 "That is not allowed.":
@@ -175,6 +199,7 @@ _version: 2
   fr: "Ce n'est pas autorisé."
   nl: "Dat is niet toegestaan."
   pl: "To jest niedozwolone."
+  es: "Eso no está permitido."
   ru: "Это не разрешено."
   uk: "Це не дозволено."
 "Share your company first (Multiplayer): then there is a session to invite to.":
@@ -182,6 +207,7 @@ _version: 2
   fr: "Partagez d'abord votre entreprise (Multijoueur) : il y aura alors une session à laquelle inviter."
   nl: "Deel eerst je bedrijf (Multiplayer): dan is er een sessie om voor uit te nodigen."
   pl: "Najpierw udostępnij firmę (Gra wieloosobowa): wtedy będzie sesja, do której można zaprosić."
+  es: "Comparte primero tu empresa (Multijugador): así habrá una sesión a la que invitar."
   ru: "Сначала откройте доступ к компании (Мультиплеер): тогда будет сессия для приглашения."
   uk: "Спершу відкрийте доступ до компанії (Мультиплеєр): тоді буде сесія для запрошення."
 "Sign in first.":
@@ -189,6 +215,7 @@ _version: 2
   fr: "Connectez-vous d'abord."
   nl: "Log eerst in."
   pl: "Najpierw się zaloguj."
+  es: "Inicia sesión primero."
   ru: "Сначала войдите."
   uk: "Спершу увійдіть."
 "Offline: the online features are back as soon as the network is.":
@@ -196,6 +223,7 @@ _version: 2
   fr: "Hors ligne : les fonctions en ligne reviennent dès que le réseau revient."
   nl: "Offline: de online functies zijn terug zodra het netwerk terug is."
   pl: "Offline: funkcje online wrócą, gdy tylko wróci sieć."
+  es: "Sin conexión: las funciones en línea vuelven en cuanto vuelva la red."
   ru: "Нет сети: онлайн-функции вернутся, как только появится сеть."
   uk: "Немає мережі: онлайн-функції повернуться, щойно з'явиться мережа."
 "You were signed out. Sign in again.":
@@ -203,6 +231,7 @@ _version: 2
   fr: "Vous avez été déconnecté. Reconnectez-vous."
   nl: "Je bent afgemeld. Log opnieuw in."
   pl: "Wylogowano cię. Zaloguj się ponownie."
+  es: "Se ha cerrado tu sesión. Vuelve a iniciar sesión."
   ru: "Вы вышли из аккаунта. Войдите снова."
   uk: "Ви вийшли з облікового запису. Увійдіть знову."
 "The server does not offer this yet.":
@@ -210,6 +239,7 @@ _version: 2
   fr: "Le serveur ne le propose pas encore."
   nl: "De server biedt dit nog niet aan."
   pl: "Serwer jeszcze tego nie oferuje."
+  es: "El servidor aún no ofrece esto."
   ru: "Сервер пока этого не поддерживает."
   uk: "Сервер поки цього не підтримує."
 "The server could not do that just now. Try again later.":
@@ -217,6 +247,7 @@ _version: 2
   fr: "Le serveur n'a pas pu le faire pour l'instant. Réessayez plus tard."
   nl: "De server kon dat nu niet doen. Probeer het later opnieuw."
   pl: "Serwer nie mógł teraz tego zrobić. Spróbuj ponownie później."
+  es: "El servidor no ha podido hacerlo ahora mismo. Inténtalo más tarde."
   ru: "Сервер сейчас не смог это выполнить. Попробуйте позже."
   uk: "Сервер зараз не зміг це виконати. Спробуйте пізніше."
 "Joining did not work.":
@@ -224,6 +255,7 @@ _version: 2
   fr: "La connexion à la session a échoué."
   nl: "Meedoen is niet gelukt."
   pl: "Nie udało się dołączyć."
+  es: "No se ha podido unir."
   ru: "Присоединиться не удалось."
   uk: "Приєднатися не вдалося."
 "At least 8 characters. Longer is stronger.":
@@ -231,6 +263,7 @@ _version: 2
   fr: "Au moins 8 caractères. Plus long, plus sûr."
   nl: "Minstens 8 tekens. Langer is sterker."
   pl: "Co najmniej 8 znaków. Dłuższe jest silniejsze."
+  es: "Al menos 8 caracteres. Cuanto más larga, más segura."
   ru: "Не менее 8 символов. Чем длиннее, тем надёжнее."
   uk: "Щонайменше 8 символів. Що довше, то надійніше."
 "Weak password":
@@ -238,6 +271,7 @@ _version: 2
   fr: "Mot de passe faible"
   nl: "Zwak wachtwoord"
   pl: "Słabe hasło"
+  es: "Contraseña débil"
   ru: "Слабый пароль"
   uk: "Слабкий пароль"
 "Fair password":
@@ -245,6 +279,7 @@ _version: 2
   fr: "Mot de passe moyen"
   nl: "Redelijk wachtwoord"
   pl: "Przeciętne hasło"
+  es: "Contraseña aceptable"
   ru: "Средний пароль"
   uk: "Середній пароль"
 "Strong password":
@@ -252,6 +287,7 @@ _version: 2
   fr: "Mot de passe fort"
   nl: "Sterk wachtwoord"
   pl: "Silne hasło"
+  es: "Contraseña segura"
   ru: "Надёжный пароль"
   uk: "Надійний пароль"
 "Email address":
@@ -259,6 +295,7 @@ _version: 2
   fr: "Adresse e-mail"
   nl: "E-mailadres"
   pl: "Adres e-mail"
+  es: "Dirección de correo electrónico"
   ru: "Адрес электронной почты"
   uk: "Адреса електронної пошти"
 "Create an account":
@@ -266,6 +303,7 @@ _version: 2
   fr: "Créer un compte"
   nl: "Account aanmaken"
   pl: "Utwórz konto"
+  es: "Crear una cuenta"
   ru: "Создать аккаунт"
   uk: "Створити обліковий запис"
 "Display name":
@@ -273,6 +311,7 @@ _version: 2
   fr: "Nom affiché"
   nl: "Weergavenaam"
   pl: "Nazwa wyświetlana"
+  es: "Nombre visible"
   ru: "Отображаемое имя"
   uk: "Ім'я для показу"
 "3 to 24 characters. Your friends see it.":
@@ -280,6 +319,7 @@ _version: 2
   fr: "De 3 à 24 caractères. Vos amis le voient."
   nl: "3 tot 24 tekens. Je vrienden zien hem."
   pl: "Od 3 do 24 znaków. Widzą ją twoi znajomi."
+  es: "De 3 a 24 caracteres. Lo ven tus amigos."
   ru: "От 3 до 24 символов. Его видят ваши друзья."
   uk: "Від 3 до 24 символів. Його бачать ваші друзі."
 "Password":
@@ -287,6 +327,7 @@ _version: 2
   fr: "Mot de passe"
   nl: "Wachtwoord"
   pl: "Hasło"
+  es: "Contraseña"
   ru: "Пароль"
   uk: "Пароль"
 "Create your account on the Omsi-Hub website, confirm your email address, then sign in here.":
@@ -294,6 +335,7 @@ _version: 2
   fr: "Créez votre compte sur le site d'Omsi-Hub, confirmez votre adresse e-mail, puis connectez-vous ici."
   nl: "Maak je account aan op de Omsi-Hub-website, bevestig je e-mailadres en log dan hier in."
   pl: "Załóż konto na stronie Omsi-Hub, potwierdź adres e-mail, a potem zaloguj się tutaj."
+  es: "Crea tu cuenta en la web de Omsi-Hub, confirma tu dirección de correo electrónico y luego inicia sesión aquí."
   ru: "Создайте аккаунт на сайте Omsi-Hub, подтвердите адрес электронной почты, затем войдите здесь."
   uk: "Створіть обліковий запис на сайті Omsi-Hub, підтвердьте адресу електронної пошти, потім увійдіть тут."
 "Confirm your email address":
@@ -301,6 +343,7 @@ _version: 2
   fr: "Confirmez votre adresse e-mail"
   nl: "Bevestig je e-mailadres"
   pl: "Potwierdź adres e-mail"
+  es: "Confirma tu dirección de correo electrónico"
   ru: "Подтвердите адрес почты"
   uk: "Підтвердьте адресу пошти"
 "your email address":
@@ -308,6 +351,7 @@ _version: 2
   fr: "votre adresse e-mail"
   nl: "je e-mailadres"
   pl: "twój adres e-mail"
+  es: "tu dirección de correo electrónico"
   ru: "ваш адрес почты"
   uk: "вашу адресу пошти"
 "Confirm":
@@ -315,6 +359,7 @@ _version: 2
   fr: "Confirmer"
   nl: "Bevestigen"
   pl: "Potwierdź"
+  es: "Confirmar"
   ru: "Подтвердить"
   uk: "Підтвердити"
 "Forgot your password?":
@@ -322,6 +367,7 @@ _version: 2
   fr: "Mot de passe oublié ?"
   nl: "Wachtwoord vergeten?"
   pl: "Nie pamiętasz hasła?"
+  es: "¿Has olvidado tu contraseña?"
   ru: "Забыли пароль?"
   uk: "Забули пароль?"
 "Choose a new password":
@@ -329,6 +375,7 @@ _version: 2
   fr: "Choisir un nouveau mot de passe"
   nl: "Kies een nieuw wachtwoord"
   pl: "Ustaw nowe hasło"
+  es: "Elige una nueva contraseña"
   ru: "Выберите новый пароль"
   uk: "Виберіть новий пароль"
 "New password":
@@ -336,6 +383,7 @@ _version: 2
   fr: "Nouveau mot de passe"
   nl: "Nieuw wachtwoord"
   pl: "Nowe hasło"
+  es: "Nueva contraseña"
   ru: "Новый пароль"
   uk: "Новий пароль"
 "Change password":
@@ -343,6 +391,7 @@ _version: 2
   fr: "Changer le mot de passe"
   nl: "Wachtwoord wijzigen"
   pl: "Zmień hasło"
+  es: "Cambiar contraseña"
   ru: "Сменить пароль"
   uk: "Змінити пароль"
 "Sign in":
@@ -350,6 +399,7 @@ _version: 2
   fr: "Se connecter"
   nl: "Inloggen"
   pl: "Zaloguj się"
+  es: "Iniciar sesión"
   ru: "Войти"
   uk: "Увійти"
 "New here?":
@@ -357,6 +407,7 @@ _version: 2
   fr: "Nouveau ici ?"
   nl: "Nieuw hier?"
   pl: "Jesteś tu nowy?"
+  es: "¿Eres nuevo?"
   ru: "Впервые здесь?"
   uk: "Вперше тут?"
 "An account is optional. With one you add friends, see who is online and invite them to your company. Without one, everything else works as before.":
@@ -364,6 +415,7 @@ _version: 2
   fr: "Un compte est facultatif. Avec lui, vous ajoutez des amis, voyez qui est en ligne et les invitez dans votre entreprise. Sans compte, tout le reste fonctionne comme avant."
   nl: "Een account is niet verplicht. Daarmee voeg je vrienden toe, zie je wie online is en nodig je ze uit in je bedrijf. Zonder account werkt al het andere zoals altijd."
   pl: "Konto jest opcjonalne. Dzięki niemu dodasz znajomych, zobaczysz, kto jest online, i zaprosisz ich do swojej firmy. Bez konta wszystko inne działa jak dotąd."
+  es: "Una cuenta es opcional. Con ella añades amigos, ves quién está en línea y los invitas a tu empresa. Sin ella, todo lo demás funciona como antes."
   ru: "Аккаунт не обязателен. С ним вы добавляете друзей, видите, кто в сети, и приглашаете их в свою компанию. Без аккаунта всё остальное работает как раньше."
   uk: "Обліковий запис не обов'язковий. З ним ви додаєте друзів, бачите, хто в мережі, і запрошуєте їх до своєї компанії. Без нього все інше працює як раніше."
 "You play without an account.":
@@ -371,6 +423,7 @@ _version: 2
   fr: "Vous jouez sans compte."
   nl: "Je speelt zonder account."
   pl: "Grasz bez konta."
+  es: "Juegas sin cuenta."
   ru: "Вы играете без аккаунта."
   uk: "Ви граєте без облікового запису."
 "Play without an account":
@@ -378,6 +431,7 @@ _version: 2
   fr: "Jouer sans compte"
   nl: "Spelen zonder account"
   pl: "Graj bez konta"
+  es: "Jugar sin cuenta"
   ru: "Играть без аккаунта"
   uk: "Грати без облікового запису"
 "Choose your display name":
@@ -385,6 +439,7 @@ _version: 2
   fr: "Choisissez votre nom affiché"
   nl: "Kies je weergavenaam"
   pl: "Wybierz nazwę wyświetlaną"
+  es: "Elige tu nombre visible"
   ru: "Выберите отображаемое имя"
   uk: "Виберіть ім'я для показу"
 "Sign out":
@@ -392,6 +447,7 @@ _version: 2
   fr: "Se déconnecter"
   nl: "Uitloggen"
   pl: "Wyloguj się"
+  es: "Cerrar sesión"
   ru: "Выйти"
   uk: "Вийти"
 "Your profile":
@@ -399,6 +455,7 @@ _version: 2
   fr: "Votre profil"
   nl: "Je profiel"
   pl: "Twój profil"
+  es: "Tu perfil"
   ru: "Ваш профиль"
   uk: "Ваш профіль"
 "Your friend code":
@@ -406,6 +463,7 @@ _version: 2
   fr: "Votre code ami"
   nl: "Je vriendcode"
   pl: "Twój kod znajomego"
+  es: "Tu código de amigo"
   ru: "Ваш код друга"
   uk: "Ваш код друга"
 "Give it to your friends: they add you with it.":
@@ -413,6 +471,7 @@ _version: 2
   fr: "Donnez-le à vos amis : ils vous ajoutent avec."
   nl: "Geef hem aan je vrienden: daarmee voegen ze jou toe."
   pl: "Przekaż go znajomym: dzięki niemu cię dodadzą."
+  es: "Dáselo a tus amigos: te añaden con él."
   ru: "Дайте его друзьям: по нему они вас добавят."
   uk: "Дайте його друзям: за ним вони вас додадуть."
 "This system has no credential store: you sign in again at the next start.":
@@ -420,6 +479,7 @@ _version: 2
   fr: "Ce système n'a pas de coffre d'identifiants : vous vous reconnecterez au prochain démarrage."
   nl: "Dit systeem heeft geen opslag voor inloggegevens: bij de volgende start log je opnieuw in."
   pl: "Ten system nie ma magazynu poświadczeń: przy następnym uruchomieniu zalogujesz się ponownie."
+  es: "Este sistema no tiene almacén de credenciales: volverás a iniciar sesión en el próximo inicio."
   ru: "В этой системе нет хранилища учётных данных: при следующем запуске войдите снова."
   uk: "У цій системі немає сховища облікових даних: під час наступного запуску увійдіть знову."
 "Delete my account":
@@ -427,6 +487,7 @@ _version: 2
   fr: "Supprimer mon compte"
   nl: "Mijn account verwijderen"
   pl: "Usuń moje konto"
+  es: "Eliminar mi cuenta"
   ru: "Удалить мой аккаунт"
   uk: "Видалити мій обліковий запис"
 "Your password, to confirm":
@@ -434,6 +495,7 @@ _version: 2
   fr: "Votre mot de passe, pour confirmer"
   nl: "Je wachtwoord, ter bevestiging"
   pl: "Twoje hasło, dla potwierdzenia"
+  es: "Tu contraseña, para confirmar"
   ru: "Ваш пароль для подтверждения"
   uk: "Ваш пароль для підтвердження"
 "Invites":
@@ -441,6 +503,7 @@ _version: 2
   fr: "Invitations"
   nl: "Uitnodigingen"
   pl: "Zaproszenia"
+  es: "Invitaciones"
   ru: "Приглашения"
   uk: "Запрошення"
 "Join their company session":
@@ -448,6 +511,7 @@ _version: 2
   fr: "Rejoindre la session de son entreprise"
   nl: "Meedoen met de sessie van hun bedrijf"
   pl: "Dołącz do sesji ich firmy"
+  es: "Unirse a la sesión de su empresa"
   ru: "Присоединиться к сессии его компании"
   uk: "Приєднатися до сесії його компанії"
 "Invite to my company":
@@ -455,6 +519,7 @@ _version: 2
   fr: "Inviter dans mon entreprise"
   nl: "Uitnodigen in mijn bedrijf"
   pl: "Zaproś do mojej firmy"
+  es: "Invitar a mi empresa"
   ru: "Пригласить в мою компанию"
   uk: "Запросити до моєї компанії"
 "Remove?":
@@ -462,6 +527,7 @@ _version: 2
   fr: "Retirer ?"
   nl: "Verwijderen?"
   pl: "Usunąć?"
+  es: "¿Quitar?"
   ru: "Удалить?"
   uk: "Видалити?"
 "Block?":
@@ -469,6 +535,7 @@ _version: 2
   fr: "Bloquer ?"
   nl: "Blokkeren?"
   pl: "Zablokować?"
+  es: "¿Bloquear?"
   ru: "Заблокировать?"
   uk: "Заблокувати?"
 "Sign in to add friends, see who is online and invite them to your company.":
@@ -476,6 +543,7 @@ _version: 2
   fr: "Connectez-vous pour ajouter des amis, voir qui est en ligne et les inviter dans votre entreprise."
   nl: "Log in om vrienden toe te voegen, te zien wie online is en ze uit te nodigen in je bedrijf."
   pl: "Zaloguj się, aby dodawać znajomych, widzieć, kto jest online, i zapraszać ich do swojej firmy."
+  es: "Inicia sesión para añadir amigos, ver quién está en línea e invitarlos a tu empresa."
   ru: "Войдите, чтобы добавлять друзей, видеть, кто в сети, и приглашать их в свою компанию."
   uk: "Увійдіть, щоб додавати друзів, бачити, хто в мережі, і запрошувати їх до своєї компанії."
 "Add a friend":
@@ -483,6 +551,7 @@ _version: 2
   fr: "Ajouter un ami"
   nl: "Vriend toevoegen"
   pl: "Dodaj znajomego"
+  es: "Añadir un amigo"
   ru: "Добавить друга"
   uk: "Додати друга"
 "Your code: %{code}":
@@ -490,6 +559,7 @@ _version: 2
   fr: "Votre code : %{code}"
   nl: "Jouw code: %{code}"
   pl: "Twój kod: %{code}"
+  es: "Tu código: %{code}"
   ru: "Ваш код: %{code}"
   uk: "Ваш код: %{code}"
 "Their friend code":
@@ -497,6 +567,7 @@ _version: 2
   fr: "Son code ami"
   nl: "Hun vriendcode"
   pl: "Kod znajomego tej osoby"
+  es: "Su código de amigo"
   ru: "Код друга"
   uk: "Код друга"
 "Friend requests":
@@ -504,6 +575,7 @@ _version: 2
   fr: "Demandes d'ami"
   nl: "Vriendschapsverzoeken"
   pl: "Zaproszenia do znajomych"
+  es: "Solicitudes de amistad"
   ru: "Запросы в друзья"
   uk: "Запити в друзі"
 "wants to be your friend":
@@ -511,6 +583,7 @@ _version: 2
   fr: "veut être votre ami"
   nl: "wil je vriend zijn"
   pl: "chce być twoim znajomym"
+  es: "quiere ser tu amigo"
   ru: "хочет добавить вас в друзья"
   uk: "хоче додати вас у друзі"
 "Friends":
@@ -518,6 +591,7 @@ _version: 2
   fr: "Amis"
   nl: "Vrienden"
   pl: "Znajomi"
+  es: "Amigos"
   ru: "Друзья"
   uk: "Друзі"
 "No friends yet. Add one with their friend code.":
@@ -525,6 +599,7 @@ _version: 2
   fr: "Pas encore d'amis. Ajoutez-en un avec son code ami."
   nl: "Nog geen vrienden. Voeg er een toe met zijn vriendcode."
   pl: "Nie masz jeszcze znajomych. Dodaj kogoś jego kodem znajomego."
+  es: "Aún no tienes amigos. Añade uno con su código de amigo."
   ru: "Друзей пока нет. Добавьте друга по его коду."
   uk: "Друзів поки немає. Додайте друга за його кодом."
 "Share your company (Multiplayer) to invite friends to it.":
@@ -532,6 +607,7 @@ _version: 2
   fr: "Partagez votre entreprise (Multijoueur) pour y inviter des amis."
   nl: "Deel je bedrijf (Multiplayer) om er vrienden voor uit te nodigen."
   pl: "Udostępnij firmę (Gra wieloosobowa), aby zaprosić do niej znajomych."
+  es: "Comparte tu empresa (Multijugador) para invitar a amigos a ella."
   ru: "Откройте доступ к компании (Мультиплеер), чтобы пригласить в неё друзей."
   uk: "Відкрийте доступ до компанії (Мультиплеєр), щоб запросити до неї друзів."
 "Sent requests":
@@ -539,6 +615,7 @@ _version: 2
   fr: "Demandes envoyées"
   nl: "Verstuurde verzoeken"
   pl: "Wysłane zaproszenia"
+  es: "Solicitudes enviadas"
   ru: "Отправленные запросы"
   uk: "Надіслані запити"
 "waiting for an answer":
@@ -546,6 +623,7 @@ _version: 2
   fr: "en attente de réponse"
   nl: "wacht op antwoord"
   pl: "czeka na odpowiedź"
+  es: "esperando respuesta"
   ru: "ожидает ответа"
   uk: "чекає на відповідь"
 "Withdraw?":
@@ -553,6 +631,7 @@ _version: 2
   fr: "Retirer ?"
   nl: "Intrekken?"
   pl: "Wycofać?"
+  es: "¿Retirar?"
   ru: "Отозвать?"
   uk: "Відкликати?"
 "Omsi-Hub online":
@@ -560,6 +639,7 @@ _version: 2
   fr: "Omsi-Hub en ligne"
   nl: "Omsi-Hub online"
   pl: "Omsi-Hub online"
+  es: "Omsi-Hub en línea"
   ru: "Omsi-Hub онлайн"
   uk: "Omsi-Hub онлайн"
 "Signed in":
@@ -567,6 +647,7 @@ _version: 2
   fr: "Connecté"
   nl: "Ingelogd"
   pl: "Zalogowano"
+  es: "Sesión iniciada"
   ru: "Вход выполнен"
   uk: "Вхід виконано"
 "Playing without an account":
@@ -574,6 +655,7 @@ _version: 2
   fr: "Jeu sans compte"
   nl: "Spelen zonder account"
   pl: "Gra bez konta"
+  es: "Jugando sin cuenta"
   ru: "Игра без аккаунта"
   uk: "Гра без облікового запису"
 "Not signed in":
@@ -581,6 +663,7 @@ _version: 2
   fr: "Non connecté"
   nl: "Niet ingelogd"
   pl: "Nie zalogowano"
+  es: "Sin sesión iniciada"
   ru: "Вход не выполнен"
   uk: "Вхід не виконано"
 "Account":
@@ -588,6 +671,7 @@ _version: 2
   fr: "Compte"
   nl: "Account"
   pl: "Konto"
+  es: "Cuenta"
   ru: "Аккаунт"
   uk: "Обліковий запис"
 "Friends: offline":
@@ -595,6 +679,7 @@ _version: 2
   fr: "Amis : hors ligne"
   nl: "Vrienden: offline"
   pl: "Znajomi: offline"
+  es: "Amigos: sin conexión"
   ru: "Друзья: нет сети"
   uk: "Друзі: немає мережі"
 "Friends: %{n} online":
@@ -602,6 +687,7 @@ _version: 2
   fr: "Amis : %{n} en ligne"
   nl: "Vrienden: %{n} online"
   pl: "Znajomi: %{n} online"
+  es: "Amigos: %{n} en línea"
   ru: "Друзья: %{n} в сети"
   uk: "Друзі: %{n} у мережі"
 "Invite":
@@ -609,6 +695,7 @@ _version: 2
   fr: "Invitation"
   nl: "Uitnodiging"
   pl: "Zaproszenie"
+  es: "Invitar"
   ru: "Приглашение"
   uk: "Запрошення"
 "In a session":
@@ -616,6 +703,7 @@ _version: 2
   fr: "En session"
   nl: "In een sessie"
   pl: "W sesji"
+  es: "En una sesión"
   ru: "В сессии"
   uk: "У сесії"
 "Last seen just now":
@@ -623,6 +711,7 @@ _version: 2
   fr: "Vu à l'instant"
   nl: "Zojuist gezien"
   pl: "Widziany przed chwilą"
+  es: "Visto ahora mismo"
   ru: "Был только что"
   uk: "Був щойно"
 "Last seen a long time ago":
@@ -630,6 +719,7 @@ _version: 2
   fr: "Vu il y a longtemps"
   nl: "Lang geleden gezien"
   pl: "Widziany dawno temu"
+  es: "Visto hace mucho tiempo"
   ru: "Был давно"
   uk: "Був давно"
 "Last seen %{n} min ago":
@@ -637,6 +727,7 @@ _version: 2
   fr: "Vu il y a %{n} min"
   nl: "%{n} min geleden gezien"
   pl: "Widziany %{n} min temu"
+  es: "Visto hace %{n} min"
   ru: "Был %{n} мин назад"
   uk: "Був %{n} хв тому"
 "Last seen %{n} h ago":
@@ -644,6 +735,7 @@ _version: 2
   fr: "Vu il y a %{n} h"
   nl: "%{n} uur geleden gezien"
   pl: "Widziany %{n} godz. temu"
+  es: "Visto hace %{n} h"
   ru: "Был %{n} ч назад"
   uk: "Був %{n} год тому"
 "Last seen %{n} days ago":
@@ -651,6 +743,7 @@ _version: 2
   fr: "Vu il y a %{n} jours"
   nl: "%{n} dagen geleden gezien"
   pl: "Widziany %{n} dni temu"
+  es: "Visto hace %{n} días"
   ru: "Был %{n} дн. назад"
   uk: "Був %{n} дн. тому"
 "A friend":
@@ -658,6 +751,7 @@ _version: 2
   fr: "Un ami"
   nl: "Een vriend"
   pl: "Znajomy"
+  es: "Un amigo"
   ru: "Друг"
   uk: "Друг"
 "Signed in. Choose your display name.":
@@ -665,6 +759,7 @@ _version: 2
   fr: "Connecté. Choisissez votre nom affiché."
   nl: "Ingelogd. Kies je weergavenaam."
   pl: "Zalogowano. Wybierz nazwę wyświetlaną."
+  es: "Sesión iniciada. Elige tu nombre visible."
   ru: "Вход выполнен. Выберите отображаемое имя."
   uk: "Вхід виконано. Виберіть ім'я для показу."
 "Email address confirmed. Sign in now.":
@@ -672,6 +767,7 @@ _version: 2
   fr: "Adresse e-mail confirmée. Connectez-vous maintenant."
   nl: "E-mailadres bevestigd. Log nu in."
   pl: "Adres e-mail potwierdzony. Zaloguj się teraz."
+  es: "Dirección de correo electrónico confirmada. Inicia sesión ahora."
   ru: "Адрес почты подтверждён. Теперь войдите."
   uk: "Адресу пошти підтверджено. Тепер увійдіть."
 "Password changed. You are signed in.":
@@ -679,6 +775,7 @@ _version: 2
   fr: "Mot de passe changé. Vous êtes connecté."
   nl: "Wachtwoord gewijzigd. Je bent ingelogd."
   pl: "Hasło zmienione. Jesteś zalogowany."
+  es: "Contraseña cambiada. Has iniciado sesión."
   ru: "Пароль изменён. Вы вошли."
   uk: "Пароль змінено. Ви увійшли."
 "Signed out. Omsi-Hub plays on locally.":
@@ -686,6 +783,7 @@ _version: 2
   fr: "Déconnecté. Omsi-Hub continue en local."
   nl: "Uitgelogd. Omsi-Hub speelt lokaal verder."
   pl: "Wylogowano. Omsi-Hub działa dalej lokalnie."
+  es: "Sesión cerrada. Omsi-Hub sigue funcionando en local."
   ru: "Вы вышли. Omsi-Hub продолжает работать локально."
   uk: "Ви вийшли. Omsi-Hub і далі працює локально."
 "Your account, your cloud saves and everything of it are deleted.":
@@ -693,6 +791,7 @@ _version: 2
   fr: "Votre compte, vos sauvegardes en ligne et tout ce qui s'y rattache sont supprimés."
   nl: "Je account, je cloudsaves en alles ervan zijn verwijderd."
   pl: "Twoje konto, zapisy w chmurze i wszystko, co z nim związane, zostały usunięte."
+  es: "Se eliminan tu cuenta, tus partidas guardadas en la nube y todo lo relacionado con ella."
   ru: "Ваш аккаунт, облачные сохранения и всё, что с ним связано, удалены."
   uk: "Ваш обліковий запис, хмарні збереження та все, що з ним пов'язано, видалено."
 "Display name saved.":
@@ -700,6 +799,7 @@ _version: 2
   fr: "Nom affiché enregistré."
   nl: "Weergavenaam opgeslagen."
   pl: "Zapisano nazwę wyświetlaną."
+  es: "Nombre visible guardado."
   ru: "Отображаемое имя сохранено."
   uk: "Ім'я для показу збережено."
 "Request declined.":
@@ -707,6 +807,7 @@ _version: 2
   fr: "Demande refusée."
   nl: "Verzoek afgewezen."
   pl: "Zaproszenie odrzucone."
+  es: "Solicitud rechazada."
   ru: "Запрос отклонён."
   uk: "Запит відхилено."
 "%{name} invites you to their company":
@@ -714,6 +815,7 @@ _version: 2
   fr: "%{name} vous invite dans son entreprise"
   nl: "%{name} nodigt je uit in hun bedrijf"
   pl: "%{name} zaprasza cię do swojej firmy"
+  es: "%{name} te invita a su empresa"
   ru: "%{name} приглашает вас в свою компанию"
   uk: "%{name} запрошує вас до своєї компанії"
 "Signed in as %{name}.":
@@ -721,6 +823,7 @@ _version: 2
   fr: "Connecté en tant que %{name}."
   nl: "Ingelogd als %{name}."
   pl: "Zalogowano jako %{name}."
+  es: "Sesión iniciada como %{name}."
   ru: "Вы вошли как %{name}."
   uk: "Ви увійшли як %{name}."
 "Invite sent to %{name}.":
@@ -728,6 +831,7 @@ _version: 2
   fr: "Invitation envoyée à %{name}."
   nl: "Uitnodiging verstuurd naar %{name}."
   pl: "Wysłano zaproszenie do %{name}."
+  es: "Invitación enviada a %{name}."
   ru: "Приглашение отправлено: %{name}."
   uk: "Запрошення надіслано: %{name}."
 "You and %{name} are friends now.":
@@ -735,6 +839,7 @@ _version: 2
   fr: "Vous et %{name} êtes amis maintenant."
   nl: "Jij en %{name} zijn nu vrienden."
   pl: "Ty i %{name} jesteście teraz znajomymi."
+  es: "%{name} y tú ya sois amigos."
   ru: "Теперь вы и %{name} друзья."
   uk: "Тепер ви і %{name} друзі."
 "%{name} is no longer your friend.":
@@ -742,6 +847,7 @@ _version: 2
   fr: "%{name} n'est plus votre ami."
   nl: "%{name} is niet langer je vriend."
   pl: "%{name} nie jest już twoim znajomym."
+  es: "%{name} ya no es tu amigo."
   ru: "%{name} больше не ваш друг."
   uk: "%{name} більше не ваш друг."
 "%{name} is blocked.":
@@ -749,6 +855,7 @@ _version: 2
   fr: "%{name} est bloqué."
   nl: "%{name} is geblokkeerd."
   pl: "%{name} jest zablokowany."
+  es: "%{name} está bloqueado."
   ru: "%{name} заблокирован."
   uk: "%{name} заблоковано."
 # (the new app's panel: the words the old launcher's own tables had, and the leaderboard switch)
@@ -757,6 +864,7 @@ _version: 2
   fr: "Ajouter"
   nl: "Toevoegen"
   pl: "Dodaj"
+  es: "Añadir"
   ru: "Добавить"
   uk: "Додати"
 "Back":
@@ -764,6 +872,7 @@ _version: 2
   fr: "Retour"
   nl: "Terug"
   pl: "Wstecz"
+  es: "Atrás"
   ru: "Назад"
   uk: "Назад"
 "Code":
@@ -771,6 +880,7 @@ _version: 2
   fr: "Code"
   nl: "Pincode"
   pl: "Kod"
+  es: "Código"
   ru: "Код"
   uk: "Код"
 "Copy":
@@ -778,6 +888,7 @@ _version: 2
   fr: "Copier"
   nl: "Kopiëren"
   pl: "Kopiuj"
+  es: "Copiar"
   ru: "Копировать"
   uk: "Копіювати"
 "Dismiss":
@@ -785,6 +896,7 @@ _version: 2
   fr: "Licencier"
   nl: "Ontslaan"
   pl: "Zwolnij"
+  es: "Despedir"
   ru: "Уволить"
   uk: "Звільнити"
 "Join":
@@ -792,6 +904,7 @@ _version: 2
   fr: "Rejoindre"
   nl: "Deelnemen"
   pl: "Dołącz"
+  es: "Unirse"
   ru: "Присоединиться"
   uk: "Приєднатися"
 "Remove":
@@ -799,6 +912,7 @@ _version: 2
   fr: "Retirer"
   nl: "Verwijderen"
   pl: "Usuń"
+  es: "Quitar"
   ru: "Убрать"
   uk: "Прибрати"
 "Save":
@@ -806,6 +920,7 @@ _version: 2
   fr: "Enregistrer"
   nl: "Opslaan"
   pl: "Zapisz"
+  es: "Guardar"
   ru: "Сохранить"
   uk: "Зберегти"
 "Withdraw":
@@ -813,6 +928,7 @@ _version: 2
   fr: "Retirer"
   nl: "Intrekken"
   pl: "Wycofaj"
+  es: "Retirar"
   ru: "Отозвать"
   uk: "Відкликати"
 "Leaderboard":
@@ -820,6 +936,7 @@ _version: 2
   fr: "Classement"
   nl: "Ranglijst"
   pl: "Ranking"
+  es: "Clasificación"
   ru: "Таблица лидеров"
   uk: "Таблиця лідерів"
 "Open the leaderboard":
@@ -827,6 +944,7 @@ _version: 2
   fr: "Ouvrir le classement"
   nl: "Ranglijst openen"
   pl: "Otwórz ranking"
+  es: "Abrir la clasificación"
   ru: "Открыть таблицу лидеров"
   uk: "Відкрити таблицю лідерів"
 "Show me on the public leaderboard":
@@ -834,6 +952,7 @@ _version: 2
   fr: "M'afficher dans le classement public"
   nl: "Toon mij op de openbare ranglijst"
   pl: "Pokazuj mnie w publicznym rankingu"
+  es: "Mostrarme en la clasificación pública"
   ru: "Показывать меня в общей таблице лидеров"
   uk: "Показувати мене в загальній таблиці лідерів"
 "You are off the leaderboard.":
@@ -841,6 +960,7 @@ _version: 2
   fr: "Vous n'apparaissez plus dans le classement."
   nl: "Je staat niet meer op de ranglijst."
   pl: "Nie jesteś już w rankingu."
+  es: "Ya no estás en la clasificación."
   ru: "Вас больше нет в таблице лидеров."
   uk: "Вас більше немає в таблиці лідерів."
 "You are on the leaderboard now.":
@@ -848,6 +968,7 @@ _version: 2
   fr: "Vous apparaissez maintenant dans le classement."
   nl: "Je staat nu op de ranglijst."
   pl: "Jesteś teraz w rankingu."
+  es: "Ahora estás en la clasificación."
   ru: "Теперь вы в таблице лидеров."
   uk: "Тепер ви в таблиці лідерів."
 "Your display name and your service record (points, level, duties, hours and kilometres driven) on omsihub.com. Off until you switch it on.":
@@ -855,6 +976,7 @@ _version: 2
   fr: "Votre nom affiché et vos états de service (points, niveau, services, heures et kilomètres parcourus) sur omsihub.com. Désactivé tant que vous ne l'activez pas."
   nl: "Je weergavenaam en je dienstoverzicht (punten, niveau, diensten, gereden uren en kilometers) op omsihub.com. Uit totdat je het aanzet."
   pl: "Twoja nazwa wyświetlana i przebieg służby (punkty, poziom, służby, przejechane godziny i kilometry) na omsihub.com. Wyłączone, dopóki tego nie włączysz."
+  es: "Tu nombre visible y tu historial de servicio (puntos, nivel, servicios, horas y kilómetros conducidos) en omsihub.com. Desactivado hasta que lo actives."
   ru: "Ваше отображаемое имя и послужной список (очки, уровень, смены, часы и километры за рулём) на omsihub.com. Выключено, пока вы его не включите."
   uk: "Ваше ім'я для показу та послужний список (очки, рівень, зміни, години та кілометри за кермом) на omsihub.com. Вимкнено, доки ви його не ввімкнете."
 "No browser window? Copy the address and open it in your browser yourself.":
@@ -862,6 +984,7 @@ _version: 2
   fr: "Aucune fenêtre de navigateur ? Copiez l'adresse et ouvrez-la vous-même dans votre navigateur."
   nl: "Geen browservenster? Kopieer het adres en open het zelf in je browser."
   pl: "Brak okna przeglądarki? Skopiuj adres i otwórz go samodzielnie w przeglądarce."
+  es: "¿No aparece la ventana del navegador? Copia la dirección y ábrela tú en tu navegador."
   ru: "Окно браузера не открылось? Скопируйте адрес и откройте его в браузере сами."
   uk: "Вікно браузера не відкрилося? Скопіюйте адресу та відкрийте її в браузері самі."
 # The profile photo (crates/hub-online/src/avatar.rs, ui/js/online/avatar.js), the same on the website.
@@ -870,6 +993,7 @@ _version: 2
   fr: "Cette image ne convient pas : choisissez une image JPEG, PNG ou WebP."
   nl: "Deze afbeelding kan niet: kies een JPEG-, PNG- of WebP-afbeelding."
   pl: "Tego obrazu nie można użyć: wybierz obraz JPEG, PNG lub WebP."
+  es: "Esa imagen no se puede usar: elige una imagen JPEG, PNG o WebP."
   ru: "Это изображение не подходит: выберите JPEG, PNG или WebP."
   uk: "Це зображення не підходить: виберіть JPEG, PNG або WebP."
 "That picture is too large: at most 1 MB.":
@@ -877,6 +1001,7 @@ _version: 2
   fr: "Cette image est trop grande : 1 Mo au plus."
   nl: "Deze afbeelding is te groot: hoogstens 1 MB."
   pl: "Ten obraz jest za duży: najwyżej 1 MB."
+  es: "Esa imagen es demasiado grande: como máximo 1 MB."
   ru: "Это изображение слишком большое: не более 1 МБ."
   uk: "Це зображення завелике: щонайбільше 1 МБ."
 "Profile photo saved.":
@@ -884,6 +1009,7 @@ _version: 2
   fr: "Photo de profil enregistrée."
   nl: "Profielfoto opgeslagen."
   pl: "Zapisano zdjęcie profilowe."
+  es: "Foto de perfil guardada."
   ru: "Фото профиля сохранено."
   uk: "Фото профілю збережено."
 "Profile photo removed.":
@@ -891,6 +1017,7 @@ _version: 2
   fr: "Photo de profil supprimée."
   nl: "Profielfoto verwijderd."
   pl: "Usunięto zdjęcie profilowe."
+  es: "Foto de perfil quitada."
   ru: "Фото профиля удалено."
   uk: "Фото профілю видалено."
 "Upload a photo":
@@ -898,6 +1025,7 @@ _version: 2
   fr: "Ajouter une photo"
   nl: "Foto uploaden"
   pl: "Prześlij zdjęcie"
+  es: "Subir una foto"
   ru: "Загрузить фото"
   uk: "Завантажити фото"
 "Change photo":
@@ -905,6 +1033,7 @@ _version: 2
   fr: "Changer de photo"
   nl: "Foto wijzigen"
   pl: "Zmień zdjęcie"
+  es: "Cambiar foto"
   ru: "Сменить фото"
   uk: "Змінити фото"
 "Remove photo":
@@ -912,6 +1041,7 @@ _version: 2
   fr: "Supprimer la photo"
   nl: "Foto verwijderen"
   pl: "Usuń zdjęcie"
+  es: "Quitar foto"
   ru: "Удалить фото"
   uk: "Видалити фото"
 "Shown to your friends, on the leaderboard and on the website.":
@@ -919,5 +1049,6 @@ _version: 2
   fr: "Visible par vos amis, dans le classement et sur le site web."
   nl: "Te zien voor je vrienden, op het klassement en op de website."
   pl: "Widoczne dla znajomych, w rankingu i na stronie."
+  es: "Se muestra a tus amigos, en la clasificación y en la web."
   ru: "Видно друзьям, в таблице лидеров и на сайте."
   uk: "Видно друзям, у таблиці лідерів і на сайті."

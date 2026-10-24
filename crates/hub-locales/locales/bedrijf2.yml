@@ -8,6 +8,7 @@ _version: 2
   ru: "Её время"
   uk: "Її час"
   pl: "Jej czas"
+  es: "Su tiempo"
 "Its pages":
   nl: "Zijn pagina's"
   de: "Ihre Seiten"
@@ -15,6 +16,7 @@ _version: 2
   ru: "Её страницы"
   uk: "Її сторінки"
   pl: "Jej strony"
+  es: "Sus páginas"
 "Your own bus company":
   nl: "Je eigen busbedrijf"
   de: "Dein eigenes Busunternehmen"
@@ -22,6 +24,7 @@ _version: 2
   ru: "Ваша собственная автобусная компания"
   uk: "Ваша власна автобусна компанія"
   pl: "Twoja własna firma autobusowa"
+  es: "Tu propia empresa de autobuses"
 "Your own bus company, %{name}":
   nl: "Je eigen busbedrijf, %{name}"
   de: "Dein eigenes Busunternehmen, %{name}"
@@ -29,6 +32,7 @@ _version: 2
   ru: "Ваша собственная автобусная компания, %{name}"
   uk: "Ваша власна автобусна компанія, %{name}"
   pl: "Twoja własna firma autobusowa, %{name}"
+  es: "Tu propia empresa de autobuses, %{name}"
 "Here you run a transport company on one of your maps: buy buses, hire drivers, take on lines or make your own. It runs in a time of its own, and what you drive yourself counts for it.":
   nl: "Hier run je een vervoerbedrijf op een van je kaarten: koop bussen, neem chauffeurs aan, neem lijnen over of maak je eigen lijnen. Het loopt in een eigen tijd, en wat je zelf rijdt, telt ervoor mee."
   de: "Hier führst du ein Verkehrsunternehmen auf einer deiner Karten: Kaufe Busse, stelle Fahrer ein, übernimm Linien oder baue eigene. Es läuft in einer eigenen Zeit, und was du selbst fährst, zählt für das Unternehmen."
@@ -36,6 +40,7 @@ _version: 2
   ru: "Здесь вы управляете транспортной компанией на одной из своих карт: покупайте автобусы, нанимайте водителей, берите линии или создавайте свои. У неё своё время, и то, что вы проедете сами, засчитывается ей."
   uk: "Тут ви керуєте транспортною компанією на одній зі своїх карт: купуйте автобуси, наймайте водіїв, беріть лінії або створюйте свої. У неї свій час, і те, що ви проїдете самі, зараховується їй."
   pl: "Tu prowadzisz firmę przewozową na jednej ze swoich map: kupuj autobusy, zatrudniaj kierowców, przejmuj linie lub twórz własne. Działa we własnym czasie, a to, co sam przejedziesz, liczy się dla niej."
+  es: "Aquí diriges una empresa de transporte en uno de tus mapas: compra autobuses, contrata conductores, hazte cargo de líneas o crea las tuyas. Funciona con su propio tiempo, y lo que conduces tú mismo cuenta para ella."
 "Found it first":
   nl: "Eerst oprichten"
   de: "Erst gründen"
@@ -43,6 +48,7 @@ _version: 2
   ru: "Сначала основать"
   uk: "Спершу заснувати"
   pl: "Najpierw ją załóż"
+  es: "Primero, fúndala"
 "Give the company a name, its colours, its home map with a depot and how hard its economy is. Once it runs, this tour shows you round its pages.":
   nl: "Geef het bedrijf een naam, zijn kleuren, zijn thuiskaart met een depot en hoe zwaar zijn economie is. Zodra het draait, leidt deze rondleiding je langs zijn pagina's."
   de: "Gib dem Unternehmen einen Namen, seine Farben, seine Heimatkarte mit einem Betriebshof und wie schwer seine Wirtschaft ist. Sobald es läuft, führt dich diese Tour durch seine Seiten."
@@ -50,6 +56,7 @@ _version: 2
   ru: "Дайте компании название, цвета, родную карту с депо и сложность экономики. Как только она заработает, этот тур покажет её страницы."
   uk: "Дайте компанії назву, кольори, рідну карту з депо та складність економіки. Щойно вона запрацює, цей тур покаже її сторінки."
   pl: "Nadaj firmie nazwę, kolory, mapę macierzystą z zajezdnią i poziom trudności gospodarki. Gdy ruszy, ta wycieczka oprowadzi cię po jej stronach."
+  es: "Dale a la empresa un nombre, sus colores, su mapa de origen con una cochera y la dificultad de su economía. Cuando esté en marcha, esta visita guiada te enseñará sus páginas."
 "The company's own clock":
   nl: "De eigen klok van het bedrijf"
   de: "Die eigene Uhr des Unternehmens"
@@ -57,6 +64,7 @@ _version: 2
   ru: "Собственные часы компании"
   uk: "Власний годинник компанії"
   pl: "Własny zegar firmy"
+  es: "El reloj propio de la empresa"
 "The company runs in a time of its own: let it run here, or jump on to the morning, to tomorrow or by days. At midnight the day is closed: the tours are run and the money is booked.":
   nl: "Het bedrijf loopt in een eigen tijd: laat hem hier lopen, of spring door naar de ochtend, naar morgen of met dagen tegelijk. Om middernacht wordt de dag afgesloten: de omlopen worden gereden en het geld geboekt."
   de: "Das Unternehmen läuft in einer eigenen Zeit: Lass sie hier laufen oder spring zum Morgen, zu morgen oder um Tage weiter. Um Mitternacht wird der Tag abgeschlossen: Die Umläufe werden gefahren und das Geld gebucht."
@@ -64,6 +72,7 @@ _version: 2
   ru: "У компании своё время: пусть оно идёт здесь, или перескочите к утру, на завтра или на несколько дней. В полночь день закрывается: выходы выполняются, деньги учитываются."
   uk: "У компанії свій час: нехай він іде тут, або перескочіть до ранку, на завтра чи на кілька днів. Опівночі день закривається: обороти виконуються, гроші обліковуються."
   pl: "Firma działa we własnym czasie: puść go tutaj albo przeskocz do rana, do jutra lub o dni. O północy dzień jest zamykany: brygady są realizowane, a pieniądze księgowane."
+  es: "La empresa funciona con su propio tiempo: déjalo correr aquí o salta a la mañana, a mañana o varios días. A medianoche se cierra el día: se hacen los recorridos y se contabiliza el dinero."
 "Everything in tabs":
   nl: "Alles in tabbladen"
   de: "Alles in Registern"
@@ -71,6 +80,7 @@ _version: 2
   ru: "Всё во вкладках"
   uk: "Усе у вкладках"
   pl: "Wszystko w kartach"
+  es: "Todo en pestañas"
 "Each part of the company has a page here: the buses, the staff, the lines, the money, the planning and more.":
   nl: "Elk deel van het bedrijf heeft hier een pagina: de bussen, het personeel, de lijnen, het geld, de planning en meer."
   de: "Jeder Teil des Unternehmens hat hier eine Seite: die Busse, das Personal, die Linien, das Geld, die Planung und mehr."
@@ -78,6 +88,7 @@ _version: 2
   ru: "У каждой части компании здесь своя страница: автобусы, персонал, линии, деньги, планирование и многое другое."
   uk: "Кожна частина компанії має тут свою сторінку: автобуси, персонал, лінії, гроші, планування та інше."
   pl: "Każda część firmy ma tu swoją stronę: autobusy, personel, linie, pieniądze, planowanie i więcej."
+  es: "Cada parte de la empresa tiene aquí su página: los autobuses, el personal, las líneas, el dinero, la planificación y más."
 "The figures":
   nl: "De cijfers"
   de: "Die Zahlen"
@@ -85,6 +96,7 @@ _version: 2
   ru: "Показатели"
   uk: "Показники"
   pl: "Liczby"
+  es: "Las cifras"
 "The cash, this month's result, the fleet, the staff, punctuality and reputation at a glance.":
   nl: "De kas, het resultaat van deze maand, de vloot, het personeel, de stiptheid en de reputatie in één oogopslag."
   de: "Die Kasse, das Ergebnis dieses Monats, die Flotte, das Personal, Pünktlichkeit und Ruf auf einen Blick."
@@ -92,6 +104,7 @@ _version: 2
   ru: "Касса, результат месяца, парк, персонал, пунктуальность и репутация с первого взгляда."
   uk: "Каса, результат місяця, парк, персонал, пунктуальність і репутація з першого погляду."
   pl: "Kasa, wynik miesiąca, flota, personel, punktualność i reputacja w jednym spojrzeniu."
+  es: "La caja, el resultado de este mes, la flota, el personal, la puntualidad y la reputación de un vistazo."
 "What wants your attention":
   nl: "Wat je aandacht vraagt"
   de: "Was deine Aufmerksamkeit braucht"
@@ -99,6 +112,7 @@ _version: 2
   ru: "Что требует внимания"
   uk: "Що потребує уваги"
   pl: "Co wymaga uwagi"
+  es: "Lo que requiere tu atención"
 "Today's tours and how many are covered, your own next duty, and what needs doing. A click takes you to the page that helps.":
   nl: "De omlopen van vandaag en hoeveel er gedekt zijn, je eigen volgende dienst en wat er moet gebeuren. Een klik brengt je naar de pagina die helpt."
   de: "Die heutigen Umläufe und wie viele gedeckt sind, dein nächster eigener Dienst und was zu tun ist. Ein Klick bringt dich zur Seite, die hilft."
@@ -106,6 +120,7 @@ _version: 2
   ru: "Сегодняшние выходы и сколько из них обеспечено, ваша следующая смена и что нужно сделать. Щелчок ведёт на страницу, которая поможет."
   uk: "Сьогоднішні обороти і скільки з них забезпечено, ваш наступний наряд і що треба зробити. Клік веде на сторінку, яка допоможе."
   pl: "Dzisiejsze brygady i ile z nich jest obsadzonych, twoja następna służba i co trzeba zrobić. Kliknięcie prowadzi do strony, która pomoże."
+  es: "Los recorridos de hoy y cuántos están cubiertos, tu próximo servicio y lo que hay que hacer. Un clic te lleva a la página que ayuda."
 "Buses and the dealer":
   nl: "Bussen en de dealer"
   de: "Busse und der Händler"
@@ -113,6 +128,7 @@ _version: 2
   ru: "Автобусы и дилер"
   uk: "Автобуси та дилер"
   pl: "Autobusy i dealer"
+  es: "Autobuses y el concesionario"
 "Your buses with their condition and their livery. At the dealer you buy new or used ones, haggle, lease or rent, and sign the contract.":
   nl: "Je bussen met hun staat en hun lak. Bij de dealer koop je nieuwe of gebruikte, onderhandel je, lease of huur je, en teken je het contract."
   de: "Deine Busse mit ihrem Zustand und ihrer Lackierung. Beim Händler kaufst du neue oder gebrauchte, verhandelst, least oder mietest und unterschreibst den Vertrag."
@@ -120,6 +136,7 @@ _version: 2
   ru: "Ваши автобусы с их состоянием и ливреей. У дилера вы покупаете новые или подержанные, торгуетесь, берёте в лизинг или аренду и подписываете договор."
   uk: "Ваші автобуси з їхнім станом і лівреєю. У дилера ви купуєте нові чи вживані, торгуєтеся, берете в лізинг чи оренду й підписуєте договір."
   pl: "Twoje autobusy z ich stanem i malowaniem. U dealera kupujesz nowe lub używane, negocjujesz, leasingujesz lub wynajmujesz i podpisujesz umowę."
+  es: "Tus autobuses con su estado y su librea. En el concesionario compras nuevos o de ocasión, regateas, haces leasing o alquilas, y firmas el contrato."
 "Drivers and the others":
   nl: "Chauffeurs en de anderen"
   de: "Fahrer und die anderen"
@@ -127,6 +144,7 @@ _version: 2
   ru: "Водители и остальные"
   uk: "Водії та інші"
   pl: "Kierowcy i pozostali"
+  es: "Conductores y los demás"
 "Hire drivers on the labour market and keep them content. Their wages, licences, holidays and days ill all count.":
   nl: "Neem chauffeurs aan op de arbeidsmarkt en houd ze tevreden. Hun loon, rijbewijzen, vakanties en ziektedagen tellen allemaal mee."
   de: "Stelle Fahrer auf dem Arbeitsmarkt ein und halte sie zufrieden. Ihr Lohn, ihre Führerscheine, ihr Urlaub und ihre Krankheitstage zählen alle."
@@ -134,6 +152,7 @@ _version: 2
   ru: "Нанимайте водителей на рынке труда и держите их довольными. Их зарплата, права, отпуска и больничные — всё имеет значение."
   uk: "Наймайте водіїв на ринку праці й тримайте їх задоволеними. Їхня зарплата, посвідчення, відпустки й лікарняні — усе має значення."
   pl: "Zatrudniaj kierowców na rynku pracy i dbaj o ich zadowolenie. Liczą się ich płace, prawa jazdy, urlopy i dni choroby."
+  es: "Contrata conductores en el mercado laboral y mantenlos contentos. Su sueldo, permisos, vacaciones y días de baja cuentan."
 "What the company runs":
   nl: "Wat het bedrijf rijdt"
   de: "Was das Unternehmen fährt"
@@ -141,6 +160,7 @@ _version: 2
   ru: "Что обслуживает компания"
   uk: "Що обслуговує компанія"
   pl: "Co obsługuje firma"
+  es: "Lo que explota la empresa"
 "Take on the map's lines or make your own in the line editor: its kind, its buses, its timetable. A line runs once it is planned.":
   nl: "Neem de lijnen van de kaart over of maak je eigen lijnen in de lijneditor: hun soort, hun bussen, hun dienstregeling. Een lijn rijdt zodra hij gepland is."
   de: "Übernimm die Linien der Karte oder baue eigene im Linieneditor: ihre Art, ihre Busse, ihren Fahrplan. Eine Linie fährt, sobald sie geplant ist."
@@ -148,6 +168,7 @@ _version: 2
   ru: "Берите линии карты или создавайте свои в редакторе линий: их вид, автобусы, расписание. Линия работает, как только она запланирована."
   uk: "Беріть лінії карти або створюйте свої в редакторі ліній: їхній вид, автобуси, розклад. Лінія працює, щойно її заплановано."
   pl: "Przejmij linie mapy lub stwórz własne w edytorze linii: ich rodzaj, autobusy, rozkład. Linia kursuje, gdy tylko zostanie zaplanowana."
+  es: "Hazte cargo de las líneas del mapa o crea las tuyas en el editor de líneas: su tipo, sus autobuses, su horario. Una línea circula en cuanto está planificada."
 "Who drives what":
   nl: "Wie rijdt wat"
   de: "Wer fährt was"
@@ -155,6 +176,7 @@ _version: 2
   ru: "Кто что ведёт"
   uk: "Хто що веде"
   pl: "Kto co prowadzi"
+  es: "Quién conduce qué"
 "The week as a chart: drag drivers and buses onto the tours and duties, or let the dispatcher fill the roster. Plan yourself as a driver too.":
   nl: "De week als grafiek: sleep chauffeurs en bussen op de omlopen en diensten, of laat de planner het rooster vullen. Plan jezelf ook in als chauffeur."
   de: "Die Woche als Diagramm: Ziehe Fahrer und Busse auf die Umläufe und Dienste oder lass den Disponenten den Dienstplan füllen. Plane dich auch selbst als Fahrer ein."
@@ -162,6 +184,7 @@ _version: 2
   ru: "Неделя в виде диаграммы: перетаскивайте водителей и автобусы на выходы и смены или поручите диспетчеру заполнить график. Назначьте и себя водителем."
   uk: "Тиждень у вигляді діаграми: перетягуйте водіїв і автобуси на обороти й наряди або доручіть диспетчеру заповнити графік. Призначте й себе водієм."
   pl: "Tydzień jako wykres: przeciągaj kierowców i autobusy na brygady i służby albo pozwól dyspozytorowi wypełnić grafik. Zaplanuj też siebie jako kierowcę."
+  es: "La semana como gráfico: arrastra conductores y autobuses a los recorridos y servicios, o deja que el planificador rellene el cuadrante. Planifícate también a ti mismo como conductor."
 "The money":
   nl: "Het geld"
   de: "Das Geld"
@@ -169,6 +192,7 @@ _version: 2
   ru: "Деньги"
   uk: "Гроші"
   pl: "Pieniądze"
+  es: "El dinero"
 "Every booking, month by month: fares, the authority's money, wages, fuel and repairs. Loans come from the bank here.":
   nl: "Elke boeking, maand na maand: ritprijzen, het geld van de opdrachtgever, lonen, brandstof en reparaties. Leningen komen hier van de bank."
   de: "Jede Buchung, Monat für Monat: Fahrgelder, das Geld des Aufgabenträgers, Löhne, Treibstoff und Reparaturen. Kredite kommen hier von der Bank."
@@ -176,6 +200,7 @@ _version: 2
   ru: "Каждая проводка, месяц за месяцем: выручка, деньги заказчика, зарплаты, топливо и ремонт. Кредиты здесь даёт банк."
   uk: "Кожна проводка, місяць за місяцем: виручка, гроші замовника, зарплати, пальне й ремонти. Кредити тут дає банк."
   pl: "Każda księgowa pozycja, miesiąc po miesiącu: bilety, pieniądze organizatora, płace, paliwo i naprawy. Kredyty daje tu bank."
+  es: "Cada asiento, mes a mes: tarifas, el dinero de la autoridad de transporte, sueldos, combustible y reparaciones. Aquí el banco concede los préstamos."
 "Your duties and your progress":
   nl: "Je diensten en je voortgang"
   de: "Deine Dienste und dein Fortschritt"
@@ -183,6 +208,7 @@ _version: 2
   ru: "Ваши смены и ваш прогресс"
   uk: "Ваші наряди та ваш поступ"
   pl: "Twoje służby i postępy"
+  es: "Tus servicios y tu progreso"
 "My duties lists the duties planned for you, each a click from driving it. Here too: the company's level, the training courses and the rankings.":
   nl: "Mijn diensten toont de diensten die voor jou gepland zijn, elk een klik van het rijden. Ook hier: het niveau van het bedrijf, de cursussen en de ranglijsten."
   de: "Meine Dienste zeigt die für dich geplanten Dienste, jeder einen Klick vom Fahren entfernt. Auch hier: die Stufe des Unternehmens, die Schulungen und die Ranglisten."
@@ -190,6 +216,7 @@ _version: 2
   ru: "«Мои смены» показывает смены, запланированные для вас, — каждая в одном щелчке от поездки. Здесь же: уровень компании, курсы обучения и рейтинги."
   uk: "«Мої наряди» показує заплановані для вас наряди — кожен за один клік від поїздки. Тут же: рівень компанії, курси навчання й рейтинги."
   pl: "Moje służby pokazują zaplanowane dla ciebie służby, każda o kliknięcie od jazdy. Tu też: poziom firmy, szkolenia i rankingi."
+  es: "Mis servicios muestra los servicios planificados para ti, cada uno a un clic de conducirlo. También aquí: el nivel de la empresa, los cursos de formación y las clasificaciones."
 "Off to work":
   nl: "Aan het werk"
   de: "An die Arbeit"
@@ -197,6 +224,7 @@ _version: 2
   ru: "За работу"
   uk: "До роботи"
   pl: "Do pracy"
+  es: "A trabajar"
 "This question mark shows the tour again. Good luck with your company!":
   nl: "Dit vraagteken toont de rondleiding opnieuw. Veel succes met je bedrijf!"
   de: "Dieses Fragezeichen zeigt die Tour noch einmal. Viel Erfolg mit deinem Unternehmen!"
@@ -204,6 +232,7 @@ _version: 2
   ru: "Этот вопросительный знак снова покажет тур. Удачи вашей компании!"
   uk: "Цей знак питання знову покаже тур. Успіхів вашій компанії!"
   pl: "Ten znak zapytania pokaże wycieczkę ponownie. Powodzenia z firmą!"
+  es: "Este signo de interrogación vuelve a mostrar la visita guiada. ¡Mucha suerte con tu empresa!"
 "A tour of the bus company":
   nl: "Een rondleiding door het busbedrijf"
   de: "Eine Tour durch das Busunternehmen"
@@ -211,6 +240,7 @@ _version: 2
   ru: "Тур по автобусной компании"
   uk: "Тур автобусною компанією"
   pl: "Wycieczka po firmie autobusowej"
+  es: "Visita guiada por la empresa de autobuses"
 "Liveries and painting":
   nl: "Lakken en spuitwerk"
   de: "Lackierungen und Lackierarbeiten"
@@ -218,6 +248,7 @@ _version: 2
   ru: "Ливреи и покраска"
   uk: "Лівреї та фарбування"
   pl: "Malowania i lakierowanie"
+  es: "Libreas y pintura"
 "our livery":
   nl: "onze lak"
   de: "unsere Lackierung"
@@ -225,6 +256,7 @@ _version: 2
   ru: "наша ливрея"
   uk: "наша ліврея"
   pl: "nasze malowanie"
+  es: "nuestra librea"
 "Design a livery (%{amount})":
   nl: "Lak ontwerpen (%{amount})"
   de: "Lackierung entwerfen (%{amount})"
@@ -232,6 +264,7 @@ _version: 2
   ru: "Создать ливрею (%{amount})"
   uk: "Створити ліврею (%{amount})"
   pl: "Zaprojektuj malowanie (%{amount})"
+  es: "Diseñar una librea (%{amount})"
 "Paint the company's own livery for this bus in the livery studio: its design is paid when it is saved, a bus's painting when the bus is painted.":
   nl: "Ontwerp de eigen lak van het bedrijf voor deze bus in de lakstudio: het ontwerp wordt betaald als het wordt opgeslagen, het spuiten van een bus als de bus wordt gespoten."
   de: "Entwirf die eigene Lackierung des Unternehmens für diesen Bus im Lackierstudio: Der Entwurf wird beim Speichern bezahlt, das Lackieren eines Busses, wenn er lackiert wird."
@@ -239,6 +272,7 @@ _version: 2
   ru: "Нарисуйте фирменную ливрею компании для этого автобуса в студии ливрей: дизайн оплачивается при сохранении, покраска автобуса — когда его красят."
   uk: "Намалюйте фірмову ліврею компанії для цього автобуса в студії лівреї: дизайн оплачується під час збереження, фарбування автобуса — коли його фарбують."
   pl: "Zaprojektuj własne malowanie firmy dla tego autobusu w studiu malowań: projekt jest płatny przy zapisie, lakierowanie autobusu przy lakierowaniu."
+  es: "Pinta la librea propia de la empresa para este autobús en el estudio de libreas: su diseño se paga al guardarlo, la pintura de un autobús cuando se pinta."
 "Bus %{n} is painted in '%{name}' in the workshop (%{amount}).":
   nl: "Bus %{n} wordt in de werkplaats in '%{name}' gespoten (%{amount})."
   de: "Bus %{n} wird in der Werkstatt in „%{name}“ lackiert (%{amount})."
@@ -246,6 +280,7 @@ _version: 2
   ru: "Автобус %{n} красят в «%{name}» в мастерской (%{amount})."
   uk: "Автобус %{n} фарбують у «%{name}» в майстерні (%{amount})."
   pl: "Autobus %{n} jest lakierowany na „%{name}” w warsztacie (%{amount})."
+  es: "El autobús %{n} se pinta con «%{name}» en el taller (%{amount})."
 "%{company} has %{cash}: not enough for the livery (%{amount}). A loan on the company's Finances page helps.":
   nl: "%{company} heeft %{cash}: niet genoeg voor de lak (%{amount}). Een lening op de pagina Financiën van het bedrijf helpt."
   de: "%{company} hat %{cash}: nicht genug für die Lackierung (%{amount}). Ein Kredit auf der Finanzseite des Unternehmens hilft."
@@ -253,6 +288,7 @@ _version: 2
   ru: "У «%{company}» %{cash}: не хватает на ливрею (%{amount}). Поможет кредит на странице финансов компании."
   uk: "У «%{company}» %{cash}: не вистачає на ліврею (%{amount}). Допоможе кредит на сторінці фінансів компанії."
   pl: "%{company} ma %{cash}: za mało na malowanie (%{amount}). Pomoże kredyt na stronie finansów firmy."
+  es: "%{company} tiene %{cash}: no basta para la librea (%{amount}). Un préstamo en la página Finanzas de la empresa ayuda."
 "'%{name}' is the company's livery: %{amount} for its design.":
   nl: "'%{name}' is de lak van het bedrijf: %{amount} voor het ontwerp."
   de: "„%{name}“ ist die Lackierung des Unternehmens: %{amount} für den Entwurf."
@@ -260,6 +296,7 @@ _version: 2
   ru: "«%{name}» — ливрея компании: %{amount} за дизайн."
   uk: "«%{name}» — ліврея компанії: %{amount} за дизайн."
   pl: "„%{name}” to malowanie firmy: %{amount} za projekt."
+  es: "«%{name}» es la librea de la empresa: %{amount} por su diseño."
 "Bus %{n} is painted in it in the workshop.":
   nl: "Bus %{n} wordt er in de werkplaats in gespoten."
   de: "Bus %{n} wird in der Werkstatt damit lackiert."
@@ -267,6 +304,7 @@ _version: 2
   ru: "Автобус %{n} красят в неё в мастерской."
   uk: "Автобус %{n} фарбують у неї в майстерні."
   pl: "Autobus %{n} jest w nim lakierowany w warsztacie."
+  es: "El autobús %{n} se pinta con ella en el taller."
 "Save · %{amount}":
   nl: "Opslaan · %{amount}"
   de: "Speichern · %{amount}"
@@ -274,6 +312,7 @@ _version: 2
   ru: "Сохранить · %{amount}"
   uk: "Зберегти · %{amount}"
   pl: "Zapisz · %{amount}"
+  es: "Guardar · %{amount}"
 "For %{company}: the design and the painting cost %{amount}; it has %{cash}.":
   nl: "Voor %{company}: ontwerp en spuitwerk kosten %{amount}; het heeft %{cash}."
   de: "Für %{company}: Entwurf und Lackierung kosten %{amount}; es hat %{cash}."
@@ -281,6 +320,7 @@ _version: 2
   ru: "Для «%{company}»: дизайн и покраска стоят %{amount}; у неё %{cash}."
   uk: "Для «%{company}»: дизайн і фарбування коштують %{amount}; у неї %{cash}."
   pl: "Dla %{company}: projekt i lakierowanie kosztują %{amount}; ma %{cash}."
+  es: "Para %{company}: el diseño y la pintura cuestan %{amount}; tiene %{cash}."
 "The livery needs a name.":
   nl: "De lak heeft een naam nodig."
   de: "Die Lackierung braucht einen Namen."
@@ -288,6 +328,7 @@ _version: 2
   ru: "Ливрее нужно название."
   uk: "Лівреї потрібна назва."
   pl: "Malowanie potrzebuje nazwy."
+  es: "La librea necesita un nombre."
 "The company has no such livery.":
   nl: "Het bedrijf heeft zo'n lak niet."
   de: "Das Unternehmen hat keine solche Lackierung."
@@ -295,6 +336,7 @@ _version: 2
   ru: "У компании нет такой ливреи."
   uk: "У компанії немає такої лівреї."
   pl: "Firma nie ma takiego malowania."
+  es: "La empresa no tiene esa librea."
 "This livery was made for another bus.":
   nl: "Deze lak is voor een andere bus gemaakt."
   de: "Diese Lackierung wurde für einen anderen Bus gemacht."
@@ -302,6 +344,7 @@ _version: 2
   ru: "Эта ливрея сделана для другого автобуса."
   uk: "Цю ліврею зроблено для іншого автобуса."
   pl: "To malowanie zrobiono dla innego autobusu."
+  es: "Esta librea se hizo para otro autobús."
 "The bus wears this livery already.":
   nl: "De bus heeft deze lak al."
   de: "Der Bus trägt diese Lackierung schon."
@@ -309,6 +352,7 @@ _version: 2
   ru: "Автобус уже в этой ливрее."
   uk: "Автобус уже в цій лівреї."
   pl: "Autobus ma już to malowanie."
+  es: "El autobús ya lleva esta librea."
 "Advertising":
   nl: "Reclame"
   de: "Werbung"
@@ -316,6 +360,7 @@ _version: 2
   ru: "Реклама"
   uk: "Реклама"
   pl: "Reklama"
+  es: "Publicidad"
 "Rear advert":
   nl: "Achterkantreclame"
   de: "Heckwerbung"
@@ -323,6 +368,7 @@ _version: 2
   ru: "Реклама сзади"
   uk: "Реклама ззаду"
   pl: "Reklama z tyłu"
+  es: "Publicidad trasera"
 "Side panels":
   nl: "Zijpanelen"
   de: "Seitenflächen"
@@ -330,6 +376,7 @@ _version: 2
   ru: "Боковые панели"
   uk: "Бокові панелі"
   pl: "Panele boczne"
+  es: "Paneles laterales"
 "Full wrap":
   nl: "Volledige beplakking"
   de: "Ganzgestaltung"
@@ -337,6 +384,7 @@ _version: 2
   ru: "Полная оклейка"
   uk: "Повне обклеювання"
   pl: "Pełne oklejenie"
+  es: "Rotulación integral"
 "Rear adverts":
   nl: "Achterkantreclame"
   de: "Heckwerbung"
@@ -344,6 +392,7 @@ _version: 2
   ru: "Реклама сзади"
   uk: "Реклама ззаду"
   pl: "Reklamy z tyłu"
+  es: "Publicidad trasera"
 "Side adverts":
   nl: "Zijreclame"
   de: "Seitenwerbung"
@@ -351,6 +400,7 @@ _version: 2
   ru: "Реклама на бортах"
   uk: "Реклама на бортах"
   pl: "Reklamy boczne"
+  es: "Publicidad lateral"
 "Full-wrap adverts":
   nl: "Volledig beplakte bussen"
   de: "Ganzgestaltungen"
@@ -358,6 +408,7 @@ _version: 2
   ru: "Полная оклейка автобусов"
   uk: "Повне обклеювання автобусів"
   pl: "Pełne oklejenia"
+  es: "Rotulaciones integrales"
 "Rear adverts open at a higher company level.":
   nl: "Achterkantreclame komt op een hoger bedrijfsniveau."
   de: "Heckwerbung gibt es auf einer höheren Unternehmensstufe."
@@ -365,6 +416,7 @@ _version: 2
   ru: "Реклама сзади открывается на более высоком уровне компании."
   uk: "Реклама ззаду відкривається на вищому рівні компанії."
   pl: "Reklamy z tyłu odblokowują się na wyższym poziomie firmy."
+  es: "La publicidad trasera se desbloquea en un nivel de empresa más alto."
 "Side adverts open at a higher company level.":
   nl: "Zijreclame komt op een hoger bedrijfsniveau."
   de: "Seitenwerbung gibt es auf einer höheren Unternehmensstufe."
@@ -372,6 +424,7 @@ _version: 2
   ru: "Реклама на бортах открывается на более высоком уровне компании."
   uk: "Реклама на бортах відкривається на вищому рівні компанії."
   pl: "Reklamy boczne odblokowują się na wyższym poziomie firmy."
+  es: "La publicidad lateral se desbloquea en un nivel de empresa más alto."
 "Full wraps open at a higher company level.":
   nl: "Volledige beplakking komt op een hoger bedrijfsniveau."
   de: "Ganzgestaltungen gibt es auf einer höheren Unternehmensstufe."
@@ -379,6 +432,7 @@ _version: 2
   ru: "Полная оклейка открывается на более высоком уровне компании."
   uk: "Повне обклеювання відкривається на вищому рівні компанії."
   pl: "Pełne oklejenia odblokowują się na wyższym poziomie firmy."
+  es: "Las rotulaciones integrales se desbloquean en un nivel de empresa más alto."
 "The company has too few buses without an advert for this contract.":
   nl: "Het bedrijf heeft te weinig bussen zonder reclame voor dit contract."
   de: "Das Unternehmen hat zu wenige Busse ohne Werbung für diesen Vertrag."
@@ -386,6 +440,7 @@ _version: 2
   ru: "У компании слишком мало автобусов без рекламы для этого договора."
   uk: "У компанії замало автобусів без реклами для цього договору."
   pl: "Firma ma za mało autobusów bez reklamy do tej umowy."
+  es: "La empresa tiene demasiados pocos autobuses sin publicidad para este contrato."
 "This offer is signed already.":
   nl: "Dit aanbod is al getekend."
   de: "Dieses Angebot ist schon unterschrieben."
@@ -393,6 +448,7 @@ _version: 2
   ru: "Это предложение уже подписано."
   uk: "Цю пропозицію вже підписано."
   pl: "Ta oferta jest już podpisana."
+  es: "Esta oferta ya está firmada."
 "There is no such contract.":
   nl: "Zo'n contract bestaat niet."
   de: "Einen solchen Vertrag gibt es nicht."
@@ -400,6 +456,7 @@ _version: 2
   ru: "Такого договора нет."
   uk: "Такого договору немає."
   pl: "Nie ma takiej umowy."
+  es: "Ese contrato no existe."
 "Brewery":
   nl: "Brouwerij"
   de: "Brauerei"
@@ -407,6 +464,7 @@ _version: 2
   ru: "Пивоварня"
   uk: "Пивоварня"
   pl: "Browar"
+  es: "Cervecera"
 "Car dealer":
   nl: "Autodealer"
   de: "Autohaus"
@@ -414,6 +472,7 @@ _version: 2
   ru: "Автосалон"
   uk: "Автосалон"
   pl: "Salon samochodowy"
+  es: "Concesionario de coches"
 "Furniture store":
   nl: "Meubelzaak"
   de: "Möbelhaus"
@@ -421,6 +480,7 @@ _version: 2
   ru: "Мебельный магазин"
   uk: "Меблевий магазин"
   pl: "Sklep meblowy"
+  es: "Tienda de muebles"
 "Bakery":
   nl: "Bakkerij"
   de: "Bäckerei"
@@ -428,6 +488,7 @@ _version: 2
   ru: "Пекарня"
   uk: "Пекарня"
   pl: "Piekarnia"
+  es: "Panadería"
 "Radio station":
   nl: "Radiozender"
   de: "Radiosender"
@@ -435,6 +496,7 @@ _version: 2
   ru: "Радиостанция"
   uk: "Радіостанція"
   pl: "Stacja radiowa"
+  es: "Emisora de radio"
 "Dental practice":
   nl: "Tandartspraktijk"
   de: "Zahnarztpraxis"
@@ -442,6 +504,7 @@ _version: 2
   ru: "Стоматология"
   uk: "Стоматологія"
   pl: "Gabinet stomatologiczny"
+  es: "Clínica dental"
 "Gym":
   nl: "Sportschool"
   de: "Fitnessstudio"
@@ -449,6 +512,7 @@ _version: 2
   ru: "Фитнес-клуб"
   uk: "Фітнес-клуб"
   pl: "Siłownia"
+  es: "Gimnasio"
 "Cinema":
   nl: "Bioscoop"
   de: "Kino"
@@ -456,6 +520,7 @@ _version: 2
   ru: "Кинотеатр"
   uk: "Кінотеатр"
   pl: "Kino"
+  es: "Cine"
 "Electronics store":
   nl: "Elektronicazaak"
   de: "Elektrofachmarkt"
@@ -463,6 +528,7 @@ _version: 2
   ru: "Магазин электроники"
   uk: "Магазин електроніки"
   pl: "Sklep z elektroniką"
+  es: "Tienda de electrónica"
 "Restaurant":
   nl: "Restaurant"
   de: "Restaurant"
@@ -470,6 +536,7 @@ _version: 2
   ru: "Ресторан"
   uk: "Ресторан"
   pl: "Restauracja"
+  es: "Restaurante"
 "Zoo":
   nl: "Dierentuin"
   de: "Tierpark"
@@ -477,6 +544,7 @@ _version: 2
   ru: "Зоопарк"
   uk: "Зоопарк"
   pl: "Zoo"
+  es: "Zoo"
 "Hotel":
   nl: "Hotel"
   de: "Hotel"
@@ -484,6 +552,7 @@ _version: 2
   ru: "Гостиница"
   uk: "Готель"
   pl: "Hotel"
+  es: "Hotel"
 "Optician":
   nl: "Opticien"
   de: "Optiker"
@@ -491,6 +560,7 @@ _version: 2
   ru: "Оптика"
   uk: "Оптика"
   pl: "Optyk"
+  es: "Óptica"
 "DIY store":
   nl: "Bouwmarkt"
   de: "Baumarkt"
@@ -498,6 +568,7 @@ _version: 2
   ru: "Строительный магазин"
   uk: "Будівельний магазин"
   pl: "Market budowlany"
+  es: "Tienda de bricolaje"
 "Festival":
   nl: "Festival"
   de: "Festival"
@@ -505,6 +576,7 @@ _version: 2
   ru: "Фестиваль"
   uk: "Фестиваль"
   pl: "Festiwal"
+  es: "Festival"
 "Driving school":
   nl: "Rijschool"
   de: "Fahrschule"
@@ -512,6 +584,7 @@ _version: 2
   ru: "Автошкола"
   uk: "Автошкола"
   pl: "Szkoła jazdy"
+  es: "Autoescuela"
 "Advertisers' offers this week":
   nl: "Aanbiedingen van adverteerders deze week"
   de: "Angebote der Werbekunden diese Woche"
@@ -519,6 +592,7 @@ _version: 2
   ru: "Предложения рекламодателей на этой неделе"
   uk: "Пропозиції рекламодавців цього тижня"
   pl: "Oferty reklamodawców w tym tygodniu"
+  es: "Ofertas de anunciantes esta semana"
 "%{n} of your buses carry no advert yet. Advertisers pay by the month, more for buses many people see.":
   nl: "%{n} van je bussen hebben nog geen reclame. Adverteerders betalen per maand, meer voor bussen die veel mensen zien."
   de: "%{n} deiner Busse tragen noch keine Werbung. Werbekunden zahlen monatlich, mehr für Busse, die viele Menschen sehen."
@@ -526,6 +600,7 @@ _version: 2
   ru: "Автобусов без рекламы: %{n}. Рекламодатели платят помесячно, больше — за автобусы, которые видят многие."
   uk: "Автобусів без реклами: %{n}. Рекламодавці платять щомісяця, більше — за автобуси, які бачать багато людей."
   pl: "Autobusy bez reklamy: %{n}. Reklamodawcy płacą miesięcznie, więcej za autobusy, które widzi wielu ludzi."
+  es: "%{n} de tus autobuses aún no llevan publicidad. Los anunciantes pagan al mes, más por los autobuses que ve mucha gente."
 "No more offers this week: new ones come on Monday.":
   nl: "Deze week geen aanbiedingen meer: maandag komen er nieuwe."
   de: "Diese Woche keine Angebote mehr: Am Montag kommen neue."
@@ -533,6 +608,7 @@ _version: 2
   ru: "На этой неделе предложений больше нет: новые придут в понедельник."
   uk: "Цього тижня пропозицій більше немає: нові прийдуть у понеділок."
   pl: "W tym tygodniu nie ma już ofert: nowe przyjdą w poniedziałek."
+  es: "No hay más ofertas esta semana: el lunes llegan nuevas."
 "%{kind} on %{n} buses for %{m} months":
   nl: "%{kind} op %{n} bussen voor %{m} maanden"
   de: "%{kind} auf %{n} Bussen für %{m} Monate"
@@ -540,6 +616,7 @@ _version: 2
   ru: "%{kind}: автобусов %{n}, месяцев %{m}"
   uk: "%{kind}: автобусів %{n}, місяців %{m}"
   pl: "%{kind}: autobusy %{n}, miesiące %{m}"
+  es: "%{kind} en %{n} autobuses durante %{m} meses"
 "%{amount} a month":
   nl: "%{amount} per maand"
   de: "%{amount} im Monat"
@@ -547,6 +624,7 @@ _version: 2
   ru: "%{amount} в месяц"
   uk: "%{amount} на місяць"
   pl: "%{amount} miesięcznie"
+  es: "%{amount} al mes"
 "%{amount} in all":
   nl: "%{amount} in totaal"
   de: "%{amount} insgesamt"
@@ -554,6 +632,7 @@ _version: 2
   ru: "всего %{amount}"
   uk: "усього %{amount}"
   pl: "łącznie %{amount}"
+  es: "%{amount} en total"
 "From level %{n}":
   nl: "Vanaf niveau %{n}"
   de: "Ab Stufe %{n}"
@@ -561,6 +640,7 @@ _version: 2
   ru: "С уровня %{n}"
   uk: "З рівня %{n}"
   pl: "Od poziomu %{n}"
+  es: "Desde el nivel %{n}"
 "To the contract":
   nl: "Naar het contract"
   de: "Zum Vertrag"
@@ -568,6 +648,7 @@ _version: 2
   ru: "К договору"
   uk: "До договору"
   pl: "Do umowy"
+  es: "Al contrato"
 "Advertising contracts":
   nl: "Reclamecontracten"
   de: "Werbeverträge"
@@ -575,6 +656,7 @@ _version: 2
   ru: "Рекламные договоры"
   uk: "Рекламні договори"
   pl: "Umowy reklamowe"
+  es: "Contratos de publicidad"
 "No advert on the buses yet. Sign an advertiser's offer: the money comes at every month's end, from the month after the signing.":
   nl: "Nog geen reclame op de bussen. Teken een aanbod van een adverteerder: het geld komt aan het eind van elke maand, vanaf de maand na de ondertekening."
   de: "Noch keine Werbung auf den Bussen. Unterschreibe ein Angebot eines Werbekunden: Das Geld kommt am Ende jedes Monats, ab dem Monat nach der Unterschrift."
@@ -582,6 +664,7 @@ _version: 2
   ru: "На автобусах пока нет рекламы. Подпишите предложение рекламодателя: деньги приходят в конце каждого месяца, начиная со следующего после подписания."
   uk: "На автобусах ще немає реклами. Підпишіть пропозицію рекламодавця: гроші надходять наприкінці кожного місяця, починаючи з наступного після підписання."
   pl: "Na autobusach nie ma jeszcze reklam. Podpisz ofertę reklamodawcy: pieniądze wpływają na koniec każdego miesiąca, od miesiąca po podpisaniu."
+  es: "Aún no hay publicidad en los autobuses. Firma la oferta de un anunciante: el dinero llega a final de cada mes, a partir del mes siguiente a la firma."
 "buses %{list}":
   nl: "bussen %{list}"
   de: "Busse %{list}"
@@ -589,6 +672,7 @@ _version: 2
   ru: "автобусы %{list}"
   uk: "автобуси %{list}"
   pl: "autobusy %{list}"
+  es: "autobuses %{list}"
 "%{amount} a month, until %{date}":
   nl: "%{amount} per maand, tot %{date}"
   de: "%{amount} im Monat, bis %{date}"
@@ -596,6 +680,7 @@ _version: 2
   ru: "%{amount} в месяц, до %{date}"
   uk: "%{amount} на місяць, до %{date}"
   pl: "%{amount} miesięcznie, do %{date}"
+  es: "%{amount} al mes, hasta el %{date}"
 "The contract":
   nl: "Het contract"
   de: "Der Vertrag"
@@ -603,6 +688,7 @@ _version: 2
   ru: "Договор"
   uk: "Договір"
   pl: "Umowa"
+  es: "El contrato"
 "Press again: %{amount}":
   nl: "Nogmaals: %{amount}"
   de: "Noch einmal: %{amount}"
@@ -610,6 +696,7 @@ _version: 2
   ru: "Ещё раз: %{amount}"
   uk: "Ще раз: %{amount}"
   pl: "Jeszcze raz: %{amount}"
+  es: "Pulsa otra vez: %{amount}"
 "End early (%{amount})":
   nl: "Vroegtijdig beëindigen (%{amount})"
   de: "Vorzeitig beenden (%{amount})"
@@ -617,6 +704,7 @@ _version: 2
   ru: "Расторгнуть (%{amount})"
   uk: "Розірвати (%{amount})"
   pl: "Zakończ wcześniej (%{amount})"
+  es: "Terminar antes (%{amount})"
 "Ending a contract early costs three months' fee (or what is left, if less); its buses are free for another advert.":
   nl: "Een contract vroegtijdig beëindigen kost drie maanden vergoeding (of wat er nog over is, als dat minder is); de bussen zijn dan vrij voor andere reclame."
   de: "Ein Vertrag, der vorzeitig beendet wird, kostet drei Monatsentgelte (oder was übrig ist, wenn weniger); seine Busse sind frei für andere Werbung."
@@ -624,6 +712,7 @@ _version: 2
   ru: "Досрочное расторжение стоит три месячных платы (или остаток, если меньше); автобусы освобождаются для другой рекламы."
   uk: "Дострокове розірвання коштує три місячні плати (або залишок, якщо менше); автобуси звільняються для іншої реклами."
   pl: "Wcześniejsze zakończenie umowy kosztuje trzy miesięczne opłaty (lub resztę, jeśli mniej); autobusy są wolne na inną reklamę."
+  es: "Terminar un contrato antes de tiempo cuesta tres meses de cuota (o lo que quede, si es menos); sus autobuses quedan libres para otra publicidad."
 "The advertising contract is ended: %{amount} paid to the advertiser.":
   nl: "Het reclamecontract is beëindigd: %{amount} betaald aan de adverteerder."
   de: "Der Werbevertrag ist beendet: %{amount} an den Werbekunden gezahlt."
@@ -631,6 +720,7 @@ _version: 2
   ru: "Рекламный договор расторгнут: рекламодателю выплачено %{amount}."
   uk: "Рекламний договір розірвано: рекламодавцю сплачено %{amount}."
   pl: "Umowa reklamowa zakończona: %{amount} zapłacono reklamodawcy."
+  es: "El contrato de publicidad ha terminado: %{amount} pagados al anunciante."
 "Advertising contract no. %{no}":
   nl: "Reclamecontract nr. %{no}"
   de: "Werbevertrag Nr. %{no}"
@@ -638,6 +728,7 @@ _version: 2
   ru: "Рекламный договор № %{no}"
   uk: "Рекламний договір № %{no}"
   pl: "Umowa reklamowa nr %{no}"
+  es: "Contrato de publicidad n.º %{no}"
 "Advertising contract":
   nl: "Reclamecontract"
   de: "Werbevertrag"
@@ -645,6 +736,7 @@ _version: 2
   ru: "Рекламный договор"
   uk: "Рекламний договір"
   pl: "Umowa reklamowa"
+  es: "Contrato de publicidad"
 "Advertiser":
   nl: "Adverteerder"
   de: "Werbekunde"
@@ -652,6 +744,7 @@ _version: 2
   ru: "Рекламодатель"
   uk: "Рекламодавець"
   pl: "Reklamodawca"
+  es: "Anunciante"
 "The advert":
   nl: "De reclame"
   de: "Die Werbung"
@@ -659,6 +752,7 @@ _version: 2
   ru: "Реклама"
   uk: "Реклама"
   pl: "Reklama"
+  es: "El anuncio"
 "Where":
   nl: "Waar"
   de: "Wo"
@@ -666,6 +760,7 @@ _version: 2
   ru: "Где"
   uk: "Де"
   pl: "Gdzie"
+  es: "Dónde"
 "From":
   nl: "Vanaf"
   de: "Ab"
@@ -673,6 +768,7 @@ _version: 2
   ru: "С"
   uk: "З"
   pl: "Od"
+  es: "Desde"
 "A bus a month":
   nl: "Per bus per maand"
   de: "Je Bus und Monat"
@@ -680,6 +776,7 @@ _version: 2
   ru: "За автобус в месяц"
   uk: "За автобус на місяць"
   pl: "Za autobus miesięcznie"
+  es: "Un autobús al mes"
 "A month in all":
   nl: "Per maand in totaal"
   de: "Im Monat insgesamt"
@@ -687,6 +784,7 @@ _version: 2
   ru: "В месяц всего"
   uk: "На місяць усього"
   pl: "Miesięcznie łącznie"
+  es: "Total al mes"
 "Over the term":
   nl: "Over de looptijd"
   de: "Über die Laufzeit"
@@ -694,6 +792,7 @@ _version: 2
   ru: "За весь срок"
   uk: "За весь строк"
   pl: "Przez cały okres"
+  es: "Durante el plazo"
 "Paid at every month's end, from the month after the signing. Ending it early costs three months' fee (%{amount}). The advertiser pays the printing and the foil.":
   nl: "Betaald aan het eind van elke maand, vanaf de maand na de ondertekening. Vroegtijdig beëindigen kost drie maanden vergoeding (%{amount}). De adverteerder betaalt het drukwerk en de folie."
   de: "Bezahlt am Ende jedes Monats, ab dem Monat nach der Unterschrift. Vorzeitig beenden kostet drei Monatsentgelte (%{amount}). Der Werbekunde zahlt Druck und Folie."
@@ -701,6 +800,7 @@ _version: 2
   ru: "Оплачивается в конце каждого месяца, начиная со следующего после подписания. Досрочное расторжение стоит три месячных платы (%{amount}). Печать и плёнку оплачивает рекламодатель."
   uk: "Оплачується наприкінці кожного місяця, починаючи з наступного після підписання. Дострокове розірвання коштує три місячні плати (%{amount}). Друк і плівку оплачує рекламодавець."
   pl: "Płatne na koniec każdego miesiąca, od miesiąca po podpisaniu. Wcześniejsze zakończenie kosztuje trzy miesięczne opłaty (%{amount}). Druk i folię opłaca reklamodawca."
+  es: "Se paga a final de cada mes, a partir del mes siguiente a la firma. Terminarlo antes de tiempo cuesta tres meses de cuota (%{amount}). El anunciante paga la impresión y el vinilo."
 "The buses that carry it":
   nl: "De bussen die hem dragen"
   de: "Die Busse, die sie tragen"
@@ -708,6 +808,7 @@ _version: 2
   ru: "Автобусы с рекламой"
   uk: "Автобуси з рекламою"
   pl: "Autobusy z reklamą"
+  es: "Los autobuses que lo llevan"
 "Sign the advertising contract":
   nl: "Reclamecontract tekenen"
   de: "Werbevertrag unterschreiben"
@@ -715,6 +816,7 @@ _version: 2
   ru: "Подписать рекламный договор"
   uk: "Підписати рекламний договір"
   pl: "Podpisz umowę reklamową"
+  es: "Firmar el contrato de publicidad"
 "Advertising contract %{no} is signed: %{amount} a month from next month.":
   nl: "Reclamecontract %{no} is getekend: %{amount} per maand vanaf volgende maand."
   de: "Werbevertrag %{no} ist unterschrieben: %{amount} im Monat ab nächstem Monat."
@@ -722,6 +824,7 @@ _version: 2
   ru: "Рекламный договор %{no} подписан: %{amount} в месяц со следующего месяца."
   uk: "Рекламний договір %{no} підписано: %{amount} на місяць з наступного місяця."
   pl: "Umowa reklamowa %{no} podpisana: %{amount} miesięcznie od przyszłego miesiąca."
+  es: "El contrato de publicidad %{no} está firmado: %{amount} al mes a partir del mes que viene."
 "Ad":
   nl: "Reclame"
   de: "Werbung"
@@ -729,6 +832,7 @@ _version: 2
   ru: "Реклама"
   uk: "Реклама"
   pl: "Reklama"
+  es: "Anuncio"
 "Advert":
   nl: "Reclame"
   de: "Werbung"
@@ -736,6 +840,7 @@ _version: 2
   ru: "Реклама"
   uk: "Реклама"
   pl: "Reklama"
+  es: "Anuncio"
 "none":
   nl: "geen"
   de: "keine"
@@ -743,6 +848,7 @@ _version: 2
   ru: "нет"
   uk: "немає"
   pl: "brak"
+  es: "ninguno"
 "D licence":
   nl: "Rijbewijs D"
   de: "Führerschein D"
@@ -750,6 +856,7 @@ _version: 2
   ru: "Права категории D"
   uk: "Посвідчення категорії D"
   pl: "Prawo jazdy kat. D"
+  es: "Permiso D"
 "Articulated licence":
   nl: "Bevoegdheid gelede bus"
   de: "Berechtigung Gelenkbus"
@@ -757,6 +864,7 @@ _version: 2
   ru: "Допуск к сочленённым автобусам"
   uk: "Допуск до зчленованих автобусів"
   pl: "Uprawnienie na przegubowce"
+  es: "Permiso de articulados"
 "Double-decker licence":
   nl: "Bevoegdheid dubbeldekker"
   de: "Berechtigung Doppeldecker"
@@ -764,6 +872,7 @@ _version: 2
   ru: "Допуск к двухэтажным автобусам"
   uk: "Допуск до двоповерхових автобусів"
   pl: "Uprawnienie na piętrusy"
+  es: "Permiso de dos pisos"
 "High-voltage instruction":
   nl: "Hoogspanningsinstructie"
   de: "Hochvolt-Unterweisung"
@@ -771,6 +880,7 @@ _version: 2
   ru: "Инструктаж по высокому напряжению"
   uk: "Інструктаж з високої напруги"
   pl: "Szkolenie wysokonapięciowe"
+  es: "Formación en alta tensión"
 "Type training":
   nl: "Typeopleiding"
   de: "Typschulung"
@@ -778,6 +888,7 @@ _version: 2
   ru: "Обучение на модель"
   uk: "Навчання на модель"
   pl: "Szkolenie typowe"
+  es: "Formación de modelo"
 "A D1 driver may drive every bus":
   nl: "Een D1-chauffeur mag elke bus rijden"
   de: "Ein D1-Fahrer darf jeden Bus fahren"
@@ -785,6 +896,7 @@ _version: 2
   ru: "Водитель с D1 сможет водить любой автобус"
   uk: "Водій з D1 зможе керувати будь-яким автобусом"
   pl: "Kierowca z D1 może prowadzić każdy autobus"
+  es: "Un conductor D1 puede conducir cualquier autobús"
 "May drive articulated buses":
   nl: "Mag gelede bussen rijden"
   de: "Darf Gelenkbusse fahren"
@@ -792,6 +904,7 @@ _version: 2
   ru: "Может водить сочленённые автобусы"
   uk: "Може керувати зчленованими автобусами"
   pl: "Może prowadzić przegubowce"
+  es: "Puede conducir autobuses articulados"
 "May drive double-deckers":
   nl: "Mag dubbeldekkers rijden"
   de: "Darf Doppeldecker fahren"
@@ -799,6 +912,7 @@ _version: 2
   ru: "Может водить двухэтажные автобусы"
   uk: "Може керувати двоповерховими автобусами"
   pl: "Może prowadzić piętrusy"
+  es: "Puede conducir autobuses de dos pisos"
 "May drive electric buses":
   nl: "Mag elektrische bussen rijden"
   de: "Darf Elektrobusse fahren"
@@ -806,6 +920,7 @@ _version: 2
   ru: "Может водить электробусы"
   uk: "Може керувати електробусами"
   pl: "Może prowadzić autobusy elektryczne"
+  es: "Puede conducir autobuses eléctricos"
 "May drive the buses of one model":
   nl: "Mag de bussen van één model rijden"
   de: "Darf die Busse eines Modells fahren"
@@ -813,6 +928,7 @@ _version: 2
   ru: "Может водить автобусы одной модели"
   uk: "Може керувати автобусами однієї моделі"
   pl: "Może prowadzić autobusy jednego modelu"
+  es: "Puede conducir los autobuses de un modelo"
 "High voltage (electric buses)":
   nl: "Hoogspanning (elektrische bussen)"
   de: "Hochvolt (Elektrobusse)"
@@ -820,6 +936,7 @@ _version: 2
   ru: "Высокое напряжение (электробусы)"
   uk: "Висока напруга (електробуси)"
   pl: "Wysokie napięcie (autobusy elektryczne)"
+  es: "Alta tensión (autobuses eléctricos)"
 "No licence for articulated buses":
   nl: "Geen bevoegdheid voor gelede bussen"
   de: "Keine Berechtigung für Gelenkbusse"
@@ -827,6 +944,7 @@ _version: 2
   ru: "Нет допуска к сочленённым автобусам"
   uk: "Немає допуску до зчленованих автобусів"
   pl: "Brak uprawnień na przegubowce"
+  es: "Sin permiso para autobuses articulados"
 "No licence for double-deckers":
   nl: "Geen bevoegdheid voor dubbeldekkers"
   de: "Keine Berechtigung für Doppeldecker"
@@ -834,6 +952,7 @@ _version: 2
   ru: "Нет допуска к двухэтажным автобусам"
   uk: "Немає допуску до двоповерхових автобусів"
   pl: "Brak uprawnień na piętrusy"
+  es: "Sin permiso para autobuses de dos pisos"
 "No high-voltage instruction for electric buses":
   nl: "Geen hoogspanningsinstructie voor elektrische bussen"
   de: "Keine Hochvolt-Unterweisung für Elektrobusse"
@@ -841,6 +960,7 @@ _version: 2
   ru: "Нет инструктажа по высокому напряжению для электробусов"
   uk: "Немає інструктажу з високої напруги для електробусів"
   pl: "Brak szkolenia wysokonapięciowego dla autobusów elektrycznych"
+  es: "Sin formación en alta tensión para autobuses eléctricos"
 "No licence for this kind of bus":
   nl: "Geen bevoegdheid voor dit soort bus"
   de: "Keine Berechtigung für diese Busart"
@@ -848,6 +968,7 @@ _version: 2
   ru: "Нет допуска к такому автобусу"
   uk: "Немає допуску до такого автобуса"
   pl: "Brak uprawnień na ten rodzaj autobusu"
+  es: "Sin permiso para este tipo de autobús"
 "No type training for this bus":
   nl: "Geen typeopleiding voor deze bus"
   de: "Keine Typschulung für diesen Bus"
@@ -855,6 +976,7 @@ _version: 2
   ru: "Нет обучения на эту модель"
   uk: "Немає навчання на цю модель"
   pl: "Brak szkolenia typowego na ten autobus"
+  es: "Sin formación de modelo para este autobús"
 "Which bus is the training for?":
   nl: "Voor welke bus is de opleiding?"
   de: "Für welchen Bus ist die Schulung?"
@@ -862,6 +984,7 @@ _version: 2
   ru: "Для какого автобуса обучение?"
   uk: "Для якого автобуса навчання?"
   pl: "Na który autobus jest szkolenie?"
+  es: "¿Para qué autobús es la formación?"
 "They need the D licence first.":
   nl: "Eerst is rijbewijs D nodig."
   de: "Zuerst braucht es den Führerschein D."
@@ -869,6 +992,7 @@ _version: 2
   ru: "Сначала нужны права категории D."
   uk: "Спочатку потрібне посвідчення категорії D."
   pl: "Najpierw potrzebne jest prawo jazdy kat. D."
+  es: "Primero necesitan el permiso D."
 "Driver introduction":
   nl: "Instructie voor chauffeurs"
   de: "Fahrereinweisung"
@@ -876,6 +1000,7 @@ _version: 2
   ru: "Инструктаж водителей"
   uk: "Інструктаж водіїв"
   pl: "Wdrożenie kierowców"
+  es: "Formación inicial del conductor"
 "No type training for the %{bus}":
   nl: "Geen typeopleiding voor de %{bus}"
   de: "Keine Typschulung für den %{bus}"
@@ -883,6 +1008,7 @@ _version: 2
   ru: "Нет обучения на %{bus}"
   uk: "Немає навчання на %{bus}"
   pl: "Brak szkolenia typowego na %{bus}"
+  es: "Sin formación de modelo para el %{bus}"
 "%{q} of %{m} drivers may drive it: train more on the Staff page.":
   nl: "%{q} van de %{m} chauffeurs mogen hem rijden: leid er meer op via Personeel."
   de: "%{q} von %{m} Fahrern dürfen ihn fahren: schule mehr auf der Seite Personal."
@@ -890,6 +1016,7 @@ _version: 2
   ru: "Водить его могут %{q} из %{m} водителей: обучите больше на странице «Персонал»."
   uk: "Керувати ним можуть %{q} з %{m} водіїв: навчіть більше на сторінці «Персонал»."
   pl: "Może go prowadzić %{q} z %{m} kierowców: przeszkol więcej na stronie Personel."
+  es: "%{q} de %{m} conductores pueden conducirlo: forma a más en la página Personal."
 "D: every bus":
   nl: "D: elke bus"
   de: "D: jeder Bus"
@@ -897,6 +1024,7 @@ _version: 2
   ru: "D: любой автобус"
   uk: "D: будь-який автобус"
   pl: "D: każdy autobus"
+  es: "D: cualquier autobús"
 "Licences & training":
   nl: "Rijbewijzen & opleiding"
   de: "Führerscheine & Schulung"
@@ -904,6 +1032,7 @@ _version: 2
   ru: "Права и обучение"
   uk: "Посвідчення й навчання"
   pl: "Uprawnienia i szkolenia"
+  es: "Permisos y formación"
 "A course begins today and the driver is away for its days. New drivers learn the fleet's models when they start; a model new to the company needs its type training first.":
   nl: "Een cursus begint vandaag en de chauffeur is er zo lang niet. Nieuwe chauffeurs leren de modellen van de vloot bij hun start; een model dat nieuw is voor het bedrijf vraagt eerst een typeopleiding."
   de: "Ein Kurs beginnt heute, und der Fahrer fehlt für seine Tage. Neue Fahrer lernen die Modelle der Flotte zum Start; ein für den Betrieb neues Modell braucht zuerst seine Typschulung."
@@ -911,6 +1040,7 @@ _version: 2
   ru: "Курс начинается сегодня, и водитель отсутствует все его дни. Новые водители осваивают модели парка при найме; новой для компании модели сначала нужно обучение."
   uk: "Курс починається сьогодні, і водій відсутній усі його дні. Нові водії опановують моделі парку під час найму; новій для компанії моделі спершу потрібне навчання."
   pl: "Kurs zaczyna się dziś, a kierowca jest nieobecny przez jego dni. Nowi kierowcy poznają modele floty na start; nowy dla firmy model wymaga najpierw szkolenia typowego."
+  es: "Hoy empieza un curso y el conductor estará fuera durante sus días. Los conductores nuevos aprenden los modelos de la flota al empezar; un modelo nuevo para la empresa necesita antes su formación de modelo."
 "D: every bus; D1: midibuses only. G: articulated, DD: double-deckers, E: electric buses":
   nl: "D: elke bus; D1: alleen midibussen. G: geleed, DD: dubbeldekkers, E: elektrische bussen"
   de: "D: jeder Bus; D1: nur Midibusse. G: Gelenkbusse, DD: Doppeldecker, E: Elektrobusse"
@@ -918,6 +1048,7 @@ _version: 2
   ru: "D: любой автобус; D1: только мидибусы. G: сочленённые, DD: двухэтажные, E: электробусы"
   uk: "D: будь-який автобус; D1: лише мідібуси. G: зчленовані, DD: двоповерхові, E: електробуси"
   pl: "D: każdy autobus; D1: tylko midibusy. G: przegubowe, DD: piętrowe, E: elektryczne"
+  es: "D: cualquier autobús; D1: solo midibuses. G: articulados, DD: dos pisos, E: autobuses eléctricos"
 "The wage a month they ask, more for each endorsement":
   nl: "Het loon per maand dat ze vragen, meer per bevoegdheid"
   de: "Der Monatslohn, den sie verlangen, mehr für jede Berechtigung"
@@ -925,6 +1056,7 @@ _version: 2
   ru: "Желаемая зарплата в месяц, больше за каждый допуск"
   uk: "Бажана зарплата на місяць, більше за кожен допуск"
   pl: "Żądana pensja miesięczna, więcej za każde uprawnienie"
+  es: "El sueldo mensual que piden, más por cada habilitación"
 "%{a}-%{b} of %{n}":
   nl: "%{a}-%{b} van %{n}"
   de: "%{a}-%{b} von %{n}"
@@ -932,6 +1064,7 @@ _version: 2
   ru: "%{a}-%{b} из %{n}"
   uk: "%{a}-%{b} з %{n}"
   pl: "%{a}-%{b} z %{n}"
+  es: "%{a}-%{b} de %{n}"
 "Earlier columns":
   nl: "Vorige kolommen"
   de: "Vorherige Spalten"
@@ -939,6 +1072,7 @@ _version: 2
   ru: "Предыдущие столбцы"
   uk: "Попередні стовпці"
   pl: "Poprzednie kolumny"
+  es: "Columnas anteriores"
 "More columns":
   nl: "Meer kolommen"
   de: "Weitere Spalten"
@@ -946,6 +1080,7 @@ _version: 2
   ru: "Другие столбцы"
   uk: "Інші стовпці"
   pl: "Więcej kolumn"
+  es: "Más columnas"
 "%{n} of %{m} have it":
   nl: "%{n} van %{m} hebben hem"
   de: "%{n} von %{m} haben sie"
@@ -953,6 +1088,7 @@ _version: 2
   ru: "Есть у %{n} из %{m}"
   uk: "Є в %{n} з %{m}"
   pl: "Ma %{n} z %{m}"
+  es: "%{n} de %{m} lo tienen"
 "Train all":
   nl: "Iedereen opleiden"
   de: "Alle schulen"
@@ -960,6 +1096,7 @@ _version: 2
   ru: "Обучить всех"
   uk: "Навчити всіх"
   pl: "Przeszkol wszystkich"
+  es: "Formar a todos"
 "D licence first":
   nl: "Eerst rijbewijs D"
   de: "Erst Führerschein D"
@@ -967,6 +1104,7 @@ _version: 2
   ru: "Сначала права D"
   uk: "Спершу посвідчення D"
   pl: "Najpierw kat. D"
+  es: "Primero el permiso D"
 "Nobody could be booked":
   nl: "Niemand kon worden ingeschreven"
   de: "Niemand konnte angemeldet werden"
@@ -974,6 +1112,7 @@ _version: 2
   ru: "Никого не удалось записать"
   uk: "Нікого не вдалося записати"
   pl: "Nikogo nie udało się zapisać"
+  es: "No se ha podido reservar a nadie"
 "Who lacks it is away today, on another course or leaving the company - or needs the D licence first.":
   nl: "Wie hem mist, is vandaag afwezig, op een andere cursus of gaat het bedrijf verlaten - of heeft eerst rijbewijs D nodig."
   de: "Wem sie fehlt, ist heute weg, auf einem anderen Kurs oder verlässt den Betrieb - oder braucht zuerst den Führerschein D."
@@ -981,6 +1120,7 @@ _version: 2
   ru: "У кого его нет, сегодня отсутствует, на другом курсе или увольняется - или сначала нужны права D."
   uk: "Хто його не має, сьогодні відсутній, на іншому курсі або звільняється - або спершу потребує посвідчення D."
   pl: "Kto go nie ma, jest dziś nieobecny, na innym kursie lub odchodzi z firmy - albo najpierw potrzebuje kat. D."
+  es: "Quien no lo tiene está fuera hoy, en otro curso o dejando la empresa, o necesita primero el permiso D."
 "Booked for %{n} drivers: %{course}, %{amount} together.":
   nl: "Ingeschreven voor %{n} chauffeurs: %{course}, samen %{amount}."
   de: "Für %{n} Fahrer gebucht: %{course}, zusammen %{amount}."
@@ -988,6 +1128,7 @@ _version: 2
   ru: "Записано водителей: %{n} - %{course}, всего %{amount}."
   uk: "Записано водіїв: %{n} - %{course}, разом %{amount}."
   pl: "Zapisano kierowców: %{n} - %{course}, razem %{amount}."
+  es: "Reservado para %{n} conductores: %{course}, %{amount} en total."
 "%{n} of %{m} may drive it":
   nl: "%{n} van %{m} mogen hem rijden"
   de: "%{n} von %{m} dürfen ihn fahren"
@@ -995,6 +1136,7 @@ _version: 2
   ru: "Могут водить %{n} из %{m}"
   uk: "Можуть керувати %{n} з %{m}"
   pl: "Może go prowadzić %{n} z %{m}"
+  es: "%{n} de %{m} pueden conducirlo"
 "Train drivers":
   nl: "Chauffeurs opleiden"
   de: "Fahrer schulen"
@@ -1002,6 +1144,7 @@ _version: 2
   ru: "Обучить водителей"
   uk: "Навчити водіїв"
   pl: "Przeszkol kierowców"
+  es: "Formar conductores"
 "Defensive driving":
   nl: "Defensief rijden"
   de: "Defensives Fahren"
@@ -1009,6 +1152,7 @@ _version: 2
   ru: "Безопасное вождение"
   uk: "Безпечне водіння"
   pl: "Jazda defensywna"
+  es: "Conducción defensiva"
 "First aid":
   nl: "EHBO"
   de: "Erste Hilfe"
@@ -1016,6 +1160,7 @@ _version: 2
   ru: "Первая помощь"
   uk: "Перша допомога"
   pl: "Pierwsza pomoc"
+  es: "Primeros auxilios"
 "Ticket sales":
   nl: "Kaartverkoop"
   de: "Fahrkartenverkauf"
@@ -1023,6 +1168,7 @@ _version: 2
   ru: "Продажа билетов"
   uk: "Продаж квитків"
   pl: "Sprzedaż biletów"
+  es: "Venta de billetes"
 "Service +15 and half the complaints: more passengers, a better reputation":
   nl: "Service +15 en de helft minder klachten: meer reizigers, een betere naam"
   de: "Service +15 und halb so viele Beschwerden: mehr Fahrgäste, ein besserer Ruf"
@@ -1030,6 +1176,7 @@ _version: 2
   ru: "Сервис +15 и вдвое меньше жалоб: больше пассажиров, лучше репутация"
   uk: "Сервіс +15 і вдвічі менше скарг: більше пасажирів, краща репутація"
   pl: "Obsługa +15 i o połowę mniej skarg: więcej pasażerów, lepsza reputacja"
+  es: "Servicio +15 y la mitad de quejas: más pasajeros, mejor reputación"
 "Half the accidents and traffic fines on their trips":
   nl: "De helft minder ongelukken en verkeersboetes op hun ritten"
   de: "Halb so viele Unfälle und Bußgelder auf ihren Fahrten"
@@ -1037,6 +1184,7 @@ _version: 2
   ru: "Вдвое меньше аварий и штрафов на их рейсах"
   uk: "Удвічі менше аварій і штрафів на їхніх рейсах"
   pl: "O połowę mniej wypadków i mandatów na ich kursach"
+  es: "La mitad de accidentes y multas de tráfico en sus viajes"
 "A passenger taken ill or hurt on board costs far less reputation":
   nl: "Een reiziger die aan boord onwel wordt of zich bezeert, kost veel minder aanzien"
   de: "Ein Fahrgast, dem an Bord übel wird oder der sich verletzt, kostet viel weniger Ruf"
@@ -1044,6 +1192,7 @@ _version: 2
   ru: "Пассажир, которому стало плохо или который поранился в салоне, стоит гораздо меньше репутации"
   uk: "Пасажир, якому стало зле чи який травмувався в салоні, коштує набагато менше репутації"
   pl: "Pasażer, który zasłabnie lub się zrani w autobusie, kosztuje znacznie mniej reputacji"
+  es: "Un pasajero que se pone enfermo o se hace daño a bordo cuesta mucha menos reputación"
 "Fewer fare dodgers: 4 % more fares on their trips":
   nl: "Minder zwartrijders: 4 % meer ritopbrengst op hun ritten"
   de: "Weniger Schwarzfahrer: 4 % mehr Fahrgeld auf ihren Fahrten"
@@ -1051,6 +1200,7 @@ _version: 2
   ru: "Меньше безбилетников: на 4 % больше выручки на их рейсах"
   uk: "Менше безбілетників: на 4 % більше виручки на їхніх рейсах"
   pl: "Mniej gapowiczów: o 4 % więcej wpływów z ich kursów"
+  es: "Menos viajeros sin billete: un 4 % más de tarifas en sus viajes"
 "A mechanic: 6 % of maintenance and repairs done in-house (up to four), a broken-down bus back a day sooner":
   nl: "Een monteur: 6 % van onderhoud en reparaties in eigen huis (tot vier), een kapotte bus een dag eerder terug"
   de: "Ein Mechaniker: 6 % von Wartung und Reparaturen im eigenen Haus (bis zu vier), ein liegengebliebener Bus einen Tag früher zurück"
@@ -1058,6 +1208,7 @@ _version: 2
   ru: "Механик: 6 % обслуживания и ремонта своими силами (до четырёх), сломанный автобус возвращается на день раньше"
   uk: "Механік: 6 % обслуговування й ремонту власними силами (до чотирьох), зламаний автобус повертається на день раніше"
   pl: "Mechanik: 6 % obsługi i napraw we własnym zakresie (do czterech), zepsuty autobus wraca dzień wcześniej"
+  es: "Un mecánico: el 6 % del mantenimiento y las reparaciones se hace en casa (hasta cuatro), un autobús averiado vuelve un día antes"
 "Defensive driving course":
   nl: "Cursus defensief rijden"
   de: "Kurs defensives Fahren"
@@ -1065,6 +1216,7 @@ _version: 2
   ru: "Курс безопасного вождения"
   uk: "Курс безпечного водіння"
   pl: "Kurs jazdy defensywnej"
+  es: "Curso de conducción defensiva"
 "Bus %{bus} had an accident yesterday: damage %{amount}":
   nl: "Bus %{bus} had gisteren een ongeluk: schade %{amount}"
   de: "Bus %{bus} hatte gestern einen Unfall: Schaden %{amount}"
@@ -1072,6 +1224,7 @@ _version: 2
   ru: "Автобус %{bus} вчера попал в аварию: ущерб %{amount}"
   uk: "Автобус %{bus} учора потрапив в аварію: збитки %{amount}"
   pl: "Autobus %{bus} miał wczoraj wypadek: szkody %{amount}"
+  es: "El autobús %{bus} tuvo ayer un accidente: daños %{amount}"
 "Bus types":
   nl: "Bustypes"
   de: "Bustypen"
@@ -1079,6 +1232,7 @@ _version: 2
   ru: "Модели автобусов"
   uk: "Моделі автобусів"
   pl: "Typy autobusów"
+  es: "Tipos de autobús"
 "Courses":
   nl: "Cursussen"
   de: "Kurse"
@@ -1086,6 +1240,7 @@ _version: 2
   ru: "Курсы"
   uk: "Курси"
   pl: "Kursy"
+  es: "Cursos"
 "The fleet has no buses yet.":
   nl: "Het wagenpark heeft nog geen bussen."
   de: "Der Fuhrpark hat noch keine Busse."
@@ -1093,6 +1248,7 @@ _version: 2
   ru: "В парке ещё нет автобусов."
   uk: "У парку ще немає автобусів."
   pl: "Flota nie ma jeszcze autobusów."
+  es: "La flota aún no tiene autobuses."
 "Train the drivers":
   nl: "Chauffeurs opleiden"
   de: "Fahrer schulen"
@@ -1100,6 +1256,7 @@ _version: 2
   ru: "Обучить водителей"
   uk: "Навчити водіїв"
   pl: "Szkol kierowców"
+  es: "Formar a los conductores"
 "Bus %{n} had an accident on its tour: damage %{amount}.":
   nl: "Bus %{n} had een ongeluk op zijn omloop: schade %{amount}."
   de: "Bus %{n} hatte auf seinem Umlauf einen Unfall: Schaden %{amount}."
@@ -1107,6 +1264,7 @@ _version: 2
   ru: "Автобус %{n} попал в аварию на выпуске: ущерб %{amount}."
   uk: "Автобус %{n} потрапив в аварію на випуску: збитки %{amount}."
   pl: "Autobus %{n} miał wypadek na swoim kursie: szkody %{amount}."
+  es: "El autobús %{n} tuvo un accidente en su recorrido: daños %{amount}."
 "Your drivers were fined %{n} times in traffic: %{amount}. Defensive driving halves it.":
   nl: "Je chauffeurs kregen %{n} verkeersboetes: %{amount}. Defensief rijden halveert dat."
   de: "Deine Fahrer bekamen %{n} Bußgelder im Verkehr: %{amount}. Defensives Fahren halbiert das."
@@ -1114,6 +1272,7 @@ _version: 2
   ru: "Ваши водители получили штрафов: %{n} на %{amount}. Безопасное вождение вдвое уменьшает их."
   uk: "Ваші водії отримали штрафів: %{n} на %{amount}. Безпечне водіння вдвічі зменшує їх."
   pl: "Twoi kierowcy dostali mandatów: %{n} na %{amount}. Jazda defensywna zmniejsza to o połowę."
+  es: "Tus conductores recibieron %{n} multas de tráfico: %{amount}. La conducción defensiva las reduce a la mitad."
 "%{n} passengers complained about their trip. The customer service course halves the complaints.":
   nl: "%{n} reizigers klaagden over hun rit. De cursus klantvriendelijkheid halveert de klachten."
   de: "%{n} Fahrgäste beschwerten sich über ihre Fahrt. Der Kurs Kundenservice halbiert die Beschwerden."
@@ -1121,6 +1280,7 @@ _version: 2
   ru: "Пассажиров, пожаловавшихся на поездку: %{n}. Курс обслуживания вдвое уменьшает жалобы."
   uk: "Пасажирів, які поскаржилися на поїздку: %{n}. Курс обслуговування вдвічі зменшує скарги."
   pl: "Pasażerów, którzy poskarżyli się na przejazd: %{n}. Kurs obsługi klienta zmniejsza skargi o połowę."
+  es: "%{n} pasajeros se quejaron de su viaje. El curso de atención al cliente reduce las quejas a la mitad."
 "%{n} passengers were taken ill or hurt on board; a first-aider was at the wheel for %{m} of them.":
   nl: "%{n} reizigers werden aan boord onwel of raakten gewond; voor %{m} van hen zat er een EHBO'er achter het stuur."
   de: "%{n} Fahrgästen wurde an Bord übel oder sie verletzten sich; bei %{m} von ihnen saß ein Ersthelfer am Steuer."
@@ -1128,6 +1288,7 @@ _version: 2
   ru: "Пассажирам стало плохо или они поранились в салоне: %{n}; для %{m} из них за рулём был водитель с курсом первой помощи."
   uk: "Пасажирам стало зле чи вони травмувалися в салоні: %{n}; для %{m} з них за кермом був водій із курсом першої допомоги."
   pl: "Pasażerów, którzy zasłabli lub się zranili: %{n}; przy %{m} z nich za kierownicą siedział ratownik."
+  es: "%{n} pasajeros se pusieron enfermos o se hicieron daño a bordo; en %{m} de los casos conducía alguien con primeros auxilios."
 "locked":
   nl: "op slot"
   de: "gesperrt"
@@ -1135,6 +1296,7 @@ _version: 2
   ru: "закрыто"
   uk: "закрито"
   pl: "zablokowane"
+  es: "bloqueado"
 "Your company's level does not open these buses yet":
   nl: "Het niveau van je bedrijf geeft deze bussen nog niet vrij"
   de: "Die Stufe deines Betriebs schaltet diese Busse noch nicht frei"
@@ -1142,6 +1304,7 @@ _version: 2
   ru: "Уровень вашей компании ещё не открывает эти автобусы"
   uk: "Рівень вашої компанії ще не відкриває ці автобуси"
   pl: "Poziom Twojej firmy nie odblokowuje jeszcze tych autobusów"
+  es: "El nivel de tu empresa aún no desbloquea estos autobuses"
 "%{from} to %{to}":
   nl: "%{from} t/m %{to}"
   de: "%{from} bis %{to}"
@@ -1149,6 +1312,7 @@ _version: 2
   ru: "с %{from} по %{to}"
   uk: "з %{from} по %{to}"
   pl: "od %{from} do %{to}"
+  es: "De %{from} a %{to}"
 "nobody is qualified for their bus":
   nl: "niemand is bevoegd voor hun bus"
   de: "niemand ist für ihren Bus berechtigt"
@@ -1156,6 +1320,7 @@ _version: 2
   ru: "ни у кого нет допуска к их автобусу"
   uk: "ні в кого немає допуску до їхнього автобуса"
   pl: "nikt nie ma uprawnień na ich autobus"
+  es: "nadie está cualificado para su autobús"
 "nobody qualified is free":
   nl: "niemand die bevoegd is, is vrij"
   de: "niemand Berechtigtes ist frei"
@@ -1163,6 +1328,7 @@ _version: 2
   ru: "нет свободных водителей с допуском"
   uk: "немає вільних водіїв із допуском"
   pl: "nikt uprawniony nie jest wolny"
+  es: "no hay nadie cualificado libre"
 "%{q} with nobody qualified for the bus, %{b} with nobody free":
   nl: "%{q} zonder iemand die bevoegd is voor de bus, %{b} zonder iemand die vrij is"
   de: "%{q} ohne Berechtigte für den Bus, %{b} ohne freie Fahrer"
@@ -1170,6 +1336,7 @@ _version: 2
   ru: "%{q} - нет никого с допуском к автобусу, %{b} - нет свободных"
   uk: "%{q} - немає нікого з допуском до автобуса, %{b} - немає вільних"
   pl: "%{q} bez nikogo uprawnionego na autobus, %{b} bez nikogo wolnego"
+  es: "%{q} sin nadie cualificado para el autobús, %{b} sin nadie libre"
 "%{n} duties still open: %{why}.":
   nl: "%{n} diensten nog open: %{why}."
   de: "%{n} Dienste noch offen: %{why}."
@@ -1177,6 +1344,7 @@ _version: 2
   ru: "Ещё открыто смен: %{n} - %{why}."
   uk: "Ще відкрито змін: %{n} - %{why}."
   pl: "Wciąż otwartych służb: %{n} - %{why}."
+  es: "%{n} servicios aún abiertos: %{why}."
 "%{n} tours still without a bus: none of the fleet is free for them.":
   nl: "%{n} omlopen nog zonder bus: er is geen bus van het wagenpark vrij voor."
   de: "%{n} Umläufe noch ohne Bus: kein Bus des Fuhrparks ist dafür frei."
@@ -1184,6 +1352,7 @@ _version: 2
   ru: "Ещё без автобуса выпусков: %{n} - в парке нет свободных."
   uk: "Ще без автобуса випусків: %{n} - у парку немає вільних."
   pl: "Wciąż bez autobusu obiegów: %{n} - żaden autobus floty nie jest wolny."
+  es: "%{n} recorridos aún sin autobús: ninguno de la flota está libre para ellos."
 "Filled: %{d} duties given to drivers, %{b} buses given.":
   nl: "Ingevuld: %{d} diensten aan chauffeurs gegeven, %{b} bussen toegewezen."
   de: "Gefüllt: %{d} Dienste an Fahrer vergeben, %{b} Busse zugeteilt."
@@ -1191,6 +1360,7 @@ _version: 2
   ru: "Заполнено: смен водителям - %{d}, автобусов назначено - %{b}."
   uk: "Заповнено: змін водіям - %{d}, автобусів призначено - %{b}."
   pl: "Wypełniono: służb przydzielonych kierowcom - %{d}, autobusów przydzielonych - %{b}."
+  es: "Rellenado: %{d} servicios asignados a conductores, %{b} autobuses asignados."
 "Every tour of %{day} has its bus and its drivers already.":
   nl: "Elke omloop van %{day} heeft zijn bus en chauffeurs al."
   de: "Jeder Umlauf am %{day} hat seinen Bus und seine Fahrer schon."
@@ -1198,6 +1368,7 @@ _version: 2
   ru: "У каждого выпуска (%{day}) уже есть автобус и водители."
   uk: "Кожен випуск (%{day}) уже має автобус і водіїв."
   pl: "Każdy obieg (%{day}) ma już autobus i kierowców."
+  es: "Todos los recorridos del %{day} ya tienen su autobús y sus conductores."
 "Nothing to fill":
   nl: "Niets in te vullen"
   de: "Nichts zu füllen"
@@ -1205,6 +1376,7 @@ _version: 2
   ru: "Нечего заполнять"
   uk: "Нічого заповнювати"
   pl: "Nie ma czego wypełniać"
+  es: "Nada que rellenar"
 "Nothing could be filled":
   nl: "Er kon niets worden ingevuld"
   de: "Nichts konnte gefüllt werden"
@@ -1212,6 +1384,7 @@ _version: 2
   ru: "Ничего не удалось заполнить"
   uk: "Нічого не вдалося заповнити"
   pl: "Nic nie udało się wypełnić"
+  es: "No se ha podido rellenar nada"
 "Hire drivers, train them for the buses on the Staff page, or get more buses.":
   nl: "Neem chauffeurs aan, leid ze op voor de bussen via Personeel, of schaf meer bussen aan."
   de: "Stelle Fahrer ein, schule sie auf der Seite Personal für die Busse, oder hol mehr Busse."
@@ -1219,6 +1392,7 @@ _version: 2
   ru: "Наймите водителей, обучите их на странице «Персонал» или купите ещё автобусы."
   uk: "Найміть водіїв, навчіть їх на сторінці «Персонал» або придбайте ще автобуси."
   pl: "Zatrudnij kierowców, przeszkol ich na stronie Personel albo kup więcej autobusów."
+  es: "Contrata conductores, fórmalos para los autobuses en la página Personal o consigue más autobuses."
 "The roster of %{day} is empty already.":
   nl: "Het rooster van %{day} is al leeg."
   de: "Der Dienstplan für %{day} ist schon leer."
@@ -1226,6 +1400,7 @@ _version: 2
   ru: "Расписание на день (%{day}) уже пустое."
   uk: "Розклад на день (%{day}) уже порожній."
   pl: "Grafik na dzień %{day} jest już pusty."
+  es: "El cuadrante del %{day} ya está vacío."
 "Nothing to clear":
   nl: "Niets te wissen"
   de: "Nichts zu leeren"
@@ -1233,6 +1408,7 @@ _version: 2
   ru: "Нечего очищать"
   uk: "Нічого очищати"
   pl: "Nie ma czego czyścić"
+  es: "Nada que vaciar"
 "The day is cleared: %{d} duties and %{b} buses taken off the roster of %{day}.":
   nl: "De dag is gewist: %{d} diensten en %{b} bussen van het rooster van %{day} gehaald."
   de: "Der Tag ist geleert: %{d} Dienste und %{b} Busse aus dem Dienstplan für %{day} genommen."
@@ -1240,6 +1416,7 @@ _version: 2
   ru: "День очищен: из расписания (%{day}) убрано смен - %{d}, автобусов - %{b}."
   uk: "День очищено: з розкладу (%{day}) прибрано змін - %{d}, автобусів - %{b}."
   pl: "Dzień wyczyszczony: z grafiku (%{day}) zdjęto służb - %{d}, autobusów - %{b}."
+  es: "El día está vaciado: %{d} servicios y %{b} autobuses quitados del cuadrante del %{day}."
 "The roster of %{day} is empty: there is nothing to repeat. Fill it first (\"Fill the roster\" does it for you), then repeat it on the other days.":
   nl: "Het rooster van %{day} is leeg: er is niets te herhalen. Vul het eerst (\"Rooster vullen\" doet dat voor je) en herhaal het dan op de andere dagen."
   de: "Der Dienstplan für %{day} ist leer: es gibt nichts zu wiederholen. Fülle ihn erst (\"Dienstplan füllen\" macht das für dich) und wiederhole ihn dann an den anderen Tagen."
@@ -1247,6 +1424,7 @@ _version: 2
   ru: "Расписание на день (%{day}) пустое: повторять нечего. Сначала заполните его (это делает «Заполнить график»), затем повторите на другие дни."
   uk: "Розклад на день (%{day}) порожній: повторювати нічого. Спершу заповніть його (це робить «Заповнити графік»), потім повторіть на інші дні."
   pl: "Grafik na dzień %{day} jest pusty: nie ma czego powtarzać. Najpierw go wypełnij (\"Wypełnij grafik\" zrobi to za ciebie), potem powtórz na inne dni."
+  es: "El cuadrante del %{day} está vacío: no hay nada que repetir. Rellénalo primero («Rellenar el cuadrante» lo hace por ti) y luego repítelo en los otros días."
 "Nothing to repeat":
   nl: "Niets te herhalen"
   de: "Nichts zu wiederholen"
@@ -1254,6 +1432,7 @@ _version: 2
   ru: "Нечего повторять"
   uk: "Нічого повторювати"
   pl: "Nie ma czego powtarzać"
+  es: "Nada que repetir"
 "The roster of %{day} is now on %{days} too.":
   nl: "Het rooster van %{day} staat nu ook op %{days}."
   de: "Der Dienstplan für %{day} gilt jetzt auch für %{days}."
@@ -1261,6 +1440,7 @@ _version: 2
   ru: "Расписание на день (%{day}) теперь действует и на %{days}."
   uk: "Розклад на день (%{day}) тепер діє і на %{days}."
   pl: "Grafik na dzień %{day} obowiązuje teraz także w: %{days}."
+  es: "El cuadrante del %{day} está ahora también en %{days}."
 "The roster of %{day} is now on %{days} too (%{n} days).":
   nl: "Het rooster van %{day} staat nu ook op %{days} (%{n} dagen)."
   de: "Der Dienstplan für %{day} gilt jetzt auch für %{days} (%{n} Tage)."
@@ -1268,6 +1448,7 @@ _version: 2
   ru: "Расписание на день (%{day}) теперь действует и на %{days} (дней: %{n})."
   uk: "Розклад на день (%{day}) тепер діє і на %{days} (днів: %{n})."
   pl: "Grafik na dzień %{day} obowiązuje teraz także: %{days} (dni: %{n})."
+  es: "El cuadrante del %{day} está ahora también en %{days} (%{n} días)."
 "Change line %{n} in service":
   nl: "Lijn %{n} in dienst wijzigen"
   de: "Linie %{n} im Betrieb ändern"
@@ -1275,6 +1456,7 @@ _version: 2
   ru: "Изменить линию %{n} в работе"
   uk: "Змінити лінію %{n} у роботі"
   pl: "Zmień linię %{n} w eksploatacji"
+  es: "Cambiar la línea %{n} en servicio"
 "The line runs: today's tours stay as they are. The new timetable begins on the day you choose; the tours it changes get their buses and drivers anew then.":
   nl: "De lijn rijdt: de omlopen van vandaag blijven zoals ze zijn. De nieuwe dienstregeling begint op de dag die je kiest; de omlopen die veranderen krijgen dan opnieuw hun bussen en chauffeurs."
   de: "Die Linie fährt: die heutigen Umläufe bleiben, wie sie sind. Der neue Fahrplan beginnt an dem Tag, den du wählst; die geänderten Umläufe bekommen dann neu ihre Busse und Fahrer."
@@ -1282,6 +1464,7 @@ _version: 2
   ru: "Линия работает: сегодняшние выпуски остаются как есть. Новое расписание начнётся в выбранный день; изменённые выпуски тогда получат автобусы и водителей заново."
   uk: "Лінія працює: сьогоднішні випуски лишаються як є. Новий розклад почнеться у вибраний день; змінені випуски тоді отримають автобуси й водіїв наново."
   pl: "Linia kursuje: dzisiejsze obiegi zostają bez zmian. Nowy rozkład zacznie się w wybranym dniu; zmienione obiegi dostaną wtedy na nowo autobusy i kierowców."
+  es: "La línea circula: los recorridos de hoy se quedan como están. El nuevo horario empieza el día que elijas; los recorridos que cambia reciben entonces de nuevo sus autobuses y conductores."
 "Route approved anew":
   nl: "Route opnieuw goedgekeurd"
   de: "Strecke neu genehmigt"
@@ -1289,6 +1472,7 @@ _version: 2
   ru: "Повторное утверждение маршрута"
   uk: "Повторне затвердження маршруту"
   pl: "Ponowne zatwierdzenie trasy"
+  es: "Ruta aprobada de nuevo"
 "%{k} kept, %{c} changed, %{a} new, %{g} dropped":
   nl: "%{k} gelijk, %{c} gewijzigd, %{a} nieuw, %{g} vervallen"
   de: "%{k} gleich, %{c} geändert, %{a} neu, %{g} entfallen"
@@ -1296,6 +1480,7 @@ _version: 2
   ru: "без изменений %{k}, изменено %{c}, новых %{a}, отменено %{g}"
   uk: "без змін %{k}, змінено %{c}, нових %{a}, скасовано %{g}"
   pl: "bez zmian %{k}, zmienione %{c}, nowe %{a}, usunięte %{g}"
+  es: "%{k} conservados, %{c} cambiados, %{a} nuevos, %{g} suprimidos"
 "On the planning":
   nl: "In de planning"
   de: "In der Planung"
@@ -1303,6 +1488,7 @@ _version: 2
   ru: "В планировании"
   uk: "У плануванні"
   pl: "W planowaniu"
+  es: "En la planificación"
 "%{n} tours to plan anew":
   nl: "%{n} omlopen opnieuw in te plannen"
   de: "%{n} Umläufe neu zu planen"
@@ -1310,6 +1496,7 @@ _version: 2
   ru: "выпусков спланировать заново: %{n}"
   uk: "випусків спланувати наново: %{n}"
   pl: "obiegów do ponownego zaplanowania: %{n}"
+  es: "%{n} recorridos que volver a planificar"
 "A day earlier":
   nl: "Een dag eerder"
   de: "Einen Tag früher"
@@ -1317,6 +1504,7 @@ _version: 2
   ru: "На день раньше"
   uk: "На день раніше"
   pl: "Dzień wcześniej"
+  es: "Un día antes"
 "A day later":
   nl: "Een dag later"
   de: "Einen Tag später"
@@ -1324,6 +1512,7 @@ _version: 2
   ru: "На день позже"
   uk: "На день пізніше"
   pl: "Dzień później"
+  es: "Un día después"
 "tomorrow":
   nl: "morgen"
   de: "morgen"
@@ -1331,6 +1520,7 @@ _version: 2
   ru: "завтра"
   uk: "завтра"
   pl: "jutro"
+  es: "mañana"
 "Save the change":
   nl: "Wijziging opslaan"
   de: "Änderung speichern"
@@ -1338,6 +1528,7 @@ _version: 2
   ru: "Сохранить изменение"
   uk: "Зберегти зміну"
   pl: "Zapisz zmianę"
+  es: "Guardar el cambio"
 "The new timetable begins on %{date}.":
   nl: "De nieuwe dienstregeling begint op %{date}."
   de: "Der neue Fahrplan beginnt am %{date}."
@@ -1345,6 +1536,7 @@ _version: 2
   ru: "Новое расписание начнётся %{date}."
   uk: "Новий розклад почнеться %{date}."
   pl: "Nowy rozkład zaczyna się %{date}."
+  es: "El nuevo horario empieza el %{date}."
 "Keep the line as it runs":
   nl: "Lijn houden zoals hij rijdt"
   de: "Linie so lassen, wie sie fährt"
@@ -1352,6 +1544,7 @@ _version: 2
   ru: "Оставить линию как есть"
   uk: "Залишити лінію як є"
   pl: "Zostaw linię, jak kursuje"
+  es: "Dejar la línea como circula"
 "The company runs this line. A changed route is approved anew; a change of a line in service begins on a day you choose. The line is given up on the company's Lines page.":
   nl: "Het bedrijf rijdt deze lijn. Een gewijzigde route wordt opnieuw goedgekeurd; een wijziging van een lijn in dienst begint op een dag die je kiest. De lijn opgeven doe je op de pagina Lijnen van het bedrijf."
   de: "Der Betrieb fährt diese Linie. Eine geänderte Strecke wird neu genehmigt; eine Änderung einer Linie im Betrieb beginnt an einem Tag deiner Wahl. Aufgegeben wird die Linie auf der Seite Linien des Betriebs."
@@ -1359,6 +1552,7 @@ _version: 2
   ru: "Компания обслуживает эту линию. Изменённый маршрут утверждается заново; изменение работающей линии начинается в выбранный день. Отказаться от линии можно на странице «Линии» компании."
   uk: "Компанія обслуговує цю лінію. Змінений маршрут затверджується наново; зміна лінії в роботі починається у вибраний день. Відмовитися від лінії можна на сторінці «Лінії» компанії."
   pl: "Firma obsługuje tę linię. Zmieniona trasa jest zatwierdzana ponownie; zmiana linii w eksploatacji zaczyna się w wybranym dniu. Z linii rezygnuje się na stronie Linie firmy."
+  es: "La empresa explota esta línea. Una ruta modificada se aprueba de nuevo; un cambio en una línea en servicio empieza el día que elijas. La línea se abandona en la página Líneas de la empresa."
 "Line %{n}: the new timetable begins on %{date}; today's tours run as they are.":
   nl: "Lijn %{n}: de nieuwe dienstregeling begint op %{date}; de omlopen van vandaag rijden zoals ze zijn."
   de: "Linie %{n}: der neue Fahrplan beginnt am %{date}; die heutigen Umläufe fahren, wie sie sind."
@@ -1366,6 +1560,7 @@ _version: 2
   ru: "Линия %{n}: новое расписание начнётся %{date}; сегодняшние выпуски идут как есть."
   uk: "Лінія %{n}: новий розклад почнеться %{date}; сьогоднішні випуски йдуть як є."
   pl: "Linia %{n}: nowy rozkład zaczyna się %{date}; dzisiejsze obiegi kursują bez zmian."
+  es: "Línea %{n}: el nuevo horario empieza el %{date}; los recorridos de hoy circulan como están."
 "Its route is approved for %{amount}.":
   nl: "De route is goedgekeurd voor %{amount}."
   de: "Die Strecke ist für %{amount} genehmigt."
@@ -1373,6 +1568,7 @@ _version: 2
   ru: "Маршрут утверждён за %{amount}."
   uk: "Маршрут затверджено за %{amount}."
   pl: "Trasa zatwierdzona za %{amount}."
+  es: "Su ruta se aprueba por %{amount}."
 "The change is taken back: the line stays as it runs.":
   nl: "De wijziging is ingetrokken: de lijn blijft zoals hij rijdt."
   de: "Die Änderung ist zurückgenommen: die Linie bleibt, wie sie fährt."
@@ -1380,6 +1576,7 @@ _version: 2
   ru: "Изменение отменено: линия остаётся как есть."
   uk: "Зміну скасовано: лінія лишається як є."
   pl: "Zmiana wycofana: linia zostaje, jak kursuje."
+  es: "El cambio se ha deshecho: la línea sigue como circula."
 "A change of a line in service begins tomorrow at the soonest.":
   nl: "Een wijziging van een lijn in dienst begint op zijn vroegst morgen."
   de: "Eine Änderung einer Linie im Betrieb beginnt frühestens morgen."
@@ -1387,6 +1584,7 @@ _version: 2
   ru: "Изменение работающей линии начинается не раньше завтрашнего дня."
   uk: "Зміна лінії в роботі починається не раніше завтрашнього дня."
   pl: "Zmiana linii w eksploatacji zaczyna się najwcześniej jutro."
+  es: "Un cambio en una línea en servicio empieza como pronto mañana."
 "Line %{n} runs its new timetable from today: %{d} duties and %{b} buses given anew.":
   nl: "Lijn %{n} rijdt vanaf vandaag de nieuwe dienstregeling: %{d} diensten en %{b} bussen opnieuw toegewezen."
   de: "Linie %{n} fährt ab heute den neuen Fahrplan: %{d} Dienste und %{b} Busse neu vergeben."
@@ -1394,6 +1592,7 @@ _version: 2
   ru: "Линия %{n} с сегодняшнего дня работает по новому расписанию: смен назначено заново - %{d}, автобусов - %{b}."
   uk: "Лінія %{n} від сьогодні працює за новим розкладом: змін призначено наново - %{d}, автобусів - %{b}."
   pl: "Linia %{n} od dziś kursuje według nowego rozkładu: służb przydzielonych na nowo - %{d}, autobusów - %{b}."
+  es: "La línea %{n} circula con su nuevo horario desde hoy: %{d} servicios y %{b} autobuses asignados de nuevo."
 "New timetable from %{date}":
   nl: "Nieuwe dienstregeling vanaf %{date}"
   de: "Neuer Fahrplan ab %{date}"
@@ -1401,6 +1600,7 @@ _version: 2
   ru: "Новое расписание с %{date}"
   uk: "Новий розклад з %{date}"
   pl: "Nowy rozkład od %{date}"
+  es: "Nuevo horario desde el %{date}"
 "Saved in the line editor: today's tours run as they are; from that day the line runs its new timetable and its changed tours are planned anew.":
   nl: "Opgeslagen in de lijneditor: de omlopen van vandaag rijden zoals ze zijn; vanaf die dag rijdt de lijn de nieuwe dienstregeling en worden de gewijzigde omlopen opnieuw ingepland."
   de: "Im Linieneditor gespeichert: die heutigen Umläufe fahren, wie sie sind; ab jenem Tag fährt die Linie den neuen Fahrplan, und die geänderten Umläufe werden neu geplant."
@@ -1408,3 +1608,4 @@ _version: 2
   ru: "Сохранено в редакторе линий: сегодняшние выпуски идут как есть; с того дня линия работает по новому расписанию, а изменённые выпуски планируются заново."
   uk: "Збережено в редакторі ліній: сьогоднішні випуски йдуть як є; з того дня лінія працює за новим розкладом, а змінені випуски плануються наново."
   pl: "Zapisano w edytorze linii: dzisiejsze obiegi kursują bez zmian; od tego dnia linia kursuje według nowego rozkładu, a zmienione obiegi są planowane na nowo."
+  es: "Guardado en el editor de líneas: los recorridos de hoy circulan como están; a partir de ese día la línea circula con su nuevo horario y sus recorridos modificados se planifican de nuevo."

@@ -2328,7 +2328,7 @@ mod tests {
         core.extend(hub_core::company::timeplan::texts());
         core.extend(hub_core::lines::DAY_GROUPS.iter().map(|d| d.0));
         let mut missing = Vec::new();
-        for lang in ["nl", "de", "fr", "ru", "uk", "pl"] {
+        for lang in ["nl", "de", "fr", "ru", "uk", "pl", "es"] {
             let table = crate::launcher::i18n::table(lang);
             for (file, t) in &texts {
                 if !table.contains_key(t) {

@@ -6,6 +6,7 @@ _version: 2
   fr: "Le numéro de parc du bus : saisissez le vôtre, ou laissez vide pour le numéro automatique."
   nl: "Het wagennummer van de bus: typ je eigen nummer, of laat het leeg voor het automatische."
   pl: "Numer taborowy autobusu: wpisz własny albo zostaw puste, by użyć automatycznego."
+  es: "El número de flota del autobús: escribe el tuyo o déjalo vacío para el automático."
   ru: "Бортовой номер автобуса: введите свой или оставьте пустым для автоматического."
   uk: "Бортовий номер автобуса: введіть свій або залиште порожнім для автоматичного."
 "A fleet number has at most 12 characters.":
@@ -13,6 +14,7 @@ _version: 2
   fr: "Un numéro de parc compte au plus 12 caractères."
   nl: "Een wagennummer heeft hoogstens 12 tekens."
   pl: "Numer taborowy ma najwyżej 12 znaków."
+  es: "Un número de flota tiene como máximo 12 caracteres."
   ru: "Бортовой номер — не длиннее 12 символов."
   uk: "Бортовий номер — не довший за 12 символів."
 "Another bus of the fleet has this number.":
@@ -20,5 +22,6 @@ _version: 2
   fr: "Un autre bus du parc porte déjà ce numéro."
   nl: "Een andere bus van de vloot heeft dit nummer."
   pl: "Inny autobus we flocie ma już ten numer."
+  es: "Otro autobús de la flota tiene este número."
   ru: "Этот номер уже у другого автобуса парка."
   uk: "Цей номер уже має інший автобус парку."

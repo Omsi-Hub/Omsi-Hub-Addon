@@ -6,6 +6,7 @@ _version: 2
   fr: "Trajets à l'heure"
   nl: "Ritten op tijd"
   pl: "Kursy na czas"
+  es: "Viajes puntuales"
   ru: "Рейсы вовремя"
   uk: "Рейси вчасно"
 "Too many trips late":
@@ -13,6 +14,7 @@ _version: 2
   fr: "Trop de trajets en retard"
   nl: "Te veel ritten te laat"
   pl: "Za dużo spóźnionych kursów"
+  es: "Demasiados viajes con retraso"
   ru: "Слишком много опозданий"
   uk: "Забагато запізнень"
 "Full buses, passengers left behind":
@@ -20,6 +22,7 @@ _version: 2
   fr: "Bus pleins, voyageurs laissés à l'arrêt"
   nl: "Volle bussen, achtergelaten reizigers"
   pl: "Pełne autobusy, pasażerowie zostawieni"
+  es: "Autobuses llenos, pasajeros que se quedan en tierra"
   ru: "Полные автобусы, оставленные пассажиры"
   uk: "Повні автобуси, залишені пасажири"
 "Accidents, complaints and passengers taken ill":
@@ -27,6 +30,7 @@ _version: 2
   fr: "Accidents, plaintes et voyageurs malades"
   nl: "Ongevallen, klachten en onwel geworden reizigers"
   pl: "Wypadki, skargi i zasłabnięcia pasażerów"
+  es: "Accidentes, quejas y pasajeros que se ponen enfermos"
   ru: "Аварии, жалобы и заболевшие пассажиры"
   uk: "Аварії, скарги та пасажири, яким стало зле"
 "%{n} buses broke down":
@@ -34,6 +38,7 @@ _version: 2
   fr: "%{n} bus en panne"
   nl: "%{n} bussen kregen pech"
   pl: "%{n} autobusów się zepsuło"
+  es: "%{n} autobuses averiados"
   ru: "%{n} автобусов сломалось"
   uk: "%{n} автобусів зламалося"
 "How clean the buses are":
@@ -41,6 +46,7 @@ _version: 2
   fr: "La propreté des bus"
   nl: "Hoe schoon de bussen zijn"
   pl: "Czystość autobusów"
+  es: "Lo limpios que están los autobuses"
   ru: "Чистота автобусов"
   uk: "Чистота автобусів"
 "How clean the depot yard is":
@@ -48,6 +54,7 @@ _version: 2
   fr: "La propreté du dépôt"
   nl: "Hoe schoon het depotterrein is"
   pl: "Czystość zajezdni"
+  es: "Lo limpio que está el patio de la cochera"
   ru: "Чистота депо"
   uk: "Чистота депо"
 "Fares far above the association's":
@@ -55,6 +62,7 @@ _version: 2
   fr: "Tarifs bien au-dessus de ceux de la communauté"
   nl: "Tarieven ver boven die van het tariefverbond"
   pl: "Taryfy znacznie powyżej związkowych"
+  es: "Tarifas muy por encima de las del consorcio"
   ru: "Тарифы намного выше тарифа объединения"
   uk: "Тарифи значно вищі за тариф об'єднання"
 "WLAN on the buses":
@@ -62,6 +70,7 @@ _version: 2
   fr: "Le WiFi dans les bus"
   nl: "Wifi in de bussen"
   pl: "WiFi w autobusach"
+  es: "WLAN en los autobuses"
   ru: "Wi-Fi в автобусах"
   uk: "Wi-Fi в автобусах"
 "The cleaning company":
@@ -69,6 +78,7 @@ _version: 2
   fr: "L'entreprise de nettoyage"
   nl: "Het schoonmaakbedrijf"
   pl: "Firma sprzątająca"
+  es: "La empresa de limpieza"
   ru: "Клининговая компания"
   uk: "Клінінгова компанія"
 "The service centre answered complaints":
@@ -76,6 +86,7 @@ _version: 2
   fr: "Le service client a répondu aux plaintes"
   nl: "Het klantencentrum beantwoordde klachten"
   pl: "Biuro obsługi odpowiedziało na skargi"
+  es: "El centro de atención al cliente respondió quejas"
   ru: "Сервисный центр ответил на жалобы"
   uk: "Сервісний центр відповів на скарги"
 "Air conditioning and better stops":
@@ -83,6 +94,7 @@ _version: 2
   fr: "Climatisation et meilleurs arrêts"
   nl: "Airconditioning en betere haltes"
   pl: "Klimatyzacja i lepsze przystanki"
+  es: "Aire acondicionado y mejores paradas"
   ru: "Кондиционеры и лучшие остановки"
   uk: "Кондиціонери та кращі зупинки"
 "A decent day: back towards normal":
@@ -90,6 +102,7 @@ _version: 2
   fr: "Une journée correcte : retour vers la normale"
   nl: "Een behoorlijke dag: terug naar normaal"
   pl: "Przyzwoity dzień: powrót do normy"
+  es: "Un día correcto: de vuelta hacia lo normal"
   ru: "Нормальный день: возврат к обычному"
   uk: "Нормальний день: повернення до звичного"
 "%{n} days without a dropped trip":
@@ -97,6 +110,7 @@ _version: 2
   fr: "%{n} jours sans trajet supprimé"
   nl: "%{n} dagen zonder uitgevallen rit"
   pl: "%{n} dni bez odwołanego kursu"
+  es: "%{n} días sin un viaje suprimido"
   ru: "%{n} дней без отменённых рейсов"
   uk: "%{n} днів без скасованих рейсів"
 "Passenger complaints answered":
@@ -104,6 +118,7 @@ _version: 2
   fr: "Plaintes de voyageurs traitées"
   nl: "Beantwoorde klachten van reizigers"
   pl: "Odpowiedzi na skargi pasażerów"
+  es: "Quejas de pasajeros respondidas"
   ru: "Ответы на жалобы пассажиров"
   uk: "Відповіді на скарги пасажирів"
 "Complaints":
@@ -111,6 +126,7 @@ _version: 2
   fr: "Plaintes"
   nl: "Klachten"
   pl: "Skargi"
+  es: "Quejas"
   ru: "Жалобы"
   uk: "Скарги"
 "Steady over the last week":
@@ -118,6 +134,7 @@ _version: 2
   fr: "Stable sur la dernière semaine"
   nl: "Stabiel in de afgelopen week"
   pl: "Stabilnie w ostatnim tygodniu"
+  es: "Estable durante la última semana"
   ru: "Стабильно за последнюю неделю"
   uk: "Стабільно за останній тиждень"
 "%{p} points over the last week":
@@ -125,6 +142,7 @@ _version: 2
   fr: "%{p} points sur la dernière semaine"
   nl: "%{p} punten in de afgelopen week"
   pl: "%{p} pkt w ostatnim tygodniu"
+  es: "%{p} puntos durante la última semana"
   ru: "%{p} баллов за последнюю неделю"
   uk: "%{p} балів за останній тиждень"
 "The trend shows once a week of days is closed":
@@ -132,6 +150,7 @@ _version: 2
   fr: "La tendance s'affiche après une semaine de journées clôturées"
   nl: "De trend verschijnt zodra er een week aan dagen is afgesloten"
   pl: "Trend pojawi się po zamknięciu tygodnia dni"
+  es: "La tendencia aparece en cuanto se cierra una semana de días"
   ru: "Тенденция появится после закрытия недели дней"
   uk: "Тенденція з'явиться після закриття тижня днів"
 "In %{mode} a loss counts ×%{f}; a day costs at most %{d} points and a week %{w}. Below 50, decent days bring it back a little every day.":
@@ -139,6 +158,7 @@ _version: 2
   fr: "En %{mode}, une perte compte ×%{f} ; une journée coûte au plus %{d} points et une semaine %{w}. Sous 50, les journées correctes la font remonter un peu chaque jour."
   nl: "In %{mode} telt een verlies ×%{f}; een dag kost hoogstens %{d} punten en een week %{w}. Onder 50 brengen behoorlijke dagen haar elke dag een beetje terug."
   pl: "W trybie %{mode} strata liczy się ×%{f}; dzień kosztuje najwyżej %{d} pkt, tydzień %{w}. Poniżej 50 przyzwoite dni podnoszą ją codziennie trochę."
+  es: "En %{mode}, una pérdida cuenta ×%{f}; un día cuesta como mucho %{d} puntos y una semana %{w}. Por debajo de 50, los días correctos la recuperan un poco cada día."
   ru: "В режиме %{mode} потеря считается ×%{f}; день стоит не больше %{d} баллов, неделя — %{w}. Ниже 50 нормальные дни понемногу её возвращают."
   uk: "У режимі %{mode} втрата рахується ×%{f}; день коштує не більше %{d} балів, тиждень — %{w}. Нижче 50 нормальні дні потроху її повертають."
 "%{p} kept off by the cap":
@@ -146,6 +166,7 @@ _version: 2
   fr: "%{p} retenus par le plafond"
   nl: "%{p} tegengehouden door de grens"
   pl: "%{p} zatrzymane przez limit"
+  es: "%{p} frenados por el límite"
   ru: "%{p} удержано лимитом"
   uk: "%{p} утримано лімітом"
 "A day on time (90 % or more, nothing dropped)":
@@ -153,6 +174,7 @@ _version: 2
   fr: "Une journée à l'heure (90 % ou plus, rien de supprimé)"
   nl: "Een dag op tijd (90 % of meer, niets uitgevallen)"
   pl: "Dzień na czas (90 % lub więcej, nic nie odwołano)"
+  es: "Un día puntual (90 % o más, ningún viaje suprimido)"
   ru: "День вовремя (90 % и больше, без отмен)"
   uk: "День вчасно (90 % і більше, без скасувань)"
 "A dropped trip":
@@ -160,6 +182,7 @@ _version: 2
   fr: "Un trajet supprimé"
   nl: "Een uitgevallen rit"
   pl: "Odwołany kurs"
+  es: "Un viaje suprimido"
   ru: "Отменённый рейс"
   uk: "Скасований рейс"
 "−0.06 each, at most −1.2 a day":
@@ -167,6 +190,7 @@ _version: 2
   fr: "−0,06 chacun, au plus −1,2 par jour"
   nl: "−0,06 per rit, hoogstens −1,2 per dag"
   pl: "−0,06 każdy, najwyżej −1,2 dziennie"
+  es: "−0,06 cada uno, como mucho −1,2 al día"
   ru: "−0,06 за каждый, не больше −1,2 в день"
   uk: "−0,06 за кожен, не більше −1,2 на день"
 "A day under 75 % on time":
@@ -174,6 +198,7 @@ _version: 2
   fr: "Une journée sous 75 % à l'heure"
   nl: "Een dag onder 75 % op tijd"
   pl: "Dzień poniżej 75 % na czas"
+  es: "Un día por debajo del 75 % de puntualidad"
   ru: "День ниже 75 % вовремя"
   uk: "День нижче 75 % вчасно"
 "−0.15; under 60 %: −0.25":
@@ -181,6 +206,7 @@ _version: 2
   fr: "−0,15 ; sous 60 % : −0,25"
   nl: "−0,15; onder 60 %: −0,25"
   pl: "−0,15; poniżej 60 %: −0,25"
+  es: "−0,15; por debajo del 60 %: −0,25"
   ru: "−0,15; ниже 60 %: −0,25"
   uk: "−0,15; нижче 60 %: −0,25"
 "A bus breaking down":
@@ -188,6 +214,7 @@ _version: 2
   fr: "Un bus en panne"
   nl: "Een bus met pech"
   pl: "Awaria autobusu"
+  es: "Un autobús que se avería"
   ru: "Поломка автобуса"
   uk: "Поломка автобуса"
 "−0.05 each, at most −0.3 a day":
@@ -195,6 +222,7 @@ _version: 2
   fr: "−0,05 chacun, au plus −0,3 par jour"
   nl: "−0,05 per bus, hoogstens −0,3 per dag"
   pl: "−0,05 każdy, najwyżej −0,3 dziennie"
+  es: "−0,05 cada uno, como mucho −0,3 al día"
   ru: "−0,05 за каждый, не больше −0,3 в день"
   uk: "−0,05 за кожен, не більше −0,3 на день"
 "at most −0.5 a day":
@@ -202,6 +230,7 @@ _version: 2
   fr: "au plus −0,5 par jour"
   nl: "hoogstens −0,5 per dag"
   pl: "najwyżej −0,5 dziennie"
+  es: "como mucho −0,5 al día"
   ru: "не больше −0,5 в день"
   uk: "не більше −0,5 на день"
 "Accidents, complaints, passengers taken ill":
@@ -209,6 +238,7 @@ _version: 2
   fr: "Accidents, plaintes, voyageurs malades"
   nl: "Ongevallen, klachten, onwel geworden reizigers"
   pl: "Wypadki, skargi, zasłabnięcia"
+  es: "Accidentes, quejas, pasajeros que se ponen enfermos"
   ru: "Аварии, жалобы, заболевшие пассажиры"
   uk: "Аварії, скарги, пасажири, яким стало зле"
 "−0.25 an accident, at most −1 a day":
@@ -216,6 +246,7 @@ _version: 2
   fr: "−0,25 par accident, au plus −1 par jour"
   nl: "−0,25 per ongeval, hoogstens −1 per dag"
   pl: "−0,25 za wypadek, najwyżej −1 dziennie"
+  es: "−0,25 por accidente, como mucho −1 al día"
   ru: "−0,25 за аварию, не больше −1 в день"
   uk: "−0,25 за аварію, не більше −1 на день"
 "Clean or dirty buses, the depot yard":
@@ -223,6 +254,7 @@ _version: 2
   fr: "Bus propres ou sales, le dépôt"
   nl: "Schone of vuile bussen, het depotterrein"
   pl: "Czyste lub brudne autobusy, zajezdnia"
+  es: "Autobuses limpios o sucios, el patio de la cochera"
   ru: "Чистые или грязные автобусы, депо"
   uk: "Чисті чи брудні автобуси, депо"
 "about +0.1 to −0.2 a day":
@@ -230,6 +262,7 @@ _version: 2
   fr: "environ +0,1 à −0,2 par jour"
   nl: "ongeveer +0,1 tot −0,2 per dag"
   pl: "około +0,1 do −0,2 dziennie"
+  es: "de aproximadamente +0,1 a −0,2 al día"
   ru: "примерно от +0,1 до −0,2 в день"
   uk: "приблизно від +0,1 до −0,2 на день"
 "a little every day":
@@ -237,6 +270,7 @@ _version: 2
   fr: "un peu chaque jour"
   nl: "elke dag een beetje"
   pl: "codziennie trochę"
+  es: "un poco cada día"
   ru: "понемногу каждый день"
   uk: "потроху щодня"
 "WLAN, the cleaning company, air conditioning, better stops":
@@ -244,6 +278,7 @@ _version: 2
   fr: "WiFi, l'entreprise de nettoyage, climatisation, meilleurs arrêts"
   nl: "Wifi, het schoonmaakbedrijf, airconditioning, betere haltes"
   pl: "WiFi, firma sprzątająca, klimatyzacja, lepsze przystanki"
+  es: "WLAN, la empresa de limpieza, aire acondicionado, mejores paradas"
   ru: "Wi-Fi, клининг, кондиционеры, лучшие остановки"
   uk: "Wi-Fi, клінінг, кондиціонери, кращі зупинки"
 "small gains every day":
@@ -251,6 +286,7 @@ _version: 2
   fr: "de petits gains chaque jour"
   nl: "elke dag een kleine winst"
   pl: "małe zyski codziennie"
+  es: "pequeñas mejoras cada día"
   ru: "небольшой прирост каждый день"
   uk: "невеликий приріст щодня"
 "answered well up to +0.4; badly, or not at all, up to −0.5":
@@ -258,6 +294,7 @@ _version: 2
   fr: "bien traitées jusqu'à +0,4 ; mal, ou pas du tout, jusqu'à −0,5"
   nl: "goed beantwoord tot +0,4; slecht of helemaal niet tot −0,5"
   pl: "dobra odpowiedź do +0,4; zła lub żadna do −0,5"
+  es: "bien respondidas, hasta +0,4; mal o sin respuesta, hasta −0,5"
   ru: "хороший ответ до +0,4; плохой или никакого — до −0,5"
   uk: "добра відповідь до +0,4; погана або жодної — до −0,5"
 "A week or a month without a dropped trip":
@@ -265,6 +302,7 @@ _version: 2
   fr: "Une semaine ou un mois sans trajet supprimé"
   nl: "Een week of een maand zonder uitgevallen rit"
   pl: "Tydzień lub miesiąc bez odwołanego kursu"
+  es: "Una semana o un mes sin un viaje suprimido"
   ru: "Неделя или месяц без отменённых рейсов"
   uk: "Тиждень або місяць без скасованих рейсів"
 "What it drives: how many ride (about ±10 %), the authority's payment per kilometre (±10 %), your quality in tenders (30 % of the score), what advertisers pay, and the contracts' rating. Below 40, only half of a further loss counts for these.":
@@ -272,6 +310,7 @@ _version: 2
   fr: "Ce qu'elle influence : combien de voyageurs montent (environ ±10 %), le paiement de l'autorité par kilomètre (±10 %), votre qualité aux appels d'offres (30 % de la note), ce que paient les annonceurs, et la note des contrats. Sous 40, seule la moitié d'une nouvelle perte compte pour tout cela."
   nl: "Wat ze bepaalt: hoeveel mensen meerijden (ongeveer ±10 %), de vergoeding van de overheid per kilometer (±10 %), je kwaliteit bij aanbestedingen (30 % van de score), wat adverteerders betalen, en de beoordeling bij contracten. Onder 40 telt voor dit alles maar de helft van een verder verlies."
   pl: "Na co wpływa: ilu pasażerów jeździ (około ±10 %), opłata organizatora za kilometr (±10 %), twoja jakość w przetargach (30 % oceny), ile płacą reklamodawcy i ocena kontraktów. Poniżej 40 liczy się tu tylko połowa dalszej straty."
+  es: "En qué influye: cuánta gente viaja (aproximadamente ±10 %), el pago por kilómetro de la autoridad de transporte (±10 %), tu calidad en las licitaciones (30 % de la puntuación), lo que pagan los anunciantes y la valoración de los contratos. Por debajo de 40, solo cuenta la mitad de cualquier pérdida adicional para estos."
   ru: "На что она влияет: сколько людей ездит (около ±10 %), оплата заказчика за километр (±10 %), ваше качество в тендерах (30 % оценки), сколько платят рекламодатели и рейтинг контрактов. Ниже 40 для всего этого учитывается лишь половина дальнейшей потери."
   uk: "На що вона впливає: скільки людей їздить (близько ±10 %), оплата замовника за кілометр (±10 %), ваша якість у тендерах (30 % оцінки), скільки платять рекламодавці та рейтинг контрактів. Нижче 40 для всього цього рахується лише половина подальшої втрати."
 "Add layover where trips run late, so the buses keep to time":
@@ -279,6 +318,7 @@ _version: 2
   fr: "Ajoutez du battement là où les trajets sont en retard, pour que les bus restent à l'heure"
   nl: "Geef meer keertijd waar ritten te laat zijn, zodat de bussen op tijd blijven"
   pl: "Dodaj czas postoju tam, gdzie kursy się spóźniają, by autobusy trzymały rozkład"
+  es: "Añade tiempo de regulación donde los viajes van con retraso, para que los autobuses cumplan el horario"
   ru: "Добавьте отстой там, где рейсы опаздывают, чтобы автобусы шли по графику"
   uk: "Додайте відстій там, де рейси запізнюються, щоб автобуси йшли за графіком"
 "Hire spare drivers and keep a spare bus, so no trip is dropped":
@@ -286,6 +326,7 @@ _version: 2
   fr: "Engagez des conducteurs de réserve et gardez un bus de réserve, pour qu'aucun trajet ne soit supprimé"
   nl: "Neem reservechauffeurs aan en houd een reservebus achter de hand, zodat geen rit uitvalt"
   pl: "Zatrudnij rezerwowych kierowców i trzymaj zapasowy autobus, by żaden kurs nie wypadł"
+  es: "Contrata conductores de reserva y ten un autobús de reserva, para que no se suprima ningún viaje"
   ru: "Наймите резервных водителей и держите запасной автобус, чтобы ни один рейс не отменялся"
   uk: "Найміть резервних водіїв і тримайте запасний автобус, щоб жоден рейс не скасовувався"
 "Have the buses serviced before they break down":
@@ -293,6 +334,7 @@ _version: 2
   fr: "Faites entretenir les bus avant qu'ils ne tombent en panne"
   nl: "Laat de bussen onderhouden voordat ze pech krijgen"
   pl: "Serwisuj autobusy, zanim się zepsują"
+  es: "Haz revisar los autobuses antes de que se averíen"
   ru: "Обслуживайте автобусы до того, как они сломаются"
   uk: "Обслуговуйте автобуси до того, як вони зламаються"
 "Keep the buses clean: cleaners, a washing bay, or the cleaning company":
@@ -300,6 +342,7 @@ _version: 2
   fr: "Gardez les bus propres : agents de nettoyage, une station de lavage ou l'entreprise de nettoyage"
   nl: "Houd de bussen schoon: schoonmakers, een wasstraat of het schoonmaakbedrijf"
   pl: "Dbaj o czystość autobusów: sprzątacze, myjnia lub firma sprzątająca"
+  es: "Mantén limpios los autobuses: personal de limpieza, un túnel de lavado o la empresa de limpieza"
   ru: "Держите автобусы в чистоте: уборщики, мойка или клининговая компания"
   uk: "Тримайте автобуси в чистоті: прибиральники, мийка або клінінгова компанія"
 "Send drivers on the customer-service course (half the complaints) and first aid":
@@ -307,6 +350,7 @@ _version: 2
   fr: "Envoyez les conducteurs au cours de service client (moitié moins de plaintes) et de premiers secours"
   nl: "Stuur chauffeurs op de cursus klantvriendelijkheid (de helft van de klachten) en EHBO"
   pl: "Wyślij kierowców na kurs obsługi klienta (połowa skarg) i pierwszej pomocy"
+  es: "Envía a los conductores al curso de atención al cliente (la mitad de quejas) y al de primeros auxilios"
   ru: "Отправьте водителей на курс обслуживания клиентов (вдвое меньше жалоб) и первой помощи"
   uk: "Відправте водіїв на курс обслуговування клієнтів (удвічі менше скарг) і першої допомоги"
 "Answer the passengers' complaints before they run out":
@@ -314,6 +358,7 @@ _version: 2
   fr: "Répondez aux plaintes des voyageurs avant leur échéance"
   nl: "Beantwoord de klachten van reizigers voordat ze verlopen"
   pl: "Odpowiadaj na skargi pasażerów przed terminem"
+  es: "Responde a las quejas de los pasajeros antes de que caduquen"
   ru: "Отвечайте на жалобы пассажиров до истечения срока"
   uk: "Відповідайте на скарги пасажирів до кінця терміну"
 "Keep the fares near the association's":
@@ -321,6 +366,7 @@ _version: 2
   fr: "Gardez les tarifs proches de ceux de la communauté"
   nl: "Houd de tarieven dicht bij die van het verbond"
   pl: "Trzymaj taryfy blisko związkowych"
+  es: "Mantén las tarifas cerca de las del consorcio"
   ru: "Держите тарифы близко к тарифу объединения"
   uk: "Тримайте тарифи близько до тарифу об'єднання"
 "Put bigger buses or more trips on full lines":
@@ -328,6 +374,7 @@ _version: 2
   fr: "Mettez des bus plus grands ou plus de trajets sur les lignes pleines"
   nl: "Zet grotere bussen of meer ritten in op volle lijnen"
   pl: "Daj większe autobusy lub więcej kursów na pełne linie"
+  es: "Pon autobuses más grandes o más viajes en las líneas llenas"
   ru: "Пустите более крупные автобусы или больше рейсов на полные линии"
   uk: "Пустіть більші автобуси або більше рейсів на повні лінії"
 "Research WLAN and air conditioning; sign the cleaning company":
@@ -335,6 +382,7 @@ _version: 2
   fr: "Recherchez le WiFi et la climatisation ; engagez l'entreprise de nettoyage"
   nl: "Onderzoek wifi en airconditioning; schakel het schoonmaakbedrijf in"
   pl: "Zbadaj WiFi i klimatyzację; podpisz umowę z firmą sprzątającą"
+  es: "Investiga el WLAN y el aire acondicionado; contrata a la empresa de limpieza"
   ru: "Исследуйте Wi-Fi и кондиционеры; наймите клининговую компанию"
   uk: "Дослідіть Wi-Fi і кондиціонери; найміть клінінгову компанію"
 "Contracts: internet for the buses, the cleaning company":
@@ -342,6 +390,7 @@ _version: 2
   fr: "Contrats : internet pour les bus, l'entreprise de nettoyage"
   nl: "Contracten: internet voor de bussen, het schoonmaakbedrijf"
   pl: "Kontrakty: internet w autobusach, firma sprzątająca"
+  es: "Contratos: internet para los autobuses, la empresa de limpieza"
   ru: "Контракты: интернет для автобусов, клининговая компания"
   uk: "Контракти: інтернет для автобусів, клінінгова компанія"
 "Last week, by cause":
@@ -349,6 +398,7 @@ _version: 2
   fr: "La semaine passée, par cause"
   nl: "Afgelopen week, per oorzaak"
   pl: "Ostatni tydzień, według przyczyny"
+  es: "La semana pasada, por causa"
   ru: "Последняя неделя, по причинам"
   uk: "Останній тиждень, за причинами"
 "Nothing moved it yet: close a day.":
@@ -356,6 +406,7 @@ _version: 2
   fr: "Rien ne l'a encore fait bouger : clôturez une journée."
   nl: "Nog niets heeft haar bewogen: sluit een dag af."
   pl: "Nic jej jeszcze nie zmieniło: zamknij dzień."
+  es: "Aún no ha cambiado nada: cierra un día."
   ru: "Пока ничего не изменилось: закройте день."
   uk: "Поки нічого не змінилося: закрийте день."
 "Day by day":
@@ -363,6 +414,7 @@ _version: 2
   fr: "Jour après jour"
   nl: "Dag voor dag"
   pl: "Dzień po dniu"
+  es: "Día a día"
   ru: "По дням"
   uk: "По днях"
 "What moves it":
@@ -370,6 +422,7 @@ _version: 2
   fr: "Ce qui la fait bouger"
   nl: "Wat haar beweegt"
   pl: "Co na nią wpływa"
+  es: "Qué la mueve"
   ru: "Что на неё влияет"
   uk: "Що на неї впливає"
 "What you can do":
@@ -377,6 +430,7 @@ _version: 2
   fr: "Ce que vous pouvez faire"
   nl: "Wat je kunt doen"
   pl: "Co możesz zrobić"
+  es: "Qué puedes hacer"
   ru: "Что вы можете сделать"
   uk: "Що ви можете зробити"
 "%{n} complaints to answer":
@@ -384,6 +438,7 @@ _version: 2
   fr: "%{n} plaintes à traiter"
   nl: "%{n} klachten te beantwoorden"
   pl: "%{n} skarg do odpowiedzi"
+  es: "%{n} quejas por responder"
   ru: "%{n} жалоб ждут ответа"
   uk: "%{n} скарг чекають відповіді"
 "%{n} of 100":
@@ -391,6 +446,7 @@ _version: 2
   fr: "%{n} sur 100"
   nl: "%{n} van 100"
   pl: "%{n} na 100"
+  es: "%{n} de 100"
   ru: "%{n} из 100"
   uk: "%{n} зі 100"
 "What raises and lowers it":
@@ -398,5 +454,6 @@ _version: 2
   fr: "Ce qui la fait monter et baisser"
   nl: "Wat haar doet stijgen en dalen"
   pl: "Co ją podnosi i obniża"
+  es: "Qué la sube y la baja"
   ru: "Что её повышает и понижает"
   uk: "Що її підвищує та знижує"

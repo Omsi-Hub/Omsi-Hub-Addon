@@ -8,6 +8,7 @@ _version: 2
   ru: "Любой цвет"
   uk: "Будь-який колір"
   pl: "Dowolny kolor"
+  es: "Cualquier color"
 "Hide the %{n} empty texts":
   nl: "De %{n} lege teksten verbergen"
   de: "Die %{n} leeren Texte ausblenden"
@@ -15,6 +16,7 @@ _version: 2
   ru: "Скрыть %{n} пустых текстов"
   uk: "Сховати %{n} порожніх текстів"
   pl: "Ukryj %{n} pustych tekstów"
+  es: "Ocultar los %{n} textos vacíos"
 "%{n} more texts, empty for this depot file":
   nl: "Nog %{n} teksten, leeg bij dit hofbestand"
   de: "%{n} weitere Texte, leer bei dieser Hofdatei"
@@ -22,6 +24,7 @@ _version: 2
   ru: "Ещё %{n} текстов, пустых в этом файле депо"
   uk: "Ще %{n} текстів, порожніх у цьому файлі депо"
   pl: "%{n} kolejnych tekstów, pustych w tym pliku zajezdni"
+  es: "%{n} textos más, vacíos para este archivo de cochera"
 "The table is the line's timetable: a change to the patterns below fills that group of days anew at once; the times typed into the other groups stay.":
   nl: "De tabel is de dienstregeling van de lijn: een wijziging in de patronen hieronder vult die groep dagen meteen opnieuw; de getypte tijden in de andere groepen blijven staan."
   de: "Die Tabelle ist der Fahrplan der Linie: eine Änderung an den Mustern unten füllt diese Tagesgruppe sofort neu; die in anderen Gruppen eingetippten Zeiten bleiben."
@@ -29,6 +32,7 @@ _version: 2
   ru: "Таблица — это расписание линии: изменение шаблонов ниже сразу заполняет эту группу дней заново; времена, введённые в другие группы, остаются."
   uk: "Таблиця — це розклад лінії: зміна шаблонів нижче одразу заповнює цю групу днів наново; час, уведений в інші групи, залишається."
   pl: "Tabela jest rozkładem linii: zmiana wzorców poniżej od razu wypełnia tę grupę dni od nowa; czasy wpisane w innych grupach zostają."
+  es: "La tabla es el horario de la línea: un cambio en los patrones de abajo vuelve a llenar ese grupo de días al instante; las horas escritas en los otros grupos se mantienen."
 "All brands":
   nl: "Alle merken"
   de: "Alle Marken"
@@ -36,3 +40,4 @@ _version: 2
   ru: "Все марки"
   uk: "Усі марки"
   pl: "Wszystkie marki"
+  es: "Todas las marcas"

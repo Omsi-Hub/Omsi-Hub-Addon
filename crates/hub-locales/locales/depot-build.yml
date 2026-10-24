@@ -10,6 +10,7 @@ _version: 2
   ru: "%{name} основано. Постройте депо, добавьте линию, купите автобус и наймите водителей."
   uk: "%{name} засновано. Збудуйте депо, додайте лінію, купіть автобус і найміть водіїв."
   pl: "%{name} założone. Zbuduj zajezdnię, dodaj linię, kup autobus i zatrudnij kierowców."
+  es: "Se ha fundado %{name}. Construye tu cochera, añade una línea, compra un autobús y contrata conductores."
 "%{lanes} lanes: washes %{n} buses a night":
   nl: "%{lanes} wasstraten: wast %{n} bussen per nacht"
   de: "%{lanes} Waschstraßen: wäscht %{n} Busse pro Nacht"
@@ -17,6 +18,7 @@ _version: 2
   ru: "Моечных линий: %{lanes}; моет %{n} автобусов за ночь"
   uk: "Мийних ліній: %{lanes}; миє %{n} автобусів за ніч"
   pl: "Myjnie: %{lanes}; myje %{n} autobusów na noc"
+  es: "%{lanes} carriles: lava %{n} autobuses por noche"
 "Building credit: what your company was given to build its first depot with, spent before your cash":
   nl: "Bouwkrediet: wat je bedrijf meekreeg om zijn eerste depot mee te bouwen, besteed vóór je kas"
   de: "Baukredit: was dein Unternehmen für seinen ersten Betriebshof bekommen hat, verbraucht vor deiner Kasse"
@@ -24,6 +26,7 @@ _version: 2
   ru: "Строительный кредит: выделен предприятию на первое депо, расходуется раньше кассы"
   uk: "Будівельний кредит: виділений підприємству на перше депо, витрачається раніше за касу"
   pl: "Kredyt budowlany: środki na pierwszą zajezdnię, wydawane przed gotówką"
+  es: "Crédito de construcción: lo que recibió tu empresa para construir su primera cochera, que se gasta antes que tu dinero"
 "Building credit left":
   nl: "Bouwkrediet over"
   de: "Verbleibender Baukredit"
@@ -31,6 +34,7 @@ _version: 2
   ru: "Остаток строительного кредита"
   uk: "Залишок будівельного кредиту"
   pl: "Pozostały kredyt budowlany"
+  es: "Crédito de construcción restante"
 "Your land is empty: build parking spaces, a workshop, a diesel station and offices to start with.":
   nl: "Je terrein is leeg: bouw om te beginnen parkeerplaatsen, een werkplaats, een dieselstation en kantoren."
   de: "Dein Gelände ist leer: baue zu Beginn Stellplätze, eine Werkstatt, eine Dieseltankstelle und Büros."
@@ -38,6 +42,7 @@ _version: 2
   ru: "Участок пуст: для начала постройте стоянку, мастерскую, дизельную заправку и офисы."
   uk: "Ділянка порожня: для початку збудуйте стоянку, майстерню, дизельну заправку й офіси."
   pl: "Teren jest pusty: na początek zbuduj miejsca postojowe, warsztat, stację diesla i biura."
+  es: "Tu terreno está vacío: para empezar, construye plazas de aparcamiento, un taller, una estación de diésel y oficinas."
 "Build the %{area} first":
   nl: "Bouw eerst: %{area}"
   de: "Zuerst bauen: %{area}"
@@ -45,6 +50,7 @@ _version: 2
   ru: "Сначала постройте: %{area}"
   uk: "Спершу збудуйте: %{area}"
   pl: "Najpierw zbuduj: %{area}"
+  es: "Construye primero: %{area}"
 "%{days} days of work":
   nl: "%{days} dagen werk"
   de: "%{days} Tage Arbeit"
@@ -52,6 +58,7 @@ _version: 2
   ru: "Работ на %{days} дн."
   uk: "Робіт на %{days} дн."
   pl: "%{days} dni pracy"
+  es: "%{days} días de obra"
 "This is there already.":
   nl: "Dit is er al."
   de: "Das gibt es schon."
@@ -59,6 +66,7 @@ _version: 2
   ru: "Это уже есть."
   uk: "Це вже є."
   pl: "To już jest."
+  es: "Esto ya existe."
 "Build the area first.":
   nl: "Bouw eerst het onderdeel zelf."
   de: "Baue zuerst den Bereich selbst."
@@ -66,6 +74,7 @@ _version: 2
   ru: "Сначала постройте саму зону."
   uk: "Спершу збудуйте саму зону."
   pl: "Najpierw zbuduj samą strefę."
+  es: "Construye primero la zona."
 "Fuel and power bought outside the depot":
   nl: "Brandstof en stroom buiten het depot gekocht"
   de: "Kraftstoff und Strom außerhalb des Betriebshofs gekauft"
@@ -73,6 +82,7 @@ _version: 2
   ru: "Топливо и электроэнергия куплены вне депо"
   uk: "Пальне й електроенергію куплено поза депо"
   pl: "Paliwo i prąd kupione poza zajezdnią"
+  es: "Combustible y electricidad comprados fuera de la cochera"
 "Fuel and power the depot saved":
   nl: "Wat het depot op brandstof en stroom bespaarde"
   de: "Was der Betriebshof an Kraftstoff und Strom gespart hat"
@@ -80,6 +90,7 @@ _version: 2
   ru: "Экономия депо на топливе и электроэнергии"
   uk: "Економія депо на пальному й електроенергії"
   pl: "Oszczędności zajezdni na paliwie i prądzie"
+  es: "Combustible y electricidad ahorrados por la cochera"
 "What can be added":
   nl: "Wat erbij kan"
   de: "Was dazukommen kann"
@@ -87,6 +98,7 @@ _version: 2
   ru: "Что можно добавить"
   uk: "Що можна додати"
   pl: "Co można dodać"
+  es: "Lo que se puede añadir"
 "Added":
   nl: "Toegevoegd"
   de: "Hinzugefügt"
@@ -94,6 +106,7 @@ _version: 2
   ru: "Добавлено"
   uk: "Додано"
   pl: "Dodano"
+  es: "Añadido"
 "Wait for the building work on this area":
   nl: "Wacht tot de bouw aan dit onderdeel klaar is"
   de: "Warte, bis die Bauarbeiten an diesem Bereich fertig sind"
@@ -101,6 +114,7 @@ _version: 2
   ru: "Дождитесь окончания стройки в этой зоне"
   uk: "Дочекайтеся завершення будівництва в цій зоні"
   pl: "Poczekaj na koniec budowy w tej strefie"
+  es: "Espera a que terminen las obras de esta zona"
 "The depot's look":
   nl: "Uiterlijk van het depot"
   de: "Aussehen des Betriebshofs"
@@ -108,6 +122,7 @@ _version: 2
   ru: "Внешний вид депо"
   uk: "Зовнішній вигляд депо"
   pl: "Wygląd zajezdni"
+  es: "Aspecto de la cochera"
 "Choose the look":
   nl: "Kies het uiterlijk"
   de: "Aussehen wählen"
@@ -115,6 +130,7 @@ _version: 2
   ru: "Выбрать внешний вид"
   uk: "Вибрати зовнішній вигляд"
   pl: "Wybierz wygląd"
+  es: "Elegir el aspecto"
 "Walls":
   nl: "Muren"
   de: "Wände"
@@ -122,6 +138,7 @@ _version: 2
   ru: "Стены"
   uk: "Стіни"
   pl: "Ściany"
+  es: "Paredes"
 "Roofs":
   nl: "Daken"
   de: "Dächer"
@@ -129,6 +146,7 @@ _version: 2
   ru: "Крыши"
   uk: "Дахи"
   pl: "Dachy"
+  es: "Tejados"
 "Trims":
   nl: "Accenten"
   de: "Zierleisten"
@@ -136,6 +154,7 @@ _version: 2
   ru: "Отделка"
   uk: "Оздоблення"
   pl: "Wykończenia"
+  es: "Molduras"
 "Default":
   nl: "Standaard"
   de: "Standard"
@@ -143,6 +162,7 @@ _version: 2
   ru: "По умолчанию"
   uk: "Типово"
   pl: "Domyślnie"
+  es: "Predeterminado"
 "Walls of":
   nl: "Muren van"
   de: "Wände aus"
@@ -150,6 +170,7 @@ _version: 2
   ru: "Стены из"
   uk: "Стіни з"
   pl: "Ściany z"
+  es: "Paredes de"
 "Steel cladding":
   nl: "Staalplaten"
   de: "Stahlverkleidung"
@@ -157,6 +178,7 @@ _version: 2
   ru: "Стальная обшивка"
   uk: "Сталева обшивка"
   pl: "Okładzina stalowa"
+  es: "Revestimiento de acero"
 "Brick":
   nl: "Baksteen"
   de: "Backstein"
@@ -164,6 +186,7 @@ _version: 2
   ru: "Кирпич"
   uk: "Цегла"
   pl: "Cegła"
+  es: "Ladrillo"
 "Plaster":
   nl: "Stucwerk"
   de: "Putz"
@@ -171,6 +194,7 @@ _version: 2
   ru: "Штукатурка"
   uk: "Штукатурка"
   pl: "Tynk"
+  es: "Enlucido"
 "Lights and cameras":
   nl: "Verlichting en camera's"
   de: "Beleuchtung und Kameras"
@@ -178,6 +202,7 @@ _version: 2
   ru: "Освещение и камеры"
   uk: "Освітлення й камери"
   pl: "Oświetlenie i kamery"
+  es: "Iluminación y cámaras"
 "Carports":
   nl: "Overkappingen"
   de: "Carports"
@@ -185,6 +210,7 @@ _version: 2
   ru: "Навесы"
   uk: "Навіси"
   pl: "Wiaty"
+  es: "Marquesinas"
 "Parking hall":
   nl: "Stallingshal"
   de: "Abstellhalle"
@@ -192,6 +218,7 @@ _version: 2
   ru: "Крытая стоянка"
   uk: "Крита стоянка"
   pl: "Hala postojowa"
+  es: "Nave de estacionamiento"
 "Paint booth":
   nl: "Spuitcabine"
   de: "Lackierkabine"
@@ -199,6 +226,7 @@ _version: 2
   ru: "Покрасочная камера"
   uk: "Фарбувальна камера"
   pl: "Kabina lakiernicza"
+  es: "Cabina de pintura"
 "Inspection lane":
   nl: "Keuringsstraat"
   de: "Prüfstraße"
@@ -206,6 +234,7 @@ _version: 2
   ru: "Линия техосмотра"
   uk: "Лінія техогляду"
   pl: "Stacja kontroli"
+  es: "Línea de inspección"
 "Tyre store":
   nl: "Bandenopslag"
   de: "Reifenlager"
@@ -213,6 +242,7 @@ _version: 2
   ru: "Склад шин"
   uk: "Склад шин"
   pl: "Magazyn opon"
+  es: "Almacén de neumáticos"
 "Wash gantries":
   nl: "Wasportalen"
   de: "Waschportale"
@@ -220,6 +250,7 @@ _version: 2
   ru: "Моечные порталы"
   uk: "Мийні портали"
   pl: "Bramy myjące"
+  es: "Túneles de lavado"
 "Interior cleaning":
   nl: "Interieurreiniging"
   de: "Innenreinigung"
@@ -227,6 +258,7 @@ _version: 2
   ru: "Уборка салона"
   uk: "Прибирання салону"
   pl: "Czyszczenie wnętrza"
+  es: "Limpieza interior"
 "Underbody wash":
   nl: "Onderbodemwas"
   de: "Unterbodenwäsche"
@@ -234,6 +266,7 @@ _version: 2
   ru: "Мойка днища"
   uk: "Миття днища"
   pl: "Mycie podwozia"
+  es: "Lavado de bajos"
 "Water recycling":
   nl: "Waterrecycling"
   de: "Wasserrecycling"
@@ -241,6 +274,7 @@ _version: 2
   ru: "Оборот воды"
   uk: "Оборот води"
   pl: "Recykling wody"
+  es: "Reciclaje de agua"
 "Bulk tank":
   nl: "Opslagtank"
   de: "Großtank"
@@ -248,6 +282,7 @@ _version: 2
   ru: "Большой резервуар"
   uk: "Великий резервуар"
   pl: "Duży zbiornik"
+  es: "Depósito grande"
 "AdBlue dispenser":
   nl: "AdBlue-pomp"
   de: "AdBlue-Zapfsäule"
@@ -255,6 +290,7 @@ _version: 2
   ru: "Колонка AdBlue"
   uk: "Колонка AdBlue"
   pl: "Dystrybutor AdBlue"
+  es: "Surtidor de AdBlue"
 "Canteen":
   nl: "Kantine"
   de: "Kantine"
@@ -262,6 +298,7 @@ _version: 2
   ru: "Столовая"
   uk: "Їдальня"
   pl: "Stołówka"
+  es: "Comedor"
 "Control room":
   nl: "Meldkamer"
   de: "Leitstelle"
@@ -269,6 +306,7 @@ _version: 2
   ru: "Диспетчерская"
   uk: "Диспетчерська"
   pl: "Dyspozytornia"
+  es: "Puesto de mando"
 "Training room":
   nl: "Opleidingsruimte"
   de: "Schulungsraum"
@@ -276,6 +314,7 @@ _version: 2
   ru: "Учебный класс"
   uk: "Навчальний клас"
   pl: "Sala szkoleniowa"
+  es: "Sala de formación"
 "Solar roof":
   nl: "Zonnedak"
   de: "Solardach"
@@ -283,6 +322,7 @@ _version: 2
   ru: "Солнечная крыша"
   uk: "Сонячний дах"
   pl: "Dach solarny"
+  es: "Tejado solar"
 "The staff feel safer, the buses are daubed on less":
   nl: "Het personeel voelt zich veiliger, de bussen worden minder beklad"
   de: "Das Personal fühlt sich sicherer, die Busse werden seltener beschmiert"
@@ -290,6 +330,7 @@ _version: 2
   ru: "Персонал чувствует себя спокойнее, автобусы реже разрисовывают"
   uk: "Персонал почувається безпечніше, автобуси рідше розмальовують"
   pl: "Personel czuje się bezpieczniej, autobusy rzadziej są mazane"
+  es: "El personal se siente más seguro y hay menos pintadas en los autobuses"
 "The buses stand dry: they stay clean longer":
   nl: "De bussen staan droog: ze blijven langer schoon"
   de: "Die Busse stehen trocken: sie bleiben länger sauber"
@@ -297,6 +338,7 @@ _version: 2
   ru: "Автобусы стоят под крышей: дольше остаются чистыми"
   uk: "Автобуси стоять під дахом: довше лишаються чистими"
   pl: "Autobusy stoją pod dachem: dłużej są czyste"
+  es: "Los autobuses están a cubierto: se mantienen limpios más tiempo"
 "The buses stand indoors: they stay clean much longer":
   nl: "De bussen staan binnen: ze blijven veel langer schoon"
   de: "Die Busse stehen drinnen: sie bleiben viel länger sauber"
@@ -304,6 +346,7 @@ _version: 2
   ru: "Автобусы стоят в помещении: гораздо дольше остаются чистыми"
   uk: "Автобуси стоять у приміщенні: значно довше лишаються чистими"
   pl: "Autobusy stoją w hali: są czyste znacznie dłużej"
+  es: "Los autobuses están bajo techo: se mantienen limpios mucho más tiempo"
 "Liveries painted in house: 30 % cheaper":
   nl: "Lakken in eigen huis: 30 % goedkoper"
   de: "Lackierungen im eigenen Haus: 30 % günstiger"
@@ -311,6 +354,7 @@ _version: 2
   ru: "Покраска своими силами: на 30 % дешевле"
   uk: "Фарбування власними силами: на 30 % дешевше"
   pl: "Malowanie we własnym zakresie: 30 % taniej"
+  es: "Libreas pintadas en casa: un 30 % más baratas"
 "Repairs found sooner: 15 % cheaper":
   nl: "Gebreken eerder gevonden: reparaties 15 % goedkoper"
   de: "Mängel früher gefunden: Reparaturen 15 % günstiger"
@@ -318,6 +362,7 @@ _version: 2
   ru: "Неисправности находят раньше: ремонт на 15 % дешевле"
   uk: "Несправності знаходять раніше: ремонт на 15 % дешевший"
   pl: "Usterki wykrywane wcześniej: naprawy 15 % taniej"
+  es: "Las averías se detectan antes: un 15 % más baratas"
 "Repairs and overhauls 7 % cheaper":
   nl: "Reparaties en revisies 7 % goedkoper"
   de: "Reparaturen und Hauptuntersuchungen 7 % günstiger"
@@ -325,6 +370,7 @@ _version: 2
   ru: "Ремонт и капремонт на 7 % дешевле"
   uk: "Ремонт і капремонт на 7 % дешевші"
   pl: "Naprawy i remonty 7 % taniej"
+  es: "Reparaciones y revisiones un 7 % más baratas"
 "Every lane washes four times the buses a night":
   nl: "Elke wasstraat wast vier keer zoveel bussen per nacht"
   de: "Jede Waschstraße wäscht pro Nacht viermal so viele Busse"
@@ -332,6 +378,7 @@ _version: 2
   ru: "Каждая линия моет за ночь вчетверо больше автобусов"
   uk: "Кожна лінія миє за ніч учетверо більше автобусів"
   pl: "Każda myjnia myje w nocy cztery razy więcej autobusów"
+  es: "Cada carril lava cuatro veces más autobuses por noche"
 "A wash cleans inside too: it does more":
   nl: "Een wasbeurt maakt ook het interieur schoon: het helpt meer"
   de: "Eine Wäsche reinigt auch innen: sie bringt mehr"
@@ -339,6 +386,7 @@ _version: 2
   ru: "Мойка убирает и салон: эффект сильнее"
   uk: "Миття прибирає й салон: ефект сильніший"
   pl: "Mycie czyści też wnętrze: daje więcej"
+  es: "El lavado también limpia por dentro: rinde más"
 "The buses stay clean longer":
   nl: "De bussen blijven langer schoon"
   de: "Die Busse bleiben länger sauber"
@@ -346,6 +394,7 @@ _version: 2
   ru: "Автобусы дольше остаются чистыми"
   uk: "Автобуси довше лишаються чистими"
   pl: "Autobusy dłużej są czyste"
+  es: "Los autobuses se mantienen limpios más tiempo"
 "The wash lanes cost 40 % less to keep":
   nl: "De wasstraten kosten 40 % minder onderhoud"
   de: "Die Waschstraßen kosten 40 % weniger Unterhalt"
@@ -353,6 +402,7 @@ _version: 2
   ru: "Содержание моечных линий на 40 % дешевле"
   uk: "Утримання мийних ліній на 40 % дешевше"
   pl: "Utrzymanie myjni kosztuje 40 % mniej"
+  es: "Los carriles de lavado cuestan un 40 % menos de mantener"
 "Diesel bought in bulk: 3 % cheaper at the depot":
   nl: "Diesel in bulk ingekocht: 3 % goedkoper in het depot"
   de: "Diesel in großen Mengen gekauft: 3 % günstiger im Betriebshof"
@@ -360,6 +410,7 @@ _version: 2
   ru: "Дизель оптом: в депо на 3 % дешевле"
   uk: "Дизель гуртом: у депо на 3 % дешевше"
   pl: "Diesel kupowany hurtowo: w zajezdni 3 % taniej"
+  es: "Diésel comprado al por mayor: un 3 % más barato en la cochera"
 "No detours for AdBlue: 1 % cheaper at the depot":
   nl: "Geen omwegen voor AdBlue: 1 % goedkoper in het depot"
   de: "Keine Umwege für AdBlue: 1 % günstiger im Betriebshof"
@@ -367,6 +418,7 @@ _version: 2
   ru: "Без объездов за AdBlue: в депо на 1 % дешевле"
   uk: "Без об'їздів по AdBlue: у депо на 1 % дешевше"
   pl: "Bez objazdów po AdBlue: w zajezdni 1 % taniej"
+  es: "Sin desvíos para el AdBlue: un 1 % más barato en la cochera"
 "The staff are more satisfied":
   nl: "Het personeel is tevredener"
   de: "Das Personal ist zufriedener"
@@ -374,6 +426,7 @@ _version: 2
   ru: "Персонал более доволен"
   uk: "Персонал задоволеніший"
   pl: "Personel jest bardziej zadowolony"
+  es: "El personal está más satisfecho"
 "The service watched: the passengers notice":
   nl: "De dienst wordt bewaakt: de reizigers merken het"
   de: "Der Betrieb wird überwacht: die Fahrgäste merken es"
@@ -381,6 +434,7 @@ _version: 2
   ru: "Движение под контролем: пассажиры это замечают"
   uk: "Рух під контролем: пасажири це помічають"
   pl: "Ruch pod kontrolą: pasażerowie to zauważają"
+  es: "El servicio vigilado: los pasajeros lo notan"
 "The staff are a little more satisfied":
   nl: "Het personeel is iets tevredener"
   de: "Das Personal ist etwas zufriedener"
@@ -388,6 +442,7 @@ _version: 2
   ru: "Персонал немного более доволен"
   uk: "Персонал трохи задоволеніший"
   pl: "Personel jest nieco bardziej zadowolony"
+  es: "El personal está algo más satisfecho"
 "Power for the chargers 8 % cheaper":
   nl: "Stroom voor de laadpalen 8 % goedkoper"
   de: "Strom für die Ladepunkte 8 % günstiger"
@@ -395,6 +450,7 @@ _version: 2
   ru: "Электроэнергия для зарядки на 8 % дешевле"
   uk: "Електроенергія для зарядки на 8 % дешевша"
   pl: "Prąd do ładowarek 8 % taniej"
+  es: "Electricidad para los cargadores un 8 % más barata"
 "Plan":
   nl: "Plattegrond"
   de: "Plan"
@@ -402,6 +458,7 @@ _version: 2
   ru: "План"
   uk: "План"
   pl: "Plan"
+  es: "Plano"
 "The depot at a glance":
   nl: "Het depot in één oogopslag"
   de: "Der Betriebshof auf einen Blick"
@@ -409,6 +466,7 @@ _version: 2
   ru: "Депо с первого взгляда"
   uk: "Депо з першого погляду"
   pl: "Zajezdnia w skrócie"
+  es: "La cochera de un vistazo"
 "Buses tonight":
   nl: "Bussen vannacht"
   de: "Busse heute Nacht"
@@ -416,6 +474,7 @@ _version: 2
   ru: "Автобусы этой ночью"
   uk: "Автобуси цієї ночі"
   pl: "Autobusy tej nocy"
+  es: "Autobuses esta noche"
 "On the yard":
   nl: "Op het terrein"
   de: "Auf dem Hof"
@@ -423,6 +482,7 @@ _version: 2
   ru: "На площадке"
   uk: "На майданчику"
   pl: "Na placu"
+  es: "En el patio"
 "In the street":
   nl: "Op straat"
   de: "Auf der Straße"
@@ -430,6 +490,7 @@ _version: 2
   ru: "На улице"
   uk: "На вулиці"
   pl: "Na ulicy"
+  es: "En la calle"
 "Upkeep a month":
   nl: "Onderhoud per maand"
   de: "Unterhalt pro Monat"
@@ -437,6 +498,7 @@ _version: 2
   ru: "Содержание в месяц"
   uk: "Утримання на місяць"
   pl: "Utrzymanie miesięcznie"
+  es: "Mantenimiento al mes"
 "level %{n}":
   nl: "niveau %{n}"
   de: "Stufe %{n}"
@@ -444,6 +506,7 @@ _version: 2
   ru: "уровень %{n}"
   uk: "рівень %{n}"
   pl: "poziom %{n}"
+  es: "nivel %{n}"
 "%{what} ready %{date}":
   nl: "%{what} klaar op %{date}"
   de: "%{what} fertig am %{date}"
@@ -451,6 +514,7 @@ _version: 2
   ru: "%{what}: готово %{date}"
   uk: "%{what}: готово %{date}"
   pl: "%{what}: gotowe %{date}"
+  es: "%{what} listo el %{date}"
 "%{need} buses for %{has} spaces":
   nl: "%{need} bussen voor %{has} plaatsen"
   de: "%{need} Busse für %{has} Stellplätze"
@@ -458,6 +522,7 @@ _version: 2
   ru: "%{need} автобусов на %{has} мест"
   uk: "%{need} автобусів на %{has} місць"
   pl: "%{need} autobusów na %{has} miejsc"
+  es: "%{need} autobuses para %{has} plazas"
 "%{busy} of %{has} bays busy, %{waiting} jobs waiting":
   nl: "%{busy} van %{has} bruggen bezet, %{waiting} klussen wachten"
   de: "%{busy} von %{has} Ständen belegt, %{waiting} Aufträge warten"
@@ -465,6 +530,7 @@ _version: 2
   ru: "Занято постов: %{busy} из %{has}, в очереди работ: %{waiting}"
   uk: "Зайнято постів: %{busy} з %{has}, у черзі робіт: %{waiting}"
   pl: "Zajęte stanowiska: %{busy} z %{has}, zleceń w kolejce: %{waiting}"
+  es: "%{busy} de %{has} fosos ocupados, %{waiting} trabajos en espera"
 "%{need} buses, washes %{has} a night":
   nl: "%{need} bussen, wast er %{has} per nacht"
   de: "%{need} Busse, wäscht %{has} pro Nacht"
@@ -472,6 +538,7 @@ _version: 2
   ru: "%{need} автобусов, моет %{has} за ночь"
   uk: "%{need} автобусів, миє %{has} за ніч"
   pl: "%{need} autobusów, myje %{has} na noc"
+  es: "%{need} autobuses, lava %{has} por noche"
 "%{need} diesel buses, fills %{has} a night":
   nl: "%{need} dieselbussen, tankt er %{has} per nacht"
   de: "%{need} Dieselbusse, betankt %{has} pro Nacht"
@@ -479,6 +546,7 @@ _version: 2
   ru: "%{need} дизельных автобусов, заправляет %{has} за ночь"
   uk: "%{need} дизельних автобусів, заправляє %{has} за ніч"
   pl: "%{need} autobusów diesla, tankuje %{has} na noc"
+  es: "%{need} autobuses diésel, reposta %{has} por noche"
 "%{need} electric buses, charges %{has} a night":
   nl: "%{need} elektrische bussen, laadt er %{has} per nacht"
   de: "%{need} Elektrobusse, lädt %{has} pro Nacht"
@@ -486,6 +554,7 @@ _version: 2
   ru: "%{need} электробусов, заряжает %{has} за ночь"
   uk: "%{need} електробусів, заряджає %{has} за ніч"
   pl: "%{need} autobusów elektrycznych, ładuje %{has} na noc"
+  es: "%{need} autobuses eléctricos, carga %{has} por noche"
 "%{need} people, room for %{has}":
   nl: "%{need} mensen, plaats voor %{has}"
   de: "%{need} Leute, Platz für %{has}"
@@ -493,6 +562,7 @@ _version: 2
   ru: "%{need} человек, места на %{has}"
   uk: "%{need} людей, місця на %{has}"
   pl: "%{need} osób, miejsca dla %{has}"
+  es: "%{need} personas, sitio para %{has}"
 "No spaces: the buses stand in the street":
   nl: "Geen plaatsen: de bussen staan op straat"
   de: "Keine Stellplätze: die Busse stehen auf der Straße"
@@ -500,6 +570,7 @@ _version: 2
   ru: "Нет мест: автобусы стоят на улице"
   uk: "Немає місць: автобуси стоять на вулиці"
   pl: "Brak miejsc: autobusy stoją na ulicy"
+  es: "Sin plazas: los autobuses se quedan en la calle"
 "None: a garage outside does the work, dearer":
   nl: "Geen: een garage buiten doet het werk, duurder"
   de: "Keine: eine fremde Werkstatt übernimmt die Arbeit, teurer"
@@ -507,6 +578,7 @@ _version: 2
   ru: "Нет: работу делает сторонняя мастерская, дороже"
   uk: "Немає: роботу робить стороння майстерня, дорожче"
   pl: "Brak: pracę wykonuje zewnętrzny warsztat, drożej"
+  es: "Ninguno: un taller externo hace el trabajo, más caro"
 "None: the fleet is cleaned by hand":
   nl: "Geen: de vloot wordt met de hand schoongemaakt"
   de: "Keine: die Flotte wird von Hand gereinigt"
@@ -514,6 +586,7 @@ _version: 2
   ru: "Нет: парк моют вручную"
   uk: "Немає: парк миють вручну"
   pl: "Brak: flota jest myta ręcznie"
+  es: "Ninguno: la flota se limpia a mano"
 "None: diesel is bought outside, dearer":
   nl: "Geen: diesel wordt buiten gekocht, duurder"
   de: "Keine: Diesel wird auswärts gekauft, teurer"
@@ -521,6 +594,7 @@ _version: 2
   ru: "Нет: дизель покупают на стороне, дороже"
   uk: "Немає: дизель купують на стороні, дорожче"
   pl: "Brak: diesel kupowany na zewnątrz, drożej"
+  es: "Ninguno: el diésel se compra fuera, más caro"
 "None: electric buses charge outside, dearer":
   nl: "Geen: elektrische bussen laden buiten, duurder"
   de: "Keine: Elektrobusse laden auswärts, teurer"
@@ -528,6 +602,7 @@ _version: 2
   ru: "Нет: электробусы заряжаются на стороне, дороже"
   uk: "Немає: електробуси заряджаються на стороні, дорожче"
   pl: "Brak: autobusy elektryczne ładują się na zewnątrz, drożej"
+  es: "Ninguno: los autobuses eléctricos cargan fuera, más caro"
 "None: the staff have no rooms":
   nl: "Geen: het personeel heeft geen ruimtes"
   de: "Keine: das Personal hat keine Räume"
@@ -535,3 +610,4 @@ _version: 2
   ru: "Нет: у персонала нет помещений"
   uk: "Немає: у персоналу немає приміщень"
   pl: "Brak: personel nie ma pomieszczeń"
+  es: "Ninguno: el personal no tiene salas"

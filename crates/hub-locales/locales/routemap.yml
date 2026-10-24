@@ -9,3 +9,4 @@ _version: 2
   ru: "Дорог: %{roads} | остановок: %{stops} | точек входа: %{entries}"
   uk: "Доріг: %{roads} | зупинок: %{stops} | точок входу: %{entries}"
   pl: "%{roads} dróg | %{stops} przystanków | %{entries} punktów wejścia"
+  es: "%{roads} carreteras | %{stops} paradas | %{entries} puntos de entrada"

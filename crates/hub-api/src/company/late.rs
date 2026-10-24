@@ -513,7 +513,7 @@ mod tests {
     use hub_core::company::model::Cents;
     use hub_core::company::{found, Founding, GameMode};
 
-    /// Every text of this file in the six languages (`company-lateness.yml`).
+    /// Every text of this file in the seven languages (`company-lateness.yml`).
     #[test]
     fn every_late_text_is_translated() {
         let src = include_str!("late.rs");
@@ -531,7 +531,7 @@ mod tests {
         }
         assert!(texts.len() > 60, "only {} texts found", texts.len());
         let mut missing = Vec::new();
-        for lang in ["nl", "de", "fr", "ru", "uk", "pl"] {
+        for lang in ["nl", "de", "fr", "ru", "uk", "pl", "es"] {
             let table = crate::launcher::i18n::table(lang);
             for t in &texts {
                 if !table.contains_key(t) {

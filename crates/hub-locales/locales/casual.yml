@@ -12,6 +12,7 @@ _version: 2
   ru: "Мои автобусы"
   uk: "Мої автобуси"
   pl: "Moje autobusy"
+  es: "Mis autobuses"
 "My lines":
   en: "My lines"
   nl: "Mijn lijnen"
@@ -20,6 +21,7 @@ _version: 2
   ru: "Мои линии"
   uk: "Мої лінії"
   pl: "Moje linie"
+  es: "Mis líneas"
 "My drivers":
   en: "My drivers"
   nl: "Mijn chauffeurs"
@@ -28,6 +30,7 @@ _version: 2
   ru: "Мои водители"
   uk: "Мої водії"
   pl: "Moi kierowcy"
+  es: "Mis conductores"
 "My company":
   en: "My company"
   nl: "Mijn bedrijf"
@@ -36,6 +39,7 @@ _version: 2
   ru: "Моя компания"
   uk: "Моя компанія"
   pl: "Moja firma"
+  es: "Mi empresa"
 "Drive a shift":
   en: "Drive a shift"
   nl: "Rijd een dienst"
@@ -44,6 +48,7 @@ _version: 2
   ru: "Проехать смену"
   uk: "Проїхати зміну"
   pl: "Przejedź zmianę"
+  es: "Conducir un turno"
 "Buy a bus":
   en: "Buy a bus"
   nl: "Bus kopen"
@@ -52,6 +57,7 @@ _version: 2
   ru: "Купить автобус"
   uk: "Купити автобус"
   pl: "Kup autobus"
+  es: "Comprar un autobús"
 "Your buses":
   en: "Your buses"
   nl: "Je bussen"
@@ -60,6 +66,7 @@ _version: 2
   ru: "Ваши автобусы"
   uk: "Ваші автобуси"
   pl: "Twoje autobusy"
+  es: "Tus autobuses"
 "Every bus of your company, with its age and condition. Repairs and services happen by themselves. Click a bus to paint it or sell it; Buy a bus opens the shop.":
   en: "Every bus of your company, with its age and condition. Repairs and services happen by themselves. Click a bus to paint it or sell it; Buy a bus opens the shop."
   nl: "Elke bus van je bedrijf, met zijn leeftijd en staat. Reparaties en onderhoud gaan vanzelf. Klik op een bus om hem te spuiten of te verkopen; Bus kopen opent de winkel."
@@ -68,6 +75,7 @@ _version: 2
   ru: "Каждый автобус вашей компании, с возрастом и состоянием. Ремонт и обслуживание идут сами. Нажмите на автобус, чтобы перекрасить или продать его; «Купить автобус» открывает магазин."
   uk: "Кожен автобус вашої компанії, з віком і станом. Ремонт і обслуговування йдуть самі. Натисніть на автобус, щоб перефарбувати чи продати його; «Купити автобус» відкриває магазин."
   pl: "Każdy autobus twojej firmy, z wiekiem i stanem. Naprawy i serwis dzieją się same. Kliknij autobus, aby go pomalować lub sprzedać; Kup autobus otwiera sklep."
+  es: "Todos los autobuses de tu empresa, con su antigüedad y su estado. Las reparaciones y revisiones se hacen solas. Haz clic en un autobús para pintarlo o venderlo; Comprar un autobús abre la tienda."
 "The bus shop":
   en: "The bus shop"
   nl: "De buswinkel"
@@ -76,6 +84,7 @@ _version: 2
   ru: "Магазин автобусов"
   uk: "Магазин автобусів"
   pl: "Sklep z autobusami"
+  es: "La tienda de autobuses"
 "The buses that fit your lines best come first. Pick one to see its price and buy it in one click: it joins the fleet and drives from the next morning.":
   en: "The buses that fit your lines best come first. Pick one to see its price and buy it in one click: it joins the fleet and drives from the next morning."
   nl: "De bussen die het best bij je lijnen passen, staan vooraan. Kies er een om de prijs te zien en koop hem met één klik: hij komt bij de vloot en rijdt vanaf de volgende ochtend."
@@ -84,6 +93,7 @@ _version: 2
   ru: "Сначала идут автобусы, лучше всего подходящие вашим линиям. Выберите один, посмотрите цену и купите в один клик: он войдёт в парк и выйдет на линию со следующего утра."
   uk: "Спершу йдуть автобуси, що найкраще пасують вашим лініям. Виберіть один, подивіться ціну й купіть одним кліком: він увійде до парку й вийде на лінію з наступного ранку."
   pl: "Najpierw autobusy, które najlepiej pasują do twoich linii. Wybierz jeden, zobacz cenę i kup jednym kliknięciem: dołączy do floty i jeździ od następnego ranka."
+  es: "Primero salen los autobuses que mejor encajan con tus líneas. Elige uno para ver su precio y cómpralo con un clic: se une a la flota y circula desde la mañana siguiente."
 "The lines your company runs, with their buses and passengers this week. The slider sets a line's fare: the advice keeps passengers and earns well.":
   en: "The lines your company runs, with their buses and passengers this week. The slider sets a line's fare: the advice keeps passengers and earns well."
   nl: "De lijnen die je bedrijf rijdt, met hun bussen en reizigers van deze week. De schuif zet het tarief van een lijn: het advies houdt reizigers vast en verdient goed."
@@ -92,6 +102,7 @@ _version: 2
   ru: "Линии вашей компании, с автобусами и пассажирами за эту неделю. Ползунок задаёт тариф линии: совет сохраняет пассажиров и приносит хороший доход."
   uk: "Лінії вашої компанії, з автобусами й пасажирами за цей тиждень. Повзунок задає тариф лінії: порада зберігає пасажирів і добре заробляє."
   pl: "Linie twojej firmy, z autobusami i pasażerami z tego tygodnia. Suwak ustawia taryfę linii: porada trzyma pasażerów i dobrze zarabia."
+  es: "Las líneas que explota tu empresa, con sus autobuses y pasajeros de esta semana. El control deslizante fija la tarifa de una línea: la recomendada mantiene a los pasajeros y gana bien."
 "A new line":
   en: "A new line"
   nl: "Een nieuwe lijn"
@@ -100,6 +111,7 @@ _version: 2
   ru: "Новая линия"
   uk: "Нова лінія"
   pl: "Nowa linia"
+  es: "Una línea nueva"
 "Three steps: pick a line of the map or draw your own stops, choose how often it runs, done. The timetable, the shifts and the drivers are made by themselves.":
   en: "Three steps: pick a line of the map or draw your own stops, choose how often it runs, done. The timetable, the shifts and the drivers are made by themselves."
   nl: "Drie stappen: kies een lijn van de kaart of teken je eigen haltes, kies hoe vaak hij rijdt, klaar. De dienstregeling, de diensten en de chauffeurs komen vanzelf."
@@ -108,6 +120,7 @@ _version: 2
   ru: "Три шага: выберите линию карты или нарисуйте свои остановки, выберите, как часто она ходит, готово. Расписание, смены и водители появятся сами."
   uk: "Три кроки: виберіть лінію мапи або намалюйте свої зупинки, виберіть, як часто вона ходить, готово. Розклад, зміни й водії з'являться самі."
   pl: "Trzy kroki: wybierz linię z mapy albo narysuj własne przystanki, wybierz, jak często kursuje, gotowe. Rozkład, zmiany i kierowcy powstaną same."
+  es: "Tres pasos: elige una línea del mapa o dibuja tus propias paradas, elige cada cuánto circula y listo. El horario, los turnos y los conductores se hacen solos."
 "Your drivers":
   en: "Your drivers"
   nl: "Je chauffeurs"
@@ -116,6 +129,7 @@ _version: 2
   ru: "Ваши водители"
   uk: "Ваші водії"
   pl: "Twoi kierowcy"
+  es: "Tus conductores"
 "Who drives for you, how well, and today's shift. The company hires the drivers it needs by itself at night; you can hire now, give a bonus or let someone go.":
   en: "Who drives for you, how well, and today's shift. The company hires the drivers it needs by itself at night; you can hire now, give a bonus or let someone go."
   nl: "Wie er voor je rijdt, hoe goed, en de dienst van vandaag. Het bedrijf neemt 's nachts zelf de chauffeurs aan die het nodig heeft; jij kunt nu aannemen, een bonus geven of iemand laten gaan."
@@ -124,6 +138,7 @@ _version: 2
   ru: "Кто у вас водит, насколько хорошо, и смена на сегодня. Компания сама ночью нанимает нужных водителей; вы можете нанять сейчас, дать премию или уволить."
   uk: "Хто у вас водить, наскільки добре, і зміна на сьогодні. Компанія сама вночі наймає потрібних водіїв; ви можете найняти зараз, дати премію чи звільнити."
   pl: "Kto dla ciebie jeździ, jak dobrze i dzisiejsza zmiana. Firma sama w nocy zatrudnia potrzebnych kierowców; możesz zatrudnić teraz, dać premię albo kogoś zwolnić."
+  es: "Quién conduce para ti, qué tal lo hace y el turno de hoy. La empresa contrata sola de noche los conductores que necesita; puedes contratar ahora, dar una prima o despedir a alguien."
 "Your money":
   en: "Your money"
   nl: "Je geld"
@@ -132,6 +147,7 @@ _version: 2
   ru: "Ваши деньги"
   uk: "Ваші гроші"
   pl: "Twoje pieniądze"
+  es: "Tu dinero"
 "What came in and what went out, week by week, and where most of it goes. Green weeks earned money, red weeks cost money.":
   en: "What came in and what went out, week by week, and where most of it goes. Green weeks earned money, red weeks cost money."
   nl: "Wat er binnenkwam en wat eruit ging, week na week, en waar het meeste heen gaat. Groene weken verdienden geld, rode weken kostten geld."
@@ -140,6 +156,7 @@ _version: 2
   ru: "Что пришло и что ушло, неделя за неделей, и куда уходит больше всего. Зелёные недели принесли деньги, красные стоили денег."
   uk: "Що надійшло і що пішло, тиждень за тижнем, і куди йде найбільше. Зелені тижні принесли гроші, червоні коштували грошей."
   pl: "Co wpłynęło i co wyszło, tydzień po tygodniu, i na co idzie najwięcej. Zielone tygodnie zarobiły, czerwone kosztowały."
+  es: "Lo que entró y lo que salió, semana a semana, y adónde va la mayor parte. Las semanas verdes ganaron dinero; las rojas costaron dinero."
 "Your company":
   en: "Your company"
   nl: "Je bedrijf"
@@ -148,6 +165,7 @@ _version: 2
   ru: "Ваша компания"
   uk: "Ваша компанія"
   pl: "Twoja firma"
+  es: "Tu empresa"
 "Your company's livery, painted in the livery editor, and its depot: when the buses no longer fit, buy a bigger one.":
   en: "Your company's livery, painted in the livery editor, and its depot: when the buses no longer fit, buy a bigger one."
   nl: "De huisstijl van je bedrijf, gespoten in de lakeditor, en zijn remise: passen de bussen er niet meer in, koop dan een grotere."
@@ -156,6 +174,7 @@ _version: 2
   ru: "Ливрея вашей компании, нарисованная в редакторе ливрей, и её депо: когда автобусы перестают помещаться, купите депо побольше."
   uk: "Ліврея вашої компанії, намальована в редакторі лівреї, і її депо: коли автобуси вже не вміщаються, купіть більше депо."
   pl: "Malowanie twojej firmy, zrobione w edytorze malowań, i jej zajezdnia: gdy autobusy się nie mieszczą, kup większą."
+  es: "La librea de tu empresa, pintada en el editor de libreas, y su cochera: cuando los autobuses ya no caben, compra una más grande."
 "Today's shifts of your company. Pick one and the shift's start opens, with the line, the bus and the times: you start the game there.":
   en: "Today's shifts of your company. Pick one and the shift's start opens, with the line, the bus and the times: you start the game there."
   nl: "De diensten van vandaag van je bedrijf. Kies er een en de start van de dienst opent, met de lijn, de bus en de tijden: daar start je het spel."
@@ -164,6 +183,7 @@ _version: 2
   ru: "Сегодняшние смены вашей компании. Выберите одну — откроется её старт с линией, автобусом и временем: оттуда вы запускаете игру."
   uk: "Сьогоднішні зміни вашої компанії. Виберіть одну — відкриється її старт з лінією, автобусом і часом: звідти ви запускаєте гру."
   pl: "Dzisiejsze zmiany twojej firmy. Wybierz jedną, a otworzy się jej start z linią, autobusem i godzinami: stamtąd uruchamiasz grę."
+  es: "Los turnos de hoy de tu empresa. Elige uno y se abre el inicio del turno, con la línea, el autobús y las horas: ahí empiezas la partida."
 "How your company's day goes, what it solved by itself, and what you can do now. The tips say what helps; Next day runs the rest of the day.":
   en: "How your company's day goes, what it solved by itself, and what you can do now. The tips say what helps; Next day runs the rest of the day."
   nl: "Hoe de dag van je bedrijf loopt, wat het zelf heeft opgelost, en wat je nu kunt doen. De tips zeggen wat helpt; Volgende dag laat de rest van de dag lopen."
@@ -172,6 +192,7 @@ _version: 2
   ru: "Как идёт день вашей компании, что она решила сама и что вы можете сделать сейчас. Советы подскажут, что поможет; «Следующий день» прокручивает остаток дня."
   uk: "Як минає день вашої компанії, що вона розв'язала сама і що ви можете зробити зараз. Поради підкажуть, що допоможе; «Наступний день» прокручує решту дня."
   pl: "Jak mija dzień twojej firmy, co rozwiązała sama i co możesz teraz zrobić. Wskazówki mówią, co pomaga; Następny dzień przewija resztę dnia."
+  es: "Cómo va el día de tu empresa, lo que ha resuelto sola y lo que puedes hacer ahora. Los consejos dicen qué ayuda; Día siguiente pasa el resto del día."
 "A new day. Yesterday: %{pax} passengers, %{money}.":
   en: "A new day. Yesterday: %{pax} passengers, %{money}."
   nl: "Een nieuwe dag. Gisteren: %{pax} reizigers, %{money}."
@@ -180,6 +201,7 @@ _version: 2
   ru: "Новый день. Вчера: %{pax} пассажиров, %{money}."
   uk: "Новий день. Учора: %{pax} пасажирів, %{money}."
   pl: "Nowy dzień. Wczoraj: %{pax} pasażerów, %{money}."
+  es: "Un nuevo día. Ayer: %{pax} pasajeros, %{money}."
 "Next day":
   en: "Next day"
   nl: "Volgende dag"
@@ -188,6 +210,7 @@ _version: 2
   ru: "Следующий день"
   uk: "Наступний день"
   pl: "Następny dzień"
+  es: "Día siguiente"
 "Run the rest of the day: the buses drive, the money comes in, and you start the next morning":
   en: "Run the rest of the day: the buses drive, the money comes in, and you start the next morning"
   nl: "Laat de rest van de dag lopen: de bussen rijden, het geld komt binnen, en je begint de volgende ochtend"
@@ -196,6 +219,7 @@ _version: 2
   ru: "Прокрутить остаток дня: автобусы ездят, деньги приходят, а вы начинаете следующее утро"
   uk: "Прокрутити решту дня: автобуси їздять, гроші надходять, а ви починаєте наступний ранок"
   pl: "Przewiń resztę dnia: autobusy jeżdżą, pieniądze wpływają, a ty zaczynasz następny poranek"
+  es: "Pasar el resto del día: los autobuses circulan, entra el dinero y empiezas la mañana siguiente"
 "Back to your company's home (Escape)":
   en: "Back to your company's home (Escape)"
   nl: "Terug naar het begin van je bedrijf (Escape)"
@@ -204,6 +228,7 @@ _version: 2
   ru: "Назад на главную вашей компании (Escape)"
   uk: "Назад на головну вашої компанії (Escape)"
   pl: "Powrót na stronę główną firmy (Escape)"
+  es: "Volver al inicio de tu empresa (Escape)"
 "%{name} · Casual":
   en: "%{name} · Casual"
   nl: "%{name} · Casual"
@@ -212,6 +237,7 @@ _version: 2
   ru: "%{name} · Казуальный"
   uk: "%{name} · Казуальний"
   pl: "%{name} · Swobodny"
+  es: "%{name} · Casual"
 "What is this page?":
   en: "What is this page?"
   nl: "Wat is deze pagina?"
@@ -220,6 +246,7 @@ _version: 2
   ru: "Что это за страница?"
   uk: "Що це за сторінка?"
   pl: "Co to za strona?"
+  es: "¿Qué es esta página?"
 
 # --- the home -------------------------------------------------------------------------------------
 "Solved by your company":
@@ -230,6 +257,7 @@ _version: 2
   ru: "Решено вашей компанией"
   uk: "Розв'язано вашою компанією"
   pl: "Rozwiązane przez twoją firmę"
+  es: "Resuelto por tu empresa"
 "Nothing went wrong today: your company runs smoothly.":
   en: "Nothing went wrong today: your company runs smoothly."
   nl: "Vandaag ging er niets mis: je bedrijf loopt gesmeerd."
@@ -238,6 +266,7 @@ _version: 2
   ru: "Сегодня ничего не случилось: ваша компания работает гладко."
   uk: "Сьогодні нічого не сталося: ваша компанія працює гладко."
   pl: "Dziś nic się nie zepsuło: twoja firma działa gładko."
+  es: "Hoy no ha fallado nada: tu empresa funciona sin problemas."
 "Your shift of today is waiting":
   en: "Your shift of today is waiting"
   nl: "Je dienst van vandaag wacht"
@@ -246,6 +275,7 @@ _version: 2
   ru: "Ваша сегодняшняя смена ждёт"
   uk: "Ваша сьогоднішня зміна чекає"
   pl: "Twoja dzisiejsza zmiana czeka"
+  es: "Tu turno de hoy te espera"
 "%{n} of today's shifts to choose from":
   en: "%{n} of today's shifts to choose from"
   nl: "%{n} diensten van vandaag om uit te kiezen"
@@ -254,6 +284,7 @@ _version: 2
   ru: "%{n} сегодняшних смен на выбор"
   uk: "%{n} сьогоднішніх змін на вибір"
   pl: "%{n} dzisiejszych zmian do wyboru"
+  es: "%{n} turnos de hoy para elegir"
 "See today's shifts":
   en: "See today's shifts"
   nl: "Bekijk de diensten van vandaag"
@@ -262,6 +293,7 @@ _version: 2
   ru: "Посмотреть сегодняшние смены"
   uk: "Переглянути сьогоднішні зміни"
   pl: "Zobacz dzisiejsze zmiany"
+  es: "Ver los turnos de hoy"
 "No tips right now: everything runs well.":
   en: "No tips right now: everything runs well."
   nl: "Nu geen tips: alles loopt goed."
@@ -270,6 +302,7 @@ _version: 2
   ru: "Сейчас советов нет: всё идёт хорошо."
   uk: "Зараз порад немає: усе йде добре."
   pl: "Na razie brak wskazówek: wszystko idzie dobrze."
+  es: "No hay consejos ahora: todo va bien."
 "Want more control? Normal opens every page: planning, workshop, tenders. Nothing of your company is lost.":
   en: "Want more control? Normal opens every page: planning, workshop, tenders. Nothing of your company is lost."
   nl: "Meer zelf regelen? Normaal opent elke pagina: planning, werkplaats, aanbestedingen. Er gaat niets van je bedrijf verloren."
@@ -278,6 +311,7 @@ _version: 2
   ru: "Хотите больше контроля? «Обычное» открывает все страницы: планирование, мастерскую, тендеры. Ничего из вашей компании не теряется."
   uk: "Хочете більше контролю? «Нормальне» відкриває всі сторінки: планування, майстерню, тендери. Нічого з вашої компанії не втрачається."
   pl: "Chcesz więcej kontroli? Normalny otwiera każdą stronę: planowanie, warsztat, przetargi. Nic z twojej firmy nie przepada."
+  es: "¿Quieres más control? Normal abre todas las páginas: planificación, taller, licitaciones. No se pierde nada de tu empresa."
 "Don't show again":
   en: "Don't show again"
   nl: "Niet meer tonen"
@@ -286,6 +320,7 @@ _version: 2
   ru: "Больше не показывать"
   uk: "Більше не показувати"
   pl: "Nie pokazuj więcej"
+  es: "No volver a mostrar"
 
 # --- the buses and the shop ----------------------------------------------------------------------
 "In the workshop: back on %{date}":
@@ -296,6 +331,7 @@ _version: 2
   ru: "В мастерской: вернётся %{date}"
   uk: "У майстерні: повернеться %{date}"
   pl: "W warsztacie: wraca %{date}"
+  es: "En el taller: vuelve el %{date}"
 "On line %{n} today":
   en: "On line %{n} today"
   nl: "Vandaag op lijn %{n}"
@@ -304,6 +340,7 @@ _version: 2
   ru: "Сегодня на линии %{n}"
   uk: "Сьогодні на лінії %{n}"
   pl: "Dziś na linii %{n}"
+  es: "Hoy en la línea %{n}"
 "%{n} buses · repairs and services happen by themselves":
   en: "%{n} buses · repairs and services happen by themselves"
   nl: "%{n} bussen · reparaties en onderhoud gaan vanzelf"
@@ -312,6 +349,7 @@ _version: 2
   ru: "%{n} автобусов · ремонт и обслуживание идут сами"
   uk: "%{n} автобусів · ремонт і обслуговування йдуть самі"
   pl: "%{n} autobusów · naprawy i serwis dzieją się same"
+  es: "%{n} autobuses · las reparaciones y revisiones se hacen solas"
 "%{n} buses on their way: the next arrives on %{date}.":
   en: "%{n} buses on their way: the next arrives on %{date}."
   nl: "%{n} bussen onderweg: de volgende komt op %{date}."
@@ -320,6 +358,7 @@ _version: 2
   ru: "%{n} автобусов в пути: следующий прибудет %{date}."
   uk: "%{n} автобусів у дорозі: наступний прибуде %{date}."
   pl: "%{n} autobusów w drodze: następny przyjedzie %{date}."
+  es: "%{n} autobuses en camino: el siguiente llega el %{date}."
 "No bus yet":
   en: "No bus yet"
   nl: "Nog geen bus"
@@ -328,6 +367,7 @@ _version: 2
   ru: "Пока нет автобуса"
   uk: "Поки немає автобуса"
   pl: "Jeszcze brak autobusu"
+  es: "Aún no hay autobús"
 "Buy your first bus in the shop: the buses that fit your lines come first, and it drives from the next morning.":
   en: "Buy your first bus in the shop: the buses that fit your lines come first, and it drives from the next morning."
   nl: "Koop je eerste bus in de winkel: de bussen die bij je lijnen passen staan vooraan, en hij rijdt vanaf de volgende ochtend."
@@ -336,6 +376,7 @@ _version: 2
   ru: "Купите первый автобус в магазине: подходящие вашим линиям идут первыми, и он выйдет на линию со следующего утра."
   uk: "Купіть перший автобус у магазині: ті, що пасують вашим лініям, ідуть першими, і він вийде на лінію з наступного ранку."
   pl: "Kup pierwszy autobus w sklepie: te pasujące do twoich linii są pierwsze, a jeździ od następnego ranka."
+  es: "Compra tu primer autobús en la tienda: primero salen los que encajan con tus líneas, y circula desde la mañana siguiente."
 "Good condition":
   en: "Good condition"
   nl: "Goede staat"
@@ -344,6 +385,7 @@ _version: 2
   ru: "Хорошее состояние"
   uk: "Добрий стан"
   pl: "Dobry stan"
+  es: "Buen estado"
 "Worn: repaired soon":
   en: "Worn: repaired soon"
   nl: "Versleten: wordt binnenkort gerepareerd"
@@ -352,6 +394,7 @@ _version: 2
   ru: "Изношен: скоро ремонт"
   uk: "Зношений: незабаром ремонт"
   pl: "Zużyty: wkrótce naprawa"
+  es: "Desgastado: pronto se repara"
 "Worn out: to the workshop":
   en: "Worn out: to the workshop"
   nl: "Op: naar de werkplaats"
@@ -360,6 +403,7 @@ _version: 2
   ru: "Изношен до предела: в мастерскую"
   uk: "Зношений до краю: до майстерні"
   pl: "Wyeksploatowany: do warsztatu"
+  es: "Muy desgastado: al taller"
 "Sorted by what fits your lines · room for %{n} more in the depot":
   en: "Sorted by what fits your lines · room for %{n} more in the depot"
   nl: "Op wat bij je lijnen past · plaats voor nog %{n} in de remise"
@@ -368,6 +412,7 @@ _version: 2
   ru: "По тому, что подходит вашим линиям · в депо есть место ещё для %{n}"
   uk: "За тим, що пасує вашим лініям · у депо є місце ще для %{n}"
   pl: "Według dopasowania do linii · miejsce na jeszcze %{n} w zajezdni"
+  es: "Ordenados por cómo encajan con tus líneas · sitio para %{n} más en la cochera"
 "The dealer is setting out the buses…":
   en: "The dealer is setting out the buses…"
   nl: "De dealer zet de bussen klaar…"
@@ -376,6 +421,7 @@ _version: 2
   ru: "Дилер расставляет автобусы…"
   uk: "Дилер розставляє автобуси…"
   pl: "Dealer ustawia autobusy…"
+  es: "El concesionario está colocando los autobuses…"
 "No bus of this size":
   en: "No bus of this size"
   nl: "Geen bus van deze maat"
@@ -384,6 +430,7 @@ _version: 2
   ru: "Нет автобусов такого размера"
   uk: "Немає автобусів такого розміру"
   pl: "Brak autobusu tej wielkości"
+  es: "No hay autobuses de este tamaño"
 "The dealer sells the buses installed in your OMSI. Choose another size.":
   en: "The dealer sells the buses installed in your OMSI. Choose another size."
   nl: "De dealer verkoopt de bussen die in je OMSI zijn geïnstalleerd. Kies een andere maat."
@@ -392,6 +439,7 @@ _version: 2
   ru: "Дилер продаёт автобусы, установленные в вашем OMSI. Выберите другой размер."
   uk: "Дилер продає автобуси, встановлені у вашому OMSI. Виберіть інший розмір."
   pl: "Dealer sprzedaje autobusy zainstalowane w twoim OMSI. Wybierz inną wielkość."
+  es: "El concesionario vende los autobuses instalados en tu OMSI. Elige otro tamaño."
 "Fits your lines":
   en: "Fits your lines"
   nl: "Past bij je lijnen"
@@ -400,6 +448,7 @@ _version: 2
   ru: "Подходит вашим линиям"
   uk: "Пасує вашим лініям"
   pl: "Pasuje do twoich linii"
+  es: "Encaja con tus líneas"
 "%{n} seats":
   en: "%{n} seats"
   nl: "%{n} zitplaatsen"
@@ -408,6 +457,7 @@ _version: 2
   ru: "%{n} сидячих мест"
   uk: "%{n} сидячих місць"
   pl: "%{n} miejsc siedzących"
+  es: "%{n} asientos"
 "Opens later, as your company grows":
   en: "Opens later, as your company grows"
   nl: "Komt later, als je bedrijf groeit"
@@ -416,6 +466,7 @@ _version: 2
   ru: "Откроется позже, когда компания вырастет"
   uk: "Відкриється пізніше, коли компанія виросте"
   pl: "Otworzy się później, gdy firma urośnie"
+  es: "Se desbloquea más adelante, cuando crezca tu empresa"
 "A rented bus":
   en: "A rented bus"
   nl: "Een huurbus"
@@ -424,6 +475,7 @@ _version: 2
   ru: "Арендованный автобус"
   uk: "Орендований автобус"
   pl: "Wynajęty autobus"
+  es: "Un autobús alquilado"
 
 # --- the lines and the wizard -------------------------------------------------------------------
 "%{n} lines · their timetables, shifts and drivers run by themselves":
@@ -434,6 +486,7 @@ _version: 2
   ru: "%{n} линий · расписания, смены и водители — сами собой"
   uk: "%{n} ліній · розклади, зміни й водії — самі собою"
   pl: "%{n} linii · rozkłady, zmiany i kierowcy działają same"
+  es: "%{n} líneas · sus horarios, turnos y conductores funcionan solos"
 "No line yet":
   en: "No line yet"
   nl: "Nog geen lijn"
@@ -442,6 +495,7 @@ _version: 2
   ru: "Пока нет линии"
   uk: "Поки немає лінії"
   pl: "Jeszcze brak linii"
+  es: "Aún no hay líneas"
 "Add your first line: pick one of the map's, or draw your own stops. It runs by itself from then on.":
   en: "Add your first line: pick one of the map's, or draw your own stops. It runs by itself from then on."
   nl: "Voeg je eerste lijn toe: kies er een van de kaart, of teken je eigen haltes. Daarna rijdt hij vanzelf."
@@ -450,6 +504,7 @@ _version: 2
   ru: "Добавьте первую линию: выберите линию карты или нарисуйте свои остановки. Дальше она работает сама."
   uk: "Додайте першу лінію: виберіть лінію мапи або намалюйте свої зупинки. Далі вона працює сама."
   pl: "Dodaj pierwszą linię: wybierz jedną z mapy albo narysuj własne przystanki. Potem kursuje sama."
+  es: "Añade tu primera línea: elige una del mapa o dibuja tus propias paradas. A partir de ahí funciona sola."
 "Line %{n}: a ticket costs %{fare} from now on.":
   en: "Line %{n}: a ticket costs %{fare} from now on."
   nl: "Lijn %{n}: een kaartje kost voortaan %{fare}."
@@ -458,6 +513,7 @@ _version: 2
   ru: "Линия %{n}: билет теперь стоит %{fare}."
   uk: "Лінія %{n}: квиток тепер коштує %{fare}."
   pl: "Linia %{n}: bilet kosztuje teraz %{fare}."
+  es: "Línea %{n}: un billete cuesta %{fare} a partir de ahora."
 "%{n} buses today":
   en: "%{n} buses today"
   nl: "%{n} bussen vandaag"
@@ -466,6 +522,7 @@ _version: 2
   ru: "%{n} автобусов сегодня"
   uk: "%{n} автобусів сьогодні"
   pl: "%{n} autobusów dziś"
+  es: "%{n} autobuses hoy"
 "%{n} passengers this week":
   en: "%{n} passengers this week"
   nl: "%{n} reizigers deze week"
@@ -474,6 +531,7 @@ _version: 2
   ru: "%{n} пассажиров за неделю"
   uk: "%{n} пасажирів за тиждень"
   pl: "%{n} pasażerów w tym tygodniu"
+  es: "%{n} pasajeros esta semana"
 "A ticket":
   en: "A ticket"
   nl: "Een kaartje"
@@ -482,6 +540,7 @@ _version: 2
   ru: "Билет"
   uk: "Квиток"
   pl: "Bilet"
+  es: "Un billete"
 "Good: this is the advised fare.":
   en: "Good: this is the advised fare."
   nl: "Goed: dit is het geadviseerde tarief."
@@ -490,6 +549,7 @@ _version: 2
   ru: "Хорошо: это рекомендуемый тариф."
   uk: "Добре: це рекомендований тариф."
   pl: "Dobrze: to zalecana taryfa."
+  es: "Bien: esta es la tarifa recomendada."
 "Advice: %{fare}. Higher fares drive passengers away.":
   en: "Advice: %{fare}. Higher fares drive passengers away."
   nl: "Advies: %{fare}. Hogere tarieven jagen reizigers weg."
@@ -498,6 +558,7 @@ _version: 2
   ru: "Совет: %{fare}. Высокие тарифы отпугивают пассажиров."
   uk: "Порада: %{fare}. Високі тарифи відлякують пасажирів."
   pl: "Porada: %{fare}. Wyższe ceny odstraszają pasażerów."
+  es: "Recomendación: %{fare}. Las tarifas más altas espantan a los pasajeros."
 "Advice: %{fare}. The line could earn more.":
   en: "Advice: %{fare}. The line could earn more."
   nl: "Advies: %{fare}. De lijn kan meer verdienen."
@@ -506,6 +567,7 @@ _version: 2
   ru: "Совет: %{fare}. Линия могла бы зарабатывать больше."
   uk: "Порада: %{fare}. Лінія могла б заробляти більше."
   pl: "Porada: %{fare}. Linia mogłaby zarabiać więcej."
+  es: "Recomendación: %{fare}. La línea podría ganar más."
 "Use the advice":
   en: "Use the advice"
   nl: "Advies gebruiken"
@@ -514,6 +576,7 @@ _version: 2
   ru: "Принять совет"
   uk: "Прийняти пораду"
   pl: "Użyj porady"
+  es: "Usar la recomendación"
 "Pick the line":
   en: "Pick the line"
   nl: "Kies de lijn"
@@ -522,6 +585,7 @@ _version: 2
   ru: "Выбрать линию"
   uk: "Вибрати лінію"
   pl: "Wybierz linię"
+  es: "Elige la línea"
 "How often":
   en: "How often"
   nl: "Hoe vaak"
@@ -530,6 +594,7 @@ _version: 2
   ru: "Как часто"
   uk: "Як часто"
   pl: "Jak często"
+  es: "Cada cuánto"
 "Three steps: the timetable, the shifts and the drivers are made by themselves.":
   en: "Three steps: the timetable, the shifts and the drivers are made by themselves."
   nl: "Drie stappen: de dienstregeling, de diensten en de chauffeurs komen vanzelf."
@@ -538,6 +603,7 @@ _version: 2
   ru: "Три шага: расписание, смены и водители появятся сами."
   uk: "Три кроки: розклад, зміни й водії з'являться самі."
   pl: "Trzy kroki: rozkład, zmiany i kierowcy powstaną same."
+  es: "Tres pasos: el horario, los turnos y los conductores se hacen solos."
 "Reading the map's timetable…":
   en: "Reading the map's timetable…"
   nl: "De dienstregeling van de kaart wordt gelezen…"
@@ -546,6 +612,7 @@ _version: 2
   ru: "Чтение расписания карты…"
   uk: "Читання розкладу мапи…"
   pl: "Czytanie rozkładu mapy…"
+  es: "Leyendo el horario del mapa…"
 "Draw the stops":
   en: "Draw the stops"
   nl: "Haltes tekenen"
@@ -554,6 +621,7 @@ _version: 2
   ru: "Нарисовать остановки"
   uk: "Намалювати зупинки"
   pl: "Narysuj przystanki"
+  es: "Dibujar las paradas"
 "Start the line":
   en: "Start the line"
   nl: "Lijn starten"
@@ -562,6 +630,7 @@ _version: 2
   ru: "Запустить линию"
   uk: "Запустити лінію"
   pl: "Uruchom linię"
+  es: "Iniciar la línea"
 "%{n} buses out today · about every %{m} minutes":
   en: "%{n} buses out today · about every %{m} minutes"
   nl: "%{n} bussen vandaag · ongeveer elke %{m} minuten"
@@ -570,6 +639,7 @@ _version: 2
   ru: "%{n} автобусов сегодня · примерно каждые %{m} минут"
   uk: "%{n} автобусів сьогодні · приблизно кожні %{m} хвилин"
   pl: "%{n} autobusów dziś · mniej więcej co %{m} minut"
+  es: "%{n} autobuses en servicio hoy · uno cada %{m} minutos aprox."
 "%{n} buses out today":
   en: "%{n} buses out today"
   nl: "%{n} bussen vandaag"
@@ -578,6 +648,7 @@ _version: 2
   ru: "%{n} автобусов на линии сегодня"
   uk: "%{n} автобусів на лінії сьогодні"
   pl: "%{n} autobusów w trasie dziś"
+  es: "%{n} autobuses en servicio hoy"
 "Draw your own stops":
   en: "Draw your own stops"
   nl: "Teken je eigen haltes"
@@ -586,6 +657,7 @@ _version: 2
   ru: "Нарисовать свои остановки"
   uk: "Намалювати свої зупинки"
   pl: "Narysuj własne przystanki"
+  es: "Dibuja tus propias paradas"
 "Click the stops on the map in the line editor: the way between them is found over the roads.":
   en: "Click the stops on the map in the line editor: the way between them is found over the roads."
   nl: "Klik de haltes aan op de kaart in de lijneditor: de weg ertussen wordt over de wegen gevonden."
@@ -594,6 +666,7 @@ _version: 2
   ru: "Отметьте остановки на карте в редакторе линий: путь между ними найдётся по дорогам."
   uk: "Позначте зупинки на мапі в редакторі ліній: шлях між ними знайдеться дорогами."
   pl: "Kliknij przystanki na mapie w edytorze linii: droga między nimi zostanie znaleziona po ulicach."
+  es: "Haz clic en las paradas del mapa en el editor de líneas: el camino entre ellas se busca por las carreteras."
 "This line of the map keeps the map's own timetable: a bus about every %{m} minutes in the daytime.":
   en: "This line of the map keeps the map's own timetable: a bus about every %{m} minutes in the daytime."
   nl: "Deze lijn van de kaart houdt de eigen dienstregeling van de kaart: overdag ongeveer elke %{m} minuten een bus."
@@ -602,6 +675,7 @@ _version: 2
   ru: "Эта линия карты сохраняет расписание карты: днём автобус примерно каждые %{m} минут."
   uk: "Ця лінія мапи зберігає розклад мапи: удень автобус приблизно кожні %{m} хвилин."
   pl: "Ta linia z mapy zachowuje rozkład mapy: w dzień autobus mniej więcej co %{m} minut."
+  es: "Esta línea del mapa mantiene el horario propio del mapa: un autobús cada %{m} minutos aprox. durante el día."
 "This line of the map keeps the map's own timetable.":
   en: "This line of the map keeps the map's own timetable."
   nl: "Deze lijn van de kaart houdt de eigen dienstregeling van de kaart."
@@ -610,6 +684,7 @@ _version: 2
   ru: "Эта линия карты сохраняет расписание карты."
   uk: "Ця лінія мапи зберігає розклад мапи."
   pl: "Ta linia z mapy zachowuje rozkład mapy."
+  es: "Esta línea del mapa mantiene el horario propio del mapa."
 "How busy should your line be? You can change it later in the line editor.":
   en: "How busy should your line be? You can change it later in the line editor."
   nl: "Hoe druk moet je lijn zijn? Je kunt het later in de lijneditor veranderen."
@@ -618,6 +693,7 @@ _version: 2
   ru: "Насколько частой должна быть линия? Это можно изменить позже в редакторе линий."
   uk: "Наскільки частою має бути лінія? Це можна змінити пізніше в редакторі ліній."
   pl: "Jak często ma kursować twoja linia? Możesz to zmienić później w edytorze linii."
+  es: "¿Cuánto movimiento debe tener tu línea? Puedes cambiarlo luego en el editor de líneas."
 "Line %{n}, ready to run":
   en: "Line %{n}, ready to run"
   nl: "Lijn %{n}, klaar om te rijden"
@@ -626,6 +702,7 @@ _version: 2
   ru: "Линия %{n} готова к работе"
   uk: "Лінія %{n} готова до роботи"
   pl: "Linia %{n}, gotowa do jazdy"
+  es: "Línea %{n}, lista para circular"
 "Your own line: draw its stops":
   en: "Your own line: draw its stops"
   nl: "Je eigen lijn: teken de haltes"
@@ -634,6 +711,7 @@ _version: 2
   ru: "Ваша собственная линия: нарисуйте остановки"
   uk: "Ваша власна лінія: намалюйте зупинки"
   pl: "Twoja własna linia: narysuj przystanki"
+  es: "Tu propia línea: dibuja sus paradas"
 "%{freq}: about every %{m} minutes":
   en: "%{freq}: about every %{m} minutes"
   nl: "%{freq}: ongeveer elke %{m} minuten"
@@ -642,6 +720,7 @@ _version: 2
   ru: "%{freq}: примерно каждые %{m} минут"
   uk: "%{freq}: приблизно кожні %{m} хвилин"
   pl: "%{freq}: mniej więcej co %{m} minut"
+  es: "%{freq}: uno cada %{m} minutos aprox."
 "Timetable and shifts":
   en: "Timetable and shifts"
   nl: "Dienstregeling en diensten"
@@ -650,6 +729,7 @@ _version: 2
   ru: "Расписание и смены"
   uk: "Розклад і зміни"
   pl: "Rozkład i zmiany"
+  es: "Horario y turnos"
 "Made by themselves":
   en: "Made by themselves"
   nl: "Komen vanzelf"
@@ -658,6 +738,7 @@ _version: 2
   ru: "Появятся сами"
   uk: "З'являться самі"
   pl: "Powstaną same"
+  es: "Se hacen solos"
 "%{n} (buy %{m} more)":
   en: "%{n} (buy %{m} more)"
   nl: "%{n} (koop er nog %{m})"
@@ -666,6 +747,7 @@ _version: 2
   ru: "%{n} (купите ещё %{m})"
   uk: "%{n} (купіть ще %{m})"
   pl: "%{n} (kup jeszcze %{m})"
+  es: "%{n} (compra %{m} más)"
 "%{n} (you have them)":
   en: "%{n} (you have them)"
   nl: "%{n} (die heb je)"
@@ -674,6 +756,7 @@ _version: 2
   ru: "%{n} (они у вас есть)"
   uk: "%{n} (вони у вас є)"
   pl: "%{n} (masz je)"
+  es: "%{n} (ya los tienes)"
 "Buses it needs":
   en: "Buses it needs"
   nl: "Bussen die hij nodig heeft"
@@ -682,6 +765,7 @@ _version: 2
   ru: "Нужно автобусов"
   uk: "Потрібно автобусів"
   pl: "Potrzebne autobusy"
+  es: "Autobuses que necesita"
 "Shown in the line editor":
   en: "Shown in the line editor"
   nl: "Te zien in de lijneditor"
@@ -690,6 +774,7 @@ _version: 2
   ru: "Видно в редакторе линий"
   uk: "Видно в редакторі ліній"
   pl: "Widać w edytorze linii"
+  es: "Se muestra en el editor de líneas"
 "%{n}, hired by themselves":
   en: "%{n}, hired by themselves"
   nl: "%{n}, vanzelf aangenomen"
@@ -698,6 +783,7 @@ _version: 2
   ru: "%{n}, нанимаются сами"
   uk: "%{n}, наймаються самі"
   pl: "%{n}, zatrudniani sami"
+  es: "%{n}, contratados solos"
 "Hired by themselves":
   en: "Hired by themselves"
   nl: "Vanzelf aangenomen"
@@ -706,6 +792,7 @@ _version: 2
   ru: "Нанимаются сами"
   uk: "Наймаються самі"
   pl: "Zatrudniani sami"
+  es: "Se contratan solos"
 "Its licence":
   en: "Its licence"
   nl: "De vergunning"
@@ -714,6 +801,7 @@ _version: 2
   ru: "Её лицензия"
   uk: "Її ліцензія"
   pl: "Jej licencja"
+  es: "Su licencia"
 "Start the line, and it runs from now on: every morning the company gives its buses and drivers their work.":
   en: "Start the line, and it runs from now on: every morning the company gives its buses and drivers their work."
   nl: "Start de lijn en hij rijdt vanaf nu: elke ochtend geeft het bedrijf zijn bussen en chauffeurs hun werk."
@@ -722,6 +810,7 @@ _version: 2
   ru: "Запустите линию, и она работает с этой минуты: каждое утро компания даёт автобусам и водителям их работу."
   uk: "Запустіть лінію, і вона працює з цієї хвилини: щоранку компанія дає автобусам і водіям їхню роботу."
   pl: "Uruchom linię, a kursuje od teraz: co rano firma daje swoim autobusom i kierowcom pracę."
+  es: "Inicia la línea y circulará a partir de ahora: cada mañana la empresa da trabajo a sus autobuses y conductores."
 "The line editor opens with this timetable: click the stops on the map, and confirm the line there. It shows what the line costs and brings.":
   en: "The line editor opens with this timetable: click the stops on the map, and confirm the line there. It shows what the line costs and brings."
   nl: "De lijneditor opent met deze dienstregeling: klik de haltes aan op de kaart en bevestig de lijn daar. Hij laat zien wat de lijn kost en oplevert."
@@ -730,6 +819,7 @@ _version: 2
   ru: "Редактор линий откроется с этим расписанием: отметьте остановки на карте и подтвердите линию там. Он покажет, сколько линия стоит и приносит."
   uk: "Редактор ліній відкриється з цим розкладом: позначте зупинки на мапі й підтвердьте лінію там. Він покаже, скільки лінія коштує і приносить."
   pl: "Edytor linii otworzy się z tym rozkładem: kliknij przystanki na mapie i potwierdź tam linię. Pokaże, ile linia kosztuje i przynosi."
+  es: "El editor de líneas se abre con este horario: haz clic en las paradas del mapa y confirma allí la línea. Muestra lo que cuesta y lo que aporta la línea."
 "Line %{n} is yours: it runs by itself from now on.":
   en: "Line %{n} is yours: it runs by itself from now on."
   nl: "Lijn %{n} is van jou: hij rijdt vanaf nu vanzelf."
@@ -738,6 +828,7 @@ _version: 2
   ru: "Линия %{n} ваша: теперь она работает сама."
   uk: "Лінія %{n} ваша: тепер вона працює сама."
   pl: "Linia %{n} jest twoja: od teraz kursuje sama."
+  es: "La línea %{n} es tuya: circula sola a partir de ahora."
 "Line %{n} is yours: it runs by itself from tomorrow.":
   en: "Line %{n} is yours: it runs by itself from tomorrow."
   nl: "Lijn %{n} is van jou: hij rijdt vanaf morgen vanzelf."
@@ -746,6 +837,7 @@ _version: 2
   ru: "Линия %{n} ваша: с завтрашнего дня она работает сама."
   uk: "Лінія %{n} ваша: із завтра вона працює сама."
   pl: "Linia %{n} jest twoja: od jutra kursuje sama."
+  es: "La línea %{n} es tuya: circula sola a partir de mañana."
 "Quiet":
   en: "Quiet"
   nl: "Rustig"
@@ -754,6 +846,7 @@ _version: 2
   ru: "Спокойно"
   uk: "Спокійно"
   pl: "Spokojnie"
+  es: "Tranquila"
 "Busy":
   en: "Busy"
   nl: "Druk"
@@ -762,6 +855,7 @@ _version: 2
   ru: "Часто"
   uk: "Часто"
   pl: "Gęsto"
+  es: "Concurrida"
 "Every half hour in the rush hours, every hour otherwise. Few buses, low costs.":
   en: "Every half hour in the rush hours, every hour otherwise. Few buses, low costs."
   nl: "Elk halfuur in de spits, anders elk uur. Weinig bussen, lage kosten."
@@ -770,6 +864,7 @@ _version: 2
   ru: "Каждые полчаса в час пик, в остальное время раз в час. Мало автобусов, низкие расходы."
   uk: "Щопівгодини в години пік, решту часу щогодини. Мало автобусів, низькі витрати."
   pl: "Co pół godziny w szczycie, poza nim co godzinę. Mało autobusów, niskie koszty."
+  es: "Cada media hora en horas punta, cada hora el resto. Pocos autobuses, costes bajos."
 "Every 15 minutes in the rush hours, every 20 to 30 otherwise.":
   en: "Every 15 minutes in the rush hours, every 20 to 30 otherwise."
   nl: "Elk kwartier in de spits, anders elke 20 tot 30 minuten."
@@ -778,6 +873,7 @@ _version: 2
   ru: "Каждые 15 минут в час пик, в остальное время каждые 20–30."
   uk: "Кожні 15 хвилин у години пік, решту часу кожні 20–30."
   pl: "Co 15 minut w szczycie, poza nim co 20–30."
+  es: "Cada 15 minutos en horas punta, cada 20 a 30 el resto."
 "Every 10 minutes in the rush hours, every 15 otherwise. Many passengers, many buses.":
   en: "Every 10 minutes in the rush hours, every 15 otherwise. Many passengers, many buses."
   nl: "Elke 10 minuten in de spits, anders elk kwartier. Veel reizigers, veel bussen."
@@ -786,6 +882,7 @@ _version: 2
   ru: "Каждые 10 минут в час пик, в остальное время каждые 15. Много пассажиров, много автобусов."
   uk: "Кожні 10 хвилин у години пік, решту часу кожні 15. Багато пасажирів, багато автобусів."
   pl: "Co 10 minut w szczycie, poza nim co 15. Dużo pasażerów, dużo autobusów."
+  es: "Cada 10 minutos en horas punta, cada 15 el resto. Muchos pasajeros, muchos autobuses."
 
 # --- the drivers ----------------------------------------------------------------------------------
 "You have the drivers your shifts need: the company hires more by itself when a line asks for them.":
@@ -796,6 +893,7 @@ _version: 2
   ru: "У вас есть водители для всех смен: компания сама наймёт больше, когда линии понадобится."
   uk: "У вас є водії для всіх змін: компанія сама найме більше, коли лінії знадобиться."
   pl: "Masz kierowców, których potrzebują twoje zmiany: firma sama zatrudni więcej, gdy linia ich potrzebuje."
+  es: "Tienes los conductores que necesitan tus turnos: la empresa contrata más sola cuando una línea los pide."
 "Nobody could be hired now: no applicant this week, or the cash is short. The company tries again tonight.":
   en: "Nobody could be hired now: no applicant this week, or the cash is short. The company tries again tonight."
   nl: "Er kon nu niemand worden aangenomen: geen sollicitant deze week, of te weinig geld. Het bedrijf probeert het vannacht opnieuw."
@@ -804,6 +902,7 @@ _version: 2
   ru: "Никого нанять не удалось: на этой неделе нет кандидатов или не хватает денег. Компания попробует снова ночью."
   uk: "Нікого найняти не вдалося: цього тижня немає кандидатів або бракує грошей. Компанія спробує знову вночі."
   pl: "Nie udało się nikogo zatrudnić: brak kandydatów w tym tygodniu albo brak pieniędzy. Firma spróbuje znowu w nocy."
+  es: "No se ha podido contratar a nadie ahora: no hay candidatos esta semana o falta dinero. La empresa lo vuelve a intentar esta noche."
 "Hired: %{names}.":
   en: "Hired: %{names}."
   nl: "Aangenomen: %{names}."
@@ -812,6 +911,7 @@ _version: 2
   ru: "Наняты: %{names}."
   uk: "Найняті: %{names}."
   pl: "Zatrudnieni: %{names}."
+  es: "Contratados: %{names}."
 "Leaves on %{date}":
   en: "Leaves on %{date}"
   nl: "Vertrekt op %{date}"
@@ -820,6 +920,7 @@ _version: 2
   ru: "Уходит %{date}"
   uk: "Іде %{date}"
   pl: "Odchodzi %{date}"
+  es: "Se va el %{date}"
 "Ill today":
   en: "Ill today"
   nl: "Vandaag ziek"
@@ -828,6 +929,7 @@ _version: 2
   ru: "Сегодня болен"
   uk: "Сьогодні хворіє"
   pl: "Dziś chory"
+  es: "De baja hoy"
 "On a course today":
   en: "On a course today"
   nl: "Vandaag op cursus"
@@ -836,6 +938,7 @@ _version: 2
   ru: "Сегодня на курсах"
   uk: "Сьогодні на курсах"
   pl: "Dziś na kursie"
+  es: "Hoy en un curso"
 "Line %{n} · %{from} – %{to}":
   en: "Line %{n} · %{from} – %{to}"
   nl: "Lijn %{n} · %{from} – %{to}"
@@ -844,6 +947,7 @@ _version: 2
   ru: "Линия %{n} · %{from} – %{to}"
   uk: "Лінія %{n} · %{from} – %{to}"
   pl: "Linia %{n} · %{from} – %{to}"
+  es: "Línea %{n} · %{from} – %{to}"
 "%{n} drivers · %{m} more wanted: hired tonight, or now":
   en: "%{n} drivers · %{m} more wanted: hired tonight, or now"
   nl: "%{n} chauffeurs · nog %{m} nodig: vannacht aangenomen, of nu"
@@ -852,6 +956,7 @@ _version: 2
   ru: "%{n} водителей · нужно ещё %{m}: наймут ночью или сейчас"
   uk: "%{n} водіїв · потрібно ще %{m}: наймуть уночі або зараз"
   pl: "%{n} kierowców · potrzeba jeszcze %{m}: zatrudnieni w nocy albo teraz"
+  es: "%{n} conductores · faltan %{m}: se contratan esta noche, o ahora"
 "%{n} drivers · every shift has its driver":
   en: "%{n} drivers · every shift has its driver"
   nl: "%{n} chauffeurs · elke dienst heeft zijn chauffeur"
@@ -860,6 +965,7 @@ _version: 2
   ru: "%{n} водителей · у каждой смены есть водитель"
   uk: "%{n} водіїв · кожна зміна має водія"
   pl: "%{n} kierowców · każda zmiana ma kierowcę"
+  es: "%{n} conductores · cada turno tiene su conductor"
 "Hire automatically":
   en: "Hire automatically"
   nl: "Automatisch aannemen"
@@ -868,6 +974,7 @@ _version: 2
   ru: "Нанять автоматически"
   uk: "Найняти автоматично"
   pl: "Zatrudnij automatycznie"
+  es: "Contratar automáticamente"
 "No driver yet":
   en: "No driver yet"
   nl: "Nog geen chauffeur"
@@ -876,6 +983,7 @@ _version: 2
   ru: "Пока нет водителя"
   uk: "Поки немає водія"
   pl: "Jeszcze brak kierowcy"
+  es: "Aún no hay conductores"
 "The company hires the drivers its shifts need by itself, at night. Or hire them now.":
   en: "The company hires the drivers its shifts need by itself, at night. Or hire them now."
   nl: "Het bedrijf neemt 's nachts zelf de chauffeurs aan die zijn diensten nodig hebben. Of neem ze nu aan."
@@ -884,6 +992,7 @@ _version: 2
   ru: "Компания сама ночью нанимает водителей для своих смен. Или наймите их сейчас."
   uk: "Компанія сама вночі наймає водіїв для своїх змін. Або найміть їх зараз."
   pl: "Firma sama w nocy zatrudnia kierowców potrzebnych na zmiany. Albo zatrudnij ich teraz."
+  es: "La empresa contrata sola de noche los conductores que necesitan sus turnos. O contrátalos ahora."
 "Bonus %{amount}":
   en: "Bonus %{amount}"
   nl: "Bonus %{amount}"
@@ -892,6 +1001,7 @@ _version: 2
   ru: "Премия %{amount}"
   uk: "Премія %{amount}"
   pl: "Premia %{amount}"
+  es: "Prima %{amount}"
 "A one-off bonus: they are happier and stay longer":
   en: "A one-off bonus: they are happier and stay longer"
   nl: "Een eenmalige bonus: ze zijn tevredener en blijven langer"
@@ -900,6 +1010,7 @@ _version: 2
   ru: "Разовая премия: водитель довольнее и дольше остаётся"
   uk: "Разова премія: водій задоволеніший і довше залишається"
   pl: "Jednorazowa premia: są zadowoleni i zostają dłużej"
+  es: "Una prima puntual: están más contentos y se quedan más tiempo"
 "Fire":
   en: "Fire"
   nl: "Ontslaan"
@@ -908,6 +1019,7 @@ _version: 2
   ru: "Уволить"
   uk: "Звільнити"
   pl: "Zwolnij"
+  es: "Despedir"
 "%{name} got a bonus of %{amount}: thank you!":
   en: "%{name} got a bonus of %{amount}: thank you!"
   nl: "%{name} kreeg een bonus van %{amount}: bedankt!"
@@ -916,6 +1028,7 @@ _version: 2
   ru: "%{name} получил(а) премию %{amount}: спасибо!"
   uk: "%{name} отримав(ла) премію %{amount}: дякую!"
   pl: "%{name} dostał(a) premię %{amount}: dziękuję!"
+  es: "%{name} ha recibido una prima de %{amount}: ¡gracias!"
 "The cash does not cover it.":
   en: "The cash does not cover it."
   nl: "Het geld is niet genoeg."
@@ -924,6 +1037,7 @@ _version: 2
   ru: "Денег не хватает."
   uk: "Грошей не вистачає."
   pl: "Gotówka nie wystarcza."
+  es: "La caja no llega."
 
 # --- the money and the company ---------------------------------------------------------------------
 "In the bank: %{cash}":
@@ -934,6 +1048,7 @@ _version: 2
   ru: "В банке: %{cash}"
   uk: "У банку: %{cash}"
   pl: "W banku: %{cash}"
+  es: "En el banco: %{cash}"
 "Week by week":
   en: "Week by week"
   nl: "Week na week"
@@ -942,6 +1057,7 @@ _version: 2
   ru: "Неделя за неделей"
   uk: "Тиждень за тижнем"
   pl: "Tydzień po tygodniu"
+  es: "Semana a semana"
 "In":
   en: "In"
   nl: "In"
@@ -950,6 +1066,7 @@ _version: 2
   ru: "Приход"
   uk: "Надходження"
   pl: "Wpływy"
+  es: "Entra"
 "Out":
   en: "Out"
   nl: "Uit"
@@ -958,6 +1075,7 @@ _version: 2
   ru: "Расход"
   uk: "Витрати"
   pl: "Wydatki"
+  es: "Sale"
 "No day closed yet: press Next day, and the first week's money shows here.":
   en: "No day closed yet: press Next day, and the first week's money shows here."
   nl: "Nog geen dag afgesloten: druk op Volgende dag, en het geld van de eerste week komt hier."
@@ -966,6 +1084,7 @@ _version: 2
   ru: "Ни один день ещё не закрыт: нажмите «Следующий день», и деньги первой недели появятся здесь."
   uk: "Жодного дня ще не закрито: натисніть «Наступний день», і гроші першого тижня з'являться тут."
   pl: "Żaden dzień nie jest jeszcze zamknięty: naciśnij Następny dzień, a pieniądze pierwszego tygodnia pokażą się tutaj."
+  es: "Aún no se ha cerrado ningún día: pulsa Día siguiente y aquí aparecerá el dinero de la primera semana."
 "Where it goes (four weeks)":
   en: "Where it goes (four weeks)"
   nl: "Waar het heen gaat (vier weken)"
@@ -974,6 +1093,7 @@ _version: 2
   ru: "Куда уходят (четыре недели)"
   uk: "Куди йдуть (чотири тижні)"
   pl: "Na co idzie (cztery tygodnie)"
+  es: "Adónde va (cuatro semanas)"
 "Nothing spent yet.":
   en: "Nothing spent yet."
   nl: "Nog niets uitgegeven."
@@ -982,6 +1102,7 @@ _version: 2
   ru: "Пока ничего не потрачено."
   uk: "Поки нічого не витрачено."
   pl: "Jeszcze nic nie wydano."
+  es: "Aún no se ha gastado nada."
 "Company livery":
   en: "Company livery"
   nl: "Huisstijl"
@@ -990,6 +1111,7 @@ _version: 2
   ru: "Фирменная ливрея"
   uk: "Фірмова ліврея"
   pl: "Malowanie firmowe"
+  es: "Librea de la empresa"
 "No livery of your own yet: your buses wear the maker's.":
   en: "No livery of your own yet: your buses wear the maker's."
   nl: "Nog geen eigen huisstijl: je bussen rijden in die van de fabrikant."
@@ -998,6 +1120,7 @@ _version: 2
   ru: "Своей ливреи пока нет: ваши автобусы в ливрее производителя."
   uk: "Власної лівреї поки немає: ваші автобуси в лівреї виробника."
   pl: "Jeszcze brak własnego malowania: twoje autobusy noszą malowanie producenta."
+  es: "Aún no tienes librea propia: tus autobuses llevan la del fabricante."
 "%{n} liveries of your own":
   en: "%{n} liveries of your own"
   nl: "%{n} eigen lakken"
@@ -1006,6 +1129,7 @@ _version: 2
   ru: "%{n} собственных ливрей"
   uk: "%{n} власних ліврей"
   pl: "%{n} własnych malowań"
+  es: "%{n} libreas propias"
 "Paint your buses in your company's own colours in the livery editor. A bus painted in it wears it in the game too.":
   en: "Paint your buses in your company's own colours in the livery editor. A bus painted in it wears it in the game too."
   nl: "Spuit je bussen in de eigen kleuren van je bedrijf in de lakeditor. Een bus die zo gespoten is, rijdt er ook in het spel mee."
@@ -1014,6 +1138,7 @@ _version: 2
   ru: "Покрасьте автобусы в цвета своей компании в редакторе ливрей. Окрашенный автобус носит её и в игре."
   uk: "Пофарбуйте автобуси в кольори своєї компанії в редакторі лівреї. Пофарбований автобус носить її і в грі."
   pl: "Pomaluj autobusy w barwy firmy w edytorze malowań. Pomalowany autobus nosi je także w grze."
+  es: "Pinta tus autobuses con los colores propios de tu empresa en el editor de libreas. Un autobús pintado con ella la lleva también en el juego."
 "Paint the company livery":
   en: "Paint the company livery"
   nl: "Huisstijl spuiten"
@@ -1022,6 +1147,7 @@ _version: 2
   ru: "Нарисовать ливрею"
   uk: "Намалювати ліврею"
   pl: "Pomaluj w barwy firmy"
+  es: "Pintar la librea de la empresa"
 "Designing a livery costs %{amount}":
   en: "Designing a livery costs %{amount}"
   nl: "Een lak ontwerpen kost %{amount}"
@@ -1030,6 +1156,7 @@ _version: 2
   ru: "Разработка ливреи стоит %{amount}"
   uk: "Розробка лівреї коштує %{amount}"
   pl: "Zaprojektowanie malowania kosztuje %{amount}"
+  es: "Diseñar una librea cuesta %{amount}"
 "Buy a bus first: then paint it.":
   en: "Buy a bus first: then paint it."
   nl: "Koop eerst een bus: spuit hem daarna."
@@ -1038,6 +1165,7 @@ _version: 2
   ru: "Сначала купите автобус, потом раскрасьте его."
   uk: "Спершу купіть автобус, потім розфарбуйте його."
   pl: "Najpierw kup autobus, potem go pomaluj."
+  es: "Primero compra un autobús: luego píntalo."
 "%{n} of %{all} places used":
   en: "%{n} of %{all} places used"
   nl: "%{n} van %{all} plaatsen in gebruik"
@@ -1046,6 +1174,7 @@ _version: 2
   ru: "Занято %{n} из %{all} мест"
   uk: "Зайнято %{n} з %{all} місць"
   pl: "Zajęte %{n} z %{all} miejsc"
+  es: "%{n} de %{all} plazas ocupadas"
 "Buy a bigger depot":
   en: "Buy a bigger depot"
   nl: "Grotere remise kopen"
@@ -1054,6 +1183,7 @@ _version: 2
   ru: "Купить депо побольше"
   uk: "Купити більше депо"
   pl: "Kup większą zajezdnię"
+  es: "Comprar una cochera más grande"
 "Being built: %{n} more places from %{date}.":
   en: "Being built: %{n} more places from %{date}."
   nl: "In aanbouw: %{n} plaatsen meer vanaf %{date}."
@@ -1062,6 +1192,7 @@ _version: 2
   ru: "Строится: ещё %{n} мест с %{date}."
   uk: "Будується: ще %{n} місць з %{date}."
   pl: "W budowie: %{n} miejsc więcej od %{date}."
+  es: "En construcción: %{n} plazas más desde el %{date}."
 "A bigger depot: %{n} more places for %{amount}, ready in %{days} days.":
   en: "A bigger depot: %{n} more places for %{amount}, ready in %{days} days."
   nl: "Een grotere remise: %{n} plaatsen meer voor %{amount}, klaar over %{days} dagen."
@@ -1070,6 +1201,7 @@ _version: 2
   ru: "Депо побольше: ещё %{n} мест за %{amount}, готово через %{days} дн."
   uk: "Більше депо: ще %{n} місць за %{amount}, готово через %{days} дн."
   pl: "Większa zajezdnia: %{n} miejsc więcej za %{amount}, gotowa za %{days} dni."
+  es: "Una cochera más grande: %{n} plazas más por %{amount}, lista en %{days} días."
 "The depot grows: %{n} more places in %{days} days.":
   en: "The depot grows: %{n} more places in %{days} days."
   nl: "De remise groeit: %{n} plaatsen meer over %{days} dagen."
@@ -1078,6 +1210,7 @@ _version: 2
   ru: "Депо растёт: ещё %{n} мест через %{days} дн."
   uk: "Депо росте: ще %{n} місць через %{days} дн."
   pl: "Zajezdnia rośnie: %{n} miejsc więcej za %{days} dni."
+  es: "La cochera crece: %{n} plazas más en %{days} días."
 "Your depot is as big as it gets.":
   en: "Your depot is as big as it gets."
   nl: "Je remise is zo groot als het kan."
@@ -1086,6 +1219,7 @@ _version: 2
   ru: "Ваше депо уже максимального размера."
   uk: "Ваше депо вже максимального розміру."
   pl: "Twoja zajezdnia jest już największa."
+  es: "Tu cochera ya es todo lo grande que puede ser."
 "Your drivers' and staff's pay":
   en: "Your drivers' and staff's pay"
   nl: "Loon van je chauffeurs en personeel"
@@ -1094,6 +1228,7 @@ _version: 2
   ru: "Зарплата водителей и персонала"
   uk: "Зарплата водіїв і персоналу"
   pl: "Pensje kierowców i personelu"
+  es: "El sueldo de tus conductores y tu personal"
 "Diesel and electricity for the buses":
   en: "Diesel and electricity for the buses"
   nl: "Diesel en stroom voor de bussen"
@@ -1102,6 +1237,7 @@ _version: 2
   ru: "Дизель и электричество для автобусов"
   uk: "Дизель і електрика для автобусів"
   pl: "Olej napędowy i prąd dla autobusów"
+  es: "Diésel y electricidad para los autobuses"
 "Keeping the buses running":
   en: "Keeping the buses running"
   nl: "Onderhoud van de bussen"
@@ -1110,6 +1246,7 @@ _version: 2
   ru: "Обслуживание автобусов"
   uk: "Обслуговування автобусів"
   pl: "Utrzymanie autobusów"
+  es: "Mantener los autobuses en marcha"
 "Repairs after breakdowns":
   en: "Repairs after breakdowns"
   nl: "Reparaties na pech"
@@ -1118,6 +1255,7 @@ _version: 2
   ru: "Ремонт после поломок"
   uk: "Ремонт після поломок"
   pl: "Naprawy po awariach"
+  es: "Reparaciones tras averías"
 "Leased buses":
   en: "Leased buses"
   nl: "Geleasede bussen"
@@ -1126,6 +1264,7 @@ _version: 2
   ru: "Автобусы в лизинге"
   uk: "Автобуси в лізингу"
   pl: "Autobusy w leasingu"
+  es: "Autobuses en leasing"
 "Buses rented for the day":
   en: "Buses rented for the day"
   nl: "Bussen gehuurd voor de dag"
@@ -1134,6 +1273,7 @@ _version: 2
   ru: "Автобусы, арендованные на день"
   uk: "Автобуси, орендовані на день"
   pl: "Autobusy wynajęte na dzień"
+  es: "Autobuses alquilados por días"
 "Insurance of the buses":
   en: "Insurance of the buses"
   nl: "Verzekering van de bussen"
@@ -1142,6 +1282,7 @@ _version: 2
   ru: "Страховка автобусов"
   uk: "Страхування автобусів"
   pl: "Ubezpieczenie autobusów"
+  es: "Seguro de los autobuses"
 "The depot's rent and upkeep":
   en: "The depot's rent and upkeep"
   nl: "Huur en onderhoud van de remise"
@@ -1150,6 +1291,7 @@ _version: 2
   ru: "Аренда и содержание депо"
   uk: "Оренда й утримання депо"
   pl: "Czynsz i utrzymanie zajezdni"
+  es: "El alquiler y el mantenimiento de la cochera"
 "Fines for bus runs that did not run or ran late":
   en: "Fines for bus runs that did not run or ran late"
   nl: "Boetes voor ritten die uitvielen of te laat waren"
@@ -1158,6 +1300,7 @@ _version: 2
   ru: "Штрафы за сорванные или опоздавшие рейсы"
   uk: "Штрафи за зірвані чи запізнілі рейси"
   pl: "Kary za kursy, które się nie odbyły lub były spóźnione"
+  es: "Multas por viajes que no se hicieron o llegaron tarde"
 "Interest on loans":
   en: "Interest on loans"
   nl: "Rente op leningen"
@@ -1166,6 +1309,7 @@ _version: 2
   ru: "Проценты по кредитам"
   uk: "Відсотки за кредитами"
   pl: "Odsetki od kredytów"
+  es: "Intereses de préstamos"
 "Licences for the lines":
   en: "Licences for the lines"
   nl: "Vergunningen voor de lijnen"
@@ -1174,6 +1318,7 @@ _version: 2
   ru: "Лицензии на линии"
   uk: "Ліцензії на лінії"
   pl: "Licencje na linie"
+  es: "Licencias de las líneas"
 "Training for the drivers":
   en: "Training for the drivers"
   nl: "Opleiding van de chauffeurs"
@@ -1182,6 +1327,7 @@ _version: 2
   ru: "Обучение водителей"
   uk: "Навчання водіїв"
   pl: "Szkolenia kierowców"
+  es: "Formación de los conductores"
 "Other costs":
   en: "Other costs"
   nl: "Overige kosten"
@@ -1190,6 +1336,7 @@ _version: 2
   ru: "Прочие расходы"
   uk: "Інші витрати"
   pl: "Inne koszty"
+  es: "Otros costes"
 "Renting buses for the day costs a lot: a bus of your own is cheaper.":
   en: "Renting buses for the day costs a lot: a bus of your own is cheaper."
   nl: "Bussen per dag huren kost veel: een eigen bus is goedkoper."
@@ -1198,6 +1345,7 @@ _version: 2
   ru: "Аренда автобусов на день обходится дорого: свой автобус дешевле."
   uk: "Оренда автобусів на день коштує дорого: свій автобус дешевший."
   pl: "Wynajem autobusów na dzień dużo kosztuje: własny autobus jest tańszy."
+  es: "Alquilar autobuses por días cuesta mucho: un autobús propio sale más barato."
 "Fines for bus runs that did not run: buy buses so that every run has one.":
   en: "Fines for bus runs that did not run: buy buses so that every run has one."
   nl: "Boetes voor uitgevallen ritten: koop bussen zodat elke rit er een heeft."
@@ -1206,6 +1354,7 @@ _version: 2
   ru: "Штрафы за сорванные рейсы: купите автобусы, чтобы у каждого рейса был свой."
   uk: "Штрафи за зірвані рейси: купіть автобуси, щоб кожен рейс мав свій."
   pl: "Kary za kursy, które się nie odbyły: kup autobusy, żeby każdy kurs miał swój."
+  es: "Multas por viajes que no se hicieron: compra autobuses para que cada viaje tenga uno."
 "Repairs cost a lot: old buses break down more often. A newer bus saves money.":
   en: "Repairs cost a lot: old buses break down more often. A newer bus saves money."
   nl: "Reparaties kosten veel: oude bussen gaan vaker kapot. Een nieuwere bus bespaart geld."
@@ -1214,6 +1363,7 @@ _version: 2
   ru: "Ремонт обходится дорого: старые автобусы ломаются чаще. Новый автобус экономит деньги."
   uk: "Ремонт коштує дорого: старі автобуси ламаються частіше. Новіший автобус заощаджує гроші."
   pl: "Naprawy dużo kosztują: stare autobusy częściej się psują. Nowszy autobus oszczędza pieniądze."
+  es: "Las reparaciones cuestan mucho: los autobuses viejos se averían más a menudo. Un autobús más nuevo ahorra dinero."
 "Pay is most of your costs: a busier line brings more passengers for the same drivers.":
   en: "Pay is most of your costs: a busier line brings more passengers for the same drivers."
   nl: "Loon is het grootste deel van je kosten: een drukkere lijn brengt meer reizigers voor dezelfde chauffeurs."
@@ -1222,6 +1372,7 @@ _version: 2
   ru: "Зарплата — основная часть расходов: более загруженная линия даёт больше пассажиров при тех же водителях."
   uk: "Зарплата — основна частина витрат: завантаженіша лінія дає більше пасажирів за тих самих водіїв."
   pl: "Pensje to większość kosztów: bardziej oblegana linia daje więcej pasażerów przy tych samych kierowcach."
+  es: "Los sueldos son la mayor parte de tus costes: una línea con más movimiento trae más pasajeros con los mismos conductores."
 
 # --- the shifts -----------------------------------------------------------------------------------
 "Your shift":
@@ -1232,6 +1383,7 @@ _version: 2
   ru: "Ваша смена"
   uk: "Ваша зміна"
   pl: "Twoja zmiana"
+  es: "Tu turno"
 "Drive this shift":
   en: "Drive this shift"
   nl: "Rijd deze dienst"
@@ -1240,6 +1392,7 @@ _version: 2
   ru: "Проехать эту смену"
   uk: "Проїхати цю зміну"
   pl: "Przejedź tę zmianę"
+  es: "Conducir este turno"
 "Pick one of today's shifts: its start opens with the line, the bus and the times.":
   en: "Pick one of today's shifts: its start opens with the line, the bus and the times."
   nl: "Kies een van de diensten van vandaag: de start opent met de lijn, de bus en de tijden."
@@ -1248,6 +1401,7 @@ _version: 2
   ru: "Выберите одну из сегодняшних смен: откроется её старт с линией, автобусом и временем."
   uk: "Виберіть одну з сьогоднішніх змін: відкриється її старт з лінією, автобусом і часом."
   pl: "Wybierz jedną z dzisiejszych zmian: otworzy się jej start z linią, autobusem i godzinami."
+  es: "Elige uno de los turnos de hoy: su inicio se abre con la línea, el autobús y las horas."
 "Reading today's timetable…":
   en: "Reading today's timetable…"
   nl: "De dienstregeling van vandaag wordt gelezen…"
@@ -1256,6 +1410,7 @@ _version: 2
   ru: "Чтение сегодняшнего расписания…"
   uk: "Читання сьогоднішнього розкладу…"
   pl: "Czytanie dzisiejszego rozkładu…"
+  es: "Leyendo el horario de hoy…"
 "Add a line first: its shifts are here the next moment.":
   en: "Add a line first: its shifts are here the next moment."
   nl: "Voeg eerst een lijn toe: de diensten staan hier meteen daarna."
@@ -1264,6 +1419,7 @@ _version: 2
   ru: "Сначала добавьте линию: её смены сразу появятся здесь."
   uk: "Спершу додайте лінію: її зміни одразу з'являться тут."
   pl: "Najpierw dodaj linię: jej zmiany pojawią się tu od razu."
+  es: "Primero añade una línea: sus turnos aparecerán aquí al momento."
 "Buy a bus for your lines: their shifts are here once it runs.":
   en: "Buy a bus for your lines: their shifts are here once it runs."
   nl: "Koop een bus voor je lijnen: de diensten staan hier zodra hij rijdt."
@@ -1272,6 +1428,7 @@ _version: 2
   ru: "Купите автобус для своих линий: их смены появятся здесь, когда он выйдет."
   uk: "Купіть автобус для своїх ліній: їхні зміни з'являться тут, коли він вийде."
   pl: "Kup autobus na swoje linie: ich zmiany pojawią się tu, gdy zacznie jeździć."
+  es: "Compra un autobús para tus líneas: sus turnos aparecerán aquí en cuanto circule."
 "No shift left today":
   en: "No shift left today"
   nl: "Vandaag geen dienst meer"
@@ -1280,6 +1437,7 @@ _version: 2
   ru: "На сегодня смен больше нет"
   uk: "На сьогодні змін більше немає"
   pl: "Na dziś nie ma już zmian"
+  es: "No quedan turnos hoy"
 "Today's shifts have all begun. Run on to the next day for new ones.":
   en: "Today's shifts have all begun. Run on to the next day for new ones."
   nl: "De diensten van vandaag zijn allemaal begonnen. Ga door naar de volgende dag voor nieuwe."
@@ -1288,6 +1446,7 @@ _version: 2
   ru: "Все сегодняшние смены уже начались. Перейдите к следующему дню за новыми."
   uk: "Усі сьогоднішні зміни вже почалися. Перейдіть до наступного дня по нові."
   pl: "Dzisiejsze zmiany już się zaczęły. Przejdź do następnego dnia po nowe."
+  es: "Todos los turnos de hoy han empezado. Pasa al día siguiente para tener nuevos."
 "A shift you pick is yours for today only: tomorrow your drivers drive it again.":
   en: "A shift you pick is yours for today only: tomorrow your drivers drive it again."
   nl: "Een dienst die je kiest is alleen vandaag van jou: morgen rijden je chauffeurs hem weer."
@@ -1296,6 +1455,7 @@ _version: 2
   ru: "Выбранная смена ваша только сегодня: завтра её снова ведут ваши водители."
   uk: "Вибрана зміна ваша лише сьогодні: завтра її знову ведуть ваші водії."
   pl: "Wybrana zmiana jest twoja tylko dziś: jutro znów jeżdżą ją twoi kierowcy."
+  es: "Un turno que eliges es tuyo solo hoy: mañana lo vuelven a conducir tus conductores."
 
 # --- the day, the tiles and the tips --------------------------------------------------------------
 "Your company runs no line yet. Add one to get going.":
@@ -1306,6 +1466,7 @@ _version: 2
   ru: "У вашей компании пока нет линий. Добавьте одну, чтобы начать."
   uk: "У вашої компанії поки немає ліній. Додайте одну, щоб почати."
   pl: "Twoja firma nie ma jeszcze linii. Dodaj jedną, żeby zacząć."
+  es: "Tu empresa aún no explota ninguna línea. Añade una para empezar."
 "Your lines are waiting for buses. Buy your first bus.":
   en: "Your lines are waiting for buses. Buy your first bus."
   nl: "Je lijnen wachten op bussen. Koop je eerste bus."
@@ -1314,6 +1475,7 @@ _version: 2
   ru: "Ваши линии ждут автобусов. Купите первый автобус."
   uk: "Ваші лінії чекають на автобуси. Купіть перший автобус."
   pl: "Twoje linie czekają na autobusy. Kup pierwszy autobus."
+  es: "Tus líneas esperan autobuses. Compra tu primer autobús."
 "The company is getting the day ready…":
   en: "The company is getting the day ready…"
   nl: "Het bedrijf zet de dag klaar…"
@@ -1322,6 +1484,7 @@ _version: 2
   ru: "Компания готовит день…"
   uk: "Компанія готує день…"
   pl: "Firma przygotowuje dzień…"
+  es: "La empresa está preparando el día…"
 "No bus runs on your lines today.":
   en: "No bus runs on your lines today."
   nl: "Vandaag rijdt er geen bus op je lijnen."
@@ -1330,6 +1493,7 @@ _version: 2
   ru: "Сегодня на ваших линиях автобусы не ходят."
   uk: "Сьогодні на ваших лініях автобуси не ходять."
   pl: "Dziś na twoich liniach nie kursuje żaden autobus."
+  es: "Hoy no circula ningún autobús en tus líneas."
 "All %{n} buses are on the road.":
   en: "All %{n} buses are on the road."
   nl: "Alle %{n} bussen zijn onderweg."
@@ -1338,6 +1502,7 @@ _version: 2
   ru: "Все %{n} автобусов на линии."
   uk: "Усі %{n} автобусів на лінії."
   pl: "Wszystkie %{n} autobusy są w trasie."
+  es: "Los %{n} autobuses están en la calle."
 "%{k} of %{n} buses are on the road.":
   en: "%{k} of %{n} buses are on the road."
   nl: "%{k} van %{n} bussen zijn onderweg."
@@ -1346,6 +1511,7 @@ _version: 2
   ru: "%{k} из %{n} автобусов на линии."
   uk: "%{k} з %{n} автобусів на лінії."
   pl: "%{k} z %{n} autobusów jest w trasie."
+  es: "%{k} de %{n} autobuses están en la calle."
 "The buses are still in the depot: the first leaves at %{time}.":
   en: "The buses are still in the depot: the first leaves at %{time}."
   nl: "De bussen staan nog in de remise: de eerste vertrekt om %{time}."
@@ -1354,6 +1520,7 @@ _version: 2
   ru: "Автобусы ещё в депо: первый выезжает в %{time}."
   uk: "Автобуси ще в депо: перший виїжджає о %{time}."
   pl: "Autobusy są jeszcze w zajezdni: pierwszy wyjeżdża o %{time}."
+  es: "Los autobuses aún están en la cochera: el primero sale a las %{time}."
 "The day's work is done: every bus is back in the depot.":
   en: "The day's work is done: every bus is back in the depot."
   nl: "Het werk van vandaag zit erop: elke bus staat weer in de remise."
@@ -1362,6 +1529,7 @@ _version: 2
   ru: "Работа дня закончена: все автобусы вернулись в депо."
   uk: "Робота дня закінчена: усі автобуси повернулися в депо."
   pl: "Praca na dziś skończona: każdy autobus wrócił do zajezdni."
+  es: "El trabajo del día está hecho: todos los autobuses han vuelto a la cochera."
 "A quiet moment: no bus is on the road right now.":
   en: "A quiet moment: no bus is on the road right now."
   nl: "Een rustig moment: er is nu geen bus onderweg."
@@ -1370,6 +1538,7 @@ _version: 2
   ru: "Спокойная минута: сейчас на линии нет автобусов."
   uk: "Спокійна хвилина: зараз на лінії немає автобусів."
   pl: "Spokojna chwila: teraz żaden autobus nie jest w trasie."
+  es: "Un momento tranquilo: ahora mismo no hay ningún autobús en la calle."
 "Today's work is handed out. Shifts: %{d}, buses: %{b}.":
   en: "Today's work is handed out. Shifts: %{d}, buses: %{b}."
   nl: "Het werk van vandaag is verdeeld. Diensten: %{d}, bussen: %{b}."
@@ -1378,6 +1547,7 @@ _version: 2
   ru: "Работа на сегодня распределена. Смен: %{d}, автобусов: %{b}."
   uk: "Роботу на сьогодні розподілено. Змін: %{d}, автобусів: %{b}."
   pl: "Dzisiejsza praca rozdzielona. Zmiany: %{d}, autobusy: %{b}."
+  es: "El trabajo de hoy está repartido. Turnos: %{d}, autobuses: %{b}."
 "Line %{n} runs from now on.":
   en: "Line %{n} runs from now on."
   nl: "Lijn %{n} rijdt vanaf nu."
@@ -1386,6 +1556,7 @@ _version: 2
   ru: "Линия %{n} работает с этой минуты."
   uk: "Лінія %{n} працює з цієї хвилини."
   pl: "Linia %{n} kursuje od teraz."
+  es: "La línea %{n} circula a partir de ahora."
 "Line %{n} stays yours: its licence is renewed for %{amount}, until %{date}.":
   en: "Line %{n} stays yours: its licence is renewed for %{amount}, until %{date}."
   nl: "Lijn %{n} blijft van jou: de vergunning is verlengd voor %{amount}, tot %{date}."
@@ -1394,6 +1565,7 @@ _version: 2
   ru: "Линия %{n} остаётся вашей: лицензия продлена за %{amount}, до %{date}."
   uk: "Лінія %{n} залишається вашою: ліцензію продовжено за %{amount}, до %{date}."
   pl: "Linia %{n} zostaje twoja: licencja przedłużona za %{amount}, do %{date}."
+  es: "La línea %{n} sigue siendo tuya: su licencia se renueva por %{amount}, hasta el %{date}."
 "Line %{n} could not be kept: its licence costs %{amount}, more than the cash.":
   en: "Line %{n} could not be kept: its licence costs %{amount}, more than the cash."
   nl: "Lijn %{n} kon niet worden behouden: de vergunning kost %{amount}, meer dan het geld."
@@ -1402,6 +1574,7 @@ _version: 2
   ru: "Линию %{n} сохранить не удалось: лицензия стоит %{amount}, больше, чем есть денег."
   uk: "Лінію %{n} зберегти не вдалося: ліцензія коштує %{amount}, більше, ніж є грошей."
   pl: "Nie udało się zachować linii %{n}: licencja kosztuje %{amount}, więcej niż gotówka."
+  es: "No se ha podido mantener la línea %{n}: su licencia cuesta %{amount}, más de lo que hay en caja."
 "Bus %{bus} broke down: spare bus %{spare} took over.":
   en: "Bus %{bus} broke down: spare bus %{spare} took over."
   nl: "Bus %{bus} kreeg pech: reservebus %{spare} nam het over."
@@ -1410,6 +1583,7 @@ _version: 2
   ru: "Автобус %{bus} сломался: резервный %{spare} его заменил."
   uk: "Автобус %{bus} зламався: резервний %{spare} його замінив."
   pl: "Autobus %{bus} się zepsuł: rezerwowy %{spare} go zastąpił."
+  es: "El autobús %{bus} se averió: el autobús de reserva %{spare} lo sustituyó."
 "Bus %{bus} broke down: the workshop repairs it.":
   en: "Bus %{bus} broke down: the workshop repairs it."
   nl: "Bus %{bus} kreeg pech: de werkplaats repareert hem."
@@ -1418,6 +1592,7 @@ _version: 2
   ru: "Автобус %{bus} сломался: мастерская его ремонтирует."
   uk: "Автобус %{bus} зламався: майстерня його ремонтує."
   pl: "Autobus %{bus} się zepsuł: warsztat go naprawia."
+  es: "El autobús %{bus} se averió: el taller lo repara."
 "%{n} on the road now":
   en: "%{n} on the road now"
   nl: "%{n} nu onderweg"
@@ -1426,6 +1601,7 @@ _version: 2
   ru: "%{n} сейчас на линии"
   uk: "%{n} зараз на лінії"
   pl: "%{n} teraz w trasie"
+  es: "%{n} en la calle ahora"
 "Hired for you at night":
   en: "Hired for you at night"
   nl: "'s Nachts voor je aangenomen"
@@ -1434,6 +1610,7 @@ _version: 2
   ru: "Нанимаются для вас ночью"
   uk: "Наймаються для вас уночі"
   pl: "Zatrudniani dla ciebie w nocy"
+  es: "Contratados para ti por la noche"
 "%{n} shifts today without a driver":
   en: "%{n} shifts today without a driver"
   nl: "%{n} diensten vandaag zonder chauffeur"
@@ -1442,6 +1619,7 @@ _version: 2
   ru: "%{n} смен сегодня без водителя"
   uk: "%{n} змін сьогодні без водія"
   pl: "%{n} zmian dziś bez kierowcy"
+  es: "%{n} turnos hoy sin conductor"
 "Every shift has its driver":
   en: "Every shift has its driver"
   nl: "Elke dienst heeft zijn chauffeur"
@@ -1450,6 +1628,7 @@ _version: 2
   ru: "У каждой смены есть водитель"
   uk: "Кожна зміна має водія"
   pl: "Każda zmiana ma kierowcę"
+  es: "Cada turno tiene su conductor"
 "This week's result":
   en: "This week's result"
   nl: "Resultaat van deze week"
@@ -1458,6 +1637,7 @@ _version: 2
   ru: "Итог этой недели"
   uk: "Підсумок цього тижня"
   pl: "Wynik tego tygodnia"
+  es: "Resultado de esta semana"
 "In the bank: the first week comes":
   en: "In the bank: the first week comes"
   nl: "Op de bank: de eerste week komt eraan"
@@ -1466,6 +1646,7 @@ _version: 2
   ru: "В банке: первая неделя впереди"
   uk: "У банку: перший тиждень попереду"
   pl: "W banku: pierwszy tydzień przed tobą"
+  es: "En el banco: pronto llega la primera semana"
 "See where it goes":
   en: "See where it goes"
   nl: "Kijk waar het heen gaat"
@@ -1474,6 +1655,7 @@ _version: 2
   ru: "Куда уходят деньги"
   uk: "Куди йдуть гроші"
   pl: "Zobacz, na co idzie"
+  es: "Ver adónde va"
 "Start with a line: pick one of the map's, or draw your own stops.":
   en: "Start with a line: pick one of the map's, or draw your own stops."
   nl: "Begin met een lijn: kies er een van de kaart, of teken je eigen haltes."
@@ -1482,6 +1664,7 @@ _version: 2
   ru: "Начните с линии: выберите линию карты или нарисуйте свои остановки."
   uk: "Почніть з лінії: виберіть лінію мапи або намалюйте свої зупинки."
   pl: "Zacznij od linii: wybierz jedną z mapy albo narysuj własne przystanki."
+  es: "Empieza con una línea: elige una del mapa o dibuja tus propias paradas."
 "Your lines need buses. Buy your first one: it runs at once.":
   en: "Your lines need buses. Buy your first one: it runs at once."
   nl: "Je lijnen hebben bussen nodig. Koop je eerste: hij rijdt meteen."
@@ -1490,6 +1673,7 @@ _version: 2
   ru: "Вашим линиям нужны автобусы. Купите первый: он сразу выйдет."
   uk: "Вашим лініям потрібні автобуси. Купіть перший: він одразу вийде."
   pl: "Twoje linie potrzebują autobusów. Kup pierwszy: od razu jeździ."
+  es: "Tus líneas necesitan autobuses. Compra el primero: circula enseguida."
 "%{n} of today's bus runs have no bus. Buy another bus.":
   en: "%{n} of today's bus runs have no bus. Buy another bus."
   nl: "%{n} ritten van vandaag hebben geen bus. Koop nog een bus."
@@ -1498,6 +1682,7 @@ _version: 2
   ru: "У %{n} сегодняшних рейсов нет автобуса. Купите ещё один."
   uk: "У %{n} сьогоднішніх рейсів немає автобуса. Купіть ще один."
   pl: "%{n} dzisiejszych kursów nie ma autobusu. Kup kolejny autobus."
+  es: "%{n} de los viajes de hoy no tienen autobús. Compra otro autobús."
 "%{n} shifts today have no driver. The company hires tonight, or now.":
   en: "%{n} shifts today have no driver. The company hires tonight, or now."
   nl: "%{n} diensten vandaag hebben geen chauffeur. Het bedrijf neemt vannacht aan, of nu."
@@ -1506,6 +1691,7 @@ _version: 2
   ru: "У %{n} смен сегодня нет водителя. Компания наймёт ночью или сейчас."
   uk: "У %{n} змін сьогодні немає водія. Компанія найме вночі або зараз."
   pl: "%{n} zmian dziś nie ma kierowcy. Firma zatrudni w nocy albo teraz."
+  es: "%{n} turnos de hoy no tienen conductor. La empresa contrata esta noche, o ahora."
 "Hire now":
   en: "Hire now"
   nl: "Nu aannemen"
@@ -1514,6 +1700,7 @@ _version: 2
   ru: "Нанять сейчас"
   uk: "Найняти зараз"
   pl: "Zatrudnij teraz"
+  es: "Contratar ahora"
 "Your depot is full: no room for another bus. Buy a bigger depot.":
   en: "Your depot is full: no room for another bus. Buy a bigger depot."
   nl: "Je remise is vol: geen plaats voor nog een bus. Koop een grotere remise."
@@ -1522,6 +1709,7 @@ _version: 2
   ru: "Ваше депо заполнено: нет места для ещё одного автобуса. Купите депо побольше."
   uk: "Ваше депо заповнене: немає місця для ще одного автобуса. Купіть більше депо."
   pl: "Twoja zajezdnia jest pełna: brak miejsca na kolejny autobus. Kup większą."
+  es: "Tu cochera está llena: no cabe otro autobús. Compra una cochera más grande."
 "Bigger depot":
   en: "Bigger depot"
   nl: "Grotere remise"
@@ -1530,6 +1718,7 @@ _version: 2
   ru: "Депо побольше"
   uk: "Більше депо"
   pl: "Większa zajezdnia"
+  es: "Cochera más grande"
 "Line %{n} is often full in the morning. Add a bus.":
   en: "Line %{n} is often full in the morning. Add a bus."
   nl: "Lijn %{n} zit 's ochtends vaak vol. Zet er een bus bij."
@@ -1538,6 +1727,7 @@ _version: 2
   ru: "Линия %{n} утром часто переполнена. Добавьте автобус."
   uk: "Лінія %{n} уранці часто переповнена. Додайте автобус."
   pl: "Linia %{n} rano jest często pełna. Dodaj autobus."
+  es: "La línea %{n} va a menudo llena por la mañana. Añade un autobús."
 "Line %{n} is often full. Add a bus.":
   en: "Line %{n} is often full. Add a bus."
   nl: "Lijn %{n} zit vaak vol. Zet er een bus bij."
@@ -1546,6 +1736,7 @@ _version: 2
   ru: "Линия %{n} часто переполнена. Добавьте автобус."
   uk: "Лінія %{n} часто переповнена. Додайте автобус."
   pl: "Linia %{n} jest często pełna. Dodaj autobus."
+  es: "La línea %{n} va a menudo llena. Añade un autobús."
 "Your fare on line %{n} is high: fewer people ride.":
   en: "Your fare on line %{n} is high: fewer people ride."
   nl: "Je tarief op lijn %{n} is hoog: er rijden minder mensen mee."
@@ -1554,6 +1745,7 @@ _version: 2
   ru: "Тариф на линии %{n} высокий: пассажиров меньше."
   uk: "Тариф на лінії %{n} високий: пасажирів менше."
   pl: "Twoja taryfa na linii %{n} jest wysoka: jeździ mniej osób."
+  es: "Tu tarifa en la línea %{n} es alta: viaja menos gente."
 "Set the fare":
   en: "Set the fare"
   nl: "Tarief instellen"
@@ -1562,6 +1754,7 @@ _version: 2
   ru: "Задать тариф"
   uk: "Задати тариф"
   pl: "Ustaw taryfę"
+  es: "Fijar la tarifa"
 "Your fare on line %{n} is low: it could earn more.":
   en: "Your fare on line %{n} is low: it could earn more."
   nl: "Je tarief op lijn %{n} is laag: hij kan meer verdienen."
@@ -1570,6 +1763,7 @@ _version: 2
   ru: "Тариф на линии %{n} низкий: она могла бы зарабатывать больше."
   uk: "Тариф на лінії %{n} низький: вона могла б заробляти більше."
   pl: "Twoja taryfa na linii %{n} jest niska: mogłaby zarabiać więcej."
+  es: "Tu tarifa en la línea %{n} es baja: podría ganar más."
 "You have more buses than you need: %{n} stand still all day. Sell one, or add a line.":
   en: "You have more buses than you need: %{n} stand still all day. Sell one, or add a line."
   nl: "Je hebt meer bussen dan nodig: %{n} staan de hele dag stil. Verkoop er een, of voeg een lijn toe."
@@ -1578,6 +1772,7 @@ _version: 2
   ru: "У вас больше автобусов, чем нужно: %{n} стоят весь день. Продайте один или добавьте линию."
   uk: "У вас більше автобусів, ніж потрібно: %{n} стоять увесь день. Продайте один або додайте лінію."
   pl: "Masz więcej autobusów, niż potrzeba: %{n} stoi cały dzień. Sprzedaj jeden albo dodaj linię."
+  es: "Tienes más autobuses de los que necesitas: %{n} están parados todo el día. Vende uno o añade una línea."
 "See my buses":
   en: "See my buses"
   nl: "Mijn bussen bekijken"
@@ -1586,6 +1781,7 @@ _version: 2
   ru: "Мои автобусы"
   uk: "Мої автобуси"
   pl: "Zobacz moje autobusy"
+  es: "Ver mis autobuses"
 "Money is getting tight. See where it goes.":
   en: "Money is getting tight. See where it goes."
   nl: "Het geld wordt krap. Kijk waar het heen gaat."
@@ -1594,6 +1790,7 @@ _version: 2
   ru: "Денег становится мало. Посмотрите, куда они уходят."
   uk: "Грошей стає мало. Подивіться, куди вони йдуть."
   pl: "Pieniędzy robi się mało. Zobacz, na co idą."
+  es: "El dinero empieza a escasear. Mira adónde va."
 "See the money":
   en: "See the money"
   nl: "Geld bekijken"
@@ -1602,6 +1799,7 @@ _version: 2
   ru: "Посмотреть деньги"
   uk: "Переглянути гроші"
   pl: "Zobacz pieniądze"
+  es: "Ver el dinero"
 
 # --- the tour's Casual stops ----------------------------------------------------------------------
 "Your company's day":
@@ -1612,6 +1810,7 @@ _version: 2
   ru: "День вашей компании"
   uk: "День вашої компанії"
   pl: "Dzień twojej firmy"
+  es: "El día de tu empresa"
 "How the day goes, in one sentence, and under it what your company solved by itself: a bus that broke down and the spare bus that took over, drivers hired at night.":
   en: "How the day goes, in one sentence, and under it what your company solved by itself: a bus that broke down and the spare bus that took over, drivers hired at night."
   nl: "Hoe de dag loopt, in één zin, en daaronder wat je bedrijf zelf heeft opgelost: een bus met pech en de reservebus die het overnam, 's nachts aangenomen chauffeurs."
@@ -1620,6 +1819,7 @@ _version: 2
   ru: "Как идёт день — одной фразой, а под ней то, что компания решила сама: сломавшийся автобус и резервный, что его заменил, водители, нанятые ночью."
   uk: "Як минає день — одним реченням, а під ним те, що компанія розв'язала сама: зламаний автобус і резервний, що його замінив, водії, найняті вночі."
   pl: "Jak mija dzień, w jednym zdaniu, a pod nim, co firma rozwiązała sama: zepsuty autobus i rezerwowy, który go zastąpił, kierowcy zatrudnieni w nocy."
+  es: "Cómo va el día, en una frase, y debajo lo que tu empresa ha resuelto sola: un autobús que se averió y el autobús de reserva que lo sustituyó, conductores contratados por la noche."
 "The big button: pick one of today's shifts - its line, its time, its bus - and its start opens. You start the game there.":
   en: "The big button: pick one of today's shifts - its line, its time, its bus - and its start opens. You start the game there."
   nl: "De grote knop: kies een van de diensten van vandaag - lijn, tijd, bus - en de start opent. Daar start je het spel."
@@ -1628,6 +1828,7 @@ _version: 2
   ru: "Большая кнопка: выберите одну из сегодняшних смен - линию, время, автобус - и откроется её старт. Оттуда вы запускаете игру."
   uk: "Велика кнопка: виберіть одну з сьогоднішніх змін - лінію, час, автобус - і відкриється її старт. Звідти ви запускаєте гру."
   pl: "Duży przycisk: wybierz jedną z dzisiejszych zmian - linię, godzinę, autobus - a otworzy się jej start. Stamtąd uruchamiasz grę."
+  es: "El botón grande: elige uno de los turnos de hoy (su línea, su hora, su autobús) y se abre su inicio. Ahí empiezas la partida."
 "Four tiles":
   en: "Four tiles"
   nl: "Vier tegels"
@@ -1636,6 +1837,7 @@ _version: 2
   ru: "Четыре плитки"
   uk: "Чотири плитки"
   pl: "Cztery kafelki"
+  es: "Cuatro casillas"
 "Your buses, your lines, your drivers and the money, each with one big number and one button. A click on a tile opens its page.":
   en: "Your buses, your lines, your drivers and the money, each with one big number and one button. A click on a tile opens its page."
   nl: "Je bussen, je lijnen, je chauffeurs en het geld, elk met één groot getal en één knop. Een klik op een tegel opent zijn pagina."
@@ -1644,6 +1846,7 @@ _version: 2
   ru: "Ваши автобусы, линии, водители и деньги — у каждой плитки одно большое число и одна кнопка. Нажатие на плитку открывает её страницу."
   uk: "Ваші автобуси, лінії, водії та гроші — у кожної плитки одне велике число й одна кнопка. Натискання на плитку відкриває її сторінку."
   pl: "Twoje autobusy, linie, kierowcy i pieniądze, każdy z jedną dużą liczbą i jednym przyciskiem. Kliknięcie kafelka otwiera jego stronę."
+  es: "Tus autobuses, tus líneas, tus conductores y el dinero, cada uno con una cifra grande y un botón. Un clic en una casilla abre su página."
 "Your company says what would help now, in plain words: a bus more, a fare too high, a full depot. The button beside a tip does it.":
   en: "Your company says what would help now, in plain words: a bus more, a fare too high, a full depot. The button beside a tip does it."
   nl: "Je bedrijf zegt in gewone woorden wat nu zou helpen: een bus meer, een te hoog tarief, een volle remise. De knop naast een tip doet het."
@@ -1652,6 +1855,7 @@ _version: 2
   ru: "Компания простыми словами говорит, что поможет сейчас: ещё автобус, слишком высокий тариф, полное депо. Кнопка рядом с советом это делает."
   uk: "Компанія простими словами каже, що допоможе зараз: ще автобус, зависокий тариф, повне депо. Кнопка біля поради це робить."
   pl: "Firma mówi prostymi słowami, co teraz pomoże: jeszcze jeden autobus, za wysoka taryfa, pełna zajezdnia. Przycisk obok wskazówki to robi."
+  es: "Tu empresa te dice qué ayudaría ahora, con palabras sencillas: un autobús más, una tarifa demasiado alta, una cochera llena. El botón junto a un consejo lo hace."
 "Your company runs the rest of the day by itself: the buses drive, the money comes in. Next day takes you to the next morning.":
   en: "Your company runs the rest of the day by itself: the buses drive, the money comes in. Next day takes you to the next morning."
   nl: "Je bedrijf doet de rest van de dag zelf: de bussen rijden, het geld komt binnen. Volgende dag brengt je naar de volgende ochtend."
@@ -1660,6 +1864,7 @@ _version: 2
   ru: "Остаток дня компания проводит сама: автобусы ездят, деньги приходят. «Следующий день» переносит вас в следующее утро."
   uk: "Решту дня компанія проводить сама: автобуси їздять, гроші надходять. «Наступний день» переносить вас у наступний ранок."
   pl: "Resztę dnia firma prowadzi sama: autobusy jeżdżą, pieniądze wpływają. Następny dzień przenosi cię do następnego ranka."
+  es: "Tu empresa pasa sola el resto del día: los autobuses circulan, entra el dinero. Día siguiente te lleva a la mañana siguiente."
 "The company sees to its routine by itself: planning, workshop, staff and research. A click here opens the settings, where Normal shows every page with nothing lost.":
   en: "The company sees to its routine by itself: planning, workshop, staff and research. A click here opens the settings, where Normal shows every page with nothing lost."
   nl: "Het bedrijf regelt zijn routine zelf: planning, werkplaats, personeel en onderzoek. Een klik hier opent de instellingen, waar Normaal elke pagina toont zonder dat er iets verloren gaat."
@@ -1668,6 +1873,7 @@ _version: 2
   ru: "Компания сама ведёт рутину: планирование, мастерская, персонал и исследования. Нажатие здесь открывает настройки, где «Обычное» показывает все страницы без потерь."
   uk: "Компанія сама веде рутину: планування, майстерня, персонал і дослідження. Натискання тут відкриває налаштування, де «Нормальне» показує всі сторінки без втрат."
   pl: "Firma sama dba o rutynę: planowanie, warsztat, personel i badania. Kliknięcie tu otwiera ustawienia, gdzie Normalny pokazuje każdą stronę bez strat."
+  es: "La empresa se ocupa sola de su rutina: planificación, taller, personal e investigación. Un clic aquí abre los ajustes, donde Normal muestra todas las páginas sin perder nada."
 "Under the company's name, always in view: its cash, the trophies earned with goals, and its reputation. A click on the cash opens the money.":
   en: "Under the company's name, always in view: its cash, the trophies earned with goals, and its reputation. A click on the cash opens the money."
   nl: "Onder de naam van het bedrijf, altijd in beeld: het geld, de trofeeën verdiend met doelen, en de reputatie. Een klik op het geld opent het geld."
@@ -1676,6 +1882,7 @@ _version: 2
   ru: "Под названием компании, всегда на виду: деньги, трофеи за цели и репутация. Нажатие на деньги открывает финансы."
   uk: "Під назвою компанії, завжди на виду: гроші, трофеї за цілі й репутація. Натискання на гроші відкриває фінанси."
   pl: "Pod nazwą firmy, zawsze na widoku: gotówka, trofea za cele i reputacja. Kliknięcie gotówki otwiera pieniądze."
+  es: "Bajo el nombre de la empresa, siempre a la vista: su caja, los trofeos ganados con objetivos y su reputación. Un clic en la caja abre el dinero."
 "Every bus as a card, with its age and its condition. Repairs happen by themselves; Buy a bus opens the shop, the buses that fit your lines first. The icons up here open every page.":
   en: "Every bus as a card, with its age and its condition. Repairs happen by themselves; Buy a bus opens the shop, the buses that fit your lines first. The icons up here open every page."
   nl: "Elke bus als kaart, met leeftijd en staat. Reparaties gaan vanzelf; Bus kopen opent de winkel, de bussen voor je lijnen eerst. De pictogrammen hierboven openen elke pagina."
@@ -1684,6 +1891,7 @@ _version: 2
   ru: "Каждый автобус — карточка с возрастом и состоянием. Ремонт идёт сам; «Купить автобус» открывает магазин, подходящие автобусы первыми. Значки вверху открывают любую страницу."
   uk: "Кожен автобус — картка з віком і станом. Ремонт іде сам; «Купити автобус» відкриває магазин, придатні автобуси першими. Значки вгорі відкривають будь-яку сторінку."
   pl: "Każdy autobus jako karta, z wiekiem i stanem. Naprawy dzieją się same; Kup autobus otwiera sklep, najpierw pasujące autobusy. Ikony u góry otwierają każdą stronę."
+  es: "Cada autobús como una tarjeta, con su antigüedad y su estado. Las reparaciones se hacen solas; Comprar un autobús abre la tienda, primero los autobuses que encajan con tus líneas. Los iconos de aquí arriba abren todas las páginas."
 "A question mark on every page":
   en: "A question mark on every page"
   nl: "Een vraagteken op elke pagina"
@@ -1692,6 +1900,7 @@ _version: 2
   ru: "Знак вопроса на каждой странице"
   uk: "Знак питання на кожній сторінці"
   pl: "Znak zapytania na każdej stronie"
+  es: "Un signo de interrogación en cada página"
 "Not sure what a page is for? Its question mark says it in a few words.":
   en: "Not sure what a page is for? Its question mark says it in a few words."
   nl: "Weet je niet waar een pagina voor is? Het vraagteken zegt het in een paar woorden."
@@ -1700,6 +1909,7 @@ _version: 2
   ru: "Непонятно, зачем страница? Её знак вопроса объяснит в нескольких словах."
   uk: "Не зрозуміло, для чого сторінка? Її знак питання пояснить кількома словами."
   pl: "Nie wiesz, do czego służy strona? Jej znak zapytania powie to w kilku słowach."
+  es: "¿No sabes para qué sirve una página? Su signo de interrogación te lo dice en pocas palabras."
 "Every line with its buses and passengers. The slider sets its fare, with advice beside it. Add a line takes three steps: the line, how often, done.":
   en: "Every line with its buses and passengers. The slider sets its fare, with advice beside it. Add a line takes three steps: the line, how often, done."
   nl: "Elke lijn met zijn bussen en reizigers. De schuif zet het tarief, met advies ernaast. Lijn toevoegen kost drie stappen: de lijn, hoe vaak, klaar."
@@ -1708,6 +1918,7 @@ _version: 2
   ru: "Каждая линия с автобусами и пассажирами. Ползунок задаёт тариф, рядом совет. Добавить линию — три шага: линия, частота, готово."
   uk: "Кожна лінія з автобусами й пасажирами. Повзунок задає тариф, поруч порада. Додати лінію — три кроки: лінія, частота, готово."
   pl: "Każda linia z autobusami i pasażerami. Suwak ustawia taryfę, obok porada. Dodanie linii to trzy kroki: linia, jak często, gotowe."
+  es: "Cada línea con sus autobuses y pasajeros. El control deslizante fija su tarifa, con una recomendación al lado. Añadir una línea lleva tres pasos: la línea, cada cuánto y listo."
 "Who drives for you and how well. The company hires the drivers it needs at night; give a bonus, or let someone go.":
   en: "Who drives for you and how well. The company hires the drivers it needs at night; give a bonus, or let someone go."
   nl: "Wie er voor je rijdt en hoe goed. Het bedrijf neemt 's nachts de chauffeurs aan die het nodig heeft; geef een bonus, of laat iemand gaan."
@@ -1716,6 +1927,7 @@ _version: 2
   ru: "Кто у вас водит и насколько хорошо. Компания ночью нанимает нужных водителей; дайте премию или увольте кого-то."
   uk: "Хто у вас водить і наскільки добре. Компанія вночі наймає потрібних водіїв; дайте премію або звільніть когось."
   pl: "Kto dla ciebie jeździ i jak dobrze. Firma w nocy zatrudnia potrzebnych kierowców; daj premię albo kogoś zwolnij."
+  es: "Quién conduce para ti y qué tal lo hace. La empresa contrata de noche los conductores que necesita; da una prima o despide a alguien."
 "Where the money goes":
   en: "Where the money goes"
   nl: "Waar het geld heen gaat"
@@ -1724,6 +1936,7 @@ _version: 2
   ru: "Куда уходят деньги"
   uk: "Куди йдуть гроші"
   pl: "Na co idą pieniądze"
+  es: "Adónde va el dinero"
 "Week by week what came in and went out, and the biggest costs in plain words, with a tip when something costs too much.":
   en: "Week by week what came in and went out, and the biggest costs in plain words, with a tip when something costs too much."
   nl: "Week na week wat er binnenkwam en wat eruit ging, en de grootste kosten in gewone woorden, met een tip als iets te veel kost."
@@ -1732,6 +1945,7 @@ _version: 2
   ru: "Неделя за неделей — что пришло и ушло, и крупнейшие расходы простыми словами, с советом, когда что-то стоит слишком дорого."
   uk: "Тиждень за тижнем — що надійшло і пішло, і найбільші витрати простими словами, з порадою, коли щось коштує задорого."
   pl: "Tydzień po tygodniu, co wpłynęło i wyszło, i największe koszty prostymi słowami, ze wskazówką, gdy coś kosztuje za dużo."
+  es: "Semana a semana lo que entró y salió, y los mayores costes con palabras sencillas, con un consejo cuando algo cuesta demasiado."
 "Livery and depot":
   en: "Livery and depot"
   nl: "Huisstijl en remise"
@@ -1740,6 +1954,7 @@ _version: 2
   ru: "Ливрея и депо"
   uk: "Ліврея і депо"
   pl: "Malowanie i zajezdnia"
+  es: "Librea y cochera"
 "Paint your buses in your company's livery, and buy a bigger depot when the buses no longer fit.":
   en: "Paint your buses in your company's livery, and buy a bigger depot when the buses no longer fit."
   nl: "Spuit je bussen in de huisstijl van je bedrijf, en koop een grotere remise als de bussen er niet meer in passen."
@@ -1748,6 +1963,7 @@ _version: 2
   ru: "Покрасьте автобусы в ливрею компании и купите депо побольше, когда автобусы перестанут помещаться."
   uk: "Пофарбуйте автобуси в ліврею компанії й купіть більше депо, коли автобуси перестануть уміщатися."
   pl: "Pomaluj autobusy w barwy firmy i kup większą zajezdnię, gdy autobusy się nie mieszczą."
+  es: "Pinta tus autobuses con la librea de tu empresa y compra una cochera más grande cuando los autobuses ya no quepan."
 
 # --- a popup's words in Casual ----------------------------------------------------------------
 "The company builds more parking spaces by itself when its cash allows. Or buy a bigger depot now on your company's page.":
@@ -1758,6 +1974,7 @@ _version: 2
   ru: "Компания сама построит больше стоянок, когда позволят деньги. Или купите депо побольше сейчас на странице своей компании."
   uk: "Компанія сама збудує більше стоянок, коли дозволять гроші. Або купіть більше депо зараз на сторінці своєї компанії."
   pl: "Firma sama zbuduje więcej miejsc postojowych, gdy pozwolą pieniądze. Albo kup teraz większą zajezdnię na stronie swojej firmy."
+  es: "La empresa construye sola más plazas de aparcamiento cuando su caja lo permite. O compra ahora una cochera más grande en la página de tu empresa."
 
 # --- one of something ------------------------------------------------------------------------------
 "1 bus · repairs and services happen by themselves":
@@ -1768,6 +1985,7 @@ _version: 2
   ru: "1 автобус · ремонт и обслуживание идут сами"
   uk: "1 автобус · ремонт і обслуговування йдуть самі"
   pl: "1 autobus · naprawy i serwis dzieją się same"
+  es: "1 autobús · las reparaciones y revisiones se hacen solas"
 "1 bus on its way: it arrives on %{date}.":
   en: "1 bus on its way: it arrives on %{date}."
   nl: "1 bus onderweg: hij komt op %{date}."
@@ -1776,6 +1994,7 @@ _version: 2
   ru: "1 автобус в пути: прибудет %{date}."
   uk: "1 автобус у дорозі: прибуде %{date}."
   pl: "1 autobus w drodze: przyjedzie %{date}."
+  es: "1 autobús en camino: llega el %{date}."
 "1 driver · %{m} more wanted: hired tonight, or now":
   en: "1 driver · %{m} more wanted: hired tonight, or now"
   nl: "1 chauffeur · nog %{m} nodig: vannacht aangenomen, of nu"
@@ -1784,6 +2003,7 @@ _version: 2
   ru: "1 водитель · нужно ещё %{m}: наймут ночью или сейчас"
   uk: "1 водій · потрібно ще %{m}: наймуть уночі або зараз"
   pl: "1 kierowca · potrzeba jeszcze %{m}: zatrudnieni w nocy albo teraz"
+  es: "1 conductor · faltan %{m}: se contratan esta noche, o ahora"
 "1 driver · every shift has its driver":
   en: "1 driver · every shift has its driver"
   nl: "1 chauffeur · elke dienst heeft zijn chauffeur"
@@ -1792,6 +2012,7 @@ _version: 2
   ru: "1 водитель · у каждой смены есть водитель"
   uk: "1 водій · кожна зміна має водія"
   pl: "1 kierowca · każda zmiana ma kierowcę"
+  es: "1 conductor · cada turno tiene su conductor"
 "1 line · its timetable, shifts and drivers run by themselves":
   en: "1 line · its timetable, shifts and drivers run by themselves"
   nl: "1 lijn · dienstregeling, diensten en chauffeurs gaan vanzelf"
@@ -1800,6 +2021,7 @@ _version: 2
   ru: "1 линия · расписание, смены и водители — сами собой"
   uk: "1 лінія · розклад, зміни й водії — самі собою"
   pl: "1 linia · rozkład, zmiany i kierowcy działają same"
+  es: "1 línea · su horario, turnos y conductores funcionan solos"
 "1 bus today":
   en: "1 bus today"
   nl: "1 bus vandaag"
@@ -1808,6 +2030,7 @@ _version: 2
   ru: "1 автобус сегодня"
   uk: "1 автобус сьогодні"
   pl: "1 autobus dziś"
+  es: "1 autobús hoy"
 "1 bus out today · about every %{m} minutes":
   en: "1 bus out today · about every %{m} minutes"
   nl: "1 bus vandaag · ongeveer elke %{m} minuten"
@@ -1816,6 +2039,7 @@ _version: 2
   ru: "1 автобус сегодня · примерно каждые %{m} минут"
   uk: "1 автобус сьогодні · приблизно кожні %{m} хвилин"
   pl: "1 autobus dziś · mniej więcej co %{m} minut"
+  es: "1 autobús en servicio hoy · uno cada %{m} minutos aprox."
 "1 bus out today":
   en: "1 bus out today"
   nl: "1 bus vandaag"
@@ -1824,6 +2048,7 @@ _version: 2
   ru: "1 автобус на линии сегодня"
   uk: "1 автобус на лінії сьогодні"
   pl: "1 autobus w trasie dziś"
+  es: "1 autobús en servicio hoy"
 "1 livery of your own":
   en: "1 livery of your own"
   nl: "1 eigen lak"
@@ -1832,6 +2057,7 @@ _version: 2
   ru: "1 собственная ливрея"
   uk: "1 власна ліврея"
   pl: "1 własne malowanie"
+  es: "1 librea propia"
 "1 trip":
   en: "1 trip"
   nl: "1 rit"
@@ -1840,6 +2066,7 @@ _version: 2
   ru: "1 рейс"
   uk: "1 рейс"
   pl: "1 kurs"
+  es: "1 viaje"
 "Your bus is on the road.":
   en: "Your bus is on the road."
   nl: "Je bus is onderweg."
@@ -1848,6 +2075,7 @@ _version: 2
   ru: "Ваш автобус на линии."
   uk: "Ваш автобус на лінії."
   pl: "Twój autobus jest w trasie."
+  es: "Tu autobús está en la calle."
 "1 of %{n} buses is on the road.":
   en: "1 of %{n} buses is on the road."
   nl: "1 van %{n} bussen is onderweg."
@@ -1856,6 +2084,7 @@ _version: 2
   ru: "1 из %{n} автобусов на линии."
   uk: "1 з %{n} автобусів на лінії."
   pl: "1 z %{n} autobusów jest w trasie."
+  es: "1 de %{n} autobuses está en la calle."
 "1 shift today without a driver":
   en: "1 shift today without a driver"
   nl: "1 dienst vandaag zonder chauffeur"
@@ -1864,6 +2093,7 @@ _version: 2
   ru: "1 смена сегодня без водителя"
   uk: "1 зміна сьогодні без водія"
   pl: "1 zmiana dziś bez kierowcy"
+  es: "1 turno hoy sin conductor"
 "1 of today's bus runs has no bus. Buy another bus.":
   en: "1 of today's bus runs has no bus. Buy another bus."
   nl: "1 rit van vandaag heeft geen bus. Koop nog een bus."
@@ -1872,6 +2102,7 @@ _version: 2
   ru: "У 1 сегодняшнего рейса нет автобуса. Купите ещё один."
   uk: "У 1 сьогоднішнього рейсу немає автобуса. Купіть ще один."
   pl: "1 dzisiejszy kurs nie ma autobusu. Kup kolejny autobus."
+  es: "1 de los viajes de hoy no tiene autobús. Compra otro autobús."
 "1 shift today has no driver. The company hires tonight, or now.":
   en: "1 shift today has no driver. The company hires tonight, or now."
   nl: "1 dienst vandaag heeft geen chauffeur. Het bedrijf neemt vannacht aan, of nu."
@@ -1880,3 +2111,4 @@ _version: 2
   ru: "У 1 смены сегодня нет водителя. Компания наймёт ночью или сейчас."
   uk: "У 1 зміни сьогодні немає водія. Компанія найме вночі або зараз."
   pl: "1 zmiana dziś nie ma kierowcy. Firma zatrudni w nocy albo teraz."
+  es: "1 turno de hoy no tiene conductor. La empresa contrata esta noche, o ahora."

@@ -125,7 +125,7 @@ pub fn call(cmd: &str, args: &Value) -> Answer {
 
 #[cfg(test)]
 mod tests {
-    /// Every text of the tab "Mods" and what the commands answer to it, in the six languages
+    /// Every text of the tab "Mods" and what the commands answer to it, in the seven languages
     /// (crates/hub-locales/locales/mods.yml).
     #[test]
     fn every_mods_text_is_translated() {
@@ -136,7 +136,7 @@ mod tests {
         texts.dedup();
         assert!(texts.len() > 30, "only {} texts found", texts.len());
         let mut missing = Vec::new();
-        for lang in ["nl", "de", "fr", "ru", "uk", "pl"] {
+        for lang in ["nl", "de", "fr", "ru", "uk", "pl", "es"] {
             let table = hub_locales::texts(lang);
             for t in &texts {
                 match table.get(t) {

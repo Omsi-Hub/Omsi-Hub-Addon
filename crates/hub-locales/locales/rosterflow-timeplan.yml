@@ -6,6 +6,7 @@ _version: 2
   fr: "Plan horaire"
   nl: "Dienstregelingsplan"
   pl: "Plan rozkładu"
+  es: "Plan horario"
   ru: "План расписания"
   uk: "План розкладу"
 "The line's running times and timetable, as a scheduler plans them":
@@ -13,6 +14,7 @@ _version: 2
   fr: "Les temps de parcours et l'horaire de la ligne, comme un planificateur les établit"
   nl: "De rijtijden en de dienstregeling van de lijn, zoals een planner ze maakt"
   pl: "Czasy przejazdu i rozkład linii, tak jak układa je planista"
+  es: "Los tiempos de recorrido y el horario de la línea, tal como los planifica un planificador"
   ru: "Время хода и расписание линии, как их составляет планировщик"
   uk: "Час руху й розклад лінії, як їх складає планувальник"
 "A line of the map's own timetable: open it once in the line editor (Lines page) to plan its timetable here.":
@@ -20,6 +22,7 @@ _version: 2
   fr: "Une ligne de l'horaire propre à la carte : ouvrez-la une fois dans l'éditeur de lignes (page Lignes) pour planifier son horaire ici."
   nl: "Een lijn uit de eigen dienstregeling van de kaart: open hem één keer in de lijneditor (pagina Lijnen) om zijn dienstregeling hier te plannen."
   pl: "Linia z własnego rozkładu mapy: otwórz ją raz w edytorze linii (strona Linie), aby planować tu jej rozkład."
+  es: "Una línea con horario propio del mapa: ábrela una vez en el editor de líneas (página Líneas) para planificar aquí su horario."
   ru: "Линия из собственного расписания карты: откройте её один раз в редакторе линий (страница «Линии»), чтобы планировать её расписание здесь."
   uk: "Лінія з власного розкладу карти: відкрийте її один раз у редакторі ліній (сторінка «Лінії»), щоб планувати її розклад тут."
 "The company runs no line yet: add one on the Lines page first.":
@@ -27,6 +30,7 @@ _version: 2
   fr: "L'entreprise n'exploite encore aucune ligne : ajoutez-en d'abord une sur la page Lignes."
   nl: "Het bedrijf rijdt nog geen lijn: voeg er eerst een toe op de pagina Lijnen."
   pl: "Firma nie obsługuje jeszcze żadnej linii: najpierw dodaj ją na stronie Linie."
+  es: "La empresa aún no tiene ninguna línea: añade una primero en la página Líneas."
   ru: "У компании пока нет линий: сначала добавьте линию на странице «Линии»."
   uk: "У компанії поки немає ліній: спершу додайте лінію на сторінці «Лінії»."
 "The timeplan has changes not saved: choose again to drop them.":
@@ -34,6 +38,7 @@ _version: 2
   fr: "Le plan horaire a des modifications non enregistrées : choisissez à nouveau pour les abandonner."
   nl: "Het dienstregelingsplan heeft niet-opgeslagen wijzigingen: kies opnieuw om ze te laten vallen."
   pl: "Plan rozkładu ma niezapisane zmiany: wybierz ponownie, aby je odrzucić."
+  es: "El plan horario tiene cambios sin guardar: vuelve a elegir para descartarlos."
   ru: "В плане расписания есть несохранённые изменения: выберите ещё раз, чтобы отбросить их."
   uk: "У плані розкладу є незбережені зміни: виберіть ще раз, щоб відкинути їх."
 "Redo":
@@ -41,6 +46,7 @@ _version: 2
   fr: "Rétablir"
   nl: "Opnieuw"
   pl: "Ponów"
+  es: "Rehacer"
   ru: "Повторить"
   uk: "Повторити"
 "Running times":
@@ -48,6 +54,7 @@ _version: 2
   fr: "Temps de parcours"
   nl: "Rijtijden"
   pl: "Czasy przejazdu"
+  es: "Tiempos de recorrido"
   ru: "Время хода"
   uk: "Час руху"
 "Inbound":
@@ -55,6 +62,7 @@ _version: 2
   fr: "Retour"
   nl: "Terug"
   pl: "Powrót"
+  es: "Vuelta"
   ru: "Обратно"
   uk: "Назад"
 "Timepoint: click to make it a plain stop":
@@ -62,6 +70,7 @@ _version: 2
   fr: "Point de passage horaire : cliquez pour en faire un simple arrêt"
   nl: "Tijdpunt: klik om er een gewone halte van te maken"
   pl: "Punkt kontrolny: kliknij, aby zrobić z niego zwykły przystanek"
+  es: "Punto de regulación: haz clic para convertirlo en una parada normal"
   ru: "Контрольный пункт: нажмите, чтобы сделать его обычной остановкой"
   uk: "Контрольний пункт: натисніть, щоб зробити його звичайною зупинкою"
 "Plain stop: click to make it a timepoint":
@@ -69,6 +78,7 @@ _version: 2
   fr: "Simple arrêt : cliquez pour en faire un point de passage horaire"
   nl: "Gewone halte: klik om er een tijdpunt van te maken"
   pl: "Zwykły przystanek: kliknij, aby zrobić z niego punkt kontrolny"
+  es: "Parada normal: haz clic para convertirla en un punto de regulación"
   ru: "Обычная остановка: нажмите, чтобы сделать её контрольным пунктом"
   uk: "Звичайна зупинка: натисніть, щоб зробити її контрольним пунктом"
 "The line has no inbound direction.":
@@ -76,6 +86,7 @@ _version: 2
   fr: "La ligne n'a pas de sens retour."
   nl: "De lijn heeft geen terugrichting."
   pl: "Linia nie ma kierunku powrotnego."
+  es: "La línea no tiene sentido de vuelta."
   ru: "У линии нет обратного направления."
   uk: "Лінія не має зворотного напрямку."
 "The main pattern":
@@ -83,6 +94,7 @@ _version: 2
   fr: "Le parcours principal"
   nl: "Het hoofdpatroon"
   pl: "Główny wariant"
+  es: "El patrón principal"
   ru: "Основной вариант"
   uk: "Основний варіант"
 "This pattern has fewer than two stops: give it its stops in the line editor.":
@@ -90,6 +102,7 @@ _version: 2
   fr: "Ce parcours a moins de deux arrêts : donnez-lui ses arrêts dans l'éditeur de lignes."
   nl: "Dit patroon heeft minder dan twee haltes: geef het zijn haltes in de lijneditor."
   pl: "Ten wariant ma mniej niż dwa przystanki: nadaj mu przystanki w edytorze linii."
+  es: "Este patrón tiene menos de dos paradas: asígnale sus paradas en el editor de líneas."
   ru: "У этого варианта меньше двух остановок: задайте его остановки в редакторе линий."
   uk: "Цей варіант має менше двох зупинок: задайте його зупинки в редакторі ліній."
 "When the band begins: click and type a time":
@@ -97,6 +110,7 @@ _version: 2
   fr: "Quand la plage commence : cliquez et tapez une heure"
   nl: "Wanneer de tijdband begint: klik en typ een tijd"
   pl: "Kiedy zaczyna się przedział: kliknij i wpisz godzinę"
+  es: "Cuándo empieza la franja: haz clic y escribe una hora"
   ru: "Когда начинается интервал: нажмите и введите время"
   uk: "Коли починається інтервал: натисніть і введіть час"
 "Add a time band here":
@@ -104,6 +118,7 @@ _version: 2
   fr: "Ajouter une plage horaire ici"
   nl: "Hier een tijdband toevoegen"
   pl: "Dodaj tu przedział czasowy"
+  es: "Añadir aquí una franja horaria"
   ru: "Добавить временной интервал здесь"
   uk: "Додати часовий інтервал тут"
 "Add a time band":
@@ -111,6 +126,7 @@ _version: 2
   fr: "Ajouter une plage horaire"
   nl: "Een tijdband toevoegen"
   pl: "Dodaj przedział czasowy"
+  es: "Añadir una franja horaria"
   ru: "Добавить временной интервал"
   uk: "Додати часовий інтервал"
 "%{n} more bands":
@@ -118,6 +134,7 @@ _version: 2
   fr: "%{n} plages de plus"
   nl: "nog %{n} tijdbanden"
   pl: "jeszcze %{n} przedziałów"
+  es: "%{n} franjas más"
   ru: "ещё интервалов: %{n}"
   uk: "ще інтервалів: %{n}"
 "Trip time":
@@ -125,6 +142,7 @@ _version: 2
   fr: "Durée du trajet"
   nl: "Ritduur"
   pl: "Czas kursu"
+  es: "Duración del viaje"
   ru: "Время рейса"
   uk: "Час рейсу"
 "Add a single trip (after the one chosen, at its headway)":
@@ -132,6 +150,7 @@ _version: 2
   fr: "Ajouter un seul trajet (après celui choisi, à sa fréquence)"
   nl: "Eén rit toevoegen (na de gekozen rit, op zijn interval)"
   pl: "Dodaj jeden kurs (po wybranym, w jego takcie)"
+  es: "Añadir un viaje suelto (después del elegido, con su frecuencia)"
   ru: "Добавить один рейс (после выбранного, с его интервалом)"
   uk: "Додати один рейс (після вибраного, з його інтервалом)"
 "Add trips by headway from a control point":
@@ -139,6 +158,7 @@ _version: 2
   fr: "Ajouter des trajets à fréquence depuis un point de contrôle"
   nl: "Ritten op interval toevoegen vanaf een controlepunt"
   pl: "Dodaj kursy w takcie od punktu kontrolnego"
+  es: "Añadir viajes por frecuencia desde un punto de control"
   ru: "Добавить рейсы с интервалом от контрольного пункта"
   uk: "Додати рейси з інтервалом від контрольного пункту"
 "Take the chosen trip out":
@@ -146,6 +166,7 @@ _version: 2
   fr: "Retirer le trajet choisi"
   nl: "De gekozen rit weghalen"
   pl: "Usuń wybrany kurs"
+  es: "Quitar el viaje elegido"
   ru: "Убрать выбранный рейс"
   uk: "Прибрати вибраний рейс"
 "The chosen trip's times from the running times again (its typed times go)":
@@ -153,6 +174,7 @@ _version: 2
   fr: "Les heures du trajet choisi à nouveau d'après les temps de parcours (ses heures saisies disparaissent)"
   nl: "De tijden van de gekozen rit weer uit de rijtijden (de getypte tijden vervallen)"
   pl: "Godziny wybranego kursu znów z czasów przejazdu (wpisane godziny znikają)"
+  es: "Volver a tomar los horarios del viaje elegido de los tiempos de recorrido (se pierden sus horas escritas)"
   ru: "Время выбранного рейса снова по времени хода (введённое вручную пропадёт)"
   uk: "Час вибраного рейсу знову за часом руху (введене вручну зникне)"
 "Timepoints only":
@@ -160,6 +182,7 @@ _version: 2
   fr: "Points horaires seulement"
   nl: "Alleen tijdpunten"
   pl: "Tylko punkty kontrolne"
+  es: "Solo puntos de regulación"
   ru: "Только контрольные пункты"
   uk: "Лише контрольні пункти"
 "Pattern":
@@ -167,6 +190,7 @@ _version: 2
   fr: "Parcours"
   nl: "Patroon"
   pl: "Wariant"
+  es: "Patrón"
   ru: "Вариант"
   uk: "Варіант"
 "Vehicle type":
@@ -174,6 +198,7 @@ _version: 2
   fr: "Type de véhicule"
   nl: "Voertuigtype"
   pl: "Typ pojazdu"
+  es: "Tipo de vehículo"
   ru: "Тип ТС"
   uk: "Тип ТЗ"
 "Headway":
@@ -181,6 +206,7 @@ _version: 2
   fr: "Fréquence"
   nl: "Interval"
   pl: "Takt"
+  es: "Frecuencia"
   ru: "Интервал"
   uk: "Інтервал"
 "No trips on this day: add them by headway with the clock above, or one at a time with +.":
@@ -188,6 +214,7 @@ _version: 2
   fr: "Aucun trajet ce jour : ajoutez-les à fréquence avec l'horloge ci-dessus, ou un par un avec +."
   nl: "Geen ritten op deze dag: voeg ze op interval toe met de klok hierboven, of één voor één met +."
   pl: "Brak kursów tego dnia: dodaj je w takcie zegarem powyżej albo pojedynczo przyciskiem +."
+  es: "No hay viajes en este día: añádelos por frecuencia con el reloj de arriba, o de uno en uno con +."
   ru: "В этот день рейсов нет: добавьте их с интервалом кнопкой с часами выше или по одному кнопкой +."
   uk: "Цього дня рейсів немає: додайте їх з інтервалом кнопкою з годинником вище або по одному кнопкою +."
 "From the running times: %{time}":
@@ -195,6 +222,7 @@ _version: 2
   fr: "D'après les temps de parcours : %{time}"
   nl: "Volgens de rijtijden: %{time}"
   pl: "Według czasów przejazdu: %{time}"
+  es: "Según los tiempos de recorrido: %{time}"
   ru: "По времени хода: %{time}"
   uk: "За часом руху: %{time}"
 "Choose a trip first: click its number.":
@@ -202,6 +230,7 @@ _version: 2
   fr: "Choisissez d'abord un trajet : cliquez sur son numéro."
   nl: "Kies eerst een rit: klik op zijn nummer."
   pl: "Najpierw wybierz kurs: kliknij jego numer."
+  es: "Elige primero un viaje: haz clic en su número."
   ru: "Сначала выберите рейс: нажмите на его номер."
   uk: "Спершу виберіть рейс: натисніть на його номер."
 "Control point":
@@ -209,6 +238,7 @@ _version: 2
   fr: "Point de contrôle"
   nl: "Controlepunt"
   pl: "Punkt kontrolny"
+  es: "Punto de control"
   ru: "Контрольный пункт"
   uk: "Контрольний пункт"
 "Start time":
@@ -216,6 +246,7 @@ _version: 2
   fr: "Heure de début"
   nl: "Begintijd"
   pl: "Godzina początku"
+  es: "Hora de inicio"
   ru: "Время начала"
   uk: "Час початку"
 "End time":
@@ -223,6 +254,7 @@ _version: 2
   fr: "Heure de fin"
   nl: "Eindtijd"
   pl: "Godzina końca"
+  es: "Hora de fin"
   ru: "Время окончания"
   uk: "Час закінчення"
 "min":
@@ -230,6 +262,7 @@ _version: 2
   fr: "min"
   nl: "min"
   pl: "min"
+  es: "min"
   ru: "мин"
   uk: "хв"
 "Minutes between the trips: several, such as 10,20, are taken in turn":
@@ -237,6 +270,7 @@ _version: 2
   fr: "Minutes entre les trajets : plusieurs valeurs, comme 10,20, sont prises tour à tour"
   nl: "Minuten tussen de ritten: meerdere, zoals 10,20, worden om de beurt genomen"
   pl: "Minuty między kursami: kilka wartości, np. 10,20, stosuje się na zmianę"
+  es: "Minutos entre los viajes: si son varios, como 10,20, se usan por turnos"
   ru: "Минуты между рейсами: несколько значений, например 10,20, чередуются"
   uk: "Хвилини між рейсами: кілька значень, наприклад 10,20, чергуються"
 "Type the times as 06:00 and the headway in minutes":
@@ -244,6 +278,7 @@ _version: 2
   fr: "Tapez les heures comme 06:00 et la fréquence en minutes"
   nl: "Typ de tijden als 06:00 en het interval in minuten"
   pl: "Wpisz godziny jako 06:00, a takt w minutach"
+  es: "Escribe las horas como 06:00 y la frecuencia en minutos"
   ru: "Введите время как 06:00, а интервал в минутах"
   uk: "Введіть час як 06:00, а інтервал у хвилинах"
 "Make the trips":
@@ -251,6 +286,7 @@ _version: 2
   fr: "Créer les trajets"
   nl: "De ritten maken"
   pl: "Utwórz kursy"
+  es: "Crear los viajes"
   ru: "Создать рейсы"
   uk: "Створити рейси"
 "%{n} trips added.":
@@ -258,6 +294,7 @@ _version: 2
   fr: "%{n} trajets ajoutés."
   nl: "%{n} ritten toegevoegd."
   pl: "Dodano kursy: %{n}."
+  es: "%{n} viajes añadidos."
   ru: "Добавлено рейсов: %{n}."
   uk: "Додано рейсів: %{n}."
 "Click to open the chart":
@@ -265,6 +302,7 @@ _version: 2
   fr: "Cliquez pour ouvrir le graphique"
   nl: "Klik om de grafiek te openen"
   pl: "Kliknij, aby otworzyć wykres"
+  es: "Haz clic para abrir el gráfico"
   ru: "Нажмите, чтобы открыть диаграмму"
   uk: "Натисніть, щоб відкрити діаграму"
 "The chart before":
@@ -272,6 +310,7 @@ _version: 2
   fr: "Le graphique précédent"
   nl: "De vorige grafiek"
   pl: "Poprzedni wykres"
+  es: "El gráfico anterior"
   ru: "Предыдущая диаграмма"
   uk: "Попередня діаграма"
 "The next chart":
@@ -279,6 +318,7 @@ _version: 2
   fr: "Le graphique suivant"
   nl: "De volgende grafiek"
   pl: "Następny wykres"
+  es: "El gráfico siguiente"
   ru: "Следующая диаграмма"
   uk: "Наступна діаграма"
 "Line %{n}: %{k}":
@@ -286,6 +326,7 @@ _version: 2
   fr: "Ligne %{n} : %{k}"
   nl: "Lijn %{n}: %{k}"
   pl: "Linia %{n}: %{k}"
+  es: "Línea %{n}: %{k}"
   ru: "Линия %{n}: %{k}"
   uk: "Лінія %{n}: %{k}"
 "The issues of this day group":
@@ -293,6 +334,7 @@ _version: 2
   fr: "Les problèmes de ce groupe de jours"
   nl: "De problemen van deze dagengroep"
   pl: "Problemy tej grupy dni"
+  es: "Los problemas de este grupo de días"
   ru: "Проблемы этой группы дней"
   uk: "Проблеми цієї групи днів"
 "UNSYNCED":
@@ -300,6 +342,7 @@ _version: 2
   fr: "NON SYNCHRONISÉ"
   nl: "NIET GESYNCHRONISEERD"
   pl: "NIEZSYNCHRONIZOWANE"
+  es: "SIN SINCRONIZAR"
   ru: "НЕ СИНХРОНИЗИРОВАНО"
   uk: "НЕ СИНХРОНІЗОВАНО"
 "The timetable changed since the scheduling studio made the blocks of this line: make its blocks and duties anew":
@@ -307,6 +350,7 @@ _version: 2
   fr: "L'horaire a changé depuis que l'atelier de planification a construit les services de cette ligne : refaire ses services de bus et de conducteurs"
   nl: "De dienstregeling is veranderd sinds de planningsstudio de omlopen van deze lijn maakte: maak haar omlopen en diensten opnieuw"
   pl: "Rozkład zmienił się, odkąd studio planowania ułożyło brygady tej linii: ułóż jej brygady i służby od nowa"
+  es: "El horario ha cambiado desde que el estudio de planificación hizo los recorridos de esta línea: vuelve a crear sus recorridos y servicios"
   ru: "Расписание изменилось с тех пор, как студия планирования составила выходы этой линии: составить её выходы и смены заново"
   uk: "Розклад змінився відтоді, як студія планування склала обороти цієї лінії: скласти її обороти й зміни заново"
 "Line %{n}: the scheduling studio makes its blocks and duties anew.":
@@ -314,6 +358,7 @@ _version: 2
   fr: "Ligne %{n} : l'atelier de planification refait ses services de bus et de conducteurs."
   nl: "Lijn %{n}: de planningsstudio maakt haar omlopen en diensten opnieuw."
   pl: "Linia %{n}: studio planowania układa jej brygady i służby od nowa."
+  es: "Línea %{n}: el estudio de planificación vuelve a crear sus recorridos y servicios."
   ru: "Линия %{n}: студия планирования составляет её выходы и смены заново."
   uk: "Лінія %{n}: студія планування складає її обороти й зміни заново."
 "Changes not saved: press again to leave without them.":
@@ -321,6 +366,7 @@ _version: 2
   fr: "Modifications non enregistrées : appuyez à nouveau pour partir sans elles."
   nl: "Wijzigingen niet opgeslagen: druk nogmaals om zonder ze te vertrekken."
   pl: "Zmiany niezapisane: naciśnij ponownie, aby wyjść bez nich."
+  es: "Cambios sin guardar: pulsa de nuevo para salir sin ellos."
   ru: "Изменения не сохранены: нажмите ещё раз, чтобы выйти без них."
   uk: "Зміни не збережено: натисніть ще раз, щоб вийти без них."
 "Type and press Enter (Tab: the next cell, Escape: leave it). Up and Down change it by a minute.":
@@ -328,6 +374,7 @@ _version: 2
   fr: "Tapez puis Entrée (Tab : cellule suivante, Échap : la quitter). Haut et Bas changent d'une minute."
   nl: "Typ en druk op Enter (Tab: volgende cel, Escape: verlaten). Omhoog en omlaag veranderen met een minuut."
   pl: "Wpisz i naciśnij Enter (Tab: następna komórka, Escape: opuść ją). Strzałki w górę i w dół zmieniają o minutę."
+  es: "Escribe y pulsa Enter (Tab: la celda siguiente, Escape: salir). Arriba y Abajo lo cambian en un minuto."
   ru: "Введите и нажмите Enter (Tab — следующая ячейка, Escape — выйти). Стрелки вверх и вниз меняют на минуту."
   uk: "Введіть і натисніть Enter (Tab — наступна клітинка, Escape — вийти). Стрілки вгору й униз змінюють на хвилину."
 "Changes not saved yet.":
@@ -335,6 +382,7 @@ _version: 2
   fr: "Modifications pas encore enregistrées."
   nl: "Wijzigingen nog niet opgeslagen."
   pl: "Zmiany jeszcze niezapisane."
+  es: "Cambios aún sin guardar."
   ru: "Изменения ещё не сохранены."
   uk: "Зміни ще не збережено."
 "Click a cell to type into it.":
@@ -342,6 +390,7 @@ _version: 2
   fr: "Cliquez sur une cellule pour y taper."
   nl: "Klik op een cel om erin te typen."
   pl: "Kliknij komórkę, aby w niej pisać."
+  es: "Haz clic en una celda para escribir en ella."
   ru: "Нажмите на ячейку, чтобы ввести значение."
   uk: "Натисніть на клітинку, щоб ввести значення."
 "No issues: the timeplan of this day group is valid.":
@@ -349,6 +398,7 @@ _version: 2
   fr: "Aucun problème : le plan horaire de ce groupe de jours est valide."
   nl: "Geen problemen: het dienstregelingsplan van deze dagengroep is geldig."
   pl: "Brak problemów: plan rozkładu tej grupy dni jest poprawny."
+  es: "Sin problemas: el plan horario de este grupo de días es válido."
   ru: "Проблем нет: план расписания этой группы дней корректен."
   uk: "Проблем немає: план розкладу цієї групи днів коректний."
 "Error":
@@ -356,6 +406,7 @@ _version: 2
   fr: "Erreur"
   nl: "Fout"
   pl: "Błąd"
+  es: "Error"
   ru: "Ошибка"
   uk: "Помилка"
 "Type the minutes, such as 7":
@@ -363,6 +414,7 @@ _version: 2
   fr: "Tapez les minutes, par exemple 7"
   nl: "Typ de minuten, bijvoorbeeld 7"
   pl: "Wpisz minuty, np. 7"
+  es: "Escribe los minutos, por ejemplo 7"
   ru: "Введите минуты, например 7"
   uk: "Введіть хвилини, наприклад 7"
 "Type a time such as 07:45 (up to 36:00)":
@@ -370,6 +422,7 @@ _version: 2
   fr: "Tapez une heure comme 07:45 (jusqu'à 36:00)"
   nl: "Typ een tijd zoals 07:45 (tot 36:00)"
   pl: "Wpisz godzinę, np. 07:45 (do 36:00)"
+  es: "Escribe una hora como 07:45 (hasta 36:00)"
   ru: "Введите время, например 07:45 (до 36:00)"
   uk: "Введіть час, наприклад 07:45 (до 36:00)"
 "%{day}: %{issue} - mend it first.":
@@ -377,6 +430,7 @@ _version: 2
   fr: "%{day} : %{issue} – corrigez-le d'abord."
   nl: "%{day}: %{issue} – los dat eerst op."
   pl: "%{day}: %{issue} – najpierw to popraw."
+  es: "%{day}: %{issue} - corrígelo primero."
   ru: "%{day}: %{issue} – сначала исправьте это."
   uk: "%{day}: %{issue} – спершу виправте це."
 "Number of trips":
@@ -384,6 +438,7 @@ _version: 2
   fr: "Nombre de trajets"
   nl: "Aantal ritten"
   pl: "Liczba kursów"
+  es: "Número de viajes"
   ru: "Число рейсов"
   uk: "Кількість рейсів"
 "Trip count by pattern":
@@ -391,6 +446,7 @@ _version: 2
   fr: "Trajets par parcours"
   nl: "Ritten per patroon"
   pl: "Kursy według wariantu"
+  es: "Viajes por patrón"
   ru: "Рейсы по вариантам"
   uk: "Рейси за варіантами"
 "Trip count by hour":
@@ -398,6 +454,7 @@ _version: 2
   fr: "Trajets par heure"
   nl: "Ritten per uur"
   pl: "Kursy według godziny"
+  es: "Viajes por hora"
   ru: "Рейсы по часам"
   uk: "Рейси за годинами"
 "%{n} trip(s) leave at the same minute as another trip of their pattern":
@@ -405,6 +462,7 @@ _version: 2
   fr: "%{n} trajet(s) partent à la même minute qu'un autre trajet de leur parcours"
   nl: "%{n} rit(ten) vertrekken op dezelfde minuut als een andere rit van hun patroon"
   pl: "%{n} kurs(y) odjeżdża w tej samej minucie co inny kurs ich wariantu"
+  es: "%{n} viaje(s) salen en el mismo minuto que otro viaje de su patrón"
   ru: "%{n} рейс(ов) отправляются в ту же минуту, что и другой рейс их варианта"
   uk: "%{n} рейс(ів) вирушають тієї ж хвилини, що й інший рейс їхнього варіанта"
 "%{n} trip(s) arrive after the trip that leaves after them":
@@ -412,6 +470,7 @@ _version: 2
   fr: "%{n} trajet(s) arrivent après le trajet qui part après eux"
   nl: "%{n} rit(ten) komen aan na de rit die na ze vertrekt"
   pl: "%{n} kurs(y) przyjeżdża po kursie, który odjeżdża po nich"
+  es: "%{n} viaje(s) llegan después del viaje que sale tras ellos"
   ru: "%{n} рейс(ов) прибывают позже рейса, который отправляется после них"
   uk: "%{n} рейс(ів) прибувають пізніше за рейс, що вирушає після них"
 "%{n} running time(s) below zero":
@@ -419,6 +478,7 @@ _version: 2
   fr: "%{n} temps de parcours négatif(s)"
   nl: "%{n} rijtijd(en) onder nul"
   pl: "%{n} czas(y) przejazdu poniżej zera"
+  es: "%{n} tiempo(s) de recorrido por debajo de cero"
   ru: "%{n} значени(й) времени хода меньше нуля"
   uk: "%{n} значен(ь) часу руху менше нуля"
 "%{n} running time(s) of zero minutes":
@@ -426,6 +486,7 @@ _version: 2
   fr: "%{n} temps de parcours de zéro minute"
   nl: "%{n} rijtijd(en) van nul minuten"
   pl: "%{n} czas(y) przejazdu równy zero minut"
+  es: "%{n} tiempo(s) de recorrido de cero minutos"
   ru: "%{n} значени(й) времени хода, равных нулю минут"
   uk: "%{n} значен(ь) часу руху, що дорівнюють нулю хвилин"
 "%{n} pattern(s) without stops":
@@ -433,6 +494,7 @@ _version: 2
   fr: "%{n} parcours sans arrêts"
   nl: "%{n} patro(o)n(en) zonder haltes"
   pl: "%{n} wariant(y) bez przystanków"
+  es: "%{n} patrón(es) sin paradas"
   ru: "%{n} вариант(ов) без остановок"
   uk: "%{n} варіант(ів) без зупинок"
 "%{n} trip(s) run past 36:00":
@@ -440,6 +502,7 @@ _version: 2
   fr: "%{n} trajet(s) vont au-delà de 36:00"
   nl: "%{n} rit(ten) lopen door na 36:00"
   pl: "%{n} kurs(y) trwa po 36:00"
+  es: "%{n} viaje(s) van más allá de las 36:00"
   ru: "%{n} рейс(ов) идут после 36:00"
   uk: "%{n} рейс(ів) тривають після 36:00"
 "No trips on this day":
@@ -447,5 +510,6 @@ _version: 2
   fr: "Aucun trajet ce jour"
   nl: "Geen ritten op deze dag"
   pl: "Brak kursów tego dnia"
+  es: "No hay viajes en este día"
   ru: "В этот день нет рейсов"
   uk: "Цього дня немає рейсів"

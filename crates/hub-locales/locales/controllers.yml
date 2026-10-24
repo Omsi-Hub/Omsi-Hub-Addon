@@ -12,6 +12,7 @@ _version: 2
   ru: "Ось X"
   uk: "Вісь X"
   pl: "Oś X"
+  es: "Eje X"
 "Y axis":
   nl: "Y-as"
   de: "Y-Achse"
@@ -19,6 +20,7 @@ _version: 2
   ru: "Ось Y"
   uk: "Вісь Y"
   pl: "Oś Y"
+  es: "Eje Y"
 "Z axis":
   nl: "Z-as"
   de: "Z-Achse"
@@ -26,6 +28,7 @@ _version: 2
   ru: "Ось Z"
   uk: "Вісь Z"
   pl: "Oś Z"
+  es: "Eje Z"
 "X rotation":
   nl: "X-rotatie"
   de: "X-Rotation"
@@ -33,6 +36,7 @@ _version: 2
   ru: "Вращение X"
   uk: "Обертання X"
   pl: "Obrót X"
+  es: "Rotación X"
 "Y rotation":
   nl: "Y-rotatie"
   de: "Y-Rotation"
@@ -40,6 +44,7 @@ _version: 2
   ru: "Вращение Y"
   uk: "Обертання Y"
   pl: "Obrót Y"
+  es: "Rotación Y"
 "Z rotation":
   nl: "Z-rotatie"
   de: "Z-Rotation"
@@ -47,6 +52,7 @@ _version: 2
   ru: "Вращение Z"
   uk: "Обертання Z"
   pl: "Obrót Z"
+  es: "Rotación Z"
 "Slider 1":
   nl: "Schuif 1"
   de: "Schieberegler 1"
@@ -54,6 +60,7 @@ _version: 2
   ru: "Ползунок 1"
   uk: "Повзунок 1"
   pl: "Suwak 1"
+  es: "Deslizador 1"
 "Slider 2":
   nl: "Schuif 2"
   de: "Schieberegler 2"
@@ -61,6 +68,7 @@ _version: 2
   ru: "Ползунок 2"
   uk: "Повзунок 2"
   pl: "Suwak 2"
+  es: "Deslizador 2"
 "Not used":
   nl: "Niet gebruikt"
   de: "Nicht benutzt"
@@ -68,6 +76,7 @@ _version: 2
   ru: "Не используется"
   uk: "Не використовується"
   pl: "Nieużywana"
+  es: "Sin usar"
 "Steering":
   nl: "Sturen"
   de: "Lenkung"
@@ -75,6 +84,7 @@ _version: 2
   ru: "Руль"
   uk: "Кермо"
   pl: "Kierowanie"
+  es: "Dirección"
 "Throttle":
   nl: "Gas"
   de: "Gas"
@@ -82,6 +92,7 @@ _version: 2
   ru: "Газ"
   uk: "Газ"
   pl: "Gaz"
+  es: "Acelerador"
 "Brake":
   nl: "Rem"
   de: "Bremse"
@@ -89,6 +100,7 @@ _version: 2
   ru: "Тормоз"
   uk: "Гальмо"
   pl: "Hamulec"
+  es: "Freno"
 "Clutch":
   nl: "Koppeling"
   de: "Kupplung"
@@ -96,6 +108,7 @@ _version: 2
   ru: "Сцепление"
   uk: "Зчеплення"
   pl: "Sprzęgło"
+  es: "Embrague"
 "Throttle and brake":
   nl: "Gas en rem"
   de: "Gas und Bremse"
@@ -103,6 +116,7 @@ _version: 2
   ru: "Газ и тормоз"
   uk: "Газ і гальмо"
   pl: "Gaz i hamulec"
+  es: "Acelerador y freno"
 "Look left / right":
   nl: "Links / rechts kijken"
   de: "Nach links / rechts schauen"
@@ -110,6 +124,7 @@ _version: 2
   ru: "Смотреть влево / вправо"
   uk: "Дивитися ліворуч / праворуч"
   pl: "Patrz w lewo / w prawo"
+  es: "Mirar a izquierda / derecha"
 "Look up / down":
   nl: "Omhoog / omlaag kijken"
   de: "Nach oben / unten schauen"
@@ -117,10 +132,12 @@ _version: 2
   ru: "Смотреть вверх / вниз"
   uk: "Дивитися вгору / вниз"
   pl: "Patrz w górę / w dół"
+  es: "Mirar arriba / abajo"
 "Linear":
   nl: "Lineair"
   de: "Linear"
   fr: "Linéaire"
+  es: "Lineal"
 "Progressive":
   nl: "Progressief"
   de: "Progressiv"
@@ -128,6 +145,7 @@ _version: 2
   ru: "Прогрессивная"
   uk: "Прогресивна"
   pl: "Progresywna"
+  es: "Progresiva"
 "Degressive":
   nl: "Degressief"
   de: "Degressiv"
@@ -135,6 +153,7 @@ _version: 2
   ru: "Дегрессивная"
   uk: "Дегресивна"
   pl: "Degresywna"
+  es: "Degresiva"
 "Bi-progressive":
   nl: "Dubbel progressief"
   de: "Beidseitig progressiv"
@@ -142,6 +161,7 @@ _version: 2
   ru: "Двусторонне прогрессивная"
   uk: "Двобічно прогресивна"
   pl: "Dwustronnie progresywna"
+  es: "Biprogresiva"
 "Bi-degressive":
   nl: "Dubbel degressief"
   de: "Beidseitig degressiv"
@@ -149,6 +169,7 @@ _version: 2
   ru: "Двусторонне дегрессивная"
   uk: "Двобічно дегресивна"
   pl: "Dwustronnie degresywna"
+  es: "Bidegresiva"
 
 # --- what a button does -----------------------------------------------------------------------
 "Throttle (full, kickdown)":
@@ -158,6 +179,7 @@ _version: 2
   ru: "Газ (в пол, кикдаун)"
   uk: "Газ (до упору, кікдаун)"
   pl: "Gaz (do oporu, kickdown)"
+  es: "Acelerador (a fondo, kickdown)"
 "Steer left":
   nl: "Naar links sturen"
   de: "Nach links lenken"
@@ -165,6 +187,7 @@ _version: 2
   ru: "Руль влево"
   uk: "Кермо ліворуч"
   pl: "Skręt w lewo"
+  es: "Girar a la izquierda"
 "Steer right":
   nl: "Naar rechts sturen"
   de: "Nach rechts lenken"
@@ -172,6 +195,7 @@ _version: 2
   ru: "Руль вправо"
   uk: "Кермо праворуч"
   pl: "Skręt w prawo"
+  es: "Girar a la derecha"
 "Steering to centre":
   nl: "Stuur naar het midden"
   de: "Lenkung zur Mitte"
@@ -179,6 +203,7 @@ _version: 2
   ru: "Руль в центр"
   uk: "Кермо в центр"
   pl: "Kierownica na środek"
+  es: "Centrar la dirección"
 "Parking brake":
   nl: "Handrem"
   de: "Feststellbremse"
@@ -186,6 +211,7 @@ _version: 2
   ru: "Стояночный тормоз"
   uk: "Стоянкове гальмо"
   pl: "Hamulec postojowy"
+  es: "Freno de estacionamiento"
 "Parking brake on":
   nl: "Handrem aan"
   de: "Feststellbremse an"
@@ -193,6 +219,7 @@ _version: 2
   ru: "Стояночный тормоз включить"
   uk: "Стоянкове гальмо ввімкнути"
   pl: "Hamulec postojowy zaciągnij"
+  es: "Echar el freno de estacionamiento"
 "Parking brake off":
   nl: "Handrem los"
   de: "Feststellbremse lösen"
@@ -200,6 +227,7 @@ _version: 2
   ru: "Стояночный тормоз отпустить"
   uk: "Стоянкове гальмо відпустити"
   pl: "Hamulec postojowy zwolnij"
+  es: "Soltar el freno de estacionamiento"
 "Indicator left":
   nl: "Richtingaanwijzer links"
   de: "Blinker links"
@@ -207,6 +235,7 @@ _version: 2
   ru: "Поворотник влево"
   uk: "Поворот ліворуч"
   pl: "Kierunkowskaz w lewo"
+  es: "Intermitente izquierdo"
 "Indicator right":
   nl: "Richtingaanwijzer rechts"
   de: "Blinker rechts"
@@ -214,6 +243,7 @@ _version: 2
   ru: "Поворотник вправо"
   uk: "Поворот праворуч"
   pl: "Kierunkowskaz w prawo"
+  es: "Intermitente derecho"
 "Indicator left (toggle)":
   nl: "Richtingaanwijzer links (aan/uit)"
   de: "Blinker links (an/aus)"
@@ -221,6 +251,7 @@ _version: 2
   ru: "Поворотник влево (вкл/выкл)"
   uk: "Поворот ліворуч (увімк/вимк)"
   pl: "Kierunkowskaz w lewo (wł./wył.)"
+  es: "Intermitente izquierdo (activar/desactivar)"
 "Indicator right (toggle)":
   nl: "Richtingaanwijzer rechts (aan/uit)"
   de: "Blinker rechts (an/aus)"
@@ -228,6 +259,7 @@ _version: 2
   ru: "Поворотник вправо (вкл/выкл)"
   uk: "Поворот праворуч (увімк/вимк)"
   pl: "Kierunkowskaz w prawo (wł./wył.)"
+  es: "Intermitente derecho (activar/desactivar)"
 "Indicators off":
   nl: "Richtingaanwijzers uit"
   de: "Blinker aus"
@@ -235,6 +267,7 @@ _version: 2
   ru: "Поворотники выключить"
   uk: "Повороти вимкнути"
   pl: "Kierunkowskazy wyłącz"
+  es: "Apagar intermitentes"
 "Hazard lights":
   nl: "Alarmlichten"
   de: "Warnblinker"
@@ -242,6 +275,7 @@ _version: 2
   ru: "Аварийка"
   uk: "Аварійка"
   pl: "Światła awaryjne"
+  es: "Luces de emergencia"
 "Horn":
   nl: "Claxon"
   de: "Hupe"
@@ -249,6 +283,7 @@ _version: 2
   ru: "Гудок"
   uk: "Клаксон"
   pl: "Klakson"
+  es: "Claxon"
 "Headlights":
   nl: "Koplampen"
   de: "Scheinwerfer"
@@ -256,6 +291,7 @@ _version: 2
   ru: "Фары"
   uk: "Фари"
   pl: "Reflektory"
+  es: "Faros"
 "Sidelights":
   nl: "Stadslicht"
   de: "Standlicht"
@@ -263,6 +299,7 @@ _version: 2
   ru: "Габариты"
   uk: "Габарити"
   pl: "Światła pozycyjne"
+  es: "Luces de posición"
 "High beam":
   nl: "Grootlicht"
   de: "Fernlicht"
@@ -270,6 +307,7 @@ _version: 2
   ru: "Дальний свет"
   uk: "Дальнє світло"
   pl: "Światła drogowe"
+  es: "Luces largas"
 "Starter":
   nl: "Starter"
   de: "Anlasser"
@@ -277,6 +315,7 @@ _version: 2
   ru: "Стартер"
   uk: "Стартер"
   pl: "Rozrusznik"
+  es: "Motor de arranque"
 "Wipers (next mode)":
   nl: "Ruitenwissers (volgende stand)"
   de: "Scheibenwischer (nächste Stufe)"
@@ -284,6 +323,7 @@ _version: 2
   ru: "Дворники (следующий режим)"
   uk: "Склоочисники (наступний режим)"
   pl: "Wycieraczki (następny tryb)"
+  es: "Limpiaparabrisas (modo siguiente)"
 "Battery / ignition":
   nl: "Accu / contact"
   de: "Batterie / Zündung"
@@ -291,6 +331,7 @@ _version: 2
   ru: "Батарея / зажигание"
   uk: "Батарея / запалювання"
   pl: "Akumulator / zapłon"
+  es: "Batería / contacto"
 "Gear D":
   nl: "Stand D"
   de: "Gang D"
@@ -298,6 +339,7 @@ _version: 2
   ru: "Передача D"
   uk: "Передача D"
   pl: "Bieg D"
+  es: "Marcha D"
 "Gear N (automatic gearbox)":
   nl: "Stand N (automaat)"
   de: "Gang N (Automatik)"
@@ -305,6 +347,7 @@ _version: 2
   ru: "Передача N (автомат)"
   uk: "Передача N (автомат)"
   pl: "Bieg N (skrzynia automatyczna)"
+  es: "Marcha N (caja automática)"
 "Gear R (automatic gearbox)":
   nl: "Stand R (automaat)"
   de: "Gang R (Automatik)"
@@ -312,6 +355,7 @@ _version: 2
   ru: "Передача R (автомат)"
   uk: "Передача R (автомат)"
   pl: "Bieg R (skrzynia automatyczna)"
+  es: "Marcha R (caja automática)"
 "Gear N (manual gearbox)":
   nl: "Stand N (handgeschakeld)"
   de: "Gang N (Schaltgetriebe)"
@@ -319,6 +363,7 @@ _version: 2
   ru: "Передача N (механика)"
   uk: "Передача N (механіка)"
   pl: "Bieg N (skrzynia manualna)"
+  es: "Marcha N (caja manual)"
 "Gear R (manual gearbox)":
   nl: "Stand R (handgeschakeld)"
   de: "Gang R (Schaltgetriebe)"
@@ -326,6 +371,7 @@ _version: 2
   ru: "Передача R (механика)"
   uk: "Передача R (механіка)"
   pl: "Bieg R (skrzynia manualna)"
+  es: "Marcha R (caja manual)"
 "Front door (leaf 1)":
   nl: "Voordeur (vleugel 1)"
   de: "Vordertür (Flügel 1)"
@@ -333,6 +379,7 @@ _version: 2
   ru: "Передняя дверь (створка 1)"
   uk: "Передні двері (стулка 1)"
   pl: "Przednie drzwi (skrzydło 1)"
+  es: "Puerta delantera (hoja 1)"
 "Front door (leaf 2)":
   nl: "Voordeur (vleugel 2)"
   de: "Vordertür (Flügel 2)"
@@ -340,6 +387,7 @@ _version: 2
   ru: "Передняя дверь (створка 2)"
   uk: "Передні двері (стулка 2)"
   pl: "Przednie drzwi (skrzydło 2)"
+  es: "Puerta delantera (hoja 2)"
 "Release rear doors":
   nl: "Achterdeuren vrijgeven"
   de: "Hintere Türen freigeben"
@@ -347,6 +395,7 @@ _version: 2
   ru: "Разблокировать задние двери"
   uk: "Розблокувати задні двері"
   pl: "Zwolnij tylne drzwi"
+  es: "Liberar puertas traseras"
 "Door release (passengers open), any bus":
   nl: "Deurvrijgave (reizigers openen), elke bus"
   de: "Türfreigabe (Fahrgäste öffnen), jeder Bus"
@@ -354,6 +403,7 @@ _version: 2
   ru: "Разблокировка дверей (открывают пассажиры), любой автобус"
   uk: "Розблокування дверей (відчиняють пасажири), будь-який автобус"
   pl: "Zwolnienie drzwi (otwierają pasażerowie), każdy autobus"
+  es: "Liberación de puertas (abren los pasajeros), cualquier autobús"
 "Sell the requested ticket":
   nl: "Het gevraagde kaartje verkopen"
   de: "Den gewünschten Fahrschein verkaufen"
@@ -361,6 +411,7 @@ _version: 2
   ru: "Продать запрошенный билет"
   uk: "Продати запитаний квиток"
   pl: "Sprzedaj żądany bilet"
+  es: "Vender el billete solicitado"
 "Passenger: request entry / exit":
   nl: "Reiziger: in- / uitstappen vragen"
   de: "Fahrgast: Ein- / Ausstieg anfordern"
@@ -368,6 +419,7 @@ _version: 2
   ru: "Пассажир: запрос входа / выхода"
   uk: "Пасажир: запит на вхід / вихід"
   pl: "Pasażer: prośba o wejście / wyjście"
+  es: "Pasajero: solicitar entrada / salida"
 "Driver's view":
   nl: "Bestuurderszicht"
   de: "Fahrersicht"
@@ -375,6 +427,7 @@ _version: 2
   ru: "Вид водителя"
   uk: "Вид водія"
   pl: "Widok kierowcy"
+  es: "Vista del conductor"
 "Passenger view":
   nl: "Reizigerszicht"
   de: "Fahrgastsicht"
@@ -382,6 +435,7 @@ _version: 2
   ru: "Вид пассажира"
   uk: "Вид пасажира"
   pl: "Widok pasażera"
+  es: "Vista del pasajero"
 "Outside view":
   nl: "Buitenzicht"
   de: "Außenansicht"
@@ -389,6 +443,7 @@ _version: 2
   ru: "Вид снаружи"
   uk: "Вид ззовні"
   pl: "Widok z zewnątrz"
+  es: "Vista exterior"
 "Next view":
   nl: "Volgend zicht"
   de: "Nächste Ansicht"
@@ -396,6 +451,7 @@ _version: 2
   ru: "Следующий вид"
   uk: "Наступний вид"
   pl: "Następny widok"
+  es: "Vista siguiente"
 "Next interior camera":
   nl: "Volgende binnencamera"
   de: "Nächste Innenkamera"
@@ -403,6 +459,7 @@ _version: 2
   ru: "Следующая камера салона"
   uk: "Наступна камера салону"
   pl: "Następna kamera wewnętrzna"
+  es: "Cámara interior siguiente"
 "Previous interior camera":
   nl: "Vorige binnencamera"
   de: "Vorige Innenkamera"
@@ -410,6 +467,7 @@ _version: 2
   ru: "Предыдущая камера салона"
   uk: "Попередня камера салону"
   pl: "Poprzednia kamera wewnętrzna"
+  es: "Cámara interior anterior"
 "Reset the view direction":
   nl: "Kijkrichting herstellen"
   de: "Blickrichtung zurücksetzen"
@@ -417,6 +475,7 @@ _version: 2
   ru: "Сбросить направление взгляда"
   uk: "Скинути напрямок погляду"
   pl: "Zresetuj kierunek patrzenia"
+  es: "Restablecer la dirección de la vista"
 "Reset all view directions":
   nl: "Alle kijkrichtingen herstellen"
   de: "Alle Blickrichtungen zurücksetzen"
@@ -424,6 +483,7 @@ _version: 2
   ru: "Сбросить все направления взгляда"
   uk: "Скинути всі напрямки погляду"
   pl: "Zresetuj wszystkie kierunki patrzenia"
+  es: "Restablecer todas las direcciones de la vista"
 "Look left (hold)":
   nl: "Links kijken (vasthouden)"
   de: "Nach links schauen (halten)"
@@ -431,6 +491,7 @@ _version: 2
   ru: "Смотреть влево (удерживать)"
   uk: "Дивитися ліворуч (утримувати)"
   pl: "Patrz w lewo (przytrzymaj)"
+  es: "Mirar a la izquierda (mantener)"
 "Look right (hold)":
   nl: "Rechts kijken (vasthouden)"
   de: "Nach rechts schauen (halten)"
@@ -438,6 +499,7 @@ _version: 2
   ru: "Смотреть вправо (удерживать)"
   uk: "Дивитися праворуч (утримувати)"
   pl: "Patrz w prawo (przytrzymaj)"
+  es: "Mirar a la derecha (mantener)"
 "Look up (hold)":
   nl: "Omhoog kijken (vasthouden)"
   de: "Nach oben schauen (halten)"
@@ -445,6 +507,7 @@ _version: 2
   ru: "Смотреть вверх (удерживать)"
   uk: "Дивитися вгору (утримувати)"
   pl: "Patrz w górę (przytrzymaj)"
+  es: "Mirar arriba (mantener)"
 "Look down (hold)":
   nl: "Omlaag kijken (vasthouden)"
   de: "Nach unten schauen (halten)"
@@ -452,6 +515,7 @@ _version: 2
   ru: "Смотреть вниз (удерживать)"
   uk: "Дивитися вниз (утримувати)"
   pl: "Patrz w dół (przytrzymaj)"
+  es: "Mirar abajo (mantener)"
 "Head tracking: centre again":
   nl: "Hoofdtracking: opnieuw centreren"
   de: "Head-Tracking: neu zentrieren"
@@ -459,6 +523,7 @@ _version: 2
   ru: "Трекинг головы: снова по центру"
   uk: "Трекінг голови: знову по центру"
   pl: "Śledzenie głowy: wyśrodkuj ponownie"
+  es: "Seguimiento de cabeza: volver a centrar"
 "Microphone":
   nl: "Microfoon"
   de: "Mikrofon"
@@ -466,6 +531,7 @@ _version: 2
   ru: "Микрофон"
   uk: "Мікрофон"
   pl: "Mikrofon"
+  es: "Micrófono"
 "Quit":
   nl: "Afsluiten"
   de: "Beenden"
@@ -473,6 +539,7 @@ _version: 2
   ru: "Выйти"
   uk: "Вийти"
   pl: "Zakończ"
+  es: "Salir"
 "Open / close the main menu":
   nl: "Hoofdmenu openen / sluiten"
   de: "Hauptmenü öffnen / schließen"
@@ -480,6 +547,7 @@ _version: 2
   ru: "Открыть / закрыть главное меню"
   uk: "Відкрити / закрити головне меню"
   pl: "Otwórz / zamknij menu główne"
+  es: "Abrir / cerrar el menú principal"
 "Screenshot":
   nl: "Schermafbeelding"
   de: "Screenshot"
@@ -487,6 +555,7 @@ _version: 2
   ru: "Снимок экрана"
   uk: "Знімок екрана"
   pl: "Zrzut ekranu"
+  es: "Captura de pantalla"
 "Quicksave":
   nl: "Snel opslaan"
   de: "Schnellspeichern"
@@ -494,6 +563,7 @@ _version: 2
   ru: "Быстрое сохранение"
   uk: "Швидке збереження"
   pl: "Szybki zapis"
+  es: "Guardado rápido"
 "Multiplayer: bus radio (hold)":
   nl: "Multiplayer: busradio (vasthouden)"
   de: "Mehrspieler: Busfunk (halten)"
@@ -501,6 +571,7 @@ _version: 2
   ru: "Мультиплеер: рация автобуса (удерживать)"
   uk: "Мультиплеєр: рація автобуса (утримувати)"
   pl: "Gra wieloosobowa: radio autobusu (przytrzymaj)"
+  es: "Multijugador: radio del autobús (mantener)"
 "Radio: on / off":
   nl: "Radio: aan / uit"
   de: "Radio: an / aus"
@@ -508,6 +579,7 @@ _version: 2
   ru: "Радио: вкл / выкл"
   uk: "Радіо: увімк / вимк"
   pl: "Radio: wł. / wył."
+  es: "Radio: encender / apagar"
 "Radio: next station":
   nl: "Radio: volgende zender"
   de: "Radio: nächster Sender"
@@ -515,6 +587,7 @@ _version: 2
   ru: "Радио: следующая станция"
   uk: "Радіо: наступна станція"
   pl: "Radio: następna stacja"
+  es: "Radio: emisora siguiente"
 "Radio: previous station":
   nl: "Radio: vorige zender"
   de: "Radio: vorheriger Sender"
@@ -522,6 +595,7 @@ _version: 2
   ru: "Радио: предыдущая станция"
   uk: "Радіо: попередня станція"
   pl: "Radio: poprzednia stacja"
+  es: "Radio: emisora anterior"
 "Radio: louder":
   nl: "Radio: harder"
   de: "Radio: lauter"
@@ -529,6 +603,7 @@ _version: 2
   ru: "Радио: громче"
   uk: "Радіо: гучніше"
   pl: "Radio: głośniej"
+  es: "Radio: más volumen"
 "Radio: quieter":
   nl: "Radio: zachter"
   de: "Radio: leiser"
@@ -536,6 +611,7 @@ _version: 2
   ru: "Радио: тише"
   uk: "Радіо: тихіше"
   pl: "Radio: ciszej"
+  es: "Radio: menos volumen"
 "Toggle mouse steering":
   nl: "Muissturing aan / uit"
   de: "Maussteuerung an / aus"
@@ -543,6 +619,7 @@ _version: 2
   ru: "Руление мышью вкл / выкл"
   uk: "Кермування мишею увімк / вимк"
   pl: "Kierowanie myszą wł. / wył."
+  es: "Activar/desactivar dirección con ratón"
 "Toggle game controllers":
   nl: "Spelcontrollers aan / uit"
   de: "Gamecontroller an / aus"
@@ -550,6 +627,7 @@ _version: 2
   ru: "Игровые контроллеры вкл / выкл"
   uk: "Ігрові контролери увімк / вимк"
   pl: "Kontrolery gier wł. / wył."
+  es: "Activar/desactivar mandos de juego"
 "Driving":
   nl: "Rijden"
   de: "Fahren"
@@ -557,6 +635,7 @@ _version: 2
   ru: "Вождение"
   uk: "Водіння"
   pl: "Jazda"
+  es: "Conducción"
 "Gearbox":
   nl: "Versnellingsbak"
   de: "Getriebe"
@@ -564,6 +643,7 @@ _version: 2
   ru: "Коробка передач"
   uk: "Коробка передач"
   pl: "Skrzynia biegów"
+  es: "Caja de cambios"
 "Lights and indicators":
   nl: "Lichten en richtingaanwijzers"
   de: "Licht und Blinker"
@@ -571,6 +651,7 @@ _version: 2
   ru: "Свет и поворотники"
   uk: "Світло і повороти"
   pl: "Światła i kierunkowskazy"
+  es: "Luces e intermitentes"
 "Doors and tickets":
   nl: "Deuren en kaartjes"
   de: "Türen und Fahrscheine"
@@ -578,6 +659,7 @@ _version: 2
   ru: "Двери и билеты"
   uk: "Двері та квитки"
   pl: "Drzwi i bilety"
+  es: "Puertas y billetes"
 "Views":
   nl: "Zichten"
   de: "Ansichten"
@@ -585,6 +667,7 @@ _version: 2
   ru: "Виды"
   uk: "Види"
   pl: "Widoki"
+  es: "Vistas"
 "The game":
   nl: "Het spel"
   de: "Das Spiel"
@@ -592,6 +675,7 @@ _version: 2
   ru: "Игра"
   uk: "Гра"
   pl: "Gra"
+  es: "El juego"
 "Hat %{n} %{dir}":
   nl: "Hat %{n} %{dir}"
   de: "Hat %{n} %{dir}"
@@ -599,6 +683,7 @@ _version: 2
   ru: "Хатка %{n} %{dir}"
   uk: "Хатка %{n} %{dir}"
   pl: "Hat %{n} %{dir}"
+  es: "Seta %{n} %{dir}"
 "up":
   nl: "omhoog"
   de: "oben"
@@ -606,6 +691,7 @@ _version: 2
   ru: "вверх"
   uk: "вгору"
   pl: "góra"
+  es: "arriba"
 "right":
   nl: "rechts"
   de: "rechts"
@@ -613,6 +699,7 @@ _version: 2
   ru: "вправо"
   uk: "праворуч"
   pl: "prawo"
+  es: "derecha"
 "down":
   nl: "omlaag"
   de: "unten"
@@ -620,6 +707,7 @@ _version: 2
   ru: "вниз"
   uk: "вниз"
   pl: "dół"
+  es: "abajo"
 "left":
   nl: "links"
   de: "links"
@@ -627,6 +715,7 @@ _version: 2
   ru: "влево"
   uk: "ліворуч"
   pl: "lewo"
+  es: "izquierda"
 
 # --- the set-up assistant --------------------------------------------------------------------
 "Let go of everything":
@@ -636,6 +725,7 @@ _version: 2
   ru: "Отпустите всё"
   uk: "Відпустіть усе"
   pl: "Puść wszystko"
+  es: "Suéltalo todo"
 "Take your hands off the wheel and your feet off the pedals, the wheel in the middle; then press Next.":
   nl: "Haal je handen van het stuur en je voeten van de pedalen, het stuur in het midden; druk dan op Volgende."
   de: "Nimm die Hände vom Lenkrad und die Füße von den Pedalen, das Lenkrad in der Mitte; dann drücke Weiter."
@@ -643,6 +733,7 @@ _version: 2
   ru: "Уберите руки с руля и ноги с педалей, руль по центру; затем нажмите «Далее»."
   uk: "Приберіть руки з керма і ноги з педалей, кермо по центру; потім натисніть «Далі»."
   pl: "Zdejmij ręce z kierownicy i stopy z pedałów, kierownica na środku; potem naciśnij Dalej."
+  es: "Quita las manos del volante y los pies de los pedales, con el volante en el centro; luego pulsa Siguiente."
 "Turn the wheel (or move the stick) all the way to the LEFT and hold it there; then press Next. No wheel (pedals only): Skip.":
   nl: "Draai het stuur (of beweeg de stick) helemaal naar LINKS en houd het daar; druk dan op Volgende. Geen stuur (alleen pedalen): Overslaan."
   de: "Dreh das Lenkrad (oder bewege den Stick) ganz nach LINKS und halte es dort; dann drücke Weiter. Kein Lenkrad (nur Pedale): Überspringen."
@@ -650,6 +741,7 @@ _version: 2
   ru: "Поверните руль (или стик) до упора ВЛЕВО и удерживайте; затем нажмите «Далее». Нет руля (только педали): «Пропустить»."
   uk: "Поверніть кермо (або стік) до упору ЛІВОРУЧ і утримуйте; потім натисніть «Далі». Немає керма (лише педалі): «Пропустити»."
   pl: "Skręć kierownicę (lub przesuń drążek) do końca w LEWO i przytrzymaj; potem naciśnij Dalej. Bez kierownicy (same pedały): Pomiń."
+  es: "Gira el volante (o mueve la palanca) del todo a la IZQUIERDA y mantenlo ahí; luego pulsa Siguiente. Sin volante (solo pedales): Omitir."
 "Press the throttle pedal all the way down and hold it; then press Next. No pedals: Skip.":
   nl: "Trap het gaspedaal helemaal in en houd het vast; druk dan op Volgende. Geen pedalen: Overslaan."
   de: "Tritt das Gaspedal ganz durch und halte es; dann drücke Weiter. Keine Pedale: Überspringen."
@@ -657,6 +749,7 @@ _version: 2
   ru: "Выжмите педаль газа до упора и удерживайте; затем нажмите «Далее». Нет педалей: «Пропустить»."
   uk: "Вичавіть педаль газу до упору і утримуйте; потім натисніть «Далі». Немає педалей: «Пропустити»."
   pl: "Wciśnij pedał gazu do końca i przytrzymaj; potem naciśnij Dalej. Brak pedałów: Pomiń."
+  es: "Pisa el acelerador a fondo y mantenlo; luego pulsa Siguiente. Sin pedales: Omitir."
 "Press the brake pedal all the way down and hold it; then press Next. No brake pedal: Skip.":
   nl: "Trap het rempedaal helemaal in en houd het vast; druk dan op Volgende. Geen rempedaal: Overslaan."
   de: "Tritt das Bremspedal ganz durch und halte es; dann drücke Weiter. Kein Bremspedal: Überspringen."
@@ -664,6 +757,7 @@ _version: 2
   ru: "Выжмите педаль тормоза до упора и удерживайте; затем нажмите «Далее». Нет педали тормоза: «Пропустить»."
   uk: "Вичавіть педаль гальма до упору і утримуйте; потім натисніть «Далі». Немає педалі гальма: «Пропустити»."
   pl: "Wciśnij pedał hamulca do końca i przytrzymaj; potem naciśnij Dalej. Brak pedału hamulca: Pomiń."
+  es: "Pisa el freno a fondo y mantenlo; luego pulsa Siguiente. Sin pedal de freno: Omitir."
 "Press the clutch pedal all the way down and hold it; then press Next. No clutch: Skip.":
   nl: "Trap het koppelingspedaal helemaal in en houd het vast; druk dan op Volgende. Geen koppeling: Overslaan."
   de: "Tritt das Kupplungspedal ganz durch und halte es; dann drücke Weiter. Keine Kupplung: Überspringen."
@@ -671,6 +765,7 @@ _version: 2
   ru: "Выжмите педаль сцепления до упора и удерживайте; затем нажмите «Далее». Нет сцепления: «Пропустить»."
   uk: "Вичавіть педаль зчеплення до упору і утримуйте; потім натисніть «Далі». Немає зчеплення: «Пропустити»."
   pl: "Wciśnij pedał sprzęgła do końca i przytrzymaj; potem naciśnij Dalej. Brak sprzęgła: Pomiń."
+  es: "Pisa el embrague a fondo y mantenlo; luego pulsa Siguiente. Sin embrague: Omitir."
 "Nothing moved far enough: hold it all the way, or skip this step.":
   nl: "Niets bewoog ver genoeg: houd het helemaal vast, of sla deze stap over."
   de: "Nichts hat sich weit genug bewegt: halte es ganz durchgedrückt, oder überspringe diesen Schritt."
@@ -678,6 +773,7 @@ _version: 2
   ru: "Ничто не сдвинулось достаточно: удерживайте до упора или пропустите этот шаг."
   uk: "Ніщо не зрушило достатньо: утримуйте до упору або пропустіть цей крок."
   pl: "Nic nie przesunęło się wystarczająco: przytrzymaj do końca albo pomiń ten krok."
+  es: "Nada se ha movido lo suficiente: llévalo hasta el tope o omite este paso."
 "Nothing was found: start again and hold each control all the way.":
   nl: "Er is niets gevonden: begin opnieuw en houd elke bediening helemaal vast."
   de: "Nichts gefunden: fang neu an und halte jedes Bedienelement ganz durch."
@@ -685,6 +781,7 @@ _version: 2
   ru: "Ничего не найдено: начните заново и удерживайте каждый орган управления до упора."
   uk: "Нічого не знайдено: почніть знову й утримуйте кожен орган керування до упору."
   pl: "Nic nie znaleziono: zacznij od nowa i przytrzymuj każdy element do końca."
+  es: "No se ha detectado nada: empieza de nuevo y lleva cada control hasta el tope."
 "The device is not connected: plug it in to set it up.":
   nl: "Het apparaat is niet aangesloten: sluit het aan om het in te stellen."
   de: "Das Gerät ist nicht angeschlossen: schließe es an, um es einzurichten."
@@ -692,6 +789,7 @@ _version: 2
   ru: "Устройство не подключено: подключите его, чтобы настроить."
   uk: "Пристрій не під'єднано: під'єднайте його, щоб налаштувати."
   pl: "Urządzenie nie jest podłączone: podłącz je, aby je skonfigurować."
+  es: "El dispositivo no está conectado: enchúfalo para configurarlo."
 
 # --- the tab -------------------------------------------------------------------------------------
 "Not saved: %{e}":
@@ -701,6 +799,7 @@ _version: 2
   ru: "Не сохранено: %{e}"
   uk: "Не збережено: %{e}"
   pl: "Nie zapisano: %{e}"
+  es: "No guardado: %{e}"
 "Reading the controllers…":
   nl: "De controllers worden gelezen…"
   de: "Die Controller werden gelesen…"
@@ -708,6 +807,7 @@ _version: 2
   ru: "Чтение контроллеров…"
   uk: "Читання контролерів…"
   pl: "Odczyt kontrolerów…"
+  es: "Leyendo los mandos…"
 "Your steering wheel, pedals, joysticks, shifters and button boxes as openOMSI drives them. Move a control or press a button: it shows here. Every change is saved at once.":
   nl: "Je stuur, pedalen, joysticks, schakelpoken en knoppenkasten zoals openOMSI ze gebruikt. Beweeg een bediening of druk op een knop: dat zie je hier. Elke wijziging wordt meteen opgeslagen."
   de: "Dein Lenkrad, deine Pedale, Joysticks, Schalthebel und Button-Boxen, wie openOMSI sie nutzt. Bewege ein Bedienelement oder drücke eine Taste: es erscheint hier. Jede Änderung wird sofort gespeichert."
@@ -715,6 +815,7 @@ _version: 2
   ru: "Ваш руль, педали, джойстики, рычаги КПП и кнопочные панели так, как их использует openOMSI. Подвигайте орган управления или нажмите кнопку: это видно здесь. Каждое изменение сохраняется сразу."
   uk: "Ваше кермо, педалі, джойстики, важелі КПП і кнопкові панелі так, як їх використовує openOMSI. Порухайте орган керування або натисніть кнопку: це видно тут. Кожна зміна зберігається одразу."
   pl: "Twoja kierownica, pedały, joysticki, drążki zmiany biegów i panele przycisków tak, jak używa ich openOMSI. Porusz elementem lub naciśnij przycisk: pojawi się tutaj. Każda zmiana zapisuje się od razu."
+  es: "Tu volante, pedales, joysticks, palancas de cambio y cajas de botones tal como los usa openOMSI. Mueve un control o pulsa un botón: aparece aquí. Cada cambio se guarda al momento."
 "Devices":
   nl: "Apparaten"
   de: "Geräte"
@@ -722,6 +823,7 @@ _version: 2
   ru: "Устройства"
   uk: "Пристрої"
   pl: "Urządzenia"
+  es: "Dispositivos"
 "No game controller is connected, and none is set up yet. Connect a wheel, pedals or a joystick and move it or press one of its buttons: it shows up here. A gamepad works without setting up.":
   nl: "Er is geen spelcontroller aangesloten en er is er nog geen ingesteld. Sluit een stuur, pedalen of een joystick aan en beweeg die of druk op een van de knoppen: dan verschijnt hij hier. Een gamepad werkt zonder instellen."
   de: "Kein Gamecontroller ist angeschlossen, und noch keiner ist eingerichtet. Schließe ein Lenkrad, Pedale oder einen Joystick an und bewege ihn oder drücke eine seiner Tasten: er erscheint hier. Ein Gamepad funktioniert ohne Einrichtung."
@@ -729,6 +831,7 @@ _version: 2
   ru: "Игровой контроллер не подключён, и ни один ещё не настроен. Подключите руль, педали или джойстик и подвигайте его или нажмите одну из кнопок: он появится здесь. Геймпад работает без настройки."
   uk: "Ігровий контролер не під'єднано, і жоден ще не налаштовано. Під'єднайте кермо, педалі або джойстик і порухайте його чи натисніть одну з кнопок: він з'явиться тут. Геймпад працює без налаштування."
   pl: "Nie podłączono żadnego kontrolera i żaden nie jest jeszcze skonfigurowany. Podłącz kierownicę, pedały lub joystick i porusz nim albo naciśnij jeden z przycisków: pojawi się tutaj. Gamepad działa bez konfiguracji."
+  es: "No hay ningún mando de juego conectado ni configurado. Conecta un volante, unos pedales o un joystick y muévelo o pulsa uno de sus botones: aparecerá aquí. Un gamepad funciona sin configurarlo."
 "No gamectrler.cfg yet: it is made with the first change.":
   nl: "Nog geen gamectrler.cfg: die wordt bij de eerste wijziging gemaakt."
   de: "Noch keine gamectrler.cfg: sie entsteht mit der ersten Änderung."
@@ -736,6 +839,7 @@ _version: 2
   ru: "gamectrler.cfg ещё нет: он создаётся при первом изменении."
   uk: "gamectrler.cfg ще немає: його буде створено з першою зміною."
   pl: "Nie ma jeszcze gamectrler.cfg: powstanie przy pierwszej zmianie."
+  es: "Aún no hay gamectrler.cfg: se crea con el primer cambio."
 "These come from OMSI 2's own file. Your changes are saved in openOMSI's own; OMSI 2's stays as it is.":
   nl: "Deze komen uit het eigen bestand van OMSI 2. Je wijzigingen worden in dat van openOMSI opgeslagen; dat van OMSI 2 blijft zoals het is."
   de: "Diese stammen aus der Datei von OMSI 2. Deine Änderungen werden in der von openOMSI gespeichert; die von OMSI 2 bleibt, wie sie ist."
@@ -743,6 +847,7 @@ _version: 2
   ru: "Это из собственного файла OMSI 2. Ваши изменения сохраняются в файл openOMSI; файл OMSI 2 остаётся как есть."
   uk: "Це з власного файлу OMSI 2. Ваші зміни зберігаються у файл openOMSI; файл OMSI 2 лишається як є."
   pl: "Pochodzą z własnego pliku OMSI 2. Twoje zmiany zapisują się w pliku openOMSI; plik OMSI 2 pozostaje bez zmian."
+  es: "Estos vienen del propio archivo de OMSI 2. Tus cambios se guardan en el de openOMSI; el de OMSI 2 se queda como está."
 "For every device":
   nl: "Voor elk apparaat"
   de: "Für jedes Gerät"
@@ -750,6 +855,7 @@ _version: 2
   ru: "Для каждого устройства"
   uk: "Для кожного пристрою"
   pl: "Dla każdego urządzenia"
+  es: "Para cada dispositivo"
 "Set up: check the axes below, and give the buttons what they do.":
   nl: "Ingesteld: controleer de assen hieronder en geef de knoppen hun functie."
   de: "Eingerichtet: prüfe unten die Achsen und gib den Tasten ihre Funktion."
@@ -757,6 +863,7 @@ _version: 2
   ru: "Настроено: проверьте оси ниже и назначьте кнопкам действия."
   uk: "Налаштовано: перевірте осі нижче й призначте кнопкам дії."
   pl: "Skonfigurowano: sprawdź osie poniżej i przypisz przyciskom działania."
+  es: "Configurar: comprueba los ejes de abajo y asigna a los botones lo que hacen."
 "Switched off":
   nl: "Uitgeschakeld"
   de: "Ausgeschaltet"
@@ -764,6 +871,7 @@ _version: 2
   ru: "Выключено"
   uk: "Вимкнено"
   pl: "Wyłączone"
+  es: "Desactivado"
 "Not connected":
   nl: "Niet aangesloten"
   de: "Nicht angeschlossen"
@@ -771,6 +879,7 @@ _version: 2
   ru: "Не подключено"
   uk: "Не під'єднано"
   pl: "Niepodłączone"
+  es: "No conectado"
 "Ready to drive":
   nl: "Klaar om te rijden"
   de: "Bereit zum Fahren"
@@ -778,6 +887,7 @@ _version: 2
   ru: "Готово к поездке"
   uk: "Готово до поїздки"
   pl: "Gotowe do jazdy"
+  es: "Listo para conducir"
 "Not set up yet":
   nl: "Nog niet ingesteld"
   de: "Noch nicht eingerichtet"
@@ -785,6 +895,7 @@ _version: 2
   ru: "Ещё не настроено"
   uk: "Ще не налаштовано"
   pl: "Jeszcze nieskonfigurowane"
+  es: "Aún sin configurar"
 "Use this device":
   nl: "Dit apparaat gebruiken"
   de: "Dieses Gerät verwenden"
@@ -792,6 +903,7 @@ _version: 2
   ru: "Использовать это устройство"
   uk: "Використовувати цей пристрій"
   pl: "Używaj tego urządzenia"
+  es: "Usar este dispositivo"
 "Set up step by step":
   nl: "Stap voor stap instellen"
   de: "Schritt für Schritt einrichten"
@@ -799,6 +911,7 @@ _version: 2
   ru: "Настроить пошагово"
   uk: "Налаштувати покроково"
   pl: "Skonfiguruj krok po kroku"
+  es: "Configurar paso a paso"
 "Really remove?":
   nl: "Echt verwijderen?"
   de: "Wirklich entfernen?"
@@ -806,6 +919,7 @@ _version: 2
   ru: "Точно удалить?"
   uk: "Справді видалити?"
   pl: "Na pewno usunąć?"
+  es: "¿Seguro que quieres quitarlo?"
 "Remove this device (its axes and buttons are forgotten)":
   nl: "Dit apparaat verwijderen (de assen en knoppen worden vergeten)"
   de: "Dieses Gerät entfernen (seine Achsen und Tasten werden vergessen)"
@@ -813,6 +927,7 @@ _version: 2
   ru: "Удалить это устройство (его оси и кнопки забываются)"
   uk: "Видалити цей пристрій (його осі й кнопки забуваються)"
   pl: "Usuń to urządzenie (jego osie i przyciski zostaną zapomniane)"
+  es: "Quitar este dispositivo (se olvidan sus ejes y botones)"
 "Not set up yet: the assistant finds the wheel and the pedals in a few steps. Until then openOMSI steers with its X axis.":
   nl: "Nog niet ingesteld: de assistent vindt het stuur en de pedalen in een paar stappen. Tot dan stuurt openOMSI met de X-as."
   de: "Noch nicht eingerichtet: der Assistent findet Lenkrad und Pedale in wenigen Schritten. Bis dahin lenkt openOMSI mit der X-Achse."
@@ -820,6 +935,7 @@ _version: 2
   ru: "Ещё не настроено: помощник найдёт руль и педали за несколько шагов. До тех пор openOMSI рулит по оси X."
   uk: "Ще не налаштовано: помічник знайде кермо й педалі за кілька кроків. Доти openOMSI кермує віссю X."
   pl: "Jeszcze nieskonfigurowane: asystent znajdzie kierownicę i pedały w kilku krokach. Do tego czasu openOMSI skręca osią X."
+  es: "Aún sin configurar: el asistente encuentra el volante y los pedales en unos pocos pasos. Hasta entonces, openOMSI dirige con su eje X."
 "Not set up yet: give its buttons what they do.":
   nl: "Nog niet ingesteld: geef de knoppen hun functie."
   de: "Noch nicht eingerichtet: gib seinen Tasten ihre Funktion."
@@ -827,6 +943,7 @@ _version: 2
   ru: "Ещё не настроено: назначьте его кнопкам действия."
   uk: "Ще не налаштовано: призначте його кнопкам дії."
   pl: "Jeszcze nieskonfigurowane: przypisz jego przyciskom działania."
+  es: "Aún sin configurar: asigna a sus botones lo que hacen."
 "Set up its buttons only":
   nl: "Alleen de knoppen instellen"
   de: "Nur die Tasten einrichten"
@@ -834,6 +951,7 @@ _version: 2
   ru: "Настроить только кнопки"
   uk: "Налаштувати лише кнопки"
   pl: "Skonfiguruj tylko przyciski"
+  es: "Configurar solo sus botones"
 "Left stick: steering":
   nl: "Linker stick: sturen"
   de: "Linker Stick: Lenkung"
@@ -841,6 +959,7 @@ _version: 2
   ru: "Левый стик: руль"
   uk: "Лівий стік: кермо"
   pl: "Lewy drążek: kierowanie"
+  es: "Stick izquierdo: dirección"
 "Left stick: up and down":
   nl: "Linker stick: op en neer"
   de: "Linker Stick: auf und ab"
@@ -848,6 +967,7 @@ _version: 2
   ru: "Левый стик: вверх и вниз"
   uk: "Лівий стік: вгору й униз"
   pl: "Lewy drążek: góra i dół"
+  es: "Stick izquierdo: arriba y abajo"
 "Right stick: looking round":
   nl: "Rechter stick: rondkijken"
   de: "Rechter Stick: umschauen"
@@ -855,6 +975,7 @@ _version: 2
   ru: "Правый стик: осмотреться"
   uk: "Правий стік: роззирнутися"
   pl: "Prawy drążek: rozglądanie się"
+  es: "Stick derecho: mirar alrededor"
 "Right stick: up and down":
   nl: "Rechter stick: op en neer"
   de: "Rechter Stick: auf und ab"
@@ -862,6 +983,7 @@ _version: 2
   ru: "Правый стик: вверх и вниз"
   uk: "Правий стік: вгору й униз"
   pl: "Prawy drążek: góra i dół"
+  es: "Stick derecho: arriba y abajo"
 "Right trigger: throttle":
   nl: "Rechter trigger: gas"
   de: "Rechter Trigger: Gas"
@@ -869,6 +991,7 @@ _version: 2
   ru: "Правый курок: газ"
   uk: "Правий курок: газ"
   pl: "Prawy spust: gaz"
+  es: "Gatillo derecho: acelerador"
 "Left trigger: brake":
   nl: "Linker trigger: rem"
   de: "Linker Trigger: Bremse"
@@ -876,6 +999,7 @@ _version: 2
   ru: "Левый курок: тормоз"
   uk: "Лівий курок: гальмо"
   pl: "Lewy spust: hamulec"
+  es: "Gatillo izquierdo: freno"
 "A gamepad needs no setting up: the left stick steers, the right trigger is the throttle and the left one the brake. With \"Default gamepad buttons\" on (below), its buttons work the indicators, the doors, the views, the gears, the menu and the pause.":
   nl: "Een gamepad hoeft niet ingesteld te worden: de linker stick stuurt, de rechter trigger is het gas en de linker de rem. Met \"Standaard gamepadknoppen\" aan (hieronder) bedienen de knoppen de richtingaanwijzers, de deuren, de zichten, de versnellingen, het menu en de pauze."
   de: "Ein Gamepad braucht keine Einrichtung: der linke Stick lenkt, der rechte Trigger ist das Gas und der linke die Bremse. Mit \"Standard-Gamepadtasten\" an (unten) bedienen seine Tasten Blinker, Türen, Ansichten, Gänge, Menü und Pause."
@@ -883,6 +1007,7 @@ _version: 2
   ru: "Геймпад не нужно настраивать: левый стик рулит, правый курок — газ, левый — тормоз. Если включено «Кнопки геймпада по умолчанию» (ниже), его кнопки управляют поворотниками, дверями, видами, передачами, меню и паузой."
   uk: "Геймпад не потребує налаштування: лівий стік кермує, правий курок — газ, лівий — гальмо. Якщо ввімкнено «Типові кнопки геймпада» (нижче), його кнопки керують поворотами, дверима, видами, передачами, меню й паузою."
   pl: "Gamepad nie wymaga konfiguracji: lewy drążek kieruje, prawy spust to gaz, a lewy hamulec. Z włączonym „Domyślne przyciski gamepada” (poniżej) jego przyciski obsługują kierunkowskazy, drzwi, widoki, biegi, menu i pauzę."
+  es: "Un gamepad no necesita configuración: el stick izquierdo dirige, el gatillo derecho es el acelerador y el izquierdo el freno. Con «Botones predeterminados del gamepad» activado (abajo), sus botones manejan los intermitentes, las puertas, las vistas, las marchas, el menú y la pausa."
 "Not connected: plug it in to see it answer. What it does is kept.":
   nl: "Niet aangesloten: sluit het aan om het te zien reageren. Wat het doet, blijft bewaard."
   de: "Nicht angeschlossen: schließe es an, um es reagieren zu sehen. Was es tut, bleibt erhalten."
@@ -890,6 +1015,7 @@ _version: 2
   ru: "Не подключено: подключите, чтобы увидеть отклик. Назначения сохраняются."
   uk: "Не під'єднано: під'єднайте, щоб побачити відгук. Призначення зберігаються."
   pl: "Niepodłączone: podłącz, aby zobaczyć reakcję. Przypisania zostają zachowane."
+  es: "No conectado: enchúfalo para ver cómo responde. Lo que hace se conserva."
 "Axes and pedals":
   nl: "Assen en pedalen"
   de: "Achsen und Pedale"
@@ -897,6 +1023,7 @@ _version: 2
   ru: "Оси и педали"
   uk: "Осі та педалі"
   pl: "Osie i pedały"
+  es: "Ejes y pedales"
 "Move a control: its line lights up.":
   nl: "Beweeg een bediening: de bijbehorende regel licht op."
   de: "Bewege ein Bedienelement: seine Zeile leuchtet auf."
@@ -904,6 +1031,7 @@ _version: 2
   ru: "Подвигайте орган управления: его строка подсветится."
   uk: "Порухайте орган керування: його рядок підсвітиться."
   pl: "Porusz elementem: jego wiersz się podświetli."
+  es: "Mueve un control: su línea se ilumina."
 "No axis steers yet.":
   nl: "Er stuurt nog geen as."
   de: "Noch lenkt keine Achse."
@@ -911,6 +1039,7 @@ _version: 2
   ru: "Пока ни одна ось не рулит."
   uk: "Поки жодна вісь не кермує."
   pl: "Żadna oś jeszcze nie kieruje."
+  es: "Aún no hay ningún eje que dirija."
 "No axis is set up; plug the device in to see its axes.":
   nl: "Er is geen as ingesteld; sluit het apparaat aan om de assen te zien."
   de: "Keine Achse ist eingerichtet; schließe das Gerät an, um seine Achsen zu sehen."
@@ -918,6 +1047,7 @@ _version: 2
   ru: "Ни одна ось не настроена; подключите устройство, чтобы увидеть его оси."
   uk: "Жодну вісь не налаштовано; під'єднайте пристрій, щоб побачити його осі."
   pl: "Żadna oś nie jest skonfigurowana; podłącz urządzenie, aby zobaczyć jego osie."
+  es: "No hay ningún eje configurado; enchufa el dispositivo para ver sus ejes."
 "Reversed":
   nl: "Omgekeerd"
   de: "Umgekehrt"
@@ -925,6 +1055,7 @@ _version: 2
   ru: "Инвертировано"
   uk: "Інвертовано"
   pl: "Odwrócona"
+  es: "Invertido"
 "Response curve":
   nl: "Responscurve"
   de: "Kennlinie"
@@ -932,6 +1063,7 @@ _version: 2
   ru: "Кривая отклика"
   uk: "Крива відгуку"
   pl: "Krzywa reakcji"
+  es: "Curva de respuesta"
 "As the setting says (the other way)":
   nl: "Zoals de instelling zegt (andersom)"
   de: "Wie die Einstellung sagt (andersherum)"
@@ -939,6 +1071,7 @@ _version: 2
   ru: "Как в настройке (в обратную сторону)"
   uk: "Як у налаштуванні (у зворотний бік)"
   pl: "Zgodnie z ustawieniem (odwrotnie)"
+  es: "Según el ajuste (al revés)"
 "As the setting says (normal)":
   nl: "Zoals de instelling zegt (normaal)"
   de: "Wie die Einstellung sagt (normal)"
@@ -946,6 +1079,7 @@ _version: 2
   ru: "Как в настройке (обычно)"
   uk: "Як у налаштуванні (звичайно)"
   pl: "Zgodnie z ustawieniem (normalnie)"
+  es: "Según el ajuste (normal)"
 "Normal":
   nl: "Normaal"
   de: "Normal"
@@ -953,6 +1087,7 @@ _version: 2
   ru: "Обычно"
   uk: "Звичайно"
   pl: "Normalnie"
+  es: "Normal"
 "The other way":
   nl: "Andersom"
   de: "Andersherum"
@@ -960,6 +1095,7 @@ _version: 2
   ru: "В обратную сторону"
   uk: "У зворотний бік"
   pl: "Odwrotnie"
+  es: "Al revés"
 "Force feedback of this wheel":
   nl: "Force feedback van dit stuur"
   de: "Force Feedback dieses Lenkrads"
@@ -967,6 +1103,7 @@ _version: 2
   ru: "Отдача этого руля"
   uk: "Віддача цього керма"
   pl: "Force feedback tej kierownicy"
+  es: "Force feedback de este volante"
 "Steering force (centring and resistance)":
   nl: "Stuurkracht (centreren en weerstand)"
   de: "Lenkkraft (Zentrierung und Widerstand)"
@@ -974,6 +1111,7 @@ _version: 2
   ru: "Усилие руля (центрирование и сопротивление)"
   uk: "Зусилля керма (центрування й опір)"
   pl: "Siła kierownicy (centrowanie i opór)"
+  es: "Fuerza de la dirección (centrado y resistencia)"
 "Vibration":
   nl: "Trilling"
   de: "Vibration"
@@ -981,6 +1119,7 @@ _version: 2
   ru: "Вибрация"
   uk: "Вібрація"
   pl: "Wibracje"
+  es: "Vibración"
 "The wheel's motor":
   nl: "De motor van het stuur"
   de: "Der Motor des Lenkrads"
@@ -988,6 +1127,7 @@ _version: 2
   ru: "Мотор руля"
   uk: "Мотор керма"
   pl: "Silnik kierownicy"
+  es: "El motor del volante"
 "Nothing":
   nl: "Niets"
   de: "Nichts"
@@ -995,6 +1135,7 @@ _version: 2
   ru: "Ничего"
   uk: "Нічого"
   pl: "Nic"
+  es: "Nada"
 "Buttons":
   nl: "Knoppen"
   de: "Tasten"
@@ -1002,6 +1143,7 @@ _version: 2
   ru: "Кнопки"
   uk: "Кнопки"
   pl: "Przyciski"
+  es: "Botones"
 "Press a button on the device: its line lights up.":
   nl: "Druk op een knop van het apparaat: de bijbehorende regel licht op."
   de: "Drücke eine Taste am Gerät: ihre Zeile leuchtet auf."
@@ -1009,6 +1151,7 @@ _version: 2
   ru: "Нажмите кнопку на устройстве: её строка подсветится."
   uk: "Натисніть кнопку на пристрої: її рядок підсвітиться."
   pl: "Naciśnij przycisk na urządzeniu: jego wiersz się podświetli."
+  es: "Pulsa un botón del dispositivo: su línea se ilumina."
 "Every button of the device (%{n})":
   nl: "Elke knop van het apparaat (%{n})"
   de: "Jede Taste des Geräts (%{n})"
@@ -1016,6 +1159,7 @@ _version: 2
   ru: "Все кнопки устройства (%{n})"
   uk: "Усі кнопки пристрою (%{n})"
   pl: "Każdy przycisk urządzenia (%{n})"
+  es: "Todos los botones del dispositivo (%{n})"
 "No button does anything yet. Press one to give it an action.":
   nl: "Nog geen knop doet iets. Druk op een knop om hem een actie te geven."
   de: "Noch tut keine Taste etwas. Drücke eine, um ihr eine Aktion zu geben."
@@ -1023,6 +1167,7 @@ _version: 2
   ru: "Пока ни одна кнопка ничего не делает. Нажмите кнопку, чтобы назначить ей действие."
   uk: "Поки жодна кнопка нічого не робить. Натисніть кнопку, щоб призначити їй дію."
   pl: "Żaden przycisk jeszcze nic nie robi. Naciśnij jeden, aby przypisać mu działanie."
+  es: "Ningún botón hace nada todavía. Pulsa uno para asignarle una acción."
 "No button does anything yet. Plug the device in and press a button to give it an action.":
   nl: "Nog geen knop doet iets. Sluit het apparaat aan en druk op een knop om hem een actie te geven."
   de: "Noch tut keine Taste etwas. Schließe das Gerät an und drücke eine Taste, um ihr eine Aktion zu geben."
@@ -1030,6 +1175,7 @@ _version: 2
   ru: "Пока ни одна кнопка ничего не делает. Подключите устройство и нажмите кнопку, чтобы назначить ей действие."
   uk: "Поки жодна кнопка нічого не робить. Під'єднайте пристрій і натисніть кнопку, щоб призначити їй дію."
   pl: "Żaden przycisk jeszcze nic nie robi. Podłącz urządzenie i naciśnij przycisk, aby przypisać mu działanie."
+  es: "Ningún botón hace nada todavía. Enchufa el dispositivo y pulsa un botón para asignarle una acción."
 "Another action…":
   nl: "Nog een actie…"
   de: "Weitere Aktion…"
@@ -1037,6 +1183,7 @@ _version: 2
   ru: "Ещё действие…"
   uk: "Ще дія…"
   pl: "Kolejne działanie…"
+  es: "Otra acción…"
 "This button does another action as well":
   nl: "Deze knop doet ook nog een andere actie"
   de: "Diese Taste führt auch noch eine andere Aktion aus"
@@ -1044,6 +1191,7 @@ _version: 2
   ru: "Эта кнопка выполняет ещё одно действие"
   uk: "Ця кнопка виконує ще одну дію"
   pl: "Ten przycisk wykonuje też inne działanie"
+  es: "Este botón también hace otra acción"
 "The action is held for as long as the button is (OMSI: continuous)":
   nl: "De actie duurt zolang de knop ingedrukt is (OMSI: continu)"
   de: "Die Aktion wird gehalten, solange die Taste gedrückt ist (OMSI: dauerhaft)"
@@ -1051,6 +1199,7 @@ _version: 2
   ru: "Действие длится, пока нажата кнопка (OMSI: непрерывно)"
   uk: "Дія триває, доки натиснута кнопка (OMSI: безперервно)"
   pl: "Działanie trwa, dopóki przycisk jest wciśnięty (OMSI: ciągłe)"
+  es: "La acción se mantiene mientras se mantenga el botón (OMSI: continuo)"
 "Held":
   nl: "Vastgehouden"
   de: "Gehalten"
@@ -1058,6 +1207,7 @@ _version: 2
   ru: "Удержание"
   uk: "Утримання"
   pl: "Przytrzymanie"
+  es: "Mantenido"
 "A latching switch (an indicator stalk, a lit hazard button): when it comes out the action is switched back":
   nl: "Een vergrendelende schakelaar (een knipperlichthendel, een verlichte alarmknop): springt hij terug, dan wordt de actie teruggezet"
   de: "Ein rastender Schalter (ein Blinkerhebel, ein beleuchteter Warnblinkschalter): springt er zurück, wird die Aktion zurückgeschaltet"
@@ -1065,6 +1215,7 @@ _version: 2
   ru: "Фиксирующийся переключатель (рычаг поворотника, подсвеченная кнопка аварийки): когда он возвращается, действие отменяется"
   uk: "Фіксований перемикач (важіль поворотів, підсвічена кнопка аварійки): коли він повертається, дію скасовано"
   pl: "Przełącznik z zatrzaskiem (dźwignia kierunkowskazu, podświetlany przycisk awaryjnych): gdy wraca, działanie zostaje cofnięte"
+  es: "Un interruptor con enclavamiento (una palanca de intermitentes, un botón de emergencia iluminado): al soltarse, la acción se revierte"
 
 # --- openOMSI's settings round the controllers (hub-game gamesettings.rs) ------------------------
 "Wheel and pedals":
@@ -1074,6 +1225,7 @@ _version: 2
   ru: "Руль и педали"
   uk: "Кермо та педалі"
   pl: "Kierownica i pedały"
+  es: "Volante y pedales"
 "Gamepad":
   nl: "Gamepad"
   de: "Gamepad"
@@ -1081,6 +1233,7 @@ _version: 2
   ru: "Геймпад"
   uk: "Геймпад"
   pl: "Gamepad"
+  es: "Gamepad"
 "Force feedback":
   nl: "Force feedback"
   de: "Force Feedback"
@@ -1088,6 +1241,7 @@ _version: 2
   ru: "Отдача"
   uk: "Віддача"
   pl: "Force feedback"
+  es: "Force feedback"
 "Dead zone of the wheel and the pedals":
   nl: "Dode zone van het stuur en de pedalen"
   de: "Totzone von Lenkrad und Pedalen"
@@ -1095,6 +1249,7 @@ _version: 2
   ru: "Мёртвая зона руля и педалей"
   uk: "Мертва зона керма й педалей"
   pl: "Martwa strefa kierownicy i pedałów"
+  es: "Zona muerta del volante y los pedales"
 "Throttle pedal strength (1: as the pedal reads)":
   nl: "Sterkte van het gaspedaal (1: zoals het pedaal meet)"
   de: "Stärke des Gaspedals (1: wie das Pedal misst)"
@@ -1102,6 +1257,7 @@ _version: 2
   ru: "Сила педали газа (1: как читает педаль)"
   uk: "Сила педалі газу (1: як читає педаль)"
   pl: "Siła pedału gazu (1: jak odczytuje pedał)"
+  es: "Sensibilidad del acelerador (1: tal como lee el pedal)"
 "Brake pedal strength (1: as the pedal reads)":
   nl: "Sterkte van het rempedaal (1: zoals het pedaal meet)"
   de: "Stärke des Bremspedals (1: wie das Pedal misst)"
@@ -1109,6 +1265,7 @@ _version: 2
   ru: "Сила педали тормоза (1: как читает педаль)"
   uk: "Сила педалі гальма (1: як читає педаль)"
   pl: "Siła pedału hamulca (1: jak odczytuje pedał)"
+  es: "Sensibilidad del freno (1: tal como lee el pedal)"
 "H-pattern shifter: back to neutral when the gear is let go":
   nl: "H-schakelpook: terug naar neutraal als de versnelling wordt losgelaten"
   de: "H-Schaltung: zurück in den Leerlauf, wenn der Gang losgelassen wird"
@@ -1116,6 +1273,7 @@ _version: 2
   ru: "H-образный рычаг: нейтраль, когда передачу отпускают"
   uk: "H-подібний важіль: нейтраль, коли передачу відпускають"
   pl: "Drążek w układzie H: luz po puszczeniu biegu"
+  es: "Palanca en H: vuelve a punto muerto al soltar la marcha"
 "Keep driving while openOMSI is in the background":
   nl: "Blijven rijden terwijl openOMSI op de achtergrond staat"
   de: "Weiterfahren, während openOMSI im Hintergrund ist"
@@ -1123,6 +1281,7 @@ _version: 2
   ru: "Продолжать ехать, пока openOMSI в фоне"
   uk: "Продовжувати їхати, поки openOMSI у фоні"
   pl: "Jedź dalej, gdy openOMSI jest w tle"
+  es: "Seguir conduciendo con openOMSI en segundo plano"
 "Stick steering speed (seconds to the full lock)":
   nl: "Stuursnelheid van de stick (seconden tot volle uitslag)"
   de: "Lenkgeschwindigkeit des Sticks (Sekunden bis zum vollen Einschlag)"
@@ -1130,6 +1289,7 @@ _version: 2
   ru: "Скорость руления стиком (секунд до полного поворота)"
   uk: "Швидкість кермування стіком (секунд до повного повороту)"
   pl: "Szybkość skrętu drążkiem (sekundy do pełnego skrętu)"
+  es: "Velocidad de dirección con stick (segundos hasta el tope)"
 "Stick steering smoothing (ms; 0: off)":
   nl: "Stuurdemping van de stick (ms; 0: uit)"
   de: "Lenkglättung des Sticks (ms; 0: aus)"
@@ -1137,6 +1297,7 @@ _version: 2
   ru: "Сглаживание руления стиком (мс; 0: выкл)"
   uk: "Згладжування кермування стіком (мс; 0: вимк)"
   pl: "Wygładzanie skrętu drążkiem (ms; 0: wył.)"
+  es: "Suavizado de la dirección con stick (ms; 0: desactivado)"
 "Force feedback and vibration":
   nl: "Force feedback en trilling"
   de: "Force Feedback und Vibration"
@@ -1144,6 +1305,7 @@ _version: 2
   ru: "Отдача и вибрация"
   uk: "Віддача й вібрація"
   pl: "Force feedback i wibracje"
+  es: "Force feedback y vibración"
 "Road texture vibration (1: normal; 0: off)":
   nl: "Trilling van het wegdek (1: normaal; 0: uit)"
   de: "Vibration der Fahrbahn (1: normal; 0: aus)"
@@ -1151,6 +1313,7 @@ _version: 2
   ru: "Вибрация от дороги (1: обычно; 0: выкл)"
   uk: "Вібрація від дороги (1: звичайно; 0: вимк)"
   pl: "Wibracje nawierzchni (1: normalnie; 0: wył.)"
+  es: "Vibración por textura de la calzada (1: normal; 0: desactivada)"
 "Engine vibration (1: normal; 0: off)":
   nl: "Trilling van de motor (1: normaal; 0: uit)"
   de: "Motorvibration (1: normal; 0: aus)"
@@ -1158,6 +1321,7 @@ _version: 2
   ru: "Вибрация двигателя (1: обычно; 0: выкл)"
   uk: "Вібрація двигуна (1: звичайно; 0: вимк)"
   pl: "Wibracje silnika (1: normalnie; 0: wył.)"
+  es: "Vibración del motor (1: normal; 0: desactivada)"
 "Vibration fade-out (seconds; 0: off)":
   nl: "Uitsterven van de trilling (seconden; 0: uit)"
   de: "Ausklingen der Vibration (Sekunden; 0: aus)"
@@ -1165,6 +1329,7 @@ _version: 2
   ru: "Затухание вибрации (секунды; 0: выкл)"
   uk: "Згасання вібрації (секунди; 0: вимк)"
   pl: "Wygaszanie wibracji (sekundy; 0: wył.)"
+  es: "Desvanecimiento de la vibración (segundos; 0: desactivado)"
 
 # --- the openOMSI tab (ui/js/hub/addon.js) -----------------------------------------------------
 "Another openOMSI folder":
@@ -1174,6 +1339,7 @@ _version: 2
   ru: "Другая папка openOMSI"
   uk: "Інша тека openOMSI"
   pl: "Inny folder openOMSI"
+  es: "Otra carpeta de openOMSI"
 "Checked at the first drive: openOMSI %{version} told the plugin what it offers.":
   nl: "Gecontroleerd bij de eerste rit: openOMSI %{version} vertelde de plug-in wat het biedt."
   de: "Bei der ersten Fahrt geprüft: openOMSI %{version} hat dem Plugin mitgeteilt, was es bietet."
@@ -1181,6 +1347,7 @@ _version: 2
   ru: "Проверено при первой поездке: openOMSI %{version} сообщил плагину, что он умеет."
   uk: "Перевірено під час першої поїздки: openOMSI %{version} повідомив плагіну, що він уміє."
   pl: "Sprawdzono przy pierwszej jeździe: openOMSI %{version} przekazał wtyczce, co oferuje."
+  es: "Comprobado en la primera conducción: openOMSI %{version} indicó al plugin lo que ofrece."
 "Checked at the first drive: the plugin then tells Omsi-Hub what this openOMSI offers.":
   nl: "Wordt gecontroleerd bij de eerste rit: de plug-in vertelt Omsi-Hub dan wat deze openOMSI biedt."
   de: "Wird bei der ersten Fahrt geprüft: das Plugin teilt Omsi-Hub dann mit, was dieses openOMSI bietet."
@@ -1188,6 +1355,7 @@ _version: 2
   ru: "Проверяется при первой поездке: тогда плагин сообщит Omsi-Hub, что умеет этот openOMSI."
   uk: "Перевіряється під час першої поїздки: тоді плагін повідомить Omsi-Hub, що вміє цей openOMSI."
   pl: "Sprawdzane przy pierwszej jeździe: wtyczka przekaże wtedy Omsi-Hub, co oferuje ten openOMSI."
+  es: "Se comprueba en la primera conducción: el plugin indica entonces a Omsi-Hub lo que ofrece este openOMSI."
 "Last drive: %{company}, line %{line}, tour %{tour}":
   nl: "Laatste rit: %{company}, lijn %{line}, omloop %{tour}"
   de: "Letzte Fahrt: %{company}, Linie %{line}, Umlauf %{tour}"
@@ -1195,6 +1363,7 @@ _version: 2
   ru: "Последняя поездка: %{company}, линия %{line}, выход %{tour}"
   uk: "Остання поїздка: %{company}, лінія %{line}, випуск %{tour}"
   pl: "Ostatnia jazda: %{company}, linia %{line}, brygada %{tour}"
+  es: "Última conducción: %{company}, línea %{line}, recorrido %{tour}"
 "Last drive: a drive of your own (%{driver})":
   nl: "Laatste rit: een eigen rit (%{driver})"
   de: "Letzte Fahrt: eine eigene Fahrt (%{driver})"
@@ -1202,6 +1371,7 @@ _version: 2
   ru: "Последняя поездка: своя поездка (%{driver})"
   uk: "Остання поїздка: власна поїздка (%{driver})"
   pl: "Ostatnia jazda: własna jazda (%{driver})"
+  es: "Última conducción: una conducción propia (%{driver})"
 "Take the plugin out of openOMSI":
   nl: "De plug-in uit openOMSI halen"
   de: "Das Plugin aus openOMSI entfernen"
@@ -1209,3 +1379,4 @@ _version: 2
   ru: "Удалить плагин из openOMSI"
   uk: "Вилучити плагін з openOMSI"
   pl: "Usuń wtyczkę z openOMSI"
+  es: "Quitar el plugin de openOMSI"

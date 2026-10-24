@@ -9,6 +9,7 @@ _version: 2
   ru: "Текущее время"
   uk: "Поточний час"
   pl: "Bieżąca godzina"
+  es: "Hora actual"
 "Current date":
   nl: "Huidige datum"
   de: "Aktuelles Datum"
@@ -16,6 +17,7 @@ _version: 2
   ru: "Текущая дата"
   uk: "Поточна дата"
   pl: "Bieżąca data"
+  es: "Fecha actual"
 "Bus ready before departure":
   nl: "Bus klaar vóór vertrek"
   de: "Bus bereit vor der Abfahrt"
@@ -23,6 +25,7 @@ _version: 2
   ru: "Автобус готов до отправления"
   uk: "Автобус готовий до відправлення"
   pl: "Autobus gotowy przed odjazdem"
+  es: "Autobús listo antes de la salida"
 "at the departure":
   nl: "op de vertrektijd"
   de: "zur Abfahrtszeit"
@@ -30,6 +33,7 @@ _version: 2
   ru: "ко времени отправления"
   uk: "на час відправлення"
   pl: "na czas odjazdu"
+  es: "a la hora de salida"
 "the game starts at %{time}":
   nl: "het spel begint om %{time}"
   de: "das Spiel beginnt um %{time}"
@@ -37,3 +41,4 @@ _version: 2
   ru: "игра начинается в %{time}"
   uk: "гра починається о %{time}"
   pl: "gra zaczyna się o %{time}"
+  es: "el juego empieza a las %{time}"

@@ -10,6 +10,7 @@ _version: 2
   ru: "Игроков: %{n} из %{max}"
   uk: "Гравців: %{n} з %{max}"
   pl: "%{n} z %{max} graczy"
+  es: "%{n} de %{max} jugadores"
 "Add server":
   nl: "Server toevoegen"
   de: "Server hinzufügen"
@@ -17,6 +18,7 @@ _version: 2
   ru: "Добавить сервер"
   uk: "Додати сервер"
   pl: "Dodaj serwer"
+  es: "Añadir servidor"
 "Asking the server...":
   nl: "Server wordt gevraagd..."
   de: "Server wird angefragt..."
@@ -24,6 +26,7 @@ _version: 2
   ru: "Запрос к серверу..."
   uk: "Запит до сервера..."
   pl: "Pytanie serwera..."
+  es: "Consultando al servidor..."
 "Can't reach the server: %{err}":
   nl: "De server is niet bereikbaar: %{err}"
   de: "Server nicht erreichbar: %{err}"
@@ -31,6 +34,7 @@ _version: 2
   ru: "Сервер недоступен: %{err}"
   uk: "Сервер недоступний: %{err}"
   pl: "Nie można połączyć się z serwerem: %{err}"
+  es: "No se puede conectar con el servidor: %{err}"
 "Choose a bus and join":
   nl: "Kies een bus en doe mee"
   de: "Bus wählen und beitreten"
@@ -38,6 +42,7 @@ _version: 2
   ru: "Выбрать автобус и подключиться"
   uk: "Обрати автобус і приєднатися"
   pl: "Wybierz autobus i dołącz"
+  es: "Elige un autobús y únete"
 "Connect by Code":
   nl: "Verbinden met code"
   de: "Per Code verbinden"
@@ -45,6 +50,7 @@ _version: 2
   ru: "Подключение по коду"
   uk: "Підключення за кодом"
   pl: "Połącz kodem"
+  es: "Conectar por código"
 "Copy the code":
   nl: "Code kopiëren"
   de: "Code kopieren"
@@ -52,6 +58,7 @@ _version: 2
   ru: "Скопировать код"
   uk: "Копіювати код"
   pl: "Kopiuj kod"
+  es: "Copiar el código"
 "Go to Drive":
   nl: "Naar Rijden"
   de: "Zu Fahren"
@@ -59,6 +66,7 @@ _version: 2
   ru: "К поездке"
   uk: "Перейти до «Їхати»"
   pl: "Przejdź do Jedź"
+  es: "Ir a Conducir"
 "Host a game":
   nl: "Een spel hosten"
   de: "Spiel hosten"
@@ -66,6 +74,7 @@ _version: 2
   ru: "Создать игру"
   uk: "Створити гру"
   pl: "Hostuj grę"
+  es: "Alojar una partida"
 "Host my next duty":
   nl: "Mijn volgende dienst hosten"
   de: "Meinen nächsten Dienst hosten"
@@ -73,6 +82,7 @@ _version: 2
   ru: "Хостить мою следующую смену"
   uk: "Хостити мій наступний наряд"
   pl: "Hostuj moją następną służbę"
+  es: "Alojar mi próximo servicio"
 "Name (optional)":
   nl: "Naam (optioneel)"
   de: "Name (optional)"
@@ -80,6 +90,7 @@ _version: 2
   ru: "Имя (необязательно)"
   uk: "Назва (необов'язково)"
   pl: "Nazwa (opcjonalnie)"
+  es: "Nombre (opcional)"
 "No servers yet. Add a server by the address its owner gives you.":
   nl: "Nog geen servers. Voeg een server toe met het adres dat de eigenaar je geeft."
   de: "Noch keine Server. Füge einen Server mit der Adresse hinzu, die dir sein Besitzer gibt."
@@ -87,6 +98,7 @@ _version: 2
   ru: "Серверов пока нет. Добавьте сервер по адресу, который даст его владелец."
   uk: "Серверів ще немає. Додайте сервер за адресою, яку дасть його власник."
   pl: "Brak serwerów. Dodaj serwer według adresu podanego przez właściciela."
+  es: "Aún no hay servidores. Añade un servidor con la dirección que te dé su propietario."
 "Paste a session code first":
   nl: "Plak eerst een sessiecode"
   de: "Zuerst einen Sitzungscode einfügen"
@@ -94,6 +106,7 @@ _version: 2
   ru: "Сначала вставьте код сеанса"
   uk: "Спершу вставте код сесії"
   pl: "Najpierw wklej kod sesji"
+  es: "Pega primero un código de sesión"
 "Paste the code your friend's game shows. The map, time and weather are the host's; you choose your bus.":
   nl: "Plak de code die het spel van je vriend toont. Kaart, tijd en weer zijn die van de host; jij kiest je bus."
   de: "Füge den Code aus dem Spiel deines Freundes ein. Karte, Zeit und Wetter sind die des Hosts; den Bus wählst du."
@@ -101,6 +114,7 @@ _version: 2
   ru: "Вставьте код из игры друга. Карта, время и погода - как у хоста; автобус выбираете вы."
   uk: "Вставте код, який показує гра вашого друга. Мапа, час і погода - від хоста; автобус обираєте ви."
   pl: "Wklej kod pokazywany przez grę znajomego. Mapa, czas i pogoda są hosta; autobus wybierasz ty."
+  es: "Pega el código que muestra el juego de tu amigo. El mapa, la hora y el tiempo son los del anfitrión; tú eliges tu autobús."
 "Refresh":
   nl: "Vernieuwen"
   de: "Aktualisieren"
@@ -108,6 +122,7 @@ _version: 2
   ru: "Обновить"
   uk: "Оновити"
   pl: "Odśwież"
+  es: "Actualizar"
 "Remove from the list":
   nl: "Uit de lijst verwijderen"
   de: "Aus der Liste entfernen"
@@ -115,6 +130,7 @@ _version: 2
   ru: "Убрать из списка"
   uk: "Прибрати зі списку"
   pl: "Usuń z listy"
+  es: "Quitar de la lista"
 "Server address":
   nl: "Serveradres"
   de: "Serveradresse"
@@ -122,6 +138,7 @@ _version: 2
   ru: "Адрес сервера"
   uk: "Адреса сервера"
   pl: "Adres serwera"
+  es: "Dirección del servidor"
 "Servers":
   nl: "Servers"
   de: "Server"
@@ -129,6 +146,7 @@ _version: 2
   ru: "Серверы"
   uk: "Сервери"
   pl: "Serwery"
+  es: "Servidores"
 "Session code copied":
   nl: "Sessiecode gekopieerd"
   de: "Sitzungscode kopiert"
@@ -136,6 +154,7 @@ _version: 2
   ru: "Код сеанса скопирован"
   uk: "Код сесії скопійовано"
   pl: "Kod sesji skopiowany"
+  es: "Código de sesión copiado"
 "That server is in the list already":
   nl: "Die server staat al in de lijst"
   de: "Dieser Server ist schon in der Liste"
@@ -143,6 +162,7 @@ _version: 2
   ru: "Этот сервер уже есть в списке"
   uk: "Цей сервер уже в списку"
   pl: "Ten serwer jest już na liście"
+  es: "Ese servidor ya está en la lista"
 "The server has not answered yet (is its address right? is it running?)":
   nl: "De server heeft nog niet geantwoord (klopt het adres? draait hij?)"
   de: "Der Server hat noch nicht geantwortet (stimmt die Adresse? läuft er?)"
@@ -150,6 +170,7 @@ _version: 2
   ru: "Сервер пока не ответил (верен ли адрес? запущен ли он?)"
   uk: "Сервер ще не відповів (чи правильна адреса? чи він працює?)"
   pl: "Serwer jeszcze nie odpowiedział (czy adres jest dobry? czy działa?)"
+  es: "El servidor aún no ha respondido (¿es correcta su dirección? ¿está en marcha?)"
 "Your next duty opens a session. Give the code to your friends: it works at home and over the internet.":
   nl: "Je volgende dienst opent een sessie. Geef de code aan je vrienden: werkt thuis en via internet."
   de: "Dein nächster Dienst öffnet eine Sitzung. Gib deinen Freunden den Code: er funktioniert zu Hause und über das Internet."
@@ -157,6 +178,7 @@ _version: 2
   ru: "Ваша следующая смена откроет сессию. Дайте код друзьям: он работает и дома, и через интернет."
   uk: "Ваш наступний наряд відкриє сесію. Дайте код друзям: працює вдома й через інтернет."
   pl: "Twoja następna służba otworzy sesję. Podaj kod znajomym: działa w domu i przez internet."
+  es: "Tu próximo servicio abre una sesión. Da el código a tus amigos: funciona en casa y por internet."
 "Friends can join from anywhere":
   nl: "Vrienden kunnen overal meedoen"
   de: "Freunde können von überall beitreten"
@@ -164,6 +186,7 @@ _version: 2
   ru: "Друзья могут подключиться откуда угодно"
   uk: "Друзі можуть приєднатися звідусіль"
   pl: "Znajomi mogą dołączyć z dowolnego miejsca"
+  es: "Tus amigos pueden unirse desde cualquier lugar"
 "Getting ready for friends on the internet...":
   nl: "Voorbereiden voor vrienden op internet..."
   de: "Vorbereitung für Freunde im Internet..."
@@ -171,6 +194,7 @@ _version: 2
   ru: "Подготовка к подключению друзей через интернет..."
   uk: "Підготовка до гри з друзями через інтернет..."
   pl: "Przygotowywanie dla znajomych w internecie..."
+  es: "Preparándose para amigos por internet..."
 "Start a duty on the Drive page: the code appears here.":
   nl: "Start een dienst op de pagina Rijden: de code verschijnt hier."
   de: "Starte einen Dienst auf der Seite „Fahren“: Der Code erscheint hier."
@@ -178,6 +202,7 @@ _version: 2
   ru: "Начните наряд на странице «Поездка»: код появится здесь."
   uk: "Почніть наряд на сторінці «Їхати»: код з'явиться тут."
   pl: "Rozpocznij służbę na stronie Jedź: kod pojawi się tutaj."
+  es: "Empieza un servicio en la página Conducir: el código aparece aquí."
 "Turn on hosting, then start a duty on the Drive page.":
   nl: "Zet hosten aan en start dan een dienst op de pagina Rijden."
   de: "Aktiviere das Hosting und starte dann einen Dienst auf der Seite „Fahren“."
@@ -185,6 +210,7 @@ _version: 2
   ru: "Включите хостинг, затем начните наряд на странице «Поездка»."
   uk: "Увімкніть хостинг, потім почніть наряд на сторінці «Їхати»."
   pl: "Włącz hosting, potem rozpocznij służbę na stronie Jedź."
+  es: "Activa el alojamiento y luego empieza un servicio en la página Conducir."
 "Drive with friends by a code, or on servers that are always on.":
   nl: "Rijd met vrienden via een code, of op servers die altijd aan staan."
   de: "Fahre mit Freunden per Code oder auf Servern, die immer laufen."
@@ -192,3 +218,4 @@ _version: 2
   ru: "Ездите с друзьями по коду или на серверах, которые работают всегда."
   uk: "Грайте з друзями за кодом або на серверах, що працюють постійно."
   pl: "Jedź ze znajomymi po kodzie lub na serwerach działających cały czas."
+  es: "Conduce con amigos mediante un código, o en servidores siempre activos."

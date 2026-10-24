@@ -337,7 +337,7 @@ mod tests {
             texts.push(src[start..].chars().take_while(|c| *c != '"').collect());
         }
         let mut missing = Vec::new();
-        for lang in ["nl", "de", "fr", "ru", "uk", "pl"] {
+        for lang in ["nl", "de", "fr", "ru", "uk", "pl", "es"] {
             let table = crate::launcher::i18n::table(lang);
             for t in &texts {
                 if !table.contains_key(t) {
@@ -385,7 +385,7 @@ mod tests {
             texts.push(src[start..].chars().take_while(|c| *c != '"').collect());
         }
         let mut missing = Vec::new();
-        for lang in ["nl", "de", "fr", "ru", "uk", "pl"] {
+        for lang in ["nl", "de", "fr", "ru", "uk", "pl", "es"] {
             let table = crate::launcher::i18n::table(lang);
             for t in &texts {
                 if !table.contains_key(t) {

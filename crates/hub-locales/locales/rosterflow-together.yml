@@ -7,6 +7,7 @@ _version: 2
   fr: "Quelqu'un d'autre a modifié les blocs et les services : votre Annuler repart d'ici."
   nl: "Iemand anders heeft de omlopen en diensten gewijzigd: je Ongedaan maken begint vanaf hier opnieuw."
   pl: "Ktoś inny zmienił bloki i służby: Twoje Cofnij zaczyna się od tego miejsca."
+  es: "Otra persona ha cambiado los recorridos y servicios: tu Deshacer empieza de nuevo desde aquí."
   ru: "Кто-то другой изменил блоки и смены: ваша отмена начинается заново отсюда."
   uk: "Хтось інший змінив блоки та зміни: ваше скасування починається звідси заново."
 "Somebody else changed the roster: your Undo begins again from here.":
@@ -14,6 +15,7 @@ _version: 2
   fr: "Quelqu'un d'autre a modifié le roulement : votre Annuler repart d'ici."
   nl: "Iemand anders heeft het rooster gewijzigd: je Ongedaan maken begint vanaf hier opnieuw."
   pl: "Ktoś inny zmienił grafik: Twoje Cofnij zaczyna się od tego miejsca."
+  es: "Otra persona ha cambiado el cuadrante: tu Deshacer empieza de nuevo desde aquí."
   ru: "Кто-то другой изменил график: ваша отмена начинается заново отсюда."
   uk: "Хтось інший змінив графік: ваше скасування починається звідси заново."
 "%{who} changed the blocks and duties of %{day}.":
@@ -21,6 +23,7 @@ _version: 2
   fr: "%{who} a modifié les blocs et les services du %{day}."
   nl: "%{who} heeft de omlopen en diensten van %{day} gewijzigd."
   pl: "%{who} zmienił(a) bloki i służby na %{day}."
+  es: "%{who} ha cambiado los recorridos y servicios de %{day}."
   ru: "%{who} изменил(а) блоки и смены на %{day}."
   uk: "%{who} змінив(ла) блоки та зміни на %{day}."
 "%{who} saved the planning of %{day}.":
@@ -28,6 +31,7 @@ _version: 2
   fr: "%{who} a enregistré la planification du %{day}."
   nl: "%{who} heeft de planning van %{day} opgeslagen."
   pl: "%{who} zapisał(a) planowanie na %{day}."
+  es: "%{who} ha guardado la planificación de %{day}."
   ru: "%{who} сохранил(а) планирование на %{day}."
   uk: "%{who} зберіг(ла) планування на %{day}."
 "%{who} changed the roster of %{day}.":
@@ -35,6 +39,7 @@ _version: 2
   fr: "%{who} a modifié le roulement du %{day}."
   nl: "%{who} heeft het rooster van %{day} gewijzigd."
   pl: "%{who} zmienił(a) grafik na %{day}."
+  es: "%{who} ha cambiado el cuadrante de %{day}."
   ru: "%{who} изменил(а) график на %{day}."
   uk: "%{who} змінив(ла) графік на %{day}."
 "%{who} changed a timetable.":
@@ -42,6 +47,7 @@ _version: 2
   fr: "%{who} a modifié un horaire."
   nl: "%{who} heeft een dienstregeling gewijzigd."
   pl: "%{who} zmienił(a) rozkład jazdy."
+  es: "%{who} ha cambiado un horario."
   ru: "%{who} изменил(а) расписание."
   uk: "%{who} змінив(ла) розклад."
 "%{who} changed the preferences.":
@@ -49,6 +55,7 @@ _version: 2
   fr: "%{who} a modifié les préférences."
   nl: "%{who} heeft de voorkeuren gewijzigd."
   pl: "%{who} zmienił(a) preferencje."
+  es: "%{who} ha cambiado las preferencias."
   ru: "%{who} изменил(а) настройки."
   uk: "%{who} змінив(ла) налаштування."
 "%{who} changed the planning.":
@@ -56,6 +63,7 @@ _version: 2
   fr: "%{who} a modifié la planification."
   nl: "%{who} heeft de planning gewijzigd."
   pl: "%{who} zmienił(a) planowanie."
+  es: "%{who} ha cambiado la planificación."
   ru: "%{who} изменил(а) планирование."
   uk: "%{who} змінив(ла) планування."
 "%{who} changed this day meanwhile: it is shown anew - do it once more.":
@@ -63,6 +71,7 @@ _version: 2
   fr: "%{who} a modifié ce jour entre-temps : il est affiché à nouveau - refaites-le."
   nl: "%{who} heeft deze dag intussen gewijzigd: hij wordt opnieuw getoond - doe het nog een keer."
   pl: "%{who} zmienił(a) w międzyczasie ten dzień: jest wyświetlany od nowa - zrób to jeszcze raz."
+  es: "%{who} ha cambiado este día mientras tanto: se muestra de nuevo; hazlo otra vez."
   ru: "%{who} тем временем изменил(а) этот день: он показан заново - сделайте это ещё раз."
   uk: "%{who} тим часом змінив(ла) цей день: його показано заново - зробіть це ще раз."
 "Your role lets you look at the planning, not change it: the boss can give you \"Edit the planning\" on his Multiplayer page.":
@@ -70,6 +79,7 @@ _version: 2
   fr: "Votre rôle vous permet de voir la planification, pas de la modifier : le patron peut vous donner « Modifier la planification » sur sa page Multijoueur."
   nl: "Je rol laat je de planning bekijken, niet wijzigen: de baas kan je op zijn Multiplayer-pagina \"Planning bewerken\" geven."
   pl: "Twoja rola pozwala przeglądać planowanie, ale nie zmieniać go: szef może dać Ci „Edycję planowania” na swojej stronie trybu wieloosobowego."
+  es: "Tu rol te permite ver la planificación, no cambiarla: el jefe puede darte \"Editar la planificación\" en su página Multijugador."
   ru: "Ваша роль позволяет смотреть планирование, но не менять его: начальник может дать вам «Редактирование планирования» на своей странице мультиплеера."
   uk: "Ваша роль дозволяє переглядати планування, але не змінювати його: начальник може дати вам «Редагування планування» на своїй сторінці мультиплеєра."
 "Read-only":
@@ -77,6 +87,7 @@ _version: 2
   fr: "Lecture seule"
   nl: "Alleen lezen"
   pl: "Tylko do odczytu"
+  es: "Solo lectura"
   ru: "Только чтение"
   uk: "Лише перегляд"
 "Lessons change the company and put it back: they are for the boss's own launcher. The tour and the help sheet work here.":
@@ -84,6 +95,7 @@ _version: 2
   fr: "Les leçons modifient l'entreprise puis la remettent comme avant : elles sont pour le lanceur du patron. La visite et la fiche d'aide fonctionnent ici."
   nl: "Lessen wijzigen het bedrijf en zetten het terug: ze zijn voor de eigen launcher van de baas. De rondleiding en het hulpblad werken hier wel."
   pl: "Lekcje zmieniają firmę i przywracają ją: są dla własnego launchera szefa. Wycieczka i ściągawka działają tutaj."
+  es: "Las lecciones cambian la empresa y luego la restauran: son para el propio lanzador del jefe. La visita guiada y la hoja de ayuda funcionan aquí."
   ru: "Уроки меняют компанию и возвращают её обратно: они для собственного лаунчера начальника. Тур и справка работают здесь."
   uk: "Уроки змінюють компанію і повертають її назад: вони для власного лаунчера начальника. Тур і довідка працюють тут."
 "The routes are drawn on the boss's map with his line editor: he changes them on his own launcher. The trips and their times you change in the Timeplan, as your role allows.":
@@ -91,5 +103,6 @@ _version: 2
   fr: "Les itinéraires sont tracés sur la carte du patron avec son éditeur de lignes : il les modifie sur son propre lanceur. Les courses et leurs horaires, vous les modifiez dans le Timeplan, selon votre rôle."
   nl: "De routes worden op de kaart van de baas getekend met zijn lijneditor: hij wijzigt ze op zijn eigen launcher. De ritten en hun tijden wijzig je in de Timeplan, voor zover je rol dat toestaat."
   pl: "Trasy są rysowane na mapie szefa jego edytorem linii: zmienia je na własnym launcherze. Kursy i ich czasy zmieniasz w Timeplanie, na ile pozwala Twoja rola."
+  es: "Las rutas se dibujan en el mapa del jefe con su editor de líneas: él las cambia en su propio lanzador. Los viajes y sus horas los cambias tú en el Plan horario, según lo permita tu rol."
   ru: "Маршруты рисуются на карте начальника его редактором линий: он меняет их в своём лаунчере. Рейсы и их время вы меняете в Timeplan, насколько позволяет ваша роль."
   uk: "Маршрути малюються на мапі начальника його редактором ліній: він змінює їх у власному лаунчері. Рейси та їхній час ви змінюєте в Timeplan, наскільки дозволяє ваша роль."

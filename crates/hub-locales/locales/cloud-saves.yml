@@ -8,6 +8,7 @@ _version: 2
   fr: "Sauvegarde cloud"
   nl: "Cloudopslag"
   pl: "Zapis w chmurze"
+  es: "Partida en la nube"
   ru: "Облачное сохранение"
   uk: "Хмарне збереження"
 "Removed from the cloud. A company of it on this PC stays as a local save.":
@@ -15,6 +16,7 @@ _version: 2
   fr: "Supprimée du cloud. Une entreprise qui en vient sur ce PC reste en sauvegarde locale."
   nl: "Uit de cloud verwijderd. Een bedrijf ervan op deze pc blijft als lokale opslag."
   pl: "Usunięto z chmury. Firma z tego zapisu na tym PC zostaje jako zapis lokalny."
+  es: "Quitada de la nube. Una empresa suya en este PC se queda como partida local."
   ru: "Удалено из облака. Компания из него на этом ПК остаётся локальным сохранением."
   uk: "Видалено з хмари. Компанія з нього на цьому ПК залишається локальним збереженням."
 "%{name} is no longer in the cloud: it stays on this PC as a local save.":
@@ -22,6 +24,7 @@ _version: 2
   fr: "%{name} n'est plus dans le cloud : l'entreprise reste sur ce PC en sauvegarde locale."
   nl: "%{name} staat niet meer in de cloud: het blijft als lokale opslag op deze pc."
   pl: "%{name} nie ma już w chmurze: zostaje na tym PC jako zapis lokalny."
+  es: "%{name} ya no está en la nube: se queda en este PC como partida local."
   ru: "%{name} больше нет в облаке: компания остаётся на этом ПК локальным сохранением."
   uk: "%{name} більше немає в хмарі: компанія залишається на цьому ПК локальним збереженням."
 "%{name} (this PC)":
@@ -29,6 +32,7 @@ _version: 2
   fr: "%{name} (ce PC)"
   nl: "%{name} (deze pc)"
   pl: "%{name} (ten PC)"
+  es: "%{name} (este PC)"
   ru: "%{name} (этот ПК)"
   uk: "%{name} (цей ПК)"
 "This PC's %{name} is in the cloud now.":
@@ -36,6 +40,7 @@ _version: 2
   fr: "%{name} de ce PC est maintenant dans le cloud."
   nl: "%{name} van deze pc staat nu in de cloud."
   pl: "%{name} z tego PC jest teraz w chmurze."
+  es: "%{name} de este PC ya está en la nube."
   ru: "%{name} с этого ПК теперь в облаке."
   uk: "%{name} з цього ПК тепер у хмарі."
 "Both kept: the cloud's %{name}, and this PC's as %{copy}.":
@@ -43,6 +48,7 @@ _version: 2
   fr: "Les deux sont gardées : %{name} du cloud, et celle de ce PC sous le nom %{copy}."
   nl: "Allebei bewaard: %{name} uit de cloud, en die van deze pc als %{copy}."
   pl: "Zachowano oba: %{name} z chmury i ten z tego PC jako %{copy}."
+  es: "Ambas conservadas: %{name} de la nube, y la de este PC como %{copy}."
   ru: "Сохранены обе: %{name} из облака и копия с этого ПК как %{copy}."
   uk: "Збережено обидві: %{name} з хмари та копію з цього ПК як %{copy}."
 "The cloud's %{name} is on this PC now.":
@@ -50,6 +56,7 @@ _version: 2
   fr: "%{name} du cloud est maintenant sur ce PC."
   nl: "%{name} uit de cloud staat nu op deze pc."
   pl: "%{name} z chmury jest teraz na tym PC."
+  es: "%{name} de la nube ya está en este PC."
   ru: "%{name} из облака теперь на этом ПК."
   uk: "%{name} з хмари тепер на цьому ПК."
 "%{name} is in the cloud now.":
@@ -57,6 +64,7 @@ _version: 2
   fr: "%{name} est maintenant dans le cloud."
   nl: "%{name} staat nu in de cloud."
   pl: "%{name} jest teraz w chmurze."
+  es: "%{name} ya está en la nube."
   ru: "%{name} теперь в облаке."
   uk: "%{name} тепер у хмарі."
 "%{name} is on this PC now.":
@@ -64,6 +72,7 @@ _version: 2
   fr: "%{name} est maintenant sur ce PC."
   nl: "%{name} staat nu op deze pc."
   pl: "%{name} jest teraz na tym PC."
+  es: "%{name} ya está en este PC."
   ru: "%{name} теперь на этом ПК."
   uk: "%{name} тепер на цьому ПК."
 "%{name} stays local.":
@@ -71,6 +80,7 @@ _version: 2
   fr: "%{name} reste en local."
   nl: "%{name} blijft lokaal."
   pl: "%{name} zostaje lokalnie."
+  es: "%{name} se queda en local."
   ru: "%{name} остаётся локальной."
   uk: "%{name} залишається локальною."
 "Local save":
@@ -78,6 +88,7 @@ _version: 2
   fr: "Sauvegarde locale"
   nl: "Lokale opslag"
   pl: "Zapis lokalny"
+  es: "Partida local"
   ru: "Локальное сохранение"
   uk: "Локальне збереження"
 "Saved %{when}":
@@ -85,6 +96,7 @@ _version: 2
   fr: "Enregistrée le %{when}"
   nl: "Opgeslagen %{when}"
   pl: "Zapisano %{when}"
+  es: "Guardada %{when}"
   ru: "Сохранено %{when}"
   uk: "Збережено %{when}"
 "On %{device}":
@@ -92,6 +104,7 @@ _version: 2
   fr: "Sur %{device}"
   nl: "Op %{device}"
   pl: "Na %{device}"
+  es: "En %{device}"
   ru: "На %{device}"
   uk: "На %{device}"
 "%{name} changed on two computers":
@@ -99,6 +112,7 @@ _version: 2
   fr: "%{name} a changé sur deux ordinateurs"
   nl: "%{name} is op twee computers gewijzigd"
   pl: "%{name} zmieniono na dwóch komputerach"
+  es: "%{name} ha cambiado en dos ordenadores"
   ru: "%{name} изменена на двух компьютерах"
   uk: "%{name} змінено на двох комп'ютерах"
 "A newer %{name} is in the cloud":
@@ -106,6 +120,7 @@ _version: 2
   fr: "Une version plus récente de %{name} est dans le cloud"
   nl: "Er staat een nieuwere %{name} in de cloud"
   pl: "W chmurze jest nowsza wersja %{name}"
+  es: "Hay una versión más reciente de %{name} en la nube"
   ru: "В облаке есть более новая версия %{name}"
   uk: "У хмарі є новіша версія %{name}"
 "This PC and the cloud both have changes since the last sync. Which copy do you want to keep? Nothing is lost until you choose.":
@@ -113,6 +128,7 @@ _version: 2
   fr: "Ce PC et le cloud ont tous deux des modifications depuis la dernière synchronisation. Quelle copie voulez-vous garder ? Rien n'est perdu tant que vous n'avez pas choisi."
   nl: "Deze pc en de cloud hebben allebei wijzigingen sinds de laatste synchronisatie. Welke kopie wil je houden? Er gaat niets verloren tot je kiest."
   pl: "Ten PC i chmura mają zmiany od ostatniej synchronizacji. Którą kopię chcesz zachować? Nic nie zginie, dopóki nie wybierzesz."
+  es: "Este PC y la nube tienen cambios desde la última sincronización. ¿Qué copia quieres conservar? No se pierde nada hasta que elijas."
   ru: "И на этом ПК, и в облаке есть изменения с последней синхронизации. Какую копию оставить? Пока вы не выберете, ничего не теряется."
   uk: "І на цьому ПК, і в хмарі є зміни з останньої синхронізації. Яку копію залишити? Доки ви не оберете, нічого не втрачається."
 "Another computer saved this company after this PC did. Download the newer version before you play?":
@@ -120,6 +136,7 @@ _version: 2
   fr: "Un autre ordinateur a enregistré cette entreprise après ce PC. Télécharger la version plus récente avant de jouer ?"
   nl: "Een andere computer heeft dit bedrijf na deze pc opgeslagen. De nieuwere versie downloaden voor je speelt?"
   pl: "Inny komputer zapisał tę firmę później niż ten PC. Pobrać nowszą wersję przed grą?"
+  es: "Otro ordenador guardó esta empresa después que este PC. ¿Descargar la versión más reciente antes de jugar?"
   ru: "Другой компьютер сохранил эту компанию позже этого ПК. Скачать более новую версию перед игрой?"
   uk: "Інший комп'ютер зберіг цю компанію пізніше за цей ПК. Завантажити новішу версію перед грою?"
 "This PC":
@@ -127,6 +144,7 @@ _version: 2
   fr: "Ce PC"
   nl: "Deze pc"
   pl: "Ten PC"
+  es: "Este PC"
   ru: "Этот ПК"
   uk: "Цей ПК"
 "The cloud":
@@ -134,6 +152,7 @@ _version: 2
   fr: "Le cloud"
   nl: "De cloud"
   pl: "Chmura"
+  es: "La nube"
   ru: "Облако"
   uk: "Хмара"
 "Keep the cloud's":
@@ -141,6 +160,7 @@ _version: 2
   fr: "Garder celle du cloud"
   nl: "Die uit de cloud houden"
   pl: "Zachowaj z chmury"
+  es: "Conservar la de la nube"
   ru: "Оставить из облака"
   uk: "Залишити з хмари"
 "Keep this PC's":
@@ -148,6 +168,7 @@ _version: 2
   fr: "Garder celle de ce PC"
   nl: "Die van deze pc houden"
   pl: "Zachowaj z tego PC"
+  es: "Conservar la de este PC"
   ru: "Оставить с этого ПК"
   uk: "Залишити з цього ПК"
 "This PC's copy is kept as %{copy}, a local save.":
@@ -155,6 +176,7 @@ _version: 2
   fr: "La copie de ce PC est gardée sous le nom %{copy}, en sauvegarde locale."
   nl: "De kopie van deze pc blijft bewaard als %{copy}, een lokale opslag."
   pl: "Kopia z tego PC zostaje jako %{copy}, zapis lokalny."
+  es: "La copia de este PC se conserva como %{copy}, una partida local."
   ru: "Копия с этого ПК сохраняется как %{copy}, локальное сохранение."
   uk: "Копія з цього ПК зберігається як %{copy}, локальне збереження."
 "Keep both":
@@ -162,6 +184,7 @@ _version: 2
   fr: "Garder les deux"
   nl: "Allebei houden"
   pl: "Zachowaj oba"
+  es: "Conservar ambas"
   ru: "Оставить обе"
   uk: "Залишити обидві"
 "Download":
@@ -169,6 +192,7 @@ _version: 2
   fr: "Télécharger"
   nl: "Downloaden"
   pl: "Pobierz"
+  es: "Descargar"
   ru: "Скачать"
   uk: "Завантажити"
 "Decide later":
@@ -176,6 +200,7 @@ _version: 2
   fr: "Décider plus tard"
   nl: "Later beslissen"
   pl: "Zdecyduj później"
+  es: "Decidir luego"
   ru: "Решить позже"
   uk: "Вирішити пізніше"
 "Keep both: this PC's copy stays as %{copy}, a local save; the cloud's opens.":
@@ -183,6 +208,7 @@ _version: 2
   fr: "Garder les deux : la copie de ce PC reste sous le nom %{copy}, en sauvegarde locale ; celle du cloud s'ouvre."
   nl: "Allebei houden: de kopie van deze pc blijft als %{copy}, een lokale opslag; die uit de cloud gaat open."
   pl: "Zachowaj oba: kopia z tego PC zostaje jako %{copy}, zapis lokalny; otworzy się ta z chmury."
+  es: "Conservar ambas: la copia de este PC se queda como %{copy}, una partida local; se abre la de la nube."
   ru: "Оставить обе: копия с этого ПК остаётся как %{copy}, локальное сохранение; открывается копия из облака."
   uk: "Залишити обидві: копія з цього ПК залишається як %{copy}, локальне збереження; відкривається копія з хмари."
 "Cloud saves":
@@ -190,6 +216,7 @@ _version: 2
   fr: "Sauvegardes cloud"
   nl: "Cloudopslag"
   pl: "Zapisy w chmurze"
+  es: "Partidas en la nube"
   ru: "Облачные сохранения"
   uk: "Хмарні збереження"
 "%{n} of %{max} used":
@@ -197,6 +224,7 @@ _version: 2
   fr: "%{n} sur %{max} utilisées"
   nl: "%{n} van %{max} in gebruik"
   pl: "Zajęte: %{n} z %{max}"
+  es: "%{n} de %{max} usadas"
   ru: "Занято %{n} из %{max}"
   uk: "Зайнято %{n} з %{max}"
 "Offline: your companies play on as local saves and sync when the network is back.":
@@ -204,6 +232,7 @@ _version: 2
   fr: "Hors ligne : vos entreprises continuent en sauvegardes locales et se synchronisent dès le retour du réseau."
   nl: "Offline: je bedrijven spelen door als lokale opslag en synchroniseren zodra het netwerk terug is."
   pl: "Offline: twoje firmy działają dalej jako zapisy lokalne i zsynchronizują się, gdy wróci sieć."
+  es: "Sin conexión: tus empresas siguen jugándose como partidas locales y se sincronizan cuando vuelva la red."
   ru: "Офлайн: ваши компании продолжают работать как локальные сохранения и синхронизируются, когда появится сеть."
   uk: "Офлайн: ваші компанії продовжують працювати як локальні збереження й синхронізуються, коли з'явиться мережа."
 "Empty slot":
@@ -211,6 +240,7 @@ _version: 2
   fr: "Emplacement libre"
   nl: "Lege plek"
   pl: "Wolne miejsce"
+  es: "Hueco libre"
   ru: "Свободный слот"
   uk: "Вільний слот"
 "Put a company in the cloud to play it on every PC you sign in on.":
@@ -218,6 +248,7 @@ _version: 2
   fr: "Mettez une entreprise dans le cloud pour la jouer sur chaque PC où vous vous connectez."
   nl: "Zet een bedrijf in de cloud om het te spelen op elke pc waarop je inlogt."
   pl: "Umieść firmę w chmurze, aby grać nią na każdym PC, na którym się zalogujesz."
+  es: "Pon una empresa en la nube para jugarla en cualquier PC en el que inicies sesión."
   ru: "Поместите компанию в облако, чтобы играть ею на любом ПК, где вы входите в аккаунт."
   uk: "Розмістіть компанію в хмарі, щоб грати нею на будь-якому ПК, де ви входите в обліковий запис."
 "Last sync %{when}":
@@ -225,6 +256,7 @@ _version: 2
   fr: "Dernière synchro le %{when}"
   nl: "Laatst gesynchroniseerd %{when}"
   pl: "Ostatnia synchronizacja %{when}"
+  es: "Última sincronización %{when}"
   ru: "Последняя синхронизация %{when}"
   uk: "Остання синхронізація %{when}"
 "Not on this PC":
@@ -232,6 +264,7 @@ _version: 2
   fr: "Pas sur ce PC"
   nl: "Niet op deze pc"
   pl: "Nie ma na tym PC"
+  es: "No está en este PC"
   ru: "Нет на этом ПК"
   uk: "Немає на цьому ПК"
 "Download to this PC":
@@ -239,6 +272,7 @@ _version: 2
   fr: "Télécharger sur ce PC"
   nl: "Naar deze pc downloaden"
   pl: "Pobierz na ten PC"
+  es: "Descargar a este PC"
   ru: "Скачать на этот ПК"
   uk: "Завантажити на цей ПК"
 "Remove from the cloud":
@@ -246,6 +280,7 @@ _version: 2
   fr: "Retirer du cloud"
   nl: "Uit de cloud verwijderen"
   pl: "Usuń z chmury"
+  es: "Quitar de la nube"
   ru: "Удалить из облака"
   uk: "Видалити з хмари"
 "Remove for good?":
@@ -253,6 +288,7 @@ _version: 2
   fr: "Retirer définitivement ?"
   nl: "Definitief verwijderen?"
   pl: "Usunąć na dobre?"
+  es: "¿Quitar para siempre?"
   ru: "Удалить навсегда?"
   uk: "Видалити назавжди?"
 "Put this company in the cloud":
@@ -260,6 +296,7 @@ _version: 2
   fr: "Mettre cette entreprise dans le cloud"
   nl: "Dit bedrijf in de cloud zetten"
   pl: "Umieść tę firmę w chmurze"
+  es: "Poner esta empresa en la nube"
   ru: "Поместить эту компанию в облако"
   uk: "Розмістити цю компанію в хмарі"
 "%{name} stays local. Local saves are unlimited and can still host company multiplayer.":
@@ -267,6 +304,7 @@ _version: 2
   fr: "%{name} reste en local. Les sauvegardes locales sont illimitées et peuvent toujours héberger le multijoueur d'entreprise."
   nl: "%{name} blijft lokaal. Lokale opslag is onbeperkt en kan nog steeds bedrijfsmultiplayer hosten."
   pl: "%{name} zostaje lokalnie. Zapisy lokalne są bez limitu i nadal mogą hostować tryb wieloosobowy firmy."
+  es: "%{name} se queda en local. Las partidas locales son ilimitadas y pueden seguir alojando el multijugador de empresa."
   ru: "%{name} остаётся локальной. Локальных сохранений сколько угодно, и они по-прежнему могут проводить совместную игру компании."
   uk: "%{name} залишається локальною. Локальних збережень скільки завгодно, і вони, як і раніше, можуть проводити спільну гру компанії."
 "Keep it local":
@@ -274,6 +312,7 @@ _version: 2
   fr: "Garder en local"
   nl: "Lokaal houden"
   pl: "Zostaw lokalnie"
+  es: "Mantenerla en local"
   ru: "Оставить локально"
   uk: "Залишити локально"
 "Replace %{name}":
@@ -281,6 +320,7 @@ _version: 2
   fr: "Remplacer %{name}"
   nl: "%{name} vervangen"
   pl: "Zastąp %{name}"
+  es: "Sustituir %{name}"
   ru: "Заменить %{name}"
   uk: "Замінити %{name}"
 "Replace %{name} for good?":
@@ -288,6 +328,7 @@ _version: 2
   fr: "Remplacer %{name} définitivement ?"
   nl: "%{name} definitief vervangen?"
   pl: "Zastąpić %{name} na dobre?"
+  es: "¿Sustituir %{name} para siempre?"
   ru: "Заменить %{name} навсегда?"
   uk: "Замінити %{name} назавжди?"
 "Replacing removes that company from the cloud. Its copy on this PC, if any, stays as a local save.":
@@ -295,6 +336,7 @@ _version: 2
   fr: "Remplacer retire cette entreprise du cloud. Sa copie sur ce PC, s'il y en a une, reste en sauvegarde locale."
   nl: "Vervangen verwijdert dat bedrijf uit de cloud. Een kopie op deze pc blijft als lokale opslag."
   pl: "Zastąpienie usuwa tę firmę z chmury. Jej kopia na tym PC, jeśli jest, zostaje jako zapis lokalny."
+  es: "Sustituirla quita esa empresa de la nube. Su copia en este PC, si la hay, se queda como partida local."
   ru: "Замена удаляет ту компанию из облака. Её копия на этом ПК, если есть, остаётся локальным сохранением."
   uk: "Заміна видаляє ту компанію з хмари. Її копія на цьому ПК, якщо є, залишається локальним збереженням."
 "At most 2 companies in the cloud. Every other company is a local save on this PC: unlimited, and it can still host company multiplayer.":
@@ -302,6 +344,7 @@ _version: 2
   fr: "Au plus 2 entreprises dans le cloud. Toute autre entreprise est une sauvegarde locale sur ce PC : illimitée, et elle peut toujours héberger le multijoueur d'entreprise."
   nl: "Maximaal 2 bedrijven in de cloud. Elk ander bedrijf is lokale opslag op deze pc: onbeperkt, en het kan nog steeds bedrijfsmultiplayer hosten."
   pl: "Najwyżej 2 firmy w chmurze. Każda inna firma to zapis lokalny na tym PC: bez limitu i nadal może hostować tryb wieloosobowy firmy."
+  es: "Como máximo 2 empresas en la nube. Todas las demás son partidas locales en este PC: ilimitadas, y pueden seguir alojando el multijugador de empresa."
   ru: "Не больше 2 компаний в облаке. Любая другая компания — локальное сохранение на этом ПК: без ограничений, и она по-прежнему может проводить совместную игру компании."
   uk: "Не більше 2 компаній у хмарі. Будь-яка інша компанія — локальне збереження на цьому ПК: без обмежень, і вона, як і раніше, може проводити спільну гру компанії."
 "Synced":
@@ -309,6 +352,7 @@ _version: 2
   fr: "Synchronisée"
   nl: "Gesynchroniseerd"
   pl: "Zsynchronizowano"
+  es: "Sincronizada"
   ru: "Синхронизировано"
   uk: "Синхронізовано"
 "Uploading":
@@ -316,6 +360,7 @@ _version: 2
   fr: "Envoi en cours"
   nl: "Wordt geüpload"
   pl: "Wysyłanie"
+  es: "Subiendo"
   ru: "Загрузка в облако"
   uk: "Вивантаження в хмару"
 "Newer in the cloud":
@@ -323,6 +368,7 @@ _version: 2
   fr: "Plus récente dans le cloud"
   nl: "Nieuwer in de cloud"
   pl: "Nowsza w chmurze"
+  es: "Más reciente en la nube"
   ru: "Новее в облаке"
   uk: "Новіша в хмарі"
 "Changed on both":
@@ -330,6 +376,7 @@ _version: 2
   fr: "Modifiée des deux côtés"
   nl: "Aan beide kanten gewijzigd"
   pl: "Zmieniona w obu miejscach"
+  es: "Cambiada en ambos"
   ru: "Изменена в обоих местах"
   uk: "Змінено в обох місцях"
 "Not synced":
@@ -337,6 +384,7 @@ _version: 2
   fr: "Non synchronisée"
   nl: "Niet gesynchroniseerd"
   pl: "Nie zsynchronizowano"
+  es: "Sin sincronizar"
   ru: "Не синхронизировано"
   uk: "Не синхронізовано"
 "Both cloud slots are taken: keep this company local, or replace one of your 2 cloud companies.":
@@ -344,6 +392,7 @@ _version: 2
   fr: "Les deux emplacements cloud sont pris : gardez cette entreprise en local, ou remplacez l'une de vos 2 entreprises cloud."
   nl: "Beide cloudplekken zijn bezet: houd dit bedrijf lokaal, of vervang een van je 2 cloudbedrijven."
   pl: "Oba miejsca w chmurze są zajęte: zostaw tę firmę lokalnie albo zastąp jedną z 2 firm w chmurze."
+  es: "Los dos huecos de la nube están ocupados: mantén esta empresa en local o sustituye una de tus 2 empresas en la nube."
   ru: "Оба облачных слота заняты: оставьте эту компанию локальной или замените одну из 2 облачных компаний."
   uk: "Обидва хмарні слоти зайняті: залиште цю компанію локальною або замініть одну з 2 хмарних компаній."
 "This company changed on this PC and in the cloud since it was last synced.":
@@ -351,6 +400,7 @@ _version: 2
   fr: "Cette entreprise a changé sur ce PC et dans le cloud depuis la dernière synchronisation."
   nl: "Dit bedrijf is sinds de laatste synchronisatie op deze pc en in de cloud gewijzigd."
   pl: "Ta firma zmieniła się na tym PC i w chmurze od ostatniej synchronizacji."
+  es: "Esta empresa ha cambiado en este PC y en la nube desde la última sincronización."
   ru: "Эта компания изменилась и на этом ПК, и в облаке с последней синхронизации."
   uk: "Ця компанія змінилася і на цьому ПК, і в хмарі з останньої синхронізації."
 "This company is too large for the cloud (at most 25 MB compressed). It stays local.":
@@ -358,6 +408,7 @@ _version: 2
   fr: "Cette entreprise est trop grande pour le cloud (25 Mo compressés au plus). Elle reste en local."
   nl: "Dit bedrijf is te groot voor de cloud (maximaal 25 MB gecomprimeerd). Het blijft lokaal."
   pl: "Ta firma jest za duża na chmurę (najwyżej 25 MB po kompresji). Zostaje lokalnie."
+  es: "Esta empresa es demasiado grande para la nube (como máximo 25 MB comprimida). Se queda en local."
   ru: "Эта компания слишком велика для облака (не больше 25 МБ в сжатом виде). Она остаётся локальной."
   uk: "Ця компанія завелика для хмари (не більше 25 МБ у стиснутому вигляді). Вона залишається локальною."
 "This cloud save is not there any more.":
@@ -365,6 +416,7 @@ _version: 2
   fr: "Cette sauvegarde cloud n'existe plus."
   nl: "Deze cloudopslag is er niet meer."
   pl: "Tego zapisu w chmurze już nie ma."
+  es: "Esta partida en la nube ya no existe."
   ru: "Этого облачного сохранения больше нет."
   uk: "Цього хмарного збереження більше немає."
 "The cloud storage refused the upload. Try again.":
@@ -372,6 +424,7 @@ _version: 2
   fr: "Le stockage cloud a refusé l'envoi. Réessayez."
   nl: "De cloudopslag heeft de upload geweigerd. Probeer het opnieuw."
   pl: "Magazyn w chmurze odrzucił wysyłany plik. Spróbuj ponownie."
+  es: "El almacenamiento en la nube ha rechazado la subida. Vuelve a intentarlo."
   ru: "Облачное хранилище отклонило загрузку. Попробуйте ещё раз."
   uk: "Хмарне сховище відхилило вивантаження. Спробуйте ще раз."
 "The cloud save is damaged: its checksum is wrong. Nothing was changed.":
@@ -379,6 +432,7 @@ _version: 2
   fr: "La sauvegarde cloud est endommagée : sa somme de contrôle est fausse. Rien n'a été modifié."
   nl: "De cloudopslag is beschadigd: de controlesom klopt niet. Er is niets gewijzigd."
   pl: "Zapis w chmurze jest uszkodzony: suma kontrolna się nie zgadza. Nic nie zmieniono."
+  es: "La partida en la nube está dañada: su suma de comprobación es incorrecta. No se ha cambiado nada."
   ru: "Облачное сохранение повреждено: контрольная сумма не совпадает. Ничего не изменено."
   uk: "Хмарне збереження пошкоджене: контрольна сума не збігається. Нічого не змінено."
 "This deletes your profile, your friends, your invites, your cloud saves and then the account itself. Your companies on this PC stay, as local saves. It cannot be undone.":
@@ -386,6 +440,7 @@ _version: 2
   fr: "Cela supprime votre profil, vos amis, vos invitations, vos sauvegardes cloud puis le compte lui-même. Vos entreprises sur ce PC restent, en sauvegardes locales. C'est irréversible."
   nl: "Dit verwijdert je profiel, je vrienden, je uitnodigingen, je cloudopslag en daarna het account zelf. Je bedrijven op deze pc blijven, als lokale opslag. Het kan niet ongedaan worden gemaakt."
   pl: "To usunie twój profil, znajomych, zaproszenia, zapisy w chmurze, a potem samo konto. Twoje firmy na tym PC zostaną jako zapisy lokalne. Nie da się tego cofnąć."
+  es: "Esto borra tu perfil, tus amigos, tus invitaciones, tus partidas en la nube y después la propia cuenta. Tus empresas en este PC se quedan, como partidas locales. No se puede deshacer."
   ru: "Будут удалены ваш профиль, друзья, приглашения, облачные сохранения, а затем и сам аккаунт. Ваши компании на этом ПК останутся локальными сохранениями. Отменить это нельзя."
   uk: "Буде видалено ваш профіль, друзів, запрошення, хмарні збереження, а потім і сам обліковий запис. Ваші компанії на цьому ПК залишаться локальними збереженнями. Скасувати це неможливо."
 "Local company to put in the cloud":
@@ -393,5 +448,6 @@ _version: 2
   fr: "Entreprise locale à mettre dans le cloud"
   nl: "Lokaal bedrijf om in de cloud te zetten"
   pl: "Lokalna firma do umieszczenia w chmurze"
+  es: "Empresa local para poner en la nube"
   ru: "Локальная компания для облака"
   uk: "Локальна компанія для хмари"

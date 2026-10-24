@@ -7,6 +7,7 @@ _version: 2
   fr: "Ce qu'est RosterFlow"
   nl: "Wat RosterFlow is"
   pl: "Czym jest RosterFlow"
+  es: "Qué es RosterFlow"
   ru: "Что такое RosterFlow"
   uk: "Що таке RosterFlow"
 "Reading the screen":
@@ -14,6 +15,7 @@ _version: 2
   fr: "Lire l'écran"
   nl: "Het scherm lezen"
   pl: "Jak czytać ekran"
+  es: "Cómo leer la pantalla"
   ru: "Как читать экран"
   uk: "Як читати екран"
 "Start planning":
@@ -21,6 +23,7 @@ _version: 2
   fr: "Commencer à planifier"
   nl: "Aan de slag met plannen"
   pl: "Zacznij planować"
+  es: "Empezar a planificar"
   ru: "Начать планирование"
   uk: "Почати планування"
 "Welcome to RosterFlow":
@@ -28,6 +31,7 @@ _version: 2
   fr: "Bienvenue dans RosterFlow"
   nl: "Welkom bij RosterFlow"
   pl: "Witaj w RosterFlow"
+  es: "Bienvenido a RosterFlow"
   ru: "Добро пожаловать в RosterFlow"
   uk: "Ласкаво просимо до RosterFlow"
 "RosterFlow plans your company's day: when the buses run, which bus drives which trips, and which driver drives which bus. It is a chain of four steps, and nothing counts until you save. Let's walk along it.":
@@ -35,6 +39,7 @@ _version: 2
   fr: "RosterFlow planifie la journée de votre entreprise : quand les bus circulent, quel bus fait quelles courses et quel conducteur conduit quel bus. C'est une chaîne de quatre étapes, et rien ne compte tant que vous n'avez pas enregistré. Parcourons-la ensemble."
   nl: "RosterFlow plant de dag van je bedrijf: wanneer de bussen rijden, welke bus welke ritten rijdt en welke chauffeur op welke bus zit. Het is een keten van vier stappen, en niets telt voordat je opslaat. Laten we hem samen doorlopen."
   pl: "RosterFlow planuje dzień twojej firmy: kiedy jeżdżą autobusy, który autobus wykonuje które kursy i który kierowca prowadzi który autobus. To łańcuch czterech kroków i nic się nie liczy, dopóki nie zapiszesz. Przejdźmy go razem."
+  es: "RosterFlow planifica el día de tu empresa: cuándo circulan los autobuses, qué autobús hace qué viajes y qué conductor lleva qué autobús. Es una cadena de cuatro pasos, y nada cuenta hasta que guardas. Vamos a recorrerla."
   ru: "RosterFlow планирует день вашей компании: когда ходят автобусы, какой автобус выполняет какие рейсы и какой водитель ведёт какой автобус. Это цепочка из четырёх шагов, и ничего не вступает в силу, пока вы не сохраните. Пройдём её вместе."
   uk: "RosterFlow планує день вашої компанії: коли ходять автобуси, який автобус виконує які рейси і який водій веде який автобус. Це ланцюжок із чотирьох кроків, і ніщо не діє, доки ви не збережете. Пройдімо його разом."
 "1. Timeplan: when the buses run":
@@ -42,6 +47,7 @@ _version: 2
   fr: "1. Plan horaire : quand les bus circulent"
   nl: "1. Dienstregelingsplan: wanneer de bussen rijden"
   pl: "1. Plan rozkładu: kiedy jeżdżą autobusy"
+  es: "1. Plan horario: cuándo circulan los autobuses"
   ru: "1. План расписания: когда ходят автобусы"
   uk: "1. План розкладу: коли ходять автобуси"
 "Here a line gets its timetable: the minutes a bus needs from stop to stop, and how often a bus leaves. Every other step is built from these trips.":
@@ -49,6 +55,7 @@ _version: 2
   fr: "Ici, une ligne reçoit son horaire : les minutes qu'il faut à un bus d'un arrêt à l'autre, et la fréquence des départs. Toutes les autres étapes sont construites à partir de ces courses."
   nl: "Hier krijgt een lijn zijn dienstregeling: de minuten die een bus nodig heeft van halte tot halte, en hoe vaak er een bus vertrekt. Alle andere stappen bouwen op deze ritten voort."
   pl: "Tu linia dostaje swój rozkład: ile minut autobus potrzebuje od przystanku do przystanku i jak często odjeżdża. Wszystkie pozostałe kroki budowane są z tych kursów."
+  es: "Aquí una línea recibe su horario: los minutos que necesita un autobús de parada a parada y cada cuánto sale un autobús. Todos los demás pasos se construyen a partir de estos viajes."
   ru: "Здесь линия получает расписание: сколько минут автобусу нужно от остановки до остановки и как часто он отправляется. Все остальные шаги строятся из этих рейсов."
   uk: "Тут лінія отримує розклад: скільки хвилин автобусу потрібно від зупинки до зупинки і як часто він вирушає. Усі інші кроки будуються з цих рейсів."
 "2. Vehicles: which bus drives which trips":
@@ -56,6 +63,7 @@ _version: 2
   fr: "2. Véhicules : quel bus fait quelles courses"
   nl: "2. Voertuigen: welke bus welke ritten rijdt"
   pl: "2. Pojazdy: który autobus wykonuje które kursy"
+  es: "2. Vehículos: qué autobús hace qué viajes"
   ru: "2. Транспорт: какой автобус выполняет какие рейсы"
   uk: "2. Транспорт: який автобус виконує які рейси"
 "The day's trips are shared out among your buses. One bus's day of trips is called a block. A good block keeps the bus busy and has few empty runs.":
@@ -63,6 +71,7 @@ _version: 2
   fr: "Les courses de la journée sont réparties entre vos bus. La journée de courses d'un bus s'appelle un bloc. Un bon bloc occupe bien le bus et compte peu de trajets à vide."
   nl: "De ritten van de dag worden over je bussen verdeeld. De dag met ritten van één bus heet een omloop. Een goede omloop houdt de bus bezig en heeft weinig lege ritten."
   pl: "Kursy dnia są rozdzielane między twoje autobusy. Dzień kursów jednego autobusu to obieg. Dobry obieg dobrze wykorzystuje autobus i ma mało pustych przejazdów."
+  es: "Los viajes del día se reparten entre tus autobuses. El día de viajes de un autobús se llama recorrido. Un buen recorrido mantiene ocupado el autobús y tiene pocos viajes en vacío."
   ru: "Рейсы дня распределяются между вашими автобусами. День рейсов одного автобуса называется выпуском. Хороший выпуск держит автобус занятым, и в нём мало порожних пробегов."
   uk: "Рейси дня розподіляються між вашими автобусами. День рейсів одного автобуса називається випуском. Добрий випуск тримає автобус зайнятим, і в ньому мало порожніх пробігів."
 "3. Drivers: who drives":
@@ -70,6 +79,7 @@ _version: 2
   fr: "3. Conducteurs : qui conduit"
   nl: "3. Chauffeurs: wie rijdt"
   pl: "3. Kierowcy: kto prowadzi"
+  es: "3. Conductores: quién conduce"
   ru: "3. Водители: кто ведёт"
   uk: "3. Водії: хто веде"
 "A bus's day is too long for one driver, so each block is cut into duties: one driver's working day. A cut can only be made where a driver can get on or off: at a terminus or at the depot.":
@@ -77,6 +87,7 @@ _version: 2
   fr: "La journée d'un bus est trop longue pour un seul conducteur : chaque bloc est donc découpé en services de conduite, la journée de travail d'un conducteur. On ne peut couper que là où un conducteur peut monter ou descendre : à un terminus ou au dépôt."
   nl: "De dag van een bus is te lang voor één chauffeur, dus wordt elke omloop in diensten geknipt: de werkdag van één chauffeur. Knippen kan alleen waar een chauffeur in of uit kan stappen: aan een eindhalte of bij de remise."
   pl: "Dzień autobusu jest za długi dla jednego kierowcy, więc każdy obieg dzieli się na służby: dzień pracy jednego kierowcy. Podzielić można tylko tam, gdzie kierowca może wsiąść lub wysiąść: na pętli lub w zajezdni."
+  es: "El día de un autobús es demasiado largo para un solo conductor, así que cada recorrido se corta en servicios: la jornada de trabajo de un conductor. Solo se puede cortar donde un conductor puede subir o bajar: en una cabecera o en la cochera."
   ru: "День автобуса слишком длинный для одного водителя, поэтому каждый выпуск делится на смены: рабочий день одного водителя. Разрезать можно только там, где водитель может сесть или сойти: на конечной или в депо."
   uk: "День автобуса задовгий для одного водія, тож кожен випуск ділиться на зміни: робочий день одного водія. Розрізати можна лише там, де водій може сісти чи зійти: на кінцевій або в депо."
 "4. Roster: which driver, which day":
@@ -84,6 +95,7 @@ _version: 2
   fr: "4. Roulement du personnel : quel conducteur, quel jour"
   nl: "4. Rooster: welke chauffeur, welke dag"
   pl: "4. Grafik: który kierowca, który dzień"
+  es: "4. Cuadrante: qué conductor, qué día"
   ru: "4. График: какой водитель, какой день"
   uk: "4. Графік: який водій, який день"
 "Here your drivers get their duties and your buses their blocks, weekday by weekday. What you plan for a Monday repeats every Monday.":
@@ -91,6 +103,7 @@ _version: 2
   fr: "Ici, vos conducteurs reçoivent leurs services et vos bus leurs blocs, jour de semaine par jour de semaine. Ce que vous planifiez pour un lundi se répète chaque lundi."
   nl: "Hier krijgen je chauffeurs hun diensten en je bussen hun omlopen, weekdag voor weekdag. Wat je voor een maandag plant, herhaalt zich elke maandag."
   pl: "Tutaj kierowcy dostają służby, a autobusy obiegi, dzień tygodnia po dniu. To, co zaplanujesz na poniedziałek, powtarza się w każdy poniedziałek."
+  es: "Aquí tus conductores reciben sus servicios y tus autobuses sus recorridos, día de la semana a día de la semana. Lo que planificas para un lunes se repite todos los lunes."
   ru: "Здесь водители получают смены, а автобусы — выпуски, день недели за днём. То, что вы запланируете на понедельник, повторяется каждый понедельник."
   uk: "Тут водії отримують зміни, а автобуси — випуски, день тижня за днем. Те, що ви заплануєте на понеділок, повторюється щопонеділка."
 "Then SAVE":
@@ -98,6 +111,7 @@ _version: 2
   fr: "Puis ENREGISTRER"
   nl: "Dan OPSLAAN"
   pl: "Potem ZAPISZ"
+  es: "Después, GUARDAR"
   ru: "Затем СОХРАНИТЬ"
   uk: "Потім ЗБЕРЕГТИ"
 "Your changes in Vehicles and Drivers are a draft. SAVE makes them the company's planning: the roster, the day and the game run it. DISCARD throws the draft away and goes back to what was saved.":
@@ -105,6 +119,7 @@ _version: 2
   fr: "Vos modifications dans Véhicules et Conducteurs sont un brouillon. ENREGISTRER en fait la planification de l'entreprise : le roulement, la journée et le jeu l'appliquent. ABANDONNER jette le brouillon et revient à ce qui était enregistré."
   nl: "Je wijzigingen in Voertuigen en Chauffeurs zijn een concept. OPSLAAN maakt ze de planning van het bedrijf: het rooster, de dag en het spel rijden ermee. VERWERPEN gooit het concept weg en gaat terug naar wat was opgeslagen."
   pl: "Zmiany w Pojazdach i Kierowcach to szkic. ZAPISZ czyni je planem firmy: grafik, dzień i gra działają według niego. ODRZUĆ wyrzuca szkic i wraca do tego, co było zapisane."
+  es: "Tus cambios en Vehículos y Conductores son un borrador. GUARDAR los convierte en la planificación de la empresa: el cuadrante, el día y el juego la usan. DESCARTAR tira el borrador y vuelve a lo guardado."
   ru: "Ваши изменения в «Транспорте» и «Водителях» — это черновик. СОХРАНИТЬ делает их планом компании: по нему работают график, день и игра. ОТМЕНИТЬ выбрасывает черновик и возвращает сохранённое."
   uk: "Ваші зміни в «Транспорті» та «Водіях» — це чернетка. ЗБЕРЕГТИ робить їх планом компанії: за ним працюють графік, день і гра. СКАСУВАТИ викидає чернетку й повертає збережене."
 "The title bar":
@@ -112,6 +127,7 @@ _version: 2
   fr: "La barre de titre"
   nl: "De titelbalk"
   pl: "Pasek tytułu"
+  es: "La barra de título"
   ru: "Строка заголовка"
   uk: "Рядок заголовка"
 "On the left: the rules (preferences), printing, search by ID and the optimiser's settings. In the middle your company and the day, with a dot: green is saved, orange means there are changes not saved yet.":
@@ -119,6 +135,7 @@ _version: 2
   fr: "À gauche : les règles (préférences), l'impression, la recherche par identifiant et les réglages de l'optimiseur. Au milieu, votre entreprise et le jour, avec un point : vert, c'est enregistré ; orange, il reste des modifications non enregistrées."
   nl: "Links: de regels (voorkeuren), afdrukken, zoeken op ID en de instellingen van de optimalisatie. In het midden je bedrijf en de dag, met een stip: groen is opgeslagen, oranje betekent dat er nog niet-opgeslagen wijzigingen zijn."
   pl: "Po lewej: reguły (preferencje), drukowanie, wyszukiwanie po ID i ustawienia optymalizacji. Pośrodku twoja firma i dzień z kropką: zielona to zapisane, pomarańczowa oznacza niezapisane zmiany."
+  es: "A la izquierda: las reglas (preferencias), la impresión, la búsqueda por ID y los ajustes del optimizador. En el centro, tu empresa y el día, con un punto: verde es guardado, naranja significa que hay cambios aún sin guardar."
   ru: "Слева: правила (настройки), печать, поиск по номеру и параметры оптимизации. В середине ваша компания и день с точкой: зелёная — сохранено, оранжевая — есть несохранённые изменения."
   uk: "Ліворуч: правила (налаштування), друк, пошук за номером і параметри оптимізації. Посередині ваша компанія і день із крапкою: зелена — збережено, помаранчева — є незбережені зміни."
 "Undo, redo and history":
@@ -126,6 +143,7 @@ _version: 2
   fr: "Annuler, rétablir et historique"
   nl: "Ongedaan maken, opnieuw en geschiedenis"
   pl: "Cofnij, ponów i historia"
+  es: "Deshacer, rehacer e historial"
   ru: "Отмена, повтор и история"
   uk: "Скасування, повтор та історія"
 "Every change can be undone (Ctrl+Z) and done again (Ctrl+Y). The clock lists all your changes, so you can go back to any one of them.":
@@ -133,6 +151,7 @@ _version: 2
   fr: "Chaque modification peut être annulée (Ctrl+Z) et rétablie (Ctrl+Y). L'horloge liste toutes vos modifications : vous pouvez revenir à n'importe laquelle."
   nl: "Elke wijziging kun je ongedaan maken (Ctrl+Z) en opnieuw doen (Ctrl+Y). De klok toont al je wijzigingen, zodat je naar elk ervan terug kunt."
   pl: "Każdą zmianę można cofnąć (Ctrl+Z) i ponowić (Ctrl+Y). Zegar pokazuje wszystkie zmiany, więc możesz wrócić do dowolnej z nich."
+  es: "Cualquier cambio se puede deshacer (Ctrl+Z) y rehacer (Ctrl+Y). El reloj muestra todos tus cambios, para que puedas volver a cualquiera de ellos."
   ru: "Любое изменение можно отменить (Ctrl+Z) и повторить (Ctrl+Y). Часы показывают все ваши изменения, и к любому из них можно вернуться."
   uk: "Будь-яку зміну можна скасувати (Ctrl+Z) і повторити (Ctrl+Y). Годинник показує всі ваші зміни, і до будь-якої з них можна повернутися."
 "The day you plan":
@@ -140,6 +159,7 @@ _version: 2
   fr: "Le jour que vous planifiez"
   nl: "De dag die je plant"
   pl: "Dzień, który planujesz"
+  es: "El día que planificas"
   ru: "День, который вы планируете"
   uk: "День, який ви плануєте"
 "Choose the day here. A day's planning holds for that weekday every week: change a Tuesday and every Tuesday changes.":
@@ -147,6 +167,7 @@ _version: 2
   fr: "Choisissez le jour ici. La planification d'un jour vaut pour ce jour de la semaine chaque semaine : modifiez un mardi, et tous les mardis changent."
   nl: "Kies hier de dag. De planning van een dag geldt elke week voor die weekdag: verander een dinsdag en elke dinsdag verandert."
   pl: "Tutaj wybierasz dzień. Plan dnia obowiązuje w ten dzień tygodnia co tydzień: zmień wtorek, a zmieni się każdy wtorek."
+  es: "Elige aquí el día. La planificación de un día vale para ese día de la semana todas las semanas: si cambias un martes, cambian todos los martes."
   ru: "Выберите здесь день. План дня действует для этого дня недели каждую неделю: измените вторник — изменится каждый вторник."
   uk: "Виберіть тут день. План дня діє для цього дня тижня щотижня: змініть вівторок — зміниться кожен вівторок."
 "How many duties and buses":
@@ -154,6 +175,7 @@ _version: 2
   fr: "Combien de services et de bus"
   nl: "Hoeveel diensten en bussen"
   pl: "Ile służb i autobusów"
+  es: "Cuántos servicios y autobuses"
   ru: "Сколько смен и автобусов"
   uk: "Скільки змін і автобусів"
 "Duties: how many drivers' working days the day needs. Blocks: how many buses drive; PVR is how many are out at the busiest moment. Fewer is cheaper, as long as every trip is driven.":
@@ -161,6 +183,7 @@ _version: 2
   fr: "Services : combien de journées de conducteurs il faut. Blocs : combien de bus roulent ; la pointe est le nombre de bus en ligne au moment le plus chargé. Moins, c'est moins cher, tant que chaque course est assurée."
   nl: "Diensten: hoeveel werkdagen van chauffeurs de dag nodig heeft. Omlopen: hoeveel bussen er rijden; de piek is hoeveel er op het drukste moment tegelijk onderweg zijn. Minder is goedkoper, zolang elke rit gereden wordt."
   pl: "Służby: ile dni pracy kierowców potrzeba. Obiegi: ile autobusów jeździ; szczyt to ile jest w trasie w najbardziej ruchliwej chwili. Mniej znaczy taniej, pod warunkiem że każdy kurs jest wykonany."
+  es: "Servicios: cuántas jornadas de conductor necesita el día. Recorridos: cuántos autobuses circulan; PVR es cuántos están fuera en el momento de más actividad. Menos es más barato, siempre que se hagan todos los viajes."
   ru: "Смены: сколько рабочих дней водителей нужно на день. Выпуски: сколько автобусов работает; пик — сколько их на линии в самый загруженный момент. Меньше — дешевле, если каждый рейс выполняется."
   uk: "Зміни: скільки робочих днів водіїв потрібно на день. Випуски: скільки автобусів працює; пік — скільки їх на лінії в найзавантаженіший момент. Менше — дешевше, якщо кожен рейс виконується."
 "Efficiency and cost":
@@ -168,6 +191,7 @@ _version: 2
   fr: "Efficacité et coût"
   nl: "Efficiëntie en kosten"
   pl: "Efektywność i koszt"
+  es: "Eficiencia y coste"
   ru: "Эффективность и стоимость"
   uk: "Ефективність і вартість"
 "Vehicle efficiency: the share of the buses' kilometres that carry passengers. Crew efficiency: the share of paid time spent driving. Higher is better for both. After a change, green means better and red means worse. The small tab underneath shows more figures.":
@@ -175,6 +199,7 @@ _version: 2
   fr: "Efficacité des véhicules : la part des kilomètres des bus avec des voyageurs. Efficacité du personnel : la part du temps payé passée à conduire. Plus c'est haut, mieux c'est. Après une modification, le vert signifie mieux et le rouge moins bien. Le petit onglet en dessous montre d'autres chiffres."
   nl: "Voertuigefficiëntie: het deel van de buskilometers met reizigers. Personeelsefficiëntie: het deel van de betaalde tijd dat gereden wordt. Bij allebei is hoger beter. Na een wijziging betekent groen beter en rood slechter. Het kleine lipje eronder toont meer cijfers."
   pl: "Efektywność pojazdów: udział kilometrów autobusów z pasażerami. Efektywność załogi: udział płatnego czasu spędzonego za kierownicą. W obu przypadkach wyżej znaczy lepiej. Po zmianie zielony oznacza lepiej, a czerwony gorzej. Mała zakładka pod spodem pokazuje więcej liczb."
+  es: "Eficiencia de vehículos: la parte de los kilómetros de los autobuses que llevan pasajeros. Eficiencia de personal: la parte del tiempo pagado que se pasa conduciendo. En ambos casos, más alto es mejor. Tras un cambio, verde significa mejor y rojo peor. La pequeña pestaña de debajo muestra más cifras."
   ru: "Эффективность транспорта: доля километров автобусов с пассажирами. Эффективность персонала: доля оплачиваемого времени за рулём. Для обеих — чем выше, тем лучше. После изменения зелёный означает лучше, красный — хуже. Маленькая вкладка внизу показывает больше показателей."
   uk: "Ефективність транспорту: частка кілометрів автобусів із пасажирами. Ефективність персоналу: частка оплачуваного часу за кермом. Для обох — що вище, то краще. Після зміни зелений означає краще, червоний — гірше. Маленька вкладка внизу показує більше показників."
 "Stats, Layers and Filter":
@@ -182,6 +207,7 @@ _version: 2
   fr: "Statistiques, Calques et Filtre"
   nl: "Statistieken, Lagen en Filter"
   pl: "Statystyki, Warstwy i Filtr"
+  es: "Estadísticas, Capas y Filtro"
   ru: "Статистика, Слои и Фильтр"
   uk: "Статистика, Шари і Фільтр"
 "Stats adds columns of figures beside the rows; click a column's heading to sort. Layers chooses what the chips say: the line, the times or the stops. Filter shows only some lines, one direction or part of the day.":
@@ -189,6 +215,7 @@ _version: 2
   fr: "Statistiques ajoute des colonnes de chiffres à côté des lignes ; cliquez sur un en-tête pour trier. Calques choisit ce qu'affichent les puces : la ligne, les horaires ou les arrêts. Filtre n'affiche que certaines lignes, un sens ou une partie de la journée."
   nl: "Statistieken zet kolommen met cijfers naast de rijen; klik op een kolomkop om te sorteren. Lagen kiest wat er op de chips staat: de lijn, de tijden of de haltes. Filter toont alleen sommige lijnen, één richting of een deel van de dag."
   pl: "Statystyki dodają kolumny liczb obok wierszy; kliknij nagłówek, by sortować. Warstwy wybierają, co pokazują kafelki: linię, godziny lub przystanki. Filtr pokazuje tylko niektóre linie, jeden kierunek lub część dnia."
+  es: "Estadísticas añade columnas de cifras junto a las filas; haz clic en el encabezado de una columna para ordenar. Capas elige lo que dicen las fichas: la línea, las horas o las paradas. Filtro muestra solo algunas líneas, un sentido o parte del día."
   ru: "«Статистика» добавляет столбцы с цифрами рядом со строками; щелчок по заголовку сортирует. «Слои» выбирают, что написано на плашках: линия, время или остановки. «Фильтр» показывает только некоторые линии, одно направление или часть дня."
   uk: "«Статистика» додає стовпці з цифрами біля рядків; клацання по заголовку сортує. «Шари» вибирають, що написано на плашках: лінія, час чи зупинки. «Фільтр» показує лише деякі лінії, один напрямок або частину дня."
 "OPTIMIZE":
@@ -196,6 +223,7 @@ _version: 2
   fr: "OPTIMISER"
   nl: "OPTIMALISEREN"
   pl: "OPTYMALIZUJ"
+  es: "OPTIMIZAR"
   ru: "ОПТИМИЗИРОВАТЬ"
   uk: "ОПТИМІЗУВАТИ"
 "RosterFlow makes the blocks and duties for you and shows them as a proposal; the figures compare it with yours, and you accept it or keep yours. Locked rows stay as they are. The gear beside it chooses buses, duties or both.":
@@ -203,6 +231,7 @@ _version: 2
   fr: "RosterFlow construit les blocs et les services pour vous et les montre comme une proposition ; les chiffres la comparent à la vôtre, et vous l'acceptez ou gardez la vôtre. Les lignes verrouillées restent telles quelles. La roue dentée à côté choisit les bus, les services ou les deux."
   nl: "RosterFlow maakt de omlopen en diensten voor je en toont ze als voorstel; de cijfers vergelijken het met jouw planning, en jij neemt het over of houdt de jouwe. Vergrendelde rijen blijven zoals ze zijn. Het tandwiel ernaast kiest bussen, diensten of allebei."
   pl: "RosterFlow układa za ciebie obiegi i służby i pokazuje je jako propozycję; liczby porównują ją z twoją, a ty ją przyjmujesz albo zostajesz przy swojej. Zablokowane wiersze pozostają bez zmian. Zębatka obok wybiera autobusy, służby lub jedno i drugie."
+  es: "RosterFlow crea por ti los recorridos y servicios y los muestra como propuesta; las cifras la comparan con la tuya, y tú la aceptas o te quedas con la tuya. Las filas bloqueadas se quedan como están. El engranaje de al lado elige autobuses, servicios o ambos."
   ru: "RosterFlow сам составляет выпуски и смены и показывает их как предложение; показатели сравнивают его с вашим планом, а вы принимаете его или оставляете свой. Заблокированные строки не меняются. Шестерёнка рядом выбирает автобусы, смены или и то и другое."
   uk: "RosterFlow сам складає випуски й зміни та показує їх як пропозицію; показники порівнюють її з вашим планом, а ви приймаєте її або лишаєте свій. Заблоковані рядки не змінюються. Шестірня поруч вибирає автобуси, зміни або те й інше."
 "A row":
@@ -210,6 +239,7 @@ _version: 2
   fr: "Une ligne du tableau"
   nl: "Een rij"
   pl: "Wiersz"
+  es: "Una fila"
   ru: "Строка"
   uk: "Рядок"
 "Each row is one bus's block (in Drivers: one duty). On the left its ID and a tick box. Hover over the ID for the lock (OPTIMIZE leaves the row alone) and the pin (keeps it at the top).":
@@ -217,6 +247,7 @@ _version: 2
   fr: "Chaque ligne est le bloc d'un bus (dans Conducteurs : un service). À gauche, son identifiant et une case à cocher. Survolez l'identifiant pour le cadenas (OPTIMISER laisse la ligne tranquille) et l'épingle (la garde en haut)."
   nl: "Elke rij is de omloop van één bus (bij Chauffeurs: één dienst). Links staan de ID en een vinkje. Ga met de muis over de ID voor het slot (OPTIMALISEREN laat de rij met rust) en de punaise (houdt hem bovenaan)."
   pl: "Każdy wiersz to obieg jednego autobusu (w Kierowcach: jedna służba). Po lewej jego ID i pole wyboru. Najedź na ID, by zobaczyć kłódkę (OPTYMALIZUJ nie rusza wiersza) i pinezkę (trzyma go na górze)."
+  es: "Cada fila es el recorrido de un autobús (en Conductores: un servicio). A la izquierda, su ID y una casilla. Pasa el ratón por el ID para ver el candado (OPTIMIZAR no toca la fila) y la chincheta (la mantiene arriba)."
   ru: "Каждая строка — выпуск одного автобуса (в «Водителях» — одна смена). Слева номер и флажок. Наведите на номер, чтобы увидеть замок (ОПТИМИЗИРОВАТЬ не тронет строку) и булавку (держит её сверху)."
   uk: "Кожен рядок — випуск одного автобуса (у «Водіях» — одна зміна). Ліворуч номер і прапорець. Наведіть на номер, щоб побачити замок (ОПТИМІЗУВАТИ не чіпатиме рядок) і шпильку (тримає його вгорі)."
 "A trip":
@@ -224,6 +255,7 @@ _version: 2
   fr: "Une course"
   nl: "Een rit"
   pl: "Kurs"
+  es: "Un viaje"
   ru: "Рейс"
   uk: "Рейс"
 "Each coloured chip is one trip with passengers, in its line's colour. The pointed end shows the way it runs: right is outbound, left is inbound. Click it to see its card; drag it to move it.":
@@ -231,6 +263,7 @@ _version: 2
   fr: "Chaque puce colorée est une course avec voyageurs, dans la couleur de sa ligne. La pointe montre le sens : à droite c'est l'aller, à gauche le retour. Cliquez pour voir sa fiche ; faites-la glisser pour la déplacer."
   nl: "Elke gekleurde chip is één rit met reizigers, in de kleur van zijn lijn. De punt wijst de rijrichting aan: naar rechts is heen, naar links is terug. Klik erop voor zijn kaart; sleep hem om hem te verplaatsen."
   pl: "Każdy kolorowy kafelek to jeden kurs z pasażerami, w kolorze swojej linii. Szpic pokazuje kierunek: w prawo to kierunek tam, w lewo powrotny. Kliknij, by zobaczyć jego kartę; przeciągnij, by go przenieść."
+  es: "Cada ficha de color es un viaje con pasajeros, en el color de su línea. El extremo en punta indica el sentido: a la derecha es ida, a la izquierda es vuelta. Haz clic para ver su tarjeta; arrástrala para moverla."
   ru: "Каждая цветная плашка — один рейс с пассажирами, в цвете своей линии. Острый конец показывает направление: вправо — прямое, влево — обратное. Щёлкните, чтобы увидеть карточку; перетащите, чтобы переместить."
   uk: "Кожна кольорова плашка — один рейс із пасажирами, у кольорі своєї лінії. Гострий кінець показує напрямок: праворуч — прямий, ліворуч — зворотний. Клацніть, щоб побачити картку; перетягніть, щоб перемістити."
 "The other symbols":
@@ -238,6 +271,7 @@ _version: 2
   fr: "Les autres symboles"
   nl: "De andere symbolen"
   pl: "Pozostałe symbole"
+  es: "Los demás símbolos"
   ru: "Другие значки"
   uk: "Інші значки"
 "Grey-blue boxes take the bus out of the depot and back. Small dark boxes are empty runs; an orange dot means their time is a guess. Arrows mark a change of driver. Split is a long unpaid break, W, P or R a driver on the way to the next bus, and a red \"!\" a broken rule.":
@@ -245,6 +279,7 @@ _version: 2
   fr: "Les cases gris-bleu font sortir le bus du dépôt et l'y ramènent. Les petites cases sombres sont des trajets à vide ; un point orange signifie que leur durée est estimée. Les flèches marquent une relève de conducteur. Coupure est une longue pause non payée, W, P ou R un conducteur en route vers le bus suivant, et un « ! » rouge une règle enfreinte."
   nl: "Grijsblauwe vakjes brengen de bus uit de remise en terug. Kleine donkere vakjes zijn lege ritten; een oranje stip betekent dat hun tijd geschat is. Pijlen markeren een chauffeurswissel. Gebroken is een lange onbetaalde pauze, W, P of R een chauffeur op weg naar de volgende bus, en een rood „!” een overtreden regel."
   pl: "Szaroniebieskie prostokąty to wyjazd autobusu z zajezdni i powrót. Małe ciemne prostokąty to puste przejazdy; pomarańczowa kropka oznacza, że ich czas jest szacowany. Strzałki oznaczają zmianę kierowcy. „Przerwa” to długa niepłatna przerwa w służbie, W, P lub R to kierowca w drodze do następnego autobusu, a czerwony „!” to złamana reguła."
+  es: "Los recuadros gris azulado sacan el autobús de la cochera y lo devuelven. Los recuadros oscuros pequeños son viajes en vacío; un punto naranja significa que su tiempo es una estimación. Las flechas marcan un cambio de conductor. Partido es una pausa larga sin pagar; W, P o R, un conductor de camino al siguiente autobús; y un \"!\" rojo, una regla incumplida."
   ru: "Серо-голубые прямоугольники — выезд автобуса из депо и возврат. Маленькие тёмные — порожние пробеги; оранжевая точка значит, что их время примерное. Стрелки отмечают смену водителя. Разрыв — долгий неоплачиваемый перерыв, W, P или R — водитель в пути к следующему автобусу, а красный «!» — нарушенное правило."
   uk: "Сіро-блакитні прямокутники — виїзд автобуса з депо й повернення. Маленькі темні — порожні пробіги; помаранчева крапка означає, що їхній час приблизний. Стрілки позначають зміну водія. Розрив — довга неоплачувана перерва, W, P або R — водій дорогою до наступного автобуса, а червоний «!» — порушене правило."
 "Is every trip covered?":
@@ -252,6 +287,7 @@ _version: 2
   fr: "Chaque course est-elle couverte ?"
   nl: "Is elke rit gedekt?"
   pl: "Czy każdy kurs jest obsadzony?"
+  es: "¿Está cubierto cada viaje?"
   ru: "Все ли рейсы закрыты?"
   uk: "Чи всі рейси закриті?"
 "How many rows are shown, and how many trips have a bus and a driver. The numbers are red until every trip has both.":
@@ -259,6 +295,7 @@ _version: 2
   fr: "Combien de lignes sont affichées, et combien de courses ont un bus et un conducteur. Les nombres restent rouges tant que chaque course n'a pas les deux."
   nl: "Hoeveel rijen er getoond worden, en hoeveel ritten een bus en een chauffeur hebben. De getallen zijn rood tot elke rit allebei heeft."
   pl: "Ile wierszy jest widocznych i ile kursów ma autobus i kierowcę. Liczby są czerwone, dopóki każdy kurs nie ma obu."
+  es: "Cuántas filas se muestran y cuántos viajes tienen autobús y conductor. Los números están en rojo hasta que cada viaje tenga ambos."
   ru: "Сколько строк показано и у скольких рейсов есть автобус и водитель. Числа красные, пока у каждого рейса нет и того и другого."
   uk: "Скільки рядків показано і скільки рейсів мають автобус і водія. Числа червоні, доки кожен рейс не має і того, і іншого."
 "Issues and zoom":
@@ -266,6 +303,7 @@ _version: 2
   fr: "Problèmes et zoom"
   nl: "Problemen en zoom"
   pl: "Problemy i powiększenie"
+  es: "Problemas y zoom"
   ru: "Проблемы и масштаб"
   uk: "Проблеми та масштаб"
 "The issues: Global, Duty and Vehicle. Click one to see what is wrong and jump to it. On the right the zoom; Ctrl and the mouse wheel zoom the hours, Shift and the wheel move along the day.":
@@ -273,6 +311,7 @@ _version: 2
   fr: "Les problèmes : globaux, de service et de véhicule. Cliquez sur l'un d'eux pour voir ce qui ne va pas et y aller. À droite, le zoom ; Ctrl et la molette zooment sur les heures, Maj et la molette font défiler la journée."
   nl: "De problemen: Algemeen, Dienst en Voertuig. Klik er een aan om te zien wat er mis is en erheen te springen. Rechts de zoom; Ctrl en het muiswiel zoomen op de uren, Shift en het wiel schuiven langs de dag."
   pl: "Problemy: globalne, służb i pojazdów. Kliknij jeden, by zobaczyć, co jest nie tak, i do niego przejść. Po prawej powiększenie; Ctrl i kółko myszy powiększają godziny, Shift i kółko przesuwają dzień."
+  es: "Los problemas: Global, Servicio y Vehículo. Haz clic en uno para ver qué falla e ir a él. A la derecha, el zoom; Ctrl y la rueda del ratón amplían las horas, Shift y la rueda recorren el día."
   ru: "Проблемы: общие, смен и транспорта. Щёлкните, чтобы увидеть, что не так, и перейти к ней. Справа масштаб; Ctrl и колесо мыши масштабируют часы, Shift и колесо сдвигают день."
   uk: "Проблеми: загальні, змін і транспорту. Клацніть, щоб побачити, що не так, і перейти до неї. Праворуч масштаб; Ctrl і коліщатко миші масштабують години, Shift і коліщатко зсувають день."
 "The stack":
@@ -280,6 +319,7 @@ _version: 2
   fr: "La pile"
   nl: "De stapel"
   pl: "Stos"
+  es: "La pila"
   ru: "Стопка"
   uk: "Стос"
 "Trips that no bus drives wait here, above the rows. Click one, then one of the slots that appear, to give it to a bus.":
@@ -287,6 +327,7 @@ _version: 2
   fr: "Les courses qu'aucun bus n'assure attendent ici, au-dessus des lignes. Cliquez sur l'une, puis sur un des emplacements qui apparaissent, pour la confier à un bus."
   nl: "Ritten die geen bus rijdt, wachten hier boven de rijen. Klik er een aan en daarna een van de vakken die verschijnen, om hem aan een bus te geven."
   pl: "Kursy, których nie wykonuje żaden autobus, czekają tutaj, nad wierszami. Kliknij jeden, a potem jedno z pojawiających się miejsc, by dać go autobusowi."
+  es: "Los viajes que no hace ningún autobús esperan aquí, encima de las filas. Haz clic en uno y luego en uno de los huecos que aparecen para dárselo a un autobús."
   ru: "Рейсы, которые не выполняет ни один автобус, ждут здесь, над строками. Щёлкните рейс, затем одно из появившихся мест, чтобы отдать его автобусу."
   uk: "Рейси, які не виконує жоден автобус, чекають тут, над рядками. Клацніть рейс, а потім одне з місць, що з'являться, щоб віддати його автобусу."
 "Moving trips":
@@ -294,6 +335,7 @@ _version: 2
   fr: "Déplacer des courses"
   nl: "Ritten verplaatsen"
   pl: "Przenoszenie kursów"
+  es: "Mover viajes"
   ru: "Перемещение рейсов"
   uk: "Переміщення рейсів"
 "Drag a chip, or double-click it, to pick it up. Every bus it could go to shows a slot with stars: five is the cheapest, and blue means no rule is broken. Hover over a slot to see the cost, click to drop. Right-click a chip for more.":
@@ -301,6 +343,7 @@ _version: 2
   fr: "Faites glisser une puce, ou double-cliquez dessus, pour la prendre. Chaque bus qui peut la recevoir montre un emplacement avec des étoiles : cinq, c'est le moins cher, et le bleu signifie qu'aucune règle n'est enfreinte. Survolez un emplacement pour voir le coût, cliquez pour déposer. Clic droit sur une puce pour plus d'options."
   nl: "Sleep een chip, of dubbelklik erop, om hem op te pakken. Elke bus waar hij naartoe kan, toont een vak met sterren: vijf is het goedkoopst, en blauw betekent dat er geen regel wordt overtreden. Ga over een vak om de kosten te zien, klik om neer te zetten. Rechtsklik op een chip voor meer."
   pl: "Przeciągnij kafelek albo kliknij go dwukrotnie, by go podnieść. Każdy autobus, do którego może trafić, pokazuje miejsce z gwiazdkami: pięć to najtaniej, a niebieski oznacza, że żadna reguła nie jest łamana. Najedź na miejsce, by zobaczyć koszt, kliknij, by upuścić. Prawy klik na kafelek daje więcej opcji."
+  es: "Arrastra una ficha, o haz doble clic en ella, para cogerla. Cada autobús al que podría ir muestra un hueco con estrellas: cinco es lo más barato, y azul significa que no se incumple ninguna regla. Pasa el ratón por un hueco para ver el coste, haz clic para soltar. Clic derecho en una ficha para más opciones."
   ru: "Перетащите плашку или щёлкните по ней дважды, чтобы взять её. Каждый автобус, куда её можно поставить, показывает место со звёздами: пять — дешевле всего, синий цвет — ни одно правило не нарушено. Наведите на место, чтобы увидеть стоимость, щёлкните, чтобы поставить. Правый щелчок по плашке — больше действий."
   uk: "Перетягніть плашку або клацніть по ній двічі, щоб узяти її. Кожен автобус, куди її можна поставити, показує місце із зірками: п'ять — найдешевше, синій колір — жодне правило не порушено. Наведіть на місце, щоб побачити вартість, клацніть, щоб поставити. Правий клік по плашці — більше дій."
 "Where drivers change":
@@ -308,6 +351,7 @@ _version: 2
   fr: "Où les conducteurs se relaient"
   nl: "Waar chauffeurs wisselen"
   pl: "Gdzie zmieniają się kierowcy"
+  es: "Dónde se relevan los conductores"
   ru: "Где меняются водители"
   uk: "Де змінюються водії"
 "The arrows mark where one driver hands the bus to the next; click them to join the two duties again. Hover over a gap between two trips: where a blue line shows, a click cuts a new duty there.":
@@ -315,6 +359,7 @@ _version: 2
   fr: "Les flèches marquent l'endroit où un conducteur passe le bus au suivant ; cliquez dessus pour réunir les deux services. Survolez l'intervalle entre deux courses : là où une ligne bleue apparaît, un clic y coupe un nouveau service."
   nl: "De pijlen markeren waar de ene chauffeur de bus aan de volgende overdraagt; klik erop om de twee diensten weer samen te voegen. Ga over een gat tussen twee ritten: waar een blauwe streep verschijnt, knipt een klik daar een nieuwe dienst af."
   pl: "Strzałki pokazują, gdzie kierowca przekazuje autobus następnemu; kliknij je, by znów połączyć dwie służby. Najedź na przerwę między dwoma kursami: tam, gdzie pojawi się niebieska linia, kliknięcie tworzy w tym miejscu nową służbę."
+  es: "Las flechas marcan dónde un conductor entrega el autobús al siguiente; haz clic en ellas para volver a unir los dos servicios. Pasa el ratón por un hueco entre dos viajes: donde aparece una línea azul, un clic corta ahí un servicio nuevo."
   ru: "Стрелки отмечают, где один водитель передаёт автобус другому; щёлкните по ним, чтобы снова объединить две смены. Наведите на промежуток между рейсами: где появится синяя черта, щелчок отрежет там новую смену."
   uk: "Стрілки позначають, де один водій передає автобус іншому; клацніть по них, щоб знову об'єднати дві зміни. Наведіть на проміжок між рейсами: де з'явиться синя риска, клік відріже там нову зміну."
 "A new vehicle":
@@ -322,6 +367,7 @@ _version: 2
   fr: "Un nouveau véhicule"
   nl: "Een nieuw voertuig"
   pl: "Nowy pojazd"
+  es: "Un vehículo nuevo"
   ru: "Новый автобус"
   uk: "Новий автобус"
 "Drop trips here to give them to an extra bus.":
@@ -329,6 +375,7 @@ _version: 2
   fr: "Déposez des courses ici pour les confier à un bus supplémentaire."
   nl: "Zet ritten hier neer om ze aan een extra bus te geven."
   pl: "Upuść tu kursy, by dać je dodatkowemu autobusowi."
+  es: "Suelta aquí viajes para dárselos a un autobús adicional."
   ru: "Поставьте рейсы сюда, чтобы отдать их дополнительному автобусу."
   uk: "Поставте рейси сюди, щоб віддати їх додатковому автобусу."
 "A duty":
@@ -336,6 +383,7 @@ _version: 2
   fr: "Un service de conduite"
   nl: "Een dienst"
   pl: "Służba"
+  es: "Un servicio"
   ru: "Смена"
   uk: "Зміна"
 "In Drivers each row is one driver's working day. It starts with the sign-on and ends with the sign-off (the T-shaped marks). In between are the pieces of work: the parts on one bus.":
@@ -343,6 +391,7 @@ _version: 2
   fr: "Dans Conducteurs, chaque ligne est la journée de travail d'un conducteur. Elle commence par la prise de service et finit par la fin de service (les marques en forme de T). Entre les deux, les parties de travail : les parties sur un même bus."
   nl: "Bij Chauffeurs is elke rij de werkdag van één chauffeur. Die begint met het aanmelden en eindigt met het afmelden (de T-vormige tekens). Daartussen zitten de dienststukken: de delen op één bus."
   pl: "W Kierowcach każdy wiersz to dzień pracy jednego kierowcy. Zaczyna się zgłoszeniem, a kończy zakończeniem służby (znaki w kształcie litery T). Pomiędzy są części pracy: odcinki na jednym autobusie."
+  es: "En Conductores, cada fila es la jornada de trabajo de un conductor. Empieza con la toma de servicio y termina con el fin de servicio (las marcas en forma de T). Entre medias están las partes de trabajo: los tramos en un mismo autobús."
   ru: "В «Водителях» каждая строка — рабочий день одного водителя. Он начинается с явки и заканчивается сдачей смены (Т-образные знаки). Между ними — части работы: отрезки на одном автобусе."
   uk: "У «Водіях» кожен рядок — робочий день одного водія. Він починається з явки й закінчується здачею зміни (Т-подібні знаки). Між ними — частини роботи: відрізки на одному автобусі."
 "Everything about a duty":
@@ -350,6 +399,7 @@ _version: 2
   fr: "Tout sur un service"
   nl: "Alles over een dienst"
   pl: "Wszystko o służbie"
+  es: "Todo sobre un servicio"
   ru: "Всё о смене"
   uk: "Усе про зміну"
 "Click a duty's ID to open its panel: its type, sign-on and sign-off, paid time, breaks, pieces of work and issues. You can lock it there, or add custom work such as office time.":
@@ -357,6 +407,7 @@ _version: 2
   fr: "Cliquez sur l'identifiant d'un service pour ouvrir son panneau : son type, la prise et la fin de service, le temps payé, les pauses, les parties de travail et les problèmes. Vous pouvez l'y verrouiller ou ajouter un travail particulier, comme du temps de bureau."
   nl: "Klik op de ID van een dienst om zijn paneel te openen: soort, aanmelden en afmelden, betaalde tijd, pauzes, dienststukken en problemen. Daar kun je hem vergrendelen of eigen werk toevoegen, zoals kantoortijd."
   pl: "Kliknij ID służby, by otworzyć jej panel: typ, zgłoszenie i zakończenie, czas płatny, przerwy, części pracy i problemy. Możesz ją tam zablokować albo dodać własną pracę, np. czas w biurze."
+  es: "Haz clic en el ID de un servicio para abrir su panel: su tipo, toma y fin de servicio, tiempo pagado, pausas, partes de trabajo y problemas. Allí puedes bloquearlo o añadir trabajo personalizado, como tiempo de oficina."
   ru: "Щёлкните номер смены, чтобы открыть её панель: тип, явка и сдача, оплачиваемое время, перерывы, части работы и проблемы. Там её можно заблокировать или добавить особую работу, например время в офисе."
   uk: "Клацніть номер зміни, щоб відкрити її панель: тип, явка і здача, оплачуваний час, перерви, частини роботи та проблеми. Там її можна заблокувати або додати особливу роботу, наприклад час в офісі."
 "Building a duty":
@@ -364,6 +415,7 @@ _version: 2
   fr: "Construire un service"
   nl: "Een dienst bouwen"
   pl: "Budowanie służby"
+  es: "Construir un servicio"
   ru: "Как собрать смену"
   uk: "Як скласти зміну"
 "Drag a piece of work here to start a duty of your own, or click for a spare duty. Drag pieces between duties to put them together.":
@@ -371,6 +423,7 @@ _version: 2
   fr: "Faites glisser une partie de travail ici pour commencer votre propre service, ou cliquez pour un service de réserve. Faites glisser des parties de travail d'un service à l'autre pour les assembler."
   nl: "Sleep een dienststuk hierheen om een eigen dienst te beginnen, of klik voor een reservedienst. Sleep stukken tussen diensten om ze samen te voegen."
   pl: "Przeciągnij tu część pracy, by zacząć własną służbę, albo kliknij, by dodać służbę rezerwową. Przeciągaj części między służbami, by je łączyć."
+  es: "Arrastra aquí una parte de trabajo para empezar un servicio propio, o haz clic para un servicio de reserva. Arrastra partes entre servicios para juntarlas."
   ru: "Перетащите сюда часть работы, чтобы начать свою смену, или щёлкните для резервной смены. Перетаскивайте части между сменами, чтобы соединять их."
   uk: "Перетягніть сюди частину роботи, щоб почати власну зміну, або клацніть для резервної зміни. Перетягуйте частини між змінами, щоб поєднувати їх."
 "Drag trips here to start a duty of their own, or click for a spare duty. Drag a trip onto another duty and its driver drives it, on the same bus; Alt and a drag takes the whole piece of work.":
@@ -379,6 +432,7 @@ _version: 2
   fr: "Faites glisser des courses ici pour en faire un service à part, ou cliquez pour un service de réserve. Faites glisser une course sur un autre service et son conducteur la fait, avec le même bus ; Alt et un glisser prennent toute la partie de travail."
   nl: "Sleep ritten hierheen om er een eigen dienst mee te beginnen, of klik voor een reservedienst. Sleep een rit op een andere dienst en de chauffeur daarvan rijdt hem, met dezelfde bus; Alt en slepen neemt het hele dienststuk mee."
   pl: "Przeciągnij tu kursy, by zacząć z nich osobną służbę, albo kliknij, by dodać służbę rezerwową. Przeciągnij kurs na inną służbę, a jej kierowca go pojedzie, tym samym autobusem; Alt i przeciągnięcie bierze całą część pracy."
+  es: "Arrastra aquí viajes para empezar un servicio propio con ellos, o haz clic para un servicio de reserva. Arrastra un viaje a otro servicio y su conductor lo hace, en el mismo autobús; Alt y arrastrar se lleva la parte de trabajo entera."
   ru: "Перетащите сюда рейсы, чтобы начать из них отдельную смену, или щёлкните для резервной смены. Перетащите рейс на другую смену, и её водитель поведёт его на том же автобусе; Alt и перетаскивание берут всю часть работы."
   uk: "Перетягніть сюди рейси, щоб почати з них окрему зміну, або клацніть для резервної зміни. Перетягніть рейс на іншу зміну, і її водій поведе його тим самим автобусом; Alt і перетягування беруть усю частину роботи."
 "The week":
@@ -386,6 +440,7 @@ _version: 2
   fr: "La semaine"
   nl: "De week"
   pl: "Tydzień"
+  es: "La semana"
   ru: "Неделя"
   uk: "Тиждень"
 "Pick a day of the coming week. Your plan for a weekday repeats every week.":
@@ -393,6 +448,7 @@ _version: 2
   fr: "Choisissez un jour de la semaine à venir. Votre plan pour un jour de semaine se répète chaque semaine."
   nl: "Kies een dag van de komende week. Je plan voor een weekdag herhaalt zich elke week."
   pl: "Wybierz dzień nadchodzącego tygodnia. Plan na dany dzień tygodnia powtarza się co tydzień."
+  es: "Elige un día de la próxima semana. Tu plan para un día de la semana se repite cada semana."
   ru: "Выберите день ближайшей недели. План на день недели повторяется каждую неделю."
   uk: "Виберіть день найближчого тижня. План на день тижня повторюється щотижня."
 "Each line's tours with their duties. Drag a driver or a bus from the list onto a duty or a tour, or click one and then the other.":
@@ -400,6 +456,7 @@ _version: 2
   fr: "Les tournées de chaque ligne avec leurs services. Faites glisser un conducteur ou un bus de la liste sur un service ou une tournée, ou cliquez sur l'un puis sur l'autre."
   nl: "De omlopen van elke lijn met hun diensten. Sleep een chauffeur of bus uit de lijst op een dienst of omloop, of klik eerst op het een en dan op het ander."
   pl: "Obiegi każdej linii z ich służbami. Przeciągnij kierowcę lub autobus z listy na służbę lub obieg albo kliknij najpierw jedno, potem drugie."
+  es: "Los recorridos de cada línea con sus servicios. Arrastra un conductor o un autobús de la lista a un servicio o un recorrido, o haz clic en uno y luego en el otro."
   ru: "Обороты каждой линии с их сменами. Перетащите водителя или автобус из списка на смену или оборот либо щёлкните сначала одно, потом другое."
   uk: "Обороти кожної лінії з їхніми змінами. Перетягніть водія або автобус зі списку на зміну чи оборот або клацніть спершу одне, потім інше."
 "Drivers and buses":
@@ -407,6 +464,7 @@ _version: 2
   fr: "Conducteurs et bus"
   nl: "Chauffeurs en bussen"
   pl: "Kierowcy i autobusy"
+  es: "Conductores y autobuses"
   ru: "Водители и автобусы"
   uk: "Водії та автобуси"
 "Your drivers and buses for the day. Click a duty or a tour in the chart to see who could take it.":
@@ -414,6 +472,7 @@ _version: 2
   fr: "Vos conducteurs et vos bus du jour. Cliquez sur un service ou une tournée dans le graphique pour voir qui pourrait le prendre."
   nl: "Je chauffeurs en bussen voor de dag. Klik in de grafiek op een dienst of omloop om te zien wie hem kan nemen."
   pl: "Twoi kierowcy i autobusy na ten dzień. Kliknij służbę lub obieg na wykresie, by zobaczyć, kto mógłby je wziąć."
+  es: "Tus conductores y autobuses del día. Haz clic en un servicio o un recorrido del gráfico para ver quién podría cogerlo."
   ru: "Ваши водители и автобусы на день. Щёлкните смену или оборот на графике, чтобы увидеть, кто мог бы его взять."
   uk: "Ваші водії та автобуси на день. Клацніть зміну чи оборот на графіку, щоб побачити, хто міг би його взяти."
 "Fill, clear, repeat":
@@ -421,6 +480,7 @@ _version: 2
   fr: "Remplir, vider, répéter"
   nl: "Vullen, leegmaken, herhalen"
   pl: "Wypełnij, wyczyść, powtórz"
+  es: "Completar, vaciar, repetir"
   ru: "Заполнить, очистить, повторить"
   uk: "Заповнити, очистити, повторити"
 "Fill the roster gives free drivers and buses to what is still open. Clear the day empties it, and Repeat copies it to the other days.":
@@ -428,6 +488,7 @@ _version: 2
   fr: "Remplir le roulement donne les conducteurs et bus libres à ce qui reste ouvert. Vider la journée l'efface, et Répéter la copie sur les autres jours."
   nl: "Rooster vullen geeft vrije chauffeurs en bussen aan wat nog open is. Dag leegmaken maakt hem leeg, en Herhalen kopieert hem naar de andere dagen."
   pl: "Wypełnij grafik daje wolnych kierowców i autobusy temu, co jeszcze otwarte. Wyczyść dzień opróżnia go, a Powtórz kopiuje go na inne dni."
+  es: "Completar el cuadrante asigna conductores y autobuses libres a lo que sigue abierto. Vaciar el día lo deja vacío, y Repetir lo copia a los demás días."
   ru: "«Заполнить график» отдаёт свободных водителей и автобусы тому, что ещё открыто. «Очистить день» очищает его, а «Повторить» копирует на другие дни."
   uk: "«Заповнити графік» віддає вільних водіїв і автобуси тому, що ще відкрите. «Очистити день» очищає його, а «Повторити» копіює на інші дні."
 "Line and days":
@@ -435,6 +496,7 @@ _version: 2
   fr: "Ligne et jours"
   nl: "Lijn en dagen"
   pl: "Linia i dni"
+  es: "Línea y días"
   ru: "Линия и дни"
   uk: "Лінія та дні"
 "Choose the line and the days: Monday to Friday, Saturday or Sunday. OUTBOUND and INBOUND switch the direction, and the icons on the right switch between running times and the timetable.":
@@ -442,6 +504,7 @@ _version: 2
   fr: "Choisissez la ligne et les jours : du lundi au vendredi, samedi ou dimanche. ALLER et RETOUR changent de sens, et les icônes à droite passent des temps de parcours à l'horaire."
   nl: "Kies de lijn en de dagen: maandag tot vrijdag, zaterdag of zondag. HEEN en TERUG wisselen de richting, en de pictogrammen rechts wisselen tussen rijtijden en dienstregeling."
   pl: "Wybierz linię i dni: od poniedziałku do piątku, sobotę lub niedzielę. TAM i POWRÓT zmieniają kierunek, a ikony po prawej przełączają między czasami przejazdu a rozkładem."
+  es: "Elige la línea y los días: de lunes a viernes, sábado o domingo. IDA y VUELTA cambian el sentido, y los iconos de la derecha alternan entre los tiempos de recorrido y el horario."
   ru: "Выберите линию и дни: с понедельника по пятницу, субботу или воскресенье. ТУДА и ОБРАТНО меняют направление, а значки справа переключают время хода и расписание."
   uk: "Виберіть лінію і дні: з понеділка по п'ятницю, суботу чи неділю. ТУДИ і НАЗАД змінюють напрямок, а значки праворуч перемикають час руху й розклад."
 "The minutes a bus needs between two stops, in time bands: the rush hour can be slower than the evening. Click a box and type a number; every trip in that band moves with it.":
@@ -449,6 +512,7 @@ _version: 2
   fr: "Les minutes qu'il faut à un bus entre deux arrêts, par tranches horaires : l'heure de pointe peut être plus lente que le soir. Cliquez sur une case et tapez un nombre ; chaque course de cette tranche suit."
   nl: "De minuten die een bus tussen twee haltes nodig heeft, in tijdvakken: het spitsuur kan trager zijn dan de avond. Klik op een vakje en typ een getal; elke rit in dat tijdvak schuift mee."
   pl: "Minuty potrzebne autobusowi między dwoma przystankami, w przedziałach czasu: szczyt może być wolniejszy niż wieczór. Kliknij pole i wpisz liczbę; każdy kurs w tym przedziale przesunie się razem z nim."
+  es: "Los minutos que necesita un autobús entre dos paradas, por franjas horarias: la hora punta puede ser más lenta que la noche. Haz clic en una casilla y escribe un número; todos los viajes de esa franja se mueven con él."
   ru: "Минуты, нужные автобусу между двумя остановками, по временным интервалам: час пик может быть медленнее вечера. Щёлкните ячейку и введите число; все рейсы этого интервала сдвинутся вместе с ним."
   uk: "Хвилини, потрібні автобусу між двома зупинками, за часовими проміжками: година пік може бути повільнішою за вечір. Клацніть клітинку і введіть число; усі рейси цього проміжку зсунуться разом із ним."
 "The timetable":
@@ -456,6 +520,7 @@ _version: 2
   fr: "L'horaire"
   nl: "De dienstregeling"
   pl: "Rozkład jazdy"
+  es: "El horario"
   ru: "Расписание"
   uk: "Розклад"
 "Every trip is a row with its time at each stop. Add trips one at a time or by headway: a first and a last departure and every how many minutes. A time typed by hand shows orange.":
@@ -463,6 +528,7 @@ _version: 2
   fr: "Chaque course est une ligne avec son heure à chaque arrêt. Ajoutez des courses une par une ou par fréquence : un premier et un dernier départ, et toutes les combien de minutes. Une heure tapée à la main apparaît en orange."
   nl: "Elke rit is een rij met zijn tijd bij elke halte. Voeg ritten één voor één toe of met een interval: een eerste en een laatste vertrek en om de hoeveel minuten. Een met de hand getypte tijd wordt oranje."
   pl: "Każdy kurs to wiersz z godziną na każdym przystanku. Dodawaj kursy pojedynczo lub według taktu: pierwszy i ostatni odjazd oraz co ile minut. Godzina wpisana ręcznie jest pomarańczowa."
+  es: "Cada viaje es una fila con su hora en cada parada. Añade viajes de uno en uno o por frecuencia: una primera y una última salida y cada cuántos minutos. Una hora escrita a mano se muestra en naranja."
   ru: "Каждый рейс — строка с временем на каждой остановке. Добавляйте рейсы по одному или по интервалу: первое и последнее отправление и через сколько минут. Время, введённое вручную, показано оранжевым."
   uk: "Кожен рейс — рядок із часом на кожній зупинці. Додавайте рейси по одному або за інтервалом: перше й останнє відправлення і через скільки хвилин. Час, введений вручну, показано помаранчевим."
 "Save, then Refresh":
@@ -470,6 +536,7 @@ _version: 2
   fr: "Enregistrer, puis Actualiser"
   nl: "Opslaan, dan Vernieuwen"
   pl: "Zapisz, potem Odśwież"
+  es: "Guardar y luego Actualizar"
   ru: "Сохранить, затем Обновить"
   uk: "Зберегти, потім Оновити"
 "Save writes the line's timetable. The status bar then says UNSYNCED - Refresh: click it, and the buses' blocks and the duties are made again for the new trips.":
@@ -477,6 +544,7 @@ _version: 2
   fr: "Enregistrer écrit l'horaire de la ligne. La barre d'état affiche alors NON SYNCHRONISÉ – Actualiser : cliquez dessus, et les blocs des bus et les services sont refaits pour les nouveaux trajets."
   nl: "Opslaan schrijft de dienstregeling van de lijn weg. De statusbalk zegt dan NIET GESYNCHRONISEERD – Vernieuwen: klik erop, en de omlopen van de bussen en de diensten worden opnieuw gemaakt voor de nieuwe ritten."
   pl: "Zapisz zapisuje rozkład linii. Pasek stanu pokaże wtedy NIEZSYNCHRONIZOWANE – Odśwież: kliknij, a obiegi autobusów i służby zostaną ułożone od nowa dla nowych kursów."
+  es: "Guardar escribe el horario de la línea. Después la barra de estado dice SIN SINCRONIZAR - Actualizar: haz clic y los recorridos de los autobuses y los servicios se vuelven a crear para los viajes nuevos."
   ru: "«Сохранить» записывает расписание линии. Затем в строке состояния появится НЕ СИНХРОНИЗИРОВАНО – Обновить: щёлкните, и выпуски автобусов и смены будут составлены заново для новых рейсов."
   uk: "«Зберегти» записує розклад лінії. Потім у рядку стану з'явиться НЕ СИНХРОНІЗОВАНО – Оновити: клацніть, і випуски автобусів та зміни буде складено заново для нових рейсів."
 "Ready to plan":
@@ -484,6 +552,7 @@ _version: 2
   fr: "Prêt à planifier"
   nl: "Klaar om te plannen"
   pl: "Gotowe do planowania"
+  es: "Listo para planificar"
   ru: "Можно планировать"
   uk: "Можна планувати"
 "This question mark brings the tour back. It also has short lessons where you try each task yourself, and a one-page help sheet.":
@@ -491,6 +560,7 @@ _version: 2
   fr: "Ce point d'interrogation relance la visite. Il propose aussi de courtes leçons où vous essayez chaque tâche vous-même, et une fiche d'aide d'une page."
   nl: "Dit vraagteken brengt de rondleiding terug. Er zitten ook korte lessen in waarin je elke taak zelf probeert, en een hulpblad van één pagina."
   pl: "Ten znak zapytania przywraca przewodnik. Znajdziesz tam też krótkie lekcje, w których sam próbujesz każdego zadania, oraz jednostronicową ściągawkę."
+  es: "Este signo de interrogación vuelve a abrir la visita guiada. También tiene lecciones cortas en las que pruebas cada tarea tú mismo, y una hoja de ayuda de una página."
   ru: "Этот вопросительный знак снова запускает обзор. Там же есть короткие уроки, где вы сами пробуете каждое действие, и памятка на одну страницу."
   uk: "Цей знак питання знову запускає огляд. Там також є короткі уроки, де ви самі пробуєте кожну дію, і пам'ятка на одну сторінку."
 "Move a trip to another bus":
@@ -498,6 +568,7 @@ _version: 2
   fr: "Déplacer une course vers un autre bus"
   nl: "Een rit naar een andere bus verplaatsen"
   pl: "Przenieś kurs na inny autobus"
+  es: "Mover un viaje a otro autobús"
   ru: "Перенести рейс на другой автобус"
   uk: "Перенести рейс на інший автобус"
 "Cut a duty and join it again":
@@ -505,6 +576,7 @@ _version: 2
   fr: "Couper un service et le réunir"
   nl: "Een dienst knippen en weer samenvoegen"
   pl: "Podziel służbę i połącz ją z powrotem"
+  es: "Cortar un servicio y volver a unirlo"
   ru: "Разрезать смену и снова соединить"
   uk: "Розрізати зміну й знову з'єднати"
 "Build a duty by hand":
@@ -512,6 +584,7 @@ _version: 2
   fr: "Construire un service à la main"
   nl: "Een dienst met de hand bouwen"
   pl: "Zbuduj służbę ręcznie"
+  es: "Construir un servicio a mano"
   ru: "Собрать смену вручную"
   uk: "Скласти зміну вручну"
 "Fix an issue":
@@ -519,6 +592,7 @@ _version: 2
   fr: "Corriger un problème"
   nl: "Een probleem oplossen"
   pl: "Napraw problem"
+  es: "Resolver un problema"
   ru: "Исправить проблему"
   uk: "Виправити проблему"
 "Let OPTIMIZE propose":
@@ -526,6 +600,7 @@ _version: 2
   fr: "Laisser OPTIMISER proposer"
   nl: "OPTIMALISEREN laten voorstellen"
   pl: "Pozwól OPTYMALIZUJ zaproponować"
+  es: "Dejar que OPTIMIZAR proponga"
   ru: "Пусть ОПТИМИЗИРОВАТЬ предложит"
   uk: "Хай ОПТИМІЗУВАТИ запропонує"
 "Plan a timetable":
@@ -533,6 +608,7 @@ _version: 2
   fr: "Planifier un horaire"
   nl: "Een dienstregeling plannen"
   pl: "Zaplanuj rozkład"
+  es: "Planificar un horario"
   ru: "Составить расписание"
   uk: "Скласти розклад"
 "Give a line its own colour":
@@ -540,6 +616,7 @@ _version: 2
   fr: "Donner sa propre couleur à une ligne"
   nl: "Een lijn een eigen kleur geven"
   pl: "Nadaj linii własny kolor"
+  es: "Dar a una línea su propio color"
   ru: "Дать линии свой цвет"
   uk: "Дати лінії свій колір"
 "SAVE and DISCARD":
@@ -547,6 +624,7 @@ _version: 2
   fr: "ENREGISTRER et ABANDONNER"
   nl: "OPSLAAN en VERWERPEN"
   pl: "ZAPISZ i ODRZUĆ"
+  es: "GUARDAR y DESCARTAR"
   ru: "СОХРАНИТЬ и ОТМЕНИТЬ"
   uk: "ЗБЕРЕГТИ і СКАСУВАТИ"
 "Open the Vehicles tab":
@@ -554,6 +632,7 @@ _version: 2
   fr: "Ouvrez l'onglet Véhicules"
   nl: "Open het tabblad Voertuigen"
   pl: "Otwórz kartę Pojazdy"
+  es: "Abre la pestaña Vehículos"
   ru: "Откройте вкладку «Транспорт»"
   uk: "Відкрийте вкладку «Транспорт»"
 "Each row there is one bus's day of trips.":
@@ -561,6 +640,7 @@ _version: 2
   fr: "Chaque ligne y est la journée de courses d'un bus."
   nl: "Elke rij daar is de dag met ritten van één bus."
   pl: "Każdy wiersz to tam dzień kursów jednego autobusu."
+  es: "Cada fila es el día de viajes de un autobús."
   ru: "Каждая строка там — день рейсов одного автобуса."
   uk: "Кожен рядок там — день рейсів одного автобуса."
 "Pick up a trip":
@@ -568,6 +648,7 @@ _version: 2
   fr: "Prenez une course"
   nl: "Pak een rit op"
   pl: "Podnieś kurs"
+  es: "Coge un viaje"
   ru: "Возьмите рейс"
   uk: "Візьміть рейс"
 "Drag a coloured chip, or double-click it. Slots appear on every bus it could go to.":
@@ -575,6 +656,7 @@ _version: 2
   fr: "Faites glisser une puce colorée, ou double-cliquez dessus. Des emplacements apparaissent sur chaque bus qui peut la recevoir."
   nl: "Sleep een gekleurde chip, of dubbelklik erop. Op elke bus waar hij naartoe kan, verschijnen vakken."
   pl: "Przeciągnij kolorowy kafelek albo kliknij go dwukrotnie. Na każdym autobusie, do którego może trafić, pojawią się miejsca."
+  es: "Arrastra una ficha de color o haz doble clic en ella. Aparecen huecos en cada autobús al que podría ir."
   ru: "Перетащите цветную плашку или щёлкните по ней дважды. На каждом автобусе, куда её можно поставить, появятся места."
   uk: "Перетягніть кольорову плашку або клацніть по ній двічі. На кожному автобусі, куди її можна поставити, з'являться місця."
 "Read the stars and the cost":
@@ -582,6 +664,7 @@ _version: 2
   fr: "Lisez les étoiles et le coût"
   nl: "Lees de sterren en de kosten"
   pl: "Odczytaj gwiazdki i koszt"
+  es: "Lee las estrellas y el coste"
   ru: "Посмотрите на звёзды и стоимость"
   uk: "Подивіться на зірки й вартість"
 "Hold the mouse over a slot: five stars is the cheapest choice, blue breaks no rule, and the card shows what it costs.":
@@ -589,6 +672,7 @@ _version: 2
   fr: "Gardez la souris sur un emplacement : cinq étoiles, c'est le choix le moins cher, le bleu n'enfreint aucune règle, et la fiche montre ce que ça coûte."
   nl: "Houd de muis boven een vak: vijf sterren is de goedkoopste keuze, blauw overtreedt geen regel, en de kaart toont wat het kost."
   pl: "Przytrzymaj mysz nad miejscem: pięć gwiazdek to najtańszy wybór, niebieski nie łamie żadnej reguły, a karta pokazuje koszt."
+  es: "Pasa el ratón por un hueco: cinco estrellas es la opción más barata, azul no incumple ninguna regla, y la tarjeta muestra lo que cuesta."
   ru: "Задержите мышь над местом: пять звёзд — самый дешёвый вариант, синий не нарушает правил, а карточка показывает стоимость."
   uk: "Затримайте мишу над місцем: п'ять зірок — найдешевший варіант, синій не порушує правил, а картка показує вартість."
 "Drop it on another bus":
@@ -596,6 +680,7 @@ _version: 2
   fr: "Déposez-la sur un autre bus"
   nl: "Zet hem op een andere bus"
   pl: "Upuść go na inny autobus"
+  es: "Suéltalo en otro autobús"
   ru: "Поставьте его на другой автобус"
   uk: "Поставте його на інший автобус"
 "Click a slot, or let go of the chip over it. Escape puts it back.":
@@ -603,6 +688,7 @@ _version: 2
   fr: "Cliquez sur un emplacement, ou lâchez la puce au-dessus. Échap la remet à sa place."
   nl: "Klik op een vak, of laat de chip erboven los. Escape zet hem terug."
   pl: "Kliknij miejsce albo puść nad nim kafelek. Escape odkłada go z powrotem."
+  es: "Haz clic en un hueco o suelta la ficha encima. Escape la devuelve a su sitio."
   ru: "Щёлкните по месту или отпустите плашку над ним. Escape вернёт её обратно."
   uk: "Клацніть по місцю або відпустіть плашку над ним. Escape поверне її назад."
 "See the figures change":
@@ -610,6 +696,7 @@ _version: 2
   fr: "Regardez les chiffres changer"
   nl: "Zie de cijfers veranderen"
   pl: "Zobacz, jak zmieniają się liczby"
+  es: "Mira cómo cambian las cifras"
   ru: "Посмотрите, как меняются показатели"
   uk: "Подивіться, як змінюються показники"
 "The green or red numbers beside the figures show what your move did: green is better, red is worse.":
@@ -617,6 +704,7 @@ _version: 2
   fr: "Les nombres verts ou rouges à côté des chiffres montrent l'effet de votre déplacement : le vert est mieux, le rouge moins bien."
   nl: "De groene of rode getallen naast de cijfers laten zien wat je verplaatsing deed: groen is beter, rood is slechter."
   pl: "Zielone lub czerwone liczby obok wskaźników pokazują skutek przeniesienia: zielony to lepiej, czerwony gorzej."
+  es: "Los números verdes o rojos junto a las cifras muestran el efecto de tu movimiento: verde es mejor, rojo es peor."
   ru: "Зелёные или красные числа рядом с показателями показывают, к чему привёл перенос: зелёный — лучше, красный — хуже."
   uk: "Зелені або червоні числа біля показників показують, до чого призвело перенесення: зелений — краще, червоний — гірше."
 "Undo it":
@@ -624,6 +712,7 @@ _version: 2
   fr: "Annulez-le"
   nl: "Maak het ongedaan"
   pl: "Cofnij to"
+  es: "Deshazlo"
   ru: "Отмените это"
   uk: "Скасуйте це"
 "Press Ctrl+Z, or the undo arrow at the top. The trip goes back to its bus.":
@@ -631,6 +720,7 @@ _version: 2
   fr: "Appuyez sur Ctrl+Z, ou sur la flèche d'annulation en haut. La course retourne à son bus."
   nl: "Druk op Ctrl+Z, of op de pijl voor ongedaan maken bovenaan. De rit gaat terug naar zijn bus."
   pl: "Naciśnij Ctrl+Z albo strzałkę cofania na górze. Kurs wraca do swojego autobusu."
+  es: "Pulsa Ctrl+Z, o la flecha de deshacer de arriba. El viaje vuelve a su autobús."
   ru: "Нажмите Ctrl+Z или стрелку отмены вверху. Рейс вернётся к своему автобусу."
   uk: "Натисніть Ctrl+Z або стрілку скасування вгорі. Рейс повернеться до свого автобуса."
 "Duties are cut from the buses' days, so you start here.":
@@ -638,6 +728,7 @@ _version: 2
   fr: "Les services sont découpés dans les journées des bus : on commence donc ici."
   nl: "Diensten worden uit de dagen van de bussen geknipt, dus je begint hier."
   pl: "Służby wycina się z dni autobusów, więc zaczynasz tutaj."
+  es: "Los servicios se cortan de los días de los autobuses, así que empiezas aquí."
   ru: "Смены нарезаются из дней автобусов, поэтому начинаем здесь."
   uk: "Зміни нарізаються з днів автобусів, тож починаємо тут."
 "Cut a duty at a terminus":
@@ -645,6 +736,7 @@ _version: 2
   fr: "Coupez un service à un terminus"
   nl: "Knip een dienst bij een eindhalte"
   pl: "Podziel służbę na pętli"
+  es: "Corta un servicio en una cabecera"
   ru: "Разрежьте смену на конечной"
   uk: "Розріжте зміну на кінцевій"
 "Hold the mouse over the gap between two trips. Where a blue line shows, a driver can take over: click to cut there.":
@@ -652,6 +744,7 @@ _version: 2
   fr: "Gardez la souris sur l'intervalle entre deux courses. Là où une ligne bleue apparaît, un conducteur peut prendre le relais : cliquez pour couper à cet endroit."
   nl: "Houd de muis boven het gat tussen twee ritten. Waar een blauwe streep verschijnt, kan een chauffeur overnemen: klik om daar te knippen."
   pl: "Przytrzymaj mysz nad przerwą między dwoma kursami. Tam, gdzie pojawi się niebieska linia, może przejąć inny kierowca: kliknij, by tam podzielić."
+  es: "Pasa el ratón por el hueco entre dos viajes. Donde aparece una línea azul, un conductor puede tomar el relevo: haz clic para cortar ahí."
   ru: "Задержите мышь над промежутком между двумя рейсами. Где появится синяя черта, может смениться водитель: щёлкните, чтобы разрезать там."
   uk: "Затримайте мишу над проміжком між двома рейсами. Де з'явиться синя риска, може змінитися водій: клацніть, щоб розрізати там."
 "Look at it in Drivers":
@@ -659,6 +752,7 @@ _version: 2
   fr: "Regardez-le dans Conducteurs"
   nl: "Bekijk het bij Chauffeurs"
   pl: "Zobacz to w Kierowcach"
+  es: "Míralo en Conductores"
   ru: "Посмотрите в «Водителях»"
   uk: "Подивіться у «Водіях»"
 "There is one duty more now: the second driver's day starts where you cut.":
@@ -666,6 +760,7 @@ _version: 2
   fr: "Il y a maintenant un service de plus : la journée du second conducteur commence là où vous avez coupé."
   nl: "Er is nu één dienst meer: de dag van de tweede chauffeur begint waar je knipte."
   pl: "Jest teraz o jedną służbę więcej: dzień drugiego kierowcy zaczyna się tam, gdzie podzieliłeś."
+  es: "Ahora hay un servicio más: el día del segundo conductor empieza donde cortaste."
   ru: "Теперь на одну смену больше: день второго водителя начинается там, где вы разрезали."
   uk: "Тепер на одну зміну більше: день другого водія починається там, де ви розрізали."
 "Go back to Vehicles":
@@ -673,6 +768,7 @@ _version: 2
   fr: "Revenez à Véhicules"
   nl: "Ga terug naar Voertuigen"
   pl: "Wróć do Pojazdów"
+  es: "Vuelve a Vehículos"
   ru: "Вернитесь в «Транспорт»"
   uk: "Поверніться до «Транспорту»"
 "The arrows on the bus's row mark your cut.":
@@ -680,6 +776,7 @@ _version: 2
   fr: "Les flèches sur la ligne du bus marquent votre coupure."
   nl: "De pijlen in de rij van de bus markeren je knip."
   pl: "Strzałki w wierszu autobusu oznaczają twój podział."
+  es: "Las flechas en la fila del autobús marcan tu corte."
   ru: "Стрелки в строке автобуса отмечают ваш разрез."
   uk: "Стрілки в рядку автобуса позначають ваш розріз."
 "Join the two duties again":
@@ -687,6 +784,7 @@ _version: 2
   fr: "Réunissez les deux services"
   nl: "Voeg de twee diensten weer samen"
   pl: "Połącz z powrotem obie służby"
+  es: "Vuelve a unir los dos servicios"
   ru: "Снова соедините две смены"
   uk: "Знову з'єднайте дві зміни"
 "Click the arrows where the drivers change. The two duties become one.":
@@ -694,6 +792,7 @@ _version: 2
   fr: "Cliquez sur les flèches où les conducteurs se relaient. Les deux services n'en font plus qu'un."
   nl: "Klik op de pijlen waar de chauffeurs wisselen. De twee diensten worden er één."
   pl: "Kliknij strzałki w miejscu zmiany kierowców. Dwie służby stają się jedną."
+  es: "Haz clic en las flechas donde se relevan los conductores. Los dos servicios pasan a ser uno."
   ru: "Щёлкните по стрелкам там, где меняются водители. Две смены станут одной."
   uk: "Клацніть по стрілках там, де змінюються водії. Дві зміни стануть однією."
 "Open the Drivers tab":
@@ -701,6 +800,7 @@ _version: 2
   fr: "Ouvrez l'onglet Conducteurs"
   nl: "Open het tabblad Chauffeurs"
   pl: "Otwórz kartę Kierowcy"
+  es: "Abre la pestaña Conductores"
   ru: "Откройте вкладку «Водители»"
   uk: "Відкрийте вкладку «Водії»"
 "Each row there is one driver's working day.":
@@ -708,6 +808,7 @@ _version: 2
   fr: "Chaque ligne y est la journée de travail d'un conducteur."
   nl: "Elke rij daar is de werkdag van één chauffeur."
   pl: "Każdy wiersz to tam dzień pracy jednego kierowcy."
+  es: "Cada fila es la jornada de trabajo de un conductor."
   ru: "Каждая строка там — рабочий день одного водителя."
   uk: "Кожен рядок там — робочий день одного водія."
 "Pick up a piece of work":
@@ -715,6 +816,7 @@ _version: 2
   fr: "Prenez une partie de travail"
   nl: "Pak een dienststuk op"
   pl: "Podnieś część pracy"
+  es: "Coge una parte de trabajo"
   ru: "Возьмите часть работы"
   uk: "Візьміть частину роботи"
 "Drag a chip of a short duty, or double-click it: the whole part on that bus comes along.":
@@ -722,6 +824,7 @@ _version: 2
   fr: "Faites glisser une puce d'un service court, ou double-cliquez dessus : toute la partie sur ce bus suit."
   nl: "Sleep een chip van een korte dienst, of dubbelklik erop: het hele deel op die bus gaat mee."
   pl: "Przeciągnij kafelek krótkiej służby albo kliknij go dwukrotnie: przeniesie się cały odcinek na tym autobusie."
+  es: "Arrastra una ficha de un servicio corto o haz doble clic en ella: se lleva todo el tramo en ese autobús."
   ru: "Перетащите плашку короткой смены или щёлкните по ней дважды: весь отрезок на этом автобусе пойдёт с ней."
   uk: "Перетягніть плашку короткої зміни або клацніть по ній двічі: увесь відрізок на цьому автобусі піде з нею."
 "Pick up a trip of a duty":
@@ -730,6 +833,7 @@ _version: 2
   fr: "Prenez une course d'un service"
   nl: "Pak een rit van een dienst op"
   pl: "Podnieś kurs służby"
+  es: "Coge un viaje de un servicio"
   ru: "Возьмите рейс смены"
   uk: "Візьміть рейс зміни"
 "Drag a chip, or double-click it. Slots appear on every duty it could go to, and on New duty. Shift or Ctrl and a click choose more trips; Alt and a drag takes the whole piece of work on that bus.":
@@ -738,6 +842,7 @@ _version: 2
   fr: "Faites glisser une puce, ou double-cliquez dessus. Des emplacements apparaissent sur chaque service qui peut la recevoir, et sur Nouveau service. Maj ou Ctrl et un clic choisissent d'autres courses ; Alt et un glisser prennent toute la partie de travail sur ce bus."
   nl: "Sleep een chip, of dubbelklik erop. Op elke dienst waar hij naartoe kan en op Nieuwe dienst verschijnen vakken. Shift of Ctrl en een klik kiezen meer ritten; Alt en slepen neemt het hele dienststuk op die bus mee."
   pl: "Przeciągnij kafelek albo kliknij go dwukrotnie. Na każdej służbie, do której może trafić, i na Nowa służba pojawią się miejsca. Shift lub Ctrl i kliknięcie wybierają więcej kursów; Alt i przeciągnięcie bierze całą część pracy na tym autobusie."
+  es: "Arrastra una ficha o haz doble clic en ella. Aparecen huecos en cada servicio al que podría ir, y en Servicio nuevo. Shift o Ctrl y un clic eligen más viajes; Alt y arrastrar se lleva la parte de trabajo entera en ese autobús."
   ru: "Перетащите плашку или щёлкните по ней дважды. На каждой смене, куда её можно поставить, и на «Новая смена» появятся места. Shift или Ctrl и щелчок выбирают ещё рейсы; Alt и перетаскивание берут всю часть работы на этом автобусе."
   uk: "Перетягніть плашку або клацніть по ній двічі. На кожній зміні, куди її можна поставити, і на «Нова зміна» з'являться місця. Shift або Ctrl і клік вибирають ще рейси; Alt і перетягування беруть усю частину роботи на цьому автобусі."
 "Click a slot, or let go over it: that duty's driver drives the trip now, on the same bus, and the first duty is cut around it. No slot? The duty would break a rule, or the drivers could not change at a terminus there.":
@@ -746,6 +851,7 @@ _version: 2
   fr: "Cliquez sur un emplacement, ou relâchez au-dessus : le conducteur de ce service fait maintenant la course, avec le même bus, et le premier service est coupé autour d'elle. Pas d'emplacement ? Le service enfreindrait une règle, ou les conducteurs ne pourraient pas se relayer à un terminus à cet endroit."
   nl: "Klik op een vak, of laat erboven los: de chauffeur van die dienst rijdt de rit nu, met dezelfde bus, en de eerste dienst wordt eromheen geknipt. Geen vak? De dienst zou een regel breken, of de chauffeurs zouden daar niet aan een eindpunt kunnen wisselen."
   pl: "Kliknij miejsce albo puść nad nim: kierowca tej służby jedzie teraz ten kurs, tym samym autobusem, a pierwsza służba zostaje wokół niego podzielona. Brak miejsca? Służba złamałaby regułę albo kierowcy nie mogliby się tam zmienić na pętli."
+  es: "Haz clic en un hueco o suelta encima: ahora el conductor de ese servicio hace el viaje, en el mismo autobús, y el primer servicio se corta alrededor. ¿No hay hueco? El servicio incumpliría una regla, o los conductores no podrían relevarse allí en una cabecera."
   ru: "Щёлкните по месту или отпустите над ним: водитель этой смены теперь ведёт рейс на том же автобусе, а первая смена разрезается вокруг него. Нет места? Смена нарушила бы правило, или водители не смогли бы смениться там на конечной."
   uk: "Клацніть по місцю або відпустіть над ним: водій цієї зміни тепер веде рейс тим самим автобусом, а першу зміну розрізано навколо нього. Немає місця? Зміна порушила б правило, або водії не змогли б змінитися там на кінцевій."
 "Drop it on another duty":
@@ -753,6 +859,7 @@ _version: 2
   fr: "Déposez-la sur un autre service"
   nl: "Zet hem op een andere dienst"
   pl: "Upuść go na inną służbę"
+  es: "Suéltalo en otro servicio"
   ru: "Поставьте его на другую смену"
   uk: "Поставте його на іншу зміну"
 "Click a slot: the two become one duty, with a break between them. No slot? The duty would get too long: take a shorter piece.":
@@ -760,6 +867,7 @@ _version: 2
   fr: "Cliquez sur un emplacement : les deux deviennent un seul service, avec une pause entre eux. Pas d'emplacement ? Le service serait trop long : prenez une partie plus courte."
   nl: "Klik op een vak: de twee worden één dienst, met een pauze ertussen. Geen vak? Dan wordt de dienst te lang: neem een korter stuk."
   pl: "Kliknij miejsce: obie stają się jedną służbą, z przerwą pomiędzy. Brak miejsca? Służba byłaby za długa: weź krótszą część."
+  es: "Haz clic en un hueco: los dos pasan a ser un servicio, con una pausa entre ellos. ¿No hay hueco? El servicio sería demasiado largo: coge una parte más corta."
   ru: "Щёлкните по месту: обе станут одной сменой с перерывом между ними. Нет места? Смена стала бы слишком длинной: возьмите часть покороче."
   uk: "Клацніть по місцю: обидві стануть однією зміною з перервою між ними. Немає місця? Зміна стала б задовгою: візьміть коротшу частину."
 "Open a duty":
@@ -767,6 +875,7 @@ _version: 2
   fr: "Ouvrez un service"
   nl: "Open een dienst"
   pl: "Otwórz służbę"
+  es: "Abre un servicio"
   ru: "Откройте смену"
   uk: "Відкрийте зміну"
 "Click a duty's ID on the left. Its panel shows what the duty is made of.":
@@ -774,6 +883,7 @@ _version: 2
   fr: "Cliquez sur l'identifiant d'un service à gauche. Son panneau montre de quoi il est fait."
   nl: "Klik links op de ID van een dienst. Zijn paneel laat zien waaruit de dienst bestaat."
   pl: "Kliknij ID służby po lewej. Jej panel pokazuje, z czego się składa."
+  es: "Haz clic en el ID de un servicio a la izquierda. Su panel muestra de qué se compone el servicio."
   ru: "Щёлкните номер смены слева. Её панель покажет, из чего она состоит."
   uk: "Клацніть номер зміни ліворуч. Її панель покаже, з чого вона складається."
 "Read sign-on, sign-off and breaks":
@@ -781,6 +891,7 @@ _version: 2
   fr: "Lisez la prise de service, la fin de service et les pauses"
   nl: "Lees aanmelden, afmelden en pauzes"
   pl: "Odczytaj rozpoczęcie, zakończenie i przerwy"
+  es: "Lee la toma y el fin de servicio y las pausas"
   ru: "Посмотрите явку, сдачу и перерывы"
   uk: "Подивіться явку, здачу й перерви"
 "Sign-on and sign-off are when the driver starts and stops. The breaks are between the pieces of work; a long unpaid one is a split.":
@@ -788,6 +899,7 @@ _version: 2
   fr: "La prise et la fin de service sont les moments où le conducteur commence et s'arrête. Les pauses sont entre les parties de travail ; une longue pause non payée est une coupure."
   nl: "Aanmelden en afmelden zijn wanneer de chauffeur begint en stopt. De pauzes liggen tussen de dienststukken; een lange onbetaalde heet een gebroken dienst."
   pl: "Rozpoczęcie i zakończenie to chwile, gdy kierowca zaczyna i kończy. Przerwy są między częściami pracy; długa niepłatna to służba dzielona."
+  es: "La toma y el fin de servicio son cuándo el conductor empieza y termina. Las pausas están entre las partes de trabajo; una larga sin pagar es un partido."
   ru: "Явка и сдача — когда водитель начинает и заканчивает. Перерывы находятся между частями работы; долгий неоплачиваемый — это разрыв."
   uk: "Явка й здача — коли водій починає й закінчує. Перерви розташовані між частинами роботи; довга неоплачувана — це розрив."
 "Lock the duty":
@@ -795,6 +907,7 @@ _version: 2
   fr: "Verrouillez le service"
   nl: "Vergrendel de dienst"
   pl: "Zablokuj służbę"
+  es: "Bloquea el servicio"
   ru: "Заблокируйте смену"
   uk: "Заблокуйте зміну"
 "Click the lock at the top of the panel. OPTIMIZE will leave this duty as it is.":
@@ -802,6 +915,7 @@ _version: 2
   fr: "Cliquez sur le cadenas en haut du panneau. OPTIMISER laissera ce service tel quel."
   nl: "Klik op het slot bovenaan het paneel. OPTIMALISEREN laat deze dienst dan zoals hij is."
   pl: "Kliknij kłódkę u góry panelu. OPTYMALIZUJ zostawi tę służbę bez zmian."
+  es: "Haz clic en el candado de la parte superior del panel. OPTIMIZAR dejará este servicio tal como está."
   ru: "Щёлкните по замку вверху панели. ОПТИМИЗИРОВАТЬ оставит эту смену как есть."
   uk: "Клацніть по замку вгорі панелі. ОПТИМІЗУВАТИ залишить цю зміну як є."
 "Open Vehicles or Drivers":
@@ -809,6 +923,7 @@ _version: 2
   fr: "Ouvrez Véhicules ou Conducteurs"
   nl: "Open Voertuigen of Chauffeurs"
   pl: "Otwórz Pojazdy lub Kierowców"
+  es: "Abre Vehículos o Conductores"
   ru: "Откройте «Транспорт» или «Водители»"
   uk: "Відкрийте «Транспорт» або «Водії»"
 "The issues are counted in the status bar at the bottom of both.":
@@ -816,6 +931,7 @@ _version: 2
   fr: "Les problèmes sont comptés dans la barre d'état en bas de chacun."
   nl: "De problemen worden bij allebei onderaan in de statusbalk geteld."
   pl: "Problemy są liczone na pasku stanu na dole obu kart."
+  es: "Los problemas se cuentan en la barra de estado de la parte inferior de ambos."
   ru: "Проблемы подсчитываются в строке состояния внизу обеих вкладок."
   uk: "Проблеми підраховуються в рядку стану внизу обох вкладок."
 "Open the issues":
@@ -823,6 +939,7 @@ _version: 2
   fr: "Ouvrez les problèmes"
   nl: "Open de problemen"
   pl: "Otwórz problemy"
+  es: "Abre los problemas"
   ru: "Откройте проблемы"
   uk: "Відкрийте проблеми"
 "Click Duty Issues or Vehicle Issues in the status bar.":
@@ -830,6 +947,7 @@ _version: 2
   fr: "Cliquez sur Problèmes services ou Problèmes véhicules dans la barre d'état."
   nl: "Klik in de statusbalk op Dienstproblemen of Voertuigproblemen."
   pl: "Kliknij Problemy służb lub Problemy pojazdów na pasku stanu."
+  es: "Haz clic en Problemas de servicios o Problemas de vehículos en la barra de estado."
   ru: "Щёлкните «Проблемы смен» или «Проблемы машин» в строке состояния."
   uk: "Клацніть «Проблеми змін» або «Проблеми машин» у рядку стану."
 "Jump to an issue":
@@ -837,6 +955,7 @@ _version: 2
   fr: "Allez à un problème"
   nl: "Spring naar een probleem"
   pl: "Przejdź do problemu"
+  es: "Ve a un problema"
   ru: "Перейдите к проблеме"
   uk: "Перейдіть до проблеми"
 "Click an issue in the list: RosterFlow shows its row.":
@@ -844,6 +963,7 @@ _version: 2
   fr: "Cliquez sur un problème dans la liste : RosterFlow montre sa ligne."
   nl: "Klik op een probleem in de lijst: RosterFlow toont zijn rij."
   pl: "Kliknij problem na liście: RosterFlow pokaże jego wiersz."
+  es: "Haz clic en un problema de la lista: RosterFlow muestra su fila."
   ru: "Щёлкните проблему в списке: RosterFlow покажет её строку."
   uk: "Клацніть проблему у списку: RosterFlow покаже її рядок."
 "Fix the issue":
@@ -851,6 +971,7 @@ _version: 2
   fr: "Corrigez le problème"
   nl: "Los het probleem op"
   pl: "Napraw ten problem"
+  es: "Resuelve el problema"
   ru: "Исправьте проблему"
   uk: "Виправте проблему"
 "Move a trip, cut or join a duty, or change the rules under Preferences. If it is fine as it is, tick it and dismiss it.":
@@ -858,6 +979,7 @@ _version: 2
   fr: "Déplacez une course, coupez ou réunissez un service, ou changez les règles dans Préférences. Si c'est bien ainsi, cochez-le et ignorez-le."
   nl: "Verplaats een rit, knip of voeg een dienst samen, of wijzig de regels onder Voorkeuren. Is het goed zo, vink het aan en negeer het."
   pl: "Przenieś kurs, podziel lub połącz służbę albo zmień reguły w Preferencjach. Jeśli tak jest dobrze, zaznacz go i odrzuć."
+  es: "Mueve un viaje, corta o une un servicio, o cambia las reglas en Preferencias. Si está bien como está, márcalo y descártalo."
   ru: "Перенесите рейс, разрежьте или соедините смену либо измените правила в «Предпочтениях». Если так и должно быть, отметьте проблему и скройте её."
   uk: "Перенесіть рейс, розріжте чи з'єднайте зміну або змініть правила у «Вподобаннях». Якщо так і має бути, позначте проблему й приховайте її."
 "OPTIMIZE is on the toolbar of both.":
@@ -865,6 +987,7 @@ _version: 2
   fr: "OPTIMISER est dans la barre d'outils des deux."
   nl: "OPTIMALISEREN staat bij allebei in de werkbalk."
   pl: "OPTYMALIZUJ jest na pasku narzędzi obu kart."
+  es: "OPTIMIZAR está en la barra de herramientas de ambos."
   ru: "ОПТИМИЗИРОВАТЬ есть на панели инструментов обеих вкладок."
   uk: "ОПТИМІЗУВАТИ є на панелі інструментів обох вкладок."
 "Click OPTIMIZE":
@@ -872,6 +995,7 @@ _version: 2
   fr: "Cliquez sur OPTIMISER"
   nl: "Klik op OPTIMALISEREN"
   pl: "Kliknij OPTYMALIZUJ"
+  es: "Haz clic en OPTIMIZAR"
   ru: "Щёлкните ОПТИМИЗИРОВАТЬ"
   uk: "Клацніть ОПТИМІЗУВАТИ"
 "RosterFlow works out the blocks and duties by itself. Locked rows stay as they are.":
@@ -879,6 +1003,7 @@ _version: 2
   fr: "RosterFlow établit lui-même les blocs et les services. Les lignes verrouillées restent telles quelles."
   nl: "RosterFlow maakt zelf de omlopen en diensten. Vergrendelde rijen blijven zoals ze zijn."
   pl: "RosterFlow sam układa obiegi i służby. Zablokowane wiersze pozostają bez zmian."
+  es: "RosterFlow calcula por sí mismo los recorridos y servicios. Las filas bloqueadas se quedan como están."
   ru: "RosterFlow сам составляет выпуски и смены. Заблокированные строки не меняются."
   uk: "RosterFlow сам складає випуски й зміни. Заблоковані рядки не змінюються."
 "Compare the figures":
@@ -886,6 +1011,7 @@ _version: 2
   fr: "Comparez les chiffres"
   nl: "Vergelijk de cijfers"
   pl: "Porównaj liczby"
+  es: "Compara las cifras"
   ru: "Сравните показатели"
   uk: "Порівняйте показники"
 "The figures now show the proposal against your planning: green where it is better, red where it is worse.":
@@ -893,6 +1019,7 @@ _version: 2
   fr: "Les chiffres montrent maintenant la proposition face à votre planification : en vert là où elle est meilleure, en rouge là où elle est moins bonne."
   nl: "De cijfers tonen nu het voorstel tegenover jouw planning: groen waar het beter is, rood waar het slechter is."
   pl: "Liczby pokazują teraz propozycję w porównaniu z twoim planem: zielone tam, gdzie jest lepsza, czerwone tam, gdzie gorsza."
+  es: "Ahora las cifras muestran la propuesta frente a tu planificación: verde donde es mejor, rojo donde es peor."
   ru: "Показатели теперь сравнивают предложение с вашим планом: зелёным, где лучше, красным, где хуже."
   uk: "Показники тепер порівнюють пропозицію з вашим планом: зеленим, де краще, червоним, де гірше."
 "Accept it or keep yours":
@@ -900,6 +1027,7 @@ _version: 2
   fr: "Acceptez-la ou gardez la vôtre"
   nl: "Neem het over of houd de jouwe"
   pl: "Przyjmij ją albo zostaw swoją"
+  es: "Acéptala o quédate con la tuya"
   ru: "Примите его или оставьте свой"
   uk: "Прийміть її або залиште свій"
 "Accept puts the proposal in your draft; Keep mine forgets it.":
@@ -907,6 +1035,7 @@ _version: 2
   fr: "Accepter met la proposition dans votre brouillon ; Garder le mien l'oublie."
   nl: "Accepteren zet het voorstel in je concept; Mijn eigen houden vergeet het."
   pl: "Akceptuj wstawia propozycję do szkicu; Zostaw moje ją pomija."
+  es: "Aceptar pone la propuesta en tu borrador; Mantener el mío la olvida."
   ru: "«Принять» добавляет предложение в черновик; «Оставить моё» забывает его."
   uk: "«Прийняти» додає пропозицію в чернетку; «Залишити моє» забуває її."
 "Open the Timeplan tab":
@@ -914,6 +1043,7 @@ _version: 2
   fr: "Ouvrez l'onglet Plan horaire"
   nl: "Open het tabblad Dienstregelingsplan"
   pl: "Otwórz kartę Plan rozkładu"
+  es: "Abre la pestaña Plan horario"
   ru: "Откройте вкладку «План расписания»"
   uk: "Відкрийте вкладку «План розкладу»"
 "Here a line gets its running times and its timetable.":
@@ -921,6 +1051,7 @@ _version: 2
   fr: "Ici, une ligne reçoit ses temps de parcours et son horaire."
   nl: "Hier krijgt een lijn zijn rijtijden en zijn dienstregeling."
   pl: "Tu linia dostaje czasy przejazdu i rozkład."
+  es: "Aquí una línea recibe sus tiempos de recorrido y su horario."
   ru: "Здесь линия получает время хода и расписание."
   uk: "Тут лінія отримує час руху й розклад."
 "Show the running times":
@@ -928,6 +1059,7 @@ _version: 2
   fr: "Affichez les temps de parcours"
   nl: "Toon de rijtijden"
   pl: "Pokaż czasy przejazdu"
+  es: "Muestra los tiempos de recorrido"
   ru: "Покажите время хода"
   uk: "Покажіть час руху"
 "Click the clock icon on the right of the bar.":
@@ -935,6 +1067,7 @@ _version: 2
   fr: "Cliquez sur l'icône d'horloge à droite de la barre."
   nl: "Klik op het klokpictogram rechts in de balk."
   pl: "Kliknij ikonę zegara po prawej stronie paska."
+  es: "Haz clic en el icono del reloj a la derecha de la barra."
   ru: "Щёлкните значок часов справа на панели."
   uk: "Клацніть значок годинника праворуч на панелі."
 "Change a running time":
@@ -942,6 +1075,7 @@ _version: 2
   fr: "Modifiez un temps de parcours"
   nl: "Wijzig een rijtijd"
   pl: "Zmień czas przejazdu"
+  es: "Cambia un tiempo de recorrido"
   ru: "Измените время хода"
   uk: "Змініть час руху"
 "Click a box with minutes in a time band, type a new number and press Enter. Every trip in that band moves with it.":
@@ -949,6 +1083,7 @@ _version: 2
   fr: "Cliquez sur une case de minutes dans une tranche horaire, tapez un nouveau nombre et appuyez sur Entrée. Chaque course de cette tranche suit."
   nl: "Klik in een tijdvak op een vakje met minuten, typ een nieuw getal en druk op Enter. Elke rit in dat tijdvak schuift mee."
   pl: "Kliknij pole z minutami w przedziale czasu, wpisz nową liczbę i naciśnij Enter. Każdy kurs w tym przedziale przesunie się razem."
+  es: "Haz clic en una casilla con minutos de una franja horaria, escribe un número nuevo y pulsa Enter. Todos los viajes de esa franja se mueven con él."
   ru: "Щёлкните ячейку с минутами во временном интервале, введите новое число и нажмите Enter. Все рейсы интервала сдвинутся вместе с ним."
   uk: "Клацніть клітинку з хвилинами в часовому проміжку, введіть нове число й натисніть Enter. Усі рейси проміжку зсунуться разом із ним."
 "Show the timetable":
@@ -956,6 +1091,7 @@ _version: 2
   fr: "Affichez l'horaire"
   nl: "Toon de dienstregeling"
   pl: "Pokaż rozkład"
+  es: "Muestra el horario"
   ru: "Покажите расписание"
   uk: "Покажіть розклад"
 "Click the grid icon on the right of the bar. Each row is a trip, with its time at every stop.":
@@ -963,6 +1099,7 @@ _version: 2
   fr: "Cliquez sur l'icône de grille à droite de la barre. Chaque ligne est une course, avec son heure à chaque arrêt."
   nl: "Klik op het rasterpictogram rechts in de balk. Elke rij is een rit, met zijn tijd bij elke halte."
   pl: "Kliknij ikonę siatki po prawej stronie paska. Każdy wiersz to kurs z godziną na każdym przystanku."
+  es: "Haz clic en el icono de la cuadrícula a la derecha de la barra. Cada fila es un viaje, con su hora en cada parada."
   ru: "Щёлкните значок сетки справа на панели. Каждая строка — рейс со временем на каждой остановке."
   uk: "Клацніть значок сітки праворуч на панелі. Кожен рядок — рейс із часом на кожній зупинці."
 "Add trips by headway":
@@ -970,6 +1107,7 @@ _version: 2
   fr: "Ajoutez des courses par fréquence"
   nl: "Voeg ritten toe met een interval"
   pl: "Dodaj kursy według taktu"
+  es: "Añade viajes por frecuencia"
   ru: "Добавьте рейсы по интервалу"
   uk: "Додайте рейси за інтервалом"
 "Click the clock tool above the table. Give the first and the last departure - in a quiet part of the day, such as the late evening - and the minutes between buses, then the tick.":
@@ -977,6 +1115,7 @@ _version: 2
   fr: "Cliquez sur l'outil horloge au-dessus du tableau. Indiquez le premier et le dernier départ – dans un moment calme de la journée, par exemple tard le soir – et les minutes entre les bus, puis la coche."
   nl: "Klik op het klokgereedschap boven de tabel. Vul het eerste en het laatste vertrek in – in een rustig deel van de dag, zoals de late avond – en de minuten tussen de bussen, en klik dan op het vinkje."
   pl: "Kliknij narzędzie z zegarem nad tabelą. Podaj pierwszy i ostatni odjazd – w spokojnej porze dnia, np. późnym wieczorem – oraz minuty między autobusami, a potem kliknij ptaszek."
+  es: "Haz clic en la herramienta del reloj encima de la tabla. Indica la primera y la última salida (en una parte tranquila del día, como la noche) y los minutos entre autobuses, y luego la marca de verificación."
   ru: "Щёлкните инструмент с часами над таблицей. Укажите первое и последнее отправление — в спокойное время дня, например поздно вечером, — и минуты между автобусами, затем галочку."
   uk: "Клацніть інструмент із годинником над таблицею. Вкажіть перше й останнє відправлення — у спокійну пору дня, наприклад пізно ввечері, — і хвилини між автобусами, потім галочку."
 "Save the timetable":
@@ -984,6 +1123,7 @@ _version: 2
   fr: "Enregistrez l'horaire"
   nl: "Sla de dienstregeling op"
   pl: "Zapisz rozkład"
+  es: "Guarda el horario"
   ru: "Сохраните расписание"
   uk: "Збережіть розклад"
 "Save writes the line's new timetable. If it asks you to mend something first, two trips leave at the same minute: undo them (the arrow in the bar) and add them at other times.":
@@ -991,6 +1131,7 @@ _version: 2
   fr: "Enregistrer écrit le nouvel horaire de la ligne. S'il demande d'abord une correction, deux courses partent à la même minute : annulez-les (la flèche dans la barre) et ajoutez-les à d'autres heures."
   nl: "Opslaan schrijft de nieuwe dienstregeling van de lijn weg. Vraagt het om eerst iets te herstellen, dan vertrekken twee ritten in dezelfde minuut: maak ze ongedaan (de pijl in de balk) en voeg ze op andere tijden toe."
   pl: "Zapisz zapisuje nowy rozkład linii. Jeśli najpierw prosi o poprawkę, dwa kursy odjeżdżają w tej samej minucie: cofnij je (strzałka na pasku) i dodaj o innych porach."
+  es: "Guardar escribe el nuevo horario de la línea. Si te pide corregir algo primero, es que dos viajes salen en el mismo minuto: deshazlos (la flecha de la barra) y añádelos a otras horas."
   ru: "«Сохранить» записывает новое расписание линии. Если сначала просят что-то исправить, два рейса отправляются в одну минуту: отмените их (стрелка на панели) и добавьте в другое время."
   uk: "«Зберегти» записує новий розклад лінії. Якщо спершу просять щось виправити, два рейси вирушають в одну хвилину: скасуйте їх (стрілка на панелі) і додайте в інший час."
 "Refresh the blocks":
@@ -998,6 +1139,7 @@ _version: 2
   fr: "Actualisez les blocs"
   nl: "Vernieuw de omlopen"
   pl: "Odśwież obiegi"
+  es: "Actualiza los recorridos"
   ru: "Обновите выпуски"
   uk: "Оновіть випуски"
 "Click UNSYNCED - Refresh in the status bar: the buses' blocks and the duties are made again for the new trips.":
@@ -1005,6 +1147,7 @@ _version: 2
   fr: "Cliquez sur NON SYNCHRONISÉ – Actualiser dans la barre d'état : les blocs des bus et les services sont refaits pour les nouvelles courses."
   nl: "Klik in de statusbalk op NIET GESYNCHRONISEERD – Vernieuwen: de omlopen van de bussen en de diensten worden opnieuw gemaakt voor de nieuwe ritten."
   pl: "Kliknij NIEZSYNCHRONIZOWANE – Odśwież na pasku stanu: obiegi autobusów i służby zostaną ułożone od nowa dla nowych kursów."
+  es: "Haz clic en SIN SINCRONIZAR - Actualizar en la barra de estado: los recorridos de los autobuses y los servicios se vuelven a crear para los viajes nuevos."
   ru: "Щёлкните НЕ СИНХРОНИЗИРОВАНО – Обновить в строке состояния: выпуски автобусов и смены будут составлены заново для новых рейсов."
   uk: "Клацніть НЕ СИНХРОНІЗОВАНО – Оновити в рядку стану: випуски автобусів і зміни буде складено заново для нових рейсів."
 "Open the line's colour":
@@ -1012,6 +1155,7 @@ _version: 2
   fr: "Ouvrez la couleur de la ligne"
   nl: "Open de kleur van de lijn"
   pl: "Otwórz kolor linii"
+  es: "Abre el color de la línea"
   ru: "Откройте цвет линии"
   uk: "Відкрийте колір лінії"
 "Right-click a trip and choose Line colour.":
@@ -1019,6 +1163,7 @@ _version: 2
   fr: "Faites un clic droit sur une course et choisissez Couleur de ligne."
   nl: "Klik met rechts op een rit en kies Lijnkleur."
   pl: "Kliknij kurs prawym przyciskiem i wybierz Kolor linii."
+  es: "Haz clic derecho en un viaje y elige Color de línea."
   ru: "Щёлкните рейс правой кнопкой и выберите «Цвет маршрута»."
   uk: "Клацніть рейс правою кнопкою й виберіть «Колір маршруту»."
 "Pick a colour":
@@ -1026,6 +1171,7 @@ _version: 2
   fr: "Choisissez une couleur"
   nl: "Kies een kleur"
   pl: "Wybierz kolor"
+  es: "Elige un color"
   ru: "Выберите цвет"
   uk: "Виберіть колір"
 "Click a colour: every chip of the line takes it at once. Automatic gives it back its old one.":
@@ -1033,6 +1179,7 @@ _version: 2
   fr: "Cliquez sur une couleur : chaque puce de la ligne la prend aussitôt. Automatique lui rend l'ancienne."
   nl: "Klik op een kleur: elke chip van de lijn neemt hem meteen over. Automatisch geeft hem zijn oude terug."
   pl: "Kliknij kolor: każdy kafelek linii od razu go przyjmie. Automatycznie przywraca poprzedni."
+  es: "Haz clic en un color: todas las fichas de la línea lo toman a la vez. Automático le devuelve el que tenía."
   ru: "Щёлкните цвет: все плашки линии сразу его примут. «Автоматически» вернёт прежний."
   uk: "Клацніть колір: усі плашки лінії одразу його приймуть. «Автоматично» поверне попередній."
 "Make a change":
@@ -1040,6 +1187,7 @@ _version: 2
   fr: "Faites une modification"
   nl: "Maak een wijziging"
   pl: "Wprowadź zmianę"
+  es: "Haz un cambio"
   ru: "Внесите изменение"
   uk: "Внесіть зміну"
 "Move a trip or cut a duty. The dot at the top turns orange: there are changes not saved.":
@@ -1047,6 +1195,7 @@ _version: 2
   fr: "Déplacez une course ou coupez un service. Le point en haut devient orange : il y a des modifications non enregistrées."
   nl: "Verplaats een rit of knip een dienst. De stip bovenaan wordt oranje: er zijn niet-opgeslagen wijzigingen."
   pl: "Przenieś kurs albo podziel służbę. Kropka na górze robi się pomarańczowa: są niezapisane zmiany."
+  es: "Mueve un viaje o corta un servicio. El punto de arriba se vuelve naranja: hay cambios sin guardar."
   ru: "Перенесите рейс или разрежьте смену. Точка вверху станет оранжевой: есть несохранённые изменения."
   uk: "Перенесіть рейс або розріжте зміну. Крапка вгорі стане помаранчевою: є незбережені зміни."
 "DISCARD it":
@@ -1054,6 +1203,7 @@ _version: 2
   fr: "ABANDONNEZ-la"
   nl: "VERWERP het"
   pl: "ODRZUĆ ją"
+  es: "DESCÁRTALO"
   ru: "ОТМЕНИТЕ его"
   uk: "СКАСУЙТЕ її"
 "DISCARD forgets your changes and goes back to what was saved.":
@@ -1061,6 +1211,7 @@ _version: 2
   fr: "ABANDONNER oublie vos modifications et revient à ce qui était enregistré."
   nl: "VERWERPEN vergeet je wijzigingen en gaat terug naar wat was opgeslagen."
   pl: "ODRZUĆ zapomina twoje zmiany i wraca do tego, co było zapisane."
+  es: "DESCARTAR olvida tus cambios y vuelve a lo guardado."
   ru: "ОТМЕНИТЬ забывает ваши изменения и возвращает сохранённое."
   uk: "СКАСУВАТИ забуває ваші зміни й повертає збережене."
 "Make a change again":
@@ -1068,6 +1219,7 @@ _version: 2
   fr: "Refaites une modification"
   nl: "Maak opnieuw een wijziging"
   pl: "Wprowadź zmianę jeszcze raz"
+  es: "Vuelve a hacer un cambio"
   ru: "Снова внесите изменение"
   uk: "Знову внесіть зміну"
 "Any change will do.":
@@ -1075,6 +1227,7 @@ _version: 2
   fr: "N'importe quelle modification convient."
   nl: "Elke wijziging is goed."
   pl: "Wystarczy dowolna zmiana."
+  es: "Cualquier cambio sirve."
   ru: "Подойдёт любое изменение."
   uk: "Підійде будь-яка зміна."
 "SAVE it":
@@ -1082,6 +1235,7 @@ _version: 2
   fr: "ENREGISTREZ-la"
   nl: "SLA het OP"
   pl: "ZAPISZ ją"
+  es: "GUÁRDALO"
   ru: "СОХРАНИТЕ его"
   uk: "ЗБЕРЕЖІТЬ її"
 "SAVE makes it the company's planning: the roster, the day and the game run it now. The dot turns green.":
@@ -1089,6 +1243,7 @@ _version: 2
   fr: "ENREGISTRER en fait la planification de l'entreprise : le roulement, la journée et le jeu l'appliquent désormais. Le point devient vert."
   nl: "OPSLAAN maakt het de planning van het bedrijf: het rooster, de dag en het spel rijden er nu mee. De stip wordt groen."
   pl: "ZAPISZ czyni ją planem firmy: grafik, dzień i gra działają teraz według niej. Kropka robi się zielona."
+  es: "GUARDAR lo convierte en la planificación de la empresa: el cuadrante, el día y el juego ya la usan. El punto se vuelve verde."
   ru: "СОХРАНИТЬ делает его планом компании: график, день и игра теперь работают по нему. Точка станет зелёной."
   uk: "ЗБЕРЕГТИ робить її планом компанії: графік, день і гра тепер працюють за ним. Крапка стане зеленою."
 "This day has no trips yet. Give the company a line first (on the Lines page), then come back.":
@@ -1096,6 +1251,7 @@ _version: 2
   fr: "Ce jour n'a encore aucune course. Donnez d'abord une ligne à l'entreprise (page Lignes), puis revenez."
   nl: "Deze dag heeft nog geen ritten. Geef het bedrijf eerst een lijn (op de pagina Lijnen) en kom dan terug."
   pl: "Ten dzień nie ma jeszcze kursów. Najpierw daj firmie linię (na stronie Linie), a potem wróć."
+  es: "Este día aún no tiene viajes. Dale primero una línea a la empresa (en la página Líneas) y luego vuelve."
   ru: "В этот день ещё нет рейсов. Сначала дайте компании линию (на странице «Линии»), затем возвращайтесь."
   uk: "Цього дня ще немає рейсів. Спершу дайте компанії лінію (на сторінці «Лінії»), потім повертайтеся."
 "Moving a trip needs at least two buses on the day. Add a line or more trips first, then come back.":
@@ -1103,6 +1259,7 @@ _version: 2
   fr: "Pour déplacer une course, il faut au moins deux bus dans la journée. Ajoutez d'abord une ligne ou plus de courses, puis revenez."
   nl: "Een rit verplaatsen kan pas met minstens twee bussen op de dag. Voeg eerst een lijn of meer ritten toe en kom dan terug."
   pl: "Do przeniesienia kursu potrzeba co najmniej dwóch autobusów w ciągu dnia. Najpierw dodaj linię lub więcej kursów, a potem wróć."
+  es: "Para mover un viaje hacen falta al menos dos autobuses en el día. Añade primero una línea o más viajes y luego vuelve."
   ru: "Чтобы перенести рейс, в дне должно быть хотя бы два автобуса. Сначала добавьте линию или больше рейсов, затем возвращайтесь."
   uk: "Щоб перенести рейс, у дні має бути щонайменше два автобуси. Спершу додайте лінію або більше рейсів, потім повертайтеся."
 "Nothing is red right now: every rule is kept. Come back when a number shows beside the issues in the status bar.":
@@ -1110,6 +1267,7 @@ _version: 2
   fr: "Rien n'est rouge pour l'instant : chaque règle est respectée. Revenez quand un nombre apparaît à côté des problèmes dans la barre d'état."
   nl: "Er is nu niets rood: elke regel wordt gehouden. Kom terug als er een getal naast de problemen in de statusbalk staat."
   pl: "Na razie nic nie jest czerwone: każda reguła jest przestrzegana. Wróć, gdy obok problemów na pasku stanu pojawi się liczba."
+  es: "Ahora mismo no hay nada en rojo: se cumplen todas las reglas. Vuelve cuando aparezca un número junto a los problemas en la barra de estado."
   ru: "Сейчас ничего не красное: все правила соблюдены. Возвращайтесь, когда рядом с проблемами в строке состояния появится число."
   uk: "Зараз нічого не червоне: усі правила дотримано. Повертайтеся, коли поруч із проблемами в рядку стану з'явиться число."
 "When the buses run: each line's running times and timetable.":
@@ -1117,6 +1275,7 @@ _version: 2
   fr: "Quand les bus circulent : les temps de parcours et l'horaire de chaque ligne."
   nl: "Wanneer de bussen rijden: de rijtijden en de dienstregeling van elke lijn."
   pl: "Kiedy jeżdżą autobusy: czasy przejazdu i rozkład każdej linii."
+  es: "Cuándo circulan los autobuses: los tiempos de recorrido y el horario de cada línea."
   ru: "Когда ходят автобусы: время хода и расписание каждой линии."
   uk: "Коли ходять автобуси: час руху й розклад кожної лінії."
 "Which bus drives which trips. One bus's day is a block.":
@@ -1124,6 +1283,7 @@ _version: 2
   fr: "Quel bus fait quelles courses. La journée d'un bus est un bloc."
   nl: "Welke bus welke ritten rijdt. De dag van één bus is een omloop."
   pl: "Który autobus wykonuje które kursy. Dzień jednego autobusu to obieg."
+  es: "Qué autobús hace qué viajes. El día de un autobús es un recorrido."
   ru: "Какой автобус выполняет какие рейсы. День одного автобуса — это выпуск."
   uk: "Який автобус виконує які рейси. День одного автобуса — це випуск."
 "Who drives. Blocks are cut into duties at a terminus or the depot.":
@@ -1131,6 +1291,7 @@ _version: 2
   fr: "Qui conduit. Les blocs sont coupés en services à un terminus ou au dépôt."
   nl: "Wie rijdt. Omlopen worden bij een eindhalte of de remise in diensten geknipt."
   pl: "Kto prowadzi. Obiegi dzieli się na służby na pętli lub w zajezdni."
+  es: "Quién conduce. Los recorridos se cortan en servicios en una cabecera o en la cochera."
   ru: "Кто ведёт. Выпуски делятся на смены на конечной или в депо."
   uk: "Хто веде. Випуски діляться на зміни на кінцевій або в депо."
 "Which driver and which bus, for each weekday.":
@@ -1138,6 +1299,7 @@ _version: 2
   fr: "Quel conducteur et quel bus, pour chaque jour de la semaine."
   nl: "Welke chauffeur en welke bus, voor elke weekdag."
   pl: "Który kierowca i który autobus, na każdy dzień tygodnia."
+  es: "Qué conductor y qué autobús, para cada día de la semana."
   ru: "Какой водитель и какой автобус, на каждый день недели."
   uk: "Який водій і який автобус, на кожен день тижня."
 "Nothing counts until you save. DISCARD goes back to what was saved.":
@@ -1145,6 +1307,7 @@ _version: 2
   fr: "Rien ne compte tant que vous n'avez pas enregistré. ABANDONNER revient à ce qui était enregistré."
   nl: "Niets telt voordat je opslaat. VERWERPEN gaat terug naar wat was opgeslagen."
   pl: "Nic się nie liczy, dopóki nie zapiszesz. ODRZUĆ wraca do tego, co było zapisane."
+  es: "Nada cuenta hasta que guardas. DESCARTAR vuelve a lo guardado."
   ru: "Ничего не действует, пока вы не сохраните. ОТМЕНИТЬ возвращает сохранённое."
   uk: "Ніщо не діє, доки ви не збережете. СКАСУВАТИ повертає збережене."
 "Block":
@@ -1152,6 +1315,7 @@ _version: 2
   fr: "Bloc"
   nl: "Omloop"
   pl: "Obieg"
+  es: "Recorrido"
   ru: "Выпуск"
   uk: "Випуск"
 "Piece of work":
@@ -1159,6 +1323,7 @@ _version: 2
   fr: "Partie de travail"
   nl: "Dienststuk"
   pl: "Część pracy"
+  es: "Parte de trabajo"
   ru: "Часть работы"
   uk: "Частина роботи"
 "Relief":
@@ -1166,6 +1331,7 @@ _version: 2
   fr: "Relève"
   nl: "Aflossing"
   pl: "Zmiana kierowcy"
+  es: "Relevo"
   ru: "Пересменка"
   uk: "Перезмінка"
 "Sign-on and sign-off":
@@ -1173,6 +1339,7 @@ _version: 2
   fr: "Prise et fin de service"
   nl: "Aanmelden en afmelden"
   pl: "Rozpoczęcie i zakończenie"
+  es: "Toma y fin de servicio"
   ru: "Явка и сдача"
   uk: "Явка і здача"
 "Deadhead":
@@ -1180,6 +1347,7 @@ _version: 2
   fr: "Haut-le-pied"
   nl: "Leegrit"
   pl: "Przejazd techniczny"
+  es: "Viaje en vacío"
   ru: "Нулевой рейс"
   uk: "Нульовий рейс"
 "Pull-out and pull-in":
@@ -1187,6 +1355,7 @@ _version: 2
   fr: "Sortie et rentrée au dépôt"
   nl: "Uitrukken en inrukken"
   pl: "Wyjazd i zjazd do zajezdni"
+  es: "Salida y entrada a cochera"
   ru: "Выезд и заезд в депо"
   uk: "Виїзд і заїзд у депо"
 "Drop slot":
@@ -1194,6 +1363,7 @@ _version: 2
   fr: "Emplacement de dépôt"
   nl: "Neerzetvak"
   pl: "Miejsce upuszczenia"
+  es: "Hueco de destino"
   ru: "Место для переноса"
   uk: "Місце для перенесення"
 "Draft":
@@ -1201,6 +1371,7 @@ _version: 2
   fr: "Brouillon"
   nl: "Concept"
   pl: "Szkic"
+  es: "Borrador"
   ru: "Черновик"
   uk: "Чернетка"
 "PVR":
@@ -1208,6 +1379,7 @@ _version: 2
   fr: "Pointe"
   nl: "Piekbehoefte"
   pl: "Szczyt"
+  es: "Punta de vehículos"
   ru: "Пиковый выпуск"
   uk: "Піковий випуск"
 "Time band":
@@ -1215,6 +1387,7 @@ _version: 2
   fr: "Tranche horaire"
   nl: "Tijdvak"
   pl: "Przedział czasu"
+  es: "Franja horaria"
   ru: "Временной интервал"
   uk: "Часовий проміжок"
 "Running time":
@@ -1222,6 +1395,7 @@ _version: 2
   fr: "Temps de parcours"
   nl: "Rijtijd"
   pl: "Czas przejazdu"
+  es: "Tiempo de viaje"
   ru: "Время хода"
   uk: "Час руху"
 "Issue":
@@ -1229,6 +1403,7 @@ _version: 2
   fr: "Problème"
   nl: "Probleem"
   pl: "Problem"
+  es: "Problema"
   ru: "Проблема"
   uk: "Проблема"
 "One run of a bus from one end of the line to the other, with passengers. Shown as a chip in the line's colour.":
@@ -1236,6 +1411,7 @@ _version: 2
   fr: "Un trajet d'un bus d'un bout à l'autre de la ligne, avec voyageurs. Affiché comme une puce de la couleur de la ligne."
   nl: "Eén rit van een bus van het ene eind van de lijn naar het andere, met reizigers. Getoond als een chip in de kleur van de lijn."
   pl: "Jeden przejazd autobusu z jednego końca linii na drugi, z pasażerami. Pokazany jako kafelek w kolorze linii."
+  es: "Un viaje de un autobús de un extremo de la línea al otro, con pasajeros. Se muestra como una ficha del color de la línea."
   ru: "Одна поездка автобуса от одного конца линии до другого, с пассажирами. Показана плашкой в цвете линии."
   uk: "Одна поїздка автобуса від одного кінця лінії до іншого, з пасажирами. Показана плашкою в кольорі лінії."
 "The pointed end of a chip shows the way the trip runs: to the right is outbound, to the left inbound.":
@@ -1243,6 +1419,7 @@ _version: 2
   fr: "La pointe d'une puce montre le sens de la course : vers la droite c'est l'aller, vers la gauche le retour."
   nl: "De punt van een chip toont de rijrichting: naar rechts is heen, naar links terug."
   pl: "Szpic kafelka pokazuje kierunek kursu: w prawo to kierunek tam, w lewo powrotny."
+  es: "El extremo en punta de una ficha indica el sentido del viaje: hacia la derecha es ida, hacia la izquierda vuelta."
   ru: "Острый конец плашки показывает направление рейса: вправо — туда, влево — обратно."
   uk: "Гострий кінець плашки показує напрямок рейсу: праворуч — туди, ліворуч — назад."
 "One bus's whole day: every trip it drives, from leaving the depot until it is back. Also called a vehicle schedule.":
@@ -1250,6 +1427,7 @@ _version: 2
   fr: "Toute la journée d'un bus : chaque course qu'il fait, de la sortie du dépôt jusqu'à son retour. On dit aussi graphique de véhicule."
   nl: "De hele dag van één bus: elke rit die hij rijdt, van het verlaten van de remise tot hij terug is. Ook wel voertuigomloop genoemd."
   pl: "Cały dzień jednego autobusu: każdy kurs, który wykonuje, od wyjazdu z zajezdni do powrotu. Nazywany też planem pojazdu."
+  es: "Todo el día de un autobús: cada viaje que hace, desde que sale de la cochera hasta que vuelve. También se llama planificación del vehículo."
   ru: "Весь день одного автобуса: каждый его рейс от выезда из депо до возвращения. Ещё называется графиком машины."
   uk: "Увесь день одного автобуса: кожен його рейс від виїзду з депо до повернення. Ще називається графіком машини."
 "One driver's working day, from sign-on to sign-off.":
@@ -1257,6 +1435,7 @@ _version: 2
   fr: "La journée de travail d'un conducteur, de la prise à la fin de service."
   nl: "De werkdag van één chauffeur, van aanmelden tot afmelden."
   pl: "Dzień pracy jednego kierowcy, od rozpoczęcia do zakończenia."
+  es: "La jornada de trabajo de un conductor, desde la toma hasta el fin de servicio."
   ru: "Рабочий день одного водителя, от явки до сдачи."
   uk: "Робочий день одного водія, від явки до здачі."
 "The part of a duty spent on one bus. A duty can have pieces on different buses.":
@@ -1264,6 +1443,7 @@ _version: 2
   fr: "La partie d'un service passée sur un même bus. Un service peut avoir des parties sur différents bus."
   nl: "Het deel van een dienst op één bus. Een dienst kan stukken op verschillende bussen hebben."
   pl: "Część służby spędzona na jednym autobusie. Służba może mieć części na różnych autobusach."
+  es: "La parte de un servicio en un mismo autobús. Un servicio puede tener tramos en autobuses distintos."
   ru: "Часть смены на одном автобусе. У смены могут быть части на разных автобусах."
   uk: "Частина зміни на одному автобусі. Зміна може мати частини на різних автобусах."
 "Where one driver hands the bus to the next: always at a terminus or at the depot (the relief point).":
@@ -1271,6 +1451,7 @@ _version: 2
   fr: "Là où un conducteur passe le bus au suivant : toujours à un terminus ou au dépôt (le point de relève)."
   nl: "Waar een chauffeur de bus aan de volgende overdraagt: altijd bij een eindhalte of de remise (het aflospunt)."
   pl: "Miejsce, gdzie kierowca przekazuje autobus następnemu: zawsze na pętli lub w zajezdni (punkt zmiany)."
+  es: "Donde un conductor entrega el autobús al siguiente: siempre en una cabecera o en la cochera (el punto de relevo)."
   ru: "Место, где водитель передаёт автобус следующему: всегда на конечной или в депо (пункт пересменки)."
   uk: "Місце, де водій передає автобус наступному: завжди на кінцевій або в депо (пункт перезмінки)."
 "The start and the end of a duty, with a few minutes to check the bus.":
@@ -1278,6 +1459,7 @@ _version: 2
   fr: "Le début et la fin d'un service, avec quelques minutes pour vérifier le bus."
   nl: "Het begin en het eind van een dienst, met een paar minuten om de bus na te kijken."
   pl: "Początek i koniec służby, z kilkoma minutami na sprawdzenie autobusu."
+  es: "El inicio y el final de un servicio, con unos minutos para revisar el autobús."
   ru: "Начало и конец смены, с несколькими минутами на осмотр автобуса."
   uk: "Початок і кінець зміни, з кількома хвилинами на огляд автобуса."
 "A bus driving without passengers, for example to where its next trip starts. An orange dot means its time is a guess.":
@@ -1285,6 +1467,7 @@ _version: 2
   fr: "Un bus qui roule sans voyageurs, par exemple jusqu'au départ de sa course suivante. Un point orange signifie que sa durée est estimée."
   nl: "Een bus die zonder reizigers rijdt, bijvoorbeeld naar waar zijn volgende rit begint. Een oranje stip betekent dat de tijd geschat is."
   pl: "Autobus jadący bez pasażerów, np. tam, gdzie zaczyna się jego następny kurs. Pomarańczowa kropka oznacza, że czas jest szacowany."
+  es: "Un autobús que circula sin pasajeros, por ejemplo hasta donde empieza su próximo viaje. Un punto naranja significa que su tiempo es una estimación."
   ru: "Автобус едет без пассажиров, например к началу следующего рейса. Оранжевая точка значит, что время примерное."
   uk: "Автобус їде без пасажирів, наприклад до початку наступного рейсу. Помаранчева крапка означає, що час приблизний."
 "The bus leaving the depot in the morning and going back at night.":
@@ -1292,6 +1475,7 @@ _version: 2
   fr: "Le bus qui quitte le dépôt le matin et y rentre le soir."
   nl: "De bus die 's ochtends de remise verlaat en 's avonds teruggaat."
   pl: "Autobus wyjeżdża rano z zajezdni i wraca do niej wieczorem."
+  es: "El autobús que sale de la cochera por la mañana y vuelve por la noche."
   ru: "Автобус утром выезжает из депо и вечером возвращается."
   uk: "Автобус уранці виїжджає з депо й увечері повертається."
 "The wait at the end of the line before the next trip.":
@@ -1299,6 +1483,7 @@ _version: 2
   fr: "L'attente au bout de la ligne avant la course suivante."
   nl: "Het wachten aan het eind van de lijn voor de volgende rit."
   pl: "Oczekiwanie na końcu linii przed następnym kursem."
+  es: "La espera al final de la línea antes del siguiente viaje."
   ru: "Ожидание на конечной перед следующим рейсом."
   uk: "Очікування на кінцевій перед наступним рейсом."
 "A long unpaid break in the middle of a duty: the driver works early and again later.":
@@ -1306,6 +1491,7 @@ _version: 2
   fr: "Une longue pause non payée au milieu d'un service : le conducteur travaille tôt, puis de nouveau plus tard."
   nl: "Een lange onbetaalde pauze midden in een dienst: de chauffeur werkt vroeg en later opnieuw."
   pl: "Długa niepłatna przerwa w środku służby: kierowca pracuje rano i potem jeszcze raz później."
+  es: "Una pausa larga no pagada en mitad de un servicio: el conductor trabaja temprano y otra vez más tarde."
   ru: "Долгий неоплачиваемый перерыв посреди смены: водитель работает утром и снова позже."
   uk: "Довга неоплачувана перерва посеред зміни: водій працює вранці й знову пізніше."
 "How a driver gets to the next bus: W walking, P by public transport, R by road in a company car.":
@@ -1313,6 +1499,7 @@ _version: 2
   fr: "Comment un conducteur rejoint le bus suivant : W à pied, P en transports en commun, R par la route en voiture de service."
   nl: "Hoe een chauffeur bij de volgende bus komt: W lopend, P met het openbaar vervoer, R over de weg met een dienstauto."
   pl: "Jak kierowca dociera do następnego autobusu: W pieszo, P komunikacją publiczną, R drogą samochodem służbowym."
+  es: "Cómo llega un conductor al siguiente autobús: W a pie, P en transporte público, R por carretera en un coche de empresa."
   ru: "Как водитель добирается до следующего автобуса: W пешком, P общественным транспортом, R по дороге на служебной машине."
   uk: "Як водій дістається до наступного автобуса: W пішки, P громадським транспортом, R дорогою службовою машиною."
 "Where something picked up may go, with stars for how good it is: blue breaks no rule, red breaks one.":
@@ -1320,6 +1507,7 @@ _version: 2
   fr: "Là où peut aller ce que vous avez pris, avec des étoiles selon la qualité : le bleu n'enfreint aucune règle, le rouge en enfreint une."
   nl: "Waar iets opgepakts heen mag, met sterren voor hoe goed het is: blauw overtreedt geen regel, rood er wel een."
   pl: "Miejsce, gdzie może trafić to, co podniesiono, z gwiazdkami oceny: niebieskie nie łamie reguł, czerwone łamie jedną."
+  es: "Dónde puede ir lo que has cogido, con estrellas según lo bueno que es: el azul no incumple ninguna regla, el rojo incumple una."
   ru: "Куда можно поставить взятое, со звёздами за качество: синее не нарушает правил, красное нарушает."
   uk: "Куди можна поставити взяте, із зірками за якість: синє не порушує правил, червоне порушує."
 "Trips no bus drives yet. They wait above the rows until you give them a bus.":
@@ -1327,6 +1515,7 @@ _version: 2
   fr: "Les courses qu'aucun bus n'assure encore. Elles attendent au-dessus des lignes jusqu'à ce que vous leur donniez un bus."
   nl: "Ritten die nog geen bus rijdt. Ze wachten boven de rijen tot je ze een bus geeft."
   pl: "Kursy, których jeszcze nie wykonuje żaden autobus. Czekają nad wierszami, aż dasz im autobus."
+  es: "Viajes que aún no hace ningún autobús. Esperan encima de las filas hasta que les asignes un autobús."
   ru: "Рейсы, которые пока не выполняет ни один автобус. Они ждут над строками, пока вы не дадите им автобус."
   uk: "Рейси, які поки не виконує жоден автобус. Вони чекають над рядками, доки ви не дасте їм автобус."
 "A locked bus or duty stays as it is: OPTIMIZE and your other edits leave it alone.":
@@ -1334,6 +1523,7 @@ _version: 2
   fr: "Un bus ou un service verrouillé reste tel quel : OPTIMISER et vos autres modifications n'y touchent pas."
   nl: "Een vergrendelde bus of dienst blijft zoals hij is: OPTIMALISEREN en je andere wijzigingen laten hem met rust."
   pl: "Zablokowany autobus lub służba zostaje bez zmian: OPTYMALIZUJ i inne twoje zmiany ich nie ruszają."
+  es: "Un autobús o servicio bloqueado se queda como está: OPTIMIZAR y tus demás cambios no lo tocan."
   ru: "Заблокированный автобус или смена не меняются: ОПТИМИЗИРОВАТЬ и другие ваши правки их не трогают."
   uk: "Заблокований автобус чи зміна не змінюються: ОПТИМІЗУВАТИ та інші ваші правки їх не чіпають."
 "Your changes before SAVE (orange dot). The game keeps running the saved planning (green dot) until you save.":
@@ -1341,6 +1531,7 @@ _version: 2
   fr: "Vos modifications avant ENREGISTRER (point orange). Le jeu continue d'appliquer la planification enregistrée (point vert) tant que vous n'enregistrez pas."
   nl: "Je wijzigingen vóór OPSLAAN (oranje stip). Het spel blijft de opgeslagen planning rijden (groene stip) tot je opslaat."
   pl: "Twoje zmiany przed ZAPISZ (pomarańczowa kropka). Gra dalej działa według zapisanego planu (zielona kropka), dopóki nie zapiszesz."
+  es: "Tus cambios antes de GUARDAR (punto naranja). El juego sigue usando la planificación guardada (punto verde) hasta que guardes."
   ru: "Ваши изменения до СОХРАНИТЬ (оранжевая точка). Игра работает по сохранённому плану (зелёная точка), пока вы не сохраните."
   uk: "Ваші зміни до ЗБЕРЕГТИ (помаранчева крапка). Гра працює за збереженим планом (зелена крапка), доки ви не збережете."
 "Peak vehicle requirement: the most buses out at the same time. That is how many buses the day needs.":
@@ -1348,6 +1539,7 @@ _version: 2
   fr: "Besoin en véhicules à la pointe : le plus grand nombre de bus en ligne en même temps. C'est le nombre de bus dont la journée a besoin."
   nl: "Piekbehoefte aan voertuigen: het grootste aantal bussen dat tegelijk onderweg is. Zoveel bussen heeft de dag nodig."
   pl: "Szczytowe zapotrzebowanie na pojazdy: najwięcej autobusów w trasie jednocześnie. Tyle autobusów potrzebuje dzień."
+  es: "Necesidad punta de vehículos: el máximo de autobuses en servicio a la vez. Son los autobuses que necesita el día."
   ru: "Пиковая потребность в машинах: наибольшее число автобусов на линии одновременно. Столько автобусов нужно на день."
   uk: "Пікова потреба в машинах: найбільша кількість автобусів на лінії одночасно. Стільки автобусів потрібно на день."
 "A part of the day with its own running times: the rush hour is often slower than the evening.":
@@ -1355,6 +1547,7 @@ _version: 2
   fr: "Une partie de la journée avec ses propres temps de parcours : l'heure de pointe est souvent plus lente que le soir."
   nl: "Een deel van de dag met eigen rijtijden: het spitsuur is vaak trager dan de avond."
   pl: "Część dnia z własnymi czasami przejazdu: szczyt bywa wolniejszy niż wieczór."
+  es: "Una parte del día con sus propios tiempos de viaje: la hora punta suele ser más lenta que la noche."
   ru: "Часть дня со своим временем хода: в час пик автобусы часто идут медленнее, чем вечером."
   uk: "Частина дня зі своїм часом руху: у годину пік автобуси часто їдуть повільніше, ніж увечері."
 "The minutes a bus needs from one stop to the next.":
@@ -1362,6 +1555,7 @@ _version: 2
   fr: "Les minutes qu'il faut à un bus d'un arrêt au suivant."
   nl: "De minuten die een bus nodig heeft van de ene halte naar de volgende."
   pl: "Minuty potrzebne autobusowi od jednego przystanku do następnego."
+  es: "Los minutos que necesita un autobús de una parada a la siguiente."
   ru: "Минуты, нужные автобусу от одной остановки до следующей."
   uk: "Хвилини, потрібні автобусу від однієї зупинки до наступної."
 "Every how many minutes a bus leaves: a headway of 10 minutes is six buses an hour.":
@@ -1369,6 +1563,7 @@ _version: 2
   fr: "Toutes les combien de minutes un bus part : une fréquence de 10 minutes, c'est six bus par heure."
   nl: "Om de hoeveel minuten er een bus vertrekt: een interval van 10 minuten is zes bussen per uur."
   pl: "Co ile minut odjeżdża autobus: takt 10 minut to sześć autobusów na godzinę."
+  es: "Cada cuántos minutos sale un autobús: una frecuencia de 10 minutos son seis autobuses por hora."
   ru: "Через сколько минут отправляется автобус: интервал 10 минут — это шесть автобусов в час."
   uk: "Через скільки хвилин вирушає автобус: інтервал 10 хвилин — це шість автобусів на годину."
 "One version of a line's route: the full run, or a short one that leaves out stops.":
@@ -1376,6 +1571,7 @@ _version: 2
   fr: "Une version du parcours d'une ligne : le trajet complet, ou un trajet court qui saute des arrêts."
   nl: "Eén versie van de route van een lijn: de hele rit, of een korte die haltes overslaat."
   pl: "Jedna wersja trasy linii: pełny przejazd albo krótki, pomijający przystanki."
+  es: "Una versión de la ruta de una línea: el trayecto completo o uno corto que se salta paradas."
   ru: "Один вариант маршрута линии: полный рейс или короткий, пропускающий остановки."
   uk: "Один варіант маршруту лінії: повний рейс або короткий, що пропускає зупинки."
 "A rule that is broken, such as a duty without a meal break. Red is a hard rule, orange a soft one that costs a penalty.":
@@ -1383,6 +1579,7 @@ _version: 2
   fr: "Une règle enfreinte, par exemple un service sans pause repas. Le rouge est une règle stricte, l'orange une règle souple qui coûte une pénalité."
   nl: "Een overtreden regel, zoals een dienst zonder maaltijdpauze. Rood is een harde regel, oranje een zachte die een boete kost."
   pl: "Złamana reguła, np. służba bez przerwy na posiłek. Czerwony to reguła twarda, pomarańczowy — miękka, za którą jest kara."
+  es: "Una regla incumplida, como un servicio sin pausa para comer. El rojo es una regla estricta; el naranja, una flexible que cuesta una penalización."
   ru: "Нарушенное правило, например смена без перерыва на обед. Красное — жёсткое правило, оранжевое — мягкое, за него штраф."
   uk: "Порушене правило, наприклад зміна без перерви на обід. Червоне — жорстке правило, помаранчеве — м'яке, за нього штраф."
 "Click a chip":
@@ -1390,6 +1587,7 @@ _version: 2
   fr: "Clic sur une puce"
   nl: "Klik op een chip"
   pl: "Kliknij kafelek"
+  es: "Clic en una ficha"
   ru: "Щелчок по плашке"
   uk: "Клік по плашці"
 "Double-click or drag":
@@ -1397,6 +1595,7 @@ _version: 2
   fr: "Double-clic ou glisser"
   nl: "Dubbelklik of slepen"
   pl: "Dwuklik lub przeciągnij"
+  es: "Doble clic o arrastrar"
   ru: "Двойной щелчок или перетаскивание"
   uk: "Подвійний клік або перетягування"
 "Shift + click":
@@ -1404,6 +1603,7 @@ _version: 2
   fr: "Maj + clic"
   nl: "Shift + klik"
   pl: "Shift + klik"
+  es: "Shift + clic"
   ru: "Shift + щелчок"
   uk: "Shift + клік"
 "Right-click":
@@ -1411,6 +1611,7 @@ _version: 2
   fr: "Clic droit"
   nl: "Rechtsklik"
   pl: "Prawy klik"
+  es: "Clic derecho"
   ru: "Правый щелчок"
   uk: "Правий клік"
 "Arrow keys":
@@ -1418,6 +1619,7 @@ _version: 2
   fr: "Flèches"
   nl: "Pijltjestoetsen"
   pl: "Strzałki"
+  es: "Teclas de flecha"
   ru: "Стрелки"
   uk: "Стрілки"
 "Ctrl + wheel":
@@ -1425,6 +1627,7 @@ _version: 2
   fr: "Ctrl + molette"
   nl: "Ctrl + muiswiel"
   pl: "Ctrl + kółko"
+  es: "Ctrl + rueda"
   ru: "Ctrl + колесо"
   uk: "Ctrl + коліщатко"
 "Shift + wheel":
@@ -1432,6 +1635,7 @@ _version: 2
   fr: "Maj + molette"
   nl: "Shift + muiswiel"
   pl: "Shift + kółko"
+  es: "Shift + rueda"
   ru: "Shift + колесо"
   uk: "Shift + коліщатко"
 "Choose the trip and open its card":
@@ -1439,6 +1643,7 @@ _version: 2
   fr: "Choisir la course et ouvrir sa fiche"
   nl: "De rit kiezen en zijn kaart openen"
   pl: "Wybierz kurs i otwórz jego kartę"
+  es: "Elegir el viaje y abrir su tarjeta"
   ru: "Выбрать рейс и открыть его карточку"
   uk: "Вибрати рейс і відкрити його картку"
 "Pick it up to move it":
@@ -1446,6 +1651,7 @@ _version: 2
   fr: "La prendre pour la déplacer"
   nl: "Oppakken om te verplaatsen"
   pl: "Podnieś, by przenieść"
+  es: "Cogerlo para moverlo"
   ru: "Взять, чтобы перенести"
   uk: "Узяти, щоб перенести"
 "Choose more trips of one row":
@@ -1453,6 +1659,7 @@ _version: 2
   fr: "Choisir plus de courses d'une même ligne"
   nl: "Meer ritten van één rij kiezen"
   pl: "Wybierz więcej kursów z jednego wiersza"
+  es: "Elegir más viajes de una fila"
   ru: "Выбрать больше рейсов одной строки"
   uk: "Вибрати більше рейсів одного рядка"
 "Ctrl + click":
@@ -1461,6 +1668,7 @@ _version: 2
   fr: "Ctrl + clic"
   nl: "Ctrl + klik"
   pl: "Ctrl + klik"
+  es: "Ctrl + clic"
   ru: "Ctrl + щелчок"
   uk: "Ctrl + клік"
 "Add one trip to the choice, or take it out":
@@ -1469,6 +1677,7 @@ _version: 2
   fr: "Ajouter une course au choix, ou l'en retirer"
   nl: "Eén rit aan de keuze toevoegen, of eruit halen"
   pl: "Dodaj jeden kurs do wyboru albo go usuń"
+  es: "Añadir un viaje a la selección o quitarlo"
   ru: "Добавить рейс к выбору или убрать его"
   uk: "Додати рейс до вибору або прибрати його"
 "Alt + drag":
@@ -1477,6 +1686,7 @@ _version: 2
   fr: "Alt + glisser"
   nl: "Alt + slepen"
   pl: "Alt + przeciągnięcie"
+  es: "Alt + arrastrar"
   ru: "Alt + перетаскивание"
   uk: "Alt + перетягування"
 "In Drivers: take the whole piece of work on that bus":
@@ -1485,6 +1695,7 @@ _version: 2
   fr: "Dans Conducteurs : prendre toute la partie de travail sur ce bus"
   nl: "In Chauffeurs: het hele dienststuk op die bus pakken"
   pl: "W Kierowcy: weź całą część pracy na tym autobusie"
+  es: "En Conductores: coger todo el tramo de trabajo en ese autobús"
   ru: "Во вкладке «Водители»: взять всю часть работы на этом автобусе"
   uk: "У вкладці «Водії»: взяти всю частину роботи на цьому автобусі"
 "Menu: move, swap, unassign, line colour and more":
@@ -1492,6 +1703,7 @@ _version: 2
   fr: "Menu : déplacer, échanger, désaffecter, couleur de ligne et plus"
   nl: "Menu: verplaatsen, ruilen, loskoppelen, lijnkleur en meer"
   pl: "Menu: przenieś, zamień, odepnij, kolor linii i więcej"
+  es: "Menú: mover, intercambiar, desasignar, color de línea y más"
   ru: "Меню: перенести, поменять, снять, цвет линии и другое"
   uk: "Меню: перенести, поміняти, зняти, колір лінії та інше"
 "To the next trip; with Shift the choice grows":
@@ -1499,6 +1711,7 @@ _version: 2
   fr: "Vers la course suivante ; avec Maj, la sélection s'agrandit"
   nl: "Naar de volgende rit; met Shift groeit de keuze"
   pl: "Do następnego kursu; z Shift wybór się powiększa"
+  es: "Al siguiente viaje; con Shift la selección crece"
   ru: "К следующему рейсу; с Shift выбор растёт"
   uk: "До наступного рейсу; із Shift вибір росте"
 "Go to a bus or a duty by its ID":
@@ -1506,6 +1719,7 @@ _version: 2
   fr: "Aller à un bus ou un service par son identifiant"
   nl: "Naar een bus of dienst gaan op ID"
   pl: "Przejdź do autobusu lub służby po ID"
+  es: "Ir a un autobús o un servicio por su ID"
   ru: "Перейти к автобусу или смене по номеру"
   uk: "Перейти до автобуса чи зміни за номером"
 "Pin the chosen row to the top":
@@ -1513,6 +1727,7 @@ _version: 2
   fr: "Épingler la ligne choisie en haut"
   nl: "De gekozen rij bovenaan vastzetten"
   pl: "Przypnij wybrany wiersz na górze"
+  es: "Fijar la fila elegida arriba"
   ru: "Закрепить выбранную строку сверху"
   uk: "Закріпити вибраний рядок угорі"
 "Put the chosen trips on the stack":
@@ -1520,6 +1735,7 @@ _version: 2
   fr: "Mettre les courses choisies sur la pile"
   nl: "De gekozen ritten op de stapel leggen"
   pl: "Odłóż wybrane kursy na stos"
+  es: "Poner los viajes elegidos en la pila"
   ru: "Положить выбранные рейсы в стопку"
   uk: "Покласти вибрані рейси в стос"
 "Undo / redo":
@@ -1527,6 +1743,7 @@ _version: 2
   fr: "Annuler / rétablir"
   nl: "Ongedaan maken / opnieuw"
   pl: "Cofnij / ponów"
+  es: "Deshacer / rehacer"
   ru: "Отменить / повторить"
   uk: "Скасувати / повторити"
 "Zoom in and out on the hours":
@@ -1534,6 +1751,7 @@ _version: 2
   fr: "Zoomer et dézoomer sur les heures"
   nl: "In- en uitzoomen op de uren"
   pl: "Powiększ i pomniejsz godziny"
+  es: "Acercar y alejar las horas"
   ru: "Приблизить и отдалить часы"
   uk: "Наблизити й віддалити години"
 "Move along the day":
@@ -1541,6 +1759,7 @@ _version: 2
   fr: "Se déplacer dans la journée"
   nl: "Langs de dag schuiven"
   pl: "Przesuwaj się wzdłuż dnia"
+  es: "Moverse por el día"
   ru: "Двигаться по дню"
   uk: "Рухатися по дню"
 "Let go, close what is open":
@@ -1548,6 +1767,7 @@ _version: 2
   fr: "Lâcher, fermer ce qui est ouvert"
   nl: "Loslaten, sluiten wat open is"
   pl: "Puść, zamknij to, co otwarte"
+  es: "Soltar, cerrar lo que esté abierto"
   ru: "Отпустить, закрыть открытое"
   uk: "Відпустити, закрити відкрите"
 "Red numbers in the status bar: some trips have no bus or no driver. Look at the stack above the rows, or let OPTIMIZE fill the gaps.":
@@ -1555,6 +1775,7 @@ _version: 2
   fr: "Des nombres rouges dans la barre d'état : certaines courses n'ont pas de bus ou pas de conducteur. Regardez la pile au-dessus des lignes, ou laissez OPTIMISER combler les trous."
   nl: "Rode getallen in de statusbalk: sommige ritten hebben geen bus of geen chauffeur. Kijk naar de stapel boven de rijen, of laat OPTIMALISEREN de gaten vullen."
   pl: "Czerwone liczby na pasku stanu: niektóre kursy nie mają autobusu albo kierowcy. Zajrzyj na stos nad wierszami albo pozwól OPTYMALIZUJ wypełnić luki."
+  es: "Números rojos en la barra de estado: algunos viajes no tienen autobús o conductor. Mira la pila encima de las filas o deja que OPTIMIZAR llene los huecos."
   ru: "Красные числа в строке состояния: у некоторых рейсов нет автобуса или водителя. Посмотрите стопку над строками или дайте ОПТИМИЗИРОВАТЬ закрыть пробелы."
   uk: "Червоні числа в рядку стану: деякі рейси не мають автобуса чи водія. Подивіться на стос над рядками або дайте ОПТИМІЗУВАТИ закрити прогалини."
 "A red \"!\" by a row: hold the mouse over it to read which rule is broken. Click the issue counter in the status bar to see them all, and click one to jump to its row.":
@@ -1562,6 +1783,7 @@ _version: 2
   fr: "Un « ! » rouge près d'une ligne : survolez-le pour lire quelle règle est enfreinte. Cliquez sur le compteur de problèmes dans la barre d'état pour tous les voir, et sur l'un pour aller à sa ligne."
   nl: "Een rood „!” bij een rij: houd de muis erboven om te lezen welke regel overtreden is. Klik op de probleemteller in de statusbalk om ze allemaal te zien, en op een ervan om naar zijn rij te springen."
   pl: "Czerwony „!” przy wierszu: najedź na niego, by przeczytać, która reguła jest złamana. Kliknij licznik problemów na pasku stanu, by zobaczyć wszystkie, i kliknij jeden, by przejść do jego wiersza."
+  es: "Un \"!\" rojo junto a una fila: pasa el ratón por encima para leer qué regla se incumple. Haz clic en el contador de problemas de la barra de estado para verlos todos, y en uno para saltar a su fila."
   ru: "Красный «!» у строки: наведите на него, чтобы прочитать, какое правило нарушено. Щёлкните счётчик проблем в строке состояния, чтобы увидеть все, и щёлкните одну, чтобы перейти к её строке."
   uk: "Червоний «!» біля рядка: наведіть на нього, щоб прочитати, яке правило порушено. Клацніть лічильник проблем у рядку стану, щоб побачити всі, і клацніть одну, щоб перейти до її рядка."
 "A red slot while you move something: dropping there breaks a rule. You may still do it, but the day gets an issue.":
@@ -1569,6 +1791,7 @@ _version: 2
   fr: "Un emplacement rouge pendant un déplacement : déposer là enfreint une règle. Vous pouvez quand même le faire, mais la journée aura un problème."
   nl: "Een rood vak terwijl je iets verplaatst: daar neerzetten overtreedt een regel. Het mag nog steeds, maar de dag krijgt een probleem."
   pl: "Czerwone miejsce podczas przenoszenia: upuszczenie tam łamie regułę. Wciąż możesz to zrobić, ale dzień dostanie problem."
+  es: "Un hueco rojo mientras mueves algo: soltarlo ahí incumple una regla. Puedes hacerlo igualmente, pero el día tendrá un problema."
   ru: "Красное место при переносе: поставив туда, вы нарушите правило. Это можно сделать, но у дня появится проблема."
   uk: "Червоне місце під час перенесення: поставивши туди, ви порушите правило. Це можна зробити, але в дня з'явиться проблема."
 "A red difference beside a figure: your last change made it worse. Ctrl+Z takes it back.":
@@ -1576,6 +1799,7 @@ _version: 2
   fr: "Une différence rouge à côté d'un chiffre : votre dernière modification l'a aggravé. Ctrl+Z l'annule."
   nl: "Een rood verschil naast een cijfer: je laatste wijziging maakte het slechter. Ctrl+Z draait het terug."
   pl: "Czerwona różnica obok wskaźnika: ostatnia zmiana go pogorszyła. Ctrl+Z ją cofa."
+  es: "Una diferencia roja junto a una cifra: tu último cambio la ha empeorado. Ctrl+Z lo deshace."
   ru: "Красная разница рядом с показателем: последнее изменение его ухудшило. Ctrl+Z отменит его."
   uk: "Червона різниця біля показника: остання зміна його погіршила. Ctrl+Z скасує її."
 "More duties than drivers (a Global issue): hire drivers on the Staff page, or make fewer, longer duties.":
@@ -1583,6 +1807,7 @@ _version: 2
   fr: "Plus de services que de conducteurs (un problème général) : embauchez des conducteurs sur la page Personnel, ou faites des services moins nombreux et plus longs."
   nl: "Meer diensten dan chauffeurs (een algemeen probleem): neem chauffeurs aan op de pagina Personeel, of maak minder, langere diensten."
   pl: "Więcej służb niż kierowców (problem ogólny): zatrudnij kierowców na stronie Personel albo zrób mniej, ale dłuższych służb."
+  es: "Más servicios que conductores (un problema global): contrata conductores en la página Personal o crea menos servicios y más largos."
   ru: "Смен больше, чем водителей (общая проблема): наймите водителей на странице «Персонал» или сделайте меньше, но более длинных смен."
   uk: "Змін більше, ніж водіїв (загальна проблема): найміть водіїв на сторінці «Персонал» або зробіть менше, але довших змін."
 "Orange is a soft rule: allowed, but it adds a penalty to the cost. Change the rules under Preferences (the first icon at the top).":
@@ -1590,6 +1815,7 @@ _version: 2
   fr: "L'orange est une règle souple : permise, mais elle ajoute une pénalité au coût. Changez les règles dans Préférences (la première icône en haut)."
   nl: "Oranje is een zachte regel: toegestaan, maar er komt een boete bij de kosten. Wijzig de regels onder Voorkeuren (het eerste pictogram bovenaan)."
   pl: "Pomarańczowy to reguła miękka: dozwolona, ale dolicza karę do kosztu. Reguły zmienisz w Preferencjach (pierwsza ikona na górze)."
+  es: "El naranja es una regla flexible: se permite, pero añade una penalización al coste. Cambia las reglas en Preferencias (el primer icono de arriba)."
   ru: "Оранжевое — мягкое правило: допустимо, но добавляет к стоимости штраф. Правила меняются в «Предпочтениях» (первый значок вверху)."
   uk: "Помаранчеве — м'яке правило: дозволено, але додає до вартості штраф. Правила змінюються у «Вподобаннях» (перший значок угорі)."
 "RosterFlow in 2 minutes":
@@ -1597,6 +1823,7 @@ _version: 2
   fr: "RosterFlow en 2 minutes"
   nl: "RosterFlow in 2 minuten"
   pl: "RosterFlow w 2 minuty"
+  es: "RosterFlow en 2 minutos"
   ru: "RosterFlow за 2 минуты"
   uk: "RosterFlow за 2 хвилини"
 "Plan your bus company's day in four steps, then save.":
@@ -1604,6 +1831,7 @@ _version: 2
   fr: "Planifiez la journée de votre entreprise de bus en quatre étapes, puis enregistrez."
   nl: "Plan de dag van je busbedrijf in vier stappen, en sla dan op."
   pl: "Zaplanuj dzień swojej firmy autobusowej w czterech krokach, a potem zapisz."
+  es: "Planifica el día de tu empresa de autobuses en cuatro pasos y luego guarda."
   ru: "Спланируйте день своей автобусной компании за четыре шага, затем сохраните."
   uk: "Сплануйте день своєї автобусної компанії за чотири кроки, потім збережіть."
 "The chain":
@@ -1611,6 +1839,7 @@ _version: 2
   fr: "La chaîne"
   nl: "De keten"
   pl: "Łańcuch"
+  es: "La cadena"
   ru: "Цепочка"
   uk: "Ланцюжок"
 "Words":
@@ -1618,6 +1847,7 @@ _version: 2
   fr: "Les mots"
   nl: "Begrippen"
   pl: "Pojęcia"
+  es: "Términos"
   ru: "Термины"
   uk: "Терміни"
 "Shortcuts":
@@ -1625,6 +1855,7 @@ _version: 2
   fr: "Raccourcis"
   nl: "Sneltoetsen"
   pl: "Skróty"
+  es: "Atajos"
   ru: "Сочетания клавиш"
   uk: "Сполучення клавіш"
 "If something is red":
@@ -1632,6 +1863,7 @@ _version: 2
   fr: "Si quelque chose est rouge"
   nl: "Als iets rood is"
   pl: "Gdy coś jest czerwone"
+  es: "Si algo está en rojo"
   ru: "Если что-то красное"
   uk: "Якщо щось червоне"
 "Depot run":
@@ -1639,6 +1871,7 @@ _version: 2
   fr: "Trajet dépôt"
   nl: "Remiserit"
   pl: "Przejazd do zajezdni"
+  es: "Viaje a cochera"
   ru: "Пробег из депо"
   uk: "Пробіг із депо"
 "Driver change":
@@ -1646,6 +1879,7 @@ _version: 2
   fr: "Relève"
   nl: "Chauffeurswissel"
   pl: "Zmiana kierowcy"
+  es: "Relevo"
   ru: "Смена водителя"
   uk: "Зміна водія"
 "Broken rule":
@@ -1653,6 +1887,7 @@ _version: 2
   fr: "Règle enfreinte"
   nl: "Overtreden regel"
   pl: "Złamana reguła"
+  es: "Regla incumplida"
   ru: "Нарушенное правило"
   uk: "Порушене правило"
 "Try it yourself":
@@ -1660,6 +1895,7 @@ _version: 2
   fr: "Essayez vous-même"
   nl: "Probeer het zelf"
   pl: "Spróbuj sam"
+  es: "Pruébalo tú mismo"
   ru: "Попробуйте сами"
   uk: "Спробуйте самі"
 "Help":
@@ -1667,6 +1903,7 @@ _version: 2
   fr: "Aide"
   nl: "Hulp"
   pl: "Pomoc"
+  es: "Ayuda"
   ru: "Помощь"
   uk: "Допомога"
 "Go on with the tour":
@@ -1674,6 +1911,7 @@ _version: 2
   fr: "Reprendre la visite"
   nl: "Verder met de rondleiding"
   pl: "Kontynuuj przewodnik"
+  es: "Seguir con la visita"
   ru: "Продолжить обзор"
   uk: "Продовжити огляд"
 "End the lesson?":
@@ -1681,6 +1919,7 @@ _version: 2
   fr: "Terminer la leçon ?"
   nl: "Les beëindigen?"
   pl: "Zakończyć lekcję?"
+  es: "¿Terminar la lección?"
   ru: "Завершить урок?"
   uk: "Завершити урок?"
 "Keep what you changed, or put everything back as it was before the lesson.":
@@ -1688,6 +1927,7 @@ _version: 2
   fr: "Gardez ce que vous avez modifié, ou remettez tout comme avant la leçon."
   nl: "Houd wat je veranderd hebt, of zet alles terug zoals het was vóór de les."
   pl: "Zachowaj zmiany albo przywróć wszystko do stanu sprzed lekcji."
+  es: "Conserva lo que has cambiado o deja todo como estaba antes de la lección."
   ru: "Оставьте изменения или верните всё, как было до урока."
   uk: "Залиште зміни або поверніть усе, як було до уроку."
 "Well done!":
@@ -1695,6 +1935,7 @@ _version: 2
   fr: "Bravo !"
   nl: "Goed gedaan!"
   pl: "Świetnie!"
+  es: "¡Bien hecho!"
   ru: "Отлично!"
   uk: "Чудово!"
 "You did every step of this lesson. Keep what you changed, or put it all back as it was.":
@@ -1702,6 +1943,7 @@ _version: 2
   fr: "Vous avez fait chaque étape de cette leçon. Gardez ce que vous avez modifié, ou remettez tout comme c'était."
   nl: "Je hebt elke stap van deze les gedaan. Houd wat je veranderd hebt, of zet alles terug zoals het was."
   pl: "Wykonałeś każdy krok tej lekcji. Zachowaj zmiany albo przywróć wszystko do poprzedniego stanu."
+  es: "Has hecho todos los pasos de esta lección. Conserva lo que has cambiado o déjalo todo como estaba."
   ru: "Вы выполнили все шаги урока. Оставьте изменения или верните всё как было."
   uk: "Ви виконали всі кроки уроку. Залиште зміни або поверніть усе як було."
 "First this":
@@ -1709,6 +1951,7 @@ _version: 2
   fr: "D'abord ceci"
   nl: "Eerst dit"
   pl: "Najpierw to"
+  es: "Primero esto"
   ru: "Сначала это"
   uk: "Спершу це"
 "The lesson is over: your changes stay.":
@@ -1716,6 +1959,7 @@ _version: 2
   fr: "La leçon est terminée : vos modifications restent."
   nl: "De les is voorbij: je wijzigingen blijven."
   pl: "Lekcja zakończona: twoje zmiany zostają."
+  es: "La lección ha terminado: tus cambios se mantienen."
   ru: "Урок окончен: ваши изменения остаются."
   uk: "Урок завершено: ваші зміни залишаються."
 "The lesson is undone: the planning is as it was before.":
@@ -1723,6 +1967,7 @@ _version: 2
   fr: "La leçon est annulée : la planification est comme avant."
   nl: "De les is ongedaan gemaakt: de planning is zoals ervoor."
   pl: "Lekcja cofnięta: plan jest taki jak wcześniej."
+  es: "La lección se ha deshecho: la planificación está como antes."
   ru: "Урок отменён: план такой же, как раньше."
   uk: "Урок скасовано: план такий самий, як раніше."
 "The planning is as it was, but the timetable could not be put back: change it back in the Timeplan tab.":
@@ -1730,6 +1975,7 @@ _version: 2
   fr: "La planification est comme avant, mais l'horaire n'a pas pu être rétabli : modifiez-le à nouveau dans l'onglet Plan horaire."
   nl: "De planning is zoals ervoor, maar de dienstregeling kon niet worden teruggezet: verander hem terug in het tabblad Dienstregelingsplan."
   pl: "Plan jest jak wcześniej, ale rozkładu nie udało się przywrócić: zmień go z powrotem na karcie Plan rozkładu."
+  es: "La planificación está como antes, pero el horario no se pudo restaurar: cámbialo en la pestaña Plan horario."
   ru: "План как раньше, но расписание вернуть не удалось: измените его обратно на вкладке «План расписания»."
   uk: "План як раніше, але розклад повернути не вдалося: змініть його назад на вкладці «План розкладу»."
 "End lesson":
@@ -1737,6 +1983,7 @@ _version: 2
   fr: "Terminer la leçon"
   nl: "Les beëindigen"
   pl: "Zakończ lekcję"
+  es: "Terminar lección"
   ru: "Завершить урок"
   uk: "Завершити урок"
 "Got it":
@@ -1744,6 +1991,7 @@ _version: 2
   fr: "Compris"
   nl: "Begrepen"
   pl: "Rozumiem"
+  es: "Entendido"
   ru: "Понятно"
   uk: "Зрозуміло"
 "Go on with the lesson":
@@ -1751,6 +1999,7 @@ _version: 2
   fr: "Continuer la leçon"
   nl: "Verder met de les"
   pl: "Kontynuuj lekcję"
+  es: "Seguir con la lección"
   ru: "Продолжить урок"
   uk: "Продовжити урок"
 "Undo the lesson":
@@ -1758,6 +2007,7 @@ _version: 2
   fr: "Annuler la leçon"
   nl: "Les ongedaan maken"
   pl: "Cofnij lekcję"
+  es: "Deshacer la lección"
   ru: "Отменить урок"
   uk: "Скасувати урок"
 "Keep my changes":
@@ -1765,6 +2015,7 @@ _version: 2
   fr: "Garder mes modifications"
   nl: "Mijn wijzigingen houden"
   pl: "Zachowaj moje zmiany"
+  es: "Conservar mis cambios"
   ru: "Оставить мои изменения"
   uk: "Залишити мої зміни"
 "Tutorial: a guided tour, lessons to try yourself and a help sheet":
@@ -1772,6 +2023,7 @@ _version: 2
   fr: "Tutoriel : une visite guidée, des leçons à essayer vous-même et une fiche d'aide"
   nl: "Tutorial: een rondleiding, lessen om zelf te proberen en een hulpblad"
   pl: "Samouczek: przewodnik, lekcje do samodzielnego wypróbowania i ściągawka"
+  es: "Tutorial: una visita guiada, lecciones para probar tú mismo y una hoja de ayuda"
   ru: "Обучение: обзор, уроки, чтобы попробовать самому, и памятка"
   uk: "Навчання: огляд, уроки, щоб спробувати самому, і пам'ятка"
 "Trip (a chip)":
@@ -1779,6 +2031,7 @@ _version: 2
   fr: "Course (une puce)"
   nl: "Rit (een chip)"
   pl: "Kurs (kafelek)"
+  es: "Viaje (una ficha)"
   ru: "Рейс (плашка)"
   uk: "Рейс (плашка)"
 "Locked rows":
@@ -1786,5 +2039,6 @@ _version: 2
   fr: "Lignes verrouillées"
   nl: "Vergrendelde rijen"
   pl: "Zablokowane wiersze"
+  es: "Filas bloqueadas"
   ru: "Заблокированные строки"
   uk: "Заблоковані рядки"

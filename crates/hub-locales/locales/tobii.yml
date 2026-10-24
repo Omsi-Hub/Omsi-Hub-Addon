@@ -8,6 +8,7 @@ _version: 2
   ru: "Отслеживание головы (айтрекеры Tobii, TrackIR и другие через opentrack)"
   uk: "Відстеження голови (айтрекери Tobii, TrackIR та інші через opentrack)"
   pl: "Śledzenie głowy (eyetrackery Tobii, TrackIR i inne przez opentrack)"
+  es: "Seguimiento de cabeza (seguidores oculares Tobii, TrackIR y otros mediante opentrack)"
 "Head tracking with":
   nl: "Headtracking met"
   de: "Headtracking mit"
@@ -15,6 +16,7 @@ _version: 2
   ru: "Отслеживание головы через"
   uk: "Відстеження голови через"
   pl: "Śledzenie głowy przez"
+  es: "Seguimiento de cabeza con"
 "Tobii eye tracker":
   nl: "Tobii-eyetracker"
   de: "Tobii-Eyetracker"
@@ -22,6 +24,7 @@ _version: 2
   ru: "Айтрекер Tobii"
   uk: "Айтрекер Tobii"
   pl: "Eyetracker Tobii"
+  es: "Seguidor ocular Tobii"
 "opentrack (UDP 4242)":
   nl: "opentrack (UDP 4242)"
   de: "opentrack (UDP 4242)"
@@ -29,6 +32,7 @@ _version: 2
   ru: "opentrack (UDP 4242)"
   uk: "opentrack (UDP 4242)"
   pl: "opentrack (UDP 4242)"
+  es: "opentrack (UDP 4242)"
 "Looking for a Tobii eye tracker…":
   nl: "Zoeken naar een Tobii-eyetracker…"
   de: "Suche nach einem Tobii-Eyetracker…"
@@ -36,6 +40,7 @@ _version: 2
   ru: "Поиск айтрекера Tobii…"
   uk: "Пошук айтрекера Tobii…"
   pl: "Szukanie eyetrackera Tobii…"
+  es: "Buscando un seguidor ocular Tobii…"
 "No Tobii software found: install the Tobii Experience.":
   nl: "Geen Tobii-software gevonden: installeer de Tobii Experience."
   de: "Keine Tobii-Software gefunden: installiere die Tobii Experience."
@@ -43,6 +48,7 @@ _version: 2
   ru: "Программа Tobii не найдена: установите Tobii Experience."
   uk: "Програму Tobii не знайдено: встановіть Tobii Experience."
   pl: "Nie znaleziono oprogramowania Tobii: zainstaluj Tobii Experience."
+  es: "No se ha encontrado software de Tobii: instala Tobii Experience."
 "No Tobii eye tracker connected.":
   nl: "Geen Tobii-eyetracker aangesloten."
   de: "Kein Tobii-Eyetracker angeschlossen."
@@ -50,6 +56,7 @@ _version: 2
   ru: "Айтрекер Tobii не подключён."
   uk: "Айтрекер Tobii не підключено."
   pl: "Nie podłączono eyetrackera Tobii."
+  es: "No hay ningún seguidor ocular Tobii conectado."
 "The Tobii eye tracker could not be used: %{e}":
   nl: "De Tobii-eyetracker kon niet worden gebruikt: %{e}"
   de: "Der Tobii-Eyetracker konnte nicht verwendet werden: %{e}"
@@ -57,6 +64,7 @@ _version: 2
   ru: "Не удалось использовать айтрекер Tobii: %{e}"
   uk: "Не вдалося використати айтрекер Tobii: %{e}"
   pl: "Nie można użyć eyetrackera Tobii: %{e}"
+  es: "No se ha podido usar el seguidor ocular Tobii: %{e}"
 "Tobii eye tracker connected - turn your head to try it: %{turn}":
   nl: "Tobii-eyetracker verbonden - draai je hoofd om het te proberen: %{turn}"
   de: "Tobii-Eyetracker verbunden - dreh den Kopf zum Ausprobieren: %{turn}"
@@ -64,6 +72,7 @@ _version: 2
   ru: "Айтрекер Tobii подключён - поверните голову, чтобы проверить: %{turn}"
   uk: "Айтрекер Tobii підключено - поверніть голову, щоб перевірити: %{turn}"
   pl: "Eyetracker Tobii połączony - obróć głowę, aby wypróbować: %{turn}"
+  es: "Seguidor ocular Tobii conectado - gira la cabeza para probarlo: %{turn}"
 "Look further at the screen's edges (Tobii)":
   nl: "Verder kijken aan de schermranden (Tobii)"
   de: "An den Bildschirmrändern weiter schauen (Tobii)"
@@ -71,6 +80,7 @@ _version: 2
   ru: "Смотреть дальше у краёв экрана (Tobii)"
   uk: "Дивитися далі біля країв екрана (Tobii)"
   pl: "Patrz dalej przy krawędziach ekranu (Tobii)"
+  es: "Mirar más allá en los bordes de la pantalla (Tobii)"
 "left %{n}°":
   nl: "links %{n}°"
   de: "links %{n}°"
@@ -78,6 +88,7 @@ _version: 2
   ru: "влево %{n}°"
   uk: "ліворуч %{n}°"
   pl: "w lewo %{n}°"
+  es: "izquierda %{n}°"
 "right %{n}°":
   nl: "rechts %{n}°"
   de: "rechts %{n}°"
@@ -85,6 +96,7 @@ _version: 2
   ru: "вправо %{n}°"
   uk: "праворуч %{n}°"
   pl: "w prawo %{n}°"
+  es: "derecha %{n}°"
 "up %{n}°":
   nl: "omhoog %{n}°"
   de: "hoch %{n}°"
@@ -92,6 +104,7 @@ _version: 2
   ru: "вверх %{n}°"
   uk: "вгору %{n}°"
   pl: "w górę %{n}°"
+  es: "arriba %{n}°"
 "down %{n}°":
   nl: "omlaag %{n}°"
   de: "runter %{n}°"
@@ -99,6 +112,7 @@ _version: 2
   ru: "вниз %{n}°"
   uk: "вниз %{n}°"
   pl: "w dół %{n}°"
+  es: "abajo %{n}°"
 "straight ahead":
   nl: "recht vooruit"
   de: "geradeaus"
@@ -106,6 +120,7 @@ _version: 2
   ru: "прямо"
   uk: "прямо"
   pl: "prosto"
+  es: "de frente"
 "Sensitivity left and right":
   nl: "Gevoeligheid links en rechts"
   de: "Empfindlichkeit links und rechts"
@@ -113,6 +128,7 @@ _version: 2
   ru: "Чувствительность влево и вправо"
   uk: "Чутливість ліворуч і праворуч"
   pl: "Czułość w lewo i w prawo"
+  es: "Sensibilidad izquierda y derecha"
 "Sensitivity up and down":
   nl: "Gevoeligheid omhoog en omlaag"
   de: "Empfindlichkeit oben und unten"
@@ -120,6 +136,7 @@ _version: 2
   ru: "Чувствительность вверх и вниз"
   uk: "Чутливість угору й униз"
   pl: "Czułość w górę i w dół"
+  es: "Sensibilidad arriba y abajo"
 "Sensitivity for leaning":
   nl: "Gevoeligheid bij leunen"
   de: "Empfindlichkeit beim Lehnen"
@@ -127,6 +144,7 @@ _version: 2
   ru: "Чувствительность наклона"
   uk: "Чутливість нахилу"
   pl: "Czułość wychylania"
+  es: "Sensibilidad al inclinarse"
 "How far the view turns left and right for a turn of the head (100 % as the tracker gives it)":
   nl: "Hoe ver het beeld links en rechts draait bij een draai van je hoofd (100 % zoals de tracker het geeft)"
   de: "Wie weit sich die Sicht bei einer Kopfdrehung nach links und rechts dreht (100 % wie vom Tracker geliefert)"
@@ -134,6 +152,7 @@ _version: 2
   ru: "Насколько вид поворачивается влево и вправо при повороте головы (100 % — как даёт трекер)"
   uk: "Наскільки вид повертається ліворуч і праворуч під час повороту голови (100 % — як дає трекер)"
   pl: "Jak daleko widok obraca się w lewo i w prawo przy obrocie głowy (100 % tak, jak podaje tracker)"
+  es: "Cuánto gira la vista a izquierda y derecha al girar la cabeza (100 % tal como lo da el seguidor)"
 "How far the view turns up and down for a nod of the head (100 % as the tracker gives it)":
   nl: "Hoe ver het beeld omhoog en omlaag draait als je je hoofd kantelt (100 % zoals de tracker het geeft)"
   de: "Wie weit sich die Sicht beim Nicken nach oben und unten dreht (100 % wie vom Tracker geliefert)"
@@ -141,6 +160,7 @@ _version: 2
   ru: "Насколько вид поворачивается вверх и вниз при наклоне головы (100 % — как даёт трекер)"
   uk: "Наскільки вид повертається вгору й униз під час нахилу голови (100 % — як дає трекер)"
   pl: "Jak daleko widok obraca się w górę i w dół przy skinieniu głową (100 % tak, jak podaje tracker)"
+  es: "Cuánto gira la vista arriba y abajo al asentir con la cabeza (100 % tal como lo da el seguidor)"
 "How far the eye moves with the head (0 % keeps it where the seat has it)":
   nl: "Hoe ver het oogpunt met je hoofd meebeweegt (0 % houdt het waar de stoel het heeft)"
   de: "Wie weit sich der Blickpunkt mit dem Kopf bewegt (0 % lässt ihn dort, wo der Sitz ihn hat)"
@@ -148,6 +168,7 @@ _version: 2
   ru: "Насколько точка обзора смещается вместе с головой (0 % оставляет её там, где её задаёт сиденье)"
   uk: "Наскільки точка огляду зміщується разом із головою (0 % залишає її там, де її задає сидіння)"
   pl: "Jak daleko punkt widzenia przesuwa się z głową (0 % zostawia go tam, gdzie ustawia go fotel)"
+  es: "Cuánto se mueve el ojo con la cabeza (0 % lo deja donde lo pone el asiento)"
 "Reset the head position":
   nl: "Hoofdpositie resetten"
   de: "Kopfposition zurücksetzen"
@@ -155,6 +176,7 @@ _version: 2
   ru: "Сбросить положение головы"
   uk: "Скинути положення голови"
   pl: "Zresetuj pozycję głowy"
+  es: "Restablecer la posición de la cabeza"
 "Takes where your head is now as the middle (Shift+F1)":
   nl: "Neemt de plek van je hoofd nu als midden (Shift+F1)"
   de: "Nimmt die jetzige Position deines Kopfes als Mitte (Umschalt+F1)"
@@ -162,6 +184,7 @@ _version: 2
   ru: "Принимает текущее положение головы за центр (Shift+F1)"
   uk: "Бере поточне положення голови за центр (Shift+F1)"
   pl: "Przyjmuje obecne położenie głowy jako środek (Shift+F1)"
+  es: "Toma la posición actual de tu cabeza como centro (Shift+F1)"
 "Head tracking with a Tobii eye tracker or opentrack (UDP port %{port}); Shift+F2 turns it on or off":
   nl: "Headtracking met een Tobii-eyetracker of opentrack (UDP-poort %{port}); Shift+F2 zet het aan of uit"
   de: "Headtracking mit einem Tobii-Eyetracker oder opentrack (UDP-Port %{port}); Umschalt+F2 schaltet es ein oder aus"
@@ -169,6 +192,7 @@ _version: 2
   ru: "Отслеживание головы айтрекером Tobii или через opentrack (UDP-порт %{port}); Shift+F2 включает и выключает его"
   uk: "Відстеження голови айтрекером Tobii або через opentrack (UDP-порт %{port}); Shift+F2 вмикає і вимикає його"
   pl: "Śledzenie głowy eyetrackerem Tobii lub przez opentrack (port UDP %{port}); Shift+F2 włącza je i wyłącza"
+  es: "Seguimiento de cabeza con un seguidor ocular Tobii u opentrack (puerto UDP %{port}); Shift+F2 lo activa o desactiva"
 "In the game, Shift+F1 takes where your head is as the middle and Shift+F2 turns head tracking on or off (keys you can change under Controls).":
   nl: "In het spel neemt Shift+F1 de plek van je hoofd als midden en zet Shift+F2 headtracking aan of uit (toetsen die je onder Besturing kunt wijzigen)."
   de: "Im Spiel nimmt Umschalt+F1 die Position deines Kopfes als Mitte, und Umschalt+F2 schaltet das Headtracking ein oder aus (Tasten, die du unter Steuerung ändern kannst)."
@@ -176,6 +200,7 @@ _version: 2
   ru: "В игре Shift+F1 принимает положение головы за центр, а Shift+F2 включает и выключает отслеживание головы (клавиши можно изменить в разделе «Управление»)."
   uk: "У грі Shift+F1 бере положення голови за центр, а Shift+F2 вмикає і вимикає відстеження голови (клавіші можна змінити в розділі «Керування»)."
   pl: "W grze Shift+F1 przyjmuje położenie głowy jako środek, a Shift+F2 włącza i wyłącza śledzenie głowy (klawisze można zmienić w Sterowaniu)."
+  es: "En el juego, Shift+F1 toma la posición de tu cabeza como centro y Shift+F2 activa o desactiva el seguimiento de cabeza (teclas que puedes cambiar en Controles)."
 "Head tracking on":
   nl: "Headtracking aan"
   de: "Headtracking an"
@@ -183,6 +208,7 @@ _version: 2
   ru: "Отслеживание головы включено"
   uk: "Відстеження голови увімкнено"
   pl: "Śledzenie głowy włączone"
+  es: "Seguimiento de cabeza activado"
 "Head tracking off":
   nl: "Headtracking uit"
   de: "Headtracking aus"
@@ -190,6 +216,7 @@ _version: 2
   ru: "Отслеживание головы выключено"
   uk: "Відстеження голови вимкнено"
   pl: "Śledzenie głowy wyłączone"
+  es: "Seguimiento de cabeza desactivado"
 "Head tracking is off":
   nl: "Headtracking staat uit"
   de: "Headtracking ist aus"
@@ -197,6 +224,7 @@ _version: 2
   ru: "Отслеживание головы выключено"
   uk: "Відстеження голови вимкнено"
   pl: "Śledzenie głowy jest wyłączone"
+  es: "El seguimiento de cabeza está desactivado"
 "Head position reset":
   nl: "Hoofdpositie gereset"
   de: "Kopfposition zurückgesetzt"
@@ -204,6 +232,7 @@ _version: 2
   ru: "Положение головы сброшено"
   uk: "Положення голови скинуто"
   pl: "Pozycja głowy zresetowana"
+  es: "Posición de la cabeza restablecida"
 "No head tracker found":
   nl: "Geen headtracker gevonden"
   de: "Kein Headtracker gefunden"
@@ -211,6 +240,7 @@ _version: 2
   ru: "Трекер головы не найден"
   uk: "Трекер голови не знайдено"
   pl: "Nie znaleziono trackera głowy"
+  es: "No se ha encontrado ningún seguidor de cabeza"
 "Head tracking: reset the head position":
   nl: "Headtracking: hoofdpositie resetten"
   de: "Headtracking: Kopfposition zurücksetzen"
@@ -218,6 +248,7 @@ _version: 2
   ru: "Отслеживание головы: сбросить положение"
   uk: "Відстеження голови: скинути положення"
   pl: "Śledzenie głowy: zresetuj pozycję głowy"
+  es: "Seguimiento de cabeza: restablecer la posición de la cabeza"
 "Head tracking on / off":
   nl: "Headtracking aan / uit"
   de: "Headtracking an / aus"
@@ -225,6 +256,7 @@ _version: 2
   ru: "Отслеживание головы вкл. / выкл."
   uk: "Відстеження голови увімк. / вимк."
   pl: "Śledzenie głowy wł. / wył."
+  es: "Seguimiento de cabeza sí / no"
 "Smoothing":
   nl: "Afvlakking"
   de: "Glättung"
@@ -232,6 +264,7 @@ _version: 2
   ru: "Сглаживание"
   uk: "Згладжування"
   pl: "Wygładzanie"
+  es: "Suavizado"
 "Sensitivity for tilting":
   nl: "Gevoeligheid bij kantelen"
   de: "Empfindlichkeit beim Neigen"
@@ -239,6 +272,7 @@ _version: 2
   ru: "Чувствительность крена"
   uk: "Чутливість крену"
   pl: "Czułość przechylania"
+  es: "Sensibilidad al ladear"
 "How far the view tilts when you tilt your head (0 % keeps the horizon level)":
   nl: "Hoe ver het beeld kantelt als je je hoofd scheef houdt (0 % houdt de horizon recht)"
   de: "Wie weit sich die Sicht neigt, wenn du den Kopf neigst (0 % hält den Horizont gerade)"
@@ -246,6 +280,7 @@ _version: 2
   ru: "Насколько наклоняется вид при наклоне головы набок (0 % держит горизонт ровным)"
   uk: "Наскільки нахиляється вид під час нахилу голови вбік (0 % тримає горизонт рівним)"
   pl: "Jak bardzo przechyla się widok, gdy przechylasz głowę (0 % utrzymuje poziomy horyzont)"
+  es: "Cuánto se ladea la vista cuando ladeas la cabeza (0 % mantiene el horizonte recto)"
 "Steadies the view against the tracker's trembling; big turns still follow at once (0 %: it only glides between the tracker's poses). For opentrack, choose its Accela filter there":
   nl: "Houdt het beeld rustig tegen het trillen van de tracker; grote draaien volgen nog steeds meteen (0 %: alleen glijden tussen de metingen van de tracker). Kies bij opentrack daar het filter Accela"
   de: "Beruhigt die Sicht gegen das Zittern des Trackers; große Drehungen folgen trotzdem sofort (0 %: nur Gleiten zwischen den Messungen des Trackers). Bei opentrack dort den Filter Accela wählen"
@@ -253,6 +288,7 @@ _version: 2
   ru: "Успокаивает вид от дрожания трекера; большие повороты по-прежнему отслеживаются сразу (0 %: только плавный переход между замерами трекера). Для opentrack выберите там фильтр Accela"
   uk: "Заспокоює вид від тремтіння трекера; великі повороти все одно відстежуються одразу (0 %: лише плавний перехід між вимірами трекера). Для opentrack виберіть там фільтр Accela"
   pl: "Uspokaja widok przed drżeniem trackera; duże obroty nadal są śledzone od razu (0 %: tylko płynne przejście między pomiarami trackera). W opentrack wybierz tam filtr Accela"
+  es: "Estabiliza la vista frente al temblor del seguidor; los giros grandes se siguen al instante (0 %: solo se desliza entre las posiciones del seguidor). Para opentrack, elige allí su filtro Accela"
 "Head movements smaller than this leave the view where it is, wherever you look":
   nl: "Hoofdbewegingen kleiner dan dit laten het beeld staan, waar je ook kijkt"
   de: "Kopfbewegungen, die kleiner sind, lassen die Sicht stehen, wohin du auch schaust"
@@ -260,6 +296,7 @@ _version: 2
   ru: "Движения головы меньше этого не сдвигают вид, куда бы вы ни смотрели"
   uk: "Рухи голови, менші за це, не зсувають вид, куди б ви не дивилися"
   pl: "Ruchy głowy mniejsze niż ta wartość nie przesuwają widoku, gdziekolwiek patrzysz"
+  es: "Los movimientos de cabeza más pequeños que esto dejan la vista donde está, mires donde mires"
 "Smoothing steadies the view against the tracker's trembling (big turns still follow at once); the dead zone leaves head movements smaller than it out. With opentrack, choose its Accela filter there.":
   nl: "Afvlakking houdt het beeld rustig tegen het trillen van de tracker (grote draaien volgen nog steeds meteen); de dode zone laat kleinere hoofdbewegingen weg. Kies bij opentrack daar het filter Accela."
   de: "Die Glättung beruhigt die Sicht gegen das Zittern des Trackers (große Drehungen folgen trotzdem sofort); die Totzone lässt kleinere Kopfbewegungen weg. Bei opentrack dort den Filter Accela wählen."
@@ -267,3 +304,4 @@ _version: 2
   ru: "Сглаживание успокаивает вид от дрожания трекера (большие повороты по-прежнему отслеживаются сразу); мёртвая зона отбрасывает меньшие движения головы. Для opentrack выберите там фильтр Accela."
   uk: "Згладжування заспокоює вид від тремтіння трекера (великі повороти все одно відстежуються одразу); мертва зона відкидає менші рухи голови. Для opentrack виберіть там фільтр Accela."
   pl: "Wygładzanie uspokaja widok przed drżeniem trackera (duże obroty nadal są śledzone od razu); strefa martwa pomija mniejsze ruchy głowy. W opentrack wybierz tam filtr Accela."
+  es: "El suavizado estabiliza la vista frente al temblor del seguidor (los giros grandes se siguen al instante); la zona muerta ignora los movimientos de cabeza más pequeños que ella. Con opentrack, elige allí su filtro Accela."

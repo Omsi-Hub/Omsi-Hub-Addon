@@ -7,6 +7,7 @@ _version: 2
   fr: "Correspondances garanties"
   nl: "Gegarandeerde aansluitingen"
   pl: "Gwarantowane przesiadki"
+  es: "Correspondencias garantizadas"
   ru: "Гарантированные пересадки"
   uk: "Гарантовані пересадки"
 "A train or another line at a stop: the line's buses wait for its passengers, at the most the hold - or their passengers change to it. The driver is told on the way.":
@@ -14,6 +15,7 @@ _version: 2
   fr: "Un train ou une autre ligne à un arrêt : les bus de la ligne attendent ses voyageurs, au plus le temps d'attente - ou leurs voyageurs y changent. Le conducteur en est averti en route."
   nl: "Een trein of een andere lijn bij een halte: de bussen van de lijn wachten op de reizigers, hooguit de wachttijd - of hun reizigers stappen erop over. De chauffeur hoort het onderweg."
   pl: "Pociąg lub inna linia na przystanku: autobusy linii czekają na jej pasażerów, najwyżej przez czas oczekiwania - albo ich pasażerowie się na nią przesiadają. Kierowca dowiaduje się o tym w drodze."
+  es: "Un tren u otra línea en una parada: los autobuses de la línea esperan a sus pasajeros, como mucho el tiempo de espera máximo, o sus pasajeros hacen transbordo a él. Al conductor se le avisa por el camino."
   ru: "Поезд или другая линия на остановке: автобусы линии ждут её пассажиров, не дольше времени ожидания, - или их пассажиры пересаживаются на неё. Водителю сообщают об этом в пути."
   uk: "Потяг або інша лінія на зупинці: автобуси лінії чекають на її пасажирів, не довше часу очікування, - або їхні пасажири пересідають на неї. Водієві повідомляють про це в дорозі."
 "What connects":
@@ -21,6 +23,7 @@ _version: 2
   fr: "Correspondance avec"
   nl: "Aansluiting op"
   pl: "Przesiadka na"
+  es: "Enlace con"
   ru: "Пересадка на"
   uk: "Пересадка на"
 "Max hold (min)":
@@ -28,6 +31,7 @@ _version: 2
   fr: "Attente max. (min)"
   nl: "Max. wachttijd (min)"
   pl: "Maks. oczekiwanie (min)"
+  es: "Espera máx. (min)"
   ru: "Макс. ожидание (мин)"
   uk: "Макс. очікування (хв)"
 "Passengers change to it":
@@ -35,6 +39,7 @@ _version: 2
   fr: "Les voyageurs y changent"
   nl: "Reizigers stappen over"
   pl: "Pasażerowie się przesiadają"
+  es: "Los pasajeros transbordan a él"
   ru: "Пассажиры пересаживаются"
   uk: "Пасажири пересідають"
 "Add a connection":
@@ -42,6 +47,7 @@ _version: 2
   fr: "Ajouter une correspondance"
   nl: "Aansluiting toevoegen"
   pl: "Dodaj przesiadkę"
+  es: "Añadir una correspondencia"
   ru: "Добавить пересадку"
   uk: "Додати пересадку"
 "No connection yet.":
@@ -49,6 +55,7 @@ _version: 2
   fr: "Pas encore de correspondance."
   nl: "Nog geen aansluiting."
   pl: "Jeszcze brak przesiadek."
+  es: "Aún no hay correspondencias."
   ru: "Пересадок пока нет."
   uk: "Пересадок поки немає."
 "Train from Erfurt":
@@ -56,6 +63,7 @@ _version: 2
   fr: "Train en provenance d'Erfurt"
   nl: "Trein uit Erfurt"
   pl: "Pociąg z Erfurtu"
+  es: "Tren procedente de Erfurt"
   ru: "Поезд из Эрфурта"
   uk: "Потяг з Ерфурта"
 "All lines":
@@ -63,6 +71,7 @@ _version: 2
   fr: "Toutes les lignes"
   nl: "Alle lijnen"
   pl: "Wszystkie linie"
+  es: "Todas las líneas"
   ru: "Все линии"
   uk: "Усі лінії"
 "Diversions and roadworks":
@@ -70,6 +79,7 @@ _version: 2
   fr: "Déviations et travaux"
   nl: "Omleidingen en wegwerkzaamheden"
   pl: "Objazdy i roboty drogowe"
+  es: "Desvíos y obras"
   ru: "Объезды и дорожные работы"
   uk: "Об'їзди та дорожні роботи"
 "Stops closed and the way round: the drivers see them on the navigator and are told before them.":
@@ -77,6 +87,7 @@ _version: 2
   fr: "Arrêts fermés et itinéraire de déviation : les conducteurs les voient sur le navigateur et sont prévenus avant."
   nl: "Gesloten haltes en de omweg: de chauffeurs zien ze in de navigator en worden vooraf gewaarschuwd."
   pl: "Zamknięte przystanki i objazd: kierowcy widzą je w nawigatorze i są uprzedzani przed nimi."
+  es: "Paradas cerradas y el camino alternativo: los conductores las ven en el navegador y se les avisa antes de llegar."
   ru: "Закрытые остановки и путь объезда: водители видят их в навигаторе, и их предупреждают заранее."
   uk: "Закриті зупинки та шлях об'їзду: водії бачать їх у навігаторі, і їх попереджають заздалегідь."
 "No diversion planned.":
@@ -84,6 +95,7 @@ _version: 2
   fr: "Aucune déviation prévue."
   nl: "Geen omleiding gepland."
   pl: "Brak zaplanowanych objazdów."
+  es: "No hay desvíos previstos."
   ru: "Объездов не запланировано."
   uk: "Об'їздів не заплановано."
 "Stops closed":
@@ -91,6 +103,7 @@ _version: 2
   fr: "Arrêts fermés"
   nl: "Gesloten haltes"
   pl: "Zamknięte przystanki"
+  es: "Paradas cerradas"
   ru: "Закрытые остановки"
   uk: "Закриті зупинки"
 "Stops, separated by commas":
@@ -98,6 +111,7 @@ _version: 2
   fr: "Arrêts, séparés par des virgules"
   nl: "Haltes, gescheiden door komma's"
   pl: "Przystanki, oddzielone przecinkami"
+  es: "Paradas, separadas por comas"
   ru: "Остановки через запятую"
   uk: "Зупинки через кому"
 "Via":
@@ -105,6 +119,7 @@ _version: 2
   fr: "Par"
   nl: "Via"
   pl: "Przez"
+  es: "Por"
   ru: "Через"
   uk: "Через"
 "The streets the buses take instead":
@@ -112,6 +127,7 @@ _version: 2
   fr: "Les rues que les bus empruntent à la place"
   nl: "De straten die de bussen in plaats daarvan nemen"
   pl: "Ulice, którymi zamiast tego jadą autobusy"
+  es: "Las calles que toman los autobuses en su lugar"
   ru: "Улицы, по которым вместо этого едут автобусы"
   uk: "Вулиці, якими замість цього їдуть автобуси"
 "Note":
@@ -119,6 +135,7 @@ _version: 2
   fr: "Remarque"
   nl: "Opmerking"
   pl: "Uwaga"
+  es: "Nota"
   ru: "Примечание"
   uk: "Примітка"
 "Add a diversion":
@@ -126,6 +143,7 @@ _version: 2
   fr: "Ajouter une déviation"
   nl: "Omleiding toevoegen"
   pl: "Dodaj objazd"
+  es: "Añadir un desvío"
   ru: "Добавить объезд"
   uk: "Додати об'їзд"
 "On-time card in the game":
@@ -133,6 +151,7 @@ _version: 2
   fr: "Carte de ponctualité dans le jeu"
   nl: "Stiptheidskaart in het spel"
   pl: "Karta punktualności w grze"
+  es: "Tarjeta de puntualidad en el juego"
   ru: "Карточка пунктуальности в игре"
   uk: "Картка пунктуальності в грі"
 "On a company duty: how you stand against the timetable, the gap to the buses ahead and behind, the connections to wait for and the diversions of the day.":
@@ -140,6 +159,7 @@ _version: 2
   fr: "Lors d'un service de l'entreprise : votre écart par rapport à l'horaire, l'intervalle avec les bus devant et derrière, les correspondances à attendre et les déviations du jour."
   nl: "Bij een dienst van het bedrijf: hoe je ervoor staat ten opzichte van de dienstregeling, de afstand tot de bussen voor en achter je, de aansluitingen om op te wachten en de omleidingen van de dag."
   pl: "Na służbie firmy: jak stoisz względem rozkładu, odstęp do autobusów przed i za tobą, przesiadki, na które czekasz, i objazdy dnia."
+  es: "En un servicio de la empresa: cómo vas respecto al horario, la distancia a los autobuses de delante y de detrás, las correspondencias que esperar y los desvíos del día."
   ru: "На смене компании: как вы идёте относительно расписания, интервал до автобусов впереди и позади, пересадки, которые нужно ждать, и объезды дня."
   uk: "На зміні компанії: як ви йдете відносно розкладу, інтервал до автобусів попереду й позаду, пересадки, на які треба чекати, і об'їзди дня."
 "Closed stops struck through on the navigator":
@@ -147,6 +167,7 @@ _version: 2
   fr: "Arrêts fermés barrés sur le navigateur"
   nl: "Gesloten haltes doorgestreept in de navigator"
   pl: "Zamknięte przystanki przekreślone w nawigatorze"
+  es: "Paradas cerradas tachadas en el navegador"
   ru: "Закрытые остановки зачёркнуты в навигаторе"
   uk: "Закриті зупинки закреслені в навігаторі"
 "The on-time card lists the stops closed":
@@ -154,6 +175,7 @@ _version: 2
   fr: "La carte de ponctualité liste les arrêts fermés"
   nl: "De stiptheidskaart noemt de gesloten haltes"
   pl: "Karta punktualności wymienia zamknięte przystanki"
+  es: "La tarjeta de puntualidad enumera las paradas cerradas"
   ru: "Карточка пунктуальности перечисляет закрытые остановки"
   uk: "Картка пунктуальності перелічує закриті зупинки"
 "held %{m} min at %{stop} for a connection (%{what})":
@@ -161,6 +183,7 @@ _version: 2
   fr: "attente de %{m} min à %{stop} pour une correspondance (%{what})"
   nl: "%{m} min gewacht bij %{stop} op een aansluiting (%{what})"
   pl: "czekał %{m} min na %{stop} na przesiadkę (%{what})"
+  es: "esperó %{m} min en %{stop} por una correspondencia (%{what})"
   ru: "ждал %{m} мин на %{stop} пересадку (%{what})"
   uk: "чекав %{m} хв на %{stop} пересадку (%{what})"
 "Held for connections":
@@ -168,6 +191,7 @@ _version: 2
   fr: "Attentes de correspondances"
   nl: "Wachten op aansluitingen"
   pl: "Oczekiwanie na przesiadki"
+  es: "Esperas por correspondencias"
   ru: "Ожидание пересадок"
   uk: "Очікування пересадок"
 "Give the diversion its day.":
@@ -175,6 +199,7 @@ _version: 2
   fr: "Indiquez le jour de la déviation."
   nl: "Geef de omleiding haar dag."
   pl: "Podaj dzień objazdu."
+  es: "Indica el día del desvío."
   ru: "Укажите день объезда."
   uk: "Вкажіть день об'їзду."
 "The diversion's last day is before its first.":
@@ -182,6 +207,7 @@ _version: 2
   fr: "Le dernier jour de la déviation est avant le premier."
   nl: "De laatste dag van de omleiding ligt voor de eerste."
   pl: "Ostatni dzień objazdu jest przed pierwszym."
+  es: "El último día del desvío es anterior al primero."
   ru: "Последний день объезда раньше первого."
   uk: "Останній день об'їзду раніше за перший."
 "Name the stops closed or the way round.":
@@ -189,6 +215,7 @@ _version: 2
   fr: "Indiquez les arrêts fermés ou l'itinéraire de déviation."
   nl: "Noem de gesloten haltes of de omweg."
   pl: "Podaj zamknięte przystanki lub objazd."
+  es: "Indica las paradas cerradas o el camino alternativo."
   ru: "Укажите закрытые остановки или путь объезда."
   uk: "Вкажіть закриті зупинки або шлях об'їзду."
 "The company does not run that line.":
@@ -196,6 +223,7 @@ _version: 2
   fr: "L'entreprise n'exploite pas cette ligne."
   nl: "Het bedrijf rijdt die lijn niet."
   pl: "Firma nie obsługuje tej linii."
+  es: "La empresa no opera esa línea."
   ru: "Компания не обслуживает эту линию."
   uk: "Компанія не обслуговує цю лінію."
 "early":
@@ -203,6 +231,7 @@ _version: 2
   fr: "en avance"
   nl: "te vroeg"
   pl: "za wcześnie"
+  es: "adelantado"
   ru: "раньше"
   uk: "раніше"
 "late":
@@ -210,6 +239,7 @@ _version: 2
   fr: "en retard"
   nl: "te laat"
   pl: "spóźniony"
+  es: "con retraso"
   ru: "опоздание"
   uk: "запізнення"
 "Counts as a late trip":
@@ -217,6 +247,7 @@ _version: 2
   fr: "Compte comme un trajet en retard"
   nl: "Telt als een te late rit"
   pl: "Liczy się jako spóźniony kurs"
+  es: "Cuenta como viaje con retraso"
   ru: "Считается опоздавшим рейсом"
   uk: "Вважається запізнілим рейсом"
 "Counts late from %{t}":
@@ -224,6 +255,7 @@ _version: 2
   fr: "Compté en retard à partir de %{t}"
   nl: "Telt als te laat vanaf %{t}"
   pl: "Spóźnienie liczy się od %{t}"
+  es: "Cuenta como retraso a partir de %{t}"
   ru: "Опоздание считается с %{t}"
   uk: "Запізнення рахується з %{t}"
 "%{t} left":
@@ -231,6 +263,7 @@ _version: 2
   fr: "reste %{t}"
   nl: "nog %{t}"
   pl: "zostało %{t}"
+  es: "quedan %{t}"
   ru: "осталось %{t}"
   uk: "лишилося %{t}"
 "Running early: wait at the stop":
@@ -238,6 +271,7 @@ _version: 2
   fr: "En avance : attendez à l'arrêt"
   nl: "Te vroeg: wacht bij de halte"
   pl: "Za wcześnie: poczekaj na przystanku"
+  es: "Vas adelantado: espera en la parada"
   ru: "Раньше графика: подождите на остановке"
   uk: "Раніше графіка: зачекайте на зупинці"
 "Ahead %{bus}: %{gap}":
@@ -245,6 +279,7 @@ _version: 2
   fr: "Devant %{bus} : %{gap}"
   nl: "Voor je %{bus}: %{gap}"
   pl: "Przed tobą %{bus}: %{gap}"
+  es: "Delante %{bus}: %{gap}"
   ru: "Впереди %{bus}: %{gap}"
   uk: "Попереду %{bus}: %{gap}"
 "Behind %{bus}: %{gap}":
@@ -252,6 +287,7 @@ _version: 2
   fr: "Derrière %{bus} : %{gap}"
   nl: "Achter je %{bus}: %{gap}"
   pl: "Za tobą %{bus}: %{gap}"
+  es: "Detrás %{bus}: %{gap}"
   ru: "Позади %{bus}: %{gap}"
   uk: "Позаду %{bus}: %{gap}"
 "every %{m} min":
@@ -259,6 +295,7 @@ _version: 2
   fr: "toutes les %{m} min"
   nl: "elke %{m} min"
   pl: "co %{m} min"
+  es: "cada %{m} min"
   ru: "каждые %{m} мин"
   uk: "кожні %{m} хв"
 "Hold %{secs} s at the next stop":
@@ -266,6 +303,7 @@ _version: 2
   fr: "Attendez %{secs} s au prochain arrêt"
   nl: "Wacht %{secs} s bij de volgende halte"
   pl: "Poczekaj %{secs} s na następnym przystanku"
+  es: "Espera %{secs} s en la próxima parada"
   ru: "Подождите %{secs} с на следующей остановке"
   uk: "Зачекайте %{secs} с на наступній зупинці"
 "You are close behind %{bus}":
@@ -273,6 +311,7 @@ _version: 2
   fr: "Vous suivez de près %{bus}"
   nl: "Je rijdt vlak achter %{bus}"
   pl: "Jedziesz tuż za %{bus}"
+  es: "Vas muy cerca de %{bus}"
   ru: "Вы идёте вплотную за %{bus}"
   uk: "Ви йдете впритул за %{bus}"
 "Connection at %{stop}: %{what} %{time}":
@@ -280,6 +319,7 @@ _version: 2
   fr: "Correspondance à %{stop} : %{what} %{time}"
   nl: "Aansluiting bij %{stop}: %{what} %{time}"
   pl: "Przesiadka na %{stop}: %{what} %{time}"
+  es: "Correspondencia en %{stop}: %{what} %{time}"
   ru: "Пересадка на %{stop}: %{what} %{time}"
   uk: "Пересадка на %{stop}: %{what} %{time}"
 "%{m} min to change":
@@ -287,6 +327,7 @@ _version: 2
   fr: "%{m} min pour changer"
   nl: "%{m} min om over te stappen"
   pl: "%{m} min na przesiadkę"
+  es: "%{m} min para transbordar"
   ru: "%{m} мин на пересадку"
   uk: "%{m} хв на пересадку"
 "Tight: keep the doors short":
@@ -294,6 +335,7 @@ _version: 2
   fr: "Juste : ouvrez les portes brièvement"
   nl: "Krap: houd de deuren kort open"
   pl: "Ciasno: krótko otwieraj drzwi"
+  es: "Justo: abre las puertas poco tiempo"
   ru: "Впритык: не задерживайте двери"
   uk: "Впритул: не затримуйте двері"
 "Missed at this delay":
@@ -301,6 +343,7 @@ _version: 2
   fr: "Manquée avec ce retard"
   nl: "Gemist bij deze vertraging"
   pl: "Przy tym opóźnieniu stracona"
+  es: "Perdida con este retraso"
   ru: "При таком опоздании упущена"
   uk: "За такого запізнення втрачена"
 "Connection at %{stop}: wait max %{m} min":
@@ -308,6 +351,7 @@ _version: 2
   fr: "Correspondance à %{stop} : attendre %{m} min max."
   nl: "Aansluiting bij %{stop}: max. %{m} min wachten"
   pl: "Przesiadka na %{stop}: czekaj maks. %{m} min"
+  es: "Correspondencia en %{stop}: espera máx. %{m} min"
   ru: "Пересадка на %{stop}: ждать не более %{m} мин"
   uk: "Пересадка на %{stop}: чекати не більше %{m} хв"
 "Hold until %{time}":
@@ -315,6 +359,7 @@ _version: 2
   fr: "Attendre jusqu'à %{time}"
   nl: "Wachten tot %{time}"
   pl: "Czekaj do %{time}"
+  es: "Espera hasta las %{time}"
   ru: "Ждать до %{time}"
   uk: "Чекати до %{time}"
 "Too late to wait for: leave on time":
@@ -322,6 +367,7 @@ _version: 2
   fr: "Trop tard pour attendre : partez à l'heure"
   nl: "Te laat om op te wachten: vertrek op tijd"
   pl: "Za późno, by czekać: odjedź punktualnie"
+  es: "Demasiado tarde para esperar: sal puntual"
   ru: "Слишком поздно, чтобы ждать: отправляйтесь вовремя"
   uk: "Надто пізно, щоб чекати: вирушайте вчасно"
 "No wait needed":
@@ -329,6 +375,7 @@ _version: 2
   fr: "Pas besoin d'attendre"
   nl: "Wachten niet nodig"
   pl: "Nie trzeba czekać"
+  es: "No hace falta esperar"
   ru: "Ждать не нужно"
   uk: "Чекати не потрібно"
 "Diversion ahead: %{stop} closed":
@@ -336,6 +383,7 @@ _version: 2
   fr: "Déviation devant : %{stop} fermé"
   nl: "Omleiding verderop: %{stop} gesloten"
   pl: "Objazd przed tobą: %{stop} zamknięty"
+  es: "Desvío más adelante: %{stop} cerrada"
   ru: "Впереди объезд: %{stop} закрыта"
   uk: "Попереду об'їзд: %{stop} закрита"
 "Via %{via}":
@@ -343,6 +391,7 @@ _version: 2
   fr: "Par %{via}"
   nl: "Via %{via}"
   pl: "Przez %{via}"
+  es: "Por %{via}"
   ru: "Через %{via}"
   uk: "Через %{via}"
 "Closed today: %{stops}":
@@ -350,6 +399,7 @@ _version: 2
   fr: "Fermés aujourd'hui : %{stops}"
   nl: "Vandaag gesloten: %{stops}"
   pl: "Dziś zamknięte: %{stops}"
+  es: "Cerradas hoy: %{stops}"
   ru: "Сегодня закрыты: %{stops}"
   uk: "Сьогодні закриті: %{stops}"
 "Hold %{secs} s at %{stop}: the bus ahead is close":
@@ -357,6 +407,7 @@ _version: 2
   fr: "Attendez %{secs} s à %{stop} : le bus devant est proche"
   nl: "Wacht %{secs} s bij %{stop}: de bus voor je is dichtbij"
   pl: "Poczekaj %{secs} s na %{stop}: autobus przed tobą jest blisko"
+  es: "Espera %{secs} s en %{stop}: el autobús de delante está cerca"
   ru: "Подождите %{secs} с на %{stop}: автобус впереди близко"
   uk: "Зачекайте %{secs} с на %{stop}: автобус попереду близько"
 "Close behind %{bus}: no time to hold":
@@ -364,6 +415,7 @@ _version: 2
   fr: "Juste derrière %{bus} : pas le temps d'attendre"
   nl: "Vlak achter %{bus}: geen tijd om te wachten"
   pl: "Tuż za %{bus}: nie ma czasu czekać"
+  es: "Muy cerca de %{bus}: no hay tiempo para esperar"
   ru: "Вплотную за %{bus}: ждать некогда"
   uk: "Впритул за %{bus}: чекати ніколи"
 "Roadworks on the line today: expect delays":
@@ -371,6 +423,7 @@ _version: 2
   fr: "Travaux sur la ligne aujourd'hui : attendez-vous à des retards"
   nl: "Vandaag werkzaamheden op de lijn: reken op vertraging"
   pl: "Dziś roboty drogowe na linii: spodziewaj się opóźnień"
+  es: "Obras en la línea hoy: habrá retrasos"
   ru: "Сегодня дорожные работы на линии: ожидайте задержек"
   uk: "Сьогодні дорожні роботи на лінії: очікуйте затримок"
 "Diversion on the line today: expect delays":
@@ -378,6 +431,7 @@ _version: 2
   fr: "Déviation sur la ligne aujourd'hui : attendez-vous à des retards"
   nl: "Vandaag een omleiding op de lijn: reken op vertraging"
   pl: "Dziś objazd na linii: spodziewaj się opóźnień"
+  es: "Desvío en la línea hoy: habrá retrasos"
   ru: "Сегодня объезд на линии: ожидайте задержек"
   uk: "Сьогодні об'їзд на лінії: очікуйте затримок"
 "Diversion on the line today":
@@ -385,5 +439,6 @@ _version: 2
   fr: "Déviation sur la ligne aujourd'hui"
   nl: "Vandaag een omleiding op de lijn"
   pl: "Dziś objazd na linii"
+  es: "Desvío en la línea hoy"
   ru: "Сегодня объезд на линии"
   uk: "Сьогодні об'їзд на лінії"

@@ -8,6 +8,7 @@ _version: 2
   fr: "Interlignage"
   nl: "Lijnkoppeling"
   pl: "Łączenie linii"
+  es: "Enlace de líneas"
   ru: "Межмаршрутная работа"
   uk: "Міжмаршрутна робота"
 "A bus may run trips of different lines in its day: Optimise chains a trip of one line into one of another where it ends where the next begins, or a short run empty away, and a trip can be moved by hand onto a bus of another line.":
@@ -15,6 +16,7 @@ _version: 2
   fr: "Un bus peut assurer des courses de lignes différentes dans sa journée : Optimiser enchaîne une course d'une ligne avec celle d'une autre là où l'une finit et la suivante commence, ou à un court haut-le-pied de là, et une course peut être déplacée à la main sur un bus d'une autre ligne."
   nl: "Een bus mag op zijn dag ritten van verschillende lijnen rijden: Optimaliseren koppelt een rit van de ene lijn aan een van een andere waar de ene eindigt en de volgende begint, of een korte leegrit verderop, en een rit kan met de hand naar een bus van een andere lijn worden verplaatst."
   pl: "Autobus może w ciągu dnia obsługiwać kursy różnych linii: Optymalizacja łączy kurs jednej linii z kursem innej tam, gdzie jeden się kończy, a następny zaczyna, lub krótki przejazd techniczny dalej, a kurs można ręcznie przenieść na autobus innej linii."
+  es: "Un autobús puede hacer viajes de distintas líneas en su día: Optimizar encadena un viaje de una línea con uno de otra donde termina donde empieza el siguiente, o a poca distancia en vacío, y un viaje se puede mover a mano a un autobús de otra línea."
   ru: "Автобус может за день выполнять рейсы разных маршрутов: Оптимизация сцепляет рейс одного маршрута с рейсом другого там, где один заканчивается, а следующий начинается, или в коротком порожнем перегоне оттуда, а рейс можно вручную перенести на автобус другого маршрута."
   uk: "Автобус може за день виконувати рейси різних маршрутів: Оптимізація зчіплює рейс одного маршруту з рейсом іншого там, де один закінчується, а наступний починається, або за коротким порожнім перегоном звідти, а рейс можна вручну перенести на автобус іншого маршруту."
 "Buses interline: a bus runs trips of several lines":
@@ -22,6 +24,7 @@ _version: 2
   fr: "Interlignage des bus : un bus assure des courses de plusieurs lignes"
   nl: "Bussen koppelen lijnen: een bus rijdt ritten van meerdere lijnen"
   pl: "Autobusy łączą linie: autobus obsługuje kursy kilku linii"
+  es: "Los autobuses enlazan líneas: un autobús hace viajes de varias líneas"
   ru: "Автобусы работают на нескольких маршрутах: автобус выполняет рейсы разных маршрутов"
   uk: "Автобуси працюють на кількох маршрутах: автобус виконує рейси різних маршрутів"
 "Longest run empty between two lines":
@@ -29,6 +32,7 @@ _version: 2
   fr: "Plus long haut-le-pied entre deux lignes"
   nl: "Langste leegrit tussen twee lijnen"
   pl: "Najdłuższy przejazd techniczny między dwiema liniami"
+  es: "Viaje en vacío más largo entre dos líneas"
   ru: "Самый длинный порожний перегон между двумя маршрутами"
   uk: "Найдовший порожній перегін між двома маршрутами"
 "Only where Deadheads sets the run, or a trip of the day runs between the two places: Optimise makes no run empty whose time it does not know. Where one ends and the next begins at one stop or relief point, the bus needs none.":
@@ -36,6 +40,7 @@ _version: 2
   fr: "Seulement là où Haut-le-pied fixe le trajet, ou une course du jour relie les deux endroits : Optimiser ne crée aucun haut-le-pied dont il ignore la durée. Là où l'une finit et la suivante commence au même arrêt ou point de relève, le bus n'en a pas besoin."
   nl: "Alleen waar Leegritten de rit vastlegt, of een rit van de dag tussen de twee plekken rijdt: Optimaliseren maakt geen leegrit waarvan het de tijd niet kent. Waar de ene eindigt en de volgende begint bij dezelfde halte of hetzelfde aflospunt, heeft de bus er geen nodig."
   pl: "Tylko tam, gdzie Przejazdy techniczne ustalają przejazd albo kurs danego dnia jeździ między tymi dwoma miejscami: Optymalizacja nie tworzy przejazdu technicznego, którego czasu nie zna. Tam, gdzie jeden kurs kończy się, a następny zaczyna na tym samym przystanku lub punkcie zmiany, autobus go nie potrzebuje."
+  es: "Solo donde Viajes en vacío fija el trayecto, o donde un viaje del día va entre los dos lugares: Optimizar no crea ningún viaje en vacío cuyo tiempo desconoce. Donde uno termina y el siguiente empieza en la misma parada o punto de relevo, el autobús no necesita ninguno."
   ru: "Только там, где перегон задан в разделе Нулевые рейсы или рейс этого дня ходит между двумя местами: Оптимизация не делает порожний перегон, время которого не знает. Там, где один рейс заканчивается, а следующий начинается на одной остановке или пункте смены, автобусу он не нужен."
   uk: "Лише там, де перегін задано в розділі Нульові рейси або рейс цього дня ходить між двома місцями: Оптимізація не робить порожній перегін, час якого не знає. Там, де один рейс закінчується, а наступний починається на одній зупинці або пункті зміни, автобусу він не потрібен."
 "Lines that interline":
@@ -43,6 +48,7 @@ _version: 2
   fr: "Lignes en interlignage"
   nl: "Lijnen die gekoppeld worden"
   pl: "Linie, które się łączy"
+  es: "Líneas que se enlazan"
   ru: "Маршруты, работающие вместе"
   uk: "Маршрути, що працюють разом"
 "A line not ticked keeps to its own buses. Optimise makes the blocks anew with it: run it after a change.":
@@ -50,6 +56,7 @@ _version: 2
   fr: "Une ligne non cochée garde ses propres bus. Optimiser refait les services véhicules avec ce réglage : lancez-le après un changement."
   nl: "Een lijn zonder vinkje houdt haar eigen bussen. Optimaliseren maakt de omlopen er opnieuw mee: voer het uit na een wijziging."
   pl: "Linia nieoznaczona zachowuje własne autobusy. Optymalizacja tworzy z tym obiegi od nowa: uruchom ją po zmianie."
+  es: "Una línea sin marcar se queda con sus propios autobuses. Optimizar rehace los recorridos con ello: ejecútalo tras un cambio."
   ru: "Неотмеченный маршрут остаётся со своими автобусами. Оптимизация заново составляет выпуски с этим: запустите её после изменения."
   uk: "Невідмічений маршрут залишається зі своїми автобусами. Оптимізація заново складає випуски з цим: запустіть її після зміни."
 "Runs trips of lines %{lines}, which do not interline (Preferences › Vehicles)":
@@ -57,6 +64,7 @@ _version: 2
   fr: "Assure des courses des lignes %{lines}, qui ne sont pas en interlignage (Préférences › Véhicules)"
   nl: "Rijdt ritten van de lijnen %{lines}, die niet gekoppeld worden (Voorkeuren › Voertuigen)"
   pl: "Obsługuje kursy linii %{lines}, których się nie łączy (Preferencje › Pojazdy)"
+  es: "Hace viajes de las líneas %{lines}, que no se enlazan (Preferencias › Vehículos)"
   ru: "Выполняет рейсы маршрутов %{lines}, которые не работают вместе (Предпочтения › Транспорт)"
   uk: "Виконує рейси маршрутів %{lines}, які не працюють разом (Вподобання › Транспорт)"
 "Buses on lines that do not interline":
@@ -64,5 +72,6 @@ _version: 2
   fr: "Bus sur des lignes sans interlignage"
   nl: "Bussen op lijnen die niet gekoppeld worden"
   pl: "Autobusy na liniach, których się nie łączy"
+  es: "Autobuses en líneas que no se enlazan"
   ru: "Автобусы на маршрутах, которые не работают вместе"
   uk: "Автобуси на маршрутах, які не працюють разом"

@@ -10,6 +10,7 @@ _version: 2
   ru: "Казуальный"
   uk: "Казуальний"
   pl: "Swobodny"
+  es: "Relajado"
 "Drive and grow: the company runs itself.":
   en: "Drive and grow: the company runs itself."
   nl: "Rijden en groeien: het bedrijf loopt vanzelf."
@@ -18,6 +19,7 @@ _version: 2
   ru: "Водите и растите: компания работает сама."
   uk: "Водіть і зростайте: компанія працює сама."
   pl: "Jeździj i rośnij: firma działa sama."
+  es: "Conduce y crece: la empresa funciona sola."
 "Run the company, with a helping hand.":
   en: "Run the company, with a helping hand."
   nl: "Leid het bedrijf, met een helpende hand."
@@ -26,6 +28,7 @@ _version: 2
   ru: "Управляйте компанией, вам помогут."
   uk: "Керуйте компанією, вам допоможуть."
   pl: "Prowadź firmę, z pomocną dłonią."
+  es: "Dirige la empresa, con una ayuda."
 "Run it as a real operator does.":
   en: "Run it as a real operator does."
   nl: "Leid het zoals een echte vervoerder dat doet."
@@ -34,6 +37,7 @@ _version: 2
   ru: "Управляйте, как настоящий перевозчик."
   uk: "Керуйте, як справжній перевізник."
   pl: "Prowadź ją jak prawdziwy przewoźnik."
+  es: "Dirígela como lo hace un operador real."
 "Everything automatic: rosters, repairs, staff and research":
   en: "Everything automatic: rosters, repairs, staff and research"
   nl: "Alles automatisch: roosters, reparaties, personeel en onderzoek"
@@ -42,6 +46,7 @@ _version: 2
   ru: "Всё автоматически: графики, ремонт, персонал и исследования"
   uk: "Усе автоматично: графіки, ремонт, персонал і дослідження"
   pl: "Wszystko automatycznie: grafiki, naprawy, personel i badania"
+  es: "Todo automático: cuadrantes, reparaciones, personal e investigación"
 "Simple screens":
   en: "Simple screens"
   nl: "Eenvoudige schermen"
@@ -50,6 +55,7 @@ _version: 2
   ru: "Простые экраны"
   uk: "Прості екрани"
   pl: "Proste ekrany"
+  es: "Pantallas sencillas"
 "Lots of help along the way":
   en: "Lots of help along the way"
   nl: "Veel hulp onderweg"
@@ -58,6 +64,7 @@ _version: 2
   ru: "Много подсказок по ходу игры"
   uk: "Багато підказок по ходу гри"
   pl: "Dużo pomocy po drodze"
+  es: "Mucha ayuda por el camino"
 "Generous money":
   en: "Generous money"
   nl: "Royaal met geld"
@@ -66,6 +73,7 @@ _version: 2
   ru: "Щедрые финансы"
   uk: "Щедрі фінанси"
   pl: "Hojne finanse"
+  es: "Dinero generoso"
 "You run the company yourself":
   en: "You run the company yourself"
   nl: "Je leidt het bedrijf zelf"
@@ -74,6 +82,7 @@ _version: 2
   ru: "Вы сами управляете компанией"
   uk: "Ви самі керуєте компанією"
   pl: "Sam prowadzisz firmę"
+  es: "Diriges tú la empresa"
 "The dispatcher helps: the roster repairs itself every morning":
   en: "The dispatcher helps: the roster repairs itself every morning"
   nl: "De planner helpt: het rooster herstelt zich elke ochtend"
@@ -82,6 +91,7 @@ _version: 2
   ru: "Диспетчер помогает: график чинится сам каждое утро"
   uk: "Диспетчер допомагає: графік лагодиться сам щоранку"
   pl: "Dyspozytor pomaga: grafik naprawia się co rano"
+  es: "El despachador ayuda: el cuadrante se repara solo cada mañana"
 "Forgiving rules and calmer days":
   en: "Forgiving rules and calmer days"
   nl: "Vergevingsgezinde regels en rustigere dagen"
@@ -90,6 +100,7 @@ _version: 2
   ru: "Мягкие правила и более спокойные дни"
   uk: "М'які правила та спокійніші дні"
   pl: "Wyrozumiałe zasady i spokojniejsze dni"
+  es: "Reglas indulgentes y días más tranquilos"
 "Optional RosterFlow":
   en: "Optional RosterFlow"
   nl: "RosterFlow naar keuze"
@@ -98,6 +109,7 @@ _version: 2
   ru: "RosterFlow по желанию"
   uk: "RosterFlow за бажанням"
   pl: "RosterFlow opcjonalnie"
+  es: "RosterFlow opcional"
 "Real-life wages, prices and rules":
   en: "Real-life wages, prices and rules"
   nl: "Echte lonen, prijzen en regels"
@@ -106,6 +118,7 @@ _version: 2
   ru: "Реальные зарплаты, цены и правила"
   uk: "Реальні зарплати, ціни та правила"
   pl: "Prawdziwe płace, ceny i zasady"
+  es: "Sueldos, precios y reglas de la vida real"
 "Real disruptions: illness, breakdowns, delays":
   en: "Real disruptions: illness, breakdowns, delays"
   nl: "Echte verstoringen: ziekte, pech, vertragingen"
@@ -114,6 +127,7 @@ _version: 2
   ru: "Настоящие сбои: болезни, поломки, опоздания"
   uk: "Справжні збої: хвороби, поломки, запізнення"
   pl: "Prawdziwe zakłócenia: choroby, awarie, opóźnienia"
+  es: "Incidencias reales: enfermedades, averías, retrasos"
 "You solve everything yourself":
   en: "You solve everything yourself"
   nl: "Je lost alles zelf op"
@@ -122,6 +136,7 @@ _version: 2
   ru: "Всё решаете вы сами"
   uk: "Усе вирішуєте ви самі"
   pl: "Wszystko rozwiązujesz sam"
+  es: "Lo resuelves todo tú"
 "Every page and every function: you run the company, and the dispatcher repairs the roster every morning. Forgiving rules and fewer disruptions.":
   en: "Every page and every function: you run the company, and the dispatcher repairs the roster every morning. Forgiving rules and fewer disruptions."
   nl: "Elke pagina en elke functie: jij leidt het bedrijf, en de planner herstelt het rooster elke ochtend. Vergevingsgezinde regels en minder verstoringen."
@@ -130,6 +145,7 @@ _version: 2
   ru: "Все страницы и все функции: вы управляете компанией, а диспетчер каждое утро чинит график. Мягкие правила и меньше сбоев."
   uk: "Усі сторінки й усі функції: ви керуєте компанією, а диспетчер щоранку лагодить графік. М'які правила та менше збоїв."
   pl: "Każda strona i każda funkcja: prowadzisz firmę, a dyspozytor co rano naprawia grafik. Wyrozumiałe zasady i mniej zakłóceń."
+  es: "Todas las páginas y todas las funciones: diriges la empresa y el despachador repara el cuadrante cada mañana. Reglas indulgentes y menos incidencias."
 "Every page and every function, with real-life wages, rules and disruptions: you plan, repair and solve everything yourself.":
   en: "Every page and every function, with real-life wages, rules and disruptions: you plan, repair and solve everything yourself."
   nl: "Elke pagina en elke functie, met echte lonen, regels en verstoringen: je plant, herstelt en lost alles zelf op."
@@ -138,6 +154,7 @@ _version: 2
   ru: "Все страницы и все функции, с реальными зарплатами, правилами и сбоями: вы сами планируете, чините и решаете всё."
   uk: "Усі сторінки й усі функції, з реальними зарплатами, правилами та збоями: ви самі плануєте, лагодите й вирішуєте все."
   pl: "Każda strona i każda funkcja, z prawdziwymi płacami, zasadami i zakłóceniami: sam planujesz, naprawiasz i rozwiązujesz wszystko."
+  es: "Todas las páginas y todas las funciones, con sueldos, reglas e incidencias de la vida real: planificas, reparas y lo resuelves todo tú."
 # The morning's repair of the roster (Normal)
 "The roster was repaired":
   en: "The roster was repaired"
@@ -147,6 +164,7 @@ _version: 2
   ru: "График исправлен"
   uk: "Графік виправлено"
   pl: "Grafik został naprawiony"
+  es: "Se ha reparado el cuadrante"
 "The dispatcher gave %{n} places of today's roster anew: their driver or bus could not run them (ill, on holiday, a clash or no bus). The rest of the roster is as you planned it.":
   en: "The dispatcher gave %{n} places of today's roster anew: their driver or bus could not run them (ill, on holiday, a clash or no bus). The rest of the roster is as you planned it."
   nl: "De planner heeft %{n} plekken van het rooster van vandaag opnieuw ingevuld: hun chauffeur of bus kon ze niet rijden (ziek, op vakantie, een overlap of geen bus). De rest van het rooster is zoals jij het plande."
@@ -155,6 +173,7 @@ _version: 2
   ru: "Диспетчер заново распределил %{n} мест в сегодняшнем графике: их водитель или автобус не мог их выполнить (болезнь, отпуск, накладка или нет автобуса). Остальной график остался таким, как вы его составили."
   uk: "Диспетчер заново розподілив %{n} місць у сьогоднішньому графіку: їхній водій або автобус не міг їх виконати (хвороба, відпустка, накладка або немає автобуса). Решта графіка така, як ви її склали."
   pl: "Dyspozytor na nowo obsadził %{n} miejsc w dzisiejszym grafiku: ich kierowca lub autobus nie mógł ich obsłużyć (choroba, urlop, kolizja lub brak autobusu). Reszta grafiku jest taka, jak ją zaplanowałeś."
+  es: "El despachador ha reasignado %{n} puestos del cuadrante de hoy: su conductor o autobús no podía cubrirlos (enfermo, de vacaciones, un conflicto o sin autobús). El resto del cuadrante está como lo planificaste."
 "Roster repaired, places still open":
   en: "Roster repaired, places still open"
   nl: "Rooster hersteld, nog plekken open"
@@ -163,6 +182,7 @@ _version: 2
   ru: "График исправлен, есть незакрытые места"
   uk: "Графік виправлено, є незакриті місця"
   pl: "Grafik naprawiony, miejsca wciąż wolne"
+  es: "Cuadrante reparado, puestos aún sin cubrir"
 "The dispatcher gave %{n} places of today's roster anew, but found nobody free for %{open} of them: give them a driver or a bus in the planning, or they fall out.":
   en: "The dispatcher gave %{n} places of today's roster anew, but found nobody free for %{open} of them: give them a driver or a bus in the planning, or they fall out."
   nl: "De planner heeft %{n} plekken van het rooster van vandaag opnieuw ingevuld, maar vond voor %{open} ervan niemand vrij: geef ze in de planning een chauffeur of een bus, anders vallen ze uit."
@@ -171,6 +191,7 @@ _version: 2
   ru: "Диспетчер заново распределил %{n} мест в сегодняшнем графике, но для %{open} из них никого свободного не нашёл: назначьте им водителя или автобус в планировании, иначе они выпадут."
   uk: "Диспетчер заново розподілив %{n} місць у сьогоднішньому графіку, але для %{open} з них нікого вільного не знайшов: призначте їм водія або автобус у плануванні, інакше вони випадуть."
   pl: "Dyspozytor na nowo obsadził %{n} miejsc w dzisiejszym grafiku, ale dla %{open} z nich nie znalazł nikogo wolnego: przydziel im kierowcę lub autobus w planowaniu, inaczej wypadną."
+  es: "El despachador ha reasignado %{n} puestos del cuadrante de hoy, pero no encontró a nadie libre para %{open} de ellos: asígnales un conductor o un autobús en la planificación, o se suprimen."
 # The company's settings: the game mode and the add-ons
 "Game mode":
   en: "Game mode"
@@ -180,6 +201,7 @@ _version: 2
   ru: "Режим игры"
   uk: "Режим гри"
   pl: "Tryb gry"
+  es: "Modo de juego"
 "Add-ons":
   en: "Add-ons"
   nl: "Uitbreidingen"
@@ -188,6 +210,7 @@ _version: 2
   ru: "Дополнения"
   uk: "Доповнення"
   pl: "Dodatki"
+  es: "Complementos"
 "RosterFlow – Bus Scheduling & Crew Rostering":
   en: "RosterFlow – Bus Scheduling & Crew Rostering"
   nl: "RosterFlow – Dienstregeling en personeelsroosters"
@@ -196,6 +219,7 @@ _version: 2
   ru: "RosterFlow – Планирование автобусов и смен"
   uk: "RosterFlow – Планування автобусів і змін"
   pl: "RosterFlow – Planowanie autobusów i grafików załóg"
+  es: "RosterFlow – Planificación de autobuses y cuadrantes de personal"
 "Advanced: modelled on professional scheduling software that real transport operators use.":
   en: "Advanced: modelled on professional scheduling software that real transport operators use."
   nl: "Gevorderd: naar het voorbeeld van professionele planningssoftware die echte vervoerders gebruiken."
@@ -204,6 +228,7 @@ _version: 2
   ru: "Для опытных: по образцу профессиональных программ планирования, которыми пользуются настоящие перевозчики."
   uk: "Для досвідчених: за зразком професійних програм планування, якими користуються справжні перевізники."
   pl: "Zaawansowane: wzorowane na profesjonalnym oprogramowaniu do planowania, z którego korzystają prawdziwi przewoźnicy."
+  es: "Avanzado: inspirado en el software de planificación profesional que usan los operadores de transporte reales."
 "RosterFlow is on: the planning is its studio now.":
   en: "RosterFlow is on: the planning is its studio now."
   nl: "RosterFlow staat aan: de planning is nu zijn studio."
@@ -212,6 +237,7 @@ _version: 2
   ru: "RosterFlow включён: планирование теперь — его студия."
   uk: "RosterFlow увімкнено: планування тепер — його студія."
   pl: "RosterFlow jest włączony: planowanie jest teraz jego studiem."
+  es: "RosterFlow está activado: la planificación es ahora su estudio."
 "RosterFlow is off: the planning is the day's roster. Its plans are kept.":
   en: "RosterFlow is off: the planning is the day's roster. Its plans are kept."
   nl: "RosterFlow staat uit: de planning is het rooster van de dag. Zijn plannen blijven bewaard."
@@ -220,6 +246,7 @@ _version: 2
   ru: "RosterFlow выключен: планирование — это график дня. Его планы сохранены."
   uk: "RosterFlow вимкнено: планування — це графік дня. Його плани збережено."
   pl: "RosterFlow jest wyłączony: planowanie to grafik dnia. Jego plany zostają zachowane."
+  es: "RosterFlow está desactivado: la planificación es el cuadrante del día. Sus planes se conservan."
 "Switch to %{mode}?":
   en: "Switch to %{mode}?"
   nl: "Overschakelen naar %{mode}?"
@@ -228,6 +255,7 @@ _version: 2
   ru: "Перейти в режим «%{mode}»?"
   uk: "Перейти в режим «%{mode}»?"
   pl: "Przełączyć na %{mode}?"
+  es: "¿Cambiar a %{mode}?"
 "Switch mode":
   en: "Switch mode"
   nl: "Modus wisselen"
@@ -236,6 +264,7 @@ _version: 2
   ru: "Сменить режим"
   uk: "Змінити режим"
   pl: "Zmień tryb"
+  es: "Cambiar de modo"
 "Switch to Normal":
   en: "Switch to Normal"
   nl: "Naar Normaal"
@@ -244,6 +273,7 @@ _version: 2
   ru: "Перейти в обычный режим"
   uk: "Перейти в нормальний режим"
   pl: "Przełącz na Normalny"
+  es: "Cambiar a Normal"
 "The company runs its routine by itself: rosters, spare parts, repairs, staff and research, with simple screens and generous money. The planning, the depot, the workshop, the concessions, the research and the contracts pages are left out.":
   en: "The company runs its routine by itself: rosters, spare parts, repairs, staff and research, with simple screens and generous money. The planning, the depot, the workshop, the concessions, the research and the contracts pages are left out."
   nl: "Het bedrijf doet zijn routine zelf: roosters, onderdelen, reparaties, personeel en onderzoek, met eenvoudige schermen en royaal geld. De pagina's planning, remise, werkplaats, concessies, onderzoek en contracten vallen weg."
@@ -252,6 +282,7 @@ _version: 2
   ru: "Компания сама ведёт свою рутину: графики, запчасти, ремонт, персонал и исследования, с простыми экранами и щедрыми финансами. Страницы планирования, депо, мастерской, концессий, исследований и контрактов скрываются."
   uk: "Компанія сама веде свою рутину: графіки, запчастини, ремонт, персонал і дослідження, з простими екранами та щедрими фінансами. Сторінки планування, депо, майстерні, концесій, досліджень і контрактів приховуються."
   pl: "Firma sama prowadzi swoją rutynę: grafiki, części zamienne, naprawy, personel i badania, z prostymi ekranami i hojnymi finansami. Strony planowania, zajezdni, warsztatu, koncesji, badań i kontraktów znikają."
+  es: "La empresa gestiona su rutina por sí sola: cuadrantes, recambios, reparaciones, personal e investigación, con pantallas sencillas y dinero generoso. Se omiten las páginas de planificación, cochera, taller, concesiones, investigación y contratos."
 "RosterFlow is switched off; its plans are kept.":
   en: "RosterFlow is switched off; its plans are kept."
   nl: "RosterFlow wordt uitgezet; zijn plannen blijven bewaard."
@@ -260,6 +291,7 @@ _version: 2
   ru: "RosterFlow выключается; его планы сохраняются."
   uk: "RosterFlow вимикається; його плани зберігаються."
   pl: "RosterFlow zostaje wyłączony; jego plany zostają zachowane."
+  es: "RosterFlow está desactivado; sus planes se conservan."
 "Every page opens and you run the company yourself: the roster, the workshop, the concessions and the research.":
   en: "Every page opens and you run the company yourself: the roster, the workshop, the concessions and the research."
   nl: "Elke pagina gaat open en je leidt het bedrijf zelf: het rooster, de werkplaats, de concessies en het onderzoek."
@@ -268,6 +300,7 @@ _version: 2
   ru: "Открываются все страницы, и вы сами управляете компанией: графиком, мастерской, концессиями и исследованиями."
   uk: "Відкриваються всі сторінки, і ви самі керуєте компанією: графіком, майстернею, концесіями та дослідженнями."
   pl: "Otwierają się wszystkie strony i sam prowadzisz firmę: grafik, warsztat, koncesje i badania."
+  es: "Todas las páginas se abren y diriges tú la empresa: el cuadrante, el taller, las concesiones y la investigación."
 "Forgiving rules and calmer days: fewer illnesses, breakdowns and delays, and the dispatcher repairs the roster every morning.":
   en: "Forgiving rules and calmer days: fewer illnesses, breakdowns and delays, and the dispatcher repairs the roster every morning."
   nl: "Vergevingsgezinde regels en rustigere dagen: minder ziekte, pech en vertragingen, en de planner herstelt het rooster elke ochtend."
@@ -276,6 +309,7 @@ _version: 2
   ru: "Мягкие правила и более спокойные дни: меньше болезней, поломок и опозданий, а диспетчер каждое утро чинит график."
   uk: "М'які правила та спокійніші дні: менше хвороб, поломок і запізнень, а диспетчер щоранку лагодить графік."
   pl: "Wyrozumiałe zasady i spokojniejsze dni: mniej chorób, awarii i opóźnień, a dyspozytor co rano naprawia grafik."
+  es: "Reglas indulgentes y días más tranquilos: menos enfermedades, averías y retrasos, y el despachador repara el cuadrante cada mañana."
 "Real-life wages, prices and rules, and real disruptions: more illness, breakdowns and delays. The roster is no longer repaired by itself: you solve everything yourself.":
   en: "Real-life wages, prices and rules, and real disruptions: more illness, breakdowns and delays. The roster is no longer repaired by itself: you solve everything yourself."
   nl: "Echte lonen, prijzen en regels, en echte verstoringen: meer ziekte, pech en vertragingen. Het rooster herstelt zich niet meer vanzelf: je lost alles zelf op."
@@ -284,6 +318,7 @@ _version: 2
   ru: "Реальные зарплаты, цены и правила, и настоящие сбои: больше болезней, поломок и опозданий. График больше не чинится сам: всё решаете вы сами."
   uk: "Реальні зарплати, ціни та правила, і справжні збої: більше хвороб, поломок і запізнень. Графік більше не лагодиться сам: усе вирішуєте ви самі."
   pl: "Prawdziwe płace, ceny i zasady oraz prawdziwe zakłócenia: więcej chorób, awarii i opóźnień. Grafik nie naprawia się już sam: wszystko rozwiązujesz sam."
+  es: "Sueldos, precios y reglas de la vida real, e incidencias reales: más enfermedades, averías y retrasos. El cuadrante ya no se repara solo: lo resuelves todo tú."
 "Your buses, people, lines, money and history stay as they are, and you can switch back at any time.":
   en: "Your buses, people, lines, money and history stay as they are, and you can switch back at any time."
   nl: "Je bussen, mensen, lijnen, geld en geschiedenis blijven zoals ze zijn, en je kunt altijd terugschakelen."
@@ -292,6 +327,7 @@ _version: 2
   ru: "Ваши автобусы, люди, линии, деньги и история остаются как есть, и вы можете вернуться в любое время."
   uk: "Ваші автобуси, люди, лінії, гроші й історія залишаються як є, і ви можете повернутися будь-коли."
   pl: "Twoje autobusy, ludzie, linie, pieniądze i historia zostają bez zmian, a w każdej chwili możesz wrócić."
+  es: "Tus autobuses, personas, líneas, dinero e historial se quedan como están, y puedes volver a cambiar cuando quieras."
 "The company runs in Casual now: it sees to its routine by itself.":
   en: "The company runs in Casual now: it sees to its routine by itself."
   nl: "Het bedrijf draait nu in Casual: het doet zijn routine zelf."
@@ -300,6 +336,7 @@ _version: 2
   ru: "Компания теперь в казуальном режиме: она сама ведёт свою рутину."
   uk: "Компанія тепер у казуальному режимі: вона сама веде свою рутину."
   pl: "Firma działa teraz w trybie Swobodnym: sama prowadzi swoją rutynę."
+  es: "La empresa funciona ahora en Relajado: se ocupa de su rutina por sí sola."
 "The company runs in Normal now: every page is open, and the dispatcher helps.":
   en: "The company runs in Normal now: every page is open, and the dispatcher helps."
   nl: "Het bedrijf draait nu in Normaal: elke pagina is open, en de planner helpt."
@@ -308,6 +345,7 @@ _version: 2
   ru: "Компания теперь в обычном режиме: открыты все страницы, а диспетчер помогает."
   uk: "Компанія тепер у нормальному режимі: відкриті всі сторінки, а диспетчер допомагає."
   pl: "Firma działa teraz w trybie Normalnym: każda strona jest otwarta, a dyspozytor pomaga."
+  es: "La empresa funciona ahora en Normal: todas las páginas están abiertas y el despachador ayuda."
 "The company runs in Realistic now: real-life rules, and you solve everything yourself.":
   en: "The company runs in Realistic now: real-life rules, and you solve everything yourself."
   nl: "Het bedrijf draait nu in Realistisch: echte regels, en je lost alles zelf op."
@@ -316,6 +354,7 @@ _version: 2
   ru: "Компания теперь в реалистичном режиме: настоящие правила, и всё решаете вы сами."
   uk: "Компанія тепер у реалістичному режимі: справжні правила, і все вирішуєте ви самі."
   pl: "Firma działa teraz w trybie Realistycznym: prawdziwe zasady i wszystko rozwiązujesz sam."
+  es: "La empresa funciona ahora en Realista: reglas de la vida real, y lo resuelves todo tú."
 "The company's game mode: change it in the company's settings":
   en: "The company's game mode: change it in the company's settings"
   nl: "De spelmodus van het bedrijf: wijzig hem in de instellingen van het bedrijf"
@@ -324,6 +363,7 @@ _version: 2
   ru: "Режим игры компании: измените его в настройках компании"
   uk: "Режим гри компанії: змініть його в налаштуваннях компанії"
   pl: "Tryb gry firmy: zmień go w ustawieniach firmy"
+  es: "El modo de juego de la empresa: cámbialo en los ajustes de la empresa"
 "Casual does not research this by itself: switch to Normal and start it on its Research page.":
   en: "Casual does not research this by itself: switch to Normal and start it on its Research page."
   nl: "Casual onderzoekt dit niet vanzelf: schakel over naar Normaal en start het op de pagina Onderzoek."
@@ -332,6 +372,7 @@ _version: 2
   ru: "В казуальном режиме это не исследуется само: перейдите в обычный режим и начните исследование на странице «Исследования»."
   uk: "У казуальному режимі це не досліджується само: перейдіть у нормальний режим і почніть дослідження на сторінці «Дослідження»."
   pl: "Tryb Swobodny nie bada tego sam: przełącz na Normalny i rozpocznij to na stronie Badania."
+  es: "Relajado no investiga esto por sí solo: cambia a Normal y empiézalo en su página de Investigación."
 "The company builds more parking spaces by itself before the yard is full, when its cash allows. To build them now, switch to Normal.":
   en: "The company builds more parking spaces by itself before the yard is full, when its cash allows. To build them now, switch to Normal."
   nl: "Het bedrijf bouwt zelf meer parkeerplaatsen voordat het terrein vol is, als de kas het toelaat. Om ze nu te bouwen, schakel je over naar Normaal."
@@ -340,6 +381,7 @@ _version: 2
   ru: "Компания сама строит больше стоянок, пока площадка не заполнена, если позволяют деньги. Чтобы построить их сейчас, перейдите в обычный режим."
   uk: "Компанія сама будує більше стоянок, поки майданчик не заповнений, якщо дозволяють гроші. Щоб побудувати їх зараз, перейдіть у нормальний режим."
   pl: "Firma sama buduje więcej miejsc postojowych, zanim plac się zapełni, gdy pozwala na to kasa. Aby zbudować je teraz, przełącz na Normalny."
+  es: "La empresa construye más plazas de aparcamiento por sí sola antes de que el patio se llene, cuando su caja lo permite. Para construirlas ya, cambia a Normal."
 "The company researches them by itself once a researcher works here and the trophies and the money are there. To start it now, switch to Normal.":
   en: "The company researches them by itself once a researcher works here and the trophies and the money are there. To start it now, switch to Normal."
   nl: "Het bedrijf onderzoekt ze zelf zodra er een onderzoeker werkt en de trofeeën en het geld er zijn. Om het nu te starten, schakel je over naar Normaal."
@@ -348,6 +390,7 @@ _version: 2
   ru: "Компания исследует их сама, как только здесь работает исследователь и есть трофеи и деньги. Чтобы начать сейчас, перейдите в обычный режим."
   uk: "Компанія досліджує їх сама, щойно тут працює дослідник і є трофеї та гроші. Щоб почати зараз, перейдіть у нормальний режим."
   pl: "Firma bada je sama, gdy tylko pracuje tu badacz i są trofea oraz pieniądze. Aby rozpocząć teraz, przełącz na Normalny."
+  es: "La empresa los investiga por sí sola cuando trabaja aquí un investigador y hay trofeos y dinero. Para empezar ya, cambia a Normal."
 # The founding wizard's game-mode cards
 "Starting capital %{amount}":
   en: "Starting capital %{amount}"
@@ -357,6 +400,7 @@ _version: 2
   ru: "Стартовый капитал %{amount}"
   uk: "Стартовий капітал %{amount}"
   pl: "Kapitał początkowy %{amount}"
+  es: "Capital inicial %{amount}"
 "Switch the game mode at any time in the company's settings. RosterFlow, the professional scheduling studio, can be switched on there as an add-on.":
   en: "Switch the game mode at any time in the company's settings. RosterFlow, the professional scheduling studio, can be switched on there as an add-on."
   nl: "Wissel de spelmodus wanneer je wilt in de instellingen van het bedrijf. RosterFlow, de professionele planningsstudio, zet je daar aan als uitbreiding."
@@ -365,6 +409,7 @@ _version: 2
   ru: "Режим игры можно сменить в любое время в настройках компании. Там же можно включить дополнение RosterFlow — профессиональную студию планирования."
   uk: "Режим гри можна змінити будь-коли в налаштуваннях компанії. Там само можна ввімкнути доповнення RosterFlow — професійну студію планування."
   pl: "Tryb gry zmienisz w każdej chwili w ustawieniach firmy. Tam też włączysz dodatek RosterFlow, profesjonalne studio planowania."
+  es: "Cambia el modo de juego cuando quieras en los ajustes de la empresa. RosterFlow, el estudio de planificación profesional, se puede activar allí como complemento."
 "Switch the game mode at any time in the company's settings: nothing is lost.":
   en: "Switch the game mode at any time in the company's settings: nothing is lost."
   nl: "Wissel de spelmodus wanneer je wilt in de instellingen van het bedrijf: er gaat niets verloren."
@@ -373,6 +418,7 @@ _version: 2
   ru: "Режим игры можно сменить в любое время в настройках компании: ничего не теряется."
   uk: "Режим гри можна змінити будь-коли в налаштуваннях компанії: нічого не втрачається."
   pl: "Tryb gry zmienisz w każdej chwili w ustawieniach firmy: nic nie przepada."
+  es: "Cambia el modo de juego cuando quieras en los ajustes de la empresa: no se pierde nada."
 "Casual buys at the list price, in one click: the buses are yours at once.":
   en: "Casual buys at the list price, in one click: the buses are yours at once."
   nl: "Casual koopt tegen de catalogusprijs, met één klik: de bussen zijn meteen van jou."
@@ -381,6 +427,7 @@ _version: 2
   ru: "В казуальном режиме покупка по прейскуранту, в один клик: автобусы сразу ваши."
   uk: "У казуальному режимі купівля за прейскурантом, в один клік: автобуси одразу ваші."
   pl: "W trybie Swobodnym kupujesz po cenie katalogowej, jednym kliknięciem: autobusy są od razu twoje."
+  es: "Relajado compra a precio de catálogo, en un clic: los autobuses son tuyos al instante."
 # The company's tour
 "Give the company a name, its colours, its home map with a depot and its game mode: Casual, Normal or Realistic. Once it runs, this tour shows you round its pages.":
   en: "Give the company a name, its colours, its home map with a depot and its game mode: Casual, Normal or Realistic. Once it runs, this tour shows you round its pages."
@@ -390,6 +437,7 @@ _version: 2
   ru: "Дайте компании название, цвета, домашнюю карту с депо и режим игры: казуальный, обычный или реалистичный. Когда она заработает, этот тур проведёт вас по её страницам."
   uk: "Дайте компанії назву, кольори, домашню карту з депо та режим гри: казуальний, нормальний або реалістичний. Коли вона запрацює, цей тур проведе вас її сторінками."
   pl: "Nadaj firmie nazwę, kolory, mapę macierzystą z zajezdnią i tryb gry: Swobodny, Normalny lub Realistyczny. Gdy ruszy, ta wycieczka oprowadzi cię po jej stronach."
+  es: "Dale a la empresa un nombre, sus colores, su mapa de origen con una cochera y su modo de juego: Relajado, Normal o Realista. Cuando esté en marcha, este recorrido te enseña sus páginas."
 "The company sees to its routine by itself: no planning, no auctions, no workshop to run. A click here opens the settings, where Normal or Realistic shows every page with nothing lost.":
   en: "The company sees to its routine by itself: no planning, no auctions, no workshop to run. A click here opens the settings, where Normal or Realistic shows every page with nothing lost."
   nl: "Het bedrijf zorgt zelf voor zijn routine: geen planning, geen veilingen, geen werkplaats om te runnen. Een klik hier opent de instellingen, waar Normaal of Realistisch elke pagina toont zonder dat er iets verloren gaat."
@@ -398,3 +446,4 @@ _version: 2
   ru: "Компания сама ведёт свою рутину: ни планирования, ни аукционов, ни мастерской. Щелчок здесь открывает настройки, где обычный или реалистичный режим показывает все страницы, ничего не теряя."
   uk: "Компанія сама веде свою рутину: ні планування, ні аукціонів, ні майстерні. Клацання тут відкриває налаштування, де нормальний або реалістичний режим показує всі сторінки, нічого не втрачаючи."
   pl: "Firma sama dba o swoją rutynę: bez planowania, bez przetargów, bez warsztatu do prowadzenia. Kliknięcie tutaj otwiera ustawienia, gdzie tryb Normalny lub Realistyczny pokazuje każdą stronę bez żadnych strat."
+  es: "La empresa se ocupa de su rutina por sí sola: sin planificación, sin subastas, sin taller que gestionar. Un clic aquí abre los ajustes, donde Normal o Realista muestran todas las páginas sin perder nada."

@@ -7,6 +7,7 @@ _version: 2
   fr: "Lun-Ven, Sam, Dim"
   nl: "Ma-Vr, Za, Zo"
   pl: "Pn-Pt, Sob, Nd"
+  es: "Lun-Vie, Sáb, Dom"
   ru: "Пн-Пт, Сб, Вс"
   uk: "Пн-Пт, Сб, Нд"
 "Mon-Fri, school days":
@@ -14,6 +15,7 @@ _version: 2
   fr: "Lun-Ven, jours d'école"
   nl: "Ma-Vr, schooldagen"
   pl: "Pn-Pt, dni szkolne"
+  es: "Lun-Vie, días lectivos"
   ru: "Пн-Пт, учебные дни"
   uk: "Пн-Пт, навчальні дні"
 "Sat, Sun":
@@ -21,6 +23,7 @@ _version: 2
   fr: "Sam, Dim"
   nl: "Za, Zo"
   pl: "Sob, Nd"
+  es: "Sáb, Dom"
   ru: "Сб, Вс"
   uk: "Сб, Нд"
 "Mon-Fri, Sat, Sun, on demand":
@@ -28,6 +31,7 @@ _version: 2
   fr: "Lun-Ven, Sam, Dim, à la demande"
   nl: "Ma-Vr, Za, Zo, op afroep"
   pl: "Pn-Pt, Sob, Nd, na żądanie"
+  es: "Lun-Vie, Sáb, Dom, a demanda"
   ru: "Пн-Пт, Сб, Вс, по заказу"
   uk: "Пн-Пт, Сб, Нд, за викликом"
 "The days the route runs, as its kind of service has them: the Timeplan makes its trips on these days":
@@ -35,6 +39,7 @@ _version: 2
   fr: "Les jours où l'itinéraire circule, selon son type de service : le plan horaire place ses courses ces jours-là"
   nl: "De dagen waarop de route rijdt, zoals het soort vervoer ze bepaalt: het dienstregelingsplan maakt de ritten op deze dagen"
   pl: "Dni, w które kursuje trasa, wynikające z rodzaju przewozu: plan rozkładu układa jej kursy na te dni"
+  es: "Los días en que circula la ruta, según su tipo de servicio: el Plan horario crea sus viajes en estos días"
   ru: "Дни, по которым ходит маршрут, по его виду перевозок: план расписания ставит его рейсы на эти дни"
   uk: "Дні, коли курсує маршрут, за його видом перевезень: план розкладу ставить його рейси на ці дні"
 "New route: click its stops on the map":
@@ -42,6 +47,7 @@ _version: 2
   fr: "Nouvel itinéraire : cliquez ses arrêts sur la carte"
   nl: "Nieuwe route: klik de haltes op de kaart aan"
   pl: "Nowa trasa: kliknij jej przystanki na mapie"
+  es: "Ruta nueva: haz clic en sus paradas en el mapa"
   ru: "Новый маршрут: щёлкните его остановки на карте"
   uk: "Новий маршрут: клацніть його зупинки на карті"
 "The route's colour":
@@ -49,6 +55,7 @@ _version: 2
   fr: "La couleur de l'itinéraire"
   nl: "De kleur van de route"
   pl: "Kolor trasy"
+  es: "El color de la ruta"
   ru: "Цвет маршрута"
   uk: "Колір маршруту"
 "To %{stop}":
@@ -56,6 +63,7 @@ _version: 2
   fr: "Vers %{stop}"
   nl: "Naar %{stop}"
   pl: "→ %{stop}"
+  es: "A %{stop}"
   ru: "→ %{stop}"
   uk: "→ %{stop}"
 "Ring":
@@ -63,6 +71,7 @@ _version: 2
   fr: "Circulaire"
   nl: "Ring"
   pl: "Okrężna"
+  es: "Circular"
   ru: "Кольцевой"
   uk: "Кільцевий"
 "%{n} km":
@@ -70,6 +79,7 @@ _version: 2
   fr: "%{n} km"
   nl: "%{n} km"
   pl: "%{n} km"
+  es: "%{n} km"
   ru: "%{n} км"
   uk: "%{n} км"
 "%{n} mi":
@@ -77,6 +87,7 @@ _version: 2
   fr: "%{n} mi"
   nl: "%{n} mijl"
   pl: "%{n} mil"
+  es: "%{n} mi"
   ru: "%{n} миль"
   uk: "%{n} миль"
 "Drag it to another place in the order":
@@ -84,6 +95,7 @@ _version: 2
   fr: "Glisser l'arrêt à une autre place dans l'ordre"
   nl: "Sleep de halte naar een andere plek in de volgorde"
   pl: "Przeciągnij przystanek w inne miejsce kolejności"
+  es: "Arrástrala a otro lugar del orden"
   ru: "Перетащите остановку на другое место в порядке"
   uk: "Перетягніть зупинку на інше місце в порядку"
 "New stops go in after %{stop}: click it again to add them at the end.":
@@ -91,6 +103,7 @@ _version: 2
   fr: "Les nouveaux arrêts viennent après %{stop} : cliquez-le de nouveau pour les ajouter à la fin."
   nl: "Nieuwe haltes komen na %{stop}: klik er nog eens op om ze aan het eind toe te voegen."
   pl: "Nowe przystanki trafią po %{stop}: kliknij go ponownie, aby dodawać je na końcu."
+  es: "Las paradas nuevas se añaden después de %{stop}: vuelve a hacer clic en ella para añadirlas al final."
   ru: "Новые остановки встанут после %{stop}: щёлкните её ещё раз, чтобы добавлять их в конец."
   uk: "Нові зупинки стануть після %{stop}: клацніть її ще раз, щоб додавати їх у кінець."
 "This route has no way back yet: without one the bus goes round to its first stop.":
@@ -98,6 +111,7 @@ _version: 2
   fr: "Cet itinéraire n'a pas encore de retour : sans lui, le bus revient en boucle à son premier arrêt."
   nl: "Deze route heeft nog geen terugweg: zonder terugweg rijdt de bus rond naar zijn eerste halte."
   pl: "Ta trasa nie ma jeszcze drogi powrotnej: bez niej autobus wraca okrężnie do pierwszego przystanku."
+  es: "Esta ruta aún no tiene camino de vuelta: sin él, el autobús da la vuelta hasta su primera parada."
   ru: "У этого маршрута ещё нет обратного пути: без него автобус по кругу возвращается к первой остановке."
   uk: "Цей маршрут ще не має зворотного шляху: без нього автобус по колу повертається до першої зупинки."
 "START":
@@ -105,6 +119,7 @@ _version: 2
   fr: "DÉPART"
   nl: "START"
   pl: "START"
+  es: "INICIO"
   ru: "СТАРТ"
   uk: "СТАРТ"
 "END":
@@ -112,6 +127,7 @@ _version: 2
   fr: "ARRIVÉE"
   nl: "EIND"
   pl: "KONIEC"
+  es: "FIN"
   ru: "КОНЕЦ"
   uk: "КІНЕЦЬ"
 "START · END":
@@ -119,6 +135,7 @@ _version: 2
   fr: "DÉPART · ARRIVÉE"
   nl: "START · EIND"
   pl: "START · KONIEC"
+  es: "INICIO · FIN"
   ru: "СТАРТ · КОНЕЦ"
   uk: "СТАРТ · КІНЕЦЬ"
 "The whole route":
@@ -126,6 +143,7 @@ _version: 2
   fr: "L'itinéraire entier"
   nl: "De hele route"
   pl: "Cała trasa"
+  es: "Toda la ruta"
   ru: "Весь маршрут"
   uk: "Увесь маршрут"
 "Search a stop":
@@ -133,6 +151,7 @@ _version: 2
   fr: "Chercher un arrêt"
   nl: "Halte zoeken"
   pl: "Szukaj przystanku"
+  es: "Buscar una parada"
   ru: "Найти остановку"
   uk: "Знайти зупинку"
 "No stop of that name":
@@ -140,6 +159,7 @@ _version: 2
   fr: "Aucun arrêt de ce nom"
   nl: "Geen halte met die naam"
   pl: "Brak przystanku o tej nazwie"
+  es: "Ninguna parada con ese nombre"
   ru: "Нет остановки с таким названием"
   uk: "Немає зупинки з такою назвою"
 "Show it on the map":
@@ -147,6 +167,7 @@ _version: 2
   fr: "Le montrer sur la carte"
   nl: "Op de kaart tonen"
   pl: "Pokaż na mapie"
+  es: "Mostrarla en el mapa"
   ru: "Показать на карте"
   uk: "Показати на карті"
 "On the route":
@@ -154,6 +175,7 @@ _version: 2
   fr: "Sur l'itinéraire"
   nl: "Op de route"
   pl: "Na trasie"
+  es: "En la ruta"
   ru: "На маршруте"
   uk: "На маршруті"
 "Add it to the direction":
@@ -161,6 +183,7 @@ _version: 2
   fr: "L'ajouter au sens"
   nl: "Aan de richting toevoegen"
   pl: "Dodaj do kierunku"
+  es: "Añadirla al sentido"
   ru: "Добавить в направление"
   uk: "Додати до напрямку"
 "Two stops at least: then the minutes from stop to stop are here.":
@@ -168,6 +191,7 @@ _version: 2
   fr: "Deux arrêts au moins : les minutes d'arrêt en arrêt s'affichent alors ici."
   nl: "Minstens twee haltes: dan staan hier de minuten van halte tot halte."
   pl: "Co najmniej dwa przystanki: wtedy tutaj są minuty od przystanku do przystanku."
+  es: "Al menos dos paradas: entonces aquí aparecen los minutos de parada a parada."
   ru: "Нужно хотя бы две остановки: тогда здесь будут минуты от остановки до остановки."
   uk: "Потрібно щонайменше дві зупинки: тоді тут будуть хвилини від зупинки до зупинки."
 "The minutes from %{a} to %{b}: click to change them":
@@ -175,6 +199,7 @@ _version: 2
   fr: "Les minutes de %{a} à %{b} : cliquez pour les changer"
   nl: "De minuten van %{a} tot %{b}: klik om ze te wijzigen"
   pl: "Minuty od %{a} do %{b}: kliknij, aby je zmienić"
+  es: "Los minutos de %{a} a %{b}: haz clic para cambiarlos"
   ru: "Минуты от %{a} до %{b}: щёлкните, чтобы изменить"
   uk: "Хвилини від %{a} до %{b}: клацніть, щоб змінити"
 "From the roads: the Timeplan starts its running times from these":
@@ -182,6 +207,7 @@ _version: 2
   fr: "D'après les routes : le plan horaire part de ces temps pour ses temps de parcours"
   nl: "Uit de wegen: het dienstregelingsplan begint zijn rijtijden met deze"
   pl: "Z dróg: plan rozkładu zaczyna od nich swoje czasy przejazdu"
+  es: "Según las calles: el Plan horario parte de estos para sus tiempos de recorrido"
   ru: "По дорогам: план расписания берёт их за основу времени хода"
   uk: "За дорогами: план розкладу бере їх за основу часу руху"
 "Typed in: the Timeplan starts its running times from these":
@@ -189,6 +215,7 @@ _version: 2
   fr: "Saisis : le plan horaire part de ces temps pour ses temps de parcours"
   nl: "Ingetypt: het dienstregelingsplan begint zijn rijtijden met deze"
   pl: "Wpisane: plan rozkładu zaczyna od nich swoje czasy przejazdu"
+  es: "Escritos a mano: el Plan horario parte de estos para sus tiempos de recorrido"
   ru: "Введены вручную: план расписания берёт их за основу времени хода"
   uk: "Введено вручну: план розкладу бере їх за основу часу руху"
 "The route has changes not saved: save them, or do it again to leave them.":
@@ -196,6 +223,7 @@ _version: 2
   fr: "L'itinéraire a des changements non enregistrés : enregistrez-les, ou recommencez pour les abandonner."
   nl: "De route heeft wijzigingen die niet zijn opgeslagen: sla ze op, of doe het nog eens om ze te laten vallen."
   pl: "Trasa ma niezapisane zmiany: zapisz je albo zrób to jeszcze raz, aby je porzucić."
+  es: "La ruta tiene cambios sin guardar: guárdalos, o vuelve a hacerlo para descartarlos."
   ru: "У маршрута есть несохранённые изменения: сохраните их или повторите действие, чтобы отказаться от них."
   uk: "Маршрут має незбережені зміни: збережіть їх або повторіть дію, щоб відмовитися від них."
 "The line editor could not be opened.":
@@ -203,6 +231,7 @@ _version: 2
   fr: "L'éditeur de lignes n'a pas pu s'ouvrir."
   nl: "De lijneneditor kon niet worden geopend."
   pl: "Nie udało się otworzyć edytora linii."
+  es: "No se ha podido abrir el editor de líneas."
   ru: "Не удалось открыть редактор линий."
   uk: "Не вдалося відкрити редактор ліній."
 # The trip-time strip on the Timeplan's running times (r62): one source of the minutes from stop to
@@ -212,6 +241,7 @@ _version: 2
   fr: "Les temps de parcours du plan horaire : %{day}, la tranche dès 00:00"
   nl: "De rijtijden van het dienstregelingsplan: %{day}, de tijdband vanaf 00:00"
   pl: "Czasy przejazdu planu rozkładu: %{day}, przedział od 00:00"
+  es: "Los tiempos de recorrido del Plan horario: %{day}, la franja desde las 00:00"
   ru: "Время хода плана расписания: %{day}, интервал с 00:00"
   uk: "Час руху плану розкладу: %{day}, проміжок з 00:00"
 "Press again: the roads' minutes replace the running times of every time band of %{day}, %{dir}, in the Timeplan":
@@ -219,6 +249,7 @@ _version: 2
   fr: "Appuyez encore : les minutes d'après les routes remplacent les temps de parcours de chaque tranche de %{day}, %{dir}, dans le plan horaire"
   nl: "Druk nog eens: de minuten uit de wegen vervangen de rijtijden van elke tijdband van %{day}, %{dir}, in het dienstregelingsplan"
   pl: "Naciśnij ponownie: minuty z dróg zastąpią czasy przejazdu każdego przedziału dnia %{day}, %{dir}, w planie rozkładu"
+  es: "Pulsa de nuevo: los minutos de las calles sustituyen los tiempos de recorrido de todas las franjas horarias de %{day}, %{dir}, en el Plan horario"
   ru: "Нажмите ещё раз: минуты по дорогам заменят время хода во всех интервалах дня %{day}, %{dir}, в плане расписания"
   uk: "Натисніть ще раз: хвилини за дорогами замінять час руху в усіх проміжках дня %{day}, %{dir}, у плані розкладу"
 "The day group whose running times these are, as the Timeplan shows it":
@@ -226,6 +257,7 @@ _version: 2
   fr: "Le groupe de jours dont ce sont les temps de parcours, tel que le plan horaire le montre"
   nl: "De dagengroep waarvan dit de rijtijden zijn, zoals het dienstregelingsplan hem toont"
   pl: "Grupa dni, do której należą te czasy przejazdu, tak jak pokazuje ją plan rozkładu"
+  es: "El grupo de días al que pertenecen estos tiempos de recorrido, tal como lo muestra el Plan horario"
   ru: "Группа дней, чьё это время хода, как её показывает план расписания"
   uk: "Група днів, чий це час руху, як її показує план розкладу"
 "no service":
@@ -233,6 +265,7 @@ _version: 2
   fr: "pas de service"
   nl: "geen dienst"
   pl: "bez kursów"
+  es: "sin servicio"
   ru: "нет рейсов"
   uk: "немає рейсів"
 "The running times changed here are in the Timeplan, not saved yet":
@@ -240,6 +273,7 @@ _version: 2
   fr: "Les temps de parcours changés ici sont dans le plan horaire, pas encore enregistrés"
   nl: "De hier gewijzigde rijtijden staan in het dienstregelingsplan, nog niet opgeslagen"
   pl: "Zmienione tu czasy przejazdu są w planie rozkładu, jeszcze niezapisane"
+  es: "Los tiempos de recorrido cambiados aquí están en el Plan horario, aún sin guardar"
   ru: "Изменённое здесь время хода находится в плане расписания и ещё не сохранено"
   uk: "Змінений тут час руху є в плані розкладу і ще не збережений"
 "Not saved: save in the Timeplan":
@@ -247,6 +281,7 @@ _version: 2
   fr: "Non enregistré : enregistrez dans le plan horaire"
   nl: "Niet opgeslagen: sla op in het dienstregelingsplan"
   pl: "Niezapisane: zapisz w planie rozkładu"
+  es: "Sin guardar: guarda en el Plan horario"
   ru: "Не сохранено: сохраните в плане расписания"
   uk: "Не збережено: збережіть у плані розкладу"
 "The route's stops are not saved yet: these are its own minutes, the Timeplan's running times once it is saved.":
@@ -254,6 +289,7 @@ _version: 2
   fr: "Les arrêts de l'itinéraire ne sont pas encore enregistrés : ce sont ses propres minutes, les temps de parcours du plan horaire une fois enregistré."
   nl: "De haltes van de route zijn nog niet opgeslagen: dit zijn haar eigen minuten, de rijtijden van het dienstregelingsplan zodra ze is opgeslagen."
   pl: "Przystanki trasy nie są jeszcze zapisane: to jej własne minuty, czasy przejazdu planu rozkładu po zapisaniu."
+  es: "Las paradas de la ruta aún no están guardadas: estos son sus propios minutos; serán los tiempos de recorrido del Plan horario en cuanto se guarde."
   ru: "Остановки маршрута ещё не сохранены: это его собственные минуты, время хода плана расписания после сохранения."
   uk: "Зупинки маршруту ще не збережені: це його власні хвилини, час руху плану розкладу після збереження."
 "The Timeplan has changes to another line not saved: save them there first, then these minutes are the Timeplan's.":
@@ -261,6 +297,7 @@ _version: 2
   fr: "Le plan horaire a des changements non enregistrés sur une autre ligne : enregistrez-les d'abord, puis ces minutes seront celles du plan horaire."
   nl: "Het dienstregelingsplan heeft niet opgeslagen wijzigingen aan een andere lijn: sla die daar eerst op, dan zijn deze minuten die van het plan."
   pl: "Plan rozkładu ma niezapisane zmiany innej linii: najpierw je tam zapisz, potem te minuty będą minutami planu."
+  es: "El Plan horario tiene cambios sin guardar en otra línea: guárdalos primero allí y entonces estos minutos serán los del Plan horario."
   ru: "В плане расписания есть несохранённые изменения другой линии: сначала сохраните их там, тогда эти минуты станут минутами плана."
   uk: "У плані розкладу є незбережені зміни іншої лінії: спершу збережіть їх там, тоді ці хвилини стануть хвилинами плану."
 "Line %{n}, %{day}: every time band of the direction runs on the minutes from the roads now - save them in the Timeplan.":
@@ -268,5 +305,6 @@ _version: 2
   fr: "Ligne %{n}, %{day} : chaque tranche de la direction roule maintenant sur les minutes d'après les routes - enregistrez-les dans le plan horaire."
   nl: "Lijn %{n}, %{day}: elke tijdband van de richting rijdt nu op de minuten uit de wegen - sla ze op in het dienstregelingsplan."
   pl: "Linia %{n}, %{day}: każdy przedział kierunku jedzie teraz według minut z dróg - zapisz je w planie rozkładu."
+  es: "Línea %{n}, %{day}: ahora todas las franjas horarias del sentido usan los minutos de las calles; guárdalos en el Plan horario."
   ru: "Линия %{n}, %{day}: все интервалы направления теперь идут по минутам по дорогам - сохраните их в плане расписания."
   uk: "Лінія %{n}, %{day}: усі проміжки напрямку тепер ідуть за хвилинами за дорогами - збережіть їх у плані розкладу."

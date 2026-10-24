@@ -9,6 +9,7 @@ _version: 2
   ru: "Для этого автобуса нет превью"
   uk: "Для цього автобуса немає попереднього перегляду"
   pl: "Brak podglądu tego autobusu"
+  es: "No hay vista previa de este autobús"
 "Preparing the preview…":
   nl: "Het voorbeeld wordt voorbereid…"
   de: "Vorschau wird vorbereitet…"
@@ -16,6 +17,7 @@ _version: 2
   ru: "Готовим превью…"
   uk: "Готуємо попередній перегляд…"
   pl: "Przygotowywanie podglądu…"
+  es: "Preparando la vista previa…"
 "The livery studio paints the bus with the graphics card: this computer cannot draw with WebGL2 here.":
   nl: "De livery-studio schildert de bus met de grafische kaart: deze computer kan hier niet tekenen met WebGL2."
   de: "Das Lackierstudio malt den Bus mit der Grafikkarte: Dieser Computer kann hier nicht mit WebGL2 zeichnen."
@@ -23,6 +25,7 @@ _version: 2
   ru: "Студия окраски рисует автобус видеокартой: этот компьютер не может рисовать здесь с WebGL2."
   uk: "Студія фарбування малює автобус відеокартою: цей комп'ютер не може малювати тут з WebGL2."
   pl: "Studio malowania maluje autobus kartą graficzną: ten komputer nie może tu rysować z WebGL2."
+  es: "El estudio de libreas pinta el autobús con la tarjeta gráfica: este ordenador no puede dibujar aquí con WebGL2."
 "Colour":
   nl: "Kleur"
   de: "Farbe"
@@ -30,6 +33,7 @@ _version: 2
   ru: "Цвет"
   uk: "Колір"
   pl: "Kolor"
+  es: "Color"
 "Choose a bus":
   nl: "Kies een bus"
   de: "Bus auswählen"
@@ -37,6 +41,7 @@ _version: 2
   ru: "Выберите автобус"
   uk: "Виберіть автобус"
   pl: "Wybierz autobus"
+  es: "Elige un autobús"
 # The 3D preview's hint (viewer.js).
 "Drag to turn, scroll to zoom":
   nl: "Sleep om te draaien, scroll om te zoomen"
@@ -45,6 +50,7 @@ _version: 2
   ru: "Перетащите, чтобы повернуть, прокрутите для масштаба"
   uk: "Перетягніть, щоб повернути, прокрутіть для масштабу"
   pl: "Przeciągnij, aby obrócić, przewiń, aby przybliżyć"
+  es: "Arrastra para girar, rueda para hacer zoom"
 "Drag to look round, scroll to zoom":
   nl: "Sleep om rond te kijken, scroll om te zoomen"
   de: "Ziehen zum Umsehen, Scrollen zum Zoomen"
@@ -52,3 +58,4 @@ _version: 2
   ru: "Перетащите, чтобы осмотреться, прокрутите для масштаба"
   uk: "Перетягніть, щоб роззирнутися, прокрутіть для масштабу"
   pl: "Przeciągnij, aby się rozejrzeć, przewiń, aby przybliżyć"
+  es: "Arrastra para mirar alrededor, rueda para hacer zoom"

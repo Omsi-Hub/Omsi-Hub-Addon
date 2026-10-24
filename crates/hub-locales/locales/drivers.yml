@@ -10,6 +10,7 @@ _version: 2
   ru: "%{n} ч назад"
   uk: "%{n} год тому"
   pl: "%{n} godz. temu"
+  es: "hace %{n} h"
 "%{n} min ago":
   nl: "%{n} min geleden"
   de: "vor %{n} Min."
@@ -17,6 +18,7 @@ _version: 2
   ru: "%{n} мин назад"
   uk: "%{n} хв тому"
   pl: "%{n} min temu"
+  es: "hace %{n} min"
 "%{xp} XP, %{left} to level %{next}":
   nl: "%{xp} XP, nog %{left} tot niveau %{next}"
   de: "%{xp} XP, noch %{left} bis Stufe %{next}"
@@ -24,6 +26,7 @@ _version: 2
   ru: "%{xp} XP, до уровня %{next} осталось %{left}"
   uk: "%{xp} XP, до рівня %{next} залишилось %{left}"
   pl: "%{xp} XP, jeszcze %{left} do poziomu %{next}"
+  es: "%{xp} XP, faltan %{left} para el nivel %{next}"
 "Level %{n}":
   nl: "Niveau %{n}"
   de: "Stufe %{n}"
@@ -31,6 +34,7 @@ _version: 2
   ru: "Уровень %{n}"
   uk: "Рівень %{n}"
   pl: "Poziom %{n}"
+  es: "Nivel %{n}"
 "(no personnel file yet)":
   nl: "(nog geen personeelsdossier)"
   de: "(noch keine Personalakte)"
@@ -38,6 +42,7 @@ _version: 2
   ru: "(личного дела пока нет)"
   uk: "(особової справи ще немає)"
   pl: "(brak jeszcze akt osobowych)"
+  es: "(aún sin expediente personal)"
 "Choose a driver":
   nl: "Kies een bestuurder"
   de: "Fahrer wählen"
@@ -45,6 +50,7 @@ _version: 2
   ru: "Выберите водителя"
   uk: "Виберіть водія"
   pl: "Wybierz kierowcę"
+  es: "Elige un conductor"
 "Crashes":
   nl: "Ongelukken"
   de: "Unfälle"
@@ -52,6 +58,7 @@ _version: 2
   ru: "Аварии"
   uk: "Аварії"
   pl: "Wypadki"
+  es: "Accidentes"
 "Create":
   nl: "Aanmaken"
   de: "Anlegen"
@@ -59,6 +66,7 @@ _version: 2
   ru: "Создать"
   uk: "Створити"
   pl: "Utwórz"
+  es: "Crear"
 "Create a driver to start a personnel file.":
   nl: "Maak een bestuurder aan om een personeelsdossier te starten."
   de: "Lege einen Fahrer an, um eine Personalakte zu beginnen."
@@ -66,6 +74,7 @@ _version: 2
   ru: "Создайте водителя, чтобы завести личное дело."
   uk: "Створіть водія, щоб завести особову справу."
   pl: "Utwórz kierowcę, aby założyć akta osobowe."
+  es: "Crea un conductor para empezar un expediente personal."
 "Delete":
   nl: "Verwijderen"
   de: "Löschen"
@@ -73,6 +82,7 @@ _version: 2
   ru: "Удалить"
   uk: "Видалити"
   pl: "Usuń"
+  es: "Eliminar"
 "Delete this driver":
   nl: "Deze bestuurder verwijderen"
   de: "Diesen Fahrer löschen"
@@ -80,6 +90,7 @@ _version: 2
   ru: "Удалить этого водителя"
   uk: "Видалити цього водія"
   pl: "Usuń tego kierowcę"
+  es: "Eliminar este conductor"
 "Delete this driver?":
   nl: "Deze bestuurder verwijderen?"
   de: "Diesen Fahrer löschen?"
@@ -87,6 +98,7 @@ _version: 2
   ru: "Удалить этого водителя?"
   uk: "Видалити цього водія?"
   pl: "Usunąć tego kierowcę?"
+  es: "¿Eliminar este conductor?"
 "Driver %{name} created.":
   nl: "Bestuurder %{name} aangemaakt."
   de: "Fahrer %{name} angelegt."
@@ -94,6 +106,7 @@ _version: 2
   ru: "Водитель %{name} создан."
   uk: "Водія %{name} створено."
   pl: "Utworzono kierowcę %{name}."
+  es: "Conductor %{name} creado."
 "Female":
   nl: "Vrouw"
   de: "Weiblich"
@@ -101,6 +114,7 @@ _version: 2
   ru: "Женщина"
   uk: "Жінка"
   pl: "Kobieta"
+  es: "Mujer"
 "Male":
   nl: "Man"
   de: "Männlich"
@@ -108,6 +122,7 @@ _version: 2
   ru: "Мужчина"
   uk: "Чоловік"
   pl: "Mężczyzna"
+  es: "Hombre"
 "New driver's name":
   nl: "Naam van nieuwe bestuurder"
   de: "Name des neuen Fahrers"
@@ -115,6 +130,7 @@ _version: 2
   ru: "Имя нового водителя"
   uk: "Ім'я нового водія"
   pl: "Imię nowego kierowcy"
+  es: "Nombre del nuevo conductor"
 "No driver yet":
   nl: "Nog geen bestuurder"
   de: "Noch kein Fahrer"
@@ -122,6 +138,7 @@ _version: 2
   ru: "Водителя пока нет"
   uk: "Водія ще немає"
   pl: "Brak jeszcze kierowcy"
+  es: "Aún no hay conductores"
 "No runs yet. Drive a duty and it shows up here.":
   nl: "Nog geen ritten. Rijd een dienst en die verschijnt hier."
   de: "Noch keine Fahrten. Fahre einen Dienst, dann erscheint er hier."
@@ -129,6 +146,7 @@ _version: 2
   ru: "Поездок пока нет. Отработайте смену - она появится здесь."
   uk: "Поїздок ще немає. Проїдьте наряд, і він з'явиться тут."
   pl: "Brak przejazdów. Odbądź służbę, a pojawi się tutaj."
+  es: "Aún no hay viajes. Conduce un servicio y aparecerá aquí."
 "Recent runs":
   nl: "Recente ritten"
   de: "Letzte Fahrten"
@@ -136,6 +154,7 @@ _version: 2
   ru: "Последние поездки"
   uk: "Останні поїздки"
   pl: "Ostatnie przejazdy"
+  es: "Viajes recientes"
 "The personnel file of %{name} is deleted with all its figures.":
   nl: "Het personeelsdossier van %{name} wordt met alle cijfers verwijderd."
   de: "Die Personalakte von %{name} wird mit allen Zahlen gelöscht."
@@ -143,6 +162,7 @@ _version: 2
   ru: "Личное дело %{name} будет удалено со всей статистикой."
   uk: "Особову справу %{name} буде видалено з усією статистикою."
   pl: "Akta osobowe %{name} zostaną usunięte ze wszystkimi danymi."
+  es: "Se elimina el expediente personal de %{name} con todas sus cifras."
 "Tickets":
   nl: "Kaartjes"
   de: "Fahrkarten"
@@ -150,6 +170,7 @@ _version: 2
   ru: "Билеты"
   uk: "Квитки"
   pl: "Bilety"
+  es: "Billetes"
 "comfort":
   nl: "comfort"
   de: "Komfort"
@@ -157,6 +178,7 @@ _version: 2
   ru: "комфорт"
   uk: "комфорт"
   pl: "komfort"
+  es: "comodidad"
 "crashes":
   nl: "ongelukken"
   de: "Unfälle"
@@ -164,6 +186,7 @@ _version: 2
   ru: "аварии"
   uk: "аварії"
   pl: "wypadki"
+  es: "accidentes"
 "distance":
   nl: "afstand"
   de: "Strecke"
@@ -171,6 +194,7 @@ _version: 2
   ru: "расстояние"
   uk: "відстань"
   pl: "dystans"
+  es: "distancia"
 "driving":
   nl: "rijgedrag"
   de: "Fahrweise"
@@ -178,6 +202,7 @@ _version: 2
   ru: "вождение"
   uk: "водіння"
   pl: "jazda"
+  es: "conducción"
 "early / late":
   nl: "te vroeg / te laat"
   de: "zu früh / zu spät"
@@ -185,6 +210,7 @@ _version: 2
   ru: "раньше / позже"
   uk: "рано / пізно"
   pl: "za wcześnie / spóźnienie"
+  es: "adelantado / con retraso"
 "hours driven":
   nl: "gereden uren"
   de: "Stunden gefahren"
@@ -192,6 +218,7 @@ _version: 2
   ru: "часов за рулём"
   uk: "годин за кермом"
   pl: "przejechane godziny"
+  es: "horas conducidas"
 "just now":
   nl: "zojuist"
   de: "gerade eben"
@@ -199,6 +226,7 @@ _version: 2
   ru: "только что"
   uk: "щойно"
   pl: "przed chwilą"
+  es: "ahora mismo"
 "pedestrians hurt":
   nl: "gewonde voetgangers"
   de: "Fußgänger verletzt"
@@ -206,6 +234,7 @@ _version: 2
   ru: "пешеходов пострадало"
   uk: "пішоходів збито"
   pl: "poszkodowani piesi"
+  es: "peatones heridos"
 "runs":
   nl: "ritten"
   de: "Fahrten"
@@ -213,6 +242,7 @@ _version: 2
   ru: "поездок"
   uk: "поїздок"
   pl: "przejazdy"
+  es: "viajes"
 "stops served":
   nl: "bediende haltes"
   de: "Haltestellen bedient"
@@ -220,6 +250,7 @@ _version: 2
   ru: "остановок обслужено"
   uk: "зупинок обслуговано"
   pl: "obsłużone przystanki"
+  es: "paradas atendidas"
 "takings":
   nl: "opbrengst"
   de: "Einnahmen"
@@ -227,6 +258,7 @@ _version: 2
   ru: "выручка"
   uk: "виторг"
   pl: "utarg"
+  es: "recaudación"
 "ticket selling":
   nl: "kaartverkoop"
   de: "Fahrscheinverkauf"
@@ -234,6 +266,7 @@ _version: 2
   ru: "продажа билетов"
   uk: "продаж квитків"
   pl: "sprzedaż biletów"
+  es: "venta de billetes"
 "tickets sold":
   nl: "verkochte kaartjes"
   de: "Fahrscheine verkauft"
@@ -241,3 +274,4 @@ _version: 2
   ru: "билетов продано"
   uk: "квитків продано"
   pl: "sprzedane bilety"
+  es: "billetes vendidos"

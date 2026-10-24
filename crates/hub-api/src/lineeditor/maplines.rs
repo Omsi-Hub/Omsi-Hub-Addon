@@ -424,7 +424,7 @@ mod tests {
             "Edit the line in the line editor: its route, timetable and displays",
             "The table holds the map's departures, each in the tour the map runs it in: change them there. A change to the patterns below makes that group of days anew from them.",
         ];
-        for lang in ["nl", "de", "fr", "ru", "uk", "pl"] {
+        for lang in ["nl", "de", "fr", "ru", "uk", "pl", "es"] {
             for k in keys {
                 assert!(crate::launcher::i18n::table(lang).contains_key(k), "{lang}: {k}");
             }

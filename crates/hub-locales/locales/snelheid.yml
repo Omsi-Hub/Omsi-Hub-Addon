@@ -7,6 +7,7 @@ _version: 2
   ru: "%{speed} mph при разрешённых %{limit} · штраф %{amount}"
   uk: "%{speed} mph при дозволених %{limit} · штраф %{amount}"
   pl: "%{speed} mph przy dozwolonych %{limit} · mandat %{amount}"
+  es: "%{speed} mph donde se permiten %{limit} · multa %{amount}"
 "Speed in":
   nl: "Snelheid in"
   de: "Geschwindigkeit in"
@@ -14,6 +15,7 @@ _version: 2
   ru: "Скорость в"
   uk: "Швидкість у"
   pl: "Prędkość w"
+  es: "Velocidad en"
 "km/h":
   nl: "km/u"
   de: "km/h"
@@ -21,6 +23,7 @@ _version: 2
   ru: "км/ч"
   uk: "км/год"
   pl: "km/h"
+  es: "km/h"
 "mph (miles per hour)":
   nl: "mph (mijl per uur)"
   de: "mph (Meilen pro Stunde)"
@@ -28,3 +31,4 @@ _version: 2
   ru: "mph (мили в час)"
   uk: "mph (милі на годину)"
   pl: "mph (mile na godzinę)"
+  es: "mph (millas por hora)"

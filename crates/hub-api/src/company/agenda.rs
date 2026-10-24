@@ -329,7 +329,7 @@ mod tests {
     use super::*;
     use hub_core::company::{found, Founding, GameMode};
 
-    /// Every text of the agenda - the core's and the page's - in the six languages.
+    /// Every text of the agenda - the core's and the page's - in the seven languages.
     #[test]
     fn every_agenda_text_is_translated() {
         let mut texts: Vec<String> = ag::texts().into_iter().map(String::from).collect();
@@ -348,7 +348,7 @@ mod tests {
         }
         assert!(texts.len() > 100, "only {} texts found", texts.len());
         let mut missing = Vec::new();
-        for lang in ["nl", "de", "fr", "ru", "uk", "pl"] {
+        for lang in ["nl", "de", "fr", "ru", "uk", "pl", "es"] {
             let table = crate::launcher::i18n::table(lang);
             for t in &texts {
                 if !table.contains_key(t) {

@@ -6,6 +6,7 @@ _version: 2
   fr: "Pendant ton absence"
   nl: "Terwijl je weg was"
   pl: "Podczas twojej nieobecności"
+  es: "Mientras no estabas"
   ru: "Пока вас не было"
   uk: "Поки вас не було"
 "The company's time ran on with the real clock while you were away, from %{from} to %{until}. Days closed: %{n}, with a result of %{amount}.":
@@ -13,6 +14,7 @@ _version: 2
   fr: "Le temps de l'entreprise a continué avec l'horloge réelle pendant ton absence, du %{from} au %{until}. Journées clôturées : %{n}, pour un résultat de %{amount}."
   nl: "De bedrijfstijd liep met de echte klok door terwijl je weg was, van %{from} tot %{until}. Afgesloten dagen: %{n}, met een resultaat van %{amount}."
   pl: "Czas firmy płynął dalej z prawdziwym zegarem podczas twojej nieobecności, od %{from} do %{until}. Zamknięte dni: %{n}, z wynikiem %{amount}."
+  es: "El tiempo de la empresa siguió avanzando con el reloj real mientras no estabas, del %{from} al %{until}. Días cerrados: %{n}, con un resultado de %{amount}."
   ru: "Время компании шло дальше вместе с реальными часами, пока вас не было, с %{from} по %{until}. Закрыто дней: %{n}, с результатом %{amount}."
   uk: "Час компанії йшов далі разом із реальним годинником, поки вас не було, з %{from} по %{until}. Закрито днів: %{n}, з результатом %{amount}."
 "The company's time ran on with the real clock while you were away, from %{start} to %{end} today.":
@@ -20,6 +22,7 @@ _version: 2
   fr: "Le temps de l'entreprise a continué avec l'horloge réelle pendant ton absence, aujourd'hui de %{start} à %{end}."
   nl: "De bedrijfstijd liep met de echte klok door terwijl je weg was, vandaag van %{start} tot %{end}."
   pl: "Czas firmy płynął dalej z prawdziwym zegarem podczas twojej nieobecności, dziś od %{start} do %{end}."
+  es: "El tiempo de la empresa siguió avanzando con el reloj real mientras no estabas, hoy de %{start} a %{end}."
   ru: "Время компании шло дальше вместе с реальными часами, пока вас не было, сегодня с %{start} до %{end}."
   uk: "Час компанії йшов далі разом із реальним годинником, поки вас не було, сьогодні з %{start} до %{end}."
 "Not all caught up":
@@ -27,6 +30,7 @@ _version: 2
   fr: "Pas tout rattrapé"
   nl: "Niet alles ingehaald"
   pl: "Nie wszystko nadrobione"
+  es: "No se ha recuperado todo"
   ru: "Наверстано не всё"
   uk: "Надолужено не все"
 "You were away for longer than %{n} days: the company caught up %{n} days, and the rest was skipped.":
@@ -34,6 +38,7 @@ _version: 2
   fr: "Tu as été absent plus de %{n} jours : l'entreprise a rattrapé %{n} jours, et le reste a été sauté."
   nl: "Je was langer dan %{n} dagen weg: het bedrijf heeft %{n} dagen ingehaald, de rest is overgeslagen."
   pl: "Nie było cię dłużej niż %{n} dni: firma nadrobiła %{n} dni, a resztę pominięto."
+  es: "Has estado fuera más de %{n} días: la empresa ha recuperado %{n} días y se ha saltado el resto."
   ru: "Вас не было больше %{n} дней: компания наверстала %{n} дней, остальное пропущено."
   uk: "Вас не було понад %{n} днів: компанія надолужила %{n} днів, решту пропущено."
 "%{d} d %{h} h":
@@ -41,6 +46,7 @@ _version: 2
   fr: "%{d} j %{h} h"
   nl: "%{d} d %{h} u"
   pl: "%{d} d %{h} godz."
+  es: "%{d} d %{h} h"
   ru: "%{d} д %{h} ч"
   uk: "%{d} д %{h} год"
 "%{d} d":
@@ -48,6 +54,7 @@ _version: 2
   fr: "%{d} j"
   nl: "%{d} d"
   pl: "%{d} d"
+  es: "%{d} d"
   ru: "%{d} д"
   uk: "%{d} д"
 "%{h} h":
@@ -55,6 +62,7 @@ _version: 2
   fr: "%{h} h"
   nl: "%{h} u"
   pl: "%{h} godz."
+  es: "%{h} h"
   ru: "%{h} ч"
   uk: "%{h} год"
 "%{h} h %{m} min":
@@ -62,6 +70,7 @@ _version: 2
   fr: "%{h} h %{m} min"
   nl: "%{h} u %{m} min"
   pl: "%{h} godz. %{m} min"
+  es: "%{h} h %{m} min"
   ru: "%{h} ч %{m} мин"
   uk: "%{h} год %{m} хв"
 "Catching up %{span} of the company's time…":
@@ -69,6 +78,7 @@ _version: 2
   fr: "Rattrapage de %{span} du temps de l'entreprise…"
   nl: "%{span} bedrijfstijd wordt ingehaald…"
   pl: "Nadrabianie %{span} czasu firmy…"
+  es: "Recuperando %{span} del tiempo de la empresa…"
   ru: "Наверстываем %{span} времени компании…"
   uk: "Надолужуємо %{span} часу компанії…"
 "Back to the real clock's pace":
@@ -76,6 +86,7 @@ _version: 2
   fr: "Revenir au rythme de l'horloge réelle"
   nl: "Terug naar het tempo van de echte klok"
   pl: "Powrót do tempa prawdziwego zegara"
+  es: "Volver al ritmo del reloj real"
   ru: "Вернуться к темпу реальных часов"
   uk: "Повернутися до темпу реального годинника"
 "The company's time stands still while it is closed: the real clock is off in the company's settings.":
@@ -83,6 +94,7 @@ _version: 2
   fr: "Le temps de l'entreprise s'arrête tant qu'elle est fermée : l'horloge réelle est désactivée dans les réglages de l'entreprise."
   nl: "De bedrijfstijd staat stil zolang het bedrijf dicht is: de echte klok staat uit in de instellingen van het bedrijf."
   pl: "Czas firmy stoi, gdy jest zamknięta: prawdziwy zegar jest wyłączony w ustawieniach firmy."
+  es: "El tiempo de la empresa se detiene mientras está cerrada: el reloj real está desactivado en los ajustes de la empresa."
   ru: "Время компании стоит, пока она закрыта: реальные часы выключены в настройках компании."
   uk: "Час компанії стоїть, поки її закрито: реальний годинник вимкнено в налаштуваннях компанії."
 "In step with the real clock: the company's time goes on while openOMSI is closed, and is caught up when you open the company.":
@@ -90,6 +102,7 @@ _version: 2
   fr: "Au rythme de l'horloge réelle : le temps de l'entreprise continue quand openOMSI est fermé, et il est rattrapé quand tu ouvres l'entreprise."
   nl: "In de pas met de echte klok: de bedrijfstijd loopt door terwijl openOMSI dicht is, en wordt ingehaald als je het bedrijf opent."
   pl: "Zgodnie z prawdziwym zegarem: czas firmy płynie dalej, gdy openOMSI jest zamknięty, i jest nadrabiany, gdy otworzysz firmę."
+  es: "Al ritmo del reloj real: el tiempo de la empresa sigue avanzando mientras openOMSI está cerrado y se recupera cuando abres la empresa."
   ru: "В такт с реальными часами: время компании идёт, пока openOMSI закрыт, и наверстывается, когда вы открываете компанию."
   uk: "У такт із реальним годинником: час компанії йде, поки openOMSI закрито, і надолужується, коли ви відкриваєте компанію."
 "Fast-forwarded: %{span} ahead of the real clock.":
@@ -97,6 +110,7 @@ _version: 2
   fr: "Accéléré : %{span} d'avance sur l'horloge réelle."
   nl: "Vooruitgespoeld: %{span} voor op de echte klok."
   pl: "Przewinięto: %{span} przed prawdziwym zegarem."
+  es: "Avanzado: %{span} por delante del reloj real."
   ru: "Перемотано: на %{span} впереди реальных часов."
   uk: "Перемотано: на %{span} попереду реального годинника."
 "In step with the real clock":
@@ -104,6 +118,7 @@ _version: 2
   fr: "Au rythme de l'horloge réelle"
   nl: "In de pas met de echte klok"
   pl: "Zgodnie z prawdziwym zegarem"
+  es: "Al ritmo del reloj real"
   ru: "В такт с реальными часами"
   uk: "У такт із реальним годинником"
 "×1: in step with the real clock. ×60: a minute a second; it stops for what needs you.":
@@ -111,6 +126,7 @@ _version: 2
   fr: "×1 : au rythme de l'horloge réelle. ×60 : une minute par seconde ; elle s'arrête pour ce qui a besoin de toi."
   nl: "×1: in de pas met de echte klok. ×60: een minuut per seconde; hij stopt voor wat jou nodig heeft."
   pl: "×1: zgodnie z prawdziwym zegarem. ×60: minuta na sekundę; zatrzymuje się, gdy jesteś potrzebny."
+  es: "×1: al ritmo del reloj real. ×60: un minuto por segundo; se detiene cuando algo te necesita."
   ru: "×1: в такт с реальными часами. ×60: минута в секунду; останавливаются, когда нужны вы."
   uk: "×1: у такт із реальним годинником. ×60: хвилина за секунду; зупиняється, коли потрібні ви."
 "The company's time ran on with the real clock: %{span}, from %{from} to %{until}. The dispatcher decided what came up.":
@@ -118,6 +134,7 @@ _version: 2
   fr: "Le temps de l'entreprise a continué avec l'horloge réelle : %{span}, du %{from} au %{until}. Le régulateur a décidé de ce qui s'est présenté."
   nl: "De bedrijfstijd liep met de echte klok door: %{span}, van %{from} tot %{until}. De dienstleider besliste wat er voorviel."
   pl: "Czas firmy płynął dalej z prawdziwym zegarem: %{span}, od %{from} do %{until}. Dyspozytor decydował o tym, co się wydarzyło."
+  es: "El tiempo de la empresa siguió avanzando con el reloj real: %{span}, del %{from} al %{until}. El jefe de tráfico decidió lo que surgió."
   ru: "Время компании шло дальше вместе с реальными часами: %{span}, с %{from} по %{until}. Диспетчер решал всё, что возникало."
   uk: "Час компанії йшов далі разом із реальним годинником: %{span}, з %{from} по %{until}. Диспетчер вирішував усе, що виникало."
 "Days closed":
@@ -125,6 +142,7 @@ _version: 2
   fr: "Journées clôturées"
   nl: "Afgesloten dagen"
   pl: "Zamknięte dni"
+  es: "Días cerrados"
   ru: "Закрыто дней"
   uk: "Закрито днів"
 "%{amount} while you were away":
@@ -132,6 +150,7 @@ _version: 2
   fr: "%{amount} pendant ton absence"
   nl: "%{amount} terwijl je weg was"
   pl: "%{amount} podczas twojej nieobecności"
+  es: "%{amount} mientras no estabas"
   ru: "%{amount}, пока вас не было"
   uk: "%{amount}, поки вас не було"
 "Nothing out of the ordinary: the tours ran as planned. The feed and the inbox have every line.":
@@ -139,6 +158,7 @@ _version: 2
   fr: "Rien d'inhabituel : les services ont roulé comme prévu. Le fil et la boîte de réception ont chaque ligne."
   nl: "Niets bijzonders: de omlopen reden zoals gepland. Het verloop en de inbox hebben elke regel."
   pl: "Nic nadzwyczajnego: obiegi jechały zgodnie z planem. Przebieg i skrzynka odbiorcza mają każdy wpis."
+  es: "Nada fuera de lo normal: los recorridos funcionaron según lo previsto. El registro y la bandeja de entrada tienen todos los detalles."
   ru: "Ничего необычного: обороты прошли по плану. В ленте и во входящих есть каждая строка."
   uk: "Нічого незвичайного: обороти пройшли за планом. У стрічці та у вхідних є кожен рядок."
 "The days' report":
@@ -146,6 +166,7 @@ _version: 2
   fr: "Rapport des journées"
   nl: "Verslag van de dagen"
   pl: "Raport z dni"
+  es: "El informe de los días"
   ru: "Отчёт за дни"
   uk: "Звіт за дні"
 "Run with the real clock, also while openOMSI is closed":
@@ -153,6 +174,7 @@ _version: 2
   fr: "Suivre l'horloge réelle, même quand openOMSI est fermé"
   nl: "Met de echte klok meelopen, ook als openOMSI dicht is"
   pl: "Płyń z prawdziwym zegarem, także gdy openOMSI jest zamknięty"
+  es: "Avanzar con el reloj real, también con openOMSI cerrado"
   ru: "Идти вместе с реальными часами, даже когда openOMSI закрыт"
   uk: "Іти разом із реальним годинником, навіть коли openOMSI закрито"
 "When you open the company, the time since is simulated, a month at most. Fast-forwarding moves it ahead of the real clock.":
@@ -160,6 +182,7 @@ _version: 2
   fr: "Quand tu ouvres l'entreprise, le temps écoulé depuis est simulé, un mois au plus. Accélérer la met en avance sur l'horloge réelle."
   nl: "Als je het bedrijf opent, wordt de tijd sindsdien gesimuleerd, hoogstens een maand. Vooruitspoelen zet het voor op de echte klok."
   pl: "Gdy otworzysz firmę, czas od tamtej pory jest symulowany, najwyżej miesiąc. Przewijanie wysuwa ją przed prawdziwy zegar."
+  es: "Al abrir la empresa se simula el tiempo transcurrido desde entonces, como mucho un mes. Avanzar rápido la adelanta respecto al reloj real."
   ru: "Когда вы открываете компанию, прошедшее время моделируется, не больше месяца. Перемотка выводит её вперёд реальных часов."
   uk: "Коли ви відкриваєте компанію, час відтоді моделюється, щонайбільше місяць. Перемотування виводить її попереду реального годинника."
 "Off: the company's time stands still while it is closed.":
@@ -167,6 +190,7 @@ _version: 2
   fr: "Désactivé : le temps de l'entreprise s'arrête tant qu'elle est fermée."
   nl: "Uit: de bedrijfstijd staat stil zolang het bedrijf dicht is."
   pl: "Wyłączone: czas firmy stoi, gdy jest zamknięta."
+  es: "Desactivado: el tiempo de la empresa se detiene mientras está cerrada."
   ru: "Выключено: время компании стоит, пока она закрыта."
   uk: "Вимкнено: час компанії стоїть, поки її закрито."
 "%{span} to catch up":
@@ -174,6 +198,7 @@ _version: 2
   fr: "%{span} à rattraper"
   nl: "%{span} in te halen"
   pl: "%{span} do nadrobienia"
+  es: "%{span} por recuperar"
   ru: "%{span} наверстать"
   uk: "%{span} надолужити"
 "Caught up %{span}":
@@ -181,5 +206,6 @@ _version: 2
   fr: "%{span} rattrapé"
   nl: "%{span} ingehaald"
   pl: "Nadrobiono %{span}"
+  es: "Recuperado %{span}"
   ru: "Наверстано %{span}"
   uk: "Надолужено %{span}"

@@ -208,7 +208,7 @@ mod tests {
         assert_eq!(say("Line 5 (own trip): fares collected for the authority"), "Line 5 (own trip): fares collected for the authority");
     }
 
-    /// Every sentence in the six languages (with the same values), and every sentence hub-core
+    /// Every sentence in the seven languages (with the same values), and every sentence hub-core
     /// books here: a new one is said too.
     #[test]
     fn every_ledger_sentence_is_known_and_translated() {
@@ -224,7 +224,7 @@ mod tests {
             out.replace("%%{}", "%{}")
         };
         let mut missing = Vec::new();
-        for lang in ["nl", "de", "fr", "ru", "uk", "pl"] {
+        for lang in ["nl", "de", "fr", "ru", "uk", "pl", "es"] {
             let table = hub_locales::texts(lang);
             for s in LINES.iter().chain(VALUES) {
                 match table.get(*s) {

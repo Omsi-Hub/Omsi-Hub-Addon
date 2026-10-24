@@ -10,6 +10,7 @@ _version: 2
   ru: "Сверху"
   uk: "Згори"
   pl: "Z góry"
+  es: "Desde arriba"
 "Reset the view":
   nl: "Beeld terugzetten"
   de: "Ansicht zurücksetzen"
@@ -17,6 +18,7 @@ _version: 2
   ru: "Сбросить вид"
   uk: "Скинути вигляд"
   pl: "Przywróć widok"
+  es: "Restablecer la vista"
 "Drag to turn, right-drag to move, scroll to zoom":
   nl: "Sleep om te draaien, rechts slepen om te verschuiven, scroll om te zoomen"
   de: "Ziehen zum Drehen, mit rechts ziehen zum Verschieben, scrollen zum Zoomen"
@@ -24,6 +26,7 @@ _version: 2
   ru: "Перетащите, чтобы повернуть, правой кнопкой — чтобы сдвинуть, колесо — масштаб"
   uk: "Перетягніть, щоб повернути, правою кнопкою — щоб зсунути, коліщатко — масштаб"
   pl: "Przeciągnij, aby obrócić, prawym przyciskiem, aby przesunąć, przewiń, aby przybliżyć"
+  es: "Arrastra para girar, arrastra con el botón derecho para mover, usa la rueda para hacer zoom"
 "Shadows, smooth edges, full sharpness":
   nl: "Schaduwen, gladde randen, volle scherpte"
   de: "Schatten, glatte Kanten, volle Schärfe"
@@ -31,6 +34,7 @@ _version: 2
   ru: "Тени, сглаживание, полная чёткость"
   uk: "Тіні, згладжування, повна чіткість"
   pl: "Cienie, wygładzone krawędzie, pełna ostrość"
+  es: "Sombras, bordes suavizados, máxima nitidez"
 "Softer shadows, a little less sharp":
   nl: "Zachtere schaduwen, iets minder scherp"
   de: "Weichere Schatten, etwas weniger scharf"
@@ -38,6 +42,7 @@ _version: 2
   ru: "Мягче тени, чуть менее чётко"
   uk: "М'якші тіні, трохи менш чітко"
   pl: "Łagodniejsze cienie, nieco mniej ostro"
+  es: "Sombras más suaves, algo menos de nitidez"
 "No shadows or trees: for slower computers":
   nl: "Geen schaduwen of bomen: voor tragere computers"
   de: "Keine Schatten oder Bäume: für langsamere Computer"
@@ -45,6 +50,7 @@ _version: 2
   ru: "Без теней и деревьев: для медленных компьютеров"
   uk: "Без тіней і дерев: для повільніших комп'ютерів"
   pl: "Bez cieni i drzew: dla wolniejszych komputerów"
+  es: "Sin sombras ni árboles: para ordenadores más lentos"
 "Now: high":
   nl: "Nu: hoog"
   de: "Jetzt: hoch"
@@ -52,6 +58,7 @@ _version: 2
   ru: "Сейчас: высокое"
   uk: "Зараз: високе"
   pl: "Teraz: wysoka"
+  es: "Ahora: alta"
 "Now: medium":
   nl: "Nu: middel"
   de: "Jetzt: mittel"
@@ -59,6 +66,7 @@ _version: 2
   ru: "Сейчас: среднее"
   uk: "Зараз: середнє"
   pl: "Teraz: średnia"
+  es: "Ahora: media"
 "Now: low":
   nl: "Nu: laag"
   de: "Jetzt: niedrig"
@@ -66,6 +74,7 @@ _version: 2
   ru: "Сейчас: низкое"
   uk: "Зараз: низьке"
   pl: "Teraz: niska"
+  es: "Ahora: baja"
 "Stop":
   nl: "Stoppen"
   de: "Beenden"
@@ -73,6 +82,7 @@ _version: 2
   ru: "Стоп"
   uk: "Стоп"
   pl: "Zakończ"
+  es: "Parada"
 "Turn":
   nl: "Draaien"
   de: "Drehen"
@@ -80,6 +90,7 @@ _version: 2
   ru: "Повернуть"
   uk: "Повернути"
   pl: "Obróć"
+  es: "Girar"
 "Pull down":
   nl: "Slopen"
   de: "Abreißen"
@@ -87,6 +98,7 @@ _version: 2
   ru: "Снести"
   uk: "Знести"
   pl: "Wyburz"
+  es: "Derribar"
 "Sure? Pull it down":
   nl: "Zeker? Slopen"
   de: "Sicher? Abreißen"
@@ -94,6 +106,7 @@ _version: 2
   ru: "Точно? Снести"
   uk: "Точно? Знести"
   pl: "Na pewno? Wyburz"
+  es: "¿Seguro? Derribar"
 "More land":
   nl: "Meer grond"
   de: "Mehr Land"
@@ -101,6 +114,7 @@ _version: 2
   ru: "Больше земли"
   uk: "Більше землі"
   pl: "Więcej gruntu"
+  es: "Más terreno"
 "Click to put it down, R to turn it, Esc to stop":
   nl: "Klik om te plaatsen, R om te draaien, Esc om te stoppen"
   de: "Klicken zum Setzen, R zum Drehen, Esc zum Beenden"
@@ -108,6 +122,7 @@ _version: 2
   ru: "Щелчок — поставить, R — повернуть, Esc — выйти"
   uk: "Клік — поставити, R — повернути, Esc — вийти"
   pl: "Kliknij, aby postawić, R, aby obrócić, Esc, aby zakończyć"
+  es: "Haz clic para colocarlo, R para girarlo, Esc para parar"
 "Drag to move, scroll to zoom":
   nl: "Sleep om te verschuiven, scroll om te zoomen"
   de: "Ziehen zum Verschieben, scrollen zum Zoomen"
@@ -115,6 +130,7 @@ _version: 2
   ru: "Перетащите, чтобы сдвинуть, колесо — масштаб"
   uk: "Перетягніть, щоб зсунути, коліщатко — масштаб"
   pl: "Przeciągnij, aby przesunąć, przewiń, aby przybliżyć"
+  es: "Arrastra para mover, usa la rueda para hacer zoom"
 "Move it where it fits: it costs nothing.":
   nl: "Zet het neer waar het past: het kost niets."
   de: "Dorthin setzen, wo es passt: es kostet nichts."
@@ -122,6 +138,7 @@ _version: 2
   ru: "Переставьте туда, где помещается: это бесплатно."
   uk: "Переставте туди, де вміщується: це безкоштовно."
   pl: "Przenieś tam, gdzie się zmieści: to nic nie kosztuje."
+  es: "Muévelo donde quepa: no cuesta nada."
 "Put it down where it fits, its lane kept free.":
   nl: "Zet het neer waar het past, met zijn rijbaan vrij."
   de: "Dorthin setzen, wo es passt, seine Fahrspur frei."
@@ -129,6 +146,7 @@ _version: 2
   ru: "Поставьте туда, где помещается, оставив проезд свободным."
   uk: "Поставте туди, де вміщується, залишивши проїзд вільним."
   pl: "Postaw tam, gdzie się zmieści, z wolnym pasem."
+  es: "Colócalo donde quepa, dejando libre su carril."
 "It does not fit on your land here: put it elsewhere or buy more land.":
   nl: "Het past hier niet op je grond: zet het ergens anders of koop meer grond."
   de: "Hier passt es nicht auf dein Land: setze es woanders hin oder kaufe mehr Land."
@@ -136,6 +154,7 @@ _version: 2
   ru: "Здесь не помещается на вашей земле: поставьте в другом месте или купите землю."
   uk: "Тут не вміщується на вашій землі: поставте деінде або купіть землю."
   pl: "Tu nie mieści się na twoim gruncie: postaw gdzie indziej lub kup więcej gruntu."
+  es: "Aquí no cabe en tu terreno: ponlo en otro sitio o compra más terreno."
 "It would block the way in from the gate.":
   nl: "Het zou de toegang vanaf de poort blokkeren."
   de: "Es würde die Zufahrt vom Tor versperren."
@@ -143,6 +162,7 @@ _version: 2
   ru: "Это перекроет въезд от ворот."
   uk: "Це перекриє в'їзд від воріт."
   pl: "Zablokowałoby wjazd od bramy."
+  es: "Bloquearía el acceso desde la entrada."
 "Something stands there already.":
   nl: "Daar staat al iets."
   de: "Dort steht schon etwas."
@@ -150,6 +170,7 @@ _version: 2
   ru: "Там уже что-то стоит."
   uk: "Там уже щось стоїть."
   pl: "Coś już tam stoi."
+  es: "Ahí ya hay algo."
 "Keep the lanes in front of the buildings and spaces free.":
   nl: "Houd de rijbanen voor de gebouwen en vakken vrij."
   de: "Halte die Fahrspuren vor Gebäuden und Stellplätzen frei."
@@ -157,6 +178,7 @@ _version: 2
   ru: "Оставьте проезды перед зданиями и местами свободными."
   uk: "Залиште проїзди перед будівлями та місцями вільними."
   pl: "Zostaw wolne pasy przed budynkami i miejscami."
+  es: "Deja libres los carriles delante de los edificios y las plazas."
 "This is not put down on the yard.":
   nl: "Dit wordt niet op het terrein geplaatst."
   de: "Das wird nicht auf den Hof gesetzt."
@@ -164,6 +186,7 @@ _version: 2
   ru: "Это не ставится на территории."
   uk: "Це не ставиться на території."
   pl: "Tego nie stawia się na placu."
+  es: "Esto no está colocado en el patio."
 "That is not there any more.":
   nl: "Dat staat er niet meer."
   de: "Das steht nicht mehr dort."
@@ -171,6 +194,7 @@ _version: 2
   ru: "Этого там больше нет."
   uk: "Цього там більше немає."
   pl: "Tego już tam nie ma."
+  es: "Eso ya no está."
 "Building work is under way on it.":
   nl: "Er wordt aan gebouwd."
   de: "Daran wird gerade gebaut."
@@ -178,6 +202,7 @@ _version: 2
   ru: "Там идёт строительство."
   uk: "Там триває будівництво."
   pl: "Trwa tam budowa."
+  es: "Hay obras en marcha en él."
 "A bus is being worked on in it.":
   nl: "Er wordt een bus in onderhouden."
   de: "Darin wird gerade ein Bus bearbeitet."
@@ -185,6 +210,7 @@ _version: 2
   ru: "В нём ремонтируют автобус."
   uk: "У ньому ремонтують автобус."
   pl: "Trwa w nim praca przy autobusie."
+  es: "Se está trabajando en un autobús dentro."
 "There is no more land to buy here.":
   nl: "Hier is geen grond meer te koop."
   de: "Hier gibt es kein Land mehr zu kaufen."
@@ -192,6 +218,7 @@ _version: 2
   ru: "Здесь больше нет земли для покупки."
   uk: "Тут більше немає землі для купівлі."
   pl: "Nie ma tu więcej gruntu do kupienia."
+  es: "Aquí no queda más terreno que comprar."
 "There is no room for it on the yard: buy more land.":
   nl: "Er is geen plek voor op het terrein: koop meer grond."
   de: "Auf dem Hof ist kein Platz dafür: kaufe mehr Land."
@@ -199,6 +226,7 @@ _version: 2
   ru: "На территории нет места: купите землю."
   uk: "На території немає місця: купіть землю."
   pl: "Na placu nie ma na to miejsca: kup więcej gruntu."
+  es: "No hay sitio para ello en el patio: compra más terreno."
 "It has been pulled down.":
   nl: "Het is gesloopt."
   de: "Es wurde abgerissen."
@@ -206,6 +234,7 @@ _version: 2
   ru: "Снесено."
   uk: "Знесено."
   pl: "Zostało wyburzone."
+  es: "Se ha derribado."
 "The land is yours: the yard is bigger.":
   nl: "De grond is van jou: het terrein is groter."
   de: "Das Land gehört dir: der Hof ist größer."
@@ -213,6 +242,7 @@ _version: 2
   ru: "Земля ваша: территория стала больше."
   uk: "Земля ваша: територія стала більшою."
   pl: "Grunt jest twój: plac jest większy."
+  es: "El terreno es tuyo: el patio es más grande."
 "%{m} m more land beside the yard, yours at once":
   nl: "%{m} m extra grond naast het terrein, meteen van jou"
   de: "%{m} m mehr Land neben dem Hof, sofort deins"
@@ -220,3 +250,4 @@ _version: 2
   ru: "%{m} м земли рядом с территорией, сразу ваши"
   uk: "%{m} м землі поруч із територією, одразу ваші"
   pl: "%{m} m gruntu obok placu, od razu twoje"
+  es: "%{m} m más de terreno junto al patio, tuyos al momento"

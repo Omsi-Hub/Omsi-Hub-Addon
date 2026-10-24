@@ -14,6 +14,7 @@ _version: 2
   ru: "Перерыв %{t}"
   uk: "Перерва %{t}"
   pl: "Przerwa %{t}"
+  es: "Pausa %{t}"
 "Meal %{t}":
   en: "Meal %{t}"
   nl: "Maaltijd %{t}"
@@ -22,6 +23,7 @@ _version: 2
   ru: "Обед %{t}"
   uk: "Обід %{t}"
   pl: "Posiłek %{t}"
+  es: "Comida %{t}"
 "Split %{t}":
   en: "Split %{t}"
   nl: "Onderbreking %{t}"
@@ -30,6 +32,7 @@ _version: 2
   ru: "Разрыв %{t}"
   uk: "Розрив %{t}"
   pl: "Przerwa dzieląca %{t}"
+  es: "Partido %{t}"
 "Driving period":
   en: "Driving period"
   nl: "Rijperiode"
@@ -38,6 +41,7 @@ _version: 2
   ru: "Период вождения"
   uk: "Період водіння"
   pl: "Okres jazdy"
+  es: "Periodo de conducción"
 "Driving periods":
   en: "Driving periods"
   nl: "Rijperiodes"
@@ -46,6 +50,7 @@ _version: 2
   ru: "Периоды вождения"
   uk: "Періоди водіння"
   pl: "Okresy jazdy"
+  es: "Periodos de conducción"
 "Driving periods under the duties":
   en: "Driving periods under the duties"
   nl: "Rijperiodes onder de diensten"
@@ -54,6 +59,7 @@ _version: 2
   ru: "Периоды вождения под сменами"
   uk: "Періоди водіння під змінами"
   pl: "Okresy jazdy pod służbami"
+  es: "Periodos de conducción bajo los servicios"
 "Driving period %{t}  ·  %{from}–%{to}":
   en: "Driving period %{t}  ·  %{from}–%{to}"
   nl: "Rijperiode %{t}  ·  %{from}–%{to}"
@@ -62,6 +68,7 @@ _version: 2
   ru: "Период вождения %{t}  ·  %{from}–%{to}"
   uk: "Період водіння %{t}  ·  %{from}–%{to}"
   pl: "Okres jazdy %{t}  ·  %{from}–%{to}"
+  es: "Periodo de conducción %{t}  ·  %{from}–%{to}"
 "A split: unpaid, the driver signs off and on again.":
   en: "A split: unpaid, the driver signs off and on again."
   nl: "Een onderbreking: onbetaald, de chauffeur meldt zich af en weer aan."
@@ -70,6 +77,7 @@ _version: 2
   ru: "Разрыв: не оплачивается, водитель сдаёт смену и снова её принимает."
   uk: "Розрив: не оплачується, водій здає зміну і знову її приймає."
   pl: "Przerwa dzieląca: niepłatna, kierowca kończy i znowu zaczyna służbę."
+  es: "Un partido: sin pagar, el conductor deja el servicio y vuelve a tomarlo."
 "Long enough for the meal break (at least %{min}).":
   en: "Long enough for the meal break (at least %{min})."
   nl: "Lang genoeg voor de maaltijdpauze (minstens %{min})."
@@ -78,6 +86,7 @@ _version: 2
   ru: "Достаточно долгий для обеденного перерыва (не менее %{min})."
   uk: "Досить довга для обідньої перерви (не менше %{min})."
   pl: "Dość długa na przerwę na posiłek (co najmniej %{min})."
+  es: "Suficientemente larga para la pausa de comida (al menos %{min})."
 "Too short for the meal break (at least %{min}).":
   en: "Too short for the meal break (at least %{min})."
   nl: "Te kort voor de maaltijdpauze (minstens %{min})."
@@ -86,6 +95,7 @@ _version: 2
   ru: "Слишком короткий для обеденного перерыва (не менее %{min})."
   uk: "Закоротка для обідньої перерви (не менше %{min})."
   pl: "Za krótka na przerwę na posiłek (co najmniej %{min})."
+  es: "Demasiado corta para la pausa de comida (al menos %{min})."
 "Ends a driving period (a break of at least %{min}).":
   en: "Ends a driving period (a break of at least %{min})."
   nl: "Sluit een rijperiode af (een pauze van minstens %{min})."
@@ -94,6 +104,7 @@ _version: 2
   ru: "Завершает период вождения (перерыв не менее %{min})."
   uk: "Завершує період водіння (перерва не менше %{min})."
   pl: "Kończy okres jazdy (przerwa co najmniej %{min})."
+  es: "Termina un periodo de conducción (una pausa de al menos %{min})."
 "Too short to end a driving period (at least %{min}).":
   en: "Too short to end a driving period (at least %{min})."
   nl: "Te kort om een rijperiode af te sluiten (minstens %{min})."
@@ -102,6 +113,7 @@ _version: 2
   ru: "Слишком короткий, чтобы завершить период вождения (не менее %{min})."
   uk: "Закоротка, щоб завершити період водіння (не менше %{min})."
   pl: "Za krótka, by zakończyć okres jazdy (co najmniej %{min})."
+  es: "Demasiado corta para terminar un periodo de conducción (al menos %{min})."
 "Over the Continuous Break limit: at most %{max} before a break of %{min}.":
   en: "Over the Continuous Break limit: at most %{max} before a break of %{min}."
   nl: "Over de grens van Onafgebroken werk: ten hoogste %{max} voor een pauze van %{min}."
@@ -110,6 +122,7 @@ _version: 2
   ru: "Сверх предела непрерывной работы: не более %{max} до перерыва %{min}."
   uk: "Понад межу безперервної роботи: не більше %{max} до перерви %{min}."
   pl: "Ponad limit pracy ciągłej: najwyżej %{max} przed przerwą %{min}."
+  es: "Por encima del límite de Pausa continua: como mucho %{max} antes de una pausa de %{min}."
 "Within the Continuous Break limit: at most %{max} before a break of %{min}.":
   en: "Within the Continuous Break limit: at most %{max} before a break of %{min}."
   nl: "Binnen de grens van Onafgebroken werk: ten hoogste %{max} voor een pauze van %{min}."
@@ -118,6 +131,7 @@ _version: 2
   ru: "В пределах непрерывной работы: не более %{max} до перерыва %{min}."
   uk: "У межах безперервної роботи: не більше %{max} до перерви %{min}."
   pl: "W limicie pracy ciągłej: najwyżej %{max} przed przerwą %{min}."
+  es: "Dentro del límite de Pausa continua: como mucho %{max} antes de una pausa de %{min}."
 "The Continuous Break rule is off.":
   en: "The Continuous Break rule is off."
   nl: "De regel Onafgebroken werk staat uit."
@@ -126,6 +140,7 @@ _version: 2
   ru: "Правило непрерывной работы выключено."
   uk: "Правило безперервної роботи вимкнене."
   pl: "Reguła pracy ciągłej jest wyłączona."
+  es: "La regla de Pausa continua está desactivada."
 "No meal break by %{at}: a duty working over %{after} needs one of %{min} before then.":
   en: "No meal break by %{at}: a duty working over %{after} needs one of %{min} before then."
   nl: "Geen maaltijdpauze voor %{at}: een dienst van meer dan %{after} heeft er voor die tijd een van %{min} nodig."
@@ -134,6 +149,7 @@ _version: 2
   ru: "Нет обеденного перерыва до %{at}: смене больше %{after} нужен перерыв %{min} до этого времени."
   uk: "Немає обідньої перерви до %{at}: зміні понад %{after} потрібна перерва %{min} до цього часу."
   pl: "Brak przerwy na posiłek do %{at}: służba ponad %{after} potrzebuje wcześniej przerwy %{min}."
+  es: "Sin pausa de comida antes de las %{at}: un servicio de más de %{after} necesita una de %{min} antes de esa hora."
 "The meal break comes too late: %{time} of work before it, at most %{after}.":
   en: "The meal break comes too late: %{time} of work before it, at most %{after}."
   nl: "De maaltijdpauze komt te laat: %{time} werk ervoor, ten hoogste %{after}."
@@ -142,6 +158,7 @@ _version: 2
   ru: "Обеденный перерыв слишком поздно: %{time} работы до него, не более %{after}."
   uk: "Обідня перерва надто пізно: %{time} роботи до неї, не більше %{after}."
   pl: "Przerwa na posiłek za późno: %{time} pracy przed nią, najwyżej %{after}."
+  es: "La pausa de comida llega demasiado tarde: %{time} de trabajo antes de ella, como mucho %{after}."
 "No break: every gap is shorter than %{t}.":
   en: "No break: every gap is shorter than %{t}."
   nl: "Geen pauze: elk gat is korter dan %{t}."
@@ -150,6 +167,7 @@ _version: 2
   ru: "Нет перерывов: каждый промежуток короче %{t}."
   uk: "Немає перерв: кожен проміжок коротший за %{t}."
   pl: "Brak przerw: każda luka jest krótsza niż %{t}."
+  es: "Sin pausa: todos los huecos son más cortos que %{t}."
 
 # --- the issue of a meal break that comes too late ------------------------------------------------
 "Meal break too late: %{time} of work before it, at most %{after}":
@@ -160,6 +178,7 @@ _version: 2
   ru: "Обеденный перерыв слишком поздно: %{time} работы до него, не более %{after}"
   uk: "Обідня перерва надто пізно: %{time} роботи до неї, не більше %{after}"
   pl: "Przerwa na posiłek za późno: %{time} pracy przed nią, najwyżej %{after}"
+  es: "Pausa de comida demasiado tarde: %{time} de trabajo antes de ella, como mucho %{after}"
 "Meal break too late":
   en: "Meal break too late"
   nl: "Maaltijdpauze te laat"
@@ -168,6 +187,7 @@ _version: 2
   ru: "Обеденный перерыв слишком поздно"
   uk: "Обідня перерва надто пізно"
   pl: "Przerwa na posiłek za późno"
+  es: "Pausa de comida demasiado tarde"
 
 # --- the Preferences: the threshold, and what breaks each rule as edited ------------------------------
 "Show a gap as a break from":
@@ -178,6 +198,7 @@ _version: 2
   ru: "Считать промежуток перерывом от"
   uk: "Вважати проміжок перервою від"
   pl: "Pokazuj lukę jako przerwę od"
+  es: "Mostrar un hueco como pausa a partir de"
 "A shorter gap between two pieces or two trips is standing time: no break, it ends no driving period and counts for no rule.":
   en: "A shorter gap between two pieces or two trips is standing time: no break, it ends no driving period and counts for no rule."
   nl: "Een korter gat tussen twee delen of twee ritten is staantijd: geen pauze, het sluit geen rijperiode af en telt voor geen enkele regel."
@@ -186,6 +207,7 @@ _version: 2
   ru: "Более короткий промежуток между двумя частями или рейсами — стоянка: не перерыв, он не завершает период вождения и не учитывается ни одним правилом."
   uk: "Коротший проміжок між двома частинами або рейсами — стоянка: не перерва, він не завершує період водіння і не враховується жодним правилом."
   pl: "Krótsza luka między dwiema częściami lub kursami to postój: nie przerwa, nie kończy okresu jazdy i nie liczy się dla żadnej reguły."
+  es: "Un hueco más corto entre dos partes o dos viajes es tiempo de espera: no es pausa, no termina ningún periodo de conducción y no cuenta para ninguna regla."
 "The meal break begins before the duty has worked that long.":
   en: "The meal break begins before the duty has worked that long."
   nl: "De maaltijdpauze begint voordat de dienst zo lang gewerkt heeft."
@@ -194,6 +216,7 @@ _version: 2
   ru: "Обеденный перерыв начинается раньше, чем смена отработает столько."
   uk: "Обідня перерва починається раніше, ніж зміна відпрацює стільки."
   pl: "Przerwa na posiłek zaczyna się, zanim służba przepracuje tyle czasu."
+  es: "La pausa de comida empieza antes de que el servicio haya trabajado tanto tiempo."
 "Gaps shorter than %{t} are standing time (Duty Breaks: show a gap as a break from).":
   en: "Gaps shorter than %{t} are standing time (Duty Breaks: show a gap as a break from)."
   nl: "Gaten korter dan %{t} zijn staantijd (Dienstpauzes: een gat als pauze tonen vanaf)."
@@ -202,6 +225,7 @@ _version: 2
   ru: "Промежутки короче %{t} — стоянка (Перерывы в смене: считать промежуток перерывом от)."
   uk: "Проміжки коротші за %{t} — стоянка (Перерви у зміні: вважати проміжок перервою від)."
   pl: "Luki krótsze niż %{t} to postój (Przerwy w służbie: pokazuj lukę jako przerwę od)."
+  es: "Los huecos más cortos que %{t} son tiempo de espera (Pausas del servicio: mostrar un hueco como pausa a partir de)."
 "Nothing breaks this rule now.":
   en: "Nothing breaks this rule now."
   nl: "Niets breekt deze regel nu."
@@ -210,6 +234,7 @@ _version: 2
   ru: "Сейчас это правило ничто не нарушает."
   uk: "Зараз це правило ніщо не порушує."
   pl: "Teraz nic nie łamie tej reguły."
+  es: "Ahora nada incumple esta regla."
 "%{n} duties break this rule now.":
   en: "%{n} duties break this rule now."
   nl: "%{n} diensten breken deze regel nu."
@@ -218,6 +243,7 @@ _version: 2
   ru: "Смен, нарушающих это правило сейчас: %{n}."
   uk: "Змін, що порушують це правило зараз: %{n}."
   pl: "Służby łamiące teraz tę regułę: %{n}."
+  es: "Ahora %{n} servicios incumplen esta regla."
 "%{n} vehicles break this rule now.":
   en: "%{n} vehicles break this rule now."
   nl: "%{n} voertuigen breken deze regel nu."
@@ -226,6 +252,7 @@ _version: 2
   ru: "Транспорта, нарушающего это правило сейчас: %{n}."
   uk: "Транспорту, що порушує це правило зараз: %{n}."
   pl: "Pojazdy łamiące teraz tę regułę: %{n}."
+  es: "Ahora %{n} vehículos incumplen esta regla."
 "The day breaks this rule now.":
   en: "The day breaks this rule now."
   nl: "De dag breekt deze regel nu."
@@ -234,6 +261,7 @@ _version: 2
   ru: "День сейчас нарушает это правило."
   uk: "День зараз порушує це правило."
   pl: "Dzień łamie teraz tę regułę."
+  es: "Ahora el día incumple esta regla."
 "%{n} duties have a split now.":
   en: "%{n} duties have a split now."
   nl: "%{n} diensten hebben nu een onderbreking."
@@ -242,6 +270,7 @@ _version: 2
   ru: "Смен с разрывом сейчас: %{n}."
   uk: "Змін із розривом зараз: %{n}."
   pl: "Służby z przerwą dzielącą teraz: %{n}."
+  es: "Ahora %{n} servicios tienen un partido."
 "No duty has a split now.":
   en: "No duty has a split now."
   nl: "Geen dienst heeft nu een onderbreking."
@@ -250,6 +279,7 @@ _version: 2
   ru: "Сейчас ни у одной смены нет разрыва."
   uk: "Зараз жодна зміна не має розриву."
   pl: "Teraz żadna służba nie ma przerwy dzielącej."
+  es: "Ahora ningún servicio tiene un partido."
 "(%{n} with the saved rules)":
   en: "(%{n} with the saved rules)"
   nl: "(%{n} met de opgeslagen regels)"
@@ -258,6 +288,7 @@ _version: 2
   ru: "(%{n} по сохранённым правилам)"
   uk: "(%{n} за збереженими правилами)"
   pl: "(%{n} według zapisanych reguł)"
+  es: "(%{n} con las reglas guardadas)"
 
 # --- after a save: what the changed rules break, Optimise offered -------------------------------------
 "Broken now by the changed rules: %{list}":
@@ -268,6 +299,7 @@ _version: 2
   ru: "Сейчас нарушены изменённые правила: %{list}"
   uk: "Зараз порушено змінені правила: %{list}"
   pl: "Teraz złamane zmienione reguły: %{list}"
+  es: "Incumplidas ahora por las reglas cambiadas: %{list}"
 "the day":
   en: "the day"
   nl: "de dag"
@@ -276,6 +308,7 @@ _version: 2
   ru: "день"
   uk: "день"
   pl: "dzień"
+  es: "el día"
 "Optimise them":
   en: "Optimise them"
   nl: "Ze optimaliseren"
@@ -284,3 +317,4 @@ _version: 2
   ru: "Оптимизировать их"
   uk: "Оптимізувати їх"
   pl: "Optymalizuj je"
+  es: "Optimizarlos"

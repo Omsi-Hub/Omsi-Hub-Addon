@@ -6,6 +6,7 @@ _version: 2
   fr: "Service de l'entreprise · fixé par la planification"
   nl: "Bedrijfsdienst · vastgelegd door de planning"
   pl: "Służba firmy · ustalona przez planowanie"
+  es: "Servicio de la empresa · fijado por la planificación"
   ru: "Смена компании · задана планированием"
   uk: "Зміна компанії · задана плануванням"
 "Open in RosterFlow":
@@ -13,6 +14,7 @@ _version: 2
   fr: "Ouvrir dans RosterFlow"
   nl: "Openen in RosterFlow"
   pl: "Otwórz w RosterFlow"
+  es: "Abrir en RosterFlow"
   ru: "Открыть в RosterFlow"
   uk: "Відкрити в RosterFlow"
 "Back to My duties":
@@ -20,6 +22,7 @@ _version: 2
   fr: "Retour à Mes services"
   nl: "Terug naar Mijn diensten"
   pl: "Wróć do Moich służb"
+  es: "Volver a Mis servicios"
   ru: "Назад к «Мои смены»"
   uk: "Назад до «Мої наряди»"
 "Start duty":
@@ -27,6 +30,7 @@ _version: 2
   fr: "Commencer le service"
   nl: "Dienst starten"
   pl: "Rozpocznij służbę"
+  es: "Empezar servicio"
   ru: "Начать смену"
   uk: "Почати зміну"
 "Reading the planning…":
@@ -34,6 +38,7 @@ _version: 2
   fr: "Lecture de la planification…"
   nl: "De planning wordt gelezen…"
   pl: "Odczytywanie planowania…"
+  es: "Leyendo la planificación…"
   ru: "Чтение планирования…"
   uk: "Читання планування…"
 "Day":
@@ -41,6 +46,7 @@ _version: 2
   fr: "Jour"
   nl: "Dag"
   pl: "Dzień"
+  es: "Día"
   ru: "День"
   uk: "День"
 "%{n} with passengers · %{m} deadheads":
@@ -48,6 +54,7 @@ _version: 2
   fr: "%{n} avec voyageurs · %{m} haut-le-pied"
   nl: "%{n} met reizigers · %{m} leegritten"
   pl: "%{n} z pasażerami · %{m} przejazdów technicznych"
+  es: "%{n} con pasajeros · %{m} en vacío"
   ru: "%{n} с пассажирами · %{m} холостых"
   uk: "%{n} з пасажирами · %{m} холостих"
 "The duty as planned":
@@ -55,6 +62,7 @@ _version: 2
   fr: "Le service tel que planifié"
   nl: "De dienst zoals gepland"
   pl: "Służba zgodnie z planem"
+  es: "El servicio según lo planificado"
   ru: "Смена по плану"
   uk: "Зміна за планом"
 "Nothing to show: the planning no longer has this duty.":
@@ -62,6 +70,7 @@ _version: 2
   fr: "Rien à afficher : la planification n'a plus ce service."
   nl: "Niets te tonen: de planning heeft deze dienst niet meer."
   pl: "Nic do pokazania: planowanie nie ma już tej służby."
+  es: "Nada que mostrar: la planificación ya no tiene este servicio."
   ru: "Нечего показать: в планировании больше нет этой смены."
   uk: "Нічого показати: у плануванні більше немає цієї зміни."
 "Take the bus over (relief)":
@@ -69,6 +78,7 @@ _version: 2
   fr: "Reprendre le bus (relève)"
   nl: "Bus overnemen (aflossing)"
   pl: "Przejmij autobus (zmiana)"
+  es: "Recibir el autobús (relevo)"
   ru: "Принять автобус (смена водителя)"
   uk: "Прийняти автобус (зміна водія)"
 "Hand the bus over (relief)":
@@ -76,6 +86,7 @@ _version: 2
   fr: "Passer le bus (relève)"
   nl: "Bus overdragen (aflossing)"
   pl: "Przekaż autobus (zmiana)"
+  es: "Entregar el autobús (relevo)"
   ru: "Передать автобус (смена водителя)"
   uk: "Передати автобус (зміна водія)"
 "%{n} min":
@@ -83,6 +94,7 @@ _version: 2
   fr: "%{n} min"
   nl: "%{n} min"
   pl: "%{n} min"
+  es: "%{n} min"
   ru: "%{n} мин"
   uk: "%{n} хв"
 "Bus and depot":
@@ -90,6 +102,7 @@ _version: 2
   fr: "Bus et dépôt"
   nl: "Bus en remise"
   pl: "Autobus i zajezdnia"
+  es: "Autobús y cochera"
   ru: "Автобус и депо"
   uk: "Автобус і депо"
 "The company's":
@@ -97,6 +110,7 @@ _version: 2
   fr: "Celle de l'entreprise"
   nl: "Die van het bedrijf"
   pl: "Firmowe"
+  es: "Los de la empresa"
   ru: "Фирменная"
   uk: "Фірмова"
 "The planning gives the duty its bus, in the company's livery: it is not chosen here.":
@@ -104,6 +118,7 @@ _version: 2
   fr: "La planification donne au service son bus, aux couleurs de l'entreprise : il ne se choisit pas ici."
   nl: "De planning geeft de dienst zijn bus, in de huisstijl van het bedrijf: die kies je hier niet."
   pl: "Planowanie przydziela służbie autobus w malowaniu firmy: nie wybiera się go tutaj."
+  es: "La planificación asigna al servicio su autobús, con la librea de la empresa: no se elige aquí."
   ru: "Планирование назначает смене автобус в фирменной окраске: здесь он не выбирается."
   uk: "Планування призначає зміні автобус у фірмовому фарбуванні: тут він не обирається."
 "Cannot start":
@@ -111,6 +126,7 @@ _version: 2
   fr: "Démarrage impossible"
   nl: "Kan niet starten"
   pl: "Nie można rozpocząć"
+  es: "No se puede empezar"
   ru: "Нельзя начать"
   uk: "Не можна почати"
 "Before you start":
@@ -118,6 +134,7 @@ _version: 2
   fr: "Avant de commencer"
   nl: "Voor je start"
   pl: "Przed rozpoczęciem"
+  es: "Antes de empezar"
   ru: "Перед началом"
   uk: "Перед початком"
 "The game starts on %{date} at %{time}, %{lead} min before the first departure: the company's clock, not the computer's.":
@@ -125,6 +142,7 @@ _version: 2
   fr: "Le jeu commence le %{date} à %{time}, %{lead} min avant le premier départ : l'horloge de l'entreprise, pas celle de l'ordinateur."
   nl: "Het spel begint op %{date} om %{time}, %{lead} min voor het eerste vertrek: de klok van het bedrijf, niet die van de computer."
   pl: "Gra zaczyna się %{date} o %{time}, %{lead} min przed pierwszym odjazdem: według zegara firmy, nie komputera."
+  es: "El juego empieza el %{date} a las %{time}, %{lead} min antes de la primera salida: según el reloj de la empresa, no el del ordenador."
   ru: "Игра начнётся %{date} в %{time}, за %{lead} мин до первого отправления: по часам компании, а не компьютера."
   uk: "Гра почнеться %{date} о %{time}, за %{lead} хв до першого відправлення: за годинником компанії, а не комп'ютера."
 "Nothing of the duty can be changed here: the planning fixes it. Only the weather is yours to choose; sound, camera and traffic are as in the Settings.":
@@ -132,6 +150,7 @@ _version: 2
   fr: "Rien du service ne peut être changé ici : la planification le fixe. Seule la météo est à votre choix ; son, caméra et trafic sont comme dans les Paramètres."
   nl: "Aan de dienst verander je hier niets: de planning legt hem vast. Alleen het weer kies je zelf; geluid, camera en verkeer zijn zoals in de Instellingen."
   pl: "Niczego w służbie nie można tu zmienić: ustala ją planowanie. Wybierasz tylko pogodę; dźwięk, kamera i ruch są jak w Ustawieniach."
+  es: "Aquí no se puede cambiar nada del servicio: lo fija la planificación. Solo el tiempo atmosférico lo eliges tú; el sonido, la cámara y el tráfico son los de los Ajustes."
   ru: "Здесь ничего в смене не изменить: её задаёт планирование. Выбрать можно только погоду; звук, камера и трафик — как в настройках."
   uk: "Тут нічого у зміні не змінити: її задає планування. Обрати можна лише погоду; звук, камера й трафік — як у налаштуваннях."
 "Planned for %{name}":
@@ -139,6 +158,7 @@ _version: 2
   fr: "Prévu pour %{name}"
   nl: "Gepland voor %{name}"
   pl: "Zaplanowano dla: %{name}"
+  es: "Previsto para %{name}"
   ru: "Запланировано для: %{name}"
   uk: "Заплановано для: %{name}"
 "As forecast (weather cycle)":
@@ -146,6 +166,7 @@ _version: 2
   fr: "Selon les prévisions (cycle météo)"
   nl: "Zoals voorspeld (weercyclus)"
   pl: "Zgodnie z prognozą (cykl pogody)"
+  es: "Según la previsión (ciclo meteorológico)"
   ru: "По прогнозу (цикл погоды)"
   uk: "За прогнозом (цикл погоди)"
 "The duty waits until the game has ended.":
@@ -153,6 +174,7 @@ _version: 2
   fr: "Le service attend que le jeu soit terminé."
   nl: "De dienst wacht tot het spel is afgesloten."
   pl: "Służba poczeka, aż gra się zakończy."
+  es: "El servicio espera a que termine la partida."
   ru: "Смена подождёт, пока игра не закроется."
   uk: "Зміна зачекає, доки гра не закриється."
 "Close the game, then start the duty again.":
@@ -160,6 +182,7 @@ _version: 2
   fr: "Fermez le jeu, puis relancez le service."
   nl: "Sluit het spel en start de dienst daarna opnieuw."
   pl: "Zamknij grę, a potem ponownie rozpocznij służbę."
+  es: "Cierra el juego y vuelve a empezar el servicio."
   ru: "Закройте игру, затем начните смену снова."
   uk: "Закрийте гру, потім почніть зміну знову."
 "Starting your company's duty…":
@@ -167,6 +190,7 @@ _version: 2
   fr: "Démarrage du service de votre entreprise…"
   nl: "De dienst van je bedrijf wordt gestart…"
   pl: "Rozpoczynanie służby Twojej firmy…"
+  es: "Empezando el servicio de tu empresa…"
   ru: "Запуск смены вашей компании…"
   uk: "Запуск зміни вашої компанії…"
 "Route of the duty":
@@ -174,6 +198,7 @@ _version: 2
   fr: "Itinéraire du service"
   nl: "Route van de dienst"
   pl: "Trasa służby"
+  es: "Ruta del servicio"
   ru: "Маршрут смены"
   uk: "Маршрут зміни"
 "This duty is no longer in the planning":
@@ -181,6 +206,7 @@ _version: 2
   fr: "Ce service n'est plus dans la planification"
   nl: "Deze dienst staat niet meer in de planning"
   pl: "Tej służby nie ma już w planowaniu"
+  es: "Este servicio ya no está en la planificación"
   ru: "Этой смены больше нет в планировании"
   uk: "Цієї зміни більше немає в плануванні"
 "The timetable or the planning changed since. Choose the duty again in RosterFlow.":
@@ -188,6 +214,7 @@ _version: 2
   fr: "L'horaire ou la planification a changé depuis. Choisissez à nouveau le service dans RosterFlow."
   nl: "De dienstregeling of de planning is sindsdien veranderd. Kies de dienst opnieuw in RosterFlow."
   pl: "Od tego czasu zmienił się rozkład lub planowanie. Wybierz służbę ponownie w RosterFlow."
+  es: "El horario o la planificación han cambiado desde entonces. Vuelve a elegir el servicio en RosterFlow."
   ru: "С тех пор изменилось расписание или планирование. Выберите смену снова в RosterFlow."
   uk: "Відтоді змінився розклад або планування. Оберіть зміну знову в RosterFlow."
 "No bus is planned for this duty":
@@ -195,6 +222,7 @@ _version: 2
   fr: "Aucun bus n'est prévu pour ce service"
   nl: "Voor deze dienst is geen bus gepland"
   pl: "Dla tej służby nie zaplanowano autobusu"
+  es: "No hay ningún autobús previsto para este servicio"
   ru: "Для этой смены не запланирован автобус"
   uk: "Для цієї зміни не заплановано автобус"
 "Give its tour a bus of the fleet in RosterFlow.":
@@ -202,6 +230,7 @@ _version: 2
   fr: "Donnez à son roulement un bus de la flotte dans RosterFlow."
   nl: "Geef zijn omloop in RosterFlow een bus uit de vloot."
   pl: "Przydziel jej obiegowi autobus z floty w RosterFlow."
+  es: "Asigna a su recorrido un autobús de la flota en RosterFlow."
   ru: "Назначьте его обороту автобус из парка в RosterFlow."
   uk: "Призначте його обороту автобус із парку в RosterFlow."
 "A rental bus runs this tour":
@@ -209,6 +238,7 @@ _version: 2
   fr: "Un bus de location assure ce roulement"
   nl: "Op deze omloop rijdt een huurbus"
   pl: "Ten obieg obsługuje autobus wynajęty"
+  es: "Un autobús de alquiler hace este recorrido"
   ru: "Этот оборот обслуживает арендованный автобус"
   uk: "Цей оборот обслуговує орендований автобус"
 "The company has no bus of its own on it to start with: give the tour a bus of the fleet in RosterFlow.":
@@ -216,6 +246,7 @@ _version: 2
   fr: "L'entreprise n'y a pas de bus à elle pour démarrer : donnez au roulement un bus de la flotte dans RosterFlow."
   nl: "Het bedrijf heeft daar geen eigen bus om mee te starten: geef de omloop in RosterFlow een bus uit de vloot."
   pl: "Firma nie ma tam własnego autobusu, którym można zacząć: przydziel obiegowi autobus z floty w RosterFlow."
+  es: "La empresa no tiene ningún autobús propio en él con el que empezar: asigna al recorrido un autobús de la flota en RosterFlow."
   ru: "У компании там нет своего автобуса, чтобы начать: назначьте обороту автобус из парка в RosterFlow."
   uk: "У компанії там немає власного автобуса, щоб почати: призначте обороту автобус із парку в RosterFlow."
 "The planned bus cannot run this day":
@@ -223,6 +254,7 @@ _version: 2
   fr: "Le bus prévu ne peut pas rouler ce jour-là"
   nl: "De geplande bus kan die dag niet rijden"
   pl: "Zaplanowany autobus nie może jeździć tego dnia"
+  es: "El autobús previsto no puede circular este día"
   ru: "Запланированный автобус не может выйти в этот день"
   uk: "Запланований автобус не може вийти цього дня"
 "Give the tour another bus of the fleet in RosterFlow.":
@@ -230,6 +262,7 @@ _version: 2
   fr: "Donnez au roulement un autre bus de la flotte dans RosterFlow."
   nl: "Geef de omloop in RosterFlow een andere bus uit de vloot."
   pl: "Przydziel obiegowi inny autobus z floty w RosterFlow."
+  es: "Asigna al recorrido otro autobús de la flota en RosterFlow."
   ru: "Назначьте обороту другой автобус из парка в RosterFlow."
   uk: "Призначте обороту інший автобус із парку в RosterFlow."
 "The planned bus has no bus file":
@@ -237,6 +270,7 @@ _version: 2
   fr: "Le bus prévu n'a pas de fichier de bus"
   nl: "De geplande bus heeft geen busbestand"
   pl: "Zaplanowany autobus nie ma pliku autobusu"
+  es: "El autobús previsto no tiene archivo de autobús"
   ru: "У запланированного автобуса нет файла автобуса"
   uk: "Запланований автобус не має файлу автобуса"
 "The planned bus is not installed":
@@ -244,6 +278,7 @@ _version: 2
   fr: "Le bus prévu n'est pas installé"
   nl: "De geplande bus is niet geïnstalleerd"
   pl: "Zaplanowany autobus nie jest zainstalowany"
+  es: "El autobús previsto no está instalado"
   ru: "Запланированный автобус не установлен"
   uk: "Запланований автобус не встановлено"
 "Install it again, or give the tour another bus of the fleet in RosterFlow.":
@@ -251,6 +286,7 @@ _version: 2
   fr: "Réinstallez-le, ou donnez au roulement un autre bus de la flotte dans RosterFlow."
   nl: "Installeer hem opnieuw, of geef de omloop in RosterFlow een andere bus uit de vloot."
   pl: "Zainstaluj go ponownie albo przydziel obiegowi inny autobus z floty w RosterFlow."
+  es: "Vuelve a instalarlo o asigna al recorrido otro autobús de la flota en RosterFlow."
   ru: "Установите его снова или назначьте обороту другой автобус из парка в RosterFlow."
   uk: "Встановіть його знову або призначте обороту інший автобус із парку в RosterFlow."
 "Nobody is planned on this duty":
@@ -258,6 +294,7 @@ _version: 2
   fr: "Personne n'est prévu sur ce service"
   nl: "Op deze dienst is niemand gepland"
   pl: "Nikt nie jest zaplanowany na tę służbę"
+  es: "No hay nadie previsto en este servicio"
   ru: "На эту смену никто не запланирован"
   uk: "На цю зміну ніхто не запланований"
 "Plan yourself on it in RosterFlow (\"You\") to drive it.":
@@ -265,6 +302,7 @@ _version: 2
   fr: "Planifiez-vous dessus dans RosterFlow (\"Vous\") pour le conduire."
   nl: "Plan jezelf erop in RosterFlow (\"Jij\") om hem te rijden."
   pl: "Zaplanuj na nią siebie w RosterFlow (\"Ty\"), aby ją poprowadzić."
+  es: "Asígnate a ti mismo en RosterFlow (\"Tú\") para conducirlo."
   ru: "Назначьте на неё себя в RosterFlow («Вы»), чтобы её проехать."
   uk: "Призначте на неї себе в RosterFlow («Ви»), щоб її проїхати."
 "Another driver is planned on this duty":
@@ -272,6 +310,7 @@ _version: 2
   fr: "Un autre conducteur est prévu sur ce service"
   nl: "Op deze dienst is een andere chauffeur gepland"
   pl: "Na tę służbę zaplanowano innego kierowcę"
+  es: "Hay otro conductor previsto en este servicio"
   ru: "На эту смену запланирован другой водитель"
   uk: "На цю зміну запланований інший водій"
 "You drove this duty already":
@@ -279,6 +318,7 @@ _version: 2
   fr: "Vous avez déjà effectué ce service"
   nl: "Je hebt deze dienst al gereden"
   pl: "Ta służba została już przez Ciebie przejechana"
+  es: "Ya has conducido este servicio"
   ru: "Вы уже проехали эту смену"
   uk: "Ви вже проїхали цю зміну"
 "Its trips are reported to the company. Choose another duty of yours in RosterFlow.":
@@ -286,6 +326,7 @@ _version: 2
   fr: "Ses courses sont déclarées à l'entreprise. Choisissez un autre de vos services dans RosterFlow."
   nl: "Zijn ritten zijn aan het bedrijf gemeld. Kies een andere dienst van je in RosterFlow."
   pl: "Jej kursy zgłoszono firmie. Wybierz inną swoją służbę w RosterFlow."
+  es: "Sus viajes ya se han comunicado a la empresa. Elige otro de tus servicios en RosterFlow."
   ru: "Её рейсы переданы компании. Выберите другую свою смену в RosterFlow."
   uk: "Її рейси передано компанії. Оберіть іншу свою зміну в RosterFlow."
 "The time of this duty has passed":
@@ -293,6 +334,7 @@ _version: 2
   fr: "L'heure de ce service est passée"
   nl: "De tijd van deze dienst is voorbij"
   pl: "Czas tej służby minął"
+  es: "La hora de este servicio ya ha pasado"
   ru: "Время этой смены прошло"
   uk: "Час цієї зміни минув"
 "The company's clock is past its end. Choose a later duty in RosterFlow.":
@@ -300,6 +342,7 @@ _version: 2
   fr: "L'horloge de l'entreprise a dépassé sa fin. Choisissez un service plus tardif dans RosterFlow."
   nl: "De klok van het bedrijf is voorbij het einde ervan. Kies een latere dienst in RosterFlow."
   pl: "Zegar firmy minął jej koniec. Wybierz późniejszą służbę w RosterFlow."
+  es: "El reloj de la empresa ya ha pasado su final. Elige un servicio posterior en RosterFlow."
   ru: "Часы компании уже после её окончания. Выберите более позднюю смену в RosterFlow."
   uk: "Годинник компанії вже після її кінця. Оберіть пізнішу зміну в RosterFlow."
 "The timetable changed":
@@ -307,6 +350,7 @@ _version: 2
   fr: "L'horaire a changé"
   nl: "De dienstregeling is veranderd"
   pl: "Rozkład się zmienił"
+  es: "El horario ha cambiado"
   ru: "Расписание изменилось"
   uk: "Розклад змінився"
 "The day's timetable no longer has this duty's trips as planned. Plan the day again in RosterFlow.":
@@ -314,5 +358,6 @@ _version: 2
   fr: "L'horaire du jour n'a plus les courses de ce service telles que prévues. Replanifiez la journée dans RosterFlow."
   nl: "De dienstregeling van de dag heeft de ritten van deze dienst niet meer zoals gepland. Plan de dag opnieuw in RosterFlow."
   pl: "Rozkład dnia nie ma już kursów tej służby zgodnie z planem. Zaplanuj dzień ponownie w RosterFlow."
+  es: "El horario del día ya no tiene los viajes de este servicio tal como se planificaron. Vuelve a planificar el día en RosterFlow."
   ru: "В расписании дня больше нет рейсов этой смены по плану. Спланируйте день заново в RosterFlow."
   uk: "У розкладі дня більше немає рейсів цієї зміни за планом. Сплануйте день заново в RosterFlow."

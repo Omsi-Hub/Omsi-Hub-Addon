@@ -8,6 +8,7 @@ _version: 2
   ru: "Как задано картой"
   uk: "Як задано картою"
   pl: "Tak jak na mapie"
+  es: "Como lo tiene el mapa"
 "Back to choosing a mode: the bus, the map and the duty are your own again":
   nl: "Terug naar het kiezen van een modus: bus, kaart en dienst zijn weer van jezelf"
   de: "Zurück zur Wahl des Modus: Bus, Karte und Dienst sind wieder deine eigenen"
@@ -15,6 +16,7 @@ _version: 2
   ru: "Назад к выбору режима: автобус, карта и смена снова ваши"
   uk: "Назад до вибору режиму: автобус, карта й наряд знову ваші"
   pl: "Powrót do wyboru trybu: autobus, mapa i służba znów są twoje"
+  es: "Volver a elegir un modo: el autobús, el mapa y el servicio vuelven a ser tuyos"
 "Install it again, or give the tour another bus in the planning.":
   nl: "Installeer hem opnieuw, of geef de omloop in de planning een andere bus."
   de: "Installiere ihn erneut oder gib dem Umlauf in der Planung einen anderen Bus."
@@ -22,6 +24,7 @@ _version: 2
   ru: "Установите его снова или назначьте выходу другой автобус в планировании."
   uk: "Встановіть його знову або призначте обороту інший автобус у плануванні."
   pl: "Zainstaluj go ponownie albo przydziel brygadzie inny autobus w planowaniu."
+  es: "Instálalo de nuevo o asigna otro autobús al recorrido en la planificación."
 "Leave the company duty":
   nl: "Bedrijfsdienst verlaten"
   de: "Unternehmensdienst verlassen"
@@ -29,6 +32,7 @@ _version: 2
   ru: "Покинуть смену компании"
   uk: "Залишити наряд компанії"
   pl: "Opuść służbę firmy"
+  es: "Dejar el servicio de la empresa"
 "Planned by %{company}":
   nl: "Ingepland door %{company}"
   de: "Geplant von %{company}"
@@ -36,6 +40,7 @@ _version: 2
   ru: "Запланировано: %{company}"
   uk: "Заплановано: %{company}"
   pl: "Zaplanowane przez %{company}"
+  es: "Planificado por %{company}"
 "That is no longer your company's duty: choose a bus for it.":
   nl: "Dat is geen dienst van je bedrijf meer: kies er een bus voor."
   de: "Das ist kein Dienst deines Unternehmens mehr: Wähle einen Bus dafür."
@@ -43,6 +48,7 @@ _version: 2
   ru: "Это больше не смена вашей компании: выберите для неё автобус."
   uk: "Це вже не наряд вашої компанії: виберіть для нього автобус."
   pl: "To już nie jest służba twojej firmy: wybierz dla niej autobus."
+  es: "Ese ya no es un servicio de tu empresa: elige un autobús para él."
 "The planned bus %{bus} is not installed: give the tour another bus in the planning.":
   nl: "De ingeplande bus %{bus} is niet geïnstalleerd: geef de omloop in de planning een andere bus."
   de: "Der geplante Bus %{bus} ist nicht installiert: Gib dem Umlauf in der Planung einen anderen Bus."
@@ -50,6 +56,7 @@ _version: 2
   ru: "Запланированный автобус %{bus} не установлен: назначьте выходу другой автобус в планировании."
   uk: "Запланований автобус %{bus} не встановлено: призначте обороту інший автобус у плануванні."
   pl: "Zaplanowany autobus %{bus} nie jest zainstalowany: przydziel brygadzie inny autobus w planowaniu."
+  es: "El autobús planificado %{bus} no está instalado: asigna otro autobús al recorrido en la planificación."
 "The planned bus is not installed: %{bus}":
   nl: "De ingeplande bus is niet geïnstalleerd: %{bus}"
   de: "Der geplante Bus ist nicht installiert: %{bus}"
@@ -57,6 +64,7 @@ _version: 2
   ru: "Запланированный автобус не установлен: %{bus}"
   uk: "Запланований автобус не встановлено: %{bus}"
   pl: "Zaplanowany autobus nie jest zainstalowany: %{bus}"
+  es: "El autobús planificado no está instalado: %{bus}"
 "You left the company duty: choose how you want to drive.":
   nl: "Je hebt de bedrijfsdienst verlaten: kies hoe je wilt rijden."
   de: "Du hast den Unternehmensdienst verlassen: Wähle, wie du fahren willst."
@@ -64,6 +72,7 @@ _version: 2
   ru: "Вы покинули смену компании: выберите, как ехать."
   uk: "Ви залишили наряд компанії: виберіть, як їхати."
   pl: "Opuściłeś służbę firmy: wybierz, jak chcesz jechać."
+  es: "Has dejado el servicio de la empresa: elige cómo quieres conducir."
 "Your company's duty is set, with the bus its planning gives it: on the map only your company's buses run. Start the duty when you are ready.":
   nl: "De dienst van je bedrijf staat klaar, met de bus uit de planning: op de kaart rijden alleen de bussen van je bedrijf. Start de dienst als je klaar bent."
   de: "Der Dienst deines Unternehmens ist eingestellt, mit dem Bus aus der Planung: Auf der Karte fahren nur die Busse deines Unternehmens. Starte den Dienst, wenn du bereit bist."
@@ -71,6 +80,7 @@ _version: 2
   ru: "Смена компании выбрана, с автобусом из планирования: на карте ездят только автобусы вашей компании. Начните смену, когда будете готовы."
   uk: "Наряд компанії вибрано, з автобусом із планування: на карті їздять лише автобуси вашої компанії. Почніть наряд, коли будете готові."
   pl: "Służba firmy ustawiona, z autobusem z planowania: na mapie jeżdżą tylko autobusy twojej firmy. Rozpocznij służbę, gdy będziesz gotów."
+  es: "El servicio de tu empresa está listo, con el autobús que le da su planificación: en el mapa solo circulan los autobuses de tu empresa. Inicia el servicio cuando estés listo."
 "Your company's planning gives this duty its bus, in the company's livery: it is not chosen here. To drive another bus, give the tour another one in the planning.":
   nl: "De planning van je bedrijf geeft deze dienst zijn bus, in de huisstijl van het bedrijf: die kies je hier niet. Wil je een andere bus rijden, geef de omloop dan in de planning een andere."
   de: "Die Planung deines Unternehmens gibt diesem Dienst seinen Bus, in der Lackierung des Unternehmens: Er wird hier nicht gewählt. Für einen anderen Bus gib dem Umlauf in der Planung einen anderen."
@@ -78,6 +88,7 @@ _version: 2
   ru: "Планирование вашей компании назначает этой смене автобус в цветах компании: он здесь не выбирается. Чтобы ездить на другом, назначьте выходу другой автобус в планировании."
   uk: "Планування вашої компанії призначає цьому наряду автобус у кольорах компанії: його тут не вибирають. Щоб їздити іншим, призначте обороту інший автобус у плануванні."
   pl: "Planowanie twojej firmy przydziela tej służbie autobus w barwach firmy: nie wybiera się go tutaj. Aby jeździć innym, przydziel brygadzie inny autobus w planowaniu."
+  es: "La planificación de tu empresa da a este servicio su autobús, con la librea de la empresa: no se elige aquí. Para conducir otro autobús, asigna otro al recorrido en la planificación."
 "Your company's planning gives this duty its bus, in the company's livery: it is not chosen here.":
   nl: "De planning van je bedrijf geeft deze dienst zijn bus, in de huisstijl van het bedrijf: die kies je hier niet."
   de: "Die Planung deines Unternehmens gibt diesem Dienst seinen Bus, in der Lackierung des Unternehmens: Er wird hier nicht gewählt."
@@ -85,3 +96,4 @@ _version: 2
   ru: "Планирование вашей компании назначает этой смене автобус в цветах компании: он здесь не выбирается."
   uk: "Планування вашої компанії призначає цьому наряду автобус у кольорах компанії: його тут не вибирають."
   pl: "Planowanie twojej firmy przydziela tej służbie autobus w barwach firmy: nie wybiera się go tutaj."
+  es: "La planificación de tu empresa da a este servicio su autobús, con la librea de la empresa: no se elige aquí."

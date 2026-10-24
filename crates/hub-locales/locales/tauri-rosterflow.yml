@@ -14,6 +14,7 @@ _version: 2
   ru: "Открыть файл"
   uk: "Відкрити файл"
   pl: "Otwórz plik"
+  es: "Abrir el archivo"
 
 # --- the Timeplan's line gone from the line editor's list -----------------------------------------
 "The line is no longer in the line editor's list: open the timetable again.":
@@ -24,6 +25,7 @@ _version: 2
   ru: "Линии больше нет в списке редактора линий: откройте расписание снова."
   uk: "Лінії більше немає в списку редактора ліній: відкрийте розклад знову."
   pl: "Linii nie ma już na liście edytora linii: otwórz rozkład jeszcze raz."
+  es: "La línea ya no está en la lista del editor de líneas: vuelve a abrir el horario."
 
 # --- the toolbar's Filter, the Stats' Done ------------
 "Filter":
@@ -34,6 +36,7 @@ _version: 2
   ru: "Фильтр"
   uk: "Фільтр"
   pl: "Filtr"
+  es: "Filtro"
 "Done":
   en: "Done"
   nl: "Klaar"
@@ -42,3 +45,4 @@ _version: 2
   ru: "Готово"
   uk: "Готово"
   pl: "Gotowe"
+  es: "Hecho"

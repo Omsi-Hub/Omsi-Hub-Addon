@@ -7,6 +7,7 @@ _version: 2
   fr: "En panne"
   nl: "Defect"
   pl: "Awaria"
+  es: "Averiado"
   ru: "Сломался"
   uk: "Зламався"
 "Delay when it broke down":
@@ -14,6 +15,7 @@ _version: 2
   fr: "Retard au moment de la panne"
   nl: "Vertraging bij het uitvallen"
   pl: "Opóźnienie w chwili awarii"
+  es: "Retraso al averiarse"
   ru: "Опоздание в момент поломки"
   uk: "Запізнення в момент поломки"
 "Kilometres today":
@@ -21,6 +23,7 @@ _version: 2
   fr: "Kilomètres aujourd'hui"
   nl: "Kilometers vandaag"
   pl: "Kilometry dzisiaj"
+  es: "Kilómetros hoy"
   ru: "Километров сегодня"
   uk: "Кілометрів сьогодні"
 "Earned today (est.)":
@@ -28,6 +31,7 @@ _version: 2
   fr: "Recettes du jour (estim.)"
   nl: "Vandaag verdiend (geschat)"
   pl: "Zarobione dzisiaj (szac.)"
+  es: "Ingresos de hoy (est.)"
   ru: "Заработано сегодня (оценка)"
   uk: "Зароблено сьогодні (оцінка)"
 "The bus's page":
@@ -35,6 +39,7 @@ _version: 2
   fr: "Fiche du bus"
   nl: "Pagina van de bus"
   pl: "Strona autobusu"
+  es: "Ficha del autobús"
   ru: "Страница автобуса"
   uk: "Сторінка автобуса"
 "Live position from the game":
@@ -42,6 +47,7 @@ _version: 2
   fr: "Position en direct depuis le jeu"
   nl: "Live positie uit het spel"
   pl: "Pozycja na żywo z gry"
+  es: "Posición en directo desde el juego"
   ru: "Положение в реальном времени из игры"
   uk: "Положення в реальному часі з гри"
 "Waiting for your decision on the Operations page.":
@@ -49,6 +55,7 @@ _version: 2
   fr: "En attente de ta décision sur la page Exploitation."
   nl: "Wacht op je beslissing op de pagina Bedrijfsvoering."
   pl: "Czeka na twoją decyzję na stronie Ruch."
+  es: "Esperando tu decisión en la página de Explotación."
   ru: "Ждёт твоего решения на странице «Движение»."
   uk: "Чекає на твоє рішення на сторінці «Рух»."
 "Block %{block}":
@@ -56,6 +63,7 @@ _version: 2
   fr: "Service véhicule %{block}"
   nl: "Omloop %{block}"
   pl: "Blok %{block}"
+  es: "Recorrido %{block}"
   ru: "Выход %{block}"
   uk: "Вихід %{block}"
 "Empty run to %{stop}":
@@ -63,6 +71,7 @@ _version: 2
   fr: "Haut-le-pied vers %{stop}"
   nl: "Lege rit naar %{stop}"
   pl: "Przejazd techniczny do %{stop}"
+  es: "Viaje en vacío a %{stop}"
   ru: "Порожний рейс до %{stop}"
   uk: "Порожній рейс до %{stop}"
 "Leaves at %{time}":
@@ -70,6 +79,7 @@ _version: 2
   fr: "Part à %{time}"
   nl: "Vertrekt om %{time}"
   pl: "Odjeżdża o %{time}"
+  es: "Sale a las %{time}"
   ru: "Отправляется в %{time}"
   uk: "Відправляється о %{time}"
 "%{m} min late":
@@ -77,6 +87,7 @@ _version: 2
   fr: "%{m} min de retard"
   nl: "%{m} min te laat"
   pl: "%{m} min opóźnienia"
+  es: "%{m} min de retraso"
   ru: "Опаздывает на %{m} мин"
   uk: "Запізнюється на %{m} хв"
 "Broke down at %{time}":
@@ -84,6 +95,7 @@ _version: 2
   fr: "Tombé en panne à %{time}"
   nl: "Om %{time} defect geraakt"
   pl: "Awaria o %{time}"
+  es: "Averiado a las %{time}"
   ru: "Сломался в %{time}"
   uk: "Зламався о %{time}"
 "Had an accident at %{time}":
@@ -91,6 +103,7 @@ _version: 2
   fr: "Accidenté à %{time}"
   nl: "Om %{time} een ongeval gehad"
   pl: "Wypadek o %{time}"
+  es: "Accidente a las %{time}"
   ru: "Попал в аварию в %{time}"
   uk: "Потрапив в аварію о %{time}"
 "Stands in for bus %{bus}, broken down at %{time}":
@@ -98,6 +111,7 @@ _version: 2
   fr: "Remplace le bus %{bus}, tombé en panne à %{time}"
   nl: "Vervangt bus %{bus}, om %{time} defect geraakt"
   pl: "Zastępuje autobus %{bus}, który uległ awarii o %{time}"
+  es: "Sustituye al autobús %{bus}, averiado a las %{time}"
   ru: "Заменяет автобус %{bus}, сломавшийся в %{time}"
   uk: "Замінює автобус %{bus}, що зламався о %{time}"
 "Service control: turned back early on the %{time} trip":
@@ -105,6 +119,7 @@ _version: 2
   fr: "Régulation : demi-tour anticipé sur le trajet de %{time}"
   nl: "Verkeersleiding: eerder omgekeerd op de rit van %{time}"
   pl: "Dyspozytor: wcześniejsze zawrócenie na kursie o %{time}"
+  es: "Control del servicio: vuelta anticipada en el viaje de las %{time}"
   ru: "Диспетчер: ранний разворот на рейсе в %{time}"
   uk: "Диспетчер: ранній розворот на рейсі о %{time}"
 "Service control: out of service to the terminus on the %{time} trip":
@@ -112,6 +127,7 @@ _version: 2
   fr: "Régulation : hors service jusqu'au terminus sur le trajet de %{time}"
   nl: "Verkeersleiding: buiten dienst naar het eindpunt op de rit van %{time}"
   pl: "Dyspozytor: bez pasażerów do pętli na kursie o %{time}"
+  es: "Control del servicio: fuera de servicio hasta la cabecera en el viaje de las %{time}"
   ru: "Диспетчер: без пассажиров до конечной на рейсе в %{time}"
   uk: "Диспетчер: без пасажирів до кінцевої на рейсі о %{time}"
 "Service control: layover %{m} min shorter before the %{time} trip":
@@ -119,6 +135,7 @@ _version: 2
   fr: "Régulation : battement raccourci de %{m} min avant le trajet de %{time}"
   nl: "Verkeersleiding: keertijd %{m} min korter voor de rit van %{time}"
   pl: "Dyspozytor: postój o %{m} min krótszy przed kursem o %{time}"
+  es: "Control del servicio: regulación %{m} min más corta antes del viaje de las %{time}"
   ru: "Диспетчер: стоянка на %{m} мин короче перед рейсом в %{time}"
   uk: "Диспетчер: стоянка на %{m} хв коротша перед рейсом о %{time}"
 "Service control: bus %{spare} took over from bus %{bus} from the %{time} trip":
@@ -126,6 +143,7 @@ _version: 2
   fr: "Régulation : le bus %{spare} a remplacé le bus %{bus} à partir du trajet de %{time}"
   nl: "Verkeersleiding: bus %{spare} nam vanaf de rit van %{time} over van bus %{bus}"
   pl: "Dyspozytor: autobus %{spare} przejął od autobusu %{bus} od kursu o %{time}"
+  es: "Control del servicio: el autobús %{spare} relevó al autobús %{bus} desde el viaje de las %{time}"
   ru: "Диспетчер: автобус %{spare} сменил автобус %{bus} с рейса в %{time}"
   uk: "Диспетчер: автобус %{spare} змінив автобус %{bus} з рейсу о %{time}"
 "Service control: duty %{n} covered from %{time}":
@@ -133,6 +151,7 @@ _version: 2
   fr: "Régulation : service agent %{n} couvert à partir de %{time}"
   nl: "Verkeersleiding: dienst %{n} vanaf %{time} overgenomen"
   pl: "Dyspozytor: służba %{n} obsadzona od %{time}"
+  es: "Control del servicio: servicio %{n} cubierto desde las %{time}"
   ru: "Диспетчер: смена %{n} закрыта с %{time}"
   uk: "Диспетчер: зміна %{n} закрита з %{time}"
 "Running %{m} minutes late: service control has ways to bring it back on time.":
@@ -140,6 +159,7 @@ _version: 2
   fr: "%{m} minutes de retard : la régulation peut le remettre à l'heure."
   nl: "%{m} minuten te laat: de verkeersleiding kan hem weer op tijd krijgen."
   pl: "%{m} minut opóźnienia: dyspozytor może przywrócić punktualność."
+  es: "Va con %{m} minutos de retraso: el control del servicio tiene formas de devolverlo a su horario."
   ru: "Опаздывает на %{m} минут: диспетчер может вернуть его в график."
   uk: "Запізнюється на %{m} хвилин: диспетчер може повернути його в графік."
 "The game's traffic":
@@ -147,6 +167,7 @@ _version: 2
   fr: "La circulation du jeu"
   nl: "Het verkeer in het spel"
   pl: "Ruch drogowy w grze"
+  es: "El tráfico del juego"
   ru: "Движение в игре"
   uk: "Рух у грі"
 "The game's buses and traffic on the fleet map":
@@ -154,6 +175,7 @@ _version: 2
   fr: "Les bus et la circulation du jeu sur la carte de la flotte"
   nl: "De bussen en het verkeer van het spel op de vlootkaart"
   pl: "Autobusy i ruch z gry na mapie floty"
+  es: "Los autobuses y el tráfico del juego en el mapa de la flota"
   ru: "Автобусы и движение из игры на карте парка"
   uk: "Автобуси й рух із гри на мапі парку"
 "The fleet map places the buses by the timetable":
@@ -161,5 +183,6 @@ _version: 2
   fr: "La carte de la flotte place les bus d'après l'horaire"
   nl: "De vlootkaart zet de bussen volgens de dienstregeling"
   pl: "Mapa floty rozmieszcza autobusy według rozkładu"
+  es: "El mapa de la flota sitúa los autobuses según el horario"
   ru: "Карта парка расставляет автобусы по расписанию"
   uk: "Мапа парку розставляє автобуси за розкладом"

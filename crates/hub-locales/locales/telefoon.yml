@@ -10,6 +10,7 @@ _version: 2
   ru: "Подключение к openOMSI"
   uk: "Підключення до openOMSI"
   pl: "Połącz z openOMSI"
+  es: "Conectar con openOMSI"
 "Enter the pairing code the game shows.":
   nl: "Toets de koppelcode in die het spel toont."
   de: "Gib den Kopplungscode ein, den das Spiel anzeigt."
@@ -17,6 +18,7 @@ _version: 2
   ru: "Введите код сопряжения, который показывает игра."
   uk: "Введіть код спарювання, який показує гра."
   pl: "Wpisz kod parowania wyświetlany przez grę."
+  es: "Introduce el código de emparejamiento que muestra el juego."
 "That code is not right. The game shows the current one.":
   nl: "Die code klopt niet. Het spel toont de geldige."
   de: "Dieser Code stimmt nicht. Das Spiel zeigt den gültigen."
@@ -24,6 +26,7 @@ _version: 2
   ru: "Код неверный. Действующий код показывает игра."
   uk: "Код неправильний. Чинний код показує гра."
   pl: "Ten kod jest nieprawidłowy. Aktualny kod pokazuje gra."
+  es: "Ese código no es correcto. El juego muestra el actual."
 "Too many tries. Wait a minute.":
   nl: "Te veel pogingen. Wacht een minuut."
   de: "Zu viele Versuche. Warte eine Minute."
@@ -31,6 +34,7 @@ _version: 2
   ru: "Слишком много попыток. Подождите минуту."
   uk: "Забагато спроб. Зачекайте хвилину."
   pl: "Zbyt wiele prób. Poczekaj minutę."
+  es: "Demasiados intentos. Espera un minuto."
 "Connection lost. Trying again…":
   nl: "Verbinding kwijt. Opnieuw proberen…"
   de: "Verbindung verloren. Neuer Versuch…"
@@ -38,6 +42,7 @@ _version: 2
   ru: "Связь потеряна. Повторная попытка…"
   uk: "Зв’язок втрачено. Повторна спроба…"
   pl: "Utracono połączenie. Ponawianie…"
+  es: "Conexión perdida. Reintentando…"
 "Waiting for the game…":
   nl: "Wachten op het spel…"
   de: "Warte auf das Spiel…"
@@ -45,6 +50,7 @@ _version: 2
   ru: "Ожидание игры…"
   uk: "Очікування гри…"
   pl: "Czekam na grę…"
+  es: "Esperando al juego…"
 "Sign on":
   nl: "Aanmelden"
   de: "Anmelden"
@@ -52,6 +58,7 @@ _version: 2
   ru: "Вход на смену"
   uk: "Вхід на зміну"
   pl: "Zgłoszenie do służby"
+  es: "Toma de servicio"
 "Your personnel number":
   nl: "Je personeelsnummer"
   de: "Deine Personalnummer"
@@ -59,6 +66,7 @@ _version: 2
   ru: "Ваш табельный номер"
   uk: "Ваш табельний номер"
   pl: "Twój numer służbowy"
+  es: "Tu número de empleado"
 "Your code":
   nl: "Je pincode"
   de: "Deine PIN"
@@ -66,6 +74,7 @@ _version: 2
   ru: "Ваш код"
   uk: "Ваш код"
   pl: "Twój kod"
+  es: "Tu código"
 "Not known here. Your number and code are in the game's duty menu (Esc, Line and tour).":
   nl: "Hier niet bekend. Je nummer en pincode staan in het dienstmenu van het spel (Esc, Lijn en omloop)."
   de: "Hier nicht bekannt. Nummer und PIN stehen im Dienstmenü des Spiels (Esc, Linie und Kurs)."
@@ -73,6 +82,7 @@ _version: 2
   ru: "Здесь не известно. Номер и код указаны в меню смены в игре (Esc, «Маршрут и выход»)."
   uk: "Тут не відомо. Номер і код є в меню зміни в грі (Esc, «Лінія й оборот»)."
   pl: "Tu nieznany. Numer i kod są w menu służby w grze (Esc, Linia i brygada)."
+  es: "No se conoce aquí. Tu número y tu código están en el menú de servicio del juego (Esc, Línea y recorrido)."
 "Clear":
   nl: "Wissen"
   de: "Löschen"
@@ -80,6 +90,7 @@ _version: 2
   ru: "Стереть"
   uk: "Стерти"
   pl: "Wyczyść"
+  es: "Borrar"
 "Duty assignment":
   nl: "Dienstopdracht"
   de: "Dienstauftrag"
@@ -87,6 +98,7 @@ _version: 2
   ru: "Наряд на смену"
   uk: "Наряд на зміну"
   pl: "Polecenie służbowe"
+  es: "Asignación de servicio"
 "Departure":
   nl: "Vertrek"
   de: "Abfahrt"
@@ -94,6 +106,7 @@ _version: 2
   ru: "Отправление"
   uk: "Відправлення"
   pl: "Odjazd"
+  es: "Salida"
 "Back at":
   nl: "Terug om"
   de: "Zurück um"
@@ -101,6 +114,7 @@ _version: 2
   ru: "Возвращение в"
   uk: "Повернення о"
   pl: "Powrót o"
+  es: "De vuelta a las"
 "Trips":
   nl: "Ritten"
   de: "Fahrten"
@@ -108,6 +122,7 @@ _version: 2
   ru: "Рейсы"
   uk: "Рейси"
   pl: "Kursy"
+  es: "Viajes"
 "Accept duty":
   nl: "Dienst aanvaarden"
   de: "Dienst annehmen"
@@ -115,6 +130,7 @@ _version: 2
   ru: "Принять смену"
   uk: "Прийняти зміну"
   pl: "Przyjmij służbę"
+  es: "Aceptar servicio"
 "The duty's codes go to the IBIS as soon as you accept it.":
   nl: "De codes van je dienst gaan naar de IBIS zodra je hem aanvaardt."
   de: "Die Codes deines Dienstes gehen ans IBIS, sobald du ihn annimmst."
@@ -122,6 +138,7 @@ _version: 2
   ru: "Коды смены уйдут в IBIS, как только вы её примете."
   uk: "Коди зміни підуть в IBIS, щойно ви її приймете."
   pl: "Kody służby trafią do IBIS, gdy tylko ją przyjmiesz."
+  es: "Los códigos del servicio van al IBIS en cuanto lo aceptas."
 "Choose another duty":
   nl: "Andere dienst kiezen"
   de: "Anderen Dienst wählen"
@@ -129,6 +146,7 @@ _version: 2
   ru: "Выбрать другую смену"
   uk: "Вибрати іншу зміну"
   pl: "Wybierz inną służbę"
+  es: "Elegir otro servicio"
 "Choose a duty":
   nl: "Kies een dienst"
   de: "Dienst wählen"
@@ -136,6 +154,7 @@ _version: 2
   ru: "Выберите смену"
   uk: "Виберіть зміну"
   pl: "Wybierz służbę"
+  es: "Elige un servicio"
 "Tap the tour you drive: you take it on at once, and its codes go to the IBIS.":
   nl: "Tik de omloop aan die je rijdt: je neemt hem meteen aan, en de codes gaan naar de IBIS."
   de: "Tippe den Umlauf an, den du fährst: du übernimmst ihn sofort, und die Codes gehen ans IBIS."
@@ -143,6 +162,7 @@ _version: 2
   ru: "Нажмите на выход, который поедете: он сразу ваш, а его коды уходят в IBIS."
   uk: "Торкніться обороту, який поїдете: він одразу ваш, а його коди йдуть в IBIS."
   pl: "Dotknij brygady, którą jedziesz: od razu ją przejmujesz, a jej kody trafiają do IBIS."
+  es: "Toca el recorrido que conduces: lo asumes al instante y sus códigos van al IBIS."
 "Drive without a duty":
   nl: "Rijden zonder dienst"
   de: "Ohne Dienst fahren"
@@ -150,6 +170,7 @@ _version: 2
   ru: "Ездить без смены"
   uk: "Їздити без зміни"
   pl: "Jedź bez służby"
+  es: "Conducir sin servicio"
 "No duty running.":
   nl: "Er loopt geen dienst."
   de: "Kein Dienst aktiv."
@@ -157,6 +178,7 @@ _version: 2
   ru: "Смена не идёт."
   uk: "Зміна не триває."
   pl: "Brak aktywnej służby."
+  es: "Ningún servicio en curso."
 "Personnel no. %{number}":
   nl: "Personeelsnummer %{number}"
   de: "Personalnummer %{number}"
@@ -164,6 +186,7 @@ _version: 2
   ru: "Табельный № %{number}"
   uk: "Табельний № %{number}"
   pl: "Nr służbowy %{number}"
+  es: "N.º de empleado %{number}"
 "Personnel no. %{number} · code %{code}":
   nl: "Personeelsnummer %{number} · pincode %{code}"
   de: "Personalnummer %{number} · PIN %{code}"
@@ -171,6 +194,7 @@ _version: 2
   ru: "Табельный № %{number} · код %{code}"
   uk: "Табельний № %{number} · код %{code}"
   pl: "Nr służbowy %{number} · kod %{code}"
+  es: "N.º de empleado %{number} · código %{code}"
 "Phone %{address}, pairing code %{code}":
   nl: "Telefoon %{address}, koppelcode %{code}"
   de: "Telefon %{address}, Kopplungscode %{code}"
@@ -178,6 +202,7 @@ _version: 2
   ru: "Телефон %{address}, код сопряжения %{code}"
   uk: "Телефон %{address}, код спарювання %{code}"
   pl: "Telefon %{address}, kod parowania %{code}"
+  es: "Teléfono %{address}, código de emparejamiento %{code}"
 "Phone: open %{address} and enter the pairing code %{code}":
   nl: "Telefoon: open %{address} en toets koppelcode %{code} in"
   de: "Telefon: öffne %{address} und gib den Kopplungscode %{code} ein"
@@ -185,6 +210,7 @@ _version: 2
   ru: "Телефон: откройте %{address} и введите код сопряжения %{code}"
   uk: "Телефон: відкрийте %{address} і введіть код спарювання %{code}"
   pl: "Telefon: otwórz %{address} i wpisz kod parowania %{code}"
+  es: "Teléfono: abre %{address} e introduce el código de emparejamiento %{code}"
 "%{device} is connected":
   nl: "%{device} is verbonden"
   de: "%{device} ist verbunden"
@@ -192,6 +218,7 @@ _version: 2
   ru: "%{device}: подключено"
   uk: "%{device}: підключено"
   pl: "%{device}: połączono"
+  es: "%{device} está conectado"
 "The phone companion could not start: %{error}":
   nl: "De telefoonkoppeling kon niet starten: %{error}"
   de: "Die Telefonverbindung konnte nicht starten: %{error}"
@@ -199,6 +226,7 @@ _version: 2
   ru: "Не удалось запустить связь с телефоном: %{error}"
   uk: "Не вдалося запустити зв’язок із телефоном: %{error}"
   pl: "Nie udało się uruchomić połączenia z telefonem: %{error}"
+  es: "No se ha podido iniciar la app complementaria: %{error}"
 "Screens":
   nl: "Schermen"
   de: "Anzeigen"
@@ -206,6 +234,7 @@ _version: 2
   ru: "Экраны"
   uk: "Екрани"
   pl: "Ekrany"
+  es: "Pantallas"
 "Break":
   nl: "Pauze"
   de: "Pause"
@@ -213,6 +242,7 @@ _version: 2
   ru: "Перерыв"
   uk: "Перерва"
   pl: "Przerwa"
+  es: "Pausa"
 "This bus has no screens to show here.":
   nl: "Deze bus heeft geen schermen om hier te tonen."
   de: "Dieser Bus hat keine Anzeigen, die hier gezeigt werden können."
@@ -220,6 +250,7 @@ _version: 2
   ru: "У этого автобуса нет экранов, которые можно показать здесь."
   uk: "У цього автобуса немає екранів, які можна показати тут."
   pl: "Ten autobus nie ma ekranów do pokazania tutaj."
+  es: "Este autobús no tiene pantallas que mostrar aquí."
 "Tap a screen to use it here.":
   nl: "Tik een scherm aan om het hier te bedienen."
   de: "Tippe eine Anzeige an, um sie hier zu bedienen."
@@ -227,6 +258,7 @@ _version: 2
   ru: "Нажмите на экран, чтобы пользоваться им здесь."
   uk: "Торкніться екрана, щоб користуватися ним тут."
   pl: "Dotknij ekranu, aby go tu obsługiwać."
+  es: "Toca una pantalla para usarla aquí."
 "%{count} keys":
   nl: "%{count} knoppen"
   de: "%{count} Tasten"
@@ -234,6 +266,7 @@ _version: 2
   ru: "клавиш: %{count}"
   uk: "клавіш: %{count}"
   pl: "przyciski: %{count}"
+  es: "%{count} teclas"
 "Touchscreen":
   nl: "Aanraakscherm"
   de: "Touchscreen"
@@ -241,6 +274,7 @@ _version: 2
   ru: "Сенсорный экран"
   uk: "Сенсорний екран"
   pl: "Ekran dotykowy"
+  es: "Pantalla táctil"
 "Delay":
   nl: "Vertraging"
   de: "Verspätung"
@@ -248,6 +282,7 @@ _version: 2
   ru: "Опоздание"
   uk: "Запізнення"
   pl: "Opóźnienie"
+  es: "Retraso"
 "Next stop":
   nl: "Volgende halte"
   de: "Nächste Haltestelle"
@@ -255,6 +290,7 @@ _version: 2
   ru: "Следующая остановка"
   uk: "Наступна зупинка"
   pl: "Następny przystanek"
+  es: "Próxima parada"
 "line %{line}":
   nl: "lijn %{line}"
   de: "Linie %{line}"
@@ -262,6 +298,7 @@ _version: 2
   ru: "линия %{line}"
   uk: "лінія %{line}"
   pl: "linia %{line}"
+  es: "línea %{line}"
 "%{count} stops":
   nl: "%{count} haltes"
   de: "%{count} Halte"
@@ -269,6 +306,7 @@ _version: 2
   ru: "остановок: %{count}"
   uk: "зупинок: %{count}"
   pl: "przystanki: %{count}"
+  es: "%{count} paradas"
 "1 stop":
   nl: "1 halte"
   de: "1 Halt"
@@ -276,6 +314,7 @@ _version: 2
   ru: "1 остановка"
   uk: "1 зупинка"
   pl: "1 przystanek"
+  es: "1 parada"
 "Scheduled break at the terminus":
   nl: "Geplande pauze op het eindpunt"
   de: "Geplante Pause an der Endhaltestelle"
@@ -283,6 +322,7 @@ _version: 2
   ru: "Плановый перерыв на конечной"
   uk: "Планова перерва на кінцевій"
   pl: "Planowa przerwa na pętli"
+  es: "Pausa prevista en la cabecera"
 "%{minutes} min left":
   nl: "nog %{minutes} min"
   de: "noch %{minutes} Min"
@@ -290,6 +330,7 @@ _version: 2
   ru: "осталось %{minutes} мин"
   uk: "залишилося %{minutes} хв"
   pl: "zostało %{minutes} min"
+  es: "quedan %{minutes} min"
 "%{minutes} min over":
   nl: "%{minutes} min over tijd"
   de: "%{minutes} Min drüber"
@@ -297,6 +338,7 @@ _version: 2
   ru: "сверх нормы %{minutes} мин"
   uk: "понад норму %{minutes} хв"
   pl: "%{minutes} min ponad czas"
+  es: "%{minutes} min de más"
 "Start break":
   nl: "Pauze starten"
   de: "Pause starten"
@@ -304,6 +346,7 @@ _version: 2
   ru: "Начать перерыв"
   uk: "Почати перерву"
   pl: "Rozpocznij przerwę"
+  es: "Iniciar pausa"
 "End break":
   nl: "Pauze beëindigen"
   de: "Pause beenden"
@@ -311,6 +354,7 @@ _version: 2
   ru: "Закончить перерыв"
   uk: "Завершити перерву"
   pl: "Zakończ przerwę"
+  es: "Terminar pausa"
 "Next trip":
   nl: "Volgende rit"
   de: "Nächste Fahrt"
@@ -318,6 +362,7 @@ _version: 2
   ru: "Следующий рейс"
   uk: "Наступний рейс"
   pl: "Następny kurs"
+  es: "Siguiente viaje"
 "Sign off":
   nl: "Afmelden"
   de: "Abmelden"
@@ -325,6 +370,7 @@ _version: 2
   ru: "Завершить смену"
   uk: "Завершити зміну"
   pl: "Zakończ służbę"
+  es: "Fin de servicio"
 "That did not work. Try again.":
   nl: "Dat lukte niet. Probeer het nog eens."
   de: "Das hat nicht geklappt. Versuche es noch einmal."
@@ -332,6 +378,7 @@ _version: 2
   ru: "Не получилось. Попробуйте ещё раз."
   uk: "Не вийшло. Спробуйте ще раз."
   pl: "Nie udało się. Spróbuj ponownie."
+  es: "No ha funcionado. Inténtalo de nuevo."
 "The game is busy. Try again in a moment.":
   nl: "Het spel is bezig. Probeer het zo nog eens."
   de: "Das Spiel ist beschäftigt. Versuche es gleich noch einmal."
@@ -339,6 +386,7 @@ _version: 2
   ru: "Игра занята. Попробуйте чуть позже."
   uk: "Гра зайнята. Спробуйте трохи пізніше."
   pl: "Gra jest zajęta. Spróbuj za chwilę."
+  es: "El juego está ocupado. Inténtalo de nuevo en un momento."
 "%{minutes} min":
   nl: "%{minutes} min"
   de: "%{minutes} Min"
@@ -346,6 +394,7 @@ _version: 2
   ru: "%{minutes} мин"
   uk: "%{minutes} хв"
   pl: "%{minutes} min"
+  es: "%{minutes} min"
 
 # The navigator on a phone or tablet (companion::nav, assets/companion/map.js): the map, the
 # IBIS codes after signing on, the report at the end of a trip, this device's own settings
@@ -357,6 +406,7 @@ _version: 2
   ru: "Подключение…"
   uk: "Підключення…"
   pl: "Łączenie…"
+  es: "Conectando…"
 "Pairing…":
   nl: "Koppelen…"
   de: "Koppeln…"
@@ -364,6 +414,7 @@ _version: 2
   ru: "Сопряжение…"
   uk: "Спарювання…"
   pl: "Parowanie…"
+  es: "Emparejando…"
 "Or scan the QR code on the navigator's sign-on page: the camera pairs at once.":
   nl: "Of scan de QR-code op de aanmeldpagina van de navigatie: de camera koppelt meteen."
   de: "Oder scanne den QR-Code auf der Anmeldeseite des Navigators: die Kamera koppelt sofort."
@@ -371,6 +422,7 @@ _version: 2
   ru: "Или отсканируйте QR-код на странице регистрации в навигаторе: камера выполнит сопряжение сразу."
   uk: "Або відскануйте QR-код на сторінці реєстрації в навігаторі: камера спарить одразу."
   pl: "Albo zeskanuj kod QR na stronie logowania w nawigacji: aparat sparuje od razu."
+  es: "O escanea el código QR de la página de toma de servicio del navegador: la cámara empareja al instante."
 "Into the IBIS":
   nl: "In de IBIS"
   de: "In den IBIS"
@@ -378,6 +430,7 @@ _version: 2
   ru: "В IBIS"
   uk: "В IBIS"
   pl: "Do IBIS"
+  es: "Al IBIS"
 "Start driving":
   nl: "Gaan rijden"
   de: "Losfahren"
@@ -385,6 +438,7 @@ _version: 2
   ru: "Поехали"
   uk: "Рушаймо"
   pl: "Ruszamy"
+  es: "Empezar a conducir"
 "Type these into the IBIS":
   nl: "Toets deze in de IBIS in"
   de: "Tippe diese in den IBIS"
@@ -392,6 +446,7 @@ _version: 2
   ru: "Введите это в IBIS"
   uk: "Введіть це в IBIS"
   pl: "Wpisz to do IBIS"
+  es: "Introduce esto en el IBIS"
 "The game is typing it into the IBIS…":
   nl: "Het spel toetst het in de IBIS in…"
   de: "Das Spiel tippt es in den IBIS…"
@@ -399,6 +454,7 @@ _version: 2
   ru: "Игра вводит это в IBIS…"
   uk: "Гра вводить це в IBIS…"
   pl: "Gra wpisuje to do IBIS…"
+  es: "El juego lo está introduciendo en el IBIS…"
 "Typed into the IBIS by the game":
   nl: "Door het spel in de IBIS ingetoetst"
   de: "Vom Spiel in den IBIS getippt"
@@ -406,6 +462,7 @@ _version: 2
   ru: "Введено в IBIS игрой"
   uk: "Введено в IBIS грою"
   pl: "Wpisane do IBIS przez grę"
+  es: "Introducido en el IBIS por el juego"
 "Destination":
   nl: "Bestemming"
   de: "Ziel"
@@ -413,6 +470,7 @@ _version: 2
   ru: "Назначение"
   uk: "Призначення"
   pl: "Cel"
+  es: "Destino"
 "route %{route}":
   nl: "route %{route}"
   de: "Route %{route}"
@@ -420,6 +478,7 @@ _version: 2
   ru: "маршрут %{route}"
   uk: "маршрут %{route}"
   pl: "trasa %{route}"
+  es: "ruta %{route}"
 "no route: by destination":
   nl: "geen route: via de bestemming"
   de: "keine Route: über das Ziel"
@@ -427,6 +486,7 @@ _version: 2
   ru: "без маршрута: по назначению"
   uk: "без маршруту: за призначенням"
   pl: "bez trasy: przez cel"
+  es: "sin ruta: por el destino"
 "typed after the line":
   nl: "na de lijn intoetsen"
   de: "nach der Linie tippen"
@@ -434,6 +494,7 @@ _version: 2
   ru: "вводится после линии"
   uk: "вводиться після лінії"
   pl: "wpisywany po linii"
+  es: "se introduce después de la línea"
 "comes with the route":
   nl: "komt met de route mee"
   de: "kommt mit der Route"
@@ -441,6 +502,7 @@ _version: 2
   ru: "задаётся маршрутом"
   uk: "задається маршрутом"
   pl: "wynika z trasy"
+  es: "viene con la ruta"
 "to":
   nl: "naar"
   de: "nach"
@@ -448,6 +510,7 @@ _version: 2
   ru: "до"
   uk: "до"
   pl: "do"
+  es: "a"
 "Course":
   nl: "Omloop"
   de: "Kurs"
@@ -455,6 +518,7 @@ _version: 2
   ru: "Выход"
   uk: "Вихід"
   pl: "Brygada"
+  es: "Recorrido"
 "Stop no.":
   nl: "Halte nr."
   de: "Halt Nr."
@@ -462,6 +526,7 @@ _version: 2
   ru: "Остановка №"
   uk: "Зупинка №"
   pl: "Przystanek nr"
+  es: "Parada n.º"
 "This bus's depot file has no codes for this trip: set the destination by hand.":
   nl: "Het remisebestand van deze bus heeft geen codes voor deze rit: zet de bestemming met de hand."
   de: "Die Betriebshofdatei dieses Busses hat keine Codes für diese Fahrt: stell das Ziel von Hand ein."
@@ -469,6 +534,7 @@ _version: 2
   ru: "В файле депо этого автобуса нет кодов для этого рейса: установите назначение вручную."
   uk: "У файлі депо цього автобуса немає кодів для цього рейсу: встановіть призначення вручну."
   pl: "Plik zajezdni tego autobusu nie ma kodów dla tego kursu: ustaw cel ręcznie."
+  es: "El archivo de cochera de este autobús no tiene códigos para este viaje: pon el destino a mano."
 "Device":
   nl: "Toestel"
   de: "Gerät"
@@ -476,6 +542,7 @@ _version: 2
   ru: "Устройство"
   uk: "Пристрій"
   pl: "Urządzenie"
+  es: "Dispositivo"
 "Follow the bus":
   nl: "Volg de bus"
   de: "Dem Bus folgen"
@@ -483,6 +550,7 @@ _version: 2
   ru: "Следовать за автобусом"
   uk: "Стежити за автобусом"
   pl: "Śledź autobus"
+  es: "Seguir el autobús"
 "Tilt the map":
   nl: "Kaart kantelen"
   de: "Karte neigen"
@@ -490,6 +558,7 @@ _version: 2
   ru: "Наклонить карту"
   uk: "Нахилити карту"
   pl: "Pochyl mapę"
+  es: "Inclinar el mapa"
 "Lay the map flat":
   nl: "Kaart plat leggen"
   de: "Karte flach legen"
@@ -497,6 +566,7 @@ _version: 2
   ru: "Сделать карту плоской"
   uk: "Зробити карту пласкою"
   pl: "Połóż mapę płasko"
+  es: "Poner el mapa plano"
 "Fewer":
   nl: "Minder"
   de: "Weniger"
@@ -504,6 +574,7 @@ _version: 2
   ru: "Меньше"
   uk: "Менше"
   pl: "Mniej"
+  es: "Menos"
 "This device":
   nl: "Dit toestel"
   de: "Dieses Gerät"
@@ -511,6 +582,7 @@ _version: 2
   ru: "Это устройство"
   uk: "Цей пристрій"
   pl: "To urządzenie"
+  es: "Este dispositivo"
 "Size":
   nl: "Grootte"
   de: "Größe"
@@ -518,6 +590,7 @@ _version: 2
   ru: "Размер"
   uk: "Розмір"
   pl: "Rozmiar"
+  es: "Tamaño"
 "Smaller":
   nl: "Kleiner"
   de: "Kleiner"
@@ -525,6 +598,7 @@ _version: 2
   ru: "Мельче"
   uk: "Дрібніше"
   pl: "Mniejsze"
+  es: "Más pequeño"
 "Larger":
   nl: "Groter"
   de: "Größer"
@@ -532,6 +606,7 @@ _version: 2
   ru: "Крупнее"
   uk: "Більше"
   pl: "Większe"
+  es: "Más grande"
 "As in the game":
   nl: "Zoals in het spel"
   de: "Wie im Spiel"
@@ -539,6 +614,7 @@ _version: 2
   ru: "Как в игре"
   uk: "Як у грі"
   pl: "Jak w grze"
+  es: "Como en el juego"
 "Tilted (3D)":
   nl: "Gekanteld (3D)"
   de: "Geneigt (3D)"
@@ -546,6 +622,7 @@ _version: 2
   ru: "Наклонная (3D)"
   uk: "Нахилена (3D)"
   pl: "Pochylona (3D)"
+  es: "Inclinado (3D)"
 "Flat (2D)":
   nl: "Plat (2D)"
   de: "Flach (2D)"
@@ -553,6 +630,7 @@ _version: 2
   ru: "Плоская (2D)"
   uk: "Пласка (2D)"
   pl: "Płaska (2D)"
+  es: "Plano (2D)"
 "Pair another device":
   nl: "Nog een toestel koppelen"
   de: "Weiteres Gerät koppeln"
@@ -560,6 +638,7 @@ _version: 2
   ru: "Подключить ещё одно устройство"
   uk: "Спарити ще один пристрій"
   pl: "Sparuj kolejne urządzenie"
+  es: "Emparejar otro dispositivo"
 "Scan this code with the other phone or tablet: it opens this page and pairs at once.":
   nl: "Scan deze code met de andere telefoon of tablet: die opent deze pagina en is meteen gekoppeld."
   de: "Scanne diesen Code mit dem anderen Handy oder Tablet: es öffnet diese Seite und ist sofort gekoppelt."
@@ -567,6 +646,7 @@ _version: 2
   ru: "Отсканируйте этот код другим телефоном или планшетом: он откроет эту страницу и сразу выполнит сопряжение."
   uk: "Відскануйте цей код іншим телефоном чи планшетом: він відкриє цю сторінку й одразу спариться."
   pl: "Zeskanuj ten kod drugim telefonem lub tabletem: otworzy tę stronę i od razu się sparuje."
+  es: "Escanea este código con el otro teléfono o tableta: abre esta página y se empareja al instante."
 "New QR code":
   nl: "Nieuwe QR-code"
   de: "Neuer QR-Code"
@@ -574,6 +654,7 @@ _version: 2
   ru: "Новый QR-код"
   uk: "Новий QR-код"
   pl: "Nowy kod QR"
+  es: "Nuevo código QR"
 "The game has no network address for the QR code yet.":
   nl: "Het spel heeft nog geen netwerkadres voor de QR-code."
   de: "Das Spiel hat noch keine Netzwerkadresse für den QR-Code."
@@ -581,6 +662,7 @@ _version: 2
   ru: "У игры пока нет сетевого адреса для QR-кода."
   uk: "У гри ще немає мережевої адреси для QR-коду."
   pl: "Gra nie ma jeszcze adresu sieciowego dla kodu QR."
+  es: "El juego aún no tiene una dirección de red para el código QR."
 "or enter the pairing code":
   nl: "of toets de koppelcode in"
   de: "oder gib den Kopplungscode ein"
@@ -588,6 +670,7 @@ _version: 2
   ru: "или введите код сопряжения"
   uk: "або введіть код спарювання"
   pl: "albo wpisz kod parowania"
+  es: "o introduce el código de emparejamiento"
 "Disconnect this device":
   nl: "Dit toestel ontkoppelen"
   de: "Dieses Gerät trennen"
@@ -595,6 +678,7 @@ _version: 2
   ru: "Отключить это устройство"
   uk: "Від’єднати цей пристрій"
   pl: "Odłącz to urządzenie"
+  es: "Desconectar este dispositivo"
 "Disconnect this device? It has to be paired again.":
   nl: "Dit toestel ontkoppelen? Daarna moet je het opnieuw koppelen."
   de: "Dieses Gerät trennen? Danach muss es neu gekoppelt werden."
@@ -602,6 +686,7 @@ _version: 2
   ru: "Отключить это устройство? Потом его придётся подключить заново."
   uk: "Від’єднати цей пристрій? Потім його доведеться спарити знову."
   pl: "Odłączyć to urządzenie? Potem trzeba będzie sparować je ponownie."
+  es: "¿Desconectar este dispositivo? Habrá que emparejarlo de nuevo."
 "Trip finished":
   nl: "Rit uitgereden"
   de: "Fahrt beendet"
@@ -609,6 +694,7 @@ _version: 2
   ru: "Рейс завершён"
   uk: "Рейс завершено"
   pl: "Kurs zakończony"
+  es: "Viaje terminado"
 "at the last stop":
   nl: "bij de laatste halte"
   de: "an der letzten Haltestelle"
@@ -616,6 +702,7 @@ _version: 2
   ru: "на последней остановке"
   uk: "на останній зупинці"
   pl: "na ostatnim przystanku"
+  es: "en la última parada"
 "too early":
   nl: "te vroeg"
   de: "zu früh"
@@ -623,6 +710,7 @@ _version: 2
   ru: "слишком рано"
   uk: "зарано"
   pl: "za wcześnie"
+  es: "demasiado pronto"
 "too late":
   nl: "te laat"
   de: "zu spät"
@@ -630,6 +718,7 @@ _version: 2
   ru: "слишком поздно"
   uk: "запізно"
   pl: "za późno"
+  es: "demasiado tarde"
 "%{n} stops served. Saved in your personnel file with the session.":
   nl: "%{n} haltes bediend. Met de sessie bewaard in je personeelsdossier."
   de: "%{n} Haltestellen bedient. Mit der Sitzung in deiner Personalakte gespeichert."
@@ -637,6 +726,7 @@ _version: 2
   ru: "Обслужено остановок: %{n}. Сохранено в вашем личном деле вместе с сеансом."
   uk: "Обслуговано зупинок: %{n}. Збережено у вашій особовій справі разом із сеансом."
   pl: "Obsłużone przystanki: %{n}. Zapisano w Twoich aktach osobowych razem z sesją."
+  es: "%{n} paradas atendidas. Guardado en tu expediente personal con la sesión."
 "OK":
   nl: "OK"
   de: "OK"
@@ -644,6 +734,7 @@ _version: 2
   ru: "ОК"
   uk: "ОК"
   pl: "OK"
+  es: "Aceptar"
 "Diversion":
   nl: "Omleiding"
   de: "Umleitung"
@@ -651,6 +742,7 @@ _version: 2
   ru: "Объезд"
   uk: "Об’їзд"
   pl: "Objazd"
+  es: "Desvío"
 "Via %{n}":
   nl: "Via %{n}"
   de: "Via %{n}"
@@ -658,6 +750,7 @@ _version: 2
   ru: "Точка %{n}"
   uk: "Точка %{n}"
   pl: "Punkt %{n}"
+  es: "Vía %{n}"
 "Via %{n} reached":
   nl: "Via %{n} bereikt"
   de: "Via %{n} erreicht"
@@ -665,6 +758,7 @@ _version: 2
   ru: "Точка %{n} пройдена"
   uk: "Точку %{n} пройдено"
   pl: "Punkt %{n} osiągnięty"
+  es: "Vía %{n} alcanzada"
 "You have arrived":
   nl: "Je bent op je bestemming"
   de: "Ziel erreicht"
@@ -672,6 +766,7 @@ _version: 2
   ru: "Вы прибыли"
   uk: "Ви прибули"
   pl: "Jesteś na miejscu"
+  es: "Has llegado"
 "Phone & tablet ready: the address and pairing code are in the navigator (hidden while streaming)":
   nl: "Telefoon & tablet klaar: adres en koppelcode staan in de navigator (verborgen tijdens het streamen)"
   de: "Handy & Tablet bereit: Adresse und Kopplungscode stehen im Navi (beim Streamen verborgen)"
@@ -679,6 +774,7 @@ _version: 2
   ru: "Телефон и планшет готовы: адрес и код сопряжения — в навигаторе (скрыты во время трансляции)"
   uk: "Телефон і планшет готові: адреса й код спряження — у навігаторі (приховані під час трансляції)"
   pl: "Telefon i tablet gotowe: adres i kod parowania są w nawigacji (ukryte podczas streamowania)"
+  es: "Teléfono y tableta listos: la dirección y el código de emparejamiento están en el navegador (ocultos durante la retransmisión)"
 "Phone: address and pairing code hidden (Show them in the navigator)":
   nl: "Telefoon: adres en koppelcode verborgen (toon ze in de navigator)"
   de: "Handy: Adresse und Kopplungscode verborgen (im Navi anzeigen)"
@@ -686,6 +782,7 @@ _version: 2
   ru: "Телефон: адрес и код сопряжения скрыты (показать в навигаторе)"
   uk: "Телефон: адресу й код спряження приховано (показати в навігаторі)"
   pl: "Telefon: adres i kod parowania ukryte (pokaż je w nawigacji)"
+  es: "Teléfono: dirección y código de emparejamiento ocultos (muéstralos en el navegador)"
 "Tap the keys in the picture as in the cab.":
   nl: "Tik op de toetsen in het beeld, net als in de cabine."
   de: "Tippe auf die Tasten im Bild wie im Führerstand."
@@ -693,6 +790,7 @@ _version: 2
   ru: "Нажимайте клавиши на картинке, как в кабине."
   uk: "Натискайте клавіші на зображенні, як у кабіні."
   pl: "Naciskaj klawisze na obrazie jak w kabinie."
+  es: "Toca las teclas de la imagen como en la cabina."
 "Too many tries. Wait a few minutes.":
   nl: "Te veel pogingen. Wacht een paar minuten."
   de: "Zu viele Versuche. Warte ein paar Minuten."
@@ -700,6 +798,7 @@ _version: 2
   ru: "Слишком много попыток. Подождите несколько минут."
   uk: "Забагато спроб. Зачекайте кілька хвилин."
   pl: "Zbyt wiele prób. Odczekaj kilka minut."
+  es: "Demasiados intentos. Espera unos minutos."
 "Hidden while streaming":
   nl: "Verborgen tijdens het streamen"
   de: "Beim Streamen verborgen"
@@ -707,6 +806,7 @@ _version: 2
   ru: "Скрыто во время трансляции"
   uk: "Приховано під час трансляції"
   pl: "Ukryte podczas streamowania"
+  es: "Oculto durante la retransmisión"
 "Show for 30 seconds":
   nl: "30 seconden tonen"
   de: "30 Sekunden anzeigen"
@@ -714,6 +814,7 @@ _version: 2
   ru: "Показать на 30 секунд"
   uk: "Показати на 30 секунд"
   pl: "Pokaż przez 30 sekund"
+  es: "Mostrar durante 30 segundos"
 "Company":
   nl: "Bedrijf"
   de: "Betrieb"
@@ -721,6 +822,7 @@ _version: 2
   ru: "Предприятие"
   uk: "Підприємство"
   pl: "Firma"
+  es: "Empresa"
 "Sent: the launcher carries it out in a moment.":
   nl: "Verstuurd: de launcher voert het zo uit."
   de: "Gesendet: der Launcher führt es gleich aus."
@@ -728,6 +830,7 @@ _version: 2
   ru: "Отправлено: лаунчер выполнит это через мгновение."
   uk: "Надіслано: лаунчер виконає це за мить."
   pl: "Wysłano: launcher wykona to za chwilę."
+  es: "Enviado: el lanzador lo ejecutará en un momento."
 "The order was not understood.":
   nl: "De opdracht werd niet begrepen."
   de: "Der Auftrag wurde nicht verstanden."
@@ -735,6 +838,7 @@ _version: 2
   ru: "Поручение не понято."
   uk: "Доручення не зрозуміло."
   pl: "Polecenie nie zostało zrozumiane."
+  es: "No se ha entendido la orden."
 "The company runs no line yet.":
   nl: "Het bedrijf rijdt nog geen lijn."
   de: "Das Unternehmen fährt noch keine Linie."
@@ -742,6 +846,7 @@ _version: 2
   ru: "Предприятие пока не обслуживает линий."
   uk: "Підприємство ще не обслуговує ліній."
   pl: "Firma nie obsługuje jeszcze żadnej linii."
+  es: "La empresa aún no opera ninguna línea."
 "The company has no bus yet.":
   nl: "Het bedrijf heeft nog geen bus."
   de: "Das Unternehmen hat noch keinen Bus."
@@ -749,6 +854,7 @@ _version: 2
   ru: "У предприятия пока нет автобусов."
   uk: "У підприємства ще немає автобусів."
   pl: "Firma nie ma jeszcze autobusu."
+  es: "La empresa aún no tiene ningún autobús."
 "The company has no driver yet.":
   nl: "Het bedrijf heeft nog geen chauffeur."
   de: "Das Unternehmen hat noch keinen Fahrer."
@@ -756,6 +862,7 @@ _version: 2
   ru: "У предприятия пока нет водителей."
   uk: "У підприємства ще немає водіїв."
   pl: "Firma nie ma jeszcze kierowcy."
+  es: "La empresa aún no tiene ningún conductor."
 "%{n} tours today have no bus or no driver.":
   nl: "%{n} omlopen hebben vandaag geen bus of geen chauffeur."
   de: "%{n} Umläufe haben heute keinen Bus oder keinen Fahrer."
@@ -763,6 +870,7 @@ _version: 2
   ru: "У %{n} оборотов сегодня нет автобуса или водителя."
   uk: "У %{n} оборотів сьогодні немає автобуса або водія."
   pl: "%{n} obiegów nie ma dziś autobusu albo kierowcy."
+  es: "%{n} recorridos de hoy no tienen autobús o conductor."
 "Less cash than a month of wages.":
   nl: "Minder in kas dan een maand lonen."
   de: "Weniger in der Kasse als ein Monat Löhne."
@@ -770,6 +878,7 @@ _version: 2
   ru: "В кассе меньше месячной зарплаты."
   uk: "У касі менше за місячну зарплату."
   pl: "W kasie mniej niż miesiąc wypłat."
+  es: "Menos dinero en caja que un mes de salarios."
 "%{n} buses are due for their service.":
   nl: "%{n} bussen moeten naar onderhoud."
   de: "%{n} Busse sind zur Wartung fällig."
@@ -777,6 +886,7 @@ _version: 2
   ru: "%{n} автобусам пора на ТО."
   uk: "%{n} автобусам час на ТО."
   pl: "%{n} autobusów wymaga przeglądu."
+  es: "%{n} autobuses tienen pendiente su mantenimiento."
 "%{n} people are unhappy.":
   nl: "%{n} mensen zijn ontevreden."
   de: "%{n} Personen sind unzufrieden."
@@ -784,6 +894,7 @@ _version: 2
   ru: "%{n} человек недовольны."
   uk: "%{n} осіб незадоволені."
   pl: "%{n} osób jest niezadowolonych."
+  es: "%{n} personas están descontentas."
 "Bus %{n} goes back on %{date}.":
   nl: "Bus %{n} gaat terug op %{date}."
   de: "Bus %{n} geht am %{date} zurück."
@@ -791,6 +902,7 @@ _version: 2
   ru: "Автобус %{n} возвращается %{date}."
   uk: "Автобус %{n} повертається %{date}."
   pl: "Autobus %{n} wraca %{date}."
+  es: "El autobús %{n} se devuelve el %{date}."
 "The company cannot be read now.":
   nl: "Het bedrijf is nu niet te lezen."
   de: "Das Unternehmen lässt sich gerade nicht lesen."
@@ -798,6 +910,7 @@ _version: 2
   ru: "Сейчас не удаётся прочитать предприятие."
   uk: "Зараз не вдається прочитати підприємство."
   pl: "Nie można teraz odczytać firmy."
+  es: "Ahora mismo no se puede leer la empresa."
 "No company is open in the launcher.":
   nl: "Er is geen bedrijf open in de launcher."
   de: "Im Launcher ist kein Unternehmen geöffnet."
@@ -805,6 +918,7 @@ _version: 2
   ru: "В лаунчере не открыто предприятие."
   uk: "У лаунчері не відкрито підприємство."
   pl: "W launcherze nie jest otwarta żadna firma."
+  es: "No hay ninguna empresa abierta en el lanzador."
 "Company day":
   nl: "Bedrijfsdag"
   de: "Betriebstag"
@@ -812,6 +926,7 @@ _version: 2
   ru: "День предприятия"
   uk: "День підприємства"
   pl: "Dzień firmy"
+  es: "Día de la empresa"
 "Cash":
   nl: "Kas"
   de: "Kasse"
@@ -819,6 +934,7 @@ _version: 2
   ru: "Касса"
   uk: "Каса"
   pl: "Kasa"
+  es: "Caja"
 "This month":
   nl: "Deze maand"
   de: "Dieser Monat"
@@ -826,6 +942,7 @@ _version: 2
   ru: "Этот месяц"
   uk: "Цей місяць"
   pl: "Ten miesiąc"
+  es: "Este mes"
 "Reputation":
   nl: "Reputatie"
   de: "Ruf"
@@ -833,6 +950,7 @@ _version: 2
   ru: "Репутация"
   uk: "Репутація"
   pl: "Reputacja"
+  es: "Reputación"
 "Today":
   nl: "Vandaag"
   de: "Heute"
@@ -840,6 +958,7 @@ _version: 2
   ru: "Сегодня"
   uk: "Сьогодні"
   pl: "Dziś"
+  es: "Hoy"
 "%{c} of %{n} tours covered":
   nl: "%{c} van %{n} omlopen gedekt"
   de: "%{c} von %{n} Umläufen besetzt"
@@ -847,6 +966,7 @@ _version: 2
   ru: "%{c} из %{n} оборотов обеспечены"
   uk: "%{c} з %{n} оборотів забезпечено"
   pl: "%{c} z %{n} obiegów obsadzonych"
+  es: "%{c} de %{n} recorridos cubiertos"
 "The timetable of the day cannot be read.":
   nl: "De dienstregeling van de dag is niet te lezen."
   de: "Der Fahrplan des Tages lässt sich nicht lesen."
@@ -854,6 +974,7 @@ _version: 2
   ru: "Не удаётся прочитать расписание дня."
   uk: "Не вдається прочитати розклад дня."
   pl: "Nie można odczytać rozkładu dnia."
+  es: "No se puede leer el horario del día."
 "no bus":
   nl: "geen bus"
   de: "kein Bus"
@@ -861,6 +982,7 @@ _version: 2
   ru: "нет автобуса"
   uk: "немає автобуса"
   pl: "brak autobusu"
+  es: "sin autobús"
 "no driver":
   nl: "geen chauffeur"
   de: "kein Fahrer"
@@ -868,6 +990,7 @@ _version: 2
   ru: "нет водителя"
   uk: "немає водія"
   pl: "brak kierowcy"
+  es: "sin conductor"
 "in the workshop until %{date}":
   nl: "in de werkplaats tot %{date}"
   de: "in der Werkstatt bis %{date}"
@@ -875,6 +998,7 @@ _version: 2
   ru: "в мастерской до %{date}"
   uk: "у майстерні до %{date}"
   pl: "w warsztacie do %{date}"
+  es: "en el taller hasta el %{date}"
 "Finances":
   nl: "Financiën"
   de: "Finanzen"
@@ -882,6 +1006,7 @@ _version: 2
   ru: "Финансы"
   uk: "Фінанси"
   pl: "Finanse"
+  es: "Finanzas"
 "No month closed yet.":
   nl: "Nog geen maand afgesloten."
   de: "Noch kein Monat abgeschlossen."
@@ -889,6 +1014,7 @@ _version: 2
   ru: "Ни один месяц ещё не закрыт."
   uk: "Жоден місяць ще не закрито."
   pl: "Żaden miesiąc nie jest jeszcze zamknięty."
+  es: "Aún no se ha cerrado ningún mes."
 "Income":
   nl: "Inkomsten"
   de: "Einnahmen"
@@ -896,6 +1022,7 @@ _version: 2
   ru: "Доходы"
   uk: "Доходи"
   pl: "Przychody"
+  es: "Ingresos"
 "Expenses":
   nl: "Uitgaven"
   de: "Ausgaben"
@@ -903,6 +1030,7 @@ _version: 2
   ru: "Расходы"
   uk: "Витрати"
   pl: "Wydatki"
+  es: "Gastos"
 "Debt":
   nl: "Schuld"
   de: "Schulden"
@@ -910,6 +1038,7 @@ _version: 2
   ru: "Долг"
   uk: "Борг"
   pl: "Dług"
+  es: "Deuda"
 "Depot":
   nl: "Remise"
   de: "Betriebshof"
@@ -917,6 +1046,7 @@ _version: 2
   ru: "Депо"
   uk: "Депо"
   pl: "Zajezdnia"
+  es: "Cochera"
 "%{b} buses on %{s} spaces · cleanliness %{c} % · upkeep %{u} a month":
   nl: "%{b} bussen op %{s} plaatsen · netheid %{c} % · onderhoud %{u} per maand"
   de: "%{b} Busse auf %{s} Plätzen · Sauberkeit %{c} % · Unterhalt %{u} im Monat"
@@ -924,6 +1054,7 @@ _version: 2
   ru: "%{b} автобусов на %{s} местах · чистота %{c} % · содержание %{u} в месяц"
   uk: "%{b} автобусів на %{s} місцях · чистота %{c} % · утримання %{u} на місяць"
   pl: "%{b} autobusów na %{s} miejscach · czystość %{c} % · utrzymanie %{u} miesięcznie"
+  es: "%{b} autobuses en %{s} plazas · limpieza %{c} % · mantenimiento %{u} al mes"
 "ready %{date}":
   nl: "klaar %{date}"
   de: "fertig %{date}"
@@ -931,6 +1062,7 @@ _version: 2
   ru: "готово %{date}"
   uk: "готово %{date}"
   pl: "gotowe %{date}"
+  es: "listo el %{date}"
 "complete":
   nl: "volledig"
   de: "vollständig"
@@ -938,6 +1070,7 @@ _version: 2
   ru: "полностью"
   uk: "повністю"
   pl: "kompletne"
+  es: "completo"
 "level %{n} of %{m}":
   nl: "niveau %{n} van %{m}"
   de: "Stufe %{n} von %{m}"
@@ -945,6 +1078,7 @@ _version: 2
   ru: "уровень %{n} из %{m}"
   uk: "рівень %{n} з %{m}"
   pl: "poziom %{n} z %{m}"
+  es: "nivel %{n} de %{m}"
 "%{d} days of work":
   nl: "%{d} dagen werk"
   de: "%{d} Tage Arbeit"
@@ -952,6 +1086,7 @@ _version: 2
   ru: "%{d} дн. работ"
   uk: "%{d} дн. робіт"
   pl: "%{d} dni prac"
+  es: "%{d} días de trabajo"
 "%{n} orders wait for the launcher.":
   nl: "%{n} opdrachten wachten op de launcher."
   de: "%{n} Aufträge warten auf den Launcher."
@@ -959,6 +1094,7 @@ _version: 2
   ru: "%{n} поручений ждут лаунчер."
   uk: "%{n} доручень чекають на лаунчер."
   pl: "%{n} poleceń czeka na launcher."
+  es: "%{n} órdenes esperan al lanzador."
 "Workshop":
   nl: "Werkplaats"
   de: "Werkstatt"
@@ -966,6 +1102,7 @@ _version: 2
   ru: "Мастерская"
   uk: "Майстерня"
   pl: "Warsztat"
+  es: "Taller"
 "until %{date}":
   nl: "tot %{date}"
   de: "bis %{date}"
@@ -973,6 +1110,7 @@ _version: 2
   ru: "до %{date}"
   uk: "до %{date}"
   pl: "do %{date}"
+  es: "hasta el %{date}"
 "waiting for a bay":
   nl: "wacht op een werkplek"
   de: "wartet auf einen Stand"
@@ -980,6 +1118,7 @@ _version: 2
   ru: "ждёт поста"
   uk: "чекає посту"
   pl: "czeka na stanowisko"
+  es: "esperando un foso"
 "No bus is in the workshop.":
   nl: "Er staat geen bus in de werkplaats."
   de: "Kein Bus ist in der Werkstatt."
@@ -987,6 +1126,7 @@ _version: 2
   ru: "В мастерской нет автобусов."
   uk: "У майстерні немає автобусів."
   pl: "Żaden autobus nie jest w warsztacie."
+  es: "No hay ningún autobús en el taller."
 "service due":
   nl: "onderhoud nodig"
   de: "Wartung fällig"
@@ -994,6 +1134,7 @@ _version: 2
   ru: "пора на ТО"
   uk: "час на ТО"
   pl: "przegląd wymagany"
+  es: "mantenimiento pendiente"
 "condition %{n} %":
   nl: "staat %{n} %"
   de: "Zustand %{n} %"
@@ -1001,6 +1142,7 @@ _version: 2
   ru: "состояние %{n} %"
   uk: "стан %{n} %"
   pl: "stan %{n} %"
+  es: "estado %{n} %"
 "The company is the launcher’s: what you order here is carried out there.":
   nl: "Het bedrijf hoort bij de launcher: wat je hier opdraagt, voert die uit."
   de: "Das Unternehmen gehört zum Launcher: was du hier beauftragst, führt er aus."
@@ -1008,6 +1150,7 @@ _version: 2
   ru: "Предприятие ведёт лаунчер: то, что вы поручите здесь, выполняется там."
   uk: "Підприємство веде лаунчер: те, що ви доручите тут, виконується там."
   pl: "Firma należy do launchera: to, co tu zlecisz, zostanie tam wykonane."
+  es: "La empresa es la del lanzador: lo que ordenes aquí se ejecuta allí."
 "Parking spaces":
   nl: "Parkeerplaatsen"
   de: "Abstellplätze"
@@ -1015,6 +1158,7 @@ _version: 2
   ru: "Места стоянки"
   uk: "Місця стоянки"
   pl: "Miejsca postojowe"
+  es: "Plazas de aparcamiento"
 "Workshop bays":
   nl: "Werkplaatsplekken"
   de: "Werkstattstände"
@@ -1022,6 +1166,7 @@ _version: 2
   ru: "Посты мастерской"
   uk: "Пости майстерні"
   pl: "Stanowiska warsztatowe"
+  es: "Puestos de taller"
 "Washing bay":
   nl: "Wasstraat"
   de: "Waschanlage"
@@ -1029,6 +1174,7 @@ _version: 2
   ru: "Мойка"
   uk: "Мийка"
   pl: "Myjnia"
+  es: "Túnel de lavado"
 "Diesel station":
   nl: "Dieselpomp"
   de: "Dieseltankstelle"
@@ -1036,6 +1182,7 @@ _version: 2
   ru: "Дизельная заправка"
   uk: "Дизельна заправка"
   pl: "Stacja diesla"
+  es: "Surtidor de gasóleo"
 "Charging points":
   nl: "Laadpunten"
   de: "Ladepunkte"
@@ -1043,6 +1190,7 @@ _version: 2
   ru: "Зарядные пункты"
   uk: "Зарядні пункти"
   pl: "Punkty ładowania"
+  es: "Puntos de carga"
 "Offices and rest rooms":
   nl: "Kantoren en kantine"
   de: "Büros und Aufenthaltsräume"
@@ -1050,6 +1198,7 @@ _version: 2
   ru: "Офисы и комнаты отдыха"
   uk: "Офіси та кімнати відпочинку"
   pl: "Biura i pokoje socjalne"
+  es: "Oficinas y salas de descanso"
 "Service":
   nl: "Onderhoudsbeurt"
   de: "Wartung"
@@ -1057,6 +1206,7 @@ _version: 2
   ru: "ТО"
   uk: "ТО"
   pl: "Przegląd"
+  es: "Mantenimiento"
 "Repair":
   nl: "Reparatie"
   de: "Reparatur"
@@ -1064,6 +1214,7 @@ _version: 2
   ru: "Ремонт"
   uk: "Ремонт"
   pl: "Naprawa"
+  es: "Reparar"
 "Overhaul":
   nl: "Revisie"
   de: "Hauptuntersuchung"
@@ -1071,6 +1222,7 @@ _version: 2
   ru: "Капремонт"
   uk: "Капремонт"
   pl: "Remont"
+  es: "Revisión general"
 "This is being built already.":
   nl: "Hier wordt al aan gebouwd."
   de: "Das wird schon gebaut."
@@ -1078,6 +1230,7 @@ _version: 2
   ru: "Это уже строится."
   uk: "Це вже будується."
   pl: "To jest już w budowie."
+  es: "Esto ya se está construyendo."
 "This is as big as it gets.":
   nl: "Groter kan het niet."
   de: "Größer geht es nicht."
@@ -1085,6 +1238,7 @@ _version: 2
   ru: "Больше уже некуда."
   uk: "Більше вже нікуди."
   pl: "Większe być nie może."
+  es: "No se puede ampliar más."
 "Not enough cash.":
   nl: "Niet genoeg in kas."
   de: "Nicht genug in der Kasse."
@@ -1092,6 +1246,7 @@ _version: 2
   ru: "Недостаточно денег в кассе."
   uk: "Недостатньо грошей у касі."
   pl: "Za mało w kasie."
+  es: "No hay suficiente caja."
 "Your company cannot build this yet.":
   nl: "Je bedrijf kan dit nog niet bouwen."
   de: "Dein Unternehmen kann das noch nicht bauen."
@@ -1099,6 +1254,7 @@ _version: 2
   ru: "Ваше предприятие пока не может это построить."
   uk: "Ваше підприємство ще не може це збудувати."
   pl: "Twoja firma nie może jeszcze tego zbudować."
+  es: "Tu empresa aún no puede construir esto."
 "This bus is not in the fleet.":
   nl: "Deze bus hoort niet bij het wagenpark."
   de: "Dieser Bus gehört nicht zur Flotte."
@@ -1106,6 +1262,7 @@ _version: 2
   ru: "Этого автобуса нет в парке."
   uk: "Цього автобуса немає в парку."
   pl: "Tego autobusu nie ma we flocie."
+  es: "Este autobús no está en la flota."
 "The workshop has a job for this bus already.":
   nl: "De werkplaats heeft al een opdracht voor deze bus."
   de: "Die Werkstatt hat schon einen Auftrag für diesen Bus."
@@ -1113,6 +1270,7 @@ _version: 2
   ru: "У мастерской уже есть работа для этого автобуса."
   uk: "Майстерня вже має роботу для цього автобуса."
   pl: "Warsztat ma już zlecenie dla tego autobusu."
+  es: "El taller ya tiene un trabajo para este autobús."
 "Too many orders are waiting for the launcher.":
   nl: "Er wachten te veel opdrachten op de launcher."
   de: "Zu viele Aufträge warten auf den Launcher."
@@ -1120,6 +1278,7 @@ _version: 2
   ru: "Слишком много поручений ждут лаунчер."
   uk: "Забагато доручень чекають на лаунчер."
   pl: "Zbyt wiele poleceń czeka na launcher."
+  es: "Hay demasiadas órdenes esperando al lanzador."
 "The order could not be saved.":
   nl: "De opdracht kon niet worden bewaard."
   de: "Der Auftrag ließ sich nicht speichern."
@@ -1127,3 +1286,4 @@ _version: 2
   ru: "Не удалось сохранить поручение."
   uk: "Не вдалося зберегти доручення."
   pl: "Nie udało się zapisać polecenia."
+  es: "No se ha podido guardar la orden."

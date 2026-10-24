@@ -6,6 +6,7 @@ _version: 2
   fr: "International (mélangé)"
   nl: "Internationaal (gemengd)"
   pl: "Międzynarodowy (mieszany)"
+  es: "Internacional (mezcla)"
   ru: "Международный (смешанный)"
   uk: "Міжнародний (змішаний)"
 "Netherlands":
@@ -13,6 +14,7 @@ _version: 2
   fr: "Pays-Bas"
   nl: "Nederland"
   pl: "Holandia"
+  es: "Países Bajos"
   ru: "Нидерланды"
   uk: "Нідерланди"
 "Belgium":
@@ -20,6 +22,7 @@ _version: 2
   fr: "Belgique"
   nl: "België"
   pl: "Belgia"
+  es: "Bélgica"
   ru: "Бельгия"
   uk: "Бельгія"
 "Germany":
@@ -27,6 +30,7 @@ _version: 2
   fr: "Allemagne"
   nl: "Duitsland"
   pl: "Niemcy"
+  es: "Alemania"
   ru: "Германия"
   uk: "Німеччина"
 "Austria":
@@ -34,6 +38,7 @@ _version: 2
   fr: "Autriche"
   nl: "Oostenrijk"
   pl: "Austria"
+  es: "Austria"
   ru: "Австрия"
   uk: "Австрія"
 "Switzerland":
@@ -41,6 +46,7 @@ _version: 2
   fr: "Suisse"
   nl: "Zwitserland"
   pl: "Szwajcaria"
+  es: "Suiza"
   ru: "Швейцария"
   uk: "Швейцарія"
 "United Kingdom":
@@ -48,6 +54,7 @@ _version: 2
   fr: "Royaume-Uni"
   nl: "Verenigd Koninkrijk"
   pl: "Wielka Brytania"
+  es: "Reino Unido"
   ru: "Великобритания"
   uk: "Велика Британія"
 "Ireland":
@@ -55,6 +62,7 @@ _version: 2
   fr: "Irlande"
   nl: "Ierland"
   pl: "Irlandia"
+  es: "Irlanda"
   ru: "Ирландия"
   uk: "Ірландія"
 "France":
@@ -62,6 +70,7 @@ _version: 2
   fr: "France"
   nl: "Frankrijk"
   pl: "Francja"
+  es: "Francia"
   ru: "Франция"
   uk: "Франція"
 "Poland":
@@ -69,6 +78,7 @@ _version: 2
   fr: "Pologne"
   nl: "Polen"
   pl: "Polska"
+  es: "Polonia"
   ru: "Польша"
   uk: "Польща"
 "Czechia":
@@ -76,6 +86,7 @@ _version: 2
   fr: "Tchéquie"
   nl: "Tsjechië"
   pl: "Czechy"
+  es: "Chequia"
   ru: "Чехия"
   uk: "Чехія"
 "Slovakia":
@@ -83,6 +94,7 @@ _version: 2
   fr: "Slovaquie"
   nl: "Slowakije"
   pl: "Słowacja"
+  es: "Eslovaquia"
   ru: "Словакия"
   uk: "Словаччина"
 "Hungary":
@@ -90,6 +102,7 @@ _version: 2
   fr: "Hongrie"
   nl: "Hongarije"
   pl: "Węgry"
+  es: "Hungría"
   ru: "Венгрия"
   uk: "Угорщина"
 "Romania":
@@ -97,6 +110,7 @@ _version: 2
   fr: "Roumanie"
   nl: "Roemenië"
   pl: "Rumunia"
+  es: "Rumanía"
   ru: "Румыния"
   uk: "Румунія"
 "Ukraine":
@@ -104,6 +118,7 @@ _version: 2
   fr: "Ukraine"
   nl: "Oekraïne"
   pl: "Ukraina"
+  es: "Ucrania"
   ru: "Украина"
   uk: "Україна"
 "Russia":
@@ -111,6 +126,7 @@ _version: 2
   fr: "Russie"
   nl: "Rusland"
   pl: "Rosja"
+  es: "Rusia"
   ru: "Россия"
   uk: "Росія"
 "Italy":
@@ -118,6 +134,7 @@ _version: 2
   fr: "Italie"
   nl: "Italië"
   pl: "Włochy"
+  es: "Italia"
   ru: "Италия"
   uk: "Італія"
 "Spain":
@@ -125,6 +142,7 @@ _version: 2
   fr: "Espagne"
   nl: "Spanje"
   pl: "Hiszpania"
+  es: "España"
   ru: "Испания"
   uk: "Іспанія"
 "Portugal":
@@ -132,6 +150,7 @@ _version: 2
   fr: "Portugal"
   nl: "Portugal"
   pl: "Portugalia"
+  es: "Portugal"
   ru: "Португалия"
   uk: "Португалія"
 "Denmark":
@@ -139,6 +158,7 @@ _version: 2
   fr: "Danemark"
   nl: "Denemarken"
   pl: "Dania"
+  es: "Dinamarca"
   ru: "Дания"
   uk: "Данія"
 "Sweden":
@@ -146,6 +166,7 @@ _version: 2
   fr: "Suède"
   nl: "Zweden"
   pl: "Szwecja"
+  es: "Suecia"
   ru: "Швеция"
   uk: "Швеція"
 "Norway":
@@ -153,6 +174,7 @@ _version: 2
   fr: "Norvège"
   nl: "Noorwegen"
   pl: "Norwegia"
+  es: "Noruega"
   ru: "Норвегия"
   uk: "Норвегія"
 "Finland":
@@ -160,6 +182,7 @@ _version: 2
   fr: "Finlande"
   nl: "Finland"
   pl: "Finlandia"
+  es: "Finlandia"
   ru: "Финляндия"
   uk: "Фінляндія"
 "United States":
@@ -167,6 +190,7 @@ _version: 2
   fr: "États-Unis"
   nl: "Verenigde Staten"
   pl: "Stany Zjednoczone"
+  es: "Estados Unidos"
   ru: "США"
   uk: "США"
 "Canada":
@@ -174,6 +198,7 @@ _version: 2
   fr: "Canada"
   nl: "Canada"
   pl: "Kanada"
+  es: "Canadá"
   ru: "Канада"
   uk: "Канада"
 "Australia":
@@ -181,6 +206,7 @@ _version: 2
   fr: "Australie"
   nl: "Australië"
   pl: "Australia"
+  es: "Australia"
   ru: "Австралия"
   uk: "Австралія"
 "Turkey":
@@ -188,6 +214,7 @@ _version: 2
   fr: "Turquie"
   nl: "Turkije"
   pl: "Turcja"
+  es: "Turquía"
   ru: "Турция"
   uk: "Туреччина"
 "Greece":
@@ -195,6 +222,7 @@ _version: 2
   fr: "Grèce"
   nl: "Griekenland"
   pl: "Grecja"
+  es: "Grecia"
   ru: "Греция"
   uk: "Греція"
 "Country":
@@ -202,6 +230,7 @@ _version: 2
   fr: "Pays"
   nl: "Land"
   pl: "Kraj"
+  es: "País"
   ru: "Страна"
   uk: "Країна"
 "Search a country":
@@ -209,6 +238,7 @@ _version: 2
   fr: "Rechercher un pays"
   nl: "Zoek een land"
   pl: "Szukaj kraju"
+  es: "Buscar un país"
   ru: "Найти страну"
   uk: "Знайти країну"
 "No country of that name.":
@@ -216,6 +246,7 @@ _version: 2
   fr: "Aucun pays de ce nom."
   nl: "Geen land met die naam."
   pl: "Brak kraju o tej nazwie."
+  es: "No hay ningún país con ese nombre."
   ru: "Нет страны с таким названием."
   uk: "Немає країни з такою назвою."
 "Your staff, applicants and passengers get names of this country. The map's country is proposed; you can change it later in the company's settings.":
@@ -223,6 +254,7 @@ _version: 2
   fr: "Votre personnel, vos candidats et vos passagers portent des noms de ce pays. Le pays de la carte est proposé ; vous pourrez le changer plus tard dans les réglages de l'entreprise."
   nl: "Je personeel, sollicitanten en reizigers krijgen namen uit dit land. Het land van de kaart wordt voorgesteld; je kunt het later wijzigen in de instellingen van het bedrijf."
   pl: "Twój personel, kandydaci i pasażerowie dostają imiona i nazwiska z tego kraju. Proponowany jest kraj mapy; możesz go później zmienić w ustawieniach firmy."
+  es: "Tu personal, los candidatos y los pasajeros reciben nombres de este país. Se propone el país del mapa; puedes cambiarlo más tarde en los ajustes de la empresa."
   ru: "Ваш персонал, соискатели и пассажиры получают имена этой страны. Предлагается страна карты; позже её можно изменить в настройках компании."
   uk: "Ваш персонал, кандидати й пасажири отримують імена цієї країни. Пропонується країна мапи; пізніше її можна змінити в налаштуваннях компанії."
 "The names of the people you hire from now on. The people you have keep their names.":
@@ -230,6 +262,7 @@ _version: 2
   fr: "Les noms des personnes que vous embauchez désormais. Vos employés actuels gardent leur nom."
   nl: "De namen van de mensen die je vanaf nu aanneemt. De mensen die je al hebt, houden hun naam."
   pl: "Imiona i nazwiska osób, które zatrudnisz od teraz. Obecni pracownicy zachowują swoje nazwiska."
+  es: "Los nombres de las personas que contrates a partir de ahora. Las que ya tienes conservan sus nombres."
   ru: "Имена людей, которых вы нанимаете с этого момента. Нынешние сотрудники сохраняют свои имена."
   uk: "Імена людей, яких ви наймаєте відтепер. Теперішні працівники зберігають свої імена."
 "Your new people come from %{country} now. The people you have keep their names.":
@@ -237,5 +270,6 @@ _version: 2
   fr: "Vos nouvelles recrues viennent désormais de ce pays : %{country}. Vos employés actuels gardent leur nom."
   nl: "Je nieuwe mensen komen nu uit %{country}. De mensen die je al hebt, houden hun naam."
   pl: "Nowi pracownicy pochodzą teraz z kraju: %{country}. Obecni pracownicy zachowują swoje nazwiska."
+  es: "Tu nuevo personal viene ahora de %{country}. Las personas que ya tienes conservan sus nombres."
   ru: "Новые сотрудники теперь из страны: %{country}. Нынешние сотрудники сохраняют свои имена."
   uk: "Нові працівники тепер із країни: %{country}. Теперішні працівники зберігають свої імена."

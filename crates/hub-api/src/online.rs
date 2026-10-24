@@ -982,11 +982,11 @@ pub(crate) fn texts_in(src: &str, lead: &str, end: char) -> Vec<String> {
     out
 }
 
-/// Every text of `texts` missing in one of the six languages.
+/// Every text of `texts` missing in one of the seven languages.
 #[cfg(test)]
 pub(crate) fn untranslated(texts: &[String]) -> Vec<String> {
     let mut missing = Vec::new();
-    for lang in ["nl", "de", "fr", "ru", "uk", "pl"] {
+    for lang in ["nl", "de", "fr", "ru", "uk", "pl", "es"] {
         let table = table(lang);
         for t in texts {
             if !table.contains_key(t) {
@@ -1022,7 +1022,7 @@ mod tests {
     }
 
     /// Every text of Omsi-Hub online - the codes, this file's, the page's (`online/*.js`, and the
-    /// privacy statement's `privacy.js`) - in the six languages.
+    /// privacy statement's `privacy.js`) - in the seven languages.
     #[test]
     fn every_online_text_is_translated() {
         let mut texts: Vec<String> = codes::TEXTS.iter().map(|(_, t)| t.to_string()).collect();

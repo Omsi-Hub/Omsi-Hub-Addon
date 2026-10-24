@@ -538,7 +538,7 @@ mod tests {
         texts.extend([Rag::Green, Rag::Orange, Rag::Red].iter().map(|r| r.label().to_string()));
         texts.extend(["Above the authority's cap: a bid above it does not count.".to_string(), "There is no such contract.".to_string()]);
         let mut missing = Vec::new();
-        for lang in ["nl", "de", "fr", "ru", "uk", "pl"] {
+        for lang in ["nl", "de", "fr", "ru", "uk", "pl", "es"] {
             let table = crate::launcher::i18n::table(lang);
             for t in &texts {
                 if !table.contains_key(t) {

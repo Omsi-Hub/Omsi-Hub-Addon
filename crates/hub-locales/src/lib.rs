@@ -242,7 +242,7 @@ mod tests {
             h
         }
         let mut missing = Vec::new();
-        for lang in ["nl", "de", "fr", "ru", "uk", "pl"] {
+        for lang in ["nl", "de", "fr", "ru", "uk", "pl", "es"] {
             let table = texts(lang);
             for (name, t) in TABLES {
                 for (key, _) in parse(t) {

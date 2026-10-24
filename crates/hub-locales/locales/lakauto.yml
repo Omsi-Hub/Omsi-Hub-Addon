@@ -8,6 +8,7 @@ _version: 2
   ru: "Скрыть другую сторону"
   uk: "Сховати інший бік"
   pl: "Ukryj drugą stronę"
+  es: "Ocultar el otro lado"
 "Every change is kept at once in a temporary file: after a crash the studio opens with it":
   nl: "Elke wijziging wordt meteen in een tijdelijk bestand bewaard: na een crash opent de studio daarmee"
   de: "Jede Änderung wird sofort in einer temporären Datei gesichert: nach einem Absturz öffnet das Studio damit"
@@ -15,6 +16,7 @@ _version: 2
   ru: "Каждое изменение сразу сохраняется во временный файл: после сбоя студия откроется с ним"
   uk: "Кожна зміна одразу зберігається в тимчасовий файл: після збою студія відкриється з ним"
   pl: "Każda zmiana jest od razu zapisywana w pliku tymczasowym: po awarii studio otworzy się z nim"
+  es: "Cada cambio se guarda al instante en un archivo temporal: tras un cierre inesperado, el estudio se abre con él"
 "Your last changes were brought back from the temporary file":
   nl: "Je laatste wijzigingen zijn teruggezet uit het tijdelijke bestand"
   de: "Deine letzten Änderungen wurden aus der temporären Datei wiederhergestellt"
@@ -22,3 +24,4 @@ _version: 2
   ru: "Последние изменения восстановлены из временного файла"
   uk: "Останні зміни відновлено з тимчасового файлу"
   pl: "Ostatnie zmiany przywrócono z pliku tymczasowego"
+  es: "Tus últimos cambios se han recuperado del archivo temporal"

@@ -217,7 +217,7 @@ mod tests {
     use crate::launcher::company::together::{book, client, code, host, roles, world};
 
     /// Every text of "Play together" - the company's side, the launcher's and the page's
-    /// (`together.js`, `multiplayer.js`) - in the six languages.
+    /// (`together.js`, `multiplayer.js`) - in the seven languages.
     #[test]
     fn every_together_text_is_translated() {
         let mut texts: Vec<String> = book::texts()
@@ -258,7 +258,7 @@ mod tests {
         }
         assert!(texts.len() > 100, "only {} texts found", texts.len());
         let mut missing = Vec::new();
-        for lang in ["nl", "de", "fr", "ru", "uk", "pl"] {
+        for lang in ["nl", "de", "fr", "ru", "uk", "pl", "es"] {
             let table = crate::launcher::i18n::table(lang);
             for t in &texts {
                 if !table.contains_key(t) {

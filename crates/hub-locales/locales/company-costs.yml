@@ -6,6 +6,7 @@ _version: 2
   fr: "Carburant et énergie"
   nl: "Brandstof en energie"
   pl: "Paliwo i energia"
+  es: "Combustible y energía"
   ru: "Топливо и энергия"
   uk: "Пальне й енергія"
 "Insurance and tax":
@@ -13,6 +14,7 @@ _version: 2
   fr: "Assurance et taxes"
   nl: "Verzekering en belasting"
   pl: "Ubezpieczenie i podatki"
+  es: "Seguros e impuestos"
   ru: "Страховка и налоги"
   uk: "Страхування й податки"
 "Wages (paid hours)":
@@ -20,6 +22,7 @@ _version: 2
   fr: "Salaires (heures payées)"
   nl: "Lonen (betaalde uren)"
   pl: "Płace (płatne godziny)"
+  es: "Sueldos (horas pagadas)"
   ru: "Зарплата (оплаченные часы)"
   uk: "Зарплата (оплачені години)"
 "Depreciation":
@@ -27,6 +30,7 @@ _version: 2
   fr: "Amortissement"
   nl: "Afschrijving"
   pl: "Amortyzacja"
+  es: "Amortización"
   ru: "Амортизация"
   uk: "Амортизація"
 "Overheads":
@@ -34,6 +38,7 @@ _version: 2
   fr: "Frais généraux"
   nl: "Overheadkosten"
   pl: "Koszty ogólne"
+  es: "Gastos generales"
   ru: "Накладные расходы"
   uk: "Накладні витрати"
 "%{month} is closed: leases, depreciation, insurance and tax, overheads and loan rates are booked. The month's result: %{amount}.":
@@ -41,6 +46,7 @@ _version: 2
   fr: "%{month} est clôturé : leasings, amortissements, assurance et taxes, frais généraux et échéances de prêt sont comptabilisés. Le résultat du mois : %{amount}."
   nl: "%{month} is afgesloten: lease, afschrijving, verzekering en belasting, overheadkosten en aflossingen zijn geboekt. Het resultaat van de maand: %{amount}."
   pl: "%{month} zamknięty: leasing, amortyzacja, ubezpieczenie i podatki, koszty ogólne i raty kredytów są zaksięgowane. Wynik miesiąca: %{amount}."
+  es: "%{month} está cerrado: se contabilizan leasings, amortización, seguros e impuestos, gastos generales y cuotas de préstamos. Resultado del mes: %{amount}."
   ru: "%{month} закрыт: лизинг, амортизация, страховка и налоги, накладные расходы и платежи по кредитам проведены. Результат месяца: %{amount}."
   uk: "%{month} закрито: лізинг, амортизацію, страхування й податки, накладні витрати та платежі за кредитами проведено. Результат місяця: %{amount}."
 "Drivers' wages %{amount}: %{hours} hours of duty paid (%{over} overtime) and %{guaranteed} hours of the week's guarantee.":
@@ -48,6 +54,7 @@ _version: 2
   fr: "Salaires des conducteurs %{amount} : %{hours} heures de service payées (%{over} heures supplémentaires) et %{guaranteed} heures de la garantie hebdomadaire."
   nl: "Chauffeurslonen %{amount}: %{hours} betaalde diensturen (%{over} overuren) en %{guaranteed} uur uit de weekgarantie."
   pl: "Płace kierowców %{amount}: %{hours} płatnych godzin służby (%{over} nadgodzin) i %{guaranteed} godzin z gwarancji tygodniowej."
+  es: "Sueldos de conductores %{amount}: %{hours} horas de servicio pagadas (%{over} extra) y %{guaranteed} horas de la garantía semanal."
   ru: "Зарплата водителей %{amount}: оплачено %{hours} часов смен (%{over} сверхурочно) и %{guaranteed} часов по недельной гарантии."
   uk: "Зарплата водіїв %{amount}: оплачено %{hours} годин змін (%{over} понаднормово) і %{guaranteed} годин за тижневою гарантією."
 "This week":
@@ -55,6 +62,7 @@ _version: 2
   fr: "Cette semaine"
   nl: "Deze week"
   pl: "W tym tygodniu"
+  es: "Esta semana"
   ru: "На этой неделе"
   uk: "Цього тижня"
 "%{paid} of %{contract} hours paid":
@@ -62,5 +70,6 @@ _version: 2
   fr: "%{paid} heures payées sur %{contract}"
   nl: "%{paid} van %{contract} uur betaald"
   pl: "%{paid} z %{contract} godzin opłaconych"
+  es: "%{paid} de %{contract} horas pagadas"
   ru: "оплачено %{paid} из %{contract} часов"
   uk: "оплачено %{paid} з %{contract} годин"

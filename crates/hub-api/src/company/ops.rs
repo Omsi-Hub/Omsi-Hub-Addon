@@ -903,7 +903,7 @@ fn take(s: &mut Session, what: &str, args: &Value) -> Result<(String, Option<i64
 mod tests {
     use super::*;
 
-    /// Every text of service control - the core's, this page's, the start screen's tile - in the six
+    /// Every text of service control - the core's, this page's, the start screen's tile - in the seven
     /// languages.
     #[test]
     fn every_ops_text_is_translated() {
@@ -937,7 +937,7 @@ mod tests {
         );
         assert!(texts.len() > 60, "only {} texts found", texts.len());
         let mut missing = Vec::new();
-        for lang in ["nl", "de", "fr", "ru", "uk", "pl"] {
+        for lang in ["nl", "de", "fr", "ru", "uk", "pl", "es"] {
             let table = crate::launcher::i18n::table(lang);
             for t in &texts {
                 if !table.contains_key(t) {

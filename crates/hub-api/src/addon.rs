@@ -866,7 +866,7 @@ mod tests {
             texts.push(p.text());
         }
         let mut missing = Vec::new();
-        for lang in ["nl", "de", "fr", "ru", "uk", "pl"] {
+        for lang in ["nl", "de", "fr", "ru", "uk", "pl", "es"] {
             let table = hub_locales::texts(lang);
             for t in &texts {
                 match table.get(*t) {

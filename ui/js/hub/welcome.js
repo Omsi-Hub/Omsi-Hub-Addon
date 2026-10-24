@@ -237,7 +237,7 @@ function Foot({ step, v }) {
 function LangFlag({ code }) {
   if (['en', 'de', 'fr', 'nl'].includes(code)) return html`<span class="hub-wflag"><${Flag} code=${code} /></span>`;
   const rows = (parts) => parts.map((c, k) => html`<rect x="0" y=${(20 * k) / parts.length} width="30" height=${20 / parts.length + 0.05} fill=${c} />`);
-  const body = { ru: rows(['#ffffff', '#0039a6', '#d52b1e']), uk: rows(['#0057b7', '#ffd700']), pl: rows(['#ffffff', '#dc143c']) }[code];
+  const body = { ru: rows(['#ffffff', '#0039a6', '#d52b1e']), uk: rows(['#0057b7', '#ffd700']), pl: rows(['#ffffff', '#dc143c']), es: rows(['#aa151b', '#f1bf00', '#f1bf00', '#aa151b']) }[code];
   if (!body) return html`<span class="hub-wflag script">${code.toUpperCase()}</span>`;
   return html`<span class="hub-wflag"><svg viewBox="0 0 30 20" preserveAspectRatio="none">${body}</svg></span>`;
 }

@@ -10,6 +10,7 @@ _version: 2
   ru: "%{name} изменён в другом месте после открытия: сохранение запишет ваши изменения поверх"
   uk: "%{name} змінено деінде після відкриття: збереження запише ваші зміни поверх"
   pl: "Plik %{name} zmieniono gdzie indziej od jego otwarcia: zapisanie nadpisze to twoimi zmianami"
+  es: "%{name} se ha cambiado en otro sitio desde que lo abriste: al guardar, tus cambios lo sobrescriben"
 "The bus's displays could not be read.":
   nl: "De displays van de bus konden niet worden gelezen."
   de: "Die Anzeigen des Busses konnten nicht gelesen werden."
@@ -17,6 +18,7 @@ _version: 2
   ru: "Не удалось прочитать указатели автобуса."
   uk: "Не вдалося прочитати покажчики автобуса."
   pl: "Nie udało się odczytać wyświetlaczy autobusu."
+  es: "No se han podido leer los indicadores del autobús."
 "Deleted from your lines, but there is no content folder to take it out of the timetable":
   nl: "Verwijderd uit je lijnen, maar er is geen contentmap om het uit de dienstregeling te halen"
   de: "Aus deinen Linien gelöscht, aber es gibt keinen Inhaltsordner, um sie aus dem Fahrplan zu nehmen"
@@ -24,6 +26,7 @@ _version: 2
   ru: "Удалено из ваших линий, но нет папки контента, чтобы убрать её из расписания"
   uk: "Видалено з ваших ліній, але немає теки вмісту, щоб прибрати її з розкладу"
   pl: "Usunięto z twoich linii, ale brak folderu zawartości, by usunąć ją z rozkładu"
+  es: "Eliminada de tus líneas, pero no hay carpeta de contenido de la que quitarla del horario"
 "The depot file %{name} is not there any more":
   nl: "Het hof-bestand %{name} is er niet meer"
   de: "Die Hofdatei %{name} ist nicht mehr da"
@@ -31,6 +34,7 @@ _version: 2
   ru: "Файла депо %{name} больше нет"
   uk: "Файлу депо %{name} більше немає"
   pl: "Pliku zajezdni %{name} już nie ma"
+  es: "El archivo de cochera %{name} ya no existe"
 "The line's changes are not saved: choose the map again to leave them":
   nl: "De wijzigingen aan de lijn zijn niet opgeslagen: kies de kaart nog eens om ze achter te laten"
   de: "Die Änderungen an der Linie sind nicht gespeichert: wähle die Karte noch einmal, um sie zu verwerfen"
@@ -38,3 +42,4 @@ _version: 2
   ru: "Изменения линии не сохранены: выберите карту ещё раз, чтобы отказаться от них"
   uk: "Зміни лінії не збережено: виберіть карту ще раз, щоб відмовитися від них"
   pl: "Zmiany linii nie są zapisane: wybierz mapę jeszcze raz, aby je porzucić"
+  es: "Los cambios de la línea no están guardados: elige el mapa de nuevo para descartarlos"

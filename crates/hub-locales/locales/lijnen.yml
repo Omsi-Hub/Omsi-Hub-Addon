@@ -9,6 +9,7 @@ _version: 2
   ru: "Это расписание само не возит пассажиров: служебные, порожние рейсы или другой транспорт."
   uk: "Цей розклад сам не возить пасажирів: службові, порожні рейси або інший транспорт."
   pl: "Ten rozkład sam nie wozi pasażerów: zjazdy do zajezdni, przejazdy techniczne albo inny ruch."
+  es: "Este horario no lleva pasajeros propios: viajes a cochera, viajes en vacío u otro tráfico."
 "Not a line with passengers":
   nl: "Geen lijn met reizigers"
   de: "Keine Linie mit Fahrgästen"
@@ -16,6 +17,7 @@ _version: 2
   ru: "Не линия с пассажирами"
   uk: "Не лінія з пасажирами"
   pl: "To nie linia z pasażerami"
+  es: "No es una línea con pasajeros"
 "Depot and empty runs are part of the tours of the lines that start or end there: take those lines on and these runs are driven with them, as empty kilometres. Choose a line with passengers in the list.":
   nl: "Depot- en leegritten horen bij de omlopen van de lijnen die daar beginnen of eindigen: neem die lijnen over en deze ritten worden meegereden, als lege kilometers. Kies een lijn met reizigers uit de lijst."
   de: "Betriebs- und Leerfahrten gehören zu den Umläufen der Linien, die dort beginnen oder enden: Übernimm diese Linien, dann werden die Fahrten mitgefahren, als Leerkilometer. Wähle eine Linie mit Fahrgästen aus der Liste."
@@ -23,6 +25,7 @@ _version: 2
   ru: "Служебные и порожние рейсы входят в обороты линий, которые там начинаются или заканчиваются: возьмите эти линии, и рейсы будут выполняться вместе с ними как порожний пробег. Выберите в списке линию с пассажирами."
   uk: "Службові та порожні рейси входять до оборотів ліній, що там починаються або закінчуються: візьміть ці лінії, і рейси виконуватимуться разом із ними як порожній пробіг. Виберіть у списку лінію з пасажирами."
   pl: "Zjazdy i przejazdy techniczne należą do obiegów linii, które tam zaczynają się lub kończą: przejmij te linie, a te przejazdy będą wykonywane razem z nimi jako puste kilometry. Wybierz z listy linię z pasażerami."
+  es: "Los viajes a cochera y en vacío forman parte de los recorridos de las líneas que empiezan o terminan allí: asume esas líneas y estos viajes se hacen con ellas, como kilómetros en vacío. Elige una línea con pasajeros en la lista."
 "%{n} timetables of the map are not the company's to run: depot and empty runs (they go with the tours that need them), specials and other operators' traffic.":
   nl: "%{n} dienstregelingen van de kaart zijn niet voor het bedrijf: depot- en leegritten (die horen bij de omlopen die ze nodig hebben), bijzondere ritten en verkeer van andere vervoerders."
   de: "%{n} Fahrpläne der Karte sind nicht für das Unternehmen: Betriebs- und Leerfahrten (sie gehören zu den Umläufen, die sie brauchen), Sonderverkehre und Verkehr anderer Betreiber."
@@ -30,3 +33,4 @@ _version: 2
   ru: "Расписаний карты не для компании: %{n} - служебные и порожние рейсы (они входят в нужные обороты), особые рейсы и транспорт других перевозчиков."
   uk: "Розкладів карти не для компанії: %{n} - службові та порожні рейси (вони входять до потрібних оборотів), особливі рейси та транспорт інших перевізників."
   pl: "%{n} rozkładów mapy nie jest dla firmy: zjazdy i przejazdy techniczne (należą do obiegów, które ich potrzebują), kursy specjalne i ruch innych przewoźników."
+  es: "%{n} horarios del mapa no los opera la empresa: viajes a cochera y en vacío (van con los recorridos que los necesitan), especiales y tráfico de otros operadores."

@@ -7,6 +7,7 @@ _version: 2
   fr: "Le roulement a changé"
   nl: "Het rooster is gewijzigd"
   pl: "Grafik zmieniony"
+  es: "El cuadrante ha cambiado"
   ru: "График изменён"
   uk: "Графік змінено"
 "%{who} taken off line %{n}, tour %{tour}, duty %{k}: nobody for it in the roster of %{day}.":
@@ -14,6 +15,7 @@ _version: 2
   fr: "%{who} retiré de la ligne %{n}, service %{tour}, service conducteur %{k} : personne pour lui dans le roulement du %{day}."
   nl: "%{who} van lijn %{n}, omloop %{tour}, dienst %{k} gehaald: niemand ervoor in het rooster van %{day}."
   pl: "%{who} zdjęty z linii %{n}, obiegu %{tour}, służby %{k}: nikogo do niej w grafiku na %{day}."
+  es: "%{who} retirado de la línea %{n}, recorrido %{tour}, servicio %{k}: nadie lo cubre en el cuadrante del %{day}."
   ru: "%{who} снят с линии %{n}, оборота %{tour}, смены %{k}: в графике на %{day} на неё никого."
   uk: "%{who} знято з лінії %{n}, обороту %{tour}, зміни %{k}: у графіку на %{day} на неї нікого."
 "Your choice for today taken back: line %{n}, tour %{tour}, duty %{k} is open again.":
@@ -21,6 +23,7 @@ _version: 2
   fr: "Votre choix du jour annulé : ligne %{n}, service %{tour}, service conducteur %{k} de nouveau ouvert."
   nl: "Uw keuze voor vandaag teruggenomen: lijn %{n}, omloop %{tour}, dienst %{k} staat weer open."
   pl: "Twój wybór na dziś cofnięty: linia %{n}, obieg %{tour}, służba %{k} znów jest otwarta."
+  es: "Tu elección de hoy se ha retirado: la línea %{n}, recorrido %{tour}, servicio %{k} vuelve a estar libre."
   ru: "Ваш выбор на сегодня отменён: линия %{n}, оборот %{tour}, смена %{k} снова открыта."
   uk: "Ваш вибір на сьогодні скасовано: лінія %{n}, оборот %{tour}, зміна %{k} знову відкрита."
 "Line %{n}, tour %{tour}, duty %{k} without its driver today: its trips are dropped (penalty %{amount}).":
@@ -28,6 +31,7 @@ _version: 2
   fr: "Ligne %{n}, service %{tour}, service conducteur %{k} sans conducteur aujourd'hui : ses courses sont supprimées (pénalité %{amount})."
   nl: "Lijn %{n}, omloop %{tour}, dienst %{k} vandaag zonder chauffeur: de ritten vervallen (boete %{amount})."
   pl: "Linia %{n}, obieg %{tour}, służba %{k} dziś bez kierowcy: jej kursy przepadają (kara %{amount})."
+  es: "Línea %{n}, recorrido %{tour}, servicio %{k} sin conductor hoy: sus viajes se suprimen (penalización %{amount})."
   ru: "Линия %{n}, оборот %{tour}, смена %{k} сегодня без водителя: её рейсы отменены (штраф %{amount})."
   uk: "Лінія %{n}, оборот %{tour}, зміна %{k} сьогодні без водія: її рейси скасовано (штраф %{amount})."
 "Bus %{bus} taken off line %{n}, tour %{tour}: no bus for it in the roster of %{day}.":
@@ -35,6 +39,7 @@ _version: 2
   fr: "Bus %{bus} retiré de la ligne %{n}, service %{tour} : aucun bus pour lui dans le roulement du %{day}."
   nl: "Bus %{bus} van lijn %{n}, omloop %{tour} gehaald: geen bus ervoor in het rooster van %{day}."
   pl: "Autobus %{bus} zdjęty z linii %{n}, obiegu %{tour}: brak autobusu w grafiku na %{day}."
+  es: "Autobús %{bus} retirado de la línea %{n}, recorrido %{tour}: no hay autobús para él en el cuadrante del %{day}."
   ru: "Автобус %{bus} снят с линии %{n}, оборота %{tour}: в графике на %{day} автобуса нет."
   uk: "Автобус %{bus} знято з лінії %{n}, обороту %{tour}: у графіку на %{day} автобуса немає."
 "Your bus for today taken back: line %{n}, tour %{tour} has no bus again.":
@@ -42,6 +47,7 @@ _version: 2
   fr: "Votre bus du jour annulé : ligne %{n}, service %{tour} de nouveau sans bus."
   nl: "Uw bus voor vandaag teruggenomen: lijn %{n}, omloop %{tour} heeft weer geen bus."
   pl: "Twój autobus na dziś cofnięty: linia %{n}, obieg %{tour} znów nie ma autobusu."
+  es: "Tu autobús de hoy se ha retirado: la línea %{n}, recorrido %{tour} vuelve a no tener autobús."
   ru: "Ваш автобус на сегодня отменён: у линии %{n}, оборота %{tour} снова нет автобуса."
   uk: "Ваш автобус на сьогодні скасовано: лінія %{n}, оборот %{tour} знову без автобуса."
 "The rental bus of line %{n}, tour %{tour} is cancelled: its %{amount} for the day are not paid.":
@@ -49,6 +55,7 @@ _version: 2
   fr: "Le bus de location de la ligne %{n}, service %{tour} est annulé : ses %{amount} pour la journée ne sont pas payés."
   nl: "De huurbus van lijn %{n}, omloop %{tour} is geannuleerd: de %{amount} voor de dag worden niet betaald."
   pl: "Wynajem autobusu dla linii %{n}, obiegu %{tour} odwołany: %{amount} za dzień nie zostanie zapłacone."
+  es: "El autobús de alquiler de la línea %{n}, recorrido %{tour} se cancela: no se pagan sus %{amount} del día."
   ru: "Арендный автобус линии %{n}, оборота %{tour} отменён: его %{amount} за день не оплачиваются."
   uk: "Орендований автобус лінії %{n}, обороту %{tour} скасовано: його %{amount} за день не сплачуються."
 "Line %{n}, tour %{tour} without its bus today: its trips are dropped (penalty %{amount}).":
@@ -56,6 +63,7 @@ _version: 2
   fr: "Ligne %{n}, service %{tour} sans bus aujourd'hui : ses courses sont supprimées (pénalité %{amount})."
   nl: "Lijn %{n}, omloop %{tour} vandaag zonder bus: de ritten vervallen (boete %{amount})."
   pl: "Linia %{n}, obieg %{tour} dziś bez autobusu: jego kursy przepadają (kara %{amount})."
+  es: "Línea %{n}, recorrido %{tour} sin autobús hoy: sus viajes se suprimen (penalización %{amount})."
   ru: "Линия %{n}, оборот %{tour} сегодня без автобуса: его рейсы отменены (штраф %{amount})."
   uk: "Лінія %{n}, оборот %{tour} сьогодні без автобуса: його рейси скасовано (штраф %{amount})."
 "The rental bus is cancelled: %{amount} not paid.":
@@ -63,6 +71,7 @@ _version: 2
   fr: "Le bus de location est annulé : %{amount} non payés."
   nl: "De huurbus is geannuleerd: %{amount} niet betaald."
   pl: "Wynajem autobusu odwołany: %{amount} niezapłacone."
+  es: "El autobús de alquiler se cancela: %{amount} sin pagar."
   ru: "Аренда автобуса отменена: %{amount} не оплачиваются."
   uk: "Оренду автобуса скасовано: %{amount} не сплачуються."
 "Nothing to take off.":
@@ -70,6 +79,7 @@ _version: 2
   fr: "Rien à retirer."
   nl: "Niets om weg te halen."
   pl: "Nie ma czego zdjąć."
+  es: "No hay nada que retirar."
   ru: "Снимать нечего."
   uk: "Знімати нічого."
 "Trips dropped today: penalty %{amount}.":
@@ -77,6 +87,7 @@ _version: 2
   fr: "Courses supprimées aujourd'hui : pénalité %{amount}."
   nl: "Vandaag vervallen ritten: boete %{amount}."
   pl: "Dzisiejsze odwołane kursy: kara %{amount}."
+  es: "Viajes suprimidos hoy: penalización %{amount}."
   ru: "Отменённые сегодня рейсы: штраф %{amount}."
   uk: "Скасовані сьогодні рейси: штраф %{amount}."
 "Rental buses cancelled: %{amount} not paid.":
@@ -84,6 +95,7 @@ _version: 2
   fr: "Bus de location annulés : %{amount} non payés."
   nl: "Huurbussen geannuleerd: %{amount} niet betaald."
   pl: "Wynajmy autobusów odwołane: %{amount} niezapłacone."
+  es: "Autobuses de alquiler cancelados: %{amount} sin pagar."
   ru: "Аренда автобусов отменена: %{amount} не оплачиваются."
   uk: "Оренду автобусів скасовано: %{amount} не сплачуються."
 "%{n} taken off.":
@@ -91,6 +103,7 @@ _version: 2
   fr: "%{n} retiré(s)."
   nl: "%{n} weggehaald."
   pl: "Zdjęto: %{n}."
+  es: "%{n} retirados."
   ru: "Снято: %{n}."
   uk: "Знято: %{n}."
 "%{who} taken off %{n} duties of %{day}.":
@@ -98,6 +111,7 @@ _version: 2
   fr: "%{who} retiré de %{n} services du %{day}."
   nl: "%{who} van %{n} diensten van %{day} gehaald."
   pl: "%{who} zdjęty z %{n} służb na %{day}."
+  es: "%{who} retirado de %{n} servicios del %{day}."
   ru: "%{who} снят с %{n} смен на %{day}."
   uk: "%{who} знято з %{n} змін на %{day}."
 "Bus %{bus} taken off %{n} tours of %{day}.":
@@ -105,6 +119,7 @@ _version: 2
   fr: "Bus %{bus} retiré de %{n} services du %{day}."
   nl: "Bus %{bus} van %{n} omlopen van %{day} gehaald."
   pl: "Autobus %{bus} zdjęty z %{n} obiegów na %{day}."
+  es: "Autobús %{bus} retirado de %{n} recorridos del %{day}."
   ru: "Автобус %{bus} снят с %{n} оборотов на %{day}."
   uk: "Автобус %{bus} знято з %{n} оборотів на %{day}."
 "The roster changed meanwhile: try again.":
@@ -112,6 +127,7 @@ _version: 2
   fr: "Le roulement a changé entre-temps : réessayez."
   nl: "Het rooster is intussen gewijzigd: probeer het opnieuw."
   pl: "Grafik zmienił się w międzyczasie: spróbuj ponownie."
+  es: "El cuadrante ha cambiado mientras tanto: inténtalo de nuevo."
   ru: "График тем временем изменился: попробуйте снова."
   uk: "Графік тим часом змінився: спробуйте ще раз."
 "This duty has begun already: its driver can no longer be taken off today.":
@@ -119,6 +135,7 @@ _version: 2
   fr: "Ce service a déjà commencé : son conducteur ne peut plus être retiré aujourd'hui."
   nl: "Deze dienst is al begonnen: de chauffeur kan er vandaag niet meer af."
   pl: "Ta służba już się zaczęła: dziś nie można już zdjąć jej kierowcy."
+  es: "Este servicio ya ha empezado: hoy ya no se puede retirar a su conductor."
   ru: "Эта смена уже началась: сегодня водителя с неё уже не снять."
   uk: "Ця зміна вже почалася: сьогодні водія з неї вже не зняти."
 "This tour is under way: its bus can no longer be taken off today.":
@@ -126,6 +143,7 @@ _version: 2
   fr: "Ce service est en cours : son bus ne peut plus être retiré aujourd'hui."
   nl: "Deze omloop is onderweg: de bus kan er vandaag niet meer af."
   pl: "Ten obieg jest w trakcie: dziś nie można już zdjąć jego autobusu."
+  es: "Este recorrido está en marcha: hoy ya no se puede retirar su autobús."
   ru: "Этот оборот уже в пути: сегодня автобус с него уже не снять."
   uk: "Цей оборот уже в дорозі: сьогодні автобус із нього вже не зняти."
 "You drove it already: what was driven stays.":
@@ -133,6 +151,7 @@ _version: 2
   fr: "Vous l'avez déjà conduit : ce qui a été conduit reste."
   nl: "U hebt hem al gereden: wat gereden is, blijft."
   pl: "Już go przejechałeś: to, co przejechane, zostaje."
+  es: "Ya lo has conducido: lo conducido se queda."
   ru: "Вы его уже проехали: проеханное остаётся."
   uk: "Ви його вже проїхали: проїхане лишається."
 "The game runs this tour now: take it off once it is back in the depot.":
@@ -140,6 +159,7 @@ _version: 2
   fr: "Le jeu fait rouler ce service en ce moment : retirez-le une fois de retour au dépôt."
   nl: "Het spel rijdt deze omloop nu: haal hem eraf als hij terug in de remise is."
   pl: "Gra właśnie prowadzi ten obieg: zdejmij go, gdy wróci do zajezdni."
+  es: "El juego está ejecutando este recorrido ahora: retíralo cuando vuelva a la cochera."
   ru: "Игра сейчас ведёт этот оборот: снимите его, когда он вернётся в депо."
   uk: "Гра зараз веде цей оборот: зніміть його, коли він повернеться в депо."
 "Nobody drives it: there is nothing to take off.":
@@ -147,6 +167,7 @@ _version: 2
   fr: "Personne ne le conduit : il n'y a rien à retirer."
   nl: "Niemand rijdt hem: er is niets om weg te halen."
   pl: "Nikt go nie prowadzi: nie ma czego zdjąć."
+  es: "Nadie lo conduce: no hay nada que retirar."
   ru: "Его никто не ведёт: снимать нечего."
   uk: "Його ніхто не веде: знімати нічого."
 "It has no bus: there is nothing to take off.":
@@ -154,6 +175,7 @@ _version: 2
   fr: "Il n'a pas de bus : il n'y a rien à retirer."
   nl: "Hij heeft geen bus: er is niets om weg te halen."
   pl: "Nie ma autobusu: nie ma czego zdjąć."
+  es: "No tiene autobús: no hay nada que retirar."
   ru: "У него нет автобуса: снимать нечего."
   uk: "У нього немає автобуса: знімати нічого."
 "Remove driver":
@@ -161,6 +183,7 @@ _version: 2
   fr: "Retirer le conducteur"
   nl: "Chauffeur weghalen"
   pl: "Zdejmij kierowcę"
+  es: "Quitar conductor"
   ru: "Снять водителя"
   uk: "Зняти водія"
 "Give to…":
@@ -168,6 +191,7 @@ _version: 2
   fr: "Confier à…"
   nl: "Geven aan…"
   pl: "Przydziel…"
+  es: "Dar a…"
   ru: "Отдать…"
   uk: "Віддати…"
 "Show in Drivers":
@@ -175,6 +199,7 @@ _version: 2
   fr: "Afficher dans Conducteurs"
   nl: "Tonen in Chauffeurs"
   pl: "Pokaż w Kierowcach"
+  es: "Mostrar en Conductores"
   ru: "Показать в Водителях"
   uk: "Показати у Водіях"
 "Remove bus":
@@ -182,6 +207,7 @@ _version: 2
   fr: "Retirer le bus"
   nl: "Bus weghalen"
   pl: "Zdejmij autobus"
+  es: "Quitar autobús"
   ru: "Снять автобус"
   uk: "Зняти автобус"
 "Change bus…":
@@ -189,6 +215,7 @@ _version: 2
   fr: "Changer de bus…"
   nl: "Bus wisselen…"
   pl: "Zmień autobus…"
+  es: "Cambiar autobús…"
   ru: "Сменить автобус…"
   uk: "Змінити автобус…"
 "Remove from all duties today":
@@ -196,6 +223,7 @@ _version: 2
   fr: "Retirer de tous les services aujourd'hui"
   nl: "Vandaag van alle diensten weghalen"
   pl: "Zdejmij dziś ze wszystkich służb"
+  es: "Quitar de todos los servicios de hoy"
   ru: "Снять сегодня со всех смен"
   uk: "Зняти сьогодні з усіх змін"
 "Remove from all duties of this day":
@@ -203,6 +231,7 @@ _version: 2
   fr: "Retirer de tous les services de ce jour"
   nl: "Van alle diensten van deze dag weghalen"
   pl: "Zdejmij ze wszystkich służb tego dnia"
+  es: "Quitar de todos los servicios de este día"
   ru: "Снять со всех смен этого дня"
   uk: "Зняти з усіх змін цього дня"
 "Remove from all tours today":
@@ -210,6 +239,7 @@ _version: 2
   fr: "Retirer de tous les services véhicule aujourd'hui"
   nl: "Vandaag van alle omlopen weghalen"
   pl: "Zdejmij dziś ze wszystkich obiegów"
+  es: "Quitar de todos los recorridos de hoy"
   ru: "Снять сегодня со всех оборотов"
   uk: "Зняти сьогодні з усіх оборотів"
 "Remove from all tours of this day":
@@ -217,6 +247,7 @@ _version: 2
   fr: "Retirer de tous les services véhicule de ce jour"
   nl: "Van alle omlopen van deze dag weghalen"
   pl: "Zdejmij ze wszystkich obiegów tego dnia"
+  es: "Quitar de todos los recorridos de este día"
   ru: "Снять со всех оборотов этого дня"
   uk: "Зняти з усіх оборотів цього дня"
 "Take the bus off this tour (Delete)":
@@ -224,6 +255,7 @@ _version: 2
   fr: "Retirer le bus de ce service (Suppr)"
   nl: "De bus van deze omloop halen (Delete)"
   pl: "Zdejmij autobus z tego obiegu (Delete)"
+  es: "Quitar el autobús de este recorrido (Supr)"
   ru: "Снять автобус с этого оборота (Delete)"
   uk: "Зняти автобус із цього обороту (Delete)"
 "Take the driver off this duty (Delete)":
@@ -231,6 +263,7 @@ _version: 2
   fr: "Retirer le conducteur de ce service (Suppr)"
   nl: "De chauffeur van deze dienst halen (Delete)"
   pl: "Zdejmij kierowcę z tej służby (Delete)"
+  es: "Quitar el conductor de este servicio (Supr)"
   ru: "Снять водителя с этой смены (Delete)"
   uk: "Зняти водія з цієї зміни (Delete)"
 "Unassign selected (%{n})":
@@ -238,6 +271,7 @@ _version: 2
   fr: "Retirer la sélection (%{n})"
   nl: "Gekozen weghalen (%{n})"
   pl: "Zdejmij zaznaczone (%{n})"
+  es: "Desasignar selección (%{n})"
   ru: "Снять выбранное (%{n})"
   uk: "Зняти вибране (%{n})"
 "Take the drivers and buses chosen off (Delete)":
@@ -245,6 +279,7 @@ _version: 2
   fr: "Retirer les conducteurs et bus choisis (Suppr)"
   nl: "De gekozen chauffeurs en bussen weghalen (Delete)"
   pl: "Zdejmij wybranych kierowców i autobusy (Delete)"
+  es: "Quitar los conductores y autobuses elegidos (Supr)"
   ru: "Снять выбранных водителей и автобусы (Delete)"
   uk: "Зняти вибраних водіїв і автобуси (Delete)"
 "Let go here to take the driver off":
@@ -252,6 +287,7 @@ _version: 2
   fr: "Relâchez ici pour retirer le conducteur"
   nl: "Hier loslaten om de chauffeur weg te halen"
   pl: "Upuść tutaj, aby zdjąć kierowcę"
+  es: "Suelta aquí para quitar el conductor"
   ru: "Отпустите здесь, чтобы снять водителя"
   uk: "Відпустіть тут, щоб зняти водія"
 "Let go here to take the bus off":
@@ -259,5 +295,6 @@ _version: 2
   fr: "Relâchez ici pour retirer le bus"
   nl: "Hier loslaten om de bus weg te halen"
   pl: "Upuść tutaj, aby zdjąć autobus"
+  es: "Suelta aquí para quitar el autobús"
   ru: "Отпустите здесь, чтобы снять автобус"
   uk: "Відпустіть тут, щоб зняти автобус"

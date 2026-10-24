@@ -12,6 +12,7 @@ _version: 2
   ru: "Редактор депо ждёт, пока изменения в редакторе линий будут сохранены."
   uk: "Редактор депо чекає, доки зміни в редакторі ліній буде збережено."
   pl: "Edytor zajezdni czeka, aż zmiany w edytorze linii zostaną zapisane."
+  es: "El editor de cocheras espera a que se guarden los cambios del editor de líneas."
 
 # (the line editor kept by the game program for the page, `lineeditor::headless`: its map's
 # roads and stops read on a worker that went down)
@@ -23,3 +24,4 @@ _version: 2
   ru: "Не удалось прочитать карту"
   uk: "Не вдалося прочитати карту"
   pl: "Nie udało się odczytać mapy"
+  es: "No se ha podido leer el mapa"

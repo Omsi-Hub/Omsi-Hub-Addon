@@ -8,6 +8,7 @@ _version: 2
   fr: "Imprimer la feuille de service"
   nl: "Dienstkaart afdrukken"
   pl: "Drukuj kartę służby"
+  es: "Imprimir hoja de servicio"
   ru: "Распечатать карточку смены"
   uk: "Надрукувати картку зміни"
 "Duty card":
@@ -15,6 +16,7 @@ _version: 2
   fr: "Feuille de service"
   nl: "Dienstkaart"
   pl: "Karta służby"
+  es: "Hoja de servicio"
   ru: "Карточка смены"
   uk: "Картка зміни"
 "Duty no.":
@@ -22,6 +24,7 @@ _version: 2
   fr: "N° de service"
   nl: "Dienstnr."
   pl: "Nr służby"
+  es: "N.º de servicio"
   ru: "№ смены"
   uk: "№ зміни"
 "Day type":
@@ -29,6 +32,7 @@ _version: 2
   fr: "Type de jour"
   nl: "Dagsoort"
   pl: "Typ dnia"
+  es: "Tipo de día"
   ru: "Тип дня"
   uk: "Тип дня"
 "Times":
@@ -36,6 +40,7 @@ _version: 2
   fr: "Horaires"
   nl: "Tijden"
   pl: "Godziny"
+  es: "Horas"
   ru: "Время"
   uk: "Час"
 "Sign on":
@@ -43,6 +48,7 @@ _version: 2
   fr: "Prise de service"
   nl: "Aanvang dienst"
   pl: "Rozpoczęcie służby"
+  es: "Toma de servicio"
   ru: "Начало смены"
   uk: "Початок зміни"
 "Sign off":
@@ -50,6 +56,7 @@ _version: 2
   fr: "Fin de service"
   nl: "Einde dienst"
   pl: "Zakończenie służby"
+  es: "Fin de servicio"
   ru: "Конец смены"
   uk: "Кінець зміни"
 "Break":
@@ -57,6 +64,7 @@ _version: 2
   fr: "Pause"
   nl: "Pauze"
   pl: "Przerwa"
+  es: "Pausa"
   ru: "Перерыв"
   uk: "Перерва"
 "Paid":
@@ -64,6 +72,7 @@ _version: 2
   fr: "Payé"
   nl: "Betaald"
   pl: "Płatne"
+  es: "Pagado"
   ru: "Оплачено"
   uk: "Оплачено"
 "IBIS":
@@ -71,6 +80,7 @@ _version: 2
   fr: "IBIS"
   nl: "IBIS"
   pl: "IBIS"
+  es: "IBIS"
   ru: "IBIS"
   uk: "IBIS"
 "Line/course":
@@ -78,6 +88,7 @@ _version: 2
   fr: "Ligne/course"
   nl: "Lijn/omloop"
   pl: "Linia/kurs"
+  es: "Línea/curso"
   ru: "Линия/выход"
   uk: "Лінія/випуск"
 "Piece %{n}":
@@ -85,6 +96,7 @@ _version: 2
   fr: "Partie %{n}"
   nl: "Dienstdeel %{n}"
   pl: "Część %{n}"
+  es: "Tramo %{n}"
   ru: "Часть %{n}"
   uk: "Частина %{n}"
 "Check code":
@@ -92,6 +104,7 @@ _version: 2
   fr: "Code de contrôle"
   nl: "Controlecode"
   pl: "Kod kontrolny"
+  es: "Código de control"
   ru: "Контрольный код"
   uk: "Контрольний код"
 "Printed by Omsi-Hub":
@@ -99,6 +112,7 @@ _version: 2
   fr: "Imprimé par Omsi-Hub"
   nl: "Afgedrukt door Omsi-Hub"
   pl: "Wydrukowano w Omsi-Hub"
+  es: "Impreso por Omsi-Hub"
   ru: "Напечатано в Omsi-Hub"
   uk: "Надруковано в Omsi-Hub"
 "Paper":
@@ -106,6 +120,7 @@ _version: 2
   fr: "Papier"
   nl: "Papier"
   pl: "Papier"
+  es: "Papel"
   ru: "Бумага"
   uk: "Папір"
 "Timing points only":
@@ -113,6 +128,7 @@ _version: 2
   fr: "Points horaires seulement"
   nl: "Alleen tijdpunten"
   pl: "Tylko punkty czasowe"
+  es: "Solo puntos de regulación"
   ru: "Только контрольные пункты"
   uk: "Лише контрольні пункти"
 "All stops":
@@ -120,6 +136,7 @@ _version: 2
   fr: "Tous les arrêts"
   nl: "Alle haltes"
   pl: "Wszystkie przystanki"
+  es: "Todas las paradas"
   ru: "Все остановки"
   uk: "Усі зупинки"
 "Show the IBIS codes":
@@ -127,6 +144,7 @@ _version: 2
   fr: "Afficher les codes IBIS"
   nl: "IBIS-codes tonen"
   pl: "Pokaż kody IBIS"
+  es: "Mostrar los códigos IBIS"
   ru: "Показывать коды IBIS"
   uk: "Показувати коди IBIS"
 "Print":
@@ -134,6 +152,7 @@ _version: 2
   fr: "Imprimer"
   nl: "Afdrukken"
   pl: "Drukuj"
+  es: "Imprimir"
   ru: "Печать"
   uk: "Друк"
 "Save as image":
@@ -141,6 +160,7 @@ _version: 2
   fr: "Enregistrer comme image"
   nl: "Opslaan als afbeelding"
   pl: "Zapisz jako obraz"
+  es: "Guardar como imagen"
   ru: "Сохранить как изображение"
   uk: "Зберегти як зображення"
 "Save the duty card as a picture":
@@ -148,6 +168,7 @@ _version: 2
   fr: "Enregistrer la feuille de service comme image"
   nl: "Dienstkaart opslaan als afbeelding"
   pl: "Zapisz kartę służby jako obraz"
+  es: "Guarda la hoja de servicio como imagen"
   ru: "Сохранить карточку смены как изображение"
   uk: "Зберегти картку зміни як зображення"
 "To save it as a PDF, choose \"Save as PDF\" as the printer.":
@@ -155,5 +176,6 @@ _version: 2
   fr: "Pour l’enregistrer en PDF, choisissez « Enregistrer au format PDF » comme imprimante."
   nl: "Kies „Opslaan als PDF” als printer om het als PDF op te slaan."
   pl: "Aby zapisać jako PDF, wybierz „Zapisz jako PDF” jako drukarkę."
+  es: "Para guardarla como PDF, elige \"Guardar como PDF\" como impresora."
   ru: "Чтобы сохранить в PDF, выберите принтер «Сохранить как PDF»."
   uk: "Щоб зберегти у PDF, виберіть принтер «Зберегти як PDF»."

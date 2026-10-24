@@ -628,7 +628,7 @@ mod tests {
         assert!(LATEST_JSON.ends_with("/releases/latest/download/latest.json"));
     }
 
-    /// Every text of the updates - this file's and the page's (`update.js`) - in the six
+    /// Every text of the updates - this file's and the page's (`update.js`) - in the seven
     /// languages.
     #[test]
     fn every_update_text_is_translated() {

@@ -9,6 +9,7 @@ _version: 2
   ru: "Что IBIS водителя показывает как пункт назначения, заглавными буквами."
   uk: "Що IBIS водія показує як пункт призначення, великими літерами."
   pl: "To, co IBIS kierowcy pokazuje jako cel, wielkimi literami."
+  es: "Lo que el IBIS del conductor muestra como destino, en mayúsculas."
 "Front sign, top row":
   nl: "Frontbord, bovenste regel"
   de: "Frontanzeige, obere Zeile"
@@ -16,6 +17,7 @@ _version: 2
   ru: "Переднее табло, верхняя строка"
   uk: "Переднє табло, верхній рядок"
   pl: "Tablica przednia, górny wiersz"
+  es: "Letrero frontal, fila superior"
 "The top row of the destination sign over the windscreen. A name that fits stays on this row alone.":
   nl: "De bovenste regel van het bestemmingsbord boven de voorruit. Een naam die past, staat alleen op deze regel."
   de: "Die obere Zeile der Zielanzeige über der Frontscheibe. Ein Name, der passt, steht allein in dieser Zeile."
@@ -23,6 +25,7 @@ _version: 2
   ru: "Верхняя строка маршрутного табло над лобовым стеклом. Название, которое помещается, стоит только в этой строке."
   uk: "Верхній рядок маршрутного табло над лобовим склом. Назва, що вміщається, стоїть лише в цьому рядку."
   pl: "Górny wiersz tablicy kierunkowej nad przednią szybą. Nazwa, która się mieści, zostaje sama w tym wierszu."
+  es: "La fila superior del letrero de destino sobre el parabrisas. Un nombre que cabe se queda solo en esta fila."
 "The top row of the destination sign over the windscreen, for a name of two rows. This depot file writes a shorter name on the bottom row alone; the buses move it up.":
   nl: "De bovenste regel van het bestemmingsbord boven de voorruit, voor een naam van twee regels. Dit hof-bestand zet een kortere naam alleen op de onderste regel; de bussen schuiven die omhoog."
   de: "Die obere Zeile der Zielanzeige über der Frontscheibe, für einen Namen in zwei Zeilen. Diese Hofdatei schreibt einen kürzeren Namen allein in die untere Zeile; die Busse rücken ihn nach oben."
@@ -30,6 +33,7 @@ _version: 2
   ru: "Верхняя строка маршрутного табло над лобовым стеклом — для названия в две строки. Этот файл депо пишет более короткое название только в нижней строке; автобусы поднимают его наверх."
   uk: "Верхній рядок маршрутного табло над лобовим склом — для назви у два рядки. Цей файл депо пише коротшу назву лише в нижньому рядку; автобуси піднімають її вгору."
   pl: "Górny wiersz tablicy kierunkowej nad przednią szybą, dla nazwy w dwóch wierszach. Ten plik zajezdni wpisuje krótszą nazwę sam w dolny wiersz; autobusy przesuwają ją w górę."
+  es: "La fila superior del letrero de destino sobre el parabrisas, para un nombre de dos filas. Este archivo de cochera escribe un nombre más corto solo en la fila inferior; los autobuses lo suben."
 "Front sign, bottom row":
   nl: "Frontbord, onderste regel"
   de: "Frontanzeige, untere Zeile"
@@ -37,6 +41,7 @@ _version: 2
   ru: "Переднее табло, нижняя строка"
   uk: "Переднє табло, нижній рядок"
   pl: "Tablica przednia, dolny wiersz"
+  es: "Letrero frontal, fila inferior"
 "The second row of the front sign, for a name too long for one. Empty: the top row is shown alone.":
   nl: "De tweede regel van het frontbord, voor een naam die te lang is voor één regel. Leeg: de bovenste regel staat er alleen."
   de: "Die zweite Zeile der Frontanzeige, für einen Namen, der für eine zu lang ist. Leer: die obere Zeile steht allein."
@@ -44,6 +49,7 @@ _version: 2
   ru: "Вторая строка переднего табло — для названия, слишком длинного для одной. Пусто: показывается только верхняя строка."
   uk: "Другий рядок переднього табло — для назви, задовгої для одного. Порожньо: показується лише верхній рядок."
   pl: "Drugi wiersz tablicy przedniej, dla nazwy za długiej na jeden. Puste: górny wiersz jest pokazany sam."
+  es: "La segunda fila del letrero frontal, para un nombre demasiado largo para una sola. Vacía: se muestra solo la fila superior."
 "The second row of the front sign. This depot file writes a name that fits on this row alone, and the buses move it up; a longer one is split over both rows.":
   nl: "De tweede regel van het frontbord. Dit hof-bestand zet een naam die past alleen op deze regel, en de bussen schuiven die omhoog; een langere wordt over beide regels verdeeld."
   de: "Die zweite Zeile der Frontanzeige. Diese Hofdatei schreibt einen Namen, der passt, allein in diese Zeile, und die Busse rücken ihn nach oben; ein längerer wird auf beide Zeilen verteilt."
@@ -51,6 +57,7 @@ _version: 2
   ru: "Вторая строка переднего табло. Этот файл депо пишет название, которое помещается, только в этой строке, и автобусы поднимают его наверх; более длинное делится на обе строки."
   uk: "Другий рядок переднього табло. Цей файл депо пише назву, що вміщається, лише в цьому рядку, і автобуси піднімають її вгору; довша ділиться на обидва рядки."
   pl: "Drugi wiersz tablicy przedniej. Ten plik zajezdni wpisuje nazwę, która się mieści, sam w ten wiersz, a autobusy przesuwają ją w górę; dłuższa jest dzielona na oba wiersze."
+  es: "La segunda fila del letrero frontal. Este archivo de cochera escribe aquí solo un nombre que cabe en esta fila, y los autobuses lo suben; uno más largo se reparte entre ambas filas."
 "Side sign":
   nl: "Zijbord"
   de: "Seitenanzeige"
@@ -58,6 +65,7 @@ _version: 2
   ru: "Боковое табло"
   uk: "Бокове табло"
   pl: "Tablica boczna"
+  es: "Letrero lateral"
 "The one-row sign by the doors (on some buses at the back too).":
   nl: "Het bord van één regel bij de deuren (bij sommige bussen ook achterop)."
   de: "Die einzeilige Anzeige an den Türen (bei manchen Bussen auch hinten)."
@@ -65,6 +73,7 @@ _version: 2
   ru: "Однострочное табло у дверей (у некоторых автобусов и сзади)."
   uk: "Однорядкове табло біля дверей (у деяких автобусів і ззаду)."
   pl: "Jednowierszowa tablica przy drzwiach (w niektórych autobusach także z tyłu)."
+  es: "El letrero de una fila junto a las puertas (en algunos autobuses también detrás)."
 "Passenger display":
   nl: "Reizigersdisplay"
   de: "Fahrgastanzeige"
@@ -72,6 +81,7 @@ _version: 2
   ru: "Табло для пассажиров"
   uk: "Табло для пасажирів"
   pl: "Wyświetlacz dla pasażerów"
+  es: "Pantalla de pasajeros"
 "The destination as it is written, for the IBIS 2, the ticket printer and the screens inside the bus.":
   nl: "De bestemming zoals ze geschreven wordt, voor de IBIS 2, de kaartjesprinter en de schermen in de bus."
   de: "Das Ziel, wie es geschrieben wird, für das IBIS 2, den Fahrscheindrucker und die Bildschirme im Bus."
@@ -79,6 +89,7 @@ _version: 2
   ru: "Пункт назначения в обычном написании — для IBIS 2, принтера билетов и экранов в салоне."
   uk: "Пункт призначення у звичайному написанні — для IBIS 2, принтера квитків і екранів у салоні."
   pl: "Cel zapisany normalnie, dla IBIS 2, drukarki biletów i ekranów w autobusie."
+  es: "El destino tal como se escribe, para el IBIS 2, la impresora de billetes y las pantallas del interior del autobús."
 "Roller blind picture":
   nl: "Rolfilmafbeelding"
   de: "Rollbandbild"
@@ -86,6 +97,7 @@ _version: 2
   ru: "Изображение роликового указателя"
   uk: "Зображення роликового покажчика"
   pl: "Obraz tablicy rolkowej"
+  es: "Imagen de la cortinilla"
 "The picture of a roller-blind sign (a .tga file): only buses with a roller blind read it.":
   nl: "De afbeelding van een rolfilmbord (een .tga-bestand): alleen bussen met een rolfilm lezen het."
   de: "Das Bild einer Rollbandanzeige (eine .tga-Datei): nur Busse mit Rollband lesen es."
@@ -93,6 +105,7 @@ _version: 2
   ru: "Изображение роликового указателя (файл .tga): его читают только автобусы с таким указателем."
   uk: "Зображення роликового покажчика (файл .tga): його читають лише автобуси з таким покажчиком."
   pl: "Obraz tablicy rolkowej (plik .tga): czytają go tylko autobusy z tablicą rolkową."
+  es: "La imagen de un letrero de cortinilla (un archivo .tga): solo la leen los autobuses con cortinilla."
 "Plug-in sign":
   nl: "Insteekbord"
   de: "Steckschild"
@@ -100,6 +113,7 @@ _version: 2
   ru: "Вставная табличка"
   uk: "Вставна табличка"
   pl: "Tabliczka wtykana"
+  es: "Cartel de quita y pon"
 "A sign behind the windscreen, by its number. Empty: none.":
   nl: "Een bord achter de voorruit, op nummer. Leeg: geen."
   de: "Ein Schild hinter der Frontscheibe, nach seiner Nummer. Leer: keins."
@@ -107,6 +121,7 @@ _version: 2
   ru: "Табличка за лобовым стеклом, по её номеру. Пусто: нет."
   uk: "Табличка за лобовим склом, за її номером. Порожньо: немає."
   pl: "Tabliczka za przednią szybą, według numeru. Puste: brak."
+  es: "Un cartel detrás del parabrisas, por su número. Vacío: ninguno."
 "Picture on LED signs":
   nl: "Afbeelding op ledborden"
   de: "Bild auf LED-Anzeigen"
@@ -114,6 +129,7 @@ _version: 2
   ru: "Картинка на светодиодных табло"
   uk: "Зображення на світлодіодних табло"
   pl: "Obraz na tablicach LED"
+  es: "Imagen en letreros LED"
 "A picture a Krüger LED sign shows instead of the text (a .bmp file). Empty: the text is shown.":
   nl: "Een afbeelding die een Krüger-ledbord toont in plaats van de tekst (een .bmp-bestand). Leeg: de tekst wordt getoond."
   de: "Ein Bild, das eine Krüger-LED-Anzeige statt des Textes zeigt (eine .bmp-Datei). Leer: der Text wird gezeigt."
@@ -121,6 +137,7 @@ _version: 2
   ru: "Картинка, которую светодиодное табло Krüger показывает вместо текста (файл .bmp). Пусто: показывается текст."
   uk: "Зображення, яке світлодіодне табло Krüger показує замість тексту (файл .bmp). Порожньо: показується текст."
   pl: "Obraz, który tablica LED Krüger pokazuje zamiast tekstu (plik .bmp). Puste: pokazywany jest tekst."
+  es: "Una imagen que muestra un letrero LED de Krüger en lugar del texto (un archivo .bmp). Vacío: se muestra el texto."
 "Special trip mark":
   nl: "Markering speciale rit"
   de: "Sonderfahrt-Kennung"
@@ -128,6 +145,7 @@ _version: 2
   ru: "Отметка спецрейса"
   uk: "Позначка спецрейсу"
   pl: "Oznaczenie kursu specjalnego"
+  es: "Marca de viaje especial"
 "Anything written here makes it a special trip: the sign shows no line number. Leave it empty for a line.":
   nl: "Alles wat hier staat, maakt er een speciale rit van: het bord toont geen lijnnummer. Laat het leeg voor een lijn."
   de: "Alles, was hier steht, macht sie zur Sonderfahrt: die Anzeige zeigt keine Liniennummer. Für eine Linie leer lassen."
@@ -135,6 +153,7 @@ _version: 2
   ru: "Любой текст здесь делает рейс специальным: табло не показывает номер маршрута. Для линии оставьте пустым."
   uk: "Будь-який текст тут робить рейс спеціальним: табло не показує номер маршруту. Для лінії залиште порожнім."
   pl: "Cokolwiek tu wpisane czyni z tego kurs specjalny: tablica nie pokazuje numeru linii. Dla linii zostaw puste."
+  es: "Cualquier cosa escrita aquí lo convierte en viaje especial: el letrero no muestra número de línea. Déjalo vacío para una línea."
 "Rear sign":
   nl: "Achterbord"
   de: "Heckanzeige"
@@ -142,6 +161,7 @@ _version: 2
   ru: "Заднее табло"
   uk: "Заднє табло"
   pl: "Tablica tylna"
+  es: "Letrero trasero"
 "The small sign at the back, on some buses only.":
   nl: "Het kleine bord achterop, alleen bij sommige bussen."
   de: "Die kleine Anzeige hinten, nur bei manchen Bussen."
@@ -149,6 +169,7 @@ _version: 2
   ru: "Маленькое табло сзади, только у некоторых автобусов."
   uk: "Маленьке табло ззаду, лише в деяких автобусів."
   pl: "Mała tablica z tyłu, tylko w niektórych autobusach."
+  es: "El letrero pequeño de detrás, solo en algunos autobuses."
 "For some buses only":
   nl: "Alleen voor sommige bussen"
   de: "Nur für manche Busse"
@@ -156,6 +177,7 @@ _version: 2
   ru: "Только для некоторых автобусов"
   uk: "Лише для деяких автобусів"
   pl: "Tylko dla niektórych autobusów"
+  es: "Solo para algunos autobuses"
 "Read only by some buses' signs; when it is empty, they show “%{text}” instead.":
   nl: "Alleen de borden van sommige bussen lezen dit; is het leeg, dan tonen ze “%{text}”."
   de: "Nur die Anzeigen mancher Busse lesen das; ist es leer, zeigen sie stattdessen „%{text}“."
@@ -163,6 +185,7 @@ _version: 2
   ru: "Читается только табло некоторых автобусов; если пусто, они показывают вместо этого «%{text}»."
   uk: "Читається лише табло деяких автобусів; якщо порожньо, вони показують замість цього «%{text}»."
   pl: "Czytane tylko przez tablice niektórych autobusów; gdy puste, pokazują zamiast tego „%{text}”."
+  es: "Solo lo leen los letreros de algunos autobuses; si está vacío, muestran “%{text}” en su lugar."
 "Only the depot file says what this is for (below); most buses do not read it.":
   nl: "Alleen het hof-bestand zegt waarvoor dit is (hieronder); de meeste bussen lezen het niet."
   de: "Nur die Hofdatei sagt, wofür das ist (unten); die meisten Busse lesen es nicht."
@@ -170,6 +193,7 @@ _version: 2
   ru: "Только файл депо говорит, для чего это (ниже); большинство автобусов это не читает."
   uk: "Лише файл депо каже, для чого це (нижче); більшість автобусів цього не читає."
   pl: "Tylko plik zajezdni mówi, do czego to służy (poniżej); większość autobusów tego nie czyta."
+  es: "Solo el archivo de cochera dice para qué sirve esto (abajo); la mayoría de los autobuses no lo leen."
 "The depot file does not say what this text is for, and most buses do not read it: empty is safe.":
   nl: "Het hof-bestand zegt niet waarvoor deze tekst is, en de meeste bussen lezen hem niet: leeg is veilig."
   de: "Die Hofdatei sagt nicht, wofür dieser Text ist, und die meisten Busse lesen ihn nicht: leer ist sicher."
@@ -177,6 +201,7 @@ _version: 2
   ru: "Файл депо не говорит, для чего этот текст, и большинство автобусов его не читает: пустым оставлять безопасно."
   uk: "Файл депо не каже, для чого цей текст, і більшість автобусів його не читає: порожнім залишати безпечно."
   pl: "Plik zajezdni nie mówi, do czego służy ten tekst, a większość autobusów go nie czyta: puste jest bezpieczne."
+  es: "El archivo de cochera no dice para qué sirve este texto, y la mayoría de los autobuses no lo leen: dejarlo vacío es seguro."
 "Side: %{side} · IBIS: %{ibis}":
   nl: "Zijkant: %{side} · IBIS: %{ibis}"
   de: "Seite: %{side} · IBIS: %{ibis}"
@@ -184,6 +209,7 @@ _version: 2
   ru: "Сбоку: %{side} · IBIS: %{ibis}"
   uk: "Збоку: %{side} · IBIS: %{ibis}"
   pl: "Bok: %{side} · IBIS: %{ibis}"
+  es: "Lateral: %{side} · IBIS: %{ibis}"
 "%{name} is in the depot file: the buses show its own texts.":
   nl: "%{name} staat in het hof-bestand: de bussen tonen de eigen teksten ervan."
   de: "%{name} steht in der Hofdatei: die Busse zeigen ihre eigenen Texte."
@@ -191,6 +217,7 @@ _version: 2
   ru: "%{name} есть в файле депо: автобусы показывают его собственные тексты."
   uk: "%{name} є у файлі депо: автобуси показують його власні тексти."
   pl: "%{name} jest w pliku zajezdni: autobusy pokazują jego własne teksty."
+  es: "%{name} está en el archivo de cochera: los autobuses muestran sus propios textos."
 "Some texts are your own (Advanced); the others are made from this destination.":
   nl: "Sommige teksten zijn van jezelf (Uitgebreid); de andere worden uit deze bestemming gemaakt."
   de: "Einige Texte sind deine eigenen (Erweitert); die anderen werden aus diesem Ziel gebildet."
@@ -198,6 +225,7 @@ _version: 2
   ru: "Некоторые тексты ваши (Расширенно); остальные составлены из этого пункта назначения."
   uk: "Деякі тексти ваші (Розширено); решта складена з цього пункту призначення."
   pl: "Niektóre teksty są twoje (Zaawansowany); pozostałe powstają z tego celu."
+  es: "Algunos textos son tuyos (Avanzado); los demás se crean a partir de este destino."
 "Every display of the bus is filled from this destination. Advanced: each text on its own, the IBIS route and the stops' names.":
   nl: "Elk display van de bus wordt uit deze bestemming gevuld. Uitgebreid: elke tekst apart, de IBIS-route en de haltenamen."
   de: "Jede Anzeige des Busses wird aus diesem Ziel gefüllt. Erweitert: jeder Text einzeln, die IBIS-Route und die Haltestellennamen."
@@ -205,6 +233,7 @@ _version: 2
   ru: "Все табло автобуса заполняются из этого пункта назначения. Расширенно: каждый текст отдельно, маршрут IBIS и названия остановок."
   uk: "Усі табло автобуса заповнюються з цього пункту призначення. Розширено: кожен текст окремо, маршрут IBIS і назви зупинок."
   pl: "Każdy wyświetlacz autobusu jest wypełniany z tego celu. Zaawansowany: każdy tekst osobno, trasa IBIS i nazwy przystanków."
+  es: "Todas las pantallas del autobús se rellenan a partir de este destino. Avanzado: cada texto por separado, la ruta del IBIS y los nombres de las paradas."
 "The depot file knows it as %{name}":
   nl: "Het hof-bestand kent dit als %{name}"
   de: "Die Hofdatei kennt es als %{name}"
@@ -212,6 +241,7 @@ _version: 2
   ru: "В файле депо это %{name}"
   uk: "У файлі депо це %{name}"
   pl: "Plik zajezdni zna to jako %{name}"
+  es: "El archivo de cochera lo conoce como %{name}"
 "Use it":
   nl: "Gebruiken"
   de: "Übernehmen"
@@ -219,6 +249,7 @@ _version: 2
   ru: "Использовать"
   uk: "Використати"
   pl: "Użyj"
+  es: "Usarlo"
 "Too long for the sign, so it is shortened. Advanced: write each row yourself.":
   nl: "Te lang voor het bord, dus ingekort. Uitgebreid: schrijf elke regel zelf."
   de: "Zu lang für die Anzeige, daher gekürzt. Erweitert: schreib jede Zeile selbst."
@@ -226,6 +257,7 @@ _version: 2
   ru: "Слишком длинно для табло, поэтому сокращено. Расширенно: напишите каждую строку сами."
   uk: "Задовго для табло, тому скорочено. Розширено: напишіть кожен рядок самі."
   pl: "Za długie na tablicę, więc skrócone. Zaawansowany: napisz każdy wiersz sam."
+  es: "Demasiado largo para el letrero, así que se acorta. Avanzado: escribe tú mismo cada fila."
 "Choose one the buses know":
   nl: "Kies er een die de bussen kennen"
   de: "Eins wählen, das die Busse kennen"
@@ -233,6 +265,7 @@ _version: 2
   ru: "Выбрать известный автобусам"
   uk: "Вибрати відомий автобусам"
   pl: "Wybierz taki, który autobusy znają"
+  es: "Elige uno que conozcan los autobuses"
 "Depot file: “%{note}”":
   nl: "Hof-bestand: “%{note}”"
   de: "Hofdatei: „%{note}“"
@@ -240,6 +273,7 @@ _version: 2
   ru: "Файл депо: «%{note}»"
   uk: "Файл депо: «%{note}»"
   pl: "Plik zajezdni: „%{note}”"
+  es: "Archivo de cochera: “%{note}”"
 "Each field is one text of the depot file; the bus reads each one for one display. Empty: the grey text made from the destination. Another destination makes them again.":
   nl: "Elk veld is één tekst van het hof-bestand; de bus leest elke tekst voor één display. Leeg: de grijze tekst die uit de bestemming gemaakt is. Een andere bestemming maakt ze opnieuw."
   de: "Jedes Feld ist ein Text der Hofdatei; der Bus liest jeden für eine Anzeige. Leer: der graue Text, aus dem Ziel gebildet. Ein anderes Ziel bildet sie neu."
@@ -247,6 +281,7 @@ _version: 2
   ru: "Каждое поле — один текст файла депо; автобус читает каждый для одного табло. Пусто: серый текст, составленный из пункта назначения. Другой пункт назначения составляет их заново."
   uk: "Кожне поле — один текст файлу депо; автобус читає кожен для одного табло. Порожньо: сірий текст, складений з пункту призначення. Інший пункт призначення складає їх заново."
   pl: "Każde pole to jeden tekst pliku zajezdni; autobus czyta każdy dla jednego wyświetlacza. Puste: szary tekst utworzony z celu. Inny cel tworzy je od nowa."
+  es: "Cada campo es un texto del archivo de cochera; el autobús lee cada uno para una pantalla. Vacío: el texto gris creado a partir del destino. Otro destino los vuelve a crear."
 "These are the depot file's own texts for %{name}: change them in a depot file of your own (depot editor).":
   nl: "Dit zijn de eigen teksten van het hof-bestand voor %{name}: wijzig ze in een eigen hof-bestand (hof-editor)."
   de: "Das sind die eigenen Texte der Hofdatei für %{name}: ändere sie in einer eigenen Hofdatei (Hofdatei-Editor)."
@@ -254,6 +289,7 @@ _version: 2
   ru: "Это собственные тексты файла депо для %{name}: измените их в своём файле депо (редактор депо)."
   uk: "Це власні тексти файлу депо для %{name}: змініть їх у власному файлі депо (редактор депо)."
   pl: "To własne teksty pliku zajezdni dla %{name}: zmień je we własnym pliku zajezdni (edytor zajezdni)."
+  es: "Estos son los textos propios del archivo de cochera para %{name}: cámbialos en un archivo de cochera tuyo (editor de cocheras)."
 "Hide the stops":
   nl: "Haltes verbergen"
   de: "Haltestellen ausblenden"
@@ -261,6 +297,7 @@ _version: 2
   ru: "Скрыть остановки"
   uk: "Сховати зупинки"
   pl: "Ukryj przystanki"
+  es: "Ocultar las paradas"
 "Show the %{n} stops":
   nl: "De %{n} haltes tonen"
   de: "Die %{n} Haltestellen zeigen"
@@ -268,6 +305,7 @@ _version: 2
   ru: "Показать остановки (%{n})"
   uk: "Показати зупинки (%{n})"
   pl: "Pokaż przystanki (%{n})"
+  es: "Mostrar las %{n} paradas"
 "Hide the texts for other kinds of sign":
   nl: "De teksten voor andere soorten borden verbergen"
   de: "Die Texte für andere Anzeigearten ausblenden"
@@ -275,6 +313,7 @@ _version: 2
   ru: "Скрыть тексты для других видов табло"
   uk: "Сховати тексти для інших видів табло"
   pl: "Ukryj teksty dla innych rodzajów tablic"
+  es: "Ocultar los textos para otros tipos de letrero"
 "%{n} more texts, for other kinds of sign":
   nl: "Nog %{n} teksten, voor andere soorten borden"
   de: "%{n} weitere Texte, für andere Anzeigearten"
@@ -282,6 +321,7 @@ _version: 2
   ru: "Ещё текстов: %{n}, для других видов табло"
   uk: "Ще текстів: %{n}, для інших видів табло"
   pl: "Jeszcze %{n} tekstów, dla innych rodzajów tablic"
+  es: "%{n} textos más, para otros tipos de letrero"
 "The number the driver types into the IBIS for this direction: the line's number and two digits. Empty: one is given when the line is saved.":
   nl: "Het nummer dat de chauffeur voor deze richting in de IBIS intikt: het lijnnummer en twee cijfers. Leeg: er wordt er een gegeven bij het opslaan van de lijn."
   de: "Die Nummer, die der Fahrer für diese Richtung ins IBIS tippt: die Liniennummer und zwei Ziffern. Leer: beim Speichern der Linie wird eine vergeben."
@@ -289,6 +329,7 @@ _version: 2
   ru: "Номер, который водитель набирает в IBIS для этого направления: номер маршрута и две цифры. Пусто: номер назначается при сохранении линии."
   uk: "Номер, який водій набирає в IBIS для цього напрямку: номер маршруту і дві цифри. Порожньо: номер призначається під час збереження лінії."
   pl: "Numer, który kierowca wpisuje w IBIS dla tego kierunku: numer linii i dwie cyfry. Puste: numer zostanie nadany przy zapisie linii."
+  es: "El número que el conductor teclea en el IBIS para este sentido: el número de la línea y dos cifras. Vacío: se asigna uno al guardar la línea."
 "What the IBIS and the passenger displays call each stop. Empty: the depot file's name for it (grey).":
   nl: "Hoe de IBIS en de reizigersdisplays elke halte noemen. Leeg: de naam uit het hof-bestand (grijs)."
   de: "Wie das IBIS und die Fahrgastanzeigen jede Haltestelle nennen. Leer: der Name aus der Hofdatei (grau)."
@@ -296,6 +337,7 @@ _version: 2
   ru: "Как IBIS и табло для пассажиров называют каждую остановку. Пусто: название из файла депо (серым)."
   uk: "Як IBIS і табло для пасажирів називають кожну зупинку. Порожньо: назва з файлу депо (сірим)."
   pl: "Jak IBIS i wyświetlacze dla pasażerów nazywają każdy przystanek. Puste: nazwa z pliku zajezdni (szara)."
+  es: "Cómo llaman el IBIS y las pantallas de pasajeros a cada parada. Vacío: el nombre del archivo de cochera (gris)."
 "Names for the buses to know besides the depot file's: each one kept is in the destination list of every line of this map.":
   nl: "Namen die de bussen naast die uit het hof-bestand moeten kennen: elke bewaarde staat in de bestemmingslijst van elke lijn op deze kaart."
   de: "Namen, die die Busse neben denen der Hofdatei kennen sollen: jeder aufbewahrte steht in der Zielliste jeder Linie dieser Karte."
@@ -303,3 +345,4 @@ _version: 2
   ru: "Названия, которые автобусы должны знать помимо названий из файла депо: каждое сохранённое есть в списке пунктов назначения каждой линии этой карты."
   uk: "Назви, які автобуси мають знати, окрім назв із файлу депо: кожна збережена є в списку пунктів призначення кожної лінії цієї мапи."
   pl: "Nazwy, które autobusy mają znać oprócz tych z pliku zajezdni: każda zachowana jest na liście celów każdej linii tej mapy."
+  es: "Nombres que deben conocer los autobuses además de los del archivo de cochera: cada uno que se guarde está en la lista de destinos de todas las líneas de este mapa."
