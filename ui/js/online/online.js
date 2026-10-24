@@ -417,7 +417,7 @@ function InviteRow({ i }) {
   };
   return html`<div class="ol-friend invite"><${Icon} name="wifi_tethering" size=${18} class="ol-accent" />
     <div class="who"><b class="cut">${i.text}</b></div>
-    <span class="acts"><${Btn} kind="primary" icon="groups" label=${tr('Join')} onClick=${join} /><${Btn} kind="ghost" icon="close" label=${tr('Dismiss')} onClick=${() => act('ol_dismiss', { id: i.id }, true)} /></span>
+    <span class="acts"><${Btn} kind="primary" icon="groups" label=${tr('Join')} onClick=${join} /><${Btn} kind="ghost" icon="close" label=${tr('Decline')} onClick=${() => act('ol_dismiss', { id: i.id }, true)} /></span>
   </div>`;
 }
 
@@ -587,6 +587,6 @@ export function OnlineLayer() {
       <${Icon} name="wifi_tethering" size=${20} />
       <div class="t"><b>${tr('Invite')}</b><span>${i.text}</span></div>
       <div class="acts"><${Btn} kind="primary" icon="groups" label=${tr('Join')} onClick=${async () => { hide(i.id); if (await joinSession(i.session)) act('ol_dismiss', { id: i.id }, true); }} />
-        <${Btn} kind="ghost" label=${tr('Dismiss')} onClick=${() => (hide(i.id), act('ol_dismiss', { id: i.id }, true))} /></div>
+        <${Btn} kind="ghost" label=${tr('Decline')} onClick=${() => (hide(i.id), act('ol_dismiss', { id: i.id }, true))} /></div>
     </div>`)}</div>`}`;
 }

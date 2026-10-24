@@ -668,7 +668,7 @@ _version: 2
   de: "Teil %{n} von %{of}: Linie %{line}, Umlauf %{tour}"
   fr: "Partie %{n} sur %{of} : ligne %{line}, service %{tour}"
   nl: "Deel %{n} van %{of}: lijn %{line}, omloop %{tour}"
-  pl: "Część %{n} z %{of}: linia %{line}, kurs %{tour}"
+  pl: "Część %{n} z %{of}: linia %{line}, brygada %{tour}"
   ru: "Часть %{n} из %{of}: маршрут %{line}, выход %{tour}"
   uk: "Частина %{n} з %{of}: маршрут %{line}, випуск %{tour}"
 "Your duty is done: take the bus back to the depot":

@@ -1697,7 +1697,7 @@ _version: 2
   nl: "Weet je niet waar een pagina voor is? Het vraagteken zegt het in een paar woorden."
   de: "Unsicher, wozu eine Seite da ist? Ihr Fragezeichen sagt es in wenigen Worten."
   fr: "Vous ne savez pas à quoi sert une page ? Son point d'interrogation le dit en quelques mots."
-  ru: "Не понятно, зачем страница? Её знак вопроса объяснит в нескольких словах."
+  ru: "Непонятно, зачем страница? Её знак вопроса объяснит в нескольких словах."
   uk: "Не зрозуміло, для чого сторінка? Її знак питання пояснить кількома словами."
   pl: "Nie wiesz, do czego służy strona? Jej znak zapytania powie to w kilku słowach."
 "Every line with its buses and passengers. The slider sets its fare, with advice beside it. Add a line takes three steps: the line, how often, done.":
@@ -1713,7 +1713,7 @@ _version: 2
   nl: "Wie er voor je rijdt en hoe goed. Het bedrijf neemt 's nachts de chauffeurs aan die het nodig heeft; geef een bonus, of laat iemand gaan."
   de: "Wer für dich fährt und wie gut. Das Unternehmen stellt nachts die Fahrer ein, die es braucht; gib eine Prämie oder lass jemanden gehen."
   fr: "Qui conduit pour vous et à quel niveau. L'entreprise embauche la nuit les conducteurs dont elle a besoin ; donnez une prime, ou laissez partir quelqu'un."
-  ru: "Кто у вас водит и насколько хорошо. Компания ночью нанимает нужных водителей; дайте премию или уволите кого-то."
+  ru: "Кто у вас водит и насколько хорошо. Компания ночью нанимает нужных водителей; дайте премию или увольте кого-то."
   uk: "Хто у вас водить і наскільки добре. Компанія вночі наймає потрібних водіїв; дайте премію або звільніть когось."
   pl: "Kto dla ciebie jeździ i jak dobrze. Firma w nocy zatrudnia potrzebnych kierowców; daj premię albo kogoś zwolnij."
 "Where the money goes":

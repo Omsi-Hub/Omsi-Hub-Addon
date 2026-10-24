@@ -612,3 +612,25 @@ _version: 2
   pl: "Zaplanujemy więcej czasu na linii %{line}, póki trwają roboty."
   ru: "Мы заложим больше времени на линии %{line}, пока идут работы."
   uk: "Ми закладемо більше часу на лінії %{line}, поки тривають роботи."
+# What answering a complaint says when it cannot be done (complaints::reply, through the popup of a refusal).
+"There is no such complaint.":
+  de: "Diese Beschwerde gibt es nicht."
+  fr: "Cette réclamation n'existe pas."
+  nl: "Die klacht bestaat niet."
+  pl: "Nie ma takiej skargi."
+  ru: "Такой жалобы нет."
+  uk: "Такої скарги немає."
+"This complaint is closed.":
+  de: "Diese Beschwerde ist abgeschlossen."
+  fr: "Cette réclamation est close."
+  nl: "Deze klacht is afgesloten."
+  pl: "Ta skarga jest zamknięta."
+  ru: "Эта жалоба закрыта."
+  uk: "Цю скаргу закрито."
+"That answer was given already.":
+  de: "Diese Antwort wurde schon gegeben."
+  fr: "Cette réponse a déjà été donnée."
+  nl: "Dat antwoord is al gegeven."
+  pl: "Ta odpowiedź została już udzielona."
+  ru: "Этот ответ уже дан."
+  uk: "Цю відповідь уже надано."

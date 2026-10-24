@@ -761,7 +761,7 @@ _version: 2
   de: "%{n} Umläufe haben heute keinen Bus oder keinen Fahrer."
   fr: "%{n} services n'ont aujourd'hui pas de bus ou pas de conducteur."
   ru: "У %{n} оборотов сегодня нет автобуса или водителя."
-  uk: "У %{n} обертів сьогодні немає автобуса або водія."
+  uk: "У %{n} оборотів сьогодні немає автобуса або водія."
   pl: "%{n} obiegów nie ma dziś autobusu albo kierowcy."
 "Less cash than a month of wages.":
   nl: "Minder in kas dan een maand lonen."
@@ -845,7 +845,7 @@ _version: 2
   de: "%{c} von %{n} Umläufen besetzt"
   fr: "%{c} services sur %{n} assurés"
   ru: "%{c} из %{n} оборотов обеспечены"
-  uk: "%{c} з %{n} обертів забезпечено"
+  uk: "%{c} з %{n} оборотів забезпечено"
   pl: "%{c} z %{n} obiegów obsadzonych"
 "The timetable of the day cannot be read.":
   nl: "De dienstregeling van de dag is niet te lezen."

@@ -35,7 +35,7 @@ _version: 2
   nl: "Rijdt dan lijn %{n} omloop %{tour} (%{from}–%{to})"
   pl: "Jedzie wtedy linią %{n}, kurs %{tour} (%{from}–%{to})"
   ru: "В это время на линии %{n}, оборот %{tour} (%{from}–%{to})"
-  uk: "У цей час на лінії %{n}, оберт %{tour} (%{from}–%{to})"
+  uk: "У цей час на лінії %{n}, оборот %{tour} (%{from}–%{to})"
 "Only %{n} min between duties: %{min} min rest needed":
   de: "Nur %{n} Min. zwischen den Diensten: %{min} Min. Pause nötig"
   fr: "Seulement %{n} min entre les services : %{min} min de repos nécessaires"
@@ -263,21 +263,21 @@ _version: 2
   nl: "Lijn %{n} omloop %{tour}: %{rule}"
   pl: "Linia %{n} kurs %{tour}: %{rule}"
   ru: "Линия %{n} оборот %{tour}: %{rule}"
-  uk: "Лінія %{n} оберт %{tour}: %{rule}"
+  uk: "Лінія %{n} оборот %{tour}: %{rule}"
 "Line %{n} tour %{tour}: %{rule} - covered for the day":
   de: "Linie %{n} Umlauf %{tour}: %{rule} – für heute abgedeckt"
   fr: "Ligne %{n} service %{tour} : %{rule} – couvert pour la journée"
   nl: "Lijn %{n} omloop %{tour}: %{rule} – voor vandaag opgevangen"
   pl: "Linia %{n} kurs %{tour}: %{rule} – obsadzone na dziś"
   ru: "Линия %{n} оборот %{tour}: %{rule} — закрыто на сегодня"
-  uk: "Лінія %{n} оберт %{tour}: %{rule} — закрито на сьогодні"
+  uk: "Лінія %{n} оборот %{tour}: %{rule} — закрито на сьогодні"
 "%{n} tours in service have no bus or driver in the roster: they do not run":
   de: "%{n} Umläufe im Betrieb haben keinen Bus oder Fahrer im Dienstplan: sie fahren nicht"
   fr: "%{n} services en exploitation n'ont ni bus ni chauffeur au roulement : ils ne roulent pas"
   nl: "%{n} omlopen in dienst hebben geen bus of chauffeur in het rooster: ze rijden niet"
   pl: "%{n} kursów w ruchu nie ma autobusu ani kierowcy w grafiku: nie jadą"
   ru: "У %{n} оборотов в работе нет автобуса или водителя в графике: они не выходят"
-  uk: "У %{n} обертів у роботі немає автобуса чи водія в графіку: вони не виходять"
+  uk: "У %{n} оборотів у роботі немає автобуса чи водія в графіку: вони не виходять"
 "The day's roster":
   de: "Dienstplan des Tages"
   fr: "Le roulement du jour"

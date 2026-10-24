@@ -474,5 +474,5 @@ _version: 2
   fr: "%{n} bus attendent des pièces"
   nl: "%{n} bussen wachten op onderdelen"
   pl: "Autobusy czekające na części: %{n}"
-  ru: "Автобусов ждут запчасти: %{n}"
-  uk: "Автобусів чекають на запчастини: %{n}"
+  ru: "Автобусов, ждущих запчасти: %{n}"
+  uk: "Автобусів, що чекають на запчастини: %{n}"

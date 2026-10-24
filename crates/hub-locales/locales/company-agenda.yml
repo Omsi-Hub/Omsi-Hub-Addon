@@ -683,7 +683,7 @@ _version: 2
   ru: "%{start}–%{end}, назначено смен: %{duties}"
   uk: "%{start}–%{end}, призначено змін: %{duties}"
 "When the day needs them, %{duties} duties given":
-  de: "Wann der Tag sie braucht, %{duties} Dienste vergeben"
+  de: "Wenn der Tag sie braucht, %{duties} Dienste vergeben"
   fr: "Quand la journée en a besoin, %{duties} postes attribués"
   nl: "Wanneer de dag ze nodig heeft, %{duties} diensten toegewezen"
   pl: "Kiedy dzień ich potrzebuje, przydzielone zmiany: %{duties}"

@@ -401,7 +401,7 @@ _version: 2
   nl: "De omlopen van elke lijn met hun diensten. Sleep een chauffeur of bus uit de lijst op een dienst of omloop, of klik eerst op het een en dan op het ander."
   pl: "Obiegi każdej linii z ich służbami. Przeciągnij kierowcę lub autobus z listy na służbę lub obieg albo kliknij najpierw jedno, potem drugie."
   ru: "Обороты каждой линии с их сменами. Перетащите водителя или автобус из списка на смену или оборот либо щёлкните сначала одно, потом другое."
-  uk: "Оберти кожної лінії з їхніми змінами. Перетягніть водія або автобус зі списку на зміну чи оберт або клацніть спершу одне, потім інше."
+  uk: "Обороти кожної лінії з їхніми змінами. Перетягніть водія або автобус зі списку на зміну чи оборот або клацніть спершу одне, потім інше."
 "Drivers and buses":
   de: "Fahrer und Busse"
   fr: "Conducteurs et bus"
@@ -415,7 +415,7 @@ _version: 2
   nl: "Je chauffeurs en bussen voor de dag. Klik in de grafiek op een dienst of omloop om te zien wie hem kan nemen."
   pl: "Twoi kierowcy i autobusy na ten dzień. Kliknij służbę lub obieg na wykresie, by zobaczyć, kto mógłby je wziąć."
   ru: "Ваши водители и автобусы на день. Щёлкните смену или оборот на графике, чтобы увидеть, кто мог бы его взять."
-  uk: "Ваші водії та автобуси на день. Клацніть зміну чи оберт на графіку, щоб побачити, хто міг би його взяти."
+  uk: "Ваші водії та автобуси на день. Клацніть зміну чи оборот на графіку, щоб побачити, хто міг би його взяти."
 "Fill, clear, repeat":
   de: "Füllen, leeren, wiederholen"
   fr: "Remplir, vider, répéter"
@@ -1583,7 +1583,7 @@ _version: 2
   fr: "Plus de services que de conducteurs (un problème général) : embauchez des conducteurs sur la page Personnel, ou faites des services moins nombreux et plus longs."
   nl: "Meer diensten dan chauffeurs (een algemeen probleem): neem chauffeurs aan op de pagina Personeel, of maak minder, langere diensten."
   pl: "Więcej służb niż kierowców (problem ogólny): zatrudnij kierowców na stronie Personel albo zrób mniej, ale dłuższych służb."
-  ru: "Смен больше, чем водителей (общая проблема): наймите водителей на странице «Персонал» или сделайте меньше, но длиннее смены."
+  ru: "Смен больше, чем водителей (общая проблема): наймите водителей на странице «Персонал» или сделайте меньше, но более длинных смен."
   uk: "Змін більше, ніж водіїв (загальна проблема): найміть водіїв на сторінці «Персонал» або зробіть менше, але довших змін."
 "Orange is a soft rule: allowed, but it adds a penalty to the cost. Change the rules under Preferences (the first icon at the top).":
   de: "Orange ist eine weiche Regel: erlaubt, aber sie erhöht die Kosten um eine Strafe. Die Regeln ändern Sie unter Einstellungen (das erste Symbol oben)."

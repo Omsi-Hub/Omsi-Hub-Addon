@@ -97,7 +97,7 @@ _version: 2
   de: "Änderungen noch nicht gespeichert: SPEICHERN macht sie zur Planung des Betriebs, VERWERFEN vergisst sie"
   fr: "Modifications non enregistrées : ENREGISTRER en fait la planification de l'entreprise, ABANDONNER les oublie"
   nl: "Wijzigingen nog niet opgeslagen: OPSLAAN maakt ze de planning van het bedrijf, VERWERPEN vergeet ze"
-  pl: "Zmiany nie zapisane: ZAPISZ czyni je planem firmy, ODRZUĆ je porzuca"
+  pl: "Niezapisane zmiany: ZAPISZ czyni je planem firmy, ODRZUĆ je porzuca"
   ru: "Изменения не сохранены: СОХРАНИТЬ делает их планом компании, ОТМЕНИТЬ забывает их"
   uk: "Зміни не збережено: ЗБЕРЕГТИ робить їх планом компанії, СКАСУВАТИ забуває їх"
 "Saved: the company runs this planning":

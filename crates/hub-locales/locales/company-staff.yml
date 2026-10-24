@@ -794,7 +794,7 @@ _version: 2
   fr: "Publier une offre pour de nouveaux candidats"
   ru: "Дать объявление о новых кандидатах"
   uk: "Дати оголошення про нових кандидатів"
-  pl: "Daj ogłoszenie o nowych kandydatów"
+  pl: "Daj ogłoszenie, aby znaleźć nowych kandydatów"
 "A job advert costs %{amount}: the applicants who are left make way for new ones at once.":
   nl: "Een advertentie kost %{amount}: de sollicitanten die over zijn maken meteen plaats voor nieuwe."
   de: "Eine Stellenanzeige kostet %{amount}: Die übrigen Bewerber machen sofort Platz für neue."

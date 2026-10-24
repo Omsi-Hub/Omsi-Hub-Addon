@@ -469,7 +469,7 @@ _version: 2
   fr: "Battement raccourci"
   nl: "Kortere keertijd"
   pl: "Krótszy postój"
-  ru: "Короче стоянка"
+  ru: "Сокращённая стоянка"
   uk: "Коротша стоянка"
 "Spare bus %{bus} swapped in":
   de: "Reservebus %{bus} eingesetzt"

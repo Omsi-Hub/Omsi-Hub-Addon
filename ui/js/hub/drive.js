@@ -370,7 +370,7 @@ export async function start(extra) {
     toast(t('The game is starting…'), 'ok');
     return r;
   } catch (e) {
-    toast(e.message, 'error');
+    toast(t(e.message), 'error');
     return null;
   }
 }

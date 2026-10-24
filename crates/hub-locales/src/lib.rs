@@ -36,6 +36,7 @@ pub const TABLES: &[(&str, &str)] = &[
     ("company-home.yml", include_str!("../locales/company-home.yml")),
     ("company-income.yml", include_str!("../locales/company-income.yml")),
     ("company-lateness.yml", include_str!("../locales/company-lateness.yml")),
+    ("company-ledger.yml", include_str!("../locales/company-ledger.yml")),
     ("company-livemap.yml", include_str!("../locales/company-livemap.yml")),
     ("company-messages.yml", include_str!("../locales/company-messages.yml")),
     ("company-multiplayer.yml", include_str!("../locales/company-multiplayer.yml")),
@@ -228,6 +229,32 @@ mod tests {
         for (name, table) in TABLES {
             assert!(parse(table).iter().all(|(k, _)| !k.is_empty()), "{name}");
         }
+    }
+
+    /// Every text of every table in each of the languages the app is kept in: not empty, with
+    /// the same `%{name}` holes as the English (a text another table translates counts).
+    #[test]
+    fn every_text_is_translated_into_every_language() {
+        fn holes(s: &str) -> Vec<&str> {
+            let mut h: Vec<&str> = s.match_indices("%{").map(|(i, _)| &s[i..s[i..].find('}').map_or(s.len(), |e| i + e + 1)]).collect();
+            h.sort();
+            h
+        }
+        let mut missing = Vec::new();
+        for lang in ["nl", "de", "fr", "ru", "uk", "pl"] {
+            let table = texts(lang);
+            for (name, t) in TABLES {
+                for (key, _) in parse(t) {
+                    match table.get(&key) {
+                        Some(tr) if !tr.trim().is_empty() && holes(tr) == holes(&key) => {}
+                        Some(tr) => missing.push(format!("{name}: {lang}: {key:?} has {tr:?}")),
+                        None => missing.push(format!("{name}: {lang}: {key:?} is not translated")),
+                    }
+                }
+            }
+        }
+        missing.dedup();
+        assert!(missing.is_empty(), "{} texts:\n{}", missing.len(), missing.join("\n"));
     }
 
     /// Every file of the folder is in `TABLES` (a new one is taken in too), each a table.

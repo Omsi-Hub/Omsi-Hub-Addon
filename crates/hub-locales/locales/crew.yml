@@ -280,7 +280,7 @@ _version: 2
 "The destination display is faulty":
   de: "Die Zielanzeige ist defekt"
   fr: "La girouette est défectueuse"
-  nl: "De richtingaanwijzer is defect"
+  nl: "Het bestemmingsdisplay is defect"
   pl: "Wyświetlacz kierunku jest uszkodzony"
   ru: "Указатель маршрута неисправен"
   uk: "Покажчик маршруту несправний"
@@ -379,7 +379,7 @@ _version: 2
   de: "Geänderte Ablösung: %{name} übernimmt"
   fr: "Relève modifiée : %{name} prend la suite"
   nl: "Gewijzigde aflossing: %{name} neemt over"
-  pl: "Zmiana zmiany: przejmuje %{name}"
+  pl: "Zmieniony zmiennik: przejmuje %{name}"
   ru: "Смена сменщика: принимает %{name}"
   uk: "Зміна змінника: приймає %{name}"
 "No relief planned yet: the dispatcher covers it":
@@ -506,7 +506,7 @@ _version: 2
   fr: "Du"
   nl: "Vanaf"
   pl: "Od"
-  ru: "Откуда"
+  ru: "С"
   uk: "З"
 "Until":
   de: "Bis"

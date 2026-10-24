@@ -53,7 +53,7 @@ _version: 2
 "Fares far above the association's":
   de: "Tarife weit über dem Verbundtarif"
   fr: "Tarifs bien au-dessus de ceux de la communauté"
-  nl: "Tarieven ver boven die van het vervoersbewijs-verbond"
+  nl: "Tarieven ver boven die van het tariefverbond"
   pl: "Taryfy znacznie powyżej związkowych"
   ru: "Тарифы намного выше тарифа объединения"
   uk: "Тарифи значно вищі за тариф об'єднання"
@@ -333,7 +333,7 @@ _version: 2
 "Research WLAN and air conditioning; sign the cleaning company":
   de: "Erforschen Sie WLAN und Klimaanlage; beauftragen Sie die Reinigungsfirma"
   fr: "Recherchez le WiFi et la climatisation ; engagez l'entreprise de nettoyage"
-  nl: "Onderzoek wifi en airconditioning; sluit het schoonmaakbedrijf in"
+  nl: "Onderzoek wifi en airconditioning; schakel het schoonmaakbedrijf in"
   pl: "Zbadaj WiFi i klimatyzację; podpisz umowę z firmą sprzątającą"
   ru: "Исследуйте Wi-Fi и кондиционеры; наймите клининговую компанию"
   uk: "Дослідіть Wi-Fi і кондиціонери; найміть клінінгову компанію"

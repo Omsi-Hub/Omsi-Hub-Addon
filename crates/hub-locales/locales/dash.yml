@@ -818,3 +818,32 @@ _version: 2
 "Launcher":
   de: "Launcher"
   ru: "Лаунчер"
+# The IBIS card's keys (dash.js): named after the device's own German keys.
+"Linie/Kurs":
+  de: "Linie/Kurs"
+  fr: "Ligne/service"
+  nl: "Lijn/omloop"
+  pl: "Linia/brygada"
+  ru: "Линия/выход"
+  uk: "Лінія/оборот"
+"Kurs %{kurs}":
+  de: "Kurs %{kurs}"
+  fr: "Service %{kurs}"
+  nl: "Omloop %{kurs}"
+  pl: "Brygada %{kurs}"
+  ru: "Выход %{kurs}"
+  uk: "Оборот %{kurs}"
+"Ziel":
+  de: "Ziel"
+  fr: "Destination"
+  nl: "Bestemming"
+  pl: "Cel"
+  ru: "Пункт назначения"
+  uk: "Пункт призначення"
+"Ziel %{code}":
+  de: "Ziel %{code}"
+  fr: "Destination %{code}"
+  nl: "Bestemming %{code}"
+  pl: "Cel %{code}"
+  ru: "Пункт назначения %{code}"
+  uk: "Пункт призначення %{code}"

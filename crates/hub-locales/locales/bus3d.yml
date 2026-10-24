@@ -37,3 +37,18 @@ _version: 2
   ru: "Выберите автобус"
   uk: "Виберіть автобус"
   pl: "Wybierz autobus"
+# The 3D preview's hint (viewer.js).
+"Drag to turn, scroll to zoom":
+  nl: "Sleep om te draaien, scroll om te zoomen"
+  de: "Ziehen zum Drehen, Scrollen zum Zoomen"
+  fr: "Faites glisser pour tourner, molette pour zoomer"
+  ru: "Перетащите, чтобы повернуть, прокрутите для масштаба"
+  uk: "Перетягніть, щоб повернути, прокрутіть для масштабу"
+  pl: "Przeciągnij, aby obrócić, przewiń, aby przybliżyć"
+"Drag to look round, scroll to zoom":
+  nl: "Sleep om rond te kijken, scroll om te zoomen"
+  de: "Ziehen zum Umsehen, Scrollen zum Zoomen"
+  fr: "Faites glisser pour regarder autour, molette pour zoomer"
+  ru: "Перетащите, чтобы осмотреться, прокрутите для масштаба"
+  uk: "Перетягніть, щоб роззирнутися, прокрутіть для масштабу"
+  pl: "Przeciągnij, aby się rozejrzeć, przewiń, aby przybliżyć"

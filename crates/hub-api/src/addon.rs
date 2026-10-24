@@ -569,7 +569,7 @@ fn set_folder(folder: &str) -> Answer {
     let checked = crate::hub::check_openomsi(folder);
     if checked["ok"] != true {
         let mut v = state();
-        v["refused"] = json!({ "folder": folder.trim(), "problem": checked["text"] });
+        v["refused"] = json!({ "folder": folder.trim(), "problem": checked["text"], "say": checked["say"], "vars": checked["vars"] });
         return Ok(v);
     }
     let mut s = Settings::load();

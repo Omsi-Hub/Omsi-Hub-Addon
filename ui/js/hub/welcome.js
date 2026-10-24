@@ -476,7 +476,8 @@ function FolderField({ id, caps, hint, value, found, check, title }) {
     const p = await pickFolder(title).catch(() => null);
     if (p) put({ [id]: p });
   };
-  const verdict = check && (check.ok ? ['check_circle', 'ok', check.version ? `openOMSI ${check.version}${check.text ? ' · ' + check.text : ''}` : check.text || tr('Found')] : ['warning', 'warn', check.text]);
+  const said = check && (check.say || check.text) ? tr(check.say || check.text, check.vars) : '';
+  const verdict = check && (check.ok ? ['check_circle', 'ok', check.version ? `openOMSI ${check.version}${said ? ' · ' + said : ''}` : said || tr('Found')] : ['warning', 'warn', said]);
   return html`<div class="hub-wfolder">
     <div class="hub-wcaps">${caps}</div>
     <div class="row">

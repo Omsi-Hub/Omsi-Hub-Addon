@@ -107,17 +107,20 @@ pub fn check_openomsi(folder: &str) -> Value {
         Ok(c) => {
             let too_old = c.install.version.as_ref().is_some_and(|v| *v < hub_game::compat::FIRST_SUPPORTED);
             let ok = c.compat.level != Level::Unsupported;
-            let text = if too_old {
-                format!("This openOMSI is {}: Omsi-Hub needs {} or newer. Update openOMSI.", c.install.version.as_ref().map(|v| v.to_string()).unwrap_or_default(), hub_game::compat::FIRST_SUPPORTED)
+            let (say, vars) = if too_old {
+                let version = c.install.version.as_ref().map(|v| v.to_string()).unwrap_or_default();
+                ("This openOMSI is %{version}: Omsi-Hub needs %{needs} or newer. Update openOMSI.".to_string(), json!({ "version": version, "needs": hub_game::compat::FIRST_SUPPORTED.to_string() }))
             } else if c.install.omsihub_build {
-                "This is the old Omsi-Hub's own game: choose the folder of the official openOMSI".to_string()
+                ("This is the old Omsi-Hub's own game: choose the folder of the official openOMSI".to_string(), json!({}))
             } else {
-                c.compat.notes.first().cloned().unwrap_or_default()
+                (c.compat.notes.first().cloned().unwrap_or_default(), json!({}))
             };
             json!({
                 "ok": ok && !c.install.omsihub_build,
                 "too_old": too_old,
-                "text": text,
+                "text": filled(&say, &vars),
+                "say": say,
+                "vars": vars,
                 "version": c.install.version,
                 "version_from": c.install.version_from,
                 "exe": c.install.exe,
@@ -135,8 +138,18 @@ pub fn check_omsi2(folder: &str) -> Value {
         return json!({ "ok": false, "missing": [], "text": "This folder does not exist" });
     }
     let missing = hub_omsi::vfs::missing_omsi2_essentials(Path::new(folder));
-    let text = if missing.is_empty() { String::new() } else { format!("This is not the OMSI 2 folder: {} not found", missing.join(", ")) };
-    json!({ "ok": missing.is_empty(), "missing": missing, "text": text })
+    let (say, vars) = if missing.is_empty() { (String::new(), json!({})) } else { ("This is not the OMSI 2 folder: %{missing} not found".to_string(), json!({ "missing": missing.join(", ") })) };
+    json!({ "ok": missing.is_empty(), "missing": missing, "text": filled(&say, &vars), "say": say, "vars": vars })
+}
+
+/// A check's text in English, its `%{name}`s filled from `vars` (the page says it translated:
+/// `say` and `vars`).
+fn filled(say: &str, vars: &Value) -> String {
+    let mut t = say.to_string();
+    for (k, v) in vars.as_object().into_iter().flatten() {
+        t = t.replace(&format!("%{{{k}}}"), v.as_str().unwrap_or_default());
+    }
+    t
 }
 
 fn setup_state() -> Value {

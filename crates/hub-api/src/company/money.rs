@@ -145,7 +145,7 @@ fn ledger(c: &Company) -> Value {
             } else {
                 "cost"
             };
-            json!({ "date": day_label(&b.date), "kind": tr(b.kind.label()), "text": b.text, "mark": mark, "amount": t, "tone": tone, "cat": cat })
+            json!({ "date": day_label(&b.date), "kind": tr(b.kind.label()), "text": super::ledger::say(&b.text), "mark": mark, "amount": t, "tone": tone, "cat": cat })
         })
         .collect();
     json!({

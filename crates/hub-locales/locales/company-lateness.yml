@@ -223,14 +223,14 @@ _version: 2
   de: "%{name} fuhr heute %{s} Fahrten verspätet: ein Pünktlichkeitskurs oder ein Dienst mit mehr Zeit."
   fr: "%{name} a fait %{s} trajets en retard aujourd'hui : une formation à la ponctualité, ou un service avec plus de temps."
   nl: "%{name} reed vandaag %{s} ritten te laat: een cursus stiptheid, of een dienst met meer tijd."
-  pl: "%{name} spóźnił dziś %{s} kursów: kurs punktualności albo służba z większym zapasem czasu."
+  pl: "%{name} prowadził dziś %{s} kursów z opóźnieniem: kurs punktualności albo służba z większym zapasem czasu."
   ru: "%{name} сегодня опоздал на %{s} рейсах: курс пунктуальности или смена с запасом времени."
   uk: "%{name} сьогодні запізнився на %{s} рейсах: курс пунктуальності або зміна із запасом часу."
 "%{name} signed on late on %{d} of the last days and drove %{s} trips late today: a punctuality course, a talk, or another duty.":
   de: "%{name} trat an %{d} der letzten Tage zu spät an und fuhr heute %{s} Fahrten verspätet: ein Pünktlichkeitskurs, ein Gespräch oder ein anderer Dienst."
   fr: "%{name} a pris son service en retard %{d} des derniers jours et a fait %{s} trajets en retard aujourd'hui : une formation à la ponctualité, un entretien, ou un autre service."
   nl: "%{name} meldde zich op %{d} van de laatste dagen te laat en reed vandaag %{s} ritten te laat: een cursus stiptheid, een gesprek of een andere dienst."
-  pl: "%{name} spóźnił się na służbę w %{d} z ostatnich dni i spóźnił dziś %{s} kursów: kurs punktualności, rozmowa albo inna służba."
+  pl: "%{name} spóźnił się na służbę w %{d} z ostatnich dni i prowadził dziś %{s} kursów z opóźnieniem: kurs punktualności, rozmowa albo inna służba."
   ru: "%{name} опаздывал на смену в %{d} из последних дней и сегодня опоздал на %{s} рейсах: курс пунктуальности, беседа или другая смена."
   uk: "%{name} запізнювався на зміну в %{d} з останніх днів і сьогодні запізнився на %{s} рейсах: курс пунктуальності, розмова або інша зміна."
 "Show the person":

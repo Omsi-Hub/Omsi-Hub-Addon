@@ -336,7 +336,7 @@ _version: 2
   de: "Nicht abgeglichen"
   fr: "Non synchronisée"
   nl: "Niet gesynchroniseerd"
-  pl: "Niezsynchronizowano"
+  pl: "Nie zsynchronizowano"
   ru: "Не синхронизировано"
   uk: "Не синхронізовано"
 "Both cloud slots are taken: keep this company local, or replace one of your 2 cloud companies.":

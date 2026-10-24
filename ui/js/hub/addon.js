@@ -35,11 +35,11 @@ export function AddonPanel() {
     setErr('');
     return call(cmd, args)
       .then((v) => {
-        if (v && v.refused) setErr(v.refused.problem || '');
+        if (v && v.refused) setErr(tr(v.refused.say || v.refused.problem || '', v.refused.vars));
         // (the plugin's commands answer its status: the whole state read again)
         return v && 'folder' in v ? setS(v) : call('addon_state').then(setS);
       })
-      .catch((e) => setErr(String(e)))
+      .catch((e) => setErr(tr(String(e))))
       .finally(() => setBusy(false));
   };
   const another = async () => {
@@ -62,7 +62,7 @@ export function AddonPanel() {
       <${Icon} name=${icon} />
       <span style="min-width:150px"><b>${name}</b>${hint && html`<br /><span class="muted small">${tr(hint)}</span>`}</span>
       <a href="#" class="grow hub-path" id=${name === 'openOMSI' ? 'set-openomsi' : 'set-omsi2'} style="word-break:break-all" onClick=${(e) => (e.preventDefault(), path && openPath(path))}>${path || tr('Not chosen')}</a>
-      ${check && !check.ok && html`<span class="small bad">${tr(check.text || '')}</span>`}
+      ${check && !check.ok && html`<span class="small bad">${tr(check.say || check.text || '', check.vars)}</span>`}
     </div>`;
   return html`<div class="setting-row full hub-addon">
     <p class="muted small" style="margin:0 0 6px">${tr('Omsi-Hub works with the openOMSI you have installed and your original OMSI 2. It keeps its own data and never changes their files.')}</p>

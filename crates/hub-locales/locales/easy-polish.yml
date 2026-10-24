@@ -19,7 +19,7 @@ _version: 2
   de: "Dein Betrieb im leichten Modus, Schritt für Schritt: eine Linie, Busse, Fahrer, die Zeit laufen lassen und ein eigener Dienst. Der Schritt, der jetzt dran ist, hat seinen Knopf; ein erledigter Schritt bekommt seinen Haken."
   fr: "Ton entreprise en mode facile, étape par étape : une ligne, des bus, des conducteurs, laisser filer le temps et un service à toi. L'étape à faire maintenant a son bouton ; une étape faite reçoit sa coche."
   nl: "Je bedrijf in de makkelijke modus, stap voor stap: een lijn, bussen, chauffeurs, de tijd laten lopen en een eigen dienst. De stap die nu aan de beurt is heeft zijn knop; een gedane stap krijgt zijn vinkje."
-  pl: "Twoja firma w trybie łatwym, krok po kroku: linia, autobusy, kierowcy, puszczenie czasu i własna służba. Krok do zrobienia teraz ma swój przycisk; zrobiony krok dostaje ptaszek."
+  pl: "Twoja firma w trybie łatwym, krok po kroku: linia, autobusy, kierowcy, puszczenie czasu i własna służba. Krok do zrobienia teraz ma swój przycisk; zrobiony krok dostaje ptaszka."
   ru: "Ваша компания в простом режиме, шаг за шагом: линия, автобусы, водители, ход времени и собственная смена. У шага, который нужно сделать сейчас, есть кнопка; выполненный шаг получает галочку."
   uk: "Ваша компанія в простому режимі, крок за кроком: лінія, автобуси, водії, плин часу і власна зміна. Крок, який треба зробити зараз, має свою кнопку; виконаний крок отримує позначку."
 "Every page of the easy mode is a tile, with what matters there now. A badge says where something waits; under the tiles are the dealer, a new line, a loan and the settings.":

@@ -45,6 +45,7 @@ mod inbox;
 pub mod kit;
 pub mod late;
 mod launch;
+mod ledger;
 mod lines;
 // (the control room's messages to the drivers, and theirs: docs/omsihub/MESSAGES.md)
 pub(crate) mod messages;

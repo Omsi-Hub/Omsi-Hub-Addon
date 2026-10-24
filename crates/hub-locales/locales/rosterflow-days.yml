@@ -405,7 +405,7 @@ _version: 2
   uk: "У %{days} немає рейсів ліній компанії: копіювати було нікуди."
 "Nothing of the planning matched on %{days}: no trip there is one of this day's (same line, way, departure and stops), so they run as their timetable has them.":
   de: "An %{days} passte nichts von der Planung: keine Fahrt dort ist eine dieses Tages (gleiche Linie, Richtung, Abfahrt und Haltestellen), also fahren sie nach ihrem Fahrplan."
-  fr: "Rien de la planification ne correspondait %{days} : aucune course là-bas n'est une de ce jour (même ligne, sens, départ et arrêts), elles roulent donc selon leur horaire."
+  fr: "Rien de la planification ne correspondait pour %{days} : aucune course là-bas n'est une de ce jour (même ligne, sens, départ et arrêts), elles roulent donc selon leur horaire."
   nl: "Niets van de planning paste op %{days}: geen rit daar is er een van deze dag (zelfde lijn, richting, vertrek en haltes), dus ze rijden zoals hun dienstregeling ze heeft."
   pl: "Nic z planu nie pasowało w %{days}: żaden kurs tam nie jest kursem tego dnia (ta sama linia, kierunek, odjazd i przystanki), więc jeżdżą według swojego rozkładu."
   ru: "Ничего из плана не совпало в %{days}: ни один рейс там не является рейсом этого дня (та же линия, направление, отправление и остановки), поэтому они идут по своему расписанию."

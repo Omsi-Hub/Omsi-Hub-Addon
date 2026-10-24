@@ -101,7 +101,7 @@ _version: 2
   uk: "Заявити %{amount}"
 "Bids until %{time} (%{left} from now), scored 70 % price and 30 % quality. Ask at most %{amount} to lead now; buying it outright: %{buy}.":
   de: "Angebote bis %{time} (noch %{left}), bewertet zu 70 % Preis und 30 % Qualität. Bieten Sie höchstens %{amount}, um jetzt vorn zu liegen; sofort kaufen: %{buy}."
-  fr: "Offres jusqu'à %{time} (dans %{left}), notées à 70 % prix et 30 % qualité. Demandez au plus %{amount} pour mener ; l'acheter d'office : %{buy}."
+  fr: "Offres jusqu'à %{time} (dans %{left}), notées à 70 % prix et 30 % qualité. Demandez au plus %{amount} pour mener ; l'acheter directement : %{buy}."
   nl: "Biedingen tot %{time} (nog %{left}), beoordeeld op 70 % prijs en 30 % kwaliteit. Vraag hoogstens %{amount} om nu voor te liggen; direct kopen: %{buy}."
   pl: "Oferty do %{time} (za %{left}), ocena 70 % cena i 30 % jakość. Zaproponuj najwyżej %{amount}, by teraz prowadzić; kupno od razu: %{buy}."
   ru: "Заявки до %{time} (через %{left}), оценка 70 % цена и 30 % качество. Заявите не больше %{amount}, чтобы лидировать; купить сразу: %{buy}."
