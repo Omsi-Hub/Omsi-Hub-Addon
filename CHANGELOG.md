@@ -2,9 +2,39 @@
 
 Each version of the Omsi-Hub add-on, newest first. The release on GitHub links here.
 
-## Next
+## 1.0.1
+
+A patch on 1.0.0. It still needs **openOMSI 0.2.22 or newer** and an original **OMSI 2**.
+
+### New
+
+- **Mods straight into openOMSI**: the new tab "Mods" on the Settings page installs a `.zip`, a
+  `.7z` or a folder with openOMSI's own installer into the content folder of the openOMSI you
+  play, its progress shown and cancelled if you want. It lists the mods there as openOMSI keeps
+  them, so they are on openOMSI's own Mods page too, each switched off and on or deleted - never
+  while the game runs. A `.rar` is refused, with what to do instead.
+- **A co-owner drives a duty from the company's pages**: "Drive this duty" in RosterFlow and
+  the planning now starts the duty in your own game, given to yourself when your role may give
+  duties and taken otherwise, where before it asked the boss's launcher ("Only the boss can do
+  this").
+- **Every text in every language**: the texts that lacked a translation are translated (Dutch,
+  German, French, Russian, Ukrainian, Polish), wrong translations put right, and the folders'
+  checks, the drive's errors and the company ledger's lines are said in your language too.
+- **Privacy Statement 4** (effective 24 October 2026), as Omsi-Hub is now: the add-on with its
+  plugin in openOMSI and the Companion app, the profile photo, the files sent with a cloud save,
+  multiplayer as openOMSI's, and bug reports.
 
 ### Fixed
+
+- **The mods you see in openOMSI are the ones Omsi-Hub reads**: Omsi-Hub follows the openOMSI
+  that openOMSI's own launcher plays (for the lists, the drive and the plugin), and Settings says
+  so when that is another than the one you chose. Archives openOMSI uses in place (a mod too big
+  to unpack) are in the lists too.
+- **The buses of your own lines are on the fleet map**: the map and the duty card take the
+  trips' routes from the timetables openOMSI reads, the line editor's lines included.
+- **The livery studio no longer paints a part the model repeats everywhere at once**: a picture,
+  text, shape or brush stroke on one of the NG313's four door posts, say, lands only on that one,
+  in the studio and in the saved livery.
 
 - **A drive no longer stops with "ran longer than 50 ms"**: openOMSI switches a plugin off when
   one call into it takes longer than 50 ms, the game's own work inside counted, and taking a
