@@ -1,14 +1,14 @@
 _version: 2
-# The phone and tablet companion on the Settings page (General › Phone & tablet): the Omsi-Hub
-# Companion app paired by its QR code or address and code (ui/js/hub/companion.js,
-# crates/hub-api/src/companion.rs).
-"Sign on, see your duty, the route and the control room's messages, and work the bus's IBIS and ticket printer from the Omsi-Hub Companion app on a phone or tablet in your network.":
-  de: "Melde dich an, sieh deinen Dienst, die Route und die Nachrichten der Leitstelle und bediene IBIS und Fahrscheindrucker des Busses mit der Omsi-Hub-Companion-App auf einem Handy oder Tablet in deinem Netzwerk."
-  fr: "Prenez votre service, voyez votre service, l'itinéraire et les messages du poste de contrôle, et utilisez l'IBIS et l'imprimante à billets du bus depuis l'app Omsi-Hub Companion sur un téléphone ou une tablette de votre réseau."
-  nl: "Meld je aan, zie je dienst, de route en de berichten van de verkeersleiding, en bedien de IBIS en de kaartautomaat van de bus met de Omsi-Hub Companion-app op een telefoon of tablet in je netwerk."
-  pl: "Zaloguj się, zobacz służbę, trasę i wiadomości dyspozytorni oraz obsługuj IBIS i drukarkę biletów autobusu w aplikacji Omsi-Hub Companion na telefonie lub tablecie w twojej sieci."
-  ru: "Отмечайтесь, смотрите наряд, маршрут и сообщения диспетчерской и управляйте IBIS и билетным принтером автобуса в приложении Omsi-Hub Companion на телефоне или планшете в вашей сети."
-  uk: "Відмічайтеся, дивіться наряд, маршрут і повідомлення диспетчерської та керуйте IBIS і квитковим принтером автобуса в застосунку Omsi-Hub Companion на телефоні чи планшеті у вашій мережі."
+# The phone and tablet companion on the Settings page (General › Phone & tablet): the web app
+# Omsi-Hub serves (or the Omsi-Hub Companion app) paired by its QR code or address and code
+# (ui/js/hub/companion.js, crates/hub-api/src/companion.rs).
+"Sign on, see your duty, the route and the control room's messages, and work the bus's IBIS and ticket printer on a phone or tablet in your network: in its browser, no app needed.":
+  de: "Melde dich an, sieh deinen Dienst, die Route und die Nachrichten der Leitstelle und bediene IBIS und Fahrscheindrucker des Busses auf einem Handy oder Tablet in deinem Netzwerk: im Browser, ohne App."
+  fr: "Prenez votre service, voyez votre service, l'itinéraire et les messages du poste de contrôle, et utilisez l'IBIS et l'imprimante à billets du bus sur un téléphone ou une tablette de votre réseau : dans son navigateur, sans app."
+  nl: "Meld je aan, zie je dienst, de route en de berichten van de verkeersleiding, en bedien de IBIS en de kaartautomaat van de bus op een telefoon of tablet in je netwerk: in de browser, zonder app."
+  pl: "Zaloguj się, zobacz służbę, trasę i wiadomości dyspozytorni oraz obsługuj IBIS i drukarkę biletów autobusu na telefonie lub tablecie w twojej sieci: w przeglądarce, bez aplikacji."
+  ru: "Отмечайтесь, смотрите наряд, маршрут и сообщения диспетчерской и управляйте IBIS и билетным принтером автобуса на телефоне или планшете в вашей сети: в браузере, без приложения."
+  uk: "Відмічайтеся, дивіться наряд, маршрут і повідомлення диспетчерської та керуйте IBIS і квитковим принтером автобуса на телефоні чи планшеті у вашій мережі: у браузері, без застосунку."
 "QR code for pairing":
   de: "QR-Code zum Koppeln"
   fr: "QR code d'appairage"
@@ -16,13 +16,13 @@ _version: 2
   pl: "Kod QR do parowania"
   ru: "QR-код для сопряжения"
   uk: "QR-код для з'єднання"
-"Open the Companion app and scan the code, or type the address and the pairing code:":
-  de: "Öffne die Companion-App und scanne den Code, oder gib die Adresse und den Kopplungscode ein:"
-  fr: "Ouvrez l'app Companion et scannez le code, ou saisissez l'adresse et le code d'appairage :"
-  nl: "Open de Companion-app en scan de code, of typ het adres en de koppelcode:"
-  pl: "Otwórz aplikację Companion i zeskanuj kod albo wpisz adres i kod parowania:"
-  ru: "Откройте приложение Companion и отсканируйте код или введите адрес и код сопряжения:"
-  uk: "Відкрийте застосунок Companion і відскануйте код або введіть адресу та код з'єднання:"
+"Scan the code with the phone's camera, or open the address in its browser and type the pairing code:":
+  de: "Scanne den Code mit der Kamera des Handys, oder öffne die Adresse in seinem Browser und gib den Kopplungscode ein:"
+  fr: "Scannez le code avec l'appareil photo du téléphone, ou ouvrez l'adresse dans son navigateur et saisissez le code d'appairage :"
+  nl: "Scan de code met de camera van de telefoon, of open het adres in de browser en typ de koppelcode:"
+  pl: "Zeskanuj kod aparatem telefonu albo otwórz adres w jego przeglądarce i wpisz kod parowania:"
+  ru: "Отсканируйте код камерой телефона или откройте адрес в его браузере и введите код сопряжения:"
+  uk: "Відскануйте код камерою телефона або відкрийте адресу в його браузері та введіть код з'єднання:"
 "Address":
   de: "Adresse"
   fr: "Adresse"

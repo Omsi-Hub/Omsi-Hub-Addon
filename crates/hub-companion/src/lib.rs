@@ -32,6 +32,7 @@ pub mod pos;
 pub mod queue;
 pub mod server;
 pub mod state;
+pub mod web;
 
 use hub_game::bridge::Assignment;
 use serde_json::{json, Value};
@@ -131,7 +132,8 @@ impl Companion {
             "host": host, "port": port,
             "address": format!("http://{host}:{port}"),
             "code": code,
-            "pair_url": pair_url(&host, port, &code, &sh.cfg.name),
+            "pair_url": pair_url(&host, port, &code),
+            "web": web::present(),
             "name": sh.cfg.name,
             "devices": devices,
             "game": game,
@@ -156,10 +158,11 @@ impl Companion {
     }
 }
 
-/// The address the QR code holds: the app opens it and pairs at once.
-pub fn pair_url(host: &str, port: u16, code: &str, name: &str) -> String {
-    let enc: String = name.bytes().map(|b| if b.is_ascii_alphanumeric() || b"-_.~".contains(&b) { (b as char).to_string() } else { format!("%{b:02X}") }).collect();
-    format!("omsihub://pair?host={host}&port={port}&code={code}&name={enc}")
+/// The address the QR code holds: the web app's pairing page (`web`). The phone's camera opens
+/// it in the browser, which pairs at once; the Companion app's own scanner reads it too.
+pub fn pair_url(host: &str, port: u16, code: &str) -> String {
+    let h = if host.contains(':') { format!("[{host}]") } else { host.to_string() };
+    format!("http://{h}:{port}/pair?code={code}")
 }
 
 /// This computer's address on the home network: the one its traffic to the internet would
@@ -225,7 +228,8 @@ mod tests {
         assert_eq!(a.len(), 32);
         assert_ne!(a, b);
         assert!(random_code().len() == 6 && random_code().bytes().all(|c| c.is_ascii_digit()));
-        assert_eq!(pair_url("192.168.1.20", 47811, "482913", "Luc's PC"), "omsihub://pair?host=192.168.1.20&port=47811&code=482913&name=Luc%27s%20PC");
+        assert_eq!(pair_url("192.168.1.20", 47811, "482913"), "http://192.168.1.20:47811/pair?code=482913");
+        assert_eq!(pair_url("fd00::20", 47811, "482913"), "http://[fd00::20]:47811/pair?code=482913");
     }
 
     #[test]
@@ -246,6 +250,18 @@ mod tests {
         };
         assert!(ask("/api/hello").contains("\"app\":\"omsi-hub\""));
         assert!(ask("/api/state").starts_with("HTTP/1.1 401"));
+        // the web app, its page without a key, its largest file whole
+        assert!(ask("/").starts_with(if web::present() { "HTTP/1.1 200" } else { "HTTP/1.1 503" }));
+        if web::present() {
+            let mut s = std::net::TcpStream::connect(("127.0.0.1", c.port())).unwrap();
+            s.write_all(b"GET /canvaskit.wasm HTTP/1.1\r\nHost: x\r\nAccept-Encoding: gzip, deflate\r\n\r\n").unwrap();
+            let mut out = Vec::new();
+            s.read_to_end(&mut out).unwrap();
+            let at = out.windows(4).position(|w| w == b"\r\n\r\n").unwrap() + 4;
+            let head = String::from_utf8_lossy(&out[..at]).to_string();
+            assert!(head.starts_with("HTTP/1.1 200") && head.contains("Content-Encoding: gzip\r\n") && head.contains("application/wasm"));
+            assert!(head.contains(&format!("Content-Length: {}\r\n", out.len() - at)));
+        }
         let st = c.status();
         assert_eq!((st["port"].as_u64(), st["code"].as_str().map(str::len)), (Some(c.port() as u64), Some(6)));
         // a datagram from the plugin

@@ -1,9 +1,10 @@
-// The phone and tablet companion on the Settings page (General › Phone & tablet): the Omsi-Hub
-// Companion app on a phone or tablet in the same network signs on, shows the duty, the route
-// and the control room's messages, and works the bus's IBIS and ticket printer. Switched on
-// here (`hub_companion_set`; off by default), it shows the address, the pairing code and the QR
-// code the app scans, and the paired devices, each to remove (`hub_companion_state`,
-// `hub_companion_code`, `hub_companion_forget`; `crates/hub-companion`).
+// The phone and tablet companion on the Settings page (General › Phone & tablet): a phone or
+// tablet in the same network - in its browser, the web app the server serves on the address, or
+// in the Omsi-Hub Companion app - signs on, shows the duty, the route and the control room's
+// messages, and works the bus's IBIS and ticket printer. Switched on here (`hub_companion_set`;
+// off by default), it shows the address, the pairing code and the QR code (the web app's
+// pairing page, which the phone's camera opens), and the paired devices, each to remove
+// (`hub_companion_state`, `hub_companion_code`, `hub_companion_forget`; `crates/hub-companion`).
 
 import { html, useEffect, useState } from '../../vendor/preact-htm.js';
 import { call } from '../api.js';
@@ -45,15 +46,15 @@ export function CompanionPanel() {
   }, []);
   if (!s) return null;
   return html`<div class="setting-row full hub-companion">
-    <p class="muted small" style="margin:0 0 6px">${tr('Sign on, see your duty, the route and the control room\'s messages, and work the bus\'s IBIS and ticket printer from the Omsi-Hub Companion app on a phone or tablet in your network.')}</p>
+    <p class="muted small" style="margin:0 0 6px">${tr('Sign on, see your duty, the route and the control room\'s messages, and work the bus\'s IBIS and ticket printer on a phone or tablet in your network: in its browser, no app needed.')}</p>
     <${Switch} checked=${s.on} label="Phone & tablet" disabled=${busy} onChange=${(on) => run('hub_companion_set', { on })} />
     ${!s.on && s.wanted && s.error && html`<p class="small bad" style="margin:6px 0 0">${tr(s.error)}</p>`}
     ${s.on &&
     html`<div class="row wrap" style="gap:16px;align-items:flex-start;margin-top:12px">
         <${Qr} qr=${s.qr} />
         <div class="grow" style="min-width:200px">
-          <p class="small" style="margin:0">${tr('Open the Companion app and scan the code, or type the address and the pairing code:')}</p>
-          <p style="margin:8px 0 0"><span class="muted small">${tr('Address')}</span><br /><b id="companion-address" style="user-select:all">${s.host}:${s.port}</b></p>
+          <p class="small" style="margin:0">${tr('Scan the code with the phone\'s camera, or open the address in its browser and type the pairing code:')}</p>
+          <p style="margin:8px 0 0"><span class="muted small">${tr('Address')}</span><br /><b id="companion-address" style="user-select:all">${s.address || `http://${s.host}:${s.port}`}</b></p>
           <p style="margin:8px 0 0"><span class="muted small">${tr('Pairing code')}</span><br /><b id="companion-code" style="font-size:22px;letter-spacing:3px;user-select:all">${s.code}</b></p>
           <div class="row" style="gap:8px;margin-top:8px"><${Button} kind="ghost" icon="refresh" label="Another code" disabled=${busy} onClick=${() => run('hub_companion_code')} /></div>
           <p class="muted small" style="margin:8px 0 0">${s.game ? html`<${Icon} name="sports_esports" /> ${tr('The game is connected.')}` : tr('The phone shows the game as soon as you drive.')}</p>

@@ -182,7 +182,7 @@ const companionQr = () => {
 };
 const companionState = () =>
   companionOn
-    ? { on: true, wanted: true, host: '192.168.1.20', port: 47811, address: 'http://192.168.1.20:47811', code: companionCode, pair_url: `omsihub://pair?host=192.168.1.20&port=47811&code=${companionCode}&name=Omsi-Hub`, name: 'Omsi-Hub', devices: companionDevices, game: false, qr: companionQr() }
+    ? { on: true, wanted: true, host: '192.168.1.20', port: 47811, address: 'http://192.168.1.20:47811', code: companionCode, pair_url: `http://192.168.1.20:47811/pair?code=${companionCode}`, web: true, name: 'Omsi-Hub', devices: companionDevices, game: false, qr: companionQr() }
     : { on: false, wanted: false, port: 47811, error: '' };
 
 const answers = {

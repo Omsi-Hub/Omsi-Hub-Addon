@@ -13,3 +13,5 @@ serde_json.workspace = true
 sha2.workspace = true
 ring.workspace = true
 hub-devices.workspace = true
+# (the web app's files are kept gzipped: unpacked for a client that takes no gzip, `web`)
+flate2 = "1"

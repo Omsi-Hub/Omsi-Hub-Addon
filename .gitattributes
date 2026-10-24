@@ -3,3 +3,6 @@
 
 # the depot's staff figures (`tools/staff_models.py`)
 *.bin binary
+
+# the Companion web app's files, gzipped (`tools/companion-web.mjs`)
+assets/companion-web/**/*.gz binary

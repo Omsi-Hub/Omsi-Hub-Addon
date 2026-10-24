@@ -506,7 +506,11 @@ fn serve(mut s: TcpStream, shared: &Arc<Shared>) -> std::io::Result<()> {
     }
     req.body = buf.get(at..(at + want).min(buf.len())).unwrap_or_default().to_vec();
     let answer = handle(&req, shared);
-    s.write_all(&answer.to_bytes(req.method == "HEAD"))?;
+    // (in pieces: the web app's larger files take a while over a phone's wifi, and the write
+    // timeout is for each piece)
+    for piece in answer.to_bytes(req.method == "HEAD").chunks(64 * 1024) {
+        s.write_all(piece)?;
+    }
     s.flush()
 }
 
@@ -527,6 +531,10 @@ pub fn handle(req: &Request, shared: &Arc<Shared>) -> Response {
         Route::Preflight => Response::new(204, "text/plain; charset=utf-8", ""),
         Route::NotFound => Response::error(404, "not_found"),
         Route::Method => Response::error(405, "method"),
+        Route::Web(path) => {
+            let gzip = req.header("accept-encoding").is_some_and(|v| v.split(',').any(|e| e.trim().starts_with("gzip")));
+            crate::web::answer(&path, gzip).unwrap_or_else(|| Response::error(404, "not_found"))
+        }
         Route::Hello => Response::json(&json!({ "app": "omsi-hub", "api": crate::API, "version": shared.cfg.version, "name": shared.cfg.name, "pairing": true })),
         Route::Pair => {
             let body = req.json();

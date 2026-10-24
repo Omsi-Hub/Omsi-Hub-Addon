@@ -29,13 +29,26 @@ game's (x east, y north).
 
 The server is off by default. The player turns it on in the add-on under
 **Settings › General › Phone & tablet**; the launcher then shows the address, a six-digit
-**pairing code** and a QR code. The QR code holds
+**pairing code** and a QR code. The QR code holds the web app's pairing page
 
 ```
-omsihub://pair?host=192.168.1.20&port=47811&code=482913&name=Luc-PC
+http://192.168.1.20:47811/pair?code=482913
 ```
 
-(the app also accepts `http://192.168.1.20:47811/pair?code=482913`). Default port **47811**.
+which the phone's camera opens in the browser; the app's own scanner reads it too, and also
+`omsihub://pair?host=192.168.1.20&port=47811&code=482913&name=Luc-PC`. Default port **47811**.
+
+### The web app
+
+On the same address the server serves the Companion app's own web build (`expo export
+--platform web`), so a phone or tablet without the app has all of it in its browser. Every
+`GET` outside `/api/` is the web app (`crates/hub-companion/src/web.rs`): one of its files, or
+for a path without an extension (`/`, `/pair`, `/duty`) its page, which routes it itself. It
+needs no key; the page pairs with the code like the app (`POST /api/pair`, the device named
+after its system and browser, "Android · Chrome") and keeps the key in the browser's local
+storage. Its files are embedded in the add-on gzipped (`assets/companion-web`, made by
+`node tools/companion-web.mjs` from the app's repository: run it when the app changes), sent
+with `Content-Encoding: gzip`; the hashed ones are cached for good, the page never.
 
 | Request | Auth | Answer |
 | --- | --- | --- |

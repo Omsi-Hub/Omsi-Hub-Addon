@@ -2022,6 +2022,7 @@ dependencies = [
 name = "hub-companion"
 version = "1.0.1"
 dependencies = [
+ "flate2",
  "hub-devices",
  "hub-game",
  "ring",

@@ -146,6 +146,9 @@ pub enum Route {
     Screen(String, Option<u64>),
     /// A browser's question before a request of another origin (the app's web build).
     Preflight,
+    /// `GET /…` but `/api/`: the web app's page or one of its files (`crate::web`). No key
+    /// needed - the page pairs with the code first.
+    Web(String),
     NotFound,
     /// A known path with the wrong method.
     Method,
@@ -189,6 +192,8 @@ pub fn route(r: &Request) -> Route {
                 wants(get, Route::Texture(id))
             } else if let Some(id) = id("/api/screen/") {
                 wants(get, Route::Screen(id, r.query("after").and_then(|v| v.parse::<u64>().ok())))
+            } else if !p.starts_with("/api/") && p != "/api" {
+                wants(get, Route::Web(p.to_string()))
             } else {
                 Route::NotFound
             }
@@ -321,11 +326,15 @@ pub struct Response {
     pub status: u16,
     pub ctype: &'static str,
     pub body: Vec<u8>,
+    /// `Cache-Control`: nothing kept, but for the web app's files (`web`).
+    pub cache: &'static str,
+    /// `Content-Encoding` of the body (the web app's files are kept gzipped).
+    pub encoding: Option<&'static str>,
 }
 
 impl Response {
     pub fn new(status: u16, ctype: &'static str, body: impl Into<Vec<u8>>) -> Response {
-        Response { status, ctype, body: body.into() }
+        Response { status, ctype, body: body.into(), cache: "no-store", encoding: None }
     }
 
     pub fn json(v: &Value) -> Response {
@@ -340,12 +349,14 @@ impl Response {
     /// The whole answer as it goes on the wire; `head_only` for HEAD. Every answer lets the
     /// app's web build read it (CORS): the key, not the origin, is what admits a device.
     pub fn to_bytes(&self, head_only: bool) -> Vec<u8> {
+        let encoding = self.encoding.map(|e| format!("Content-Encoding: {e}\r\nVary: Accept-Encoding\r\n")).unwrap_or_default();
         let out = format!(
-            "HTTP/1.1 {} {}\r\nContent-Type: {}\r\nContent-Length: {}\r\nCache-Control: no-store\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Allow-Origin: *\r\nAccess-Control-Allow-Headers: Authorization, Content-Type\r\nAccess-Control-Allow-Methods: GET, POST, OPTIONS\r\nAccess-Control-Max-Age: 600\r\nConnection: close\r\n\r\n",
+            "HTTP/1.1 {} {}\r\nContent-Type: {}\r\nContent-Length: {}\r\n{encoding}Cache-Control: {}\r\nX-Content-Type-Options: nosniff\r\nAccess-Control-Allow-Origin: *\r\nAccess-Control-Allow-Headers: Authorization, Content-Type\r\nAccess-Control-Allow-Methods: GET, POST, OPTIONS\r\nAccess-Control-Max-Age: 600\r\nConnection: close\r\n\r\n",
             self.status,
             reason(self.status),
             self.ctype,
-            self.body.len()
+            self.body.len(),
+            self.cache
         );
         let mut bytes = out.into_bytes();
         if !head_only {
@@ -399,7 +410,10 @@ mod tests {
         assert_eq!(route(&req("GET /api/hello HTTP/1.1\r\n\r\n")), Route::Hello);
         assert_eq!(route(&req("GET /api/pair HTTP/1.1\r\n\r\n")), Route::Method);
         assert_eq!(route(&req("OPTIONS /api/do HTTP/1.1\r\n\r\n")), Route::Preflight);
-        assert_eq!(route(&req("GET /settings.json HTTP/1.1\r\n\r\n")), Route::NotFound);
+        assert_eq!(route(&req("GET /api/settings.json HTTP/1.1\r\n\r\n")), Route::NotFound);
+        assert_eq!(route(&req("GET /pair?code=123456 HTTP/1.1\r\n\r\n")), Route::Web("/pair".into()));
+        assert_eq!(route(&req("POST / HTTP/1.1\r\n\r\n")), Route::Method);
+        assert!(!route(&req("GET / HTTP/1.1\r\n\r\n")).needs_key());
         assert_eq!(route(&req("GET /api/roads?x=-120.5&y=3000 HTTP/1.1\r\n\r\n")), Route::Roads { x: -120.5, y: 3000.0, r: 1000.0 });
         assert_eq!(route(&req("GET /api/roads?x=1&y=2&r=99999 HTTP/1.1\r\n\r\n")), Route::Roads { x: 1.0, y: 2.0, r: 2000.0 });
         assert_eq!(route(&req("GET /api/roads?x=NaN&y=1 HTTP/1.1\r\n\r\n")), Route::NotFound);

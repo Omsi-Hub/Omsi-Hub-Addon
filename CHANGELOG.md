@@ -2,6 +2,19 @@
 
 Each version of the Omsi-Hub add-on, newest first. The release on GitHub links here.
 
+## Unreleased
+
+### New
+
+- **Phone & tablet in the browser, no app needed**: with Settings › General › Phone & tablet
+  on, Omsi-Hub serves the Companion as a web app on its address (`http://<your computer>:47811`).
+  Scan the QR code with the phone's camera, or open the address in the phone's browser and type
+  the pairing code; then everything the Companion app does is there - signing on with your
+  driver's pass, the duty and the duty order, taking a duty from the map's lines, the navigator,
+  the stops and trips, the control room's messages, the break, and the bus's IBIS and ticket
+  printer drawn as in the cab. The QR code now opens this page (the Companion app's own
+  scanner reads it too).
+
 ## 1.0.1
 
 A patch on 1.0.0. It still needs **openOMSI 0.2.22 or newer** and an original **OMSI 2**.
