@@ -29,6 +29,9 @@ pub struct VehicleInfo {
     pub missing_packs: Vec<String>,
     /// The fleet numbers of its `[number]` list with the plate each comes with.
     pub numbers: Vec<(String, String)>,
+    /// A bus for the AI traffic only ([`hub_omsi::vehicle::Bus::is_ai_bus`]): known, so that a
+    /// bus the company has of it still is, but offered nowhere to drive or to buy.
+    pub ai: bool,
 }
 
 impl VehicleInfo {
@@ -49,12 +52,14 @@ impl VehicleInfo {
             installed,
             missing_packs: Vec::new(),
             numbers: bus.numbers.clone(),
+            ai: bus.is_ai_bus(file),
         }
     }
 }
 
-/// Every bus installed (not the AI's only, not a rear section), sorted by name. Empty when the
-/// OMSI 2 folder is not set.
+/// Every bus installed (not a car, not a rear section), sorted by name; a bus for the AI traffic
+/// only is in it marked `ai` (an AI bus the company has is still installed, but the market and
+/// the line editor leave them out). Empty when the OMSI 2 folder is not set.
 pub fn list_vehicles() -> anyhow::Result<Vec<VehicleInfo>> {
     let Some(vfs) = crate::paths::vfs() else { return Ok(Vec::new()) };
     Ok(vehicles_in(&vfs))

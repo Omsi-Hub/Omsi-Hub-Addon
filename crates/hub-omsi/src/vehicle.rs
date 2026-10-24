@@ -100,6 +100,19 @@ fn flag(s: &str) -> bool {
     matches!(s.trim().to_ascii_lowercase().as_str(), "true" | "1" | "yes")
 }
 
+/// A name that marks a vehicle for the AI traffic (a modder's simpler copy of a bus that only
+/// the timetable drives): a word "AI" or "KI" (the German "künstliche Intelligenz"), alone, with
+/// a number (`AI2`) or run into what it is (`AIBus`, `KIBusse`, `AI_Traffic`). A word that only
+/// holds those letters is not one (`Main`, `Kiel`, `Ikarus`, `Taiwan`).
+pub fn is_ai_name(s: &str) -> bool {
+    const KINDS: [&str; 10] = ["bus", "busse", "buses", "busses", "traffic", "verkehr", "vehicle", "vehicles", "fahrzeug", "fahrzeuge"];
+    s.split(|c: char| !c.is_alphanumeric()).any(|w| {
+        let w = w.to_lowercase();
+        let Some(rest) = w.strip_prefix("ai").or_else(|| w.strip_prefix("ki")) else { return false };
+        rest.chars().all(|c| c.is_ascii_digit()) || KINDS.contains(&rest)
+    })
+}
+
 /// A count, then as many files.
 fn file_list(r: &mut Reader) -> Vec<PathBuf> {
     let n = parse_i32(r.value()).max(0) as usize;
@@ -241,6 +254,14 @@ impl Bus {
     /// Made for the AI traffic or a car: not a bus to drive a duty with.
     pub fn is_traffic(&self) -> bool {
         self.ai_only || self.is_car()
+    }
+
+    /// A bus for the AI traffic only, read from `file` (its `.bus` relative to the OMSI 2
+    /// folder, `Vehicles/<folder>/<name>.bus`): `[ai_veh_type]`, or "AI" or "KI" in its folder,
+    /// its file name or its `[friendlyname]` ([`is_ai_name`]). Omsi-Hub offers it nowhere to
+    /// drive.
+    pub fn is_ai_bus(&self, file: &str) -> bool {
+        self.ai_only || is_ai_name(file) || is_ai_name(&self.manufacturer) || is_ai_name(&self.type_name)
     }
 
     /// Its name as OMSI's bus list shows it: the manufacturer and the type.
@@ -451,5 +472,27 @@ mod tests {
         assert!(short.is_car());
         let trail = Bus::parse(&CfgFile::from_str("trail.bus", "[coupling_front]\r\n0\r\n4.1\r\n0.3\r\n[ai_veh_type]\r\n0\r\n[type]\r\n2\r\n"));
         assert!(trail.is_rear_section() && trail.ai_only && trail.rail && !trail.has_friendly_name);
+    }
+
+    #[test]
+    fn an_ai_bus_is_known_by_its_names_or_its_ai_veh_type() {
+        for ai in [
+            "Vehicles/MAN_SD202_AI/SD202.bus",
+            "Vehicles/KI-Busse/O530.bus",
+            "Vehicles/MAN_NL/NL202_ki2.bus",
+            "Vehicles/AIBus Pack/a.bus",
+            "Vehicles/Busse/MAN SD200 (KI).bus",
+            "Vehicles/x/AI_Traffic.bus",
+        ] {
+            assert!(is_ai_name(ai), "{ai}");
+        }
+        for not in ["Vehicles/MAN_SD202/SD202.bus", "Vehicles/Kiel_Citaro/Main.bus", "Vehicles/Ikarus_280/Taiwan.bus", "Vehicles/Kia/Aixam.bus", "Vehicles/Haikou/Kirchberg.bus", ""] {
+            assert!(!is_ai_name(not), "{not}");
+        }
+        let bus = Bus { manufacturer: "MAN".into(), type_name: "SD 202".into(), ..Bus::default() };
+        assert!(!bus.is_ai_bus("Vehicles/MAN_SD202/SD202.bus"));
+        assert!(bus.is_ai_bus("Vehicles/MAN_SD202/SD202_AI.bus"));
+        assert!(Bus { type_name: "SD 202 KI".into(), ..bus.clone() }.is_ai_bus("Vehicles/MAN_SD202/SD202.bus"));
+        assert!(Bus { ai_only: true, ..bus }.is_ai_bus("Vehicles/MAN_SD202/SD202.bus"));
     }
 }

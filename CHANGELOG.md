@@ -15,6 +15,15 @@ Each version of the Omsi-Hub add-on, newest first. The release on GitHub links h
   printer drawn as in the cab. The QR code now opens this page (the Companion app's own
   scanner reads it too).
 
+### Changed
+
+- **Buses for the AI traffic are no longer offered to drive**: a bus with "AI" or "KI" in its
+  folder, its file name or its name (`MAN_SD202_AI`, `KI-Busse`, `Citaro KI`), or marked
+  `[ai_veh_type]`, is left out of the bus list of a drive, the company's market and dealer,
+  the line editor's bus choice and the livery studio; a drive with such a bus, chosen before,
+  is refused with a word why. Such a bus the company bought before stays in the fleet; give
+  its tours another bus to drive them yourself.
+
 ## 1.0.1
 
 A patch on 1.0.0. It still needs **openOMSI 0.2.22 or newer** and an original **OMSI 2**.

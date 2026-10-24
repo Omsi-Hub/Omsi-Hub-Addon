@@ -304,8 +304,9 @@ pub fn maps_in(vfs: &Vfs) -> Vec<MapInfo> {
     out
 }
 
-/// The buses of `vfs` a player can drive (not the AI's only, not a rear section), by name,
-/// each with its paints (its `[CTC]` folder's `.cti` items) and its fleet numbers.
+/// The buses of `vfs` a player can drive (not a car, not a rear section, not a bus for the AI
+/// traffic only: `Bus::is_ai_bus`), by name, each with its paints (its `[CTC]` folder's `.cti`
+/// items) and its fleet numbers.
 pub fn buses_in(vfs: &Vfs) -> Vec<VehicleInfo> {
     let mut out: Vec<VehicleInfo> = Vec::new();
     for (folder, is_dir) in vfs.list_dir("Vehicles") {
@@ -322,7 +323,7 @@ pub fn buses_in(vfs: &Vfs) -> Vec<VehicleInfo> {
             let rel = format!("{rel_dir}/{name}");
             let Some(path) = vfs.resolve(&rel) else { continue };
             let Ok(bus) = hub_omsi::vehicle::Bus::load(&path) else { continue };
-            if bus.is_traffic() || bus.is_rear_section() {
+            if bus.is_traffic() || bus.is_rear_section() || bus.is_ai_bus(&rel) {
                 continue;
             }
             let installed = vfs.bases().len() > 1 && path.starts_with(&vfs.bases()[0]);
@@ -334,6 +335,13 @@ pub fn buses_in(vfs: &Vfs) -> Vec<VehicleInfo> {
     }
     out.sort_by(|a, b| name_cmp(&a.name, &b.name).then_with(|| a.file.cmp(&b.file)));
     out
+}
+
+/// The bus `file` (relative to the OMSI 2 folder) is one for the AI traffic only
+/// (`Bus::is_ai_bus`: its names, else its `[ai_veh_type]`); a bus not found is none.
+pub fn is_ai_bus(vfs: &Vfs, file: &str) -> bool {
+    let rel = slashed(file);
+    hub_omsi::vehicle::is_ai_name(&rel) || vfs.resolve(&rel).and_then(|p| hub_omsi::CfgFile::read(&p).ok()).is_some_and(|c| hub_omsi::vehicle::Bus::parse(&c).is_ai_bus(&rel))
 }
 
 /// A weather file as the day step lists it: its file and name, and what it holds - the
@@ -554,6 +562,42 @@ pub(crate) mod tests {
         assert_eq!((w[1].precip, w[1].snow.is_some()), (Some("snow"), true), "{:?}", w[1]);
         let j = serde_json::to_value(&w[0]).unwrap();
         assert!(j["temp"].is_number() && j["fog_m"].is_number() && j["precip"].is_string(), "{j}");
+    }
+
+    #[test]
+    fn a_bus_for_the_ai_traffic_is_offered_nowhere_to_drive_or_to_buy() {
+        let root = temp("ai-buses");
+        let bus = |rel: &str, maker: &str, type_name: &str, extra: &str| {
+            let p = root.join(rel);
+            std::fs::create_dir_all(p.parent().unwrap()).unwrap();
+            std::fs::write(p, format!("[friendlyname]\r\n{maker}\r\n{type_name}\r\nweiss\r\n[passengercabin]\r\nmodel\\cabin.cfg\r\n{extra}")).unwrap();
+        };
+        bus("Vehicles/MAN_SD202/SD202.bus", "MAN", "SD 202", "");
+        bus("Vehicles/MAN_SD202_AI/SD202.bus", "MAN", "SD 202", "");
+        bus("Vehicles/Citaro/Citaro.bus", "Mercedes-Benz", "Citaro KI", "");
+        bus("Vehicles/Citaro/Citaro_typed.bus", "Mercedes-Benz", "Citaro", "[ai_veh_type]\r\n1\r\n");
+        let v = Vfs::new(root.clone(), None);
+        // (the drive's bus list: the bus to drive alone)
+        let files = |l: &[VehicleInfo]| l.iter().map(|b| b.file.clone()).collect::<Vec<_>>();
+        assert_eq!(files(&buses_in(&v)), ["Vehicles/MAN_SD202/SD202.bus"]);
+        // (the company's: the AI buses by their names known, but neither on the market nor in
+        // the line editor's choice)
+        let all = hub_core::vehicles::vehicles_in(&v);
+        assert_eq!(all.iter().filter(|b| b.ai).count(), 2, "{all:?}");
+        assert!(all.iter().any(|b| b.file == "Vehicles/MAN_SD202/SD202.bus" && !b.ai));
+        let market: Vec<String> = hub_core::company::market::market_of(&all).into_iter().map(|b| b.file).collect();
+        assert_eq!(market, ["Vehicles/MAN_SD202/SD202.bus"]);
+        let cat = crate::lineeditor::catalogue(&all);
+        assert_eq!(cat.iter().flat_map(|m| m.1.iter().flat_map(|k| k.1.iter().map(|x| x.0.clone()))).collect::<Vec<_>>(), ["Vehicles/MAN_SD202/SD202.bus"]);
+        // (nor started: a choice of one made before is refused)
+        for ai in ["Vehicles/MAN_SD202_AI/SD202.bus", "vehicles\\citaro\\citaro.bus", "Vehicles/Citaro/Citaro_typed.bus"] {
+            assert!(is_ai_bus(&v, ai), "{ai}");
+        }
+        assert!(!is_ai_bus(&v, "Vehicles/MAN_SD202/SD202.bus") && !is_ai_bus(&v, "Vehicles/Gone/Gone.bus"));
+        // (a choice saved before the field was there reads as a bus to drive)
+        let old: VehicleInfo = serde_json::from_str(r#"{"name":"X","file":"a.bus"}"#).unwrap();
+        assert!(!old.ai);
+        let _ = std::fs::remove_dir_all(root);
     }
 
     #[test]

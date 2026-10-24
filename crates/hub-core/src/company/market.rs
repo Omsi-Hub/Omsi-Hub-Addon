@@ -141,8 +141,9 @@ pub fn class_of_vehicle(v: &crate::vehicles::BusFile, file: &str, name: &str) ->
 pub fn market_of(vehicles: &[crate::VehicleInfo]) -> Vec<MarketBus> {
     let mut out: Vec<MarketBus> = vehicles
         .iter()
-        // (a tram is no bus for the company; nor is a rail vehicle's `.ovh`)
-        .filter(|v| !is_tram(&[&v.name, &v.file, &v.type_name]) && !v.file.to_lowercase().ends_with(".ovh"))
+        // (a tram is no bus for the company; nor is a rail vehicle's `.ovh`, nor a bus for the
+        // AI traffic only)
+        .filter(|v| !v.ai && !is_tram(&[&v.name, &v.file, &v.type_name]) && !v.file.to_lowercase().ends_with(".ovh"))
         .map(|v| {
             let (kind, coach, region) = class_of(&v.file, &v.name);
             MarketBus { file: v.file.clone(), name: crate::display_bus_name(&v.name), kind, paints: v.paints.clone(), default_paint: v.default_paint.clone(), region, coach }

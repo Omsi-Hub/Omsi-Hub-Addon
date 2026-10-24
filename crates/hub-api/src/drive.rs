@@ -125,6 +125,10 @@ pub fn start(d: &Duty, p: &dyn Platform) -> Answer {
     if !s.has_folders() {
         return Err("Choose your openOMSI and OMSI 2 folders first".into());
     }
+    // (a bus for the AI traffic only is never driven, whatever chose it before)
+    if !d.bus.trim().is_empty() && crate::content::vfs().is_some_and(|v| crate::content::is_ai_bus(&v, &d.bus)) {
+        return Err("This bus is for the AI traffic only and cannot be driven: choose another bus".into());
+    }
     let mut game = GAME.lock().unwrap_or_else(|e| e.into_inner());
     if let Some(g) = game.as_mut() {
         if g.poll().is_none() {

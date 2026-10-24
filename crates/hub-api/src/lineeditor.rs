@@ -1012,12 +1012,13 @@ fn no_depot_text(v: &LineEditorView, group: &str) -> String {
 
 /// The installed buses by maker and model, as a line's buses are chosen from them: (maker, its
 /// models - (model, its versions - (bus file, version))), in the bus picker's order.
-type Catalogue = Vec<(String, Vec<(String, Vec<(String, String)>)>)>;
+pub(crate) type Catalogue = Vec<(String, Vec<(String, Vec<(String, String)>)>)>;
 
-fn catalogue(vehicles: &[core::VehicleInfo]) -> Catalogue {
+pub(crate) fn catalogue(vehicles: &[core::VehicleInfo]) -> Catalogue {
     use crate::lineeditor::words::name_cmp;
     let mut out: Catalogue = Vec::new();
-    for v in vehicles {
+    // (a bus for the AI traffic only is no bus to choose for a line)
+    for v in vehicles.iter().filter(|v| !v.ai) {
         let (maker, _) = service::maker_model(&v.manufacturer, &v.type_name, &v.file, &v.folder);
         let (model, version) = crate::lineeditor::words::split_type(&v.type_name, &v.file, &v.default_paint);
         let m = match out.iter().position(|x| x.0.eq_ignore_ascii_case(&maker)) {
@@ -1199,6 +1200,7 @@ mod tests {
             installed: false,
             missing_packs: Vec::new(),
             numbers: Vec::new(),
+            ai: false,
         }
     }
 
