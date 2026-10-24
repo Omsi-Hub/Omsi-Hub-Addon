@@ -131,6 +131,14 @@ jobs:
           codesign --verify --deep --strict --verbose=2 "$RUNNER_TEMP/dmg/Omsi-Hub.app"
           codesign -dv "$RUNNER_TEMP/dmg/Omsi-Hub.app"
           hdiutil detach "$RUNNER_TEMP/dmg"
+      # (the .dmg to try on a Mac, kept a week)
+      - name: the .dmg to download
+        if: runner.os == 'macOS' && !cancelled()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Omsi-Hub-macOS-dmg
+          path: target/release/bundle/dmg/*.dmg
+          retention-days: 7
       - name: Linux packages made
         if: runner.os == 'Linux'
         shell: bash
