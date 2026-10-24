@@ -23,6 +23,11 @@ Each version of the Omsi-Hub add-on, newest first. The release on GitHub links h
   the line editor's bus choice and the livery studio; a drive with such a bus, chosen before,
   is refused with a word why. Such a bus the company bought before stays in the fleet; give
   its tours another bus to drive them yourself.
+- **Signing on with your personnel number is back, and always asked for a company's duty**:
+  in the bus company mode you sign on in the game with your driver's pass (personnel number
+  and code, made for you the first time and shown on the company's panel and in the
+  Companion) before the duty order and the IBIS; there is no switch to leave it out. A drive
+  of your own (a free drive, a line and tour you chose) never asks for it.
 
 ## 1.0.1
 
