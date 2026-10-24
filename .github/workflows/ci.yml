@@ -126,7 +126,8 @@ jobs:
         run: |
           set -e
           dmg=$(ls target/release/bundle/dmg/*.dmg)
-          hdiutil attach -nobrowse -readonly -mountpoint "$RUNNER_TEMP/dmg" "$dmg"
+          # (the .dmg shows the licence and asks to agree first)
+          printf 'Y\n' | PAGER=true hdiutil attach -nobrowse -readonly -mountpoint "$RUNNER_TEMP/dmg" "$dmg" > /dev/null
           codesign --verify --deep --strict --verbose=2 "$RUNNER_TEMP/dmg/Omsi-Hub.app"
           codesign -dv "$RUNNER_TEMP/dmg/Omsi-Hub.app"
           hdiutil detach "$RUNNER_TEMP/dmg"
