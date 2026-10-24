@@ -33,6 +33,7 @@ omsi-scenery = { workspace = true, optional = true }
 omsi-timetable = { workspace = true, optional = true }
 omsi-world = { workspace = true, optional = true }
 omsi-content = { workspace = true, optional = true }
+omsi-launcher-core = { workspace = true, optional = true }
 hashbrown.workspace = true
 parking_lot.workspace = true
 rayon = { workspace = true, optional = true }
@@ -58,8 +59,10 @@ doc = false
 # (the desktop app: the game, openOMSI's readers, the network, the files; without it, the bus company's
 # and RosterFlow's commands over a company handed in, as the website runs them in the browser)
 default = ["native"]
-native = ["hub-core/native", "dep:hub-online", "dep:ureq", "dep:omsi-cfg", "dep:omsi-model", "dep:omsi-o3d", "dep:omsi-sim", "dep:omsi-texture", "dep:omsi-vehicle", "dep:omsi-geometry", "dep:omsi-map", "dep:omsi-scenery", "dep:omsi-timetable", "dep:omsi-world", "dep:omsi-content", "dep:rayon", "dep:omsi-net", "dep:hub-livery", "dep:hub-companion"]
+native = ["hub-core/native", "dep:hub-online", "dep:ureq", "dep:omsi-cfg", "dep:omsi-model", "dep:omsi-o3d", "dep:omsi-sim", "dep:omsi-texture", "dep:omsi-vehicle", "dep:omsi-geometry", "dep:omsi-map", "dep:omsi-scenery", "dep:omsi-timetable", "dep:omsi-world", "dep:omsi-content", "dep:omsi-launcher-core", "dep:rayon", "dep:omsi-net", "dep:hub-livery", "dep:hub-companion"]
 
 [dev-dependencies]
+# (the mods' tests: a mod packed as a .zip, as the installer reads it)
+zip = { version = "8.6", default-features = false, features = ["deflate"] }
 # (the livery studio's tests: a picture written and brought in)
 image.workspace = true

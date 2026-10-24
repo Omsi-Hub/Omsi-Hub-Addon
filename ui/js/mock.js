@@ -32,6 +32,28 @@ const keep = () => {
   }
 };
 
+// (the mods of the tab "Mods", and the installs of this run: `hub_mods`)
+const mockMods = [
+  { id: 'MAN_NL_NG', name: 'MAN_NL_NG', kind: 'bus', paths: ['Vehicles/MAN_NL_NG'], enabled: true, bytes: 412e6, installed: 0, noted: false },
+  { id: 'Bad Huegelsdorf', name: 'Bad Huegelsdorf', kind: 'map', paths: ['maps/Bad_Huegelsdorf_2020'], enabled: true, bytes: 2.4e9, installed: 0, noted: true },
+  { id: 'Lincolnshire V5', name: 'Lincolnshire V5', kind: 'archive', paths: ['Archives/Lincolnshire V5.zip'], enabled: false, bytes: 5.1e9, installed: 0, noted: true },
+];
+const mockJobs = [];
+function modsState() {
+  const steps = ['queued', 'planning', 'checking', 'unpacking', 'moving', 'done'];
+  for (const j of mockJobs.filter((x) => !x.finished)) {
+    const part = Math.min(1, (Date.now() - j.at) / 4000);
+    j.bytes_done = Math.round(j.bytes_total * part);
+    j.files_done = Math.round(j.files_total * part);
+    j.state = steps[Math.min(steps.length - 1, Math.floor(part * (steps.length - 1)))];
+    if (part >= 1) {
+      Object.assign(j, { state: 'done', finished: Date.now(), installed: [`Vehicles/${j.name}`], message: `${j.name} installed` });
+      mockMods.unshift({ id: j.name, name: j.name, kind: 'bus', paths: [`Vehicles/${j.name}`], enabled: true, bytes: j.bytes_total, installed: Date.now() / 1000, noted: true });
+    }
+  }
+  return { content: settings.openomsi_folder || 'C:/openOMSI', jobs: mockJobs.map((j) => ({ ...j })), mods: mockMods.map((m) => ({ ...m })), running: false, rar: false };
+}
+
 function versionIn(folder) {
   const m = /(\d+)\.(\d+)(?:\.(\d+))?/.exec(folder);
   return m ? [Number(m[1]), Number(m[2]), Number(m[3] || 0)] : null;
@@ -203,6 +225,33 @@ const answers = {
   cs_open: () => ({}),
   // (`?followed`: openOMSI's own launcher plays another openOMSI than the chosen one)
   addon_state: () => ({ folder: settings.openomsi_folder, chosen: params.has('followed') ? 'C:/Downloads/openOMSI-0.3.39-windows-x64' : settings.openomsi_folder, followed: params.has('followed'), game: checkOpenomsi(settings.openomsi_folder), plugin: { state: addonPlugin }, plugin_version: '1.7.0', hello: null, checked: false, assigned: null }),
+  // (the tab "Mods": an install runs for a few seconds, then the mod is in the list)
+  hub_mods: () => modsState(),
+  hub_mods_inspect: () => ({ fits: true, unpacked_bytes: 120e6, free_bytes: 80e9, suggested: 'extract' }),
+  hub_mods_install: (a) => {
+    if (/\.rar$/i.test(String(a.path))) throw new Error('A .rar cannot be installed here: unpack it first (with 7-Zip or WinRAR) and install the folder, or use a .zip or .7z');
+    const name = String(a.path).split(/[\\/]/).pop().replace(/\.(zip|7z|rar)$/i, '');
+    const job = { id: mockJobs.length + 1, source: a.path, name, state: 'queued', files_done: 0, files_total: 40, bytes_done: 0, bytes_total: 120e6, message: '', report: [], warnings: [], installed: [], kept_aside: [], started: Date.now(), finished: null, at: Date.now() };
+    mockJobs.unshift(job);
+    return { job, state: modsState() };
+  },
+  hub_mods_cancel: (a) => {
+    const j = mockJobs.find((x) => x.id === a.id && !x.finished);
+    if (j) Object.assign(j, { state: 'cancelled', finished: Date.now() });
+    return { cancelled: !!j, state: modsState() };
+  },
+  hub_mods_clear: () => (mockJobs.splice(0, mockJobs.length, ...mockJobs.filter((j) => !j.finished)), modsState()),
+  hub_mods_enable: (a) => {
+    const m = mockMods.find((x) => x.id === a.id);
+    if (m) m.enabled = a.on;
+    return { name: m?.name, state: modsState() };
+  },
+  hub_mods_remove: (a) => {
+    const k = mockMods.findIndex((x) => x.id === a.id);
+    if (k < 0) throw new Error('no such mod');
+    const [m] = mockMods.splice(k, 1);
+    return { name: m.name, state: modsState() };
+  },
   addon_enable: (a) => ((addonPlugin = a.on ? 'on' : 'off'), { state: addonPlugin, version: '1.7.0' }),
   addon_remove: () => ((addonPlugin = 'missing'), { state: 'missing' }),
   addon_set_folder: (a) => {

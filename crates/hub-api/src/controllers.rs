@@ -75,7 +75,7 @@ pub fn state(places: &Places, lang: &str, running: bool) -> Value {
 }
 
 #[cfg(test)]
-mod tests {
+pub(crate) mod tests {
     use super::*;
 
     fn temp(tag: &str) -> PathBuf {
@@ -116,7 +116,7 @@ mod tests {
 
     /// The texts of a page's source: every string literal that reads as an English text (a
     /// capital, then small letters) - the tables of names, the labels, what `tr` is given.
-    fn page_texts(src: &str) -> Vec<String> {
+    pub(crate) fn page_texts(src: &str) -> Vec<String> {
         let mut out = Vec::new();
         let mut chars = src.chars().peekable();
         let mut last = ' ';

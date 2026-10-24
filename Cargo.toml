@@ -52,20 +52,24 @@ hub-devices = { path = "crates/hub-devices" }
 # openOMSI's readers and its vehicle simulation, as Luc's fork of openOMSI has them: the code of
 # openOMSI from before it became AGPL (2026-10-14), under its MIT licence, with Luc's own changes
 # (THIRD_PARTY_NOTICES.md). The 3D view, the photos and the livery studio read a bus with them as
-# the game reads it. Pinned to one commit of the fork.
-omsi-cfg = { git = "https://github.com/Luc-nbr/openOMSI", rev = "f69f2aea9d18e6b17247d3cb83c84860ab950656" }
-omsi-model = { git = "https://github.com/Luc-nbr/openOMSI", rev = "f69f2aea9d18e6b17247d3cb83c84860ab950656" }
-omsi-net = { git = "https://github.com/Luc-nbr/openOMSI", rev = "f69f2aea9d18e6b17247d3cb83c84860ab950656" }
-omsi-o3d = { git = "https://github.com/Luc-nbr/openOMSI", rev = "f69f2aea9d18e6b17247d3cb83c84860ab950656" }
-omsi-sim = { git = "https://github.com/Luc-nbr/openOMSI", rev = "f69f2aea9d18e6b17247d3cb83c84860ab950656" }
-omsi-texture = { git = "https://github.com/Luc-nbr/openOMSI", rev = "f69f2aea9d18e6b17247d3cb83c84860ab950656" }
-omsi-vehicle = { git = "https://github.com/Luc-nbr/openOMSI", rev = "f69f2aea9d18e6b17247d3cb83c84860ab950656" }
-omsi-geometry = { git = "https://github.com/Luc-nbr/openOMSI", rev = "f69f2aea9d18e6b17247d3cb83c84860ab950656" }
-omsi-map = { git = "https://github.com/Luc-nbr/openOMSI", rev = "f69f2aea9d18e6b17247d3cb83c84860ab950656" }
-omsi-scenery = { git = "https://github.com/Luc-nbr/openOMSI", rev = "f69f2aea9d18e6b17247d3cb83c84860ab950656" }
-omsi-timetable = { git = "https://github.com/Luc-nbr/openOMSI", rev = "f69f2aea9d18e6b17247d3cb83c84860ab950656" }
-omsi-world = { git = "https://github.com/Luc-nbr/openOMSI", rev = "f69f2aea9d18e6b17247d3cb83c84860ab950656" }
-omsi-content = { git = "https://github.com/Luc-nbr/openOMSI", rev = "f69f2aea9d18e6b17247d3cb83c84860ab950656" }
+# the game reads it. Pinned to one commit of the fork (its branch omsi-hub-rar-optional: beta and
+# omsi-launcher-core's feature `rar`, which Omsi-Hub builds without).
+omsi-cfg = { git = "https://github.com/Luc-nbr/openOMSI", rev = "b2244cf6c101fc6ed9c9bdd12b00d383433217c2" }
+omsi-model = { git = "https://github.com/Luc-nbr/openOMSI", rev = "b2244cf6c101fc6ed9c9bdd12b00d383433217c2" }
+omsi-net = { git = "https://github.com/Luc-nbr/openOMSI", rev = "b2244cf6c101fc6ed9c9bdd12b00d383433217c2" }
+omsi-o3d = { git = "https://github.com/Luc-nbr/openOMSI", rev = "b2244cf6c101fc6ed9c9bdd12b00d383433217c2" }
+omsi-sim = { git = "https://github.com/Luc-nbr/openOMSI", rev = "b2244cf6c101fc6ed9c9bdd12b00d383433217c2" }
+omsi-texture = { git = "https://github.com/Luc-nbr/openOMSI", rev = "b2244cf6c101fc6ed9c9bdd12b00d383433217c2" }
+omsi-vehicle = { git = "https://github.com/Luc-nbr/openOMSI", rev = "b2244cf6c101fc6ed9c9bdd12b00d383433217c2" }
+omsi-geometry = { git = "https://github.com/Luc-nbr/openOMSI", rev = "b2244cf6c101fc6ed9c9bdd12b00d383433217c2" }
+omsi-map = { git = "https://github.com/Luc-nbr/openOMSI", rev = "b2244cf6c101fc6ed9c9bdd12b00d383433217c2" }
+omsi-scenery = { git = "https://github.com/Luc-nbr/openOMSI", rev = "b2244cf6c101fc6ed9c9bdd12b00d383433217c2" }
+omsi-timetable = { git = "https://github.com/Luc-nbr/openOMSI", rev = "b2244cf6c101fc6ed9c9bdd12b00d383433217c2" }
+omsi-world = { git = "https://github.com/Luc-nbr/openOMSI", rev = "b2244cf6c101fc6ed9c9bdd12b00d383433217c2" }
+omsi-content = { git = "https://github.com/Luc-nbr/openOMSI", rev = "b2244cf6c101fc6ed9c9bdd12b00d383433217c2" }
+# (its mod installer and the mods' notes: Omsi-Hub installs mods as openOMSI's launcher does, `hub-api`'s
+# `mods`; without its feature `rar` - unrar-rs is GPL-3.0 - so a .rar is refused)
+omsi-launcher-core = { git = "https://github.com/Luc-nbr/openOMSI", rev = "b2244cf6c101fc6ed9c9bdd12b00d383433217c2", default-features = false }
 
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"

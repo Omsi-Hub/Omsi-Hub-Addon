@@ -3,12 +3,13 @@
 Omsi-Hub is proprietary software (`LICENSE`). It builds on the code below, each under its own
 licence, whose notices travel with it; Omsi-Hub's licence takes away none of the rights they give.
 
-## openOMSI's readers and vehicle simulation
+## openOMSI's readers, vehicle simulation and mod installer
 
 The 3D view, the bus photos and the livery studio read a bus as the game reads it with crates of
 openOMSI: `omsi-cfg`, `omsi-model`, `omsi-sim`, `omsi-texture` and `omsi-vehicle`, and what they
 build on (`omsi-script`, `omsi-o3d`, `omsi-geometry`, `omsi-content`, `omsi-scenery`, `omsi-map`,
-`omsi-timetable`, `omsi-world`). Cargo fetches them from Luc's fork of openOMSI
+`omsi-timetable`, `omsi-world`); the tab "Mods" installs mods with openOMSI's own installer,
+`omsi-launcher-core`. Cargo fetches them from Luc's fork of openOMSI
 (<https://github.com/Luc-nbr/openOMSI>), pinned to one commit in `Cargo.toml`; none of their code
 is in this repository.
 

@@ -213,17 +213,21 @@ pub fn archive_bases(content: &Path) -> Vec<PathBuf> {
     zips.iter().filter_map(|z| archive_copy(z, &cache)).collect()
 }
 
+#[cfg(feature = "native")]
 /// The content folders of an archive Omsi-Hub reads: its buses, maps, depots, fonts, drivers and
 /// weather - not the scenery, splines, textures and sounds, which only the game and the 3D view
 /// (through openOMSI's own readers) read.
 const ARCHIVE_FOLDERS: [&str; 8] = ["Vehicles", "maps", "HOFs", "Fonts", "Drivers", "Weather", "TicketPacks", "Announcements"];
 
+#[cfg(feature = "native")]
 /// Files of those folders Omsi-Hub never reads: models, pictures, sounds, a map's tiles.
 const ARCHIVE_SKIPPED: [&str; 16] = ["o3d", "x", "dds", "bmp", "jpg", "jpeg", "png", "tga", "wav", "ogg", "mp3", "map", "rdy", "dll", "exe", "pdf"];
 
+#[cfg(feature = "native")]
 /// The largest file taken out of an archive (a text file is far smaller).
 const ARCHIVE_MAX_FILE: u64 = 16 << 20;
 
+#[cfg(feature = "native")]
 /// Whether the file `rel` of an archive (`/`, from the content folder's top), `size` bytes, is
 /// one Omsi-Hub reads: in one of [`ARCHIVE_FOLDERS`], not one of [`ARCHIVE_SKIPPED`] - but for
 /// a map's picture and a font's bitmap.
@@ -428,6 +432,7 @@ mod tests {
         std::fs::write(path, out).unwrap();
     }
 
+    #[cfg(feature = "native")]
     #[test]
     fn what_omsi_hub_reads_of_an_archive() {
         assert!(archive_reads("Vehicles/Big Bus/big.bus", 100));

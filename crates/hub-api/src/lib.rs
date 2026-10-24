@@ -8,6 +8,7 @@
 //! | `hub_` | [`hub`] | the app: boot, texts, first-run setup, migration, drives |
 //! | `hub_update` | [`update`] | the app's own updates (this repository's releases) |
 //! | `hub_companion` | [`companion`] | the phone and tablet companion's server |
+//! | `hub_mods` | [`mods`] | mods installed into openOMSI with its own installer |
 //! | `addon_` | [`addon`] | the plugin in the player's openOMSI, the bridge |
 //! | `addon_controllers` | [`controllers`] | the player's wheel, pedals and button boxes |
 //! | `co_` | [`company`] | the bus company |
@@ -47,6 +48,8 @@ pub mod launcher;
 #[cfg(feature = "native")]
 pub mod lineeditor;
 pub mod live;
+#[cfg(feature = "native")]
+pub mod mods;
 #[cfg(feature = "native")]
 pub mod online;
 #[cfg(feature = "native")]
@@ -140,6 +143,8 @@ pub fn call(cmd: &str, args: &Value, p: &dyn Platform) -> Answer {
         c if c.starts_with("hub_lan") => lan::call(c, args).unwrap_or_else(|| Err(format!("unknown command: {cmd}"))),
         #[cfg(feature = "native")]
         c if c.starts_with("hub_profile") => drivers::call(c, args).unwrap_or_else(|| Err(format!("unknown command: {cmd}"))),
+        #[cfg(feature = "native")]
+        c if c.starts_with("hub_mods") => mods::call(c, args),
         c if c.starts_with("hub_") => hub::call(c, args, p),
         c if c.starts_with("addon_controllers") => controllers::call(c, args),
         c if c.starts_with("addon_") => addon::call(c, args, p),

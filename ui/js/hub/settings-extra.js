@@ -1,7 +1,8 @@
 // The Settings page's tabs and rows (`pages/settings.js` draws them): the look - light or dark,
 // the accent, the launcher's size, the animations, the company's layout -, the language and the
 // phone and tablet companion (`companion.js`);
-// openOMSI and OMSI 2 (the folders, the version, the plugin: `addon.js`); openOMSI's own settings
+// openOMSI and OMSI 2 (the folders, the version, the plugin: `addon.js`); the mods installed into
+// openOMSI (`mods.js`); openOMSI's own settings
 // (`gamesettings.js`, its `settings.cfg`); the game controllers - the wheel, the pedals, the
 // button boxes (`controllers.js`, `Inputs/gamectrler.cfg`); the updates; and the
 // bus models' categories and regions the company goes by. Every change is saved at once
@@ -17,6 +18,7 @@ import { STOP_SIGNS } from './stopsigns.js';
 import { UpdateRow } from '../update.js';
 import { showPrivacy } from '../privacy.js';
 import { AddonPanel } from './addon.js';
+import { ModsPanel } from './mods.js';
 import { GameSettingsPanel } from './gamesettings.js';
 import { ControllersPanel } from './controllers.js';
 import { CompanionPanel } from './companion.js';
@@ -62,6 +64,8 @@ export const SETTINGS_TABS = [
     ],
   },
   { id: 'addon', label: 'openOMSI and OMSI 2', cols: [{ title: 'Your openOMSI and OMSI 2', rows: [{ type: 'custom', id: 'hub-addon', view: () => html`<${AddonPanel} />` }] }] },
+  // (mods installed into openOMSI with its own installer, and switched off, on or deleted)
+  { id: 'mods', label: 'Mods', cols: [{ title: 'Mods in openOMSI', rows: [{ type: 'custom', id: 'hub-mods', view: () => html`<${ModsPanel} />` }] }] },
   { id: 'game', label: "openOMSI's settings", cols: [{ title: "openOMSI's settings", rows: [{ type: 'custom', id: 'hub-game-settings', view: () => html`<${GameSettingsPanel} />` }] }] },
   // (the wheel, the pedals, joysticks and button boxes, and openOMSI's settings round them)
   { id: 'controllers', label: 'Controllers', cols: [{ title: 'Game controllers', rows: [{ type: 'custom', id: 'hub-controllers', view: () => html`<${ControllersPanel} />` }] }] },

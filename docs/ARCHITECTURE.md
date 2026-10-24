@@ -180,6 +180,7 @@ installed here):
 | `hub_` | `hub`, `drive`, `live`, `content` | Boot, texts, first-run setup, migration, drives and their live dashboard; the drive's steps (`content`: maps, buses, lines, shifts, weather, depots, bus options, fonts, the route map's roads) |
 | `addon_` | `addon` | The plugin: state, folder, version, enable/remove, texts, assignment, reports booked, the bridge looked at |
 | `hub_companion_` | `companion` | The phone and tablet companion: on/off, the pairing code and QR code, the paired devices; started with the app when on |
+| `hub_mods` | `mods` | Mods installed into the content folder of the openOMSI in use with openOMSI's own installer (`omsi-launcher-core`'s `install`, noted in `Mods/.mods.json` as openOMSI's launcher notes them), followed while they install, switched off, on and deleted (`mods`) |
 | `co_` | `company` | Ported (`co_more_*` too); the fleet map's and the duty map's roads from `hub_omsi::roads`; bus photos: kept by `co_photo_save`, taken by the page from the 3D model (`ui/js/hub/photos.js`) |
 | `rf_` | `rosterflow` | Ported |
 | `tg_` | `together` | Later (needs a relay) |
