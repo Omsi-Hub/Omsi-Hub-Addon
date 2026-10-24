@@ -13,6 +13,7 @@ import { S, set, toast } from '../store.js';
 import { call } from '../api.js';
 import { language } from '../i18n.js';
 import { Icon as HubIcon, tr } from '../hub/bits.js';
+import { duty } from '../hub/drive.js';
 import { SYMBOLS, STROKES } from '../symbols.js';
 // (the editors a hand-over opens: the line editor, the livery studio)
 import * as editors from '../editors/index.js';
@@ -101,6 +102,23 @@ export async function act(name, args = {}) {
   if (r.tab != null) goTab(r.tab);
   refresh();
   return r;
+}
+
+/** "Drive this duty" (`r`: its duty, `from`: the page): the company's duty launcher with it - on
+ * a company joined with "Play together" the player's own game instead (`tg_drive_here`: the duty
+ * made his, then driven as any duty of his; the boss's launcher starts no game for him). */
+export async function driveDuty(r, from) {
+  if (!S.co?.remote) return act('drive_duty', { duty: r, from });
+  let a;
+  try {
+    a = await call('tg_drive_here', { duty: r, base: await duty(), lang: language() });
+  } catch (e) {
+    toast(e.message, 'error');
+    return null;
+  }
+  if (a?.error) toast(a.error, 'error');
+  refresh();
+  return a;
 }
 
 /** Ask the clock's shell again at once (after an action), and every view with it: the shell and

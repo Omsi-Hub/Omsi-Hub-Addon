@@ -994,3 +994,29 @@ fn a_duty_names_the_players_who_drive_at_the_same_time() {
     // (an open duty, as Piet sees it: Luc and Jan drive then, Piet himself not counted)
     assert_eq!(host::along_of(&list, &d("9"), 300, 700, Some(2)), vec!["Luc".to_string(), "Jan".to_string()]);
 }
+
+/// "Drive this duty" on the company's own pages, on a co-owner's launcher (`tg_drive_here`): a
+/// duty the company drives (here the agency's) given to himself, then started in his own game.
+#[test]
+fn a_co_owner_gives_himself_a_duty_the_company_drives_and_starts_it() {
+    let mut b = boss();
+    let wd = super::super::plan::weekday_of(&b.c.date);
+    super::super::plan::set_driver(&mut b.c, wd, "Linie5", "2", 0, Some(Who::Agency));
+    let v = ask(&mut b, "jan", "hello", |_| {});
+    let jan = guest_no(&b, "jan");
+    assert!(b.st.set_role(&mut b.c, now(), jan, Role::CoOwner, Role::CoOwner.preset()));
+    let duty = snap(&v).duties[0].duty.clone();
+    assert_eq!(snap(&v).duties[0].state, DutyState::Company);
+    // (taking it is refused: somebody drives it)
+    assert_eq!(ask(&mut b, "jan", "take", |r| r.duty = Some(duty.clone()))["ok"], false);
+    let v = ask(&mut b, "jan", "assign", |r| {
+        r.duty = Some(duty.clone());
+        r.target = jan;
+    });
+    assert_eq!(v["ok"], true, "{v}");
+    assert_eq!(b.plan().tours[0].duties[0].who, Some(Who::Guest(jan)));
+    let v = ask(&mut b, "jan", "start", |r| r.duty = Some(duty.clone()));
+    assert_eq!(v["ok"], true, "{v}");
+    assert!(serde_json::from_value::<DriveStart>(v["start"].clone()).is_ok());
+    assert_eq!(b.c.together.claim_of(&duty).map(|x| x.state), Some(ClaimState::Driving));
+}

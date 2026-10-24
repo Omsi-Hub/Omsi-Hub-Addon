@@ -4,6 +4,7 @@
 // tours covered, the driver's next duty) and the last day closed. (Another company: the round
 // menu and the command palette.)
 
+import { S } from '../store.js';
 import { html, setUi, act, useView, useSize, textW, goTab, Icon, Btn, Figure, Section, Meter, Switch, seen } from './kit.js';
 import { follow } from './agenda.js';
 
@@ -111,7 +112,9 @@ function NeedsYou({ n, style }) {
  * is the dashboard's "Needs you"). */
 function Today({ t, style }) {
   const c = t.covered;
-  const n = t.next;
+  // (the next duty is the boss's own, his career's: not on a player's launcher of "Play together",
+  // who drives his duties from the planning or his menu)
+  const n = S.co?.remote ? null : t.next;
   return html`<${Section} class="co-today" title=${t.title} style=${style}>
     <div style="overflow:hidden;flex:1;min-height:0">
       ${c.bar ? html`<div style="margin-bottom:18px"><${Bar} b=${c.bar} onClick=${c.bar.click ? () => goTab(5) : null} /></div>` : html`<div class=${'co-para t-' + c.tone} style="line-height:24px;margin-bottom:10px;font-weight:500">${c.text}</div>`}

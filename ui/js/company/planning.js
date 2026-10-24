@@ -12,7 +12,8 @@
 // With the RosterFlow add-on on, the planning is RosterFlow's (phase 4): handed to our game-drawn
 // launcher until then, or drawn by `window.omsiHubRosterFlow` when that is there.
 
-import { html, useEffect, useRef, useState, ui, setUi, setCo, useSize, textW, Icon, Btn, Seg, Switch, Dialog, HOME, handOver, tr, escTaken, useGone } from './kit.js';
+import { S } from '../store.js';
+import { html, useEffect, useRef, useState, ui, setUi, setCo, useSize, textW, Icon, Btn, Seg, Switch, Dialog, HOME, handOver, driveDuty, tr, escTaken, useGone } from './kit.js';
 import { useLayoutEffect } from '../../vendor/preact-htm.js';
 import { useMore, actMore, TextIn, box, rosterFlowPage } from './more.js';
 import { dark } from '../hub/theme.js';
@@ -685,7 +686,7 @@ function DutyPanel({ s, v, inner }) {
         ${s.cands.map((c) => html`<div class="pl-slot"><${PickRow} r=${{ x: 0, y: 0, w: lw, h: 30 }} on=${c.on && c.who != null} swatch=${c.swatch} text=${c.name} right=${c.state} rightTone=${c.tone} onClick=${() => give(c.who)} /></div>`)}
       </div>
     </div>
-    ${s.drive && html`<${RfButton} r=${{ x: 0, y: inner.h - 38, w: w - 4, h: 36 }} label=${s.drive} solid onClick=${() => actMore('plan_drive', { date: v.date, ti: s.ti, k: s.k })} />`}
+    ${s.drive && html`<${RfButton} r=${{ x: 0, y: inner.h - 38, w: w - 4, h: 36 }} label=${s.drive} solid onClick=${() => (S.co?.remote ? driveDuty(s.duty, 5) : actMore('plan_drive', { date: v.date, ti: s.ti, k: s.k }))} />`}
   </div>`;
 }
 

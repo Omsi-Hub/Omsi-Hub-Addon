@@ -773,6 +773,8 @@ fn duty_panel(c: &Company, p: &DayPlan, ti: usize, k: usize) -> Value {
         "head": line_title(t, Some(k)), "colour": line_colour(c, &t.tour.line), "tt": tt_button(),
         "facts": facts,
         "drive": (p.today && !t.by_player).then(|| tr("Drive this duty").to_uppercase()),
+        // (a player of "Play together" drives it in his own game: `kit.js`'s `driveDuty`)
+        "duty": (p.today && !t.by_player).then(|| co::duty_launch::DutyRef::of(p, ti, k)).flatten(),
         "options_title": tr("Cover it today").to_uppercase(), "options": options,
         "cands_title": tr("Who drives it").to_uppercase(), "cands": cands,
     })

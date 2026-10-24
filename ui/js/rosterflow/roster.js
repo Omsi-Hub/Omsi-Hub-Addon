@@ -13,7 +13,7 @@ import { html, useEffect, useRef, useState } from '../../vendor/preact-htm.js';
 import { S } from '../store.js';
 import { language } from '../i18n.js';
 import { tr } from '../hub/bits.js';
-import { act as coAct, setCo } from '../company/kit.js';
+import { driveDuty, setCo } from '../company/kit.js';
 import { openDutyCard } from '../company/dutycard.js';
 import { alpha, mix, hex, tone, css, lighten } from './pal.js';
 import * as D from './draw.js';
@@ -856,7 +856,7 @@ function DutyPanel({ d }) {
     ${d.options.length > 0 && html`<span class="rf-caps">${tr('Cover it today').toUpperCase()}</span>${d.options.map((o) => html`<${PickRow} on=${o.on} text=${o.label} right=${o.note} onTap=${() => rAct('set_fill', { key: o.key, fill: o.fill })} />`)}`}
     <span class="rf-caps">${tr('Who drives it').toUpperCase()}</span>
     ${d.cands.map((c) => html`<${PickRow} on=${c.on} swatch=${SWATCH[c.swatch] || c.swatch} text=${c.name} right=${c.state} rtone=${c.tone} onTap=${() => !d.by_player && rAct('give_driver', { ti: d.ti, k: d.k, who: c.who })} />`)}
-    ${d.drive && html`<${RfButton} label="Drive this duty" solid style="width:100%;height:36px;margin-top:12px" onClick=${() => coAct('drive_duty', { duty: d.drive, from: 5 }).then(() => setRf({ open: true }))} />`}`;
+    ${d.drive && html`<${RfButton} label="Drive this duty" solid style="width:100%;height:36px;margin-top:12px" onClick=${() => driveDuty(d.drive, 5).then(() => setRf({ open: true }))} />`}`;
 }
 
 /** A tour chosen (`rf_roster::tour_panel`): its bus and which others could run it; on the

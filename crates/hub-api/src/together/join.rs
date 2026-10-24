@@ -443,6 +443,7 @@ pub(super) fn call(cmd: &str, args: &Value, p: &dyn Platform) -> Option<Answer> 
         "tg_view" => Ok(view()),
         "tg_take" | "tg_release" => Ok(duty_act(if cmd == "tg_take" { "take" } else { "release" }, args, |_| {})),
         "tg_drive" => drive(args, p, "start"),
+        "tg_drive_here" => drive_here(args, p),
         // (Beta 63: a duty the AI drives since he left it, back from its next trip)
         "tg_take_back" => drive(args, p, "take_back"),
         "tg_status" => Ok(status()),
@@ -704,6 +705,29 @@ fn drive(args: &Value, p: &dyn Platform, what: &str) -> Answer {
         j.wake = true;
     }
     Ok(json!({ "launched": serde_json::to_value(launched).unwrap_or(Value::Null) }))
+}
+
+/// "Drive this duty" on the company's own pages (RosterFlow's duty, the planning's): never the
+/// boss's duty launcher - that is his game - but the player's own, as any duty of his. Made his
+/// first (given to himself when his role may give duties - whoever had it gives it up -, else
+/// taken), then driven alone in his own game.
+fn drive_here(args: &Value, p: &dyn Platform) -> Answer {
+    let Some(r) = duty_arg(args) else { return Ok(json!({})) };
+    let (me, assign, mine) = {
+        let g = joined();
+        let Some(s) = g.as_ref().and_then(|j| j.snap.as_ref()) else { return Ok(json!({ "error": tr("Looking for the boss's launcher…") })) };
+        let Some(you) = s.you.as_ref() else { return Ok(json!({ "error": tr("Looking for the boss's launcher…") })) };
+        let mine = s.duties.iter().any(|d| d.guest == you.no && crate::launcher::company::together::book::same_duty(&d.duty, &r));
+        (you.no, you.perms.contains(&Perm::Assign), mine)
+    };
+    if !mine {
+        let made = if assign { send_now("assign", |q| (q.duty, q.target) = (Some(r.clone()), me)) } else { send_now("take", |q| q.duty = Some(r.clone())) };
+        let a = answer_of(made);
+        if a.get("error").is_some() {
+            return Ok(a);
+        }
+    }
+    drive(args, p, "start")
 }
 
 /// A duty's line in the friend's view: what it is, who drives it, what he can do with it (`ask`:
