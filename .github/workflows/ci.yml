@@ -118,6 +118,20 @@ jobs:
         working-directory: app
         shell: bash
         run: npx --yes @tauri-apps/cli@2 build ${{ matrix.build }}
+      # (the bundle signed as a whole, ad hoc, the one in the .dmg too: a downloaded app whose bundle
+      # is not signed is "damaged" to macOS)
+      - name: the app's signature on macOS
+        if: runner.os == 'macOS'
+        shell: bash
+        run: |
+          set -e
+          app=target/release/bundle/macos/Omsi-Hub.app
+          codesign --verify --deep --strict --verbose=2 "$app"
+          codesign -dv "$app"
+          dmg=$(ls target/release/bundle/dmg/*.dmg)
+          hdiutil attach -nobrowse -readonly -mountpoint "$RUNNER_TEMP/dmg" "$dmg"
+          codesign --verify --deep --strict --verbose=2 "$RUNNER_TEMP/dmg/Omsi-Hub.app"
+          hdiutil detach "$RUNNER_TEMP/dmg"
       - name: Linux packages made
         if: runner.os == 'Linux'
         shell: bash

@@ -185,6 +185,7 @@ What it means for players:
   choice are tested; the replacement is the plugin's and has not been tried yet.
 - That the NSIS installer starts the new version after a passive update on Windows.
 - That macOS Gatekeeper lets the replaced bundle start. Without an Apple Developer ID
-  signature and notarization, the first start after a manual download already needs
-  right-click → Open. An update keeps the bundle's quarantine state, but this has not been tried
-  yet.
+  signature and notarization (the bundle is signed ad hoc, `signingIdentity: "-"` in
+  app/tauri.macos.conf.json), the first start after a manual download already needs System
+  Settings › Privacy & Security › "Open Anyway" (macOS 15 no longer lets right-click → Open
+  through). An update keeps the bundle's quarantine state, but this has not been tried yet.

@@ -157,7 +157,7 @@ jobs:
             Needs openOMSI 0.2.22 or newer and an original OMSI 2. Omsi-Hub does not replace openOMSI: it builds on the openOMSI you have installed.
 
             - Windows: `Omsi-Hub_<version>_x64-setup.exe`
-            - macOS: `Omsi-Hub_<version>_aarch64.dmg` (Apple silicon; Intel Macs are not built). The app is not notarised: the first time, right-click it and choose Open.
+            - macOS: `Omsi-Hub_<version>_aarch64.dmg` (Apple silicon; Intel Macs are not built). The app is not notarised: the first time macOS says it cannot check it, choose Done, then System Settings › Privacy & Security › "Open Anyway".
             - Linux: `Omsi-Hub_<version>_amd64.AppImage` (updates itself), or the `.deb` / `.rpm`.
           releaseDraft: true
           prerelease: ${{ steps.kind.outputs.prerelease == 'true' }}

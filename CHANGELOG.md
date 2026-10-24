@@ -15,6 +15,12 @@ Each version of the Omsi-Hub add-on, newest first. The release on GitHub links h
   `.cti` file (one file may hold several), every paint folder of the bus's model, and the
   repaints in openOMSI's content folder (where its mods and the livery studio put them), not
   only the OMSI 2 folder. The company's livery choice for its buses lists them too.
+- **macOS no longer says Omsi-Hub "is damaged and can't be opened"**: the app as a whole is
+  now signed (ad hoc, without an Apple Developer ID), where before only its program was and the
+  bundle around it was not, which macOS calls damaged once a browser has downloaded it. It is
+  still not notarised: the first time, macOS says it cannot check the app; choose Done, then
+  System Settings › Privacy & Security › "Open Anyway". 1.0.0 already downloaded opens after
+  `xattr -cr /Applications/Omsi-Hub.app` in Terminal.
 
 ## 1.0.0
 
