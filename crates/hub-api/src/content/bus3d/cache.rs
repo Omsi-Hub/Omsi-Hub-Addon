@@ -24,6 +24,12 @@ use std::sync::{Arc, Mutex, OnceLock};
 /// The most packs kept, in bytes.
 const MOST: u64 = 1 << 30;
 
+/// The way the looks are worked out: raised when a kept look may be wrong, and with it the
+/// photos and depot models taken in them (`photo::name_of`, `depot::name_of`). 2: the looks
+/// kept by a read from before a livery's save; 3: by a read from before the content folder had
+/// the bus's `[CTC]` folder (a livery of the studio drawn as the model's white base).
+pub const LOOKS: u32 = 3;
+
 pub fn dir() -> PathBuf {
     core::data_dir().join("cache").join("bus3d").join("v2")
 }
@@ -309,8 +315,7 @@ fn read_for_look(root: &Path, bus: &str, manifest: &Manifest) -> Result<(Arc<Bus
 pub fn look_of(root: &Path, bus: &str, manifest: &Manifest, paint: Option<&str>, options: &[(String, f32)]) -> Result<Look, String> {
     let mut opts: Vec<(String, f32)> = options.to_vec();
     opts.sort_by(|a, b| a.0.to_lowercase().cmp(&b.0.to_lowercase()));
-    // (look-2: the looks kept by a read from before a livery's save are worked out again)
-    let key = tex::id_of(&format!("look-2|{}|{:?}", paint.unwrap_or("").trim().to_lowercase(), opts));
+    let key = tex::id_of(&format!("look-{LOOKS}|{}|{:?}", paint.unwrap_or("").trim().to_lowercase(), opts));
     let file = dir().join("l").join(format!("{}-{key}.json", manifest.pack));
     if let Some(kept) = std::fs::read(&file).ok().and_then(|b| serde_json::from_slice::<KeptLook>(&b).ok()) {
         if fresh(&kept.stamps) && kept.look.visible.len() == manifest.counts.entries {

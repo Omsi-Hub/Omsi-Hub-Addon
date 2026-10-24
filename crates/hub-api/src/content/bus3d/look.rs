@@ -185,7 +185,10 @@ pub fn look_of(read: &BusRead, head: &Head, manifest: &Manifest, paint: Option<&
 }
 
 /// The files a bus's looks depend on beyond its pack: per part the `.bus`, its scripts, its
-/// constant files and variable lists, its `[CTC]` folders and every `.cti` in them.
+/// constant files and variable lists, its `[CTC]` folders and every `.cti` in them - and every
+/// content root's copy of such a folder that is not there yet (the livery studio's first save
+/// for a bus makes the content folder's: until then nothing of it was stamped, and the looks
+/// went on from the read before the save, the new livery drawn as the model's white base).
 pub fn look_sources(read: &BusRead) -> Vec<std::path::PathBuf> {
     let mut out = Vec::new();
     for vt in read.all() {
@@ -195,19 +198,30 @@ pub fn look_sources(read: &BusRead) -> Vec<std::path::PathBuf> {
         }
         for c in &vt.model.ctc {
             let d = omsi_cfg::resolve_path(vt.def.dir(), &c.path);
-            for m in omsi_cfg::mirrored_dirs(&d) {
-                for e in omsi_cfg::vfs::read_dir_paths(&m) {
+            let mirrored = omsi_cfg::mirrored_dirs(&d);
+            for m in &mirrored {
+                for e in omsi_cfg::vfs::read_dir_paths(m) {
                     if e.extension().is_some_and(|x| x.eq_ignore_ascii_case("cti")) {
                         out.push(e);
                     }
                 }
-                out.push(m);
+                out.push(m.clone());
             }
+            out.extend(content_copies(&d).into_iter().filter(|p| !mirrored.contains(p)));
         }
     }
     out.sort();
     out.dedup();
     out
+}
+
+/// Every content root's copy of the folder `dir`, there or not (`mirrored_dirs` has only the
+/// ones there): the place the livery studio writes to (`lak::place`, the root's folder of
+/// the same relative path).
+fn content_copies(dir: &std::path::Path) -> Vec<std::path::PathBuf> {
+    let roots = omsi_cfg::content_roots();
+    let Some(rel) = roots.iter().filter(|r| dir.starts_with(r)).max_by_key(|r| r.components().count()).and_then(|r| dir.strip_prefix(r).ok()) else { return Vec::new() };
+    roots.iter().map(|r| r.join(rel)).collect()
 }
 
 #[cfg(test)]

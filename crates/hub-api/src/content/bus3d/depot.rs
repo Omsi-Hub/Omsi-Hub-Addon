@@ -32,9 +32,10 @@ fn arg_str(args: &Value, name: &str) -> String {
     args.get(name).and_then(Value::as_str).unwrap_or_default().to_string()
 }
 
-/// The model's name for a bus file and a livery.
+/// The model's name for a bus file and a livery, in the looks as they are worked out now (as
+/// a photo's).
 pub fn name_of(bus: &str, paint: &str) -> String {
-    format!("d{STYLE}-{}", tex::id_of(&format!("depot-{STYLE}|{}|{}", bus.replace('\\', "/").trim().to_lowercase(), paint.trim().to_lowercase())))
+    format!("d{STYLE}-{}", tex::id_of(&format!("depot-{STYLE}|looks-{}|{}|{}", super::cache::LOOKS, bus.replace('\\', "/").trim().to_lowercase(), paint.trim().to_lowercase())))
 }
 
 /// The model of `bus` in `paint` and its atlas, if they are kept for the bus as it is now.

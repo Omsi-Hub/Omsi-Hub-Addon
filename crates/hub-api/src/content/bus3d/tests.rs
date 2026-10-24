@@ -324,3 +324,76 @@ fn a_real_bus_is_packed() {
     assert!(m.counts.triangles > 0);
     let _ = Path::new("");
 }
+
+/// A TGA of `w` x `h` pixels of one colour (32 bits).
+fn tga(w: u16, h: u16, rgba: [u8; 4]) -> Vec<u8> {
+    let mut t = vec![0u8; 18];
+    t[2] = 2;
+    t[12..14].copy_from_slice(&w.to_le_bytes());
+    t[14..16].copy_from_slice(&h.to_le_bytes());
+    t[16] = 32;
+    t[17] = 8;
+    t.extend(std::iter::repeat_n([rgba[2], rgba[1], rgba[0], rgba[3]], w as usize * h as usize).flatten());
+    t
+}
+
+/// Luc's "Test livery" of the livery studio on the London Citybus, drawn in the preview as the
+/// model's white base: the bus was opened before openOMSI's content folder had its `[CTC]`
+/// folder, the studio's first save made it, and the looks went on from the read before the
+/// save, which knew no livery of that name - and kept that white look on disk as fresh. The
+/// livery saved as the studio saves it (`~LiveryStudio_<nnnn>_<slug>.cti` and its textures in
+/// the content folder's copy of the bus's `[CTC]` folder) is in the next look, its texture in
+/// place of the model's.
+#[test]
+fn a_livery_the_studio_saves_into_a_new_content_folder_shows_in_the_next_look() {
+    crate::online::test_data_dir();
+    let root = sandbox("studio");
+    let cfg = root.join("Vehicles/Test/model/model.cfg");
+    let mut text = std::fs::read_to_string(&cfg).unwrap();
+    text.push_str("\n[CTC]\nColorscheme\ntexture\\livery\n0\n\n[CTCTexture]\nBody\nbody.tga\n");
+    std::fs::write(&cfg, text).unwrap();
+    let stock = root.join("Vehicles/Test/texture/livery");
+    std::fs::create_dir_all(&stock).unwrap();
+    std::fs::write(stock.join("stock.cti"), "[item]\r\nStock\r\nBody\r\nstock_body.tga\r\n").unwrap();
+    std::fs::write(stock.join("stock_body.tga"), tga(4, 2, [0, 200, 0, 255])).unwrap();
+    // openOMSI's content folder, before the bus's root: nothing of the bus in it yet
+    let content = root.with_file_name(format!("{}-content", root.file_name().unwrap().to_string_lossy()));
+    let _ = std::fs::remove_dir_all(&content);
+    std::fs::create_dir_all(&content).unwrap();
+    omsi_cfg::add_content_root_before(content.clone(), &root);
+    omsi_cfg::add_content_root(root.clone());
+    let bus = "Vehicles/Test/test.bus";
+
+    // the bus step opens the bus in a livery of its own
+    let opened = super::cache::open(&root, bus, Some("Stock"), &[]).unwrap();
+    assert_eq!(opened.look.paint.as_deref(), Some("Stock"));
+    let manifest = opened.manifest;
+    let body = manifest.textures.iter().position(|t| t.names.iter().any(|(_, n)| n == "body.tga")).unwrap();
+    // the content folder's copy of the [CTC] folder is watched before it is there
+    let (read, _, _) = super::cache::read_of(&root, bus).unwrap();
+    let copy = content.join("Vehicles/Test/texture/livery");
+    assert!(super::look::look_sources(&read).contains(&copy), "{:?}", super::look::look_sources(&read));
+
+    // the studio saves "Mine" (`lak::place`, `hub_livery::export`)
+    let dir = copy.join("LiveryStudio").join("0001_mine");
+    std::fs::create_dir_all(&dir).unwrap();
+    std::fs::write(dir.join("body_1a2b3c4d.tga"), tga(4, 2, [200, 0, 0, 255])).unwrap();
+    std::fs::write(copy.join("~LiveryStudio_0001_mine.cti"), "[item]\r\nMine\r\nBody\r\nLiveryStudio\\0001_mine\\body_1a2b3c4d.tga\r\n").unwrap();
+    omsi_cfg::content_changed();
+
+    // the bus step asks for its look: the livery, its texture on the body - and kept so
+    for _ in 0..2 {
+        let look = super::cache::look_of(&root, bus, &manifest, Some("Mine"), &[]).unwrap();
+        assert_eq!(look.paint.as_deref(), Some("Mine"));
+        let swapped = look.textures.iter().find(|(i, _)| *i == body).map(|(_, t)| t).expect("the body's texture swapped");
+        assert_eq!(swapped.name, "body_1a2b3c4d.tga");
+        assert!(super::cache::texture(&swapped.id).unwrap().starts_with(&content), "served from the content folder");
+    }
+    // the model's own liveries as before
+    assert_eq!(super::cache::look_of(&root, bus, &manifest, Some("Stock"), &[]).unwrap().paint.as_deref(), Some("Stock"));
+
+    omsi_cfg::remove_content_root(&content);
+    omsi_cfg::remove_content_root(&root);
+    let _ = std::fs::remove_dir_all(&root);
+    let _ = std::fs::remove_dir_all(&content);
+}

@@ -38,9 +38,10 @@ fn arg_str(args: &Value, name: &str) -> String {
     args.get(name).and_then(Value::as_str).unwrap_or_default().to_string()
 }
 
-/// The photo's name for a bus file and a livery (as the tiles name them).
+/// The photo's name for a bus file and a livery (as the tiles name them), in the looks as they
+/// are worked out now (`cache::LOOKS`: a photo taken in a look worked out wrong is taken again).
 pub fn name_of(bus: &str, paint: &str) -> String {
-    format!("p3-{}", tex::id_of(&format!("photo-{STYLE}|{}|{}", bus.replace('\\', "/").trim().to_lowercase(), paint.trim().to_lowercase())))
+    format!("p3-{}", tex::id_of(&format!("photo-{STYLE}|looks-{}|{}|{}", cache::LOOKS, bus.replace('\\', "/").trim().to_lowercase(), paint.trim().to_lowercase())))
 }
 
 /// What was found of the photos' files lately, by photo.
