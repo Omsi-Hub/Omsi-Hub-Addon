@@ -116,7 +116,7 @@ Phases 2–5 can run in parallel sessions once phase 1 fixes the interfaces.
 
 - **The repository's GitHub address.** Settled: `github.com/Omsi-Hub/Omsi-Hub-Addon`, private:
   Omsi-Hub is proprietary from 19 October 2026 (`LICENSE`; the code before it was MIT). The
-  releases are in the public `github.com/Luc-nbr/Omsi-Hub-Releases` (docs/UPDATES.md).
+  releases are in the public `github.com/Omsi-Hub/Omsi-Hub-Releases` (docs/UPDATES.md).
 - **The game-drawn editors** (line editor and others in `omsihub-game`): web UI in the app, or drop?
   Decided per editor in phase 1.
 - **The app's name and identifier:** `Omsi-Hub`, with a new identifier (a fresh WebView profile) or the

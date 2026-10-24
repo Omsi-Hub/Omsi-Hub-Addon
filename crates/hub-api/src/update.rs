@@ -1,4 +1,4 @@
-//! The app's own updates, from the GitHub releases of the public repository `Luc-nbr/Omsi-Hub-Releases`
+//! The app's own updates, from the GitHub releases of the public repository `Omsi-Hub/Omsi-Hub-Releases`
 //! (the code's own repository is private: its releases could not be downloaded by players).
 //! Nothing of openOMSI's updater: the look is ours, the installation Tauri's updater plugin's.
 //!
@@ -34,13 +34,13 @@ use std::time::{Duration, Instant};
 
 /// The repository whose releases are Omsi-Hub's: public, only the installers and `latest.json` in
 /// it (the release workflow puts them there).
-pub const REPO: &str = "Luc-nbr/Omsi-Hub-Releases";
-pub const REPO_URL: &str = "https://github.com/Luc-nbr/Omsi-Hub-Releases";
+pub const REPO: &str = "Omsi-Hub/Omsi-Hub-Releases";
+pub const REPO_URL: &str = "https://github.com/Omsi-Hub/Omsi-Hub-Releases";
 /// The releases, newest first (drafts are only listed to the repository's owners).
-const API: &str = "https://api.github.com/repos/Luc-nbr/Omsi-Hub-Releases/releases?per_page=20";
+const API: &str = "https://api.github.com/repos/Omsi-Hub/Omsi-Hub-Releases/releases?per_page=20";
 /// What Tauri's updater reads: the newest release's `latest.json` (GitHub's `latest` skips drafts
 /// and pre-releases too).
-pub const LATEST_JSON: &str = "https://github.com/Luc-nbr/Omsi-Hub-Releases/releases/latest/download/latest.json";
+pub const LATEST_JSON: &str = "https://github.com/Omsi-Hub/Omsi-Hub-Releases/releases/latest/download/latest.json";
 /// The environment variable that switches the looks off.
 pub const NO_UPDATE_ENV: &str = "OMSIHUB_NO_UPDATE";
 
@@ -624,7 +624,7 @@ mod tests {
     /// The repository is this app's own, not openOMSI's or the old fork's.
     #[test]
     fn the_releases_are_this_repositorys() {
-        assert_eq!(REPO, "Luc-nbr/Omsi-Hub-Releases");
+        assert_eq!(REPO, "Omsi-Hub/Omsi-Hub-Releases");
         assert!(API.contains(REPO) && LATEST_JSON.contains(REPO) && REPO_URL.ends_with(REPO));
         assert!(LATEST_JSON.ends_with("/releases/latest/download/latest.json"));
     }

@@ -1,7 +1,7 @@
 # The app's updates
 
 Omsi-Hub updates itself from the GitHub releases of the public repository
-`github.com/Luc-nbr/Omsi-Hub-Releases`, which holds only the installers and `latest.json`: the
+`github.com/Omsi-Hub/Omsi-Hub-Releases`, which holds only the installers and `latest.json`: the
 code's own repository (`Omsi-Hub/Omsi-Hub-Addon`) is private, and nobody could download from its
 releases. Nothing of openOMSI's updater is used.
 
@@ -79,7 +79,7 @@ matches the processor in the name: `x64`, `amd64` or `x86_64`; `aarch64` or `arm
 
 0. **The releases' repository.** The app reads the releases without signing in, so they live in
    a public repository of their own:
-   - make `Luc-nbr/Omsi-Hub-Releases` on GitHub: **public**, with a README (it needs one commit:
+   - make `Omsi-Hub/Omsi-Hub-Releases` on GitHub: **public**, with a README (it needs one commit:
      the release tags are made from its `main`);
    - make a **fine-grained token** (GitHub → Settings → Developer settings → Fine-grained tokens):
      repository access "Only select repositories" → `Omsi-Hub-Releases`, permission
@@ -178,10 +178,10 @@ What it means for players:
   "notes": "What changed",
   "pub_date": "2026-11-01T12:00:00Z",
   "platforms": {
-    "windows-x86_64": { "signature": "<contents of Omsi-Hub_0.2.0_x64-setup.exe.sig>", "url": "https://github.com/Luc-nbr/Omsi-Hub-Releases/releases/download/v0.2.0/Omsi-Hub_0.2.0_x64-setup.exe" },
-    "darwin-aarch64": { "signature": "<contents of Omsi-Hub_aarch64.app.tar.gz.sig>", "url": "https://github.com/Luc-nbr/Omsi-Hub-Releases/releases/download/v0.2.0/Omsi-Hub_aarch64.app.tar.gz" },
-    "darwin-x86_64": { "signature": "<contents of Omsi-Hub_x64.app.tar.gz.sig>", "url": "https://github.com/Luc-nbr/Omsi-Hub-Releases/releases/download/v0.2.0/Omsi-Hub_x64.app.tar.gz" },
-    "linux-x86_64": { "signature": "<contents of Omsi-Hub_0.2.0_amd64.AppImage.sig>", "url": "https://github.com/Luc-nbr/Omsi-Hub-Releases/releases/download/v0.2.0/Omsi-Hub_0.2.0_amd64.AppImage" }
+    "windows-x86_64": { "signature": "<contents of Omsi-Hub_0.2.0_x64-setup.exe.sig>", "url": "https://github.com/Omsi-Hub/Omsi-Hub-Releases/releases/download/v0.2.0/Omsi-Hub_0.2.0_x64-setup.exe" },
+    "darwin-aarch64": { "signature": "<contents of Omsi-Hub_aarch64.app.tar.gz.sig>", "url": "https://github.com/Omsi-Hub/Omsi-Hub-Releases/releases/download/v0.2.0/Omsi-Hub_aarch64.app.tar.gz" },
+    "darwin-x86_64": { "signature": "<contents of Omsi-Hub_x64.app.tar.gz.sig>", "url": "https://github.com/Omsi-Hub/Omsi-Hub-Releases/releases/download/v0.2.0/Omsi-Hub_x64.app.tar.gz" },
+    "linux-x86_64": { "signature": "<contents of Omsi-Hub_0.2.0_amd64.AppImage.sig>", "url": "https://github.com/Omsi-Hub/Omsi-Hub-Releases/releases/download/v0.2.0/Omsi-Hub_0.2.0_amd64.AppImage" }
   }
 }
 ```

@@ -287,9 +287,9 @@ const answers = {
     startMockDrive(mode, emit);
     return { started: true, pid: 4242, mode, args: ['--map', d.map] };
   },
-  hub_update: () => ({ kind: 'none', shown: '0.1.0', line: 'Omsi-Hub 0.1.0 is the newest.', repo: 'github.com/Luc-nbr/Omsi-Hub-Releases', auto: false }),
+  hub_update: () => ({ kind: 'none', shown: '0.1.0', line: 'Omsi-Hub 0.1.0 is the newest.', repo: 'github.com/Omsi-Hub/Omsi-Hub-Releases', auto: false }),
   hub_drive_args: (a) => ({ args: ['--root', settings.openomsi_folder, '--map', a.duty.map, '--bus', a.duty.bus, ...(a.duty.line ? ['--line', a.duty.line, '--tour', a.duty.tour || ''] : []), '--time', a.duty.time] }),
-  hub_update_act: (a) => ({ kind: 'none', line: a.what === 'check' ? 'Omsi-Hub 0.1.0 is the newest.' : '', repo: 'github.com/Luc-nbr/Omsi-Hub-Releases', auto: false }),
+  hub_update_act: (a) => ({ kind: 'none', line: a.what === 'check' ? 'Omsi-Hub 0.1.0 is the newest.' : '', repo: 'github.com/Omsi-Hub/Omsi-Hub-Releases', auto: false }),
 
   // the timetable editor
   tt_load: (a) => (/grundorf/i.test(a.map || '') ? TT : { dir: '', folder: '', lines: [], trips: [] }),
