@@ -1,16 +1,16 @@
-<!-- privacy-version: 3 -->
+<!-- privacy-version: 4 -->
 <!-- Maintainer: written to match what the code does; have it checked by someone who knows the GDPR. -->
 # Privacy Statement
 
-**Omsi-Hub. Version 3, effective 19 October 2026.**
+**Omsi-Hub. Version 4, effective 24 October 2026.**
 
 ## 1. Introduction
 
 This Privacy Statement describes how Omsi-Hub processes personal data in connection with:
 
-- the Omsi-Hub app for Windows and macOS (Omsi-Hub.exe, Omsi-Hub.app), together with the game it starts and the Omsi-Hub plugin that runs in that game (together: "**the Software**");
-- the optional Omsi-Hub account and the online services that come with it: sign-in, friends and invitations, the player and company leaderboards, cloud saves and bug reports (together: "**the Services**");
-- the website at https://omsihub.com and its pages, including the account pages, the leaderboard, the roadmap and the bug report form ("**the Website**");
+- the Omsi-Hub app for Windows, macOS and Linux (omsi-hub.exe, Omsi-Hub.app, and the AppImage, .deb and .rpm packages), an add-on that starts the user's own copy of openOMSI, together with the Omsi-Hub plugin that runs in openOMSI and the Omsi-Hub Companion app for iPhone, iPad and Android, which connects to the app over the user's local network (together: "**the Software**");
+- the optional Omsi-Hub account and the online services that come with it: sign-in, the profile and its photo, friends, their online status and invitations, the player and company leaderboards, cloud saves and bug reports (together: "**the Services**");
+- the website at https://omsihub.com and its pages, including the account pages (My Omsi-Hub), the player and company leaderboards, the page that opens a company from a cloud save in the browser, the roadmap, the bug report form and the page with the user's bug reports ("**the Website**");
 - the Omsi-Hub server on Discord and its bot ("**the Discord server**").
 
 It is issued in accordance with Regulation (EU) 2016/679, the General Data Protection Regulation (**GDPR**).
@@ -31,21 +31,18 @@ The Software can be used in full without creating an account. In that case all g
 
 The Software periodically retrieves information about available versions from GitHub, Inc., and downloads updates from it. GitHub processes the user's IP address in this context, as it would for any request to its servers.
 
-### 3.2 Usage counter
+### 3.2 Multiplayer
 
-While the game is running, it reports to the openOMSI project's usage counter that an instance is in use. This report contains only:
+Multiplayer sessions, including shared company sessions, are provided by openOMSI's own network functions, which the Software starts. When a user hosts a session or joins one, the following occurs:
 
-- a random identifier, generated anew at every start and not stored;
-- the version number of the Software;
-- the type of operating system.
+- the participating installations connect to each other directly, so each participant to whom the user provides a session code can see the user's IP address; a user who joins a server, including the official openOMSI server, connects to that server, and its operator can see the user's IP address;
+- to make that connection through home routers, openOMSI asks public STUN servers of Google LLC and Cloudflare, Inc. for the user's public IP address, may ask the user's own router to forward a port (UPnP), and posts the session's network addresses on the public message relay ntfy.sh, under a name derived from the session code that does not reveal the code itself;
+- where no direct connection is possible, a hosted session is reached through a Cloudflare quick tunnel of Cloudflare, Inc., whose address is also posted on ntfy.sh; the program used for this (cloudflared) is downloaded from Cloudflare's releases on GitHub the first time the user hosts a session;
+- the current address of the official openOMSI server is looked up on ntfy.sh.
 
-No name, device identifier or other personal data is transmitted. Users may disable this function at any time under Settings → General.
+Omsi-Hub does not store any of this data. Apart from the session code of a session a signed-in user hosts (section 4), none of it is sent to the Services.
 
-### 3.3 Multiplayer
-
-When a user shares a company session or joins one, the participating installations connect to each other directly. Each participant to whom the user provides a session code can therefore see the user's IP address. These connections do not pass through servers operated by Omsi-Hub.
-
-### 3.4 Phone and tablet displays
+### 3.3 Phone and tablet displays
 
 The optional phone and tablet displays operate exclusively within the user's local network.
 
@@ -60,18 +57,19 @@ Creating an account is optional. It is required only for the friends list, invit
 | Identifier, username, email address and the address of the profile picture received from Discord, if the user chooses to sign in with a Discord account | Authentication | Performance of a contract (Art. 6(1)(b) GDPR) |
 | The identifier and username of a linked Discord account, and the date and time of linking | Giving the user their roles on the Discord server and linking their tickets there to the account (section 4.2); only once the user has linked a Discord account, and the user may unlink it at any time | Consent (Art. 6(1)(a) GDPR) |
 | Display name and friend code | Enabling other users to find and identify the account holder | Performance of a contract (Art. 6(1)(b) GDPR) |
+| A profile photo, if the user chooses to add one | Showing the account holder in the Software and on the Website, to friends and, once the user has enabled publication, on the public leaderboards; the photo is stored at a public address that contains neither the account identifier nor the name, and the user may replace or remove it at any time | Performance of a contract (Art. 6(1)(b) GDPR) |
 | Friends, friend requests and blocked users | Providing the friends list | Performance of a contract (Art. 6(1)(b) GDPR) |
 | Online status, time of last activity, and the session code while hosting a session | Informing friends of availability and allowing them to join; visible to friends only | Performance of a contract (Art. 6(1)(b) GDPR) |
 | Invitations to a session (they can no longer be accepted after 15 minutes) | Allowing a friend to be invited into a session | Performance of a contract (Art. 6(1)(b) GDPR) |
 | Career statistics: points, level, number of duties, minutes driven, kilometres | Displaying the user's profile | Performance of a contract (Art. 6(1)(b) GDPR) |
 | The same career statistics, on the public leaderboard | Publication on the leaderboard; only once the user has enabled this, and the user may disable it at any time | Consent (Art. 6(1)(a) GDPR) |
 | A game company's name, short name, colours, country, map, game mode and figures (cash, monthly profit, buses, lines, staff, passengers, punctuality, reputation), together with the display name, on the public company leaderboard | Publication on the company leaderboard; only for a company for which the user has enabled this, and the user may disable it at any time, which removes the company from the leaderboard | Consent (Art. 6(1)(a) GDPR) |
-| Up to two cloud saves of game companies | Enabling the user to continue playing on another device; accessible to the account holder only | Performance of a contract (Art. 6(1)(b) GDPR) |
+| Up to two cloud saves of game companies and, with each, the files the company's pages read on the user's computer: the map's timetable and depot files, the buses installed and their liveries, the lines and depots made in the Software, the driver's trips and career, the photos of the company's buses and the company's logo | Enabling the user to continue playing on another device and to open the company on the Website; accessible to the account holder only | Performance of a contract (Art. 6(1)(b) GDPR) |
 | The version of this Privacy Statement accepted, and the date and time of acceptance | Demonstrating that the user has been informed and has agreed | Legal obligation and legitimate interest (Art. 6(1)(c) and (f) GDPR) |
 
 ### 4.1 Bug reports
 
-Anyone may send a bug report, from the Website or the Software, with or without an account. A bug report contains the description entered by the user and the category chosen; the page, browser (user agent) and language, or the version of the Software and the operating system; the account identifier when the user is signed in, or otherwise an email address only if the user provides one; and a salted hash of the sender's IP address, used solely to limit the number of reports. Bug reports are processed to correct errors and to reply to the reporter, on the basis of legitimate interest (Art. 6(1)(f) GDPR) or, for account holders, the performance of a contract (Art. 6(1)(b) GDPR).
+Anyone may send a bug report from the Website, with or without an account, or open a ticket on the Discord server (section 4.2). A bug report contains the description entered by the user and the category chosen; the page, browser (user agent) and language; the screenshots and videos the user attaches; the account identifier when the user is signed in, or otherwise an email address only if the user provides one; and a salted hash of the sender's IP address, used solely to limit the number of reports. Each bug report is also sent by email to info@omsihub.com. The Omsi-Hub team answers a bug report in a conversation in which both sides may post messages, screenshots and videos; an account holder follows it on the Website, and the other side is notified of each answer by email. The team's answers carry the name of the team member who wrote them, and the team may add internal notes that the reporter does not see. Bug reports are processed to correct errors and to reply to the reporter, on the basis of legitimate interest (Art. 6(1)(f) GDPR) or, for account holders, the performance of a contract (Art. 6(1)(b) GDPR).
 
 ### 4.2 Discord
 
@@ -91,11 +89,13 @@ Omsi-Hub engages the following parties in the processing of personal data.
 | Party | Role and data concerned | Location |
 | --- | --- | --- |
 | Supabase, Inc. | Processor: hosting of accounts, the database, cloud saves and bug reports, and the Website's release information | Frankfurt, Germany (European Union) |
-| Omsi-Hub's email service provider | Processor: sending verification and password-recovery emails, and delivering bug reports to info@omsihub.com (with the reporter's address as reply address, where known) | Under a data processing agreement |
+| Omsi-Hub's email service provider | Processor: sending verification and password-recovery emails, delivering bug reports to info@omsihub.com (with the reporter's address as reply address, where known), and notifying of answers to bug reports | Under a data processing agreement |
 | The hosting provider of omsihub.com | Processor: serving the Website; server logs may briefly contain IP addresses | Under a data processing agreement |
-| Google LLC | Independent controller, only where the user chooses to sign in with a Google account; Google's own privacy policy applies | United States |
+| Google LLC | Independent controller, only where the user chooses to sign in with a Google account, and for its STUN servers when the user hosts or joins a multiplayer session (section 3.2); Google's own privacy policy applies | United States |
+| Cloudflare, Inc. | Independent controller for its STUN servers and its quick tunnels when the user hosts or joins a multiplayer session (section 3.2); Cloudflare's own privacy policy applies | United States |
+| ntfy.sh | Independent controller for the public message relay on which the network addresses of a multiplayer session are posted (section 3.2); its operator's own privacy policy applies | As stated by its operator |
 | Discord Inc. | Independent controller for the Discord server and, where the user chooses, for signing in with a Discord account; Discord's own privacy policy applies. Answers to tickets from the Discord server are passed to Discord to be posted in their thread | United States |
-| GitHub, Inc. | Independent controller for the Software's update checks and for downloads the user starts | United States |
+| GitHub, Inc. | Independent controller for the Software's update checks, for the download of cloudflared (section 3.2) and for downloads the user starts | United States |
 
 Where personal data is transferred to a country outside the European Economic Area, this takes place on the basis of an adequacy decision of the European Commission, including the EU–U.S. Data Privacy Framework, or the Standard Contractual Clauses adopted by the European Commission.
 
@@ -103,12 +103,12 @@ Where personal data is transferred to a country outside the European Economic Ar
 
 - **Account data** is retained for as long as the account exists.
 - **Invitations** can no longer be accepted after 15 minutes. They are deleted when dismissed, and together with the account.
-- **Bug reports** are retained for 12 months and then deleted; a report linked to an account is erased together with that account.
+- **Bug reports**, with their conversation, screenshots and videos, are deleted one day after they are marked as solved, or earlier when the Omsi-Hub team deletes them; a report linked to an account is erased together with that account.
 - **A linked Discord account** is retained until the user unlinks it or deletes the account; its roles on the Discord server are then removed.
 - **Tickets from the Discord server** are retained and erased as bug reports are; their private thread on Discord is deleted together with the ticket.
 - **Moderation reports** in the moderators' channel on the Discord server are deleted once they have been dealt with, and at the latest after six months.
 - **Company leaderboard entries** are removed as soon as the user disables publication, when the company is deleted, or together with the account; entries not updated for 30 days are no longer shown.
-- **Deleting the account.** The user may delete the account at any time, in the Software (Account → Delete account) or on the Website. All associated personal data is then erased without delay: the profile, friends, invitations, statistics, leaderboard entries, bug reports and their Discord threads, the Discord link and cloud saves.
+- **Deleting the account.** The user may delete the account at any time, in the Software (Account → Delete account) or on the Website. All associated personal data is then erased without delay: the profile and its photo, friends, invitations, statistics, leaderboard entries, bug reports and their Discord threads, the Discord link, and cloud saves with the files sent with them.
 - **Proof of consent** to this Privacy Statement is erased together with the account.
 
 ## 7. Security
