@@ -57,13 +57,13 @@ pub struct Trips {
 
 impl Trips {
     pub fn read(map: &str, date: &str) -> Result<Trips, String> {
-        let global = hub_core::paths::resolve_content(map).ok_or_else(|| format!("the map {map} is not there"))?;
-        let map_dir = global.parent().map(Path::to_path_buf).ok_or("map folder")?;
+        let vfs = hub_core::paths::vfs().ok_or("no OMSI 2 folder")?;
+        let global = vfs.resolve(map).ok_or_else(|| format!("the map {map} is not there"))?;
         let date = if date.trim().is_empty() { "1989-05-30" } else { date.trim() };
         let day = chrono::NaiveDate::parse_from_str(date, "%Y-%m-%d").map_err(|_| format!("'{date}' is not a date (YYYY-MM-DD)"))?;
-        let chrono = hub_omsi::map::active_chrono_dirs(&map_dir, day);
-        let off = hub_omsi::map::chrono_deactivated_lines(&chrono);
-        let data = hub_omsi::timetable::Timetable::load_with_chrono(&hub_core::paths::resolve_path(&map_dir, "TTData"), &chrono, &off);
+        // (the TTData openOMSI reads: the content folder's - where the line editor's lines are -
+        // before the one beside global.cfg)
+        let data = hub_omsi::timetable::timetable_for(&vfs, map, day).map_err(|e| e.to_string())?.unwrap_or_default();
         // (the tile of a step is the index of its entry in `[map]`, as the game reads it)
         let tiles = hub_omsi::map::GlobalCfg::load(&global).map(|g| g.tiles).unwrap_or_default();
         Ok(Trips { data, tiles })

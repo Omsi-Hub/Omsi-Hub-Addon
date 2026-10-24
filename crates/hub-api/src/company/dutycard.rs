@@ -63,11 +63,11 @@ fn timetable(map: &str, date: &str) -> Option<Arc<TimetableData>> {
             return Some(t.clone());
         }
     }
-    let map_dir = installed(map).parent()?.to_path_buf();
     let day = chrono::NaiveDate::parse_from_str(date.trim(), "%Y-%m-%d").ok()?;
-    let chrono = hub_omsi::map::active_chrono_dirs(&map_dir, day);
-    let off = hub_omsi::map::chrono_deactivated_lines(&chrono);
-    let t = Arc::new(TimetableData::load_with_chrono(&hub_core::paths::resolve_path(&map_dir, "TTData"), &chrono, &off));
+    // (the TTData openOMSI reads: the content folder's - where the line editor's lines are -
+    // before the one beside global.cfg)
+    let vfs = hub_core::paths::vfs()?;
+    let t = Arc::new(hub_omsi::timetable::timetable_for(&vfs, map, day).ok()??);
     *kept.lock().unwrap_or_else(|e| e.into_inner()) = Some((map.to_string(), date.to_string(), Instant::now(), t.clone()));
     Some(t)
 }
