@@ -1,7 +1,9 @@
 //! The plugin in the player's openOMSI (`addon_`), on `hub-game`: the Settings page's "Your
 //! openOMSI", the assignment every drive gives the plugin, and what the plugin reports booked.
 //!
-//! * `addon_state` - the chosen openOMSI (its folder, program and version), how well Omsi-Hub
+//! * `addon_state` - the openOMSI in use (its folder, program and version: the one openOMSI's
+//!   own launcher plays, else the chosen one, `hub_core::paths::openomsi_folder`; `followed`
+//!   when they differ, the chosen one in `chosen`), how well Omsi-Hub
 //!   works with it (estimated from the version, or checked with the plugin's handshake
 //!   `data/hello.json` since the first drive: `compat`), the plugin there (missing, on, off,
 //!   out of date) and the duty it was last given;
@@ -128,14 +130,18 @@ pub fn save(data: &Path, k: &Kept) -> Result<(), String> {
     std::fs::rename(&tmp, &path).map_err(|e| e.to_string())
 }
 
-/// The plugins folder of the chosen openOMSI.
+/// The plugins folder of the openOMSI in use (`paths::openomsi_folder`).
 pub fn plugins_dir() -> Result<PathBuf, String> {
-    let s = Settings::load();
-    if s.openomsi_folder.is_empty() {
-        return Err("Choose your openOMSI folder first".into());
-    }
-    let c = hub_game::check_folder(Path::new(&s.openomsi_folder), &hub_core::paths::home_dir()).map_err(|p| p.text().to_string())?;
+    let folder = hub_core::paths::openomsi_folder().ok_or("Choose your openOMSI folder first")?;
+    let c = hub_game::check_folder(&folder, &hub_core::paths::home_dir()).map_err(|p| p.text().to_string())?;
     Ok(c.install.plugins_dir)
+}
+
+/// Whether the folder `a` is the folder `b` (written alike, or the same folder on disk: another
+/// slash, another case).
+fn same_folder(a: &Path, b: &str) -> bool {
+    let b = Path::new(b.trim());
+    a == b || a.canonicalize().ok().zip(b.canonicalize().ok()).is_some_and(|(x, y)| x == y)
 }
 
 /// The player's language, as the texts' tables name it (`en` when none is set).
@@ -548,13 +554,18 @@ pub fn book() -> Booked {
 
 fn state() -> Value {
     let s = Settings::load();
-    let game = (!s.openomsi_folder.is_empty()).then(|| crate::hub::check_openomsi(&s.openomsi_folder));
+    // (the openOMSI in use: the one openOMSI's own launcher plays, else the chosen one)
+    let folder = hub_core::paths::openomsi_folder().map(|f| f.to_string_lossy().into_owned()).unwrap_or_default();
+    let game = (!folder.is_empty()).then(|| crate::hub::check_openomsi(&folder));
     let plugins = plugins_dir().ok();
     let plugin = plugins.as_deref().map(install::status);
     let hello = plugins.as_deref().and_then(|d| bridge::read_hello(&install::plugin_dir(d)));
     let assigned = load(&hub_core::data_dir()).assigned;
     json!({
-        "folder": s.openomsi_folder,
+        "folder": folder,
+        // (followed: openOMSI's launcher plays another openOMSI than the one chosen here)
+        "chosen": s.openomsi_folder,
+        "followed": hub_core::paths::launcher_openomsi(&hub_core::paths::home_dir()).is_some_and(|f| !same_folder(&f, &s.openomsi_folder)),
         "game": game,
         "plugin": plugin,
         "plugin_version": install::VERSION,
@@ -597,11 +608,8 @@ pub fn call(cmd: &str, args: &Value, _p: &dyn Platform) -> Answer {
         "addon_state" => Ok(state()),
         "addon_set_folder" => set_folder(&arg::<String>(args, "folder")?),
         "addon_version" => {
-            let s = Settings::load();
-            if s.openomsi_folder.is_empty() {
-                return Err("Choose your openOMSI folder first".into());
-            }
-            let c = crate::hub::check_openomsi(&s.openomsi_folder);
+            let folder = hub_core::paths::openomsi_folder().ok_or("Choose your openOMSI folder first")?;
+            let c = crate::hub::check_openomsi(&folder.to_string_lossy());
             Ok(json!({ "version": c["version"], "version_from": c["version_from"], "min": hub_game::compat::FIRST_SUPPORTED.to_string(), "ok": c["ok"] }))
         }
         "addon_enable" => {

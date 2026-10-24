@@ -201,7 +201,8 @@ const answers = {
   ol_presence: () => ({ ok: true }),
   cs_state: () => ({ companies: {}, slots: 2, used: 0, local_label: 'Local save', cloud_label: 'Cloud save' }),
   cs_open: () => ({}),
-  addon_state: () => ({ folder: settings.openomsi_folder, game: checkOpenomsi(settings.openomsi_folder), plugin: { state: addonPlugin }, plugin_version: '1.7.0', hello: null, checked: false, assigned: null }),
+  // (`?followed`: openOMSI's own launcher plays another openOMSI than the chosen one)
+  addon_state: () => ({ folder: settings.openomsi_folder, chosen: params.has('followed') ? 'C:/Downloads/openOMSI-0.3.39-windows-x64' : settings.openomsi_folder, followed: params.has('followed'), game: checkOpenomsi(settings.openomsi_folder), plugin: { state: addonPlugin }, plugin_version: '1.7.0', hello: null, checked: false, assigned: null }),
   addon_enable: (a) => ((addonPlugin = a.on ? 'on' : 'off'), { state: addonPlugin, version: '1.7.0' }),
   addon_remove: () => ((addonPlugin = 'missing'), { state: 'missing' }),
   addon_set_folder: (a) => {

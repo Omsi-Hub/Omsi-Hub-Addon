@@ -46,9 +46,14 @@ openOMSI's `omsi-texture`).
   lines, codepage, bom }` with `from_bytes`, `read`, `reader()`, `blocks(kw)`, `value(kw)` and
   `to_bytes()`; `Reader` with `next_keyword`, `str`, `value`, `values(n)`, `run`, `i32`, `f64`
   and `until`; and `parse_i32`/`parse_f64`.
-- `vfs`: `Vfs::new(root, content)`. It has `resolve(rel)`, `read`, `read_cfg`, `list_dir`,
-  `is_file`/`is_dir` and `relative`. It searches the content folder first, then OMSI 2, in any
+- `vfs`: `Vfs::new(root, content)` and `Vfs::layered(first, root)`. It has `resolve(rel)`,
+  `read`, `read_cfg`, `list_dir`, `is_file`/`is_dir` and `relative`. It searches the content
+  folder first, then the archives openOMSI uses in place (`hub_core::paths::archive_bases`:
+  what Omsi-Hub reads of each `Archives/*.zip`, copied into its cache), then OMSI 2, in any
   case, with either slash. Also `find_child`, `resolve_in` and `missing_omsi2_essentials`.
+  The openOMSI whose content folder is read is the one openOMSI's own launcher plays
+  (`~/.openomsi/launcher.json`'s `game`), else the one chosen in the setup
+  (`hub_core::paths::openomsi_folder`).
 - `timetable`:
   - the types `Timetable { lines, trips, tracks, stn_links, bus_stops }`, `Line`, `Tour`
     (`days: DayMask`), `TourTrip`, `Trip`, `TripStop`, `TripProfile`, `Track`, `TrackEntry`,

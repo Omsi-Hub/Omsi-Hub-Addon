@@ -131,7 +131,9 @@ pub fn start(d: &Duty, p: &dyn Platform) -> Answer {
             return Err("openOMSI is running already".into());
         }
     }
-    let checked = hub_game::check_folder(Path::new(&s.openomsi_folder), &hub_core::paths::home_dir()).map_err(|e| e.text().to_string())?;
+    // (the openOMSI in use: the one openOMSI's own launcher plays, else the chosen one)
+    let folder = hub_core::paths::openomsi_folder().unwrap_or_else(|| s.openomsi_folder.clone().into());
+    let checked = hub_game::check_folder(&folder, &hub_core::paths::home_dir()).map_err(|e| e.text().to_string())?;
     if checked.compat.level == hub_game::compat::Level::Unsupported {
         return Err(checked.compat.notes.first().cloned().unwrap_or_else(|| "This openOMSI is not supported".into()));
     }

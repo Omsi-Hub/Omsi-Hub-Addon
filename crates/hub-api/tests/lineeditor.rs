@@ -35,6 +35,7 @@ fn a_map_is_read_and_a_new_line_routed_between_two_of_its_stops() {
     }
     std::fs::write(root.join("Omsi.exe"), b"").unwrap();
     std::env::set_var(hub_core::paths::DATA_DIR_ENV, base.join("data"));
+    std::env::set_var(hub_core::paths::HOME_DIR_ENV, base.join("home"));
     hub_core::settings::Settings { omsi2_folder: root.to_string_lossy().into_owned(), ..Default::default() }.save().unwrap();
     let map = root.join("maps/Linedorf");
     utf16(&map.join("global.cfg"), "[name]\nLinedorf\n\n[version]\n14\n\n[map]\n0\n0\ntile_0_0.map\n");

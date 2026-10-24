@@ -931,6 +931,13 @@ _version: 2
   ru: "Папка плагинов: %{dir}"
   uk: "Тека плагінів: %{dir}"
   pl: "Folder wtyczek: %{dir}"
+"Omsi-Hub uses the openOMSI that openOMSI's own launcher plays, with the mods you installed there. Chosen here: %{chosen}":
+  nl: "Omsi-Hub gebruikt de openOMSI die de launcher van openOMSI zelf start, met de mods die je daar hebt geïnstalleerd. Hier gekozen: %{chosen}"
+  de: "Omsi-Hub nutzt das openOMSI, das openOMSIs eigener Launcher startet, mit den Mods, die du dort installiert hast. Hier gewählt: %{chosen}"
+  fr: "Omsi-Hub utilise l'openOMSI que lance le lanceur d'openOMSI lui-même, avec les mods que vous y avez installés. Choisi ici : %{chosen}"
+  ru: "Omsi-Hub использует тот openOMSI, который запускает собственный лаунчер openOMSI, с установленными там модами. Выбрано здесь: %{chosen}"
+  uk: "Omsi-Hub використовує той openOMSI, який запускає власний лаунчер openOMSI, з модами, які ви там встановили. Вибрано тут: %{chosen}"
+  pl: "Omsi-Hub używa tego openOMSI, który uruchamia własny launcher openOMSI, z modami zainstalowanymi właśnie tam. Wybrano tutaj: %{chosen}"
 "The game closed on an error":
   nl: "Het spel is met een fout gestopt"
   de: "Das Spiel wurde mit einem Fehler beendet"

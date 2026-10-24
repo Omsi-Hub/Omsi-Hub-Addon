@@ -53,6 +53,7 @@ fn the_editors_write_into_the_content_folder_and_the_data_folder_only() {
     std::fs::create_dir_all(openomsi.join("Plugins")).unwrap();
     std::fs::write(openomsi.join("openomsi.exe"), b"").unwrap();
     std::env::set_var(hub_core::paths::DATA_DIR_ENV, base.join("data"));
+    std::env::set_var(hub_core::paths::HOME_DIR_ENV, base.join("home"));
     let settings = hub_core::settings::Settings { omsi2_folder: omsi2.to_string_lossy().into_owned(), openomsi_folder: openomsi.to_string_lossy().into_owned(), ..Default::default() };
     settings.save().unwrap();
     let mut before = Vec::new();

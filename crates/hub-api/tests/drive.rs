@@ -56,6 +56,7 @@ fn a_company_duty_is_driven_reported_and_booked() {
     let _ = std::fs::remove_dir_all(&base);
     let data = base.join("data");
     std::env::set_var(hub_core::paths::DATA_DIR_ENV, &data);
+    std::env::set_var(hub_core::paths::HOME_DIR_ENV, base.join("home"));
     std::env::set_var("FAKE_OPENOMSI_SECONDS", "5");
 
     // the folders, as the first-run setup keeps them

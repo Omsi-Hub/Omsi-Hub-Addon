@@ -166,7 +166,10 @@ fn setup_state() -> Value {
 fn suggest() -> Value {
     let omsi2: Vec<String> = hub_game::find::omsi2_candidates().into_iter().filter(|p| hub_omsi::vfs::missing_omsi2_essentials(p).is_empty()).map(|p| p.to_string_lossy().into_owned()).collect();
     let home = hub_core::paths::home_dir();
-    let openomsi: Vec<String> = hub_game::find::openomsi_candidates(&home, omsi2.first().map(Path::new)).into_iter().map(|p| p.to_string_lossy().into_owned()).collect();
+    // (the openOMSI openOMSI's own launcher plays first: its mods are the player's)
+    let played = hub_core::paths::launcher_openomsi(&home);
+    let others = hub_game::find::openomsi_candidates(&home, omsi2.first().map(Path::new)).into_iter().filter(|p| Some(p) != played.as_ref());
+    let openomsi: Vec<String> = played.clone().into_iter().chain(others).map(|p| p.to_string_lossy().into_owned()).collect();
     json!({ "openomsi": openomsi, "omsi2": omsi2 })
 }
 

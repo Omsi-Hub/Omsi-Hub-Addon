@@ -67,6 +67,7 @@ export function AddonPanel() {
   return html`<div class="setting-row full hub-addon">
     <p class="muted small" style="margin:0 0 6px">${tr('Omsi-Hub works with the openOMSI you have installed and your original OMSI 2. It keeps its own data and never changes their files.')}</p>
     ${folder('folder', 'openOMSI', s.folder, inst, '0.2.22 or newer')}
+    ${s.followed && html`<p class="muted small" id="addon-followed" style="margin:4px 0 0;word-break:break-all">${tr("Omsi-Hub uses the openOMSI that openOMSI's own launcher plays, with the mods you installed there. Chosen here: %{chosen}", { chosen: s.chosen || '-' })}</p>`}
     ${folder('folder_open', 'OMSI 2', S.settings?.omsi2_folder, omsi2, 'Steam, Steam with Proton, or retail')}
     <div class="row wrap" style="gap:12px;margin-top:12px">
       <${Button} icon="folder_open" label="Choose the folders again" disabled=${busy} onClick=${() => set({ setup: true })} />

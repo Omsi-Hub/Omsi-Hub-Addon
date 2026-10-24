@@ -34,6 +34,7 @@ fn the_maps_draw_the_city_map_s_roads_and_the_trip_on_its_lane() {
     }
     std::fs::write(root.join("Omsi.exe"), b"").unwrap();
     std::env::set_var(hub_core::paths::DATA_DIR_ENV, base.join("data"));
+    std::env::set_var(hub_core::paths::HOME_DIR_ENV, base.join("home"));
     hub_core::settings::Settings { omsi2_folder: root.to_string_lossy().into_owned(), ..Default::default() }.save().unwrap();
     let map = root.join("maps/Roadtown");
     utf16(&map.join("global.cfg"), "[name]\nRoadtown\n\n[version]\n14\n\n[map]\n0\n0\ntile_0_0.map\n");

@@ -63,7 +63,18 @@ pub struct Vfs {
 impl Vfs {
     /// The OMSI 2 folder `root`, with openOMSI's content folder before it.
     pub fn new(root: PathBuf, content: Option<PathBuf>) -> Vfs {
-        let mut bases: Vec<PathBuf> = content.into_iter().filter(|c| c != &root).collect();
+        Vfs::layered(content.into_iter().collect(), root)
+    }
+
+    /// The OMSI 2 folder `root`, with the folders `first` before it, searched in their order
+    /// (openOMSI's content folder, then the archives it uses in place).
+    pub fn layered(first: Vec<PathBuf>, root: PathBuf) -> Vfs {
+        let mut bases: Vec<PathBuf> = Vec::new();
+        for b in first {
+            if b != root && !bases.contains(&b) {
+                bases.push(b);
+            }
+        }
         bases.push(root);
         Vfs { bases }
     }
@@ -156,6 +167,23 @@ mod tests {
         assert!(matches!(vfs.read("maps/none.cfg"), Err(ReadError::NotFound(_))));
         let p = vfs.resolve("maps/Grundorf/Holidays.txt").unwrap();
         assert_eq!(vfs.relative(&p).unwrap(), "Maps/Grundorf/Holidays.txt");
+    }
+
+    #[test]
+    fn layered_folders_are_searched_in_their_order() {
+        let root = dir("layered-root");
+        let content = dir("layered-content");
+        let archive = dir("layered-archive");
+        for (b, name) in [(&root, "root"), (&archive, "archive")] {
+            std::fs::create_dir_all(b.join("Vehicles/Bus")).unwrap();
+            std::fs::write(b.join("Vehicles/Bus/bus.bus"), name).unwrap();
+        }
+        std::fs::create_dir_all(archive.join("Vehicles/Big")).unwrap();
+        let vfs = Vfs::layered(vec![content.clone(), archive.clone(), content.clone(), root.clone()], root.clone());
+        assert_eq!(vfs.bases(), [content, archive.clone(), root.clone()]);
+        assert_eq!(vfs.read("Vehicles/Bus/bus.bus").unwrap(), b"archive");
+        assert_eq!(vfs.list_dir("Vehicles").into_iter().map(|(n, _)| n).collect::<Vec<_>>(), ["Big", "Bus"]);
+        assert_eq!(vfs.root(), root.as_path());
     }
 
     #[test]

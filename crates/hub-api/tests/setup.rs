@@ -15,6 +15,7 @@ fn the_setup_checks_and_keeps_the_folders() {
     let data = std::env::temp_dir().join(format!("hub-api-setup-{}", std::process::id()));
     let _ = std::fs::remove_dir_all(&data);
     std::env::set_var(hub_core::paths::DATA_DIR_ENV, &data);
+    std::env::set_var(hub_core::paths::HOME_DIR_ENV, data.join("home"));
 
     let boot = call("hub_boot", &json!({}), &Quiet).unwrap();
     assert_eq!(boot["setup_needed"], true);
