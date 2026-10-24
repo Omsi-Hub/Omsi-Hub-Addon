@@ -37,12 +37,12 @@ jobs:
         if: runner.os == 'Linux'
         run: sudo apt-get update && sudo apt-get install -y $LINUX_DEPS
       # (rustup takes the toolchain rust-toolchain.toml pins, with rustfmt and clippy)
-      # (Luc's openOMSI fork, which Cargo fetches, is private: read with the secret OPENOMSI_TOKEN when
+      # (Luc's openOMSI fork, which Cargo fetches, is private: read with the secret FORKED_OPEN_OMSI when
       # there is one - a fine-grained token with "Contents: Read-only" on Luc-nbr/openOMSI)
       - name: Access to the openOMSI fork
         shell: bash
         env:
-          TOKEN: ${{ secrets.OPENOMSI_TOKEN }}
+          TOKEN: ${{ secrets.FORKED_OPEN_OMSI }}
         run: |
           if [ -n "$TOKEN" ]; then
             git config --global url."https://x-access-token:${TOKEN}@github.com/Luc-nbr/openOMSI".insteadOf "https://github.com/Luc-nbr/openOMSI"
@@ -98,12 +98,12 @@ jobs:
       - name: Linux packages
         if: runner.os == 'Linux'
         run: sudo apt-get update && sudo apt-get install -y $LINUX_DEPS xvfb xdg-utils file
-      # (Luc's openOMSI fork, which Cargo fetches, is private: read with the secret OPENOMSI_TOKEN when
+      # (Luc's openOMSI fork, which Cargo fetches, is private: read with the secret FORKED_OPEN_OMSI when
       # there is one - a fine-grained token with "Contents: Read-only" on Luc-nbr/openOMSI)
       - name: Access to the openOMSI fork
         shell: bash
         env:
-          TOKEN: ${{ secrets.OPENOMSI_TOKEN }}
+          TOKEN: ${{ secrets.FORKED_OPEN_OMSI }}
         run: |
           if [ -n "$TOKEN" ]; then
             git config --global url."https://x-access-token:${TOKEN}@github.com/Luc-nbr/openOMSI".insteadOf "https://github.com/Luc-nbr/openOMSI"

@@ -88,7 +88,7 @@ matches the processor in the name: `x64`, `amd64` or `x86_64`; `aarch64` or `arm
      variables → Actions). The release workflow stops with a clear error without it.
 
    The openOMSI fork Cargo fetches (`Luc-nbr/openOMSI`) is private: CI and the release read it
-   with the secret `OPENOMSI_TOKEN` (a fine-grained token with "Contents: Read-only" on
+   with the secret `FORKED_OPEN_OMSI` (a fine-grained token with "Contents: Read-only" on
    `Luc-nbr/openOMSI`), or the fork is made public.
 
    `update.rs` (`REPO`, `API`, `LATEST_JSON`) and the updater's endpoint in `tauri.conf.json`

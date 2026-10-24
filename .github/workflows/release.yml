@@ -85,14 +85,14 @@ jobs:
           toolchain: "1.99.0"
           targets: ${{ matrix.target }}
 
-      # (Luc's openOMSI fork, which Cargo fetches, is private: read with the secret OPENOMSI_TOKEN when
+      # (Luc's openOMSI fork, which Cargo fetches, is private: read with the secret FORKED_OPEN_OMSI when
       # there is one - a fine-grained token with "Contents: Read-only" on Luc-nbr/openOMSI -, else
       # from this repository's branch deps/openomsi, which holds the fork's pinned commit, with this
       # repository's own token)
       - name: Access to the openOMSI fork
         shell: bash
         env:
-          TOKEN: ${{ secrets.OPENOMSI_TOKEN }}
+          TOKEN: ${{ secrets.FORKED_OPEN_OMSI }}
           OWN: ${{ github.token }}
         run: |
           if [ -n "$TOKEN" ]; then
