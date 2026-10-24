@@ -436,6 +436,34 @@ fn a_bus_is_read_with_its_paints_numbers_and_cabin() {
     assert_eq!(capacity(&Bus::default()), None);
 }
 
+#[test]
+fn a_bus_s_paints_are_every_item_of_every_paint_folder_in_every_content_folder() {
+    let (root, content) = (temp("paints-root"), temp("paints-content"));
+    let w = |base: &Path, rel: &str, text: &str| {
+        let p = base.join(rel);
+        std::fs::create_dir_all(p.parent().unwrap()).unwrap();
+        std::fs::write(p, text).unwrap();
+    };
+    w(&root, "Vehicles/Bus/bus.bus", "[friendlyname]\r\nMaker\r\nCity\r\nStock\r\n\r\n[model]\r\nmodel\\model.cfg\r\n");
+    w(&root, "Vehicles/Bus/model/model.cfg", "[CTC]\r\nColorscheme\r\nTexture\r\n4\r\n\r\n[CTC]\r\nColorscheme\r\n..\\Shared\\Paints\r\n4\r\n");
+    // (two liveries in one file; a file of the content folder hides the one of its name here)
+    w(&root, "Vehicles/Bus/Texture/a.cti", "[item]\r\nStock\r\n\r\n[item]\r\nNight\r\n");
+    w(&root, "Vehicles/Bus/Texture/b.cti", "[item]\r\nOld\r\n");
+    w(&root, "Vehicles/Shared/Paints/c.cti", "[item]\r\nShared\r\n");
+    // (a repaint a mod put into openOMSI's content folder)
+    w(&content, "Vehicles/Bus/Texture/b.cti", "[item]\r\nNew\r\n");
+    w(&content, "Vehicles/Bus/Texture/mine.cti", "[item]\r\nMy livery\r\n");
+    let bus = Bus::load(&root.join("Vehicles/Bus/bus.bus")).unwrap();
+    assert_eq!(bus.ctc_dirs, ["Texture", "../Shared/Paints"]);
+    assert_eq!(bus.paints, ["Stock", "Night", "Old", "Shared"]);
+    let vfs = Vfs::new(root.clone(), Some(content.clone()));
+    assert_eq!(bus.paints_in_vfs(&vfs), ["New", "My livery", "Stock", "Night", "Shared"]);
+    // (the bus itself in the content folder, its model in the OMSI 2 folder)
+    w(&content, "Vehicles/Bus/bus.bus", "[friendlyname]\r\nMaker\r\nCity\r\nStock\r\n\r\n[model]\r\nmodel\\model.cfg\r\n");
+    let moved = Bus::load(&content.join("Vehicles/Bus/bus.bus")).unwrap();
+    assert_eq!(moved.paints_in_vfs(&vfs), ["New", "My livery", "Stock", "Night", "Shared"]);
+}
+
 // --- fonts and the weather -------------------------------------------------------------------
 
 #[test]

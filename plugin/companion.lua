@@ -21,6 +21,7 @@
 -- they are compared without case.
 
 local json = require("hubjson")
+local start = require("start")
 
 local M = {}
 
@@ -365,6 +366,9 @@ local function press(key)
   return false, "not_supported"
 end
 
+-- (a command whose ack comes later, from the game's next frames: take_duty)
+local LATER = {}
+
 local function carry_out(c)
   local what = c["do"]
   if what == "key" then
@@ -396,10 +400,13 @@ local function carry_out(c)
     return true
   elseif what == "take_duty" then
     if not fn("duty.start") then return false, "not_supported" end
-    local ok, why = omsi.duty.start(tostring(c.line or ""), tostring(c.tour or ""), math.tointeger(tonumber(c.trip)) or 1)
-    if not ok then return false, tostring(why or "refused") end
-    if fn("duty.type_ibis") then omsi.duty.type_ibis() end
-    return true
+    -- (in a call of its own, start.lua: acked when it is taken)
+    local seq = math.tointeger(tonumber(c.seq)) or 0
+    start.duty(tostring(c.line or ""), tostring(c.tour or ""), math.tointeger(tonumber(c.trip)) or 1, nil, function(ok, why)
+      if ok and fn("duty.type_ibis") then omsi.duty.type_ibis() end
+      send({ t = "ack", seq = seq, ok = ok == true, error = ok and "" or tostring(why or "refused") })
+    end)
+    return LATER
   elseif what == "drive_free" then
     if hook.drive_free then hook.drive_free() end
     return true
@@ -448,7 +455,7 @@ local function look()
       done = seq
       local fine, result, why = pcall(carry_out, c)
       if not fine then result, why = false, "error" end
-      send({ t = "ack", seq = seq, ok = result == true, error = result == true and "" or (why or "refused") })
+      if result ~= LATER then send({ t = "ack", seq = seq, ok = result == true, error = result == true and "" or (why or "refused") }) end
     end
   end
 end

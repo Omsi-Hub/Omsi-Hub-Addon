@@ -80,7 +80,8 @@ end
 function M.begin(n, line_name, tour)
   cur = nil
   if not (fn(omsi.duty, "trips") and fn(omsi.duty, "trip_stops")) then return end
-  local t = omsi.duty.trips()[n]
+  local all = omsi.duty.trips()
+  local t = all[n]
   if not t then return end
   local line = t.line or ""
   local visits, by_number, last = {}, {}, 0
@@ -94,7 +95,7 @@ function M.begin(n, line_name, tour)
   end
   cur = {
     n = n, line = line, tour = tour or "", line_name = line_name or "", name = t.name or "",
-    terminus = terminus_of(line, t.terminus), trips = #omsi.duty.trips(),
+    terminus = terminus_of(line, t.terminus), trips = #all,
     departure = t.departure or 0, arrival = t.arrival or 0, visits = visits, by_number = by_number,
     last = last, arrived = {}, served = {}, reached = 0, furthest = 0, started = false, start = now(),
     done = false,

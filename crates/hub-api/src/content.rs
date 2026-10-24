@@ -327,7 +327,8 @@ pub fn buses_in(vfs: &Vfs) -> Vec<VehicleInfo> {
             }
             let installed = vfs.bases().len() > 1 && path.starts_with(&vfs.bases()[0]);
             let mut v = VehicleInfo::of_bus(&bus, &rel, &folder, installed, hofs.clone());
-            v.paints = bus.paints.iter().filter(|p| !p.trim().is_empty()).cloned().collect();
+            // (its paints in every content folder, as openOMSI offers them)
+            v.paints = bus.paints_in_vfs(vfs).into_iter().filter(|p| !p.trim().is_empty()).collect();
             out.push(v);
         }
     }

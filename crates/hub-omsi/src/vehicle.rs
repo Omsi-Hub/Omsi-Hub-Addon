@@ -69,8 +69,9 @@ pub struct Bus {
     /// The paints it can wear (the names of its `.cti` files' items; read by [`Bus::load`]).
     pub paints: Vec<String>,
     /// The model's paint folder (`[CTC]` in `model.cfg`), relative to the bus's folder (read by
-    /// [`Bus::load`]).
+    /// [`Bus::load`]): the first of `ctc_dirs`, every `[CTC]` the model has.
     pub ctc_dir: Option<String>,
+    pub ctc_dirs: Vec<String>,
     pub scripts: BusScripts,
     /// `[sound_ai]`.
     pub sound_ai: Option<String>,
@@ -178,19 +179,9 @@ impl Bus {
         let mut b = Bus::parse(&CfgFile::read(path)?);
         b.path = path.to_path_buf();
         let dir = b.dir().to_path_buf();
-        b.ctc_dir = b.model.as_deref().and_then(|m| resolve_in(&dir, m)).and_then(|m| CfgFile::read(m).ok()).and_then(|m| {
-            let mut r = m.reader();
-            while let Some(k) = r.next_keyword() {
-                if k.eq_ignore_ascii_case("CTC") {
-                    let v = r.values(2);
-                    return v.get(1).and_then(|s| opt_rel(s));
-                }
-            }
-            None
-        });
-        if let Some(ctc) = b.ctc_dir.as_deref().and_then(|c| resolve_in(&dir, c)) {
-            b.paints = paints_in(&ctc);
-        }
+        b.ctc_dirs = b.model.as_deref().and_then(|m| resolve_in(&dir, m)).and_then(|m| CfgFile::read(m).ok()).map(|m| ctc_dirs_of(&m)).unwrap_or_default();
+        b.ctc_dir = b.ctc_dirs.first().cloned();
+        b.paints = paints_in_dirs(&b.ctc_dirs.iter().filter_map(|c| resolve_in(&dir, c)).collect::<Vec<_>>());
         b.numbers = b.read_numbers();
         Ok(b)
     }
@@ -273,18 +264,83 @@ impl Bus {
     }
 }
 
-/// The paints of a `[CTC]` folder: each `.cti` file's first `[item]` name (else the file's
-/// name), each once, in the order of the files' names.
+/// Every `[CTC]` paint folder of a `model.cfg` (relative to the bus's folder), each once.
+fn ctc_dirs_of(model: &CfgFile) -> Vec<String> {
+    let mut out: Vec<String> = Vec::new();
+    let mut r = model.reader();
+    while let Some(k) = r.next_keyword() {
+        if k.eq_ignore_ascii_case("CTC") {
+            let v = r.values(2);
+            if let Some(d) = v.get(1).and_then(|s| opt_rel(s)).filter(|d| !out.iter().any(|o| crate::vfs::same_name(o, d))) {
+                out.push(d);
+            }
+        }
+    }
+    out
+}
+
+/// `rel` (with `..` parts) under `dir`, both relative to a content folder: `None` above it.
+fn join_rel(dir: &str, rel: &str) -> Option<String> {
+    let mut parts: Vec<&str> = dir.split('/').filter(|s| !s.is_empty()).collect();
+    for part in rel.split(['/', '\\']).filter(|s| !s.is_empty() && *s != ".") {
+        if part == ".." {
+            parts.pop()?;
+        } else {
+            parts.push(part);
+        }
+    }
+    Some(parts.join("/"))
+}
+
+impl Bus {
+    /// Its paints as openOMSI offers them: the `.cti` files of every `[CTC]` folder of its model,
+    /// in every content folder of `vfs` (openOMSI's content folder first, where its mods and the
+    /// livery studio put theirs: a file there hides one of the same name in the OMSI 2 folder),
+    /// the model found in any of them too. [`Bus::load`] reads only the bus's own folder.
+    pub fn paints_in_vfs(&self, vfs: &crate::Vfs) -> Vec<String> {
+        let Some(dir) = vfs.relative(self.dir()) else { return self.paints.clone() };
+        let model = self.model.as_deref().and_then(|m| join_rel(&dir, m)).and_then(|m| vfs.read_cfg(&m).ok());
+        let ctc = model.map(|m| ctc_dirs_of(&m)).unwrap_or_else(|| self.ctc_dirs.clone());
+        let mut dirs: Vec<PathBuf> = Vec::new();
+        for c in ctc.iter().filter_map(|c| join_rel(&dir, c)) {
+            dirs.extend(vfs.bases().iter().filter_map(|b| resolve_in(b, &c)).filter(|d| d.is_dir()));
+        }
+        paints_in_dirs(&dirs)
+    }
+}
+
+/// The paints of a `[CTC]` folder: every `[item]` name of its `.cti` files (a file without one:
+/// the file's name), each once, in the order of the files' names.
 pub fn paints_in(dir: &Path) -> Vec<String> {
-    let Ok(entries) = std::fs::read_dir(dir) else { return Vec::new() };
-    let mut files: Vec<PathBuf> = entries.flatten().map(|e| e.path()).filter(|p| p.is_file() && p.extension().is_some_and(|x| x.eq_ignore_ascii_case("cti"))).collect();
-    files.sort_by_key(|p| p.file_name().map(|n| n.to_string_lossy().to_lowercase()));
+    paints_in_dirs(&[dir.to_path_buf()])
+}
+
+/// The same over several folders, as the game reads them: a `.cti` file of a name an earlier
+/// folder had is not read again.
+pub fn paints_in_dirs(dirs: &[PathBuf]) -> Vec<String> {
+    let mut files: Vec<PathBuf> = Vec::new();
+    for dir in dirs {
+        let Ok(entries) = std::fs::read_dir(dir) else { continue };
+        let mut here: Vec<PathBuf> = entries.flatten().map(|e| e.path()).filter(|p| p.is_file() && p.extension().is_some_and(|x| x.eq_ignore_ascii_case("cti"))).collect();
+        here.sort_by_key(|p| p.file_name().map(|n| n.to_string_lossy().to_lowercase()));
+        for f in here {
+            let name = f.file_name().map(|n| n.to_string_lossy().into_owned()).unwrap_or_default();
+            if !files.iter().any(|o| o.file_name().is_some_and(|n| crate::vfs::same_name(&n.to_string_lossy(), &name))) {
+                files.push(f);
+            }
+        }
+    }
     let mut out: Vec<String> = Vec::new();
     for f in files {
-        let item = CfgFile::read(&f).ok().and_then(|c| c.blocks("item").first().and_then(|b| b.first()).map(|s| s.trim().to_string())).filter(|s| !s.is_empty());
-        let name = item.unwrap_or_else(|| f.file_stem().map(|s| s.to_string_lossy().into_owned()).unwrap_or_default());
-        if !out.iter().any(|o| crate::vfs::same_name(o, &name)) {
-            out.push(name);
+        // (a .cti may hold several liveries, an [item] each: the game offers every one)
+        let mut items: Vec<String> = CfgFile::read(&f).map(|c| c.blocks("item").iter().filter_map(|b| b.first()).map(|s| s.trim().to_string()).filter(|s| !s.is_empty()).collect()).unwrap_or_default();
+        if items.is_empty() {
+            items.push(f.file_stem().map(|s| s.to_string_lossy().into_owned()).unwrap_or_default());
+        }
+        for name in items {
+            if !out.iter().any(|o| crate::vfs::same_name(o, &name)) {
+                out.push(name);
+            }
         }
     }
     out

@@ -19,6 +19,7 @@
 
 local json = require("hubjson")
 local layout = require("layout")
+local start = require("start")
 
 local M = {}
 
@@ -161,8 +162,10 @@ local function turn_back(t)
   at = at or math.max(1, math.min(#next_stops, math.floor(#next_stops * t.part + 0.5)))
   if hook.end_trip then hook.end_trip("short_turn") end
   turned = { line = d.line, tour = d.tour }
-  local ok = omsi.duty.start(d.line, d.tour, t.trip + 1, at)
-  if ok and fn("duty.type_ibis") then omsi.duty.type_ibis() end
+  -- (in a call of its own: start.lua)
+  start.duty(d.line, d.tour, t.trip + 1, at, function(ok)
+    if ok and fn("duty.type_ibis") then omsi.duty.type_ibis() end
+  end)
   toast(tr("Turned back: the next trip goes on from %{stop}", { stop = next_stops[at].name or "" }), tr("Short-turn"), "u_turn_left", COLOR.instruction)
 end
 

@@ -2,6 +2,20 @@
 
 Each version of the Omsi-Hub add-on, newest first. The release on GitHub links here.
 
+## Next
+
+### Fixed
+
+- **A drive no longer stops with "ran longer than 50 ms"**: openOMSI switches a plugin off when
+  one call into it takes longer than 50 ms, the game's own work inside counted, and taking a
+  duty (the button, the start by itself, a duty's next part, a relief, a short-turn, the phone)
+  makes its route and the timetable paper, which on a large map takes about that long alone.
+  The plugin (1.14.0) now takes the duty in a call of its own and does the rest in the next.
+- **Your own liveries are offered for every bus, as openOMSI offers them**: every livery of a
+  `.cti` file (one file may hold several), every paint folder of the bus's model, and the
+  repaints in openOMSI's content folder (where its mods and the livery studio put them), not
+  only the OMSI 2 folder. The company's livery choice for its buses lists them too.
+
 ## 1.0.0
 
 The first Omsi-Hub that is an add-on: its own app beside the openOMSI you have installed, instead

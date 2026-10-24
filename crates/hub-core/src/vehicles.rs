@@ -81,7 +81,11 @@ pub fn vehicles_in(vfs: &hub_omsi::Vfs) -> Vec<VehicleInfo> {
                 continue;
             }
             let installed = vfs.bases().len() > 1 && path.starts_with(&vfs.bases()[0]);
-            out.push(VehicleInfo::of_bus(&bus, &rel, &folder, installed, hofs.clone()));
+            let mut v = VehicleInfo::of_bus(&bus, &rel, &folder, installed, hofs.clone());
+            // (its paints in every content folder, as openOMSI offers them: the company's sheets
+            // choose from them)
+            v.paints = bus.paints_in_vfs(vfs).into_iter().filter(|p| !p.trim().is_empty()).collect();
+            out.push(v);
         }
     }
     out.sort_by(|a, b| a.name.to_lowercase().cmp(&b.name.to_lowercase()));

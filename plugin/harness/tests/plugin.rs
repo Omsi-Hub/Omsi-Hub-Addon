@@ -170,9 +170,13 @@ fn a_shift_s_parts_are_chained_and_the_duty_ends_after_the_last() {
     assert!(h.state.borrow().started.is_empty(), "the first part is the game's");
     // the first part's last trip done: the second part taken with duty.start
     h.fire("trip_done", &[json!(1), json!("arrived"), json!(90.0), json!(90.0), json!(100.0)]).unwrap();
-    assert_eq!(h.state.borrow().started, [("11".to_string(), "3".to_string(), 2, 0)]);
-    assert!(toasted(&h, "Part 2 of 2: line 11, tour 3"));
+    // (in a call of its own, the next frame's: openOMSI stops a plugin whose one call runs over
+    // 50 ms, and duty.start can take that long by itself; its card in the frame after)
+    assert!(h.state.borrow().started.is_empty());
     h.frame().unwrap();
+    assert_eq!(h.state.borrow().started, [("11".to_string(), "3".to_string(), 2, 0)]);
+    h.frame().unwrap();
+    assert!(toasted(&h, "Part 2 of 2: line 11, tour 3"));
     // its last trip done: the duty ended
     h.fire("trip_done", &[json!(2), json!("arrived"), json!(90.0), json!(90.0), json!(100.0)]).unwrap();
     assert!(h.state.borrow().duty.is_none());

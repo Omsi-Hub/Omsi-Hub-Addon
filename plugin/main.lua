@@ -21,7 +21,7 @@
 --                         the game to Omsi-Hub's companion server by UDP)
 -- A game without the file functions gets the handshake and the reports in its log instead.
 
-local VERSION = "1.13.0"
+local VERSION = "1.14.0"
 local BRIDGE = 1
 local PANEL = "omsihub"
 
@@ -89,6 +89,8 @@ end
 -- the duty's parts, chained with duty.start (legs.lua)
 local legs = require("legs")
 legs.setup(assignment)
+-- (duty.start in a call of its own: openOMSI's 50 ms for one call - start.lua)
+local start = require("start")
 
 -- one line to Omsi-Hub: into a file of the data folder, else into the game's log
 local function send_out(file, tag, value, append)
@@ -262,32 +264,36 @@ local function say(text, title, icon, seconds)
 end
 
 local function start_duty()
-  if not (assignment and has["duty.start"]) or duty_now() then return end
-  local ok, why
+  if not (assignment and has["duty.start"]) or duty_now() or start.busy() then return end
+  local line, tour, trip, stop
   if legs.any() then
-    local line, tour, trip, stop = legs.first()
-    ok, why = omsi.duty.start(line, tour, trip, stop)
+    line, tour, trip, stop = legs.first()
   else
-    ok, why = omsi.duty.start(assignment.line, assignment.tour, tonumber(assignment.trip) or 1, tonumber(assignment.stop) or 1)
+    line, tour, trip, stop = assignment.line, assignment.tour, tonumber(assignment.trip) or 1, tonumber(assignment.stop) or 1
   end
-  if not ok then
-    local text = tr("The duty could not be started: %{reason}", { reason = why or "" })
-    if has["ui.toast"] then omsi.ui.toast(text, { icon = "warning" }) else omsi.message(text, 8) end
-  end
+  start.duty(line, tour, trip, stop, function(ok, why)
+    if not ok then
+      local text = tr("The duty could not be started: %{reason}", { reason = why or "" })
+      if has["ui.toast"] then omsi.ui.toast(text, { icon = "warning" }) else omsi.message(text, 8) end
+    end
+    panel()
+  end)
   panel()
 end
 
 -- the part of the duty under way is done (legs.lua): the next one taken, or the duty ended
 local function next_leg(what, line, tour, trip, stop)
   if what == "next" and has["duty.start"] then
-    local ok, why = omsi.duty.start(line, tour, trip, stop)
-    if ok then
-      local n = legs.current()
-      say(tr("Part %{n} of %{of}: line %{line}, tour %{tour}", { n = n, of = legs.count(), line = line, tour = tour }), tr("Duty"), "route")
-      if has["duty.type_ibis"] and not (assignment and assignment.ibis == false) then omsi.duty.type_ibis() end
-    else
-      say(tr("The duty could not be started: %{reason}", { reason = why or "" }), nil, "warning", 8)
-    end
+    start.duty(line, tour, trip, stop, function(ok, why)
+      if ok then
+        local n = legs.current()
+        say(tr("Part %{n} of %{of}: line %{line}, tour %{tour}", { n = n, of = legs.count(), line = line, tour = tour }), tr("Duty"), "route")
+        if has["duty.type_ibis"] and not (assignment and assignment.ibis == false) then omsi.duty.type_ibis() end
+      else
+        say(tr("The duty could not be started: %{reason}", { reason = why or "" }), nil, "warning", 8)
+      end
+      panel()
+    end)
   elseif what == "done" then
     if has["duty.finish"] then omsi.duty.finish() end
     say(tr("Your duty is done: take the bus back to the depot"), tr("Duty"), "flag")
@@ -432,7 +438,7 @@ omsi.on("duty", function(line, tour)
   local from = legs.duty_began(line, tour)
   if from and has["duty.start"] then
     local _, l = legs.current()
-    omsi.duty.start(line, tour, l.first, from)
+    start.duty(line, tour, l.first, from)
   end
   panel()
 end)
