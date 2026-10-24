@@ -28,7 +28,7 @@ never changes their files.
   is 1.13.0.
 - **Omsi-Hub is no longer open source**: from this version it is proprietary software, free to
   download and use (`LICENSE`); the code up to 19 October 2026 was MIT. The releases and the
-  updates come from the public `Omsi-Hub/Omsi-Hub-Releases`, and the libraries' licences travel
+  updates come from the public `Omsi-Hub/Omsi-Hub-Addon`, and the libraries' licences travel
   with the app (`third-party-licenses.txt`).
 - **The welcome** on the first start, as in the old Omsi-Hub: the language, the animations, your
   openOMSI folder and your OMSI 2 folder (it suggests the ones it finds, on Steam too, and checks

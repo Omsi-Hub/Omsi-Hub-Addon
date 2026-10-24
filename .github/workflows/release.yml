@@ -1,11 +1,8 @@
 # Omsi-Hub's releases: the installers for Windows, macOS (Apple silicon; Intel Macs no longer) and Linux,
-# built by Tauri and put in a DRAFT release named after the version (`v<version>`) in the PUBLIC
-# repository Omsi-Hub/Omsi-Hub-Releases (this one is private: players could not download from it;
-# the app's updater and the website read the releases there). Luc publishes the draft by hand
-# (docs/UPDATES.md §5): a draft or a pre-release is never offered to players.
-#
-# Writing there takes the secret OMSI_HUB_RELEASES: a fine-grained token of Luc's with "Contents: Read
-# and write" on Omsi-Hub/Omsi-Hub-Releases only (this repository's own token cannot write to another).
+# built by Tauri and put in a DRAFT release named after the version (`v<version>`) in this public
+# repository, with its own token (the app's updater and the website read the releases here). Luc
+# publishes the draft by hand (docs/UPDATES.md §5): a draft or a pre-release is never offered to
+# players.
 #
 # A pre-release (for testers) is the same draft with GitHub's pre-release mark: run by hand with
 # "pre-release" on (the default), or a tag whose version has a `-` in it. Published, it stays a
@@ -17,9 +14,7 @@
 # built all the same, and the app offers "Download from GitHub" instead of installing itself.
 #
 # Runs on a pushed tag `v*` (the version in Cargo.toml and app/tauri.conf.json, checked), or by
-# hand (Actions → Release → Run workflow). Run again, it uploads to the same draft. Run by hand with
-# "here" on (the default), the draft is made in this repository instead, with its own token: no
-# OMSI_HUB_RELEASES needed, and only those with access to it can download.
+# hand (Actions → Release → Run workflow). Run again, it uploads to the same draft.
 name: Release
 
 on:
@@ -31,17 +26,11 @@ on:
         description: "A pre-release (for testers; the app offers it to nobody)"
         type: boolean
         default: true
-      here:
-        description: "In this repository (Omsi-Hub-Addon) instead of Omsi-Hub/Omsi-Hub-Releases"
-        type: boolean
-        default: true
 
 concurrency:
   group: release-${{ github.ref }}
   cancel-in-progress: false
 
-# (this repository is written to only when the release goes here, "here" on a run by hand;
-# else it goes to Omsi-Hub-Releases with OMSI_HUB_RELEASES)
 permissions:
   contents: write
 
@@ -131,18 +120,6 @@ jobs:
           echo "prerelease=$pre" >> "$GITHUB_OUTPUT"
           echo "::notice::Omsi-Hub $app, pre-release: $pre"
 
-      # (the releases' repository can be written to; here, this repository's own token does)
-      - name: Releases repository token
-        if: ${{ !inputs.here }}
-        shell: bash
-        env:
-          TOKEN: ${{ secrets.OMSI_HUB_RELEASES }}
-        run: |
-          if [ -z "$TOKEN" ]; then
-            echo "::error::The secret OMSI_HUB_RELEASES is missing: a token with Contents read and write on Omsi-Hub/Omsi-Hub-Releases (docs/UPDATES.md)."
-            exit 1
-          fi
-
       # (the updater files signed and latest.json attached only when the key is set up)
       - name: Updater signing set up?
         id: signing
@@ -162,16 +139,13 @@ jobs:
       - name: Build and upload to the draft release
         uses: tauri-apps/tauri-action@v0
         env:
-          GITHUB_TOKEN: ${{ inputs.here && secrets.GITHUB_TOKEN || secrets.OMSI_HUB_RELEASES }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
           TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
         with:
           projectPath: app
-          owner: ${{ inputs.here && github.repository_owner || 'Omsi-Hub' }}
-          repo: ${{ inputs.here && github.event.repository.name || 'Omsi-Hub-Releases' }}
-          # (the tag is made there from its own main - this repository's commits are not in it; here,
-          # from the commit built)
-          releaseCommitish: ${{ inputs.here && github.sha || 'main' }}
+          # (the tag, when the release makes it, on the commit built)
+          releaseCommitish: ${{ github.sha }}
           tauriScript: npx --yes @tauri-apps/cli@2
           tagName: v__VERSION__
           releaseName: Omsi-Hub __VERSION__

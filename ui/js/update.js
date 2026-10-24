@@ -107,6 +107,6 @@ export function UpdateRow() {
     </div>
     <${Switch} checked=${u ? u.look : true} label=${tr('Look for updates')} onChange=${(on) => updateAct('look', { on })} />
     <${Switch} checked=${!!u?.auto} label=${tr('Install updates without asking')} onChange=${(on) => updateAct('auto', { on })} />
-    <div class="ol-row"><${Btn} kind="ghost" icon="open_in_new" label=${u?.repo || 'github.com/Omsi-Hub/Omsi-Hub-Releases'} onClick=${() => updateAct('repo')} /></div>
+    <div class="ol-row"><${Btn} kind="ghost" icon="open_in_new" label=${u?.repo || 'github.com/Omsi-Hub/Omsi-Hub-Addon'} onClick=${() => updateAct('repo')} /></div>
   </div>`;
 }
