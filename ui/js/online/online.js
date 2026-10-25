@@ -342,8 +342,8 @@ function Leaderboard({ v }) {
   </div>`;
 }
 
-/** Signed in: the display name, the friend code, the leaderboard, signing out, deleting the
- * account. */
+/** Signed in: the display name, the friend code, the account's personnel pass, the leaderboard,
+ * signing out, deleting the account. */
 export function Profile({ v }) {
   const me = v.me || {};
   const [name, setName] = useState(me.name || '');
@@ -389,6 +389,9 @@ export function Profile({ v }) {
       <div class="ol-field"><span>${tr('Your friend code')}</span>
         <div class="ol-row"><b class="ol-code">${me.code || '—'}</b><span class="ol-fill"></span>${me.code && html`<${Copy} text=${me.code} />`}</div>
         <em class="ol-hint">${tr('Give it to your friends: they add you with it.')}</em></div>
+      ${me.personnel && html`<div class="ol-field"><span>${tr('Personnel pass')}</span>
+        <div class="ol-row ol-pass">${[['Personnel number', me.personnel.number], ['Code', me.personnel.code]].map(([k, n]) => html`<span><small>${tr(k)}</small><b class="ol-code">${n}</b></span>`)}</div>
+        <em class="ol-hint">${tr("Your account's: you sign on with them before every duty, on every computer you sign in on.")}</em></div>`}
       <${Leaderboard} v=${v} />
       ${err && html`<p class="ol-err">${err}</p>`}
       ${v.lasting === false && html`<${Note} text=${tr('This system has no credential store: you sign in again at the next start.')} />`}

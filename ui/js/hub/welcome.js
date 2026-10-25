@@ -609,11 +609,12 @@ function NewDriver({ canCancel }) {
 
 /** The chosen driver's personnel pass: their initial and name, their level, and - when they
  * were made - the personnel number and code they sign on with (`welcome::pass`). `account`:
- * the account's driver (no other driver to make or choose). */
-function Pass({ name, account }) {
+ * the account's driver (no other driver to make or choose), `pass` the account's own numbers
+ * once fetched (`ol_state`'s `me.personnel`: the same on every computer). */
+function Pass({ name, account, pass }) {
   const s = useStore();
   const w = s.hubWelcome;
-  const known = w.personnel?.name === name ? w.personnel.p : undefined;
+  const known = pass || (w.personnel?.name === name ? w.personnel.p : undefined);
   useEffect(() => {
     if (known !== undefined) return;
     // (not over the numbers `createDriver` made meanwhile: this look may answer after them)
@@ -661,7 +662,7 @@ function Driver() {
   }, [signedIn(v)]);
   const names = s.profiles || [];
   const chosen = chosenDriver();
-  if (signedIn(v)) return html`<div class="hub-wdriverstep"><div class="left">${chosen ? html`<${Pass} name=${chosen} account />` : html`<p class="note">…</p>`}</div></div>`;
+  if (signedIn(v)) return html`<div class="hub-wdriverstep"><div class="left">${chosen ? html`<${Pass} name=${chosen} account pass=${v.me?.personnel} />` : html`<p class="note">…</p>`}</div></div>`;
   const form = w.typing || !chosen;
   return html`<div class=${'hub-wdriverstep' + (names.length ? ' two' : '')}>
     <div class="left">${form ? html`<${NewDriver} canCancel=${!!chosen} />` : html`<${Pass} name=${chosen} />`}</div>

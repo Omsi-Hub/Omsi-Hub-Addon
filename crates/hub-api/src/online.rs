@@ -13,6 +13,9 @@
 //! * `ol_local {on}` - "Play without an account" (only that choice is kept, in the data
 //!   folder's `omsihub-online.json`);
 //! * `ol_profile {name}` - the display name chosen or changed;
+//! * the account's personnel pass (`my_personnel`, the state's `me.personnel`) is fetched once a
+//!   session and written into the account's driver's pass (`addon::set_personnel`): the
+//!   number and the code they sign on with are the account's, the same on every computer;
 //! * `ol_leaderboard {on}` - standing on the public leaderboard, or not (off until chosen);
 //! * `ol_report_stats {points, level, duties, minutes, km}` - the service record for the
 //!   leaderboard; the worker tells it itself, the account's driver's whenever it changed
@@ -49,7 +52,7 @@
 
 use crate::{Answer, Platform};
 use hub_online::oauth::{self, Provider, Texts};
-use hub_online::{codes, privacy, store, Client, Endpoints, Error, Flow, Friend, Invite, Profile, Stats};
+use hub_online::{codes, privacy, store, Client, Endpoints, Error, Flow, Friend, Invite, Personnel, Profile, Stats};
 use serde_json::{json, Value};
 use std::collections::{BTreeMap, HashMap, HashSet};
 use std::sync::atomic::{AtomicBool, AtomicU64, Ordering};
@@ -157,6 +160,9 @@ struct View {
     /// accepted yet.
     privacy_before: u32,
     profile: Option<Profile>,
+    /// The account's personnel pass, fetched once a session (`my_personnel`): the account's
+    /// driver signs on with it (`addon::set_personnel`).
+    personnel: Option<Personnel>,
     friends: Vec<Friend>,
     invites: Vec<Invite>,
     /// The requests and invites the page has shown (the badge counts the others).
@@ -266,6 +272,7 @@ fn signed_out(v: &mut View) {
     v.need_privacy = false;
     v.privacy_before = 0;
     v.profile = None;
+    v.personnel = None;
     v.friends.clear();
     v.invites.clear();
     v.told = None;
@@ -295,12 +302,15 @@ fn presence_of(hosted: Option<Hosted>, away: bool) -> (&'static str, Option<Stri
 
 /// What a refresh fetched: (lasting, no password), then the account, or the version accepted
 /// before while the privacy statement waits.
-type Fetched = ((bool, bool), Result<(Option<Profile>, Vec<Friend>, Vec<Invite>), u32>);
+type Fetched = ((bool, bool), Result<(Option<Profile>, Option<Personnel>, Vec<Friend>, Vec<Invite>), u32>);
 
-/// The heartbeat, then the profile, the friends and the invites, into the view; first, while the
-/// privacy statement is not agreed to, `my_privacy` (and nothing else).
+/// The heartbeat, then the profile, the personnel pass (once), the friends and the invites, into
+/// the view; first, while the privacy statement is not agreed to, `my_privacy` (and nothing else).
 fn refresh(beat: bool) -> Result<(), Error> {
-    let away = view().away;
+    let (away, has_pass) = {
+        let v = view();
+        (v.away, v.personnel.is_some())
+    };
     let now_state = presence(away);
     // (the account's user id beside what was fetched: the driver linked is this account's)
     let mut user = String::new();
@@ -320,8 +330,11 @@ fn refresh(beat: bool) -> Result<(), Error> {
             }
         }
         let profile = c.profile()?;
+        // (a server without `my_personnel` yet, or a pass not fetched now: the driver keeps the
+        // one of this computer, and it is asked again at the next beat)
+        let personnel = if profile.is_some() && !has_pass { c.personnel().ok() } else { None };
         let (friends, invites) = if profile.is_some() { (c.friends()?, c.invites()?) } else { (Vec::new(), Vec::new()) };
-        Ok(Some(((c.lasting(), !c.has_password()), Ok((profile, friends, invites)))))
+        Ok(Some(((c.lasting(), !c.has_password()), Ok((profile, personnel, friends, invites)))))
     });
     let mut v = view();
     match got {
@@ -344,8 +357,12 @@ fn refresh(beat: bool) -> Result<(), Error> {
             }
             Ok(())
         }
-        Ok(Some(((lasting, no_password), Ok((profile, friends, invites))))) => {
+        Ok(Some(((lasting, no_password), Ok((profile, personnel, friends, invites))))) => {
             let link = profile.as_ref().map(|p| p.display_name.clone());
+            if personnel.is_some() {
+                v.personnel = personnel;
+            }
+            let pass = v.personnel.clone();
             v.signed_in = true;
             v.lasting = lasting;
             v.no_password = no_password;
@@ -365,6 +382,11 @@ fn refresh(beat: bool) -> Result<(), Error> {
             drop(v);
             if let Some(name) = link {
                 crate::drivers::link_account(&name, &user);
+                // (the account's pass is its driver's: the plugin's sign-on, the Companion and
+                // the welcome's pass read it there)
+                if let (Some(p), Some(driver)) = (pass, crate::drivers::account_driver()) {
+                    crate::addon::set_personnel(&driver, &hub_game::bridge::Personnel { number: p.number, code: p.code });
+                }
             }
             Ok(())
         }
@@ -565,7 +587,8 @@ fn state() -> Value {
         "lasting": v.lasting,
         "need_profile": v.need_profile,
         "no_password": v.signed_in && v.no_password,
-        "me": v.profile.as_ref().map(|p| json!({ "name": p.display_name, "code": p.friend_code, "board": p.on_board, "avatar": avatar_of(p.avatar.as_ref()) })),
+        "me": v.profile.as_ref().map(|p| json!({ "name": p.display_name, "code": p.friend_code, "board": p.on_board, "avatar": avatar_of(p.avatar.as_ref()),
+            "personnel": v.personnel.as_ref().map(|p| json!({ "number": p.number, "code": p.code })) })),
         "friends": order.iter().map(|f| friend_json(f)).collect::<Vec<_>>(),
         "online_count": friends.iter().filter(|f| state_of(f) != "offline").count(),
         "requests": requests.iter().map(|f| json!({ "id": f.user_id, "name": f.display_name, "incoming": f.incoming, "new": f.incoming && !v.seen.contains(&format!("r:{}", f.user_id)), "avatar": avatar_of(f.avatar.as_ref()) })).collect::<Vec<_>>(),
@@ -598,6 +621,8 @@ fn after_sign_in(agree: bool) -> Value {
         let mut v = view();
         v.signed_in = true;
         v.seen.clear();
+        // (another account's pass is not this one's)
+        v.personnel = None;
     }
     // (Ok(None): accepted; Ok(Some(n)): held, version n accepted before)
     let agreed = with(|c| -> Result<Option<u32>, Error> {

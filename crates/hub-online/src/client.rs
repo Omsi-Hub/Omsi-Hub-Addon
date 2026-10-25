@@ -38,6 +38,16 @@ pub struct Profile {
     pub avatar: Option<String>,
 }
 
+/// The account's personnel pass (`my_personnel()`): the number and the code its driver signs on
+/// with before a duty, the same on every computer the player signs in on.
+#[derive(Debug, Clone, Default, PartialEq, Eq)]
+pub struct Personnel {
+    /// Six digits, the account's own.
+    pub number: String,
+    /// Four digits.
+    pub code: String,
+}
+
 /// A row of `my_friends()`: a friend, or a request either way.
 #[derive(Debug, Clone, Default, PartialEq, Eq)]
 pub struct Friend {
@@ -495,6 +505,18 @@ impl Client {
             on_board: field(row, &["on_board"]).and_then(Value::as_bool).unwrap_or(false),
             avatar: text(row, &["avatar"]).filter(|a| !a.is_empty()),
         }))
+    }
+
+    /// The account's personnel pass (`my_personnel()`, made by the server when there is none);
+    /// an answer that is not one (not digits, too short or long) is `server`.
+    pub fn personnel(&mut self) -> Result<Personnel, Error> {
+        let v = self.rpc("my_personnel", json!({}))?;
+        let row = v.as_array().and_then(|a| a.first()).unwrap_or(&v);
+        let digits = |s: &str, n: std::ops::RangeInclusive<usize>| n.contains(&s.len()) && s.bytes().all(|b| b.is_ascii_digit());
+        match (text(row, &["number"]), text(row, &["code"])) {
+            (Some(number), Some(code)) if digits(&number, 3..=10) && digits(&code, 3..=8) => Ok(Personnel { number, code }),
+            _ => Err(Error::Code("server")),
+        }
     }
 
     /// The online state and the company session hosted now (None: none).

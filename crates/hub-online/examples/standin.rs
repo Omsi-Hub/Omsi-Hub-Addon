@@ -107,6 +107,11 @@ fn main() {
     assert_eq!((a.display_name.as_str(), a.friend_code.len(), a.on_board), (ana_name.as_str(), 8, false));
     assert_eq!(bo.set_display_name(&ana_name.to_uppercase()), Err(Error::Code("name_taken")));
     step("profiles made with a friend code; a name taken is said so");
+    let (pa, pb) = (ana.personnel().unwrap(), bo.personnel().unwrap());
+    assert!(pa.number.len() == 6 && pa.code.len() == 4, "{pa:?}");
+    assert_eq!(ana.personnel().unwrap(), pa);
+    assert_ne!(pa.number, pb.number);
+    step("every account has a personnel pass of its own, the same at every ask");
 
     // --- friends, online state, invites --------------------------------------------------------------
     assert_eq!(ana.send_friend_request(&a.friend_code), Err(Error::Code("self")));

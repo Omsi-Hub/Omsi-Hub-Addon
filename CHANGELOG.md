@@ -31,6 +31,10 @@ Each version of the Omsi-Hub add-on, newest first. The release on GitHub links h
   *Sign in with Google*, through your browser as Google does. An account made with Discord on
   the website now signs in here too, without a password, and signing in with Discord links that
   Discord account to yours for the roles on the Omsi-Hub Discord server, as on the website.
+- **A personnel pass of your account**: every Omsi-Hub account now has its own personnel
+  number and code. Signed in, your account's driver signs on for a duty with them, on every
+  computer you sign in on; the account panel shows them under *Personnel pass*, beside your
+  friend code. Your friends never see them.
 - **The mod installer on the start page**: *Install mods* among the links under the ways to
   drive opens Settings straight on its tab Mods, to install a mod file or folder into openOMSI.
 - **Searching for a button's action**: on Settings › Controllers, giving a button of the wheel

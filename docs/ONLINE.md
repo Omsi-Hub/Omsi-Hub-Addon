@@ -39,6 +39,20 @@ the app it is chosen in the account panel ("Your profile") or by a click on the 
 picture in the service record; the friends list shows the friends' photos. Deleting the account
 deletes the folder first.
 
+**The personnel pass** is the account's (Luc, 2026-10-25: "Elk omsi hub account moet een
+dienstnummer en dienst code krijgen die gelinked is aan het account"; the website's migration
+`supabase/migrations/20261025120000_personnel.sql` and its test `supabase/tests/personnel.test.mjs`):
+every account has a personnel number (six digits, nobody else's) and a code (four digits), in
+`private.personnel`, which the REST API does not show - the profile's row is read by friends, the
+code is the player's own. They are made with the account (a trigger on `auth.users`), were made
+by the migration for the accounts there were, and `my_personnel()` (`number`, `code`) makes one
+should it be missing. The app fetches it once a session (`Client::personnel`) and writes it into
+the account's driver's pass (`personnel.json`, `addon::set_personnel`), over the one made on that
+computer: the plugin's sign-on, the Companion and the welcome's pass read it there, so the driver
+signs on with the same number and code on every computer. The account panel shows it ("Personnel
+pass", `ol_state`'s `me.personnel`). A server without `my_personnel` yet leaves the driver the
+pass of the computer. Other drivers keep their own; deleting the account deletes its pass.
+
 ## Moving to Supabase
 
 The online side moves from Neon to Supabase. The **website runs on Supabase**, and so does the app's
@@ -312,6 +326,7 @@ key belongs in the app or in this repository.
 | `respond_friend_request(p_from, p_accept)` | accept or decline |
 | `remove_friend(p_other)` / `block_player(p_other)` | unfriend; block (also removes invites) |
 | `send_invite(p_to, p_session)` / `dismiss_invite(p_id)` | invite a friend to your company session |
+| `my_personnel()` | the account's personnel pass: `number` (six digits), `code` (four), made when there is none |
 | `my_friends()` | friends and requests: name, status, `online` (seen in the last 2 minutes), session code (friends only), `relation`, `incoming` |
 | `delete_my_data()` | everything of the player's in these tables |
 

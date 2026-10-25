@@ -19,7 +19,8 @@
 //   provider_token}` (the website's Edge Function, only its claim) takes to link that Discord
 //   account; the links are read back by tests at `GET /__discord?user=<id>`.
 // - The database (`/rest/v1`): the functions of online/supabase/schema.sql with the same checks and
-//   answers (the privacy statement's `accept_privacy` and `my_privacy` among them), and the tables' reads with the same row-level rules (profiles, invites).
+//   answers (the privacy statement's `accept_privacy` and `my_privacy` among them, and the account's
+//   personnel pass, `my_personnel`), and the tables' reads with the same row-level rules (profiles, invites).
 // - Storage (`/storage/v1`): the private bucket `saves`, each player only in users/<own id>/, only
 //   slot1 and slot2 written, 25 MB a file.
 //
@@ -46,6 +47,7 @@ const flows = new Map(); // PKCE code -> { user, challenge, until }
 const codes = new Map(); // email -> { code, kind }
 const refreshes = new Map(); // token -> { user, session, used }
 const profiles = new Map(); // user id -> row
+const personnel = new Map(); // user id -> { number, code } (private.personnel: the account's pass)
 const friendships = []; // { requester, addressee, status, created_at }
 const invites = []; // { id, from_user, to_user, session_code, created_at, expires_at }
 const files = new Map(); // 'users/<id>/slotN/<name>' -> { bytes, type, id, at }
@@ -249,6 +251,15 @@ const FUNCTIONS = {
         return { user_id: p.user_id, display_name: p.display_name, status: ok ? p.status : null, online: ok && Date.parse(p.last_seen) > now() - 120e3 && p.status !== 'offline', session_code: ok ? p.session_code : null, last_seen: ok ? p.last_seen : null, relation: f.status, incoming: f.addressee === me };
       });
   },
+  my_personnel(me) {
+    if (!personnel.has(me)) {
+      let number;
+      do number = String(crypto.randomInt(100000, 1000000));
+      while ([...personnel.values()].some((p) => p.number === number));
+      personnel.set(me, { number, code: String(crypto.randomInt(1000, 10000)) });
+    }
+    return [{ ...personnel.get(me) }];
+  },
   delete_my_data(me) {
     deleteUserData(me);
     return null;
@@ -258,6 +269,7 @@ const FUNCTIONS = {
     // (the consents go with the user: `on delete cascade` from auth.users)
     for (let i = consents.length - 1; i >= 0; i--) if (consents[i].user_id === me) consents.splice(i, 1);
     users.delete(me);
+    personnel.delete(me);
     for (const [t, r] of refreshes) if (r.user === me) refreshes.delete(t);
     return null;
   },

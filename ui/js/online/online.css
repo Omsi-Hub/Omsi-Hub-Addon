@@ -81,6 +81,9 @@
 .ol-note.quiet { padding: 6px 8px; border-radius: var(--hub-r); background: var(--hub-lift); margin-bottom: 10px; }
 .ol-code { font-family: ui-monospace, "Cascadia Mono", Menlo, monospace; font-size: 19.5px; letter-spacing: 0.12em; color: var(--hub-accent-text); }
 :root[data-theme="light"] .ol-code { color: var(--hub-accent-deep); }
+.ol-pass { gap: 24px; }
+.ol-pass > span { display: flex; flex-direction: column; gap: 2px; }
+.ol-pass small { font-size: 11px; color: var(--hub-text-dim); }
 .ol-local { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--hub-hairline); display: flex; justify-content: center; }
 .ol-danger { margin-top: 18px; padding-top: 12px; border-top: 1px solid var(--hub-hairline); display: flex; flex-direction: column; gap: 8px; }
 .ol-danger .ol-btn-x.ghost { align-self: flex-start; color: var(--hub-danger); }

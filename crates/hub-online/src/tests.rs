@@ -6,7 +6,7 @@ use crate::client::{test_jwt, test_now};
 use crate::mock::{Answer, Mock, Req};
 use crate::saves_tests::{raw_of, storage, Files};
 use crate::store::{MemoryStore, SecretStore};
-use crate::{check, codes, Client, Endpoints, Error, Stats};
+use crate::{check, codes, Client, Endpoints, Error, Personnel, Stats};
 use serde_json::{json, Value};
 
 use std::sync::atomic::{AtomicUsize, Ordering};
@@ -376,6 +376,35 @@ fn the_account_waits_for_the_privacy_statement() {
     c.forget();
     assert!(!c.privacy_needed());
     assert_eq!(c.privacy, None);
+}
+
+#[test]
+fn the_accounts_personnel_pass_is_read() {
+    let answer = Arc::new(std::sync::Mutex::new(json!([{ "number": "482913", "code": "5821" }])));
+    let a = answer.clone();
+    let m = Mock::start(move |r| {
+        if let Some(x) = refresh_route(r) {
+            return x;
+        }
+        match r.path.as_str() {
+            "/rest/v1/rpc/my_personnel" => ok(a.lock().unwrap().clone()),
+            _ => (404, vec![], Value::Null),
+        }
+    });
+    let mut c = client(&m, &signed_in("r1"));
+    assert_eq!(c.personnel(), Ok(Personnel { number: "482913".into(), code: "5821".into() }));
+    assert_eq!(m.requests().last().unwrap().body, json!({}));
+    // (one row as an object too, as PostgREST may hand it)
+    *answer.lock().unwrap() = json!({ "number": "100200", "code": "1234" });
+    assert_eq!(c.personnel().map(|p| p.number), Ok("100200".into()));
+    // (what is no pass is not taken)
+    for bad in [json!([]), json!([{ "number": "12a456", "code": "1234" }]), json!([{ "number": "123456", "code": "12" }]), json!(null)] {
+        *answer.lock().unwrap() = bad.clone();
+        assert_eq!(c.personnel(), Err(Error::Code("server")), "{bad}");
+    }
+    // (a server without the function yet)
+    let old = Mock::start(|r| refresh_route(r).unwrap_or((404, vec![], json!({ "code": "PGRST202", "message": "Could not find the function public.my_personnel" }))));
+    assert_eq!(client(&old, &signed_in("r1")).personnel(), Err(Error::Code("unavailable")));
 }
 
 #[test]
