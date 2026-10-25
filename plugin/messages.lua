@@ -2,8 +2,9 @@
 -- CAD/AVL as real operators have it (docs/omsihub/MESSAGES.md).
 --
 -- Omsi-Hub writes the driver's inbox into the data folder (`data/messages.json`, in the player's
--- language); this module reads it every few seconds and shows what is new as a card with a
--- sound - louder for an urgent message -, and the inbox in a panel of its own: the messages
+-- language); this module reads it every few seconds and shows what is new as a notification
+-- with a sound - louder for an urgent message, which stays until it is clicked away -, and the
+-- inbox in the navigator (navigator.lua; an older openOMSI: a panel of its own): the messages
 -- with Accept and Decline for an instruction and the canned replies, and the quick buttons to
 -- control (a delay in traffic, a breakdown, ...). What the driver does goes back as one line
 -- each (`data/replies.jsonl`); how the duty stands goes back every few seconds
@@ -19,6 +20,8 @@
 
 local json = require("hubjson")
 local layout = require("layout")
+local navigator = require("navigator")
+local notes = require("notes")
 local start = require("start")
 
 local M = {}
@@ -79,13 +82,9 @@ local function hhmm(t)
   return string.format("%02d:%02d", (m // 60) % 24, m % 60)
 end
 
--- a card for a while, or a line of text in a game without panels
-local function toast(text, title, icon, color, seconds)
-  if fn("ui.toast") then
-    omsi.ui.toast(text, { title = title, icon = icon, color = color, seconds = seconds or 8 })
-  else
-    omsi.message((title and title ~= "" and (title .. ": ") or "") .. text, seconds or 8)
-  end
+-- a notification for a while (notes.lua; `sticky`: until it is clicked away)
+local function toast(text, title, icon, color, seconds, sticky)
+  notes.say(text, { title = title, icon = icon, color = color, seconds = seconds or 8, sticky = sticky })
 end
 
 local function sound(priority)
@@ -309,7 +308,7 @@ local function children()
       out[#out + 1] = { type = "row", children = { q[i], q[i + 1] } }
     end
   end
-  out[#out + 1] = { type = "text", text = tr("F9: messages · F10: use the panels with the mouse"), size = 11, color = DIM }
+  out[#out + 1] = { type = "text", text = tr("F9: messages · F10: use the panels with the mouse"), size = 11, color = DIM, visible = not navigator.docks() }
   return out
 end
 
@@ -317,12 +316,14 @@ local function panel()
   if not fn("ui.set") then return end
   local want = (open or any_waiting() or hold ~= nil) and inbox ~= nil
   if not want then
-    if shown and fn("ui.remove") then layout.remove(PANEL) end
+    navigator.put("messages", nil)
+    if shown and fn("ui.remove") and not navigator.docks() then layout.remove(PANEL) end
     shown = false
     return
   end
-  layout.set(PANEL, { anchor = "bottom_right", x = 16, y = 96, width = 340, accent = "#F47F30", draggable = true, children = children() })
   shown = true
+  if navigator.docks() then return navigator.put("messages", children()) end
+  layout.set(PANEL, { anchor = "bottom_right", x = 16, y = 96, width = 340, accent = "#F47F30", draggable = true, children = children() })
 end
 
 -- the inbox read again (every few seconds): what is new told
@@ -339,7 +340,7 @@ function M.read()
     if type(m) == "table" and m.id and not m.mine and not omsi.data.msg_seen[m.id] then
       omsi.data.msg_seen[m.id] = true
       if m.state == "sent" then reply("delivered", m.id) end
-      toast(m.text or "", m.from, ICON[m.priority] or "chat", COLOR[m.priority], m.priority == "urgent" and 20 or 10)
+      toast(m.text or "", m.from, ICON[m.priority] or "chat", COLOR[m.priority], m.priority == "urgent" and 20 or 10, m.priority == "urgent")
       sound(m.priority)
       if m.action then open = true end
     end
@@ -388,8 +389,8 @@ end
 
 -- a click of the inbox; whether it was this module's
 function M.click(p, element)
-  if p ~= PANEL then return false end
   local e = element or ""
+  if p ~= PANEL and not (navigator.is(p) and e:sub(1, 4) == "msg_") then return false end
   if e == "msg_close" then
     open, quick = false, false
   elseif e == "msg_quick" then

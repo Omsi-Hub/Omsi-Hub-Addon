@@ -8,13 +8,15 @@
 -- line's contract.
 --
 -- In an openOMSI with the navigator's board (`omsi.ui.version` 3) the board is in the navigator,
--- under its next-stop bar, as before: Shift+N and the handle on the bar show and hide it, and the
--- navigator's own list of stops steps aside for it. An older openOMSI gets it as a panel of its
--- own on the left, which the player can move while the panels have the mouse (F10).
+-- under its next-stop bar, with the plugin's other parts (navigator.lua): Shift+N and the handle
+-- on the bar show and hide it, and the navigator's own list of stops steps aside for it. An older
+-- openOMSI gets it as a panel of its own on the left, which the player can move while the panels
+-- have the mouse (F10).
 
 local career = require("career")
 local company = require("company")
 local layout = require("layout")
+local navigator = require("navigator")
 
 local M = {}
 
@@ -200,6 +202,7 @@ function M.update(on, parts, assignment, boarded)
   if not (omsi.ui and omsi.ui.set and omsi.duty and omsi.duty.get) then return end
   local d = on and omsi.duty.get() or nil
   if not d then
+    navigator.put("board", nil)
     if shown then
       layout.remove(PANEL)
       shown = false
@@ -224,10 +227,10 @@ function M.update(on, parts, assignment, boarded)
   local children = M.rows(d, trips, omsi.duty.stops(), clock, fit, not docks)
   if docks then
     for _, x in ipairs(company.elements(parts or {}, assignment, d, trips, clock, boarded, fit > 1)) do children[#children + 1] = x end
-    layout.set(PANEL, { anchor = "navigator", padding = 11, gap = 5, children = children })
-  else
-    layout.set(PANEL, { anchor = "left", x = 16, y = 0, width = 340, background = "#141A26F2", accent = ACCENT, draggable = true, children = children })
+    navigator.put("board", children)
+    return
   end
+  layout.set(PANEL, { anchor = "left", x = 16, y = 0, width = 340, background = "#141A26F2", accent = ACCENT, draggable = true, children = children })
   shown = true
 end
 

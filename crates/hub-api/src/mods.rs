@@ -110,12 +110,7 @@ pub fn call(cmd: &str, args: &Value) -> Answer {
                 return Err("Close openOMSI first: the game has the mods' files open".into());
             }
             let id = arg::<String>(args, "id")?;
-            let name = if cmd == "hub_mods_remove" {
-                mods::remove(&content, &id)
-            } else {
-                mods::set_enabled(&content, &id, arg::<bool>(args, "on")?)
-            }
-            .map_err(|e| format!("{e:#}"))?;
+            let name = if cmd == "hub_mods_remove" { mods::remove(&content, &id) } else { mods::set_enabled(&content, &id, arg::<bool>(args, "on")?) }.map_err(|e| format!("{e:#}"))?;
             hub_core::log_line(&format!("mods: {cmd} {name}"));
             Ok(json!({ "name": name, "state": state(&content) }))
         }
@@ -131,7 +126,10 @@ mod tests {
     fn every_mods_text_is_translated() {
         let js = include_str!("../../../ui/js/hub/mods.js").replace("\r\n", "\n");
         let mut texts = crate::controllers::tests::page_texts(&js);
-        texts.extend(["Mods", "Mods in openOMSI", "A mod is a folder, or a .zip or .7z file", super::NO_RAR, "This mod is being installed already", "Close openOMSI first: the game has the mods' files open"].map(String::from));
+        texts.extend(
+            ["Mods", "Mods in openOMSI", "A mod is a folder, or a .zip or .7z file", super::NO_RAR, "This mod is being installed already", "Close openOMSI first: the game has the mods' files open"]
+                .map(String::from),
+        );
         texts.sort();
         texts.dedup();
         assert!(texts.len() > 30, "only {} texts found", texts.len());

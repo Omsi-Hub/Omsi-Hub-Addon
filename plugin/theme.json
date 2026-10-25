@@ -1,0 +1,32 @@
+{
+  "name": "Omsi-Hub",
+  "title": "Omsi-Hub",
+  "author": "Omsi-Hub",
+  "colors": {
+    "accent": "#2a75f7",
+    "accent_hover": "#4888f8",
+    "accent_ink": "#ffffff",
+    "accent_2": "#7ba9fa",
+    "background": "#0a142e",
+    "sidebar": "#0c1730",
+    "surface": "#141a26",
+    "surface_2": "#1b2231",
+    "surface_3": "#262e3e",
+    "ink": "#e8ebf2",
+    "ink_2": "#c4cad6",
+    "ink_muted": "#959db0",
+    "text_faint": "#60687a",
+    "danger": "#d93a30",
+    "ok": "#34b26e",
+    "warn": "#e8aa46"
+  },
+  "radius": 12,
+  "glass": { "opacity": 0.55, "blur": 26, "edge": 0.14, "highlight": 0.09 },
+  "loading": {
+    "background": "#0a142e",
+    "text": "#c4cad6",
+    "logo": "theme-loading.svg",
+    "progress": "stroke"
+  },
+  "logo": "theme-icon.svg"
+}
