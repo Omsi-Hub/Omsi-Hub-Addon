@@ -980,8 +980,8 @@ fn view() -> Value {
 }
 
 /// The driver's companies, each with its whole name for the picker: "Land (LAN) · Grundorf" -
-/// the name, the short name and the home map.
-fn companies() -> Value {
+/// the name, the short name and the home map (also the account panel's company board).
+pub(crate) fn companies() -> Value {
     let list = files::list(&data(), &profile());
     json!(list
         .iter()

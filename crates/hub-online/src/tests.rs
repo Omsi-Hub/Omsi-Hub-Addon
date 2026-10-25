@@ -6,7 +6,7 @@ use crate::client::{test_jwt, test_now};
 use crate::mock::{Answer, Mock, Req};
 use crate::saves_tests::{raw_of, storage, Files};
 use crate::store::{MemoryStore, SecretStore};
-use crate::{check, codes, Client, Endpoints, Error, Personnel, Stats};
+use crate::{check, codes, BoardCompany, Client, Endpoints, Error, Personnel, Stats};
 use serde_json::{json, Value};
 
 use std::sync::atomic::{AtomicUsize, Ordering};
@@ -330,6 +330,52 @@ fn the_leaderboard_is_switched_and_the_record_reported() {
     assert_eq!(c.report_stats(&Stats { points: 3, ..s }), Err(Error::Code("no_profile")));
     assert_eq!(c.report_stats(&Stats { points: 4, level: 0, ..s }), Ok("ok"));
     assert_eq!(m.requests().last().unwrap().body["p_level"], 1, "the lowest level is 1");
+}
+
+/// A company put on the company board with its figures, a sixth one refused, and one taken off.
+#[test]
+fn a_company_goes_on_the_company_board_and_off() {
+    let m = Mock::start(|r| {
+        if let Some(a) = refresh_route(r) {
+            return a;
+        }
+        match r.path.as_str() {
+            "/rest/v1/rpc/publish_company" if r.body["p_name"] == "Sixth" => (400, vec![], json!({ "code": "54000", "message": "too many companies shown", "details": null })),
+            "/rest/v1/rpc/publish_company" => ok(json!(true)),
+            "/rest/v1/rpc/unpublish_company" => ok(json!(false)),
+            _ => (404, vec![], Value::Null),
+        }
+    });
+    let mut c = client(&m, &signed_in("r1"));
+    let b = BoardCompany {
+        key: "0123456789abcdef".into(),
+        name: "Stadtbus Nord".into(),
+        short: Some("SN".into()),
+        colour: Some("#f28c28".into()),
+        country: Some("DE".into()),
+        mode: "normal".into(),
+        currency: Some("EUR".into()),
+        days: 40,
+        cash: 12_345_600,
+        profit_month: -50_000,
+        buses: 6,
+        lines: 3,
+        staff: 11,
+        passengers_month: 4_200,
+        on_time: Some(91.5),
+        reputation: Some(64.0),
+        ..Default::default()
+    };
+    c.publish_company(&b).unwrap();
+    let body = m.requests().last().unwrap().body.clone();
+    assert_eq!(body["p_key"], "0123456789abcdef");
+    assert_eq!(body["p_profit_month"], -50_000);
+    assert_eq!(body["p_map"], Value::Null);
+    assert_eq!(body["p_on_time"], 91.5);
+    assert_eq!(c.publish_company(&BoardCompany { name: "Sixth".into(), ..b.clone() }), Err(Error::Code("board_full")));
+    // (one that was not on it is taken off as well)
+    c.unpublish_company("0123456789abcdef").unwrap();
+    assert_eq!(m.requests().last().unwrap().body, json!({ "p_key": "0123456789abcdef" }));
 }
 
 /// Until the player agreed to the current privacy statement nothing of the account's goes out:

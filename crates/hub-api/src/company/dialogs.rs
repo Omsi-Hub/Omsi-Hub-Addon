@@ -74,6 +74,11 @@ fn settings(s: &mut Session, args: &Value) -> Value {
     let logo_text = c.logo.as_deref().map(|p| p.rsplit(['/', '\\']).next().unwrap_or(p).to_string()).unwrap_or_else(|| tr("No logo picture: the short name is the mark."));
     let on = c.clock.real.on;
     let vehicles = super::vehicles::settings_part(s);
+    // (the company board is the desktop's account: the website has none)
+    #[cfg(feature = "native")]
+    let board = crate::board::settings_part(&c.id);
+    #[cfg(not(feature = "native"))]
+    let board = Value::Null;
     json!({
         "title": tr("The company's settings"),
         "vehicles": vehicles,
@@ -94,6 +99,7 @@ fn settings(s: &mut Session, args: &Value) -> Value {
             "caps": tr("Multiplayer").to_uppercase(), "on": c.together.friends_join, "label": tr("Friends can join without an invite"),
             "say": tr(if c.together.friends_join { "While you share the company, your Omsi-Hub friends see a Join button in their friends list: no session code needed." } else { "Off: friends join when you invite them from your friends list, or with the session code." }),
         },
+        "board": board,
         "realtime": { "on": on, "label": tr("Run with the real clock, also while Omsi-Hub is closed"), "say": tr(if on { "When you open the company, the time since is simulated, a month at most. Fast-forwarding moves it ahead of the real clock." } else { "Off: the company's time stands still while it is closed." }) },
         "date": date, "date_label": day_label(&date),
         "earliest": ck::earliest_date(&c).map(|e| trf("Not before %{date}: the company's last booking.", &[("date", &day_label(&e))])),
@@ -1019,6 +1025,20 @@ pub fn act(s: &mut Session, what: &str, args: &Value, _p: &dyn crate::Platform) 
                 crate::online::friends_join_changed(on);
             }
             done(r)
+        }
+        "board" => {
+            #[cfg(feature = "native")]
+            {
+                let on = args.get("on").and_then(Value::as_bool).unwrap_or(false);
+                let r = crate::board::set(&c.id, on);
+                match (r.get("message").and_then(Value::as_str), r.get("error").and_then(Value::as_str)) {
+                    (_, Some(e)) => s.say(e.to_string(), true),
+                    (Some(m), _) => s.say(m.to_string(), false),
+                    _ => {}
+                }
+                s.generation += 1;
+            }
+            Ok(json!({}))
         }
         "realtime" => {
             let on = args.get("on").and_then(Value::as_bool).unwrap_or(true);

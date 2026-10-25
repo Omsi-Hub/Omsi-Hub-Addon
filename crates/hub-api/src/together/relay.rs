@@ -369,9 +369,9 @@ mod tests {
             ("ops", include_str!("../company/ops.rs")),
             ("sandbox", include_str!("../company/sandbox.rs")),
         ];
-        // (the boss's own: never from afar - friends joining his company without an invite is his
-        // online profile's)
-        let own = ["logo", "move_date", "design_livery", "friends_join"];
+        // (the boss's own: never from afar - friends joining his company without an invite, and the
+        // company on the online leaderboard, are his online profile's)
+        let own = ["logo", "move_date", "design_livery", "friends_join", "board"];
         let mut missing = Vec::new();
         for (page, src) in pages {
             for a in acts_in(src) {

@@ -1637,6 +1637,9 @@ fn delete(s: &mut Session, id: &str) -> Answer {
     if let Some(list) = s.companies.as_mut() {
         list.retain(|x| x.id != id);
     }
+    // (off the company board with it)
+    #[cfg(feature = "native")]
+    crate::board::deleted(id);
     if open {
         switch_company(s, None);
     }

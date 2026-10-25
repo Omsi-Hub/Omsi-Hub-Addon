@@ -27,6 +27,8 @@
 
 pub mod addon;
 #[cfg(feature = "native")]
+pub mod board;
+#[cfg(feature = "native")]
 pub mod cloud;
 #[cfg(feature = "native")]
 pub mod cloud_content;

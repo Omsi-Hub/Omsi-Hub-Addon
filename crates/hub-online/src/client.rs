@@ -100,6 +100,35 @@ pub struct Stats {
     pub km: u32,
 }
 
+/// A company on the company board (`publish_company`): what the website's "Top companies" shows
+/// of it. The key stands for the company (8 to 64 letters, digits, `_` and `-`); the database
+/// keeps the figures in their ranges and the texts in their lengths.
+#[derive(Debug, Clone, Default, PartialEq)]
+pub struct BoardCompany {
+    pub key: String,
+    pub name: String,
+    pub short: Option<String>,
+    /// `#rrggbb`.
+    pub colour: Option<String>,
+    /// Two capital letters (`DE`).
+    pub country: Option<String>,
+    pub map_name: Option<String>,
+    /// `casual`, `normal` or `realistic`.
+    pub mode: String,
+    pub sandbox: bool,
+    /// Three capital letters (`EUR`).
+    pub currency: Option<String>,
+    pub days: u32,
+    pub cash: i64,
+    pub profit_month: i64,
+    pub buses: u32,
+    pub lines: u32,
+    pub staff: u32,
+    pub passengers_month: u64,
+    pub on_time: Option<f32>,
+    pub reputation: Option<f32>,
+}
+
 /// The access token and what it says.
 struct Access {
     token: String,
@@ -608,6 +637,25 @@ impl Client {
             Some("bad") => Err(Error::Code("bad_input")),
             _ => Err(Error::Code("server")),
         }
+    }
+
+    // --- the company board ------------------------------------------------------------------------
+
+    /// A company on the company board, or its figures brought up to date (`publish_company`);
+    /// a sixth company of the player's is `board_full`.
+    pub fn publish_company(&mut self, b: &BoardCompany) -> Result<(), Error> {
+        let args = json!({
+            "p_key": b.key, "p_name": b.name, "p_short": b.short, "p_colour": b.colour, "p_country": b.country,
+            "p_map": b.map_name, "p_mode": b.mode, "p_sandbox": b.sandbox, "p_currency": b.currency, "p_days": b.days,
+            "p_cash": b.cash, "p_profit_month": b.profit_month, "p_buses": b.buses, "p_lines": b.lines, "p_staff": b.staff,
+            "p_passengers_month": b.passengers_month, "p_on_time": b.on_time, "p_reputation": b.reputation,
+        });
+        self.rpc("publish_company", args).map(|_| ())
+    }
+
+    /// A company taken off the company board (`unpublish_company`; one that was not on it too).
+    pub fn unpublish_company(&mut self, key: &str) -> Result<(), Error> {
+        self.rpc("unpublish_company", json!({ "p_key": key })).map(|_| ())
     }
 }
 

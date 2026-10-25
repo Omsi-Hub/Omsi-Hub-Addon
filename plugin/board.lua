@@ -24,6 +24,9 @@ local PANEL = "omsihub_board"
 local AHEAD = 4
 -- the stops in a row under the trip (out for now)
 local STOPS = false
+-- the board itself (out for now: Luc, 2026-10-25, "die widget moet of weg of makkelijk weg te
+-- klikken zijn" - the navigator's own bar has the line, the next stop and the delay)
+local SHOWN = false
 -- Omsi-Hub's colours (the launcher's dark theme): the line's plate, punctuality as fills (a
 -- chip) and as letters, the advice's tint and ink, the texts
 local PLATE, ON_PLATE = "#FFD23F", "#1A1400"
@@ -205,7 +208,7 @@ end
 -- `assignment` the duty Omsi-Hub gave, `boarded` the passengers of this trip and of the duty.
 function M.update(on, parts, assignment, boarded)
   if not (omsi.ui and omsi.ui.set and omsi.duty and omsi.duty.get) then return end
-  local d = on and omsi.duty.get() or nil
+  local d = (SHOWN and on) and omsi.duty.get() or nil
   if not d then
     navigator.put("board", nil)
     if shown then

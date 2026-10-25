@@ -5,7 +5,7 @@
 // sheet) - and the popup over all of them.
 
 import { S } from '../store.js';
-import { call } from '../api.js';
+import { call, openUrl } from '../api.js';
 import { html, useEffect, useState, tr, setCo, act, cmd, refresh, useView, useGone, goTab, goKey, handOver, Icon, Btn, Seg, Switch, Select, Dialog, Popup, Figure, Mark, Plate, Slider, T } from './kit.js';
 import { toast } from '../store.js';
 import { VehicleDialog, NewDialog } from './fleet.js';
@@ -78,7 +78,7 @@ const close = () => setCo({ dialog: null });
 // --- the company's settings -------------------------------------------------------------------
 
 /** The company's settings (`settings::dialog`): its mark, its game mode (and add-ons), how it
- * buys, whether friends join without an invite, its date and the real clock; deleting it. */
+ * buys, whether friends join without an invite, whether it is on the online leaderboard, its date and the real clock; deleting it. */
 function SettingsDialog({ d }) {
   const v = useView('settings', { date: d.date || null });
   if (useGone(v, close) || !v) return null;
@@ -95,7 +95,7 @@ function SettingsDialog({ d }) {
     <span class="rest"></span>
     <${Btn} kind=${v.move ? '' : 'primary'} label=${v.close} onClick=${close} />
     ${v.move && html`<${Btn} kind="primary" icon="calendar_month" label=${v.move} onClick=${moveTo} />`}`;
-  const h = (v.buying ? 786 : 722) + (v.addons ? 40 : 0) + (v.vehicles ? 132 : 0) + (v.company_mode ? 112 : 0) + (v.country ? 96 : 0) + (v.currency ? 84 : 0) + (v.friends ? 104 : 0);
+  const h = (v.buying ? 786 : 722) + (v.addons ? 40 : 0) + (v.vehicles ? 132 : 0) + (v.company_mode ? 112 : 0) + (v.country ? 96 : 0) + (v.currency ? 84 : 0) + (v.friends ? 104 : 0) + (v.board ? 116 : 0);
   // (Beta 61: a career or a sandbox - turned into a sandbox once, after a confirmation)
   const cm = v.company_mode;
   const vh = v.vehicles;
@@ -138,6 +138,10 @@ function SettingsDialog({ d }) {
       ${v.friends && html`<div class="co-caps">${v.friends.caps}</div>
         <${Switch} checked=${v.friends.on} label=${v.friends.label} onChange=${(on) => act('friends_join', { on })} style="min-height:36px" />
         <p class="co-note" style="margin:4px 0 14px">${v.friends.say}</p>`}
+      ${v.board && html`<div class="co-caps">${v.board.caps}</div>
+        <${Switch} checked=${v.board.on} disabled=${v.board.disabled} label=${v.board.label} onChange=${(on) => act('board', { on })} style="min-height:36px" />
+        <p class="co-note" style="margin:4px 0 6px">${v.board.say}</p>
+        <div style="margin:0 0 14px"><${Btn} icon="emoji_events" label=${v.board.open} onClick=${() => openUrl(v.board.url).catch(() => {})} /></div>`}
       <div class="co-caps">${v.date_caps}</div>
       <div class="co-para" style="color:var(--hub-text);font-weight:500;line-height:24px;margin-bottom:10px">${v.now}</div>
       <${Switch} checked=${v.realtime.on} label=${v.realtime.label} onChange=${(on) => act('realtime', { on })} style="min-height:36px" />

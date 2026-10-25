@@ -24,7 +24,7 @@ const companies = [
   { id: 'grundorf-linien', name: 'Grundorf Linien', short: 'GL', colours: ['#1e88e5', '#f5f5f5'], map: MAP, map_name: 'Grundorf', depot: 'Betriebshof Grundorf', mode: 'realistic', cash: 26450000, trophies: 21, reputation: 71.2, date: '2026-10-19', minute: 6 * 60 + 15, played: 60 * 3, rosterflow: true },
 ];
 
-const st = { open: null, gen: 1, speed: 0, until: 16 * 60, dispatcher: true, minor: false, launch: null, notices: [], weather: 'clear', realtime: false, friendsJoin: false, read: new Set([3, 4, 5]), gone: new Set(), feeds: [] };
+const st = { open: null, gen: 1, speed: 0, until: 16 * 60, dispatcher: true, minor: false, launch: null, notices: [], weather: 'clear', realtime: false, friendsJoin: false, board: false, read: new Set([3, 4, 5]), gone: new Set(), feeds: [] };
 const co = () => companies.find((c) => c.id === st.open) || null;
 /** Whether the company open has the RosterFlow add-on on (each company its own, as the game's). */
 const rosterflowOn = () => !!co()?.rosterflow;
@@ -794,6 +794,7 @@ function settings(a) {
     currency: { caps: 'CURRENCY', value: 0, codes: ['EUR', 'GBP', 'PLN'], options: ['Euro (€)', 'Pound (£)', 'Złoty (zł)'], say: 'Money is shown in this currency.' },
     vehicles: null,
     friends: { caps: 'MULTIPLAYER', on: st.friendsJoin, label: 'Friends can join without an invite', say: st.friendsJoin ? 'While you share the company, your Omsi-Hub friends see a Join button in their friends list: no session code needed.' : 'Off: friends join when you invite them from your friends list, or with the session code.' },
+    board: { caps: 'ONLINE LEADERBOARD', on: st.board, disabled: false, label: 'Show this company on the online leaderboard', say: st.board ? 'Its name, colour, map and figures (this month\'s profit and passengers, cash, buses, lines, staff, trips on time and reputation) are on omsihub.com, with your display name.' : 'Off: nothing of this company leaves this PC. At most 5 of your companies can be on the board.', url: 'https://omsihub.com/leaderboard.html', open: 'Open the leaderboard' },
     date_caps: "THE COMPANY'S DATE", now: `${dayLabel(c.date)}  ·  ${hm()}`,
     realtime: { on: st.realtime, label: 'In step with the real clock', say: "The company's time goes on while Omsi-Hub is closed." },
     date: a.date || c.date, earliest: null, warn: 'Moving the date does not simulate the days between.',
@@ -1787,6 +1788,10 @@ function doAct(a) {
       return {};
     case 'friends_join':
       st.friendsJoin = !!a.on;
+      bump();
+      return {};
+    case 'board':
+      st.board = !!a.on;
       bump();
       return {};
     case 'rosterflow':

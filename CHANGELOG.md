@@ -2,10 +2,21 @@
 
 Each version of the Omsi-Hub add-on, newest first. The release on GitHub links here.
 
-## Unreleased
+## 1.1.0
+
+It still needs **openOMSI 0.2.22 or newer** and an original **OMSI 2**. Omsi-Hub's look in the
+game's own screens needs an openOMSI with interface themes.
 
 ### New
 
+- **Your companies on the online leaderboard**: switch "Show this company on the online
+  leaderboard" on in the company's settings, or in the account panel's "Company leaderboard"
+  under the cloud saves, and the company stands on omsihub.com's company board - its name,
+  colour, map and figures (this month's profit and passengers, cash, buses, lines, staff, trips on
+  time and reputation), with your display name. Omsi-Hub keeps the figures up to date while you
+  play. Off until you switch it on; at most 5 of your companies at a time; switched off, or the
+  company deleted, it is taken off the board again. The website pointed to this switch before the
+  app had it.
 - **Phone & tablet in the browser, no app needed**: with Settings › General › Phone & tablet
   on, Omsi-Hub serves the Companion as a web app on its address (`http://<your computer>:47811`).
   Scan the QR code with the phone's camera, or open the address in the phone's browser and type
@@ -32,14 +43,22 @@ Each version of the Omsi-Hub add-on, newest first. The release on GitHub links h
   the website now signs in here too, without a password, and signing in with Discord links that
   Discord account to yours for the roles on the Omsi-Hub Discord server, as on the website.
 - **A personnel pass of your account**: every Omsi-Hub account now has its own personnel
-  number and code. Signed in, your account's driver signs on for a duty with them, on every
-  computer you sign in on; the account panel shows them under *Personnel pass*, beside your
+  number and code, the same on every computer you sign in on, for signing on in the game when
+  that comes back; the account panel shows them under *Personnel pass*, beside your
   friend code. Your friends never see them.
 - **The mod installer on the start page**: *Install mods* among the links under the ways to
   drive opens Settings straight on its tab Mods, to install a mod file or folder into openOMSI.
 - **Searching for a button's action**: on Settings › Controllers, giving a button of the wheel
   or button box an action opens a search field over the actions, still by group - type *door*
   or *indicator* and only those are left. The arrow keys and Enter pick one, Escape closes it.
+- **openOMSI in Omsi-Hub's look**: with an openOMSI that knows interface themes, the game's own
+  screens look like Omsi-Hub. The loading screen is Omsi-Hub's logo on its dark blue, and the
+  logo is the loading bar: its blue ring is drawn round the bus and on along the line under
+  the name as the map loads. When the ring is nearly round, the bus pops up and flashes its
+  headlights; the stops pop up on the line as it reaches them. The pause menu, its settings and lists are panes of frosted glass
+  over the game's picture, in Omsi-Hub's blue, with Omsi-Hub's logo at the top. The plugin
+  puts the look in force once; Options › Interface › Interface theme in openOMSI switches back
+  to openOMSI's own look (or to another theme), and that choice stays. The plugin is 1.16.1.
 
 ### Changed
 
@@ -68,8 +87,9 @@ Each version of the Omsi-Hub add-on, newest first. The release on GitHub links h
 - **No signing on in the game for now**: a company's duty starts without the personnel
   number and code and without the duty order to accept; the duty's codes go to the IBIS at
   once. Your pass stays on your account and in Omsi-Hub, for when signing on comes back.
-- **No row of stops under the trip for now**: the duty board in the game shows the trip, how it
-  stands against the timetable and what comes next, without the stops ahead.
+- **No duty board in the game for now**: the card beside the navigator with the trip, the stops
+  ahead and what comes next is gone. The navigator's own bar shows the line, the next stop and
+  the delay, and the Companion on your phone the whole duty.
 
 ## 1.0.1
 

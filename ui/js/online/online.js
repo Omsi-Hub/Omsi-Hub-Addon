@@ -2,7 +2,7 @@
 // crate `hub-online`): the top bar's account button with the new requests and invites on it, the
 // panel - signing in and out (an account is made on the website), the email confirmed and the
 // password reset by a code (or the mail's link), the profile with the friend code and the
-// leaderboard switch, the account deleted; the friends with their online state, the requests,
+// leaderboard switch, the cloud saves and the companies on the company board, the account deleted; the friends with their online state, the requests,
 // the invites to a company session - and the invites' notices over every page. An account is
 // optional: "Play without an account" is always there, and offline the panel says so quietly.
 // The email address and the password go to Rust and are kept nowhere but in the form, until
@@ -28,6 +28,8 @@ import { get, set, useStore } from '../store.js';
 import { Btn, Icon, loadSheet, Sure, Switch, toast, tr } from './bits.js';
 // (the account's cloud saves: the 2 slots - `cloud.js`)
 import { CloudSaves } from './cloud.js';
+// (the account's companies on the company board - `board.js`)
+import { CompanyBoard } from './board.js';
 import { AGE, askPrivacy, PrivacyLink, Statement } from '../privacy.js';
 // (the profile photo, the same on the website: `avatar.js`)
 import { Avatar, AvatarPicker } from './avatar.js';
@@ -398,6 +400,7 @@ export function Profile({ v }) {
       <div class="ol-row"><${Btn} icon="logout" label=${tr('Sign out')} onClick=${() => act('ol_sign_out')} /><span class="ol-fill"></span><${PrivacyLink} /></div>
     </div>
     <${CloudSaves} />
+    <${CompanyBoard} />
     <div class="ol-danger">
       ${!del
         ? html`<${Btn} kind="ghost" icon="delete" label=${tr('Delete account')} onClick=${() => setDel(true)} />`
