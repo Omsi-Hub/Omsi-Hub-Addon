@@ -470,11 +470,11 @@ fn in_an_openomsi_with_the_navigator_s_board_everything_is_in_the_navigator_and_
 #[test]
 fn the_omsi_hub_look_is_put_in_force_once_in_an_openomsi_with_themes() {
     let dir = installed("theme");
-    for file in ["theme.json", "theme-loading.svg", "theme-icon.svg"] {
+    for file in ["theme.json", "theme-loading.svg", "theme-logo.svg"] {
         assert!(dir.join(file).is_file(), "{file} installed");
     }
     let theme: serde_json::Value = serde_json::from_str(&std::fs::read_to_string(dir.join("theme.json")).unwrap()).unwrap();
-    assert_eq!((theme["loading"]["logo"].as_str(), theme["loading"]["progress"].as_str(), theme["logo"].as_str()), (Some("theme-loading.svg"), Some("stroke"), Some("theme-icon.svg")));
+    assert_eq!((theme["loading"]["logo"].as_str(), theme["loading"]["progress"].as_str(), theme["logo"].as_str()), (Some("theme-loading.svg"), Some("stroke"), Some("theme-logo.svg")));
     assert!(theme["glass"].is_object());
     // (the loading logo is the brand's, its ring and line the path the progress is drawn along;
     // the bus pops up as the ring is nearly round it and flashes its headlights, the stops pop

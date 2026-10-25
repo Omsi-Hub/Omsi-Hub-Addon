@@ -45,7 +45,7 @@ pub const FILES: &[(&str, &str)] = &[
     // (Omsi-Hub's look for openOMSI's own screens: an interface theme, `ui.set_theme`)
     ("theme.json", include_str!("../../../plugin/theme.json")),
     ("theme-loading.svg", include_str!("../../../plugin/theme-loading.svg")),
-    ("theme-icon.svg", include_str!("../../../plugin/theme-icon.svg")),
+    ("theme-logo.svg", include_str!("../../../plugin/theme-logo.svg")),
 ];
 /// The texts the plugin shows (`tr` in `plugin/main.lua`), in English: Omsi-Hub puts their
 /// translations into the assignment (`bridge::Assignment::texts`).

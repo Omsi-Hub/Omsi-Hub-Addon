@@ -18,7 +18,7 @@ the plugin through plain files (`crates/hub-game/src/bridge.rs`).
   for the company's fleet map; it only reads the game. `companion` talks to Omsi-Hub's phone and
   tablet companion while it is on (`data/companion.json`, datagrams by UDP; docs/COMPANION.md):
   it presses only the keys of the bus's IBIS, ticket printer and change dispenser.
-- `theme.json`, `theme-loading.svg`, `theme-icon.svg`: Omsi-Hub's look for openOMSI's own screens,
+- `theme.json`, `theme-loading.svg`, `theme-logo.svg`: Omsi-Hub's look for openOMSI's own screens,
   an interface theme (openOMSI's docs/THEMES.md) of the plugin's name: the loading screen with the
   logo's ring as the loading bar (`id="progress"`), the pause menu's panels of glass. `main.lua`
   puts it in force once (`ui.set_theme`), over openOMSI's own look only.
