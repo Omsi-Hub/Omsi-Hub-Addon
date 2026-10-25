@@ -14,6 +14,11 @@ Each version of the Omsi-Hub add-on, newest first. The release on GitHub links h
   the stops and trips, the control room's messages, the break, and the bus's IBIS and ticket
   printer drawn as in the cab. The QR code now opens this page (the Companion app's own
   scanner reads it too).
+- **Phones get in, whatever Windows' firewall said**: on Windows, turning Phone & tablet on
+  sees to it that the firewall lets phones and tablets in - on a network Windows calls public
+  too, and after its question was once clicked away. Windows asks once whether Omsi-Hub may;
+  if that is clicked away, Settings says so beside the pairing code with a button *Let phones
+  in*.
 - **A shift between two times**: besides its length and the part of the day, a work shift can
   now be asked for by its times - choose *From – to* in the shift step and set, say, 05:00 and
   12:00. The shifts that fill those hours come into the list at once, each beginning at or after

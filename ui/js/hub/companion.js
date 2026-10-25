@@ -5,6 +5,8 @@
 // off by default), it shows the address, the pairing code and the QR code (the web app's
 // pairing page, which the phone's camera opens), and the paired devices, each to remove
 // (`hub_companion_state`, `hub_companion_code`, `hub_companion_forget`; `crates/hub-companion`).
+// On Windows the add-on sees to it that the firewall lets the phones in (`hub_companion_firewall`,
+// crates/hub-api's `companion::firewall`): when it does not, a line here and a button.
 
 import { html, useEffect, useState } from '../../vendor/preact-htm.js';
 import { call } from '../api.js';
@@ -60,6 +62,12 @@ export function CompanionPanel() {
           <p class="muted small" style="margin:8px 0 0">${s.game ? html`<${Icon} name="sports_esports" /> ${tr('The game is connected.')}` : tr('The phone shows the game as soon as you drive.')}</p>
         </div>
       </div>
+      ${(s.firewall === 'shut' || s.firewall === 'declined') &&
+      html`<div class="row wrap" style="gap:10px;align-items:center;margin-top:12px">
+        <p class="small bad grow" style="margin:0"><${Icon} name="shield" /> ${tr('Windows does not let phones reach Omsi-Hub yet.')}</p>
+        <${Button} icon="shield" label="Let phones in" disabled=${busy} onClick=${() => run('hub_companion_firewall')} />
+      </div>`}
+      ${s.firewall === 'asking' && html`<p class="small" style="margin:12px 0 0"><${Icon} name="shield" /> ${tr('Windows asks whether Omsi-Hub may let phones in: choose Yes.')}</p>`}
       <p class="small" style="margin:14px 0 4px"><b>${tr('Paired devices')}</b></p>
       ${(s.devices || []).length === 0 && html`<p class="muted small" style="margin:0">${tr('None yet')}</p>`}
       ${(s.devices || []).map(
@@ -69,6 +77,6 @@ export function CompanionPanel() {
           <${Button} kind="ghost" icon="delete" label="Remove" disabled=${busy} onClick=${() => run('hub_companion_forget', { id: d.id })} />
         </div>`,
       )}
-      <p class="muted small" style="margin:10px 0 0">${tr('Only devices in your own network reach it, and only with a pairing code. Your firewall may ask to let Omsi-Hub take connections: allow it for private networks.')}</p>`}
+      <p class="muted small" style="margin:10px 0 0">${tr('Only devices in your own network reach it, and only with a pairing code.')}</p>`}
   </div>`;
 }
