@@ -8,7 +8,7 @@
 //!   `…-setup.exe` on Windows, the `.app.tar.gz` on macOS, the `.AppImage` on Linux).
 //! * **The offer**: a dialog over the page (`hub_update`, asked about once a second): Update now,
 //!   Not now (that version is not offered again), What's new; "install updates without asking"
-//!   (`update_auto`) while no game runs; Settings' "Check now" and "look for updates"
+//!   (`update_auto`, on unless switched off) while no game runs; Settings' "Check now" and "look for updates"
 //!   (`update_check`).
 //! * **The installation** (the app, [`Installer`]): `tauri-plugin-updater` downloads the asset
 //!   named in the release's `latest.json`, checks its signature against the public key built
@@ -439,7 +439,8 @@ fn tick() -> Value {
         check(s, false);
     }
     downloaded(s);
-    let auto = setting("update_auto", false);
+    // (on unless the player switched it off: an update installs itself, no click asked)
+    let auto = setting("update_auto", true);
     if let Status::Available(r) = s.status.clone() {
         // (an offer put aside comes back for a newer version only)
         s.dismissed = s.dismissed_version.as_deref() == Some(r.version.as_str());
