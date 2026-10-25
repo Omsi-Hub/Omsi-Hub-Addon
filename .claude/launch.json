@@ -6,6 +6,24 @@
       "runtimeExecutable": "node",
       "runtimeArgs": ["tools/serve-ui.mjs", "5174"],
       "port": 5174
+    },
+    {
+      "name": "companion-web",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "C:/Omsi-hub/Omsi-hub-companion-app", "run", "web", "--", "--port", "8081"],
+      "port": 8081
+    },
+    {
+      "name": "website",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "C:/Omsi-hub/Omsi-Hub-Website", "run", "dev"],
+      "port": 5182
+    },
+    {
+      "name": "fakegame-web",
+      "runtimeExecutable": "cargo",
+      "runtimeArgs": ["run", "-p", "hub-plugin-harness", "--example", "fakegame"],
+      "port": 47811
     }
   ]
 }
