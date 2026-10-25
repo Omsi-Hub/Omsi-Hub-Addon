@@ -2,6 +2,18 @@
 
 Each version of the Omsi-Hub add-on, newest first. The release on GitHub links here.
 
+## 1.1.1
+
+A patch on 1.1.0. It still needs **openOMSI 0.2.22 or newer** and an original **OMSI 2**.
+
+### Changed
+
+- **Updates install themselves**: a new version of Omsi-Hub now downloads, installs and starts
+  by itself, without a click, while no game runs (on Windows the installer shows its progress
+  and asks nothing). "Install updates without asking" in Settings is on unless you switch it
+  off. Coming from 1.1.0, install this version by hand once: from then on every update
+  installs itself.
+
 ## 1.1.0
 
 It still needs **openOMSI 0.2.22 or newer** and an original **OMSI 2**. Omsi-Hub's look in the
