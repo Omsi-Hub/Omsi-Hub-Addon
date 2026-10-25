@@ -146,6 +146,7 @@ fn commands_in_the_file_when_the_game_starts_are_old_and_a_new_session_starts_ag
 }
 
 #[test]
+#[ignore = "signing on is out for now (main.lua's SIGN_ON)"]
 fn the_driver_signs_on_and_accepts_the_duty_on_the_phone() {
     let dir = installed("signon");
     let a = Assignment {

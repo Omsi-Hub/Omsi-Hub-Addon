@@ -21,7 +21,7 @@
 --                         the game to Omsi-Hub's companion server by UDP)
 -- A game without the file functions gets the handshake and the reports in its log instead.
 
-local VERSION = "1.15.0"
+local VERSION = "1.15.2"
 local BRIDGE = 1
 local PANEL = "omsihub"
 
@@ -197,7 +197,10 @@ omsi.data.board_parts = omsi.data.board_parts or {}
 local function parts()
   return company.parts(omsi.data.board_parts)
 end
-if company_duty() then signon.setup(tr, assignment) end
+-- (signing on is out for now (Luc, 2026-10-25: "Het aanmelden ... mogen er voor nu wel even
+-- uit"): the driver is at work at once, the duty's codes in the IBIS as without a pass)
+local SIGN_ON = false
+if SIGN_ON and company_duty() then signon.setup(tr, assignment) end
 -- (the on-time card: punctuality, headway, connections, diversions - `ontime.lua`, its own)
 local ontime = require("ontime")
 ontime.setup(tr, assignment, has)
@@ -225,7 +228,7 @@ local function panel()
       { type = "icon", name = "business", color = "#F58620" },
       { type = "text", text = assignment.company ~= "" and assignment.company or "Omsi-Hub", weight = "bold", grow = true, wrap = false },
     } },
-    { type = "text", text = tr("Duty %{duty}: line %{line}, tour %{tour}", { duty = assignment.duty, line = assignment.line, tour = assignment.tour }) },
+    signon.heading(assignment),
   }
   if work then
     children[#children + 1] = { type = "text", id = "status", text = status, size = 13 }
@@ -236,7 +239,7 @@ local function panel()
   end
   -- (in the navigator its buttons take a click without the mouse: only a field asks for F10)
   local docks = navigator.docks()
-  children[#children + 1] = { type = "text", text = tr("F10: use the panel with the mouse"), size = 12, color = "#9AA3AD", visible = not work or (can_start and not docks) }
+  children[#children + 1] = { type = "text", text = tr("F10: use the panel with the mouse"), size = 11.5, color = "#959DB0", visible = signon.stage == "signon" or (not docks and (not work or can_start)) }
   -- (in the navigator while the duty runs: the company and the sign-off alone, the board under
   -- it has the line, the tour and the trip)
   if docks and work and d then
@@ -255,7 +258,7 @@ local function panel()
     end
   end
   if docks then return navigator.put("company", children) end
-  layout.set(PANEL, { anchor = "right", x = 16, y = 0, width = 300, accent = "#F58620", draggable = true, children = children })
+  layout.set(PANEL, { anchor = "right", x = 16, y = 0, width = 300, background = "#141A26F2", accent = "#F58620", draggable = true, children = children })
 end
 
 -- the IBIS: typed by the game as each trip begins, unless Omsi-Hub says the driver types it -

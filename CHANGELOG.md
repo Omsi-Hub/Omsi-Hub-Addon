@@ -54,17 +54,22 @@ Each version of the Omsi-Hub add-on, newest first. The release on GitHub links h
   screen: move the navigator by dragging its map, size it at its corner (Settings › General ›
   Navigator as a widget) and Shift+N shows and hides it. Only typing your personnel number
   still asks for F10. An openOMSI without the navigator's board keeps the panels of their own.
+- **The duty order in Omsi-Hub's look**: the company's panel heads the duty with
+  its lines' plates, its tour and from when to when it runs, instead of the timetable's names
+  (`oo_879 9 1`). The duty order lists the first six trips - when each leaves and where it
+  goes - and counts the others (*and 25 more trips until 23:30*), on Omsi-Hub's dark sheet.
+  In an openOMSI with the navigator's board it is in the navigator, under its map.
 - **Buses for the AI traffic are no longer offered to drive**: a bus with "AI" or "KI" in its
   folder, its file name or its name (`MAN_SD202_AI`, `KI-Busse`, `Citaro KI`), or marked
   `[ai_veh_type]`, is left out of the bus list of a drive, the company's market and dealer,
   the line editor's bus choice and the livery studio; a drive with such a bus, chosen before,
   is refused with a word why. Such a bus the company bought before stays in the fleet; give
   its tours another bus to drive them yourself.
-- **Signing on with your personnel number is back, and always asked for a company's duty**:
-  in the bus company mode you sign on in the game with your driver's pass (personnel number
-  and code, made for you the first time and shown on the company's panel and in the
-  Companion) before the duty order and the IBIS; there is no switch to leave it out. A drive
-  of your own (a free drive, a line and tour you chose) never asks for it.
+- **No signing on in the game for now**: a company's duty starts without the personnel
+  number and code and without the duty order to accept; the duty's codes go to the IBIS at
+  once. Your pass stays on your account and in Omsi-Hub, for when signing on comes back.
+- **No row of stops under the trip for now**: the duty board in the game shows the trip, how it
+  stands against the timetable and what comes next, without the stops ahead.
 
 ## 1.0.1
 

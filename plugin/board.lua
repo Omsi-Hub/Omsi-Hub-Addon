@@ -22,6 +22,8 @@ local M = {}
 
 local PANEL = "omsihub_board"
 local AHEAD = 4
+-- the stops in a row under the trip (out for now)
+local STOPS = false
 -- Omsi-Hub's colours (the launcher's dark theme): the line's plate, punctuality as fills (a
 -- chip) and as letters, the advice's tint and ink, the texts
 local PLATE, ON_PLATE = "#FFD23F", "#1A1400"
@@ -136,42 +138,45 @@ function M.rows(d, trips, stops, clock, ahead, old)
     if (after.line or "") ~= (this.line or "") then advice("sync_alt", tr("Continue on line %{line}, tour %{tour}", { line = after.line or "", tour = d.tour or "" }), ACCENT) end
     return children
   end
-  -- the stop behind the bus and the ones ahead (when the bus is off the timetable, when it
-  -- will be at each)
-  local served, now = {}, nil
-  for _, s in ipairs(stops) do
-    if s.stops ~= false then
-      served[#served + 1] = s
-      if now == nil and not s.passed then now = #served end
+  -- (the stops in a row are out for now: Luc, 2026-10-25)
+  if STOPS then
+    -- the stop behind the bus and the ones ahead (when the bus is off the timetable, when it
+    -- will be at each)
+    local served, now = {}, nil
+    for _, s in ipairs(stops) do
+      if s.stops ~= false then
+        served[#served + 1] = s
+        if now == nil and not s.passed then now = #served end
+      end
     end
-  end
-  now = math.min(now or #served, #served)
-  local late = phase == "running" and punctuality(d.delay or 0) ~= "on_time" and (d.delay or 0) or nil
-  local from, to = math.max(now - 1, 1), math.min(now + ahead - 1, #served)
-  local list = {}
-  for j = from, to do
-    local s = served[j]
-    local state = j < now and "done" or (j == now and "now" or "ahead")
-    local expected = (late and (state == "ahead" or (state == "now" and not d.at_stop))) and hhmm(s.arrival + late) or ""
-    list[#list + 1] = {
-      name = s.name or "", time = hhmm(s.arrival), expected = expected, expected_color = expected ~= "" and INK[punctuality(late)] or nil,
-      state = state, tag = j == #served and tr("terminus") or "",
-    }
-  end
-  if #list > 0 then
-    if old then
-      local rows = {}
-      for _, s in ipairs(list) do rows[#rows + 1] = { (s.state == "now" and "▶ " or "") .. s.name, s.time, s.expected } end
-      add({ type = "table", columns = {}, widths = { 0.6, 0.2, 0.2 }, rows = rows, size = 13 })
-    else
-      add({ type = "stops", stops = list, color = ACCENT, size = 13 })
+    now = math.min(now or #served, #served)
+    local late = phase == "running" and punctuality(d.delay or 0) ~= "on_time" and (d.delay or 0) or nil
+    local from, to = math.max(now - 1, 1), math.min(now + ahead - 1, #served)
+    local list = {}
+    for j = from, to do
+      local s = served[j]
+      local state = j < now and "done" or (j == now and "now" or "ahead")
+      local expected = (late and (state == "ahead" or (state == "now" and not d.at_stop))) and hhmm(s.arrival + late) or ""
+      list[#list + 1] = {
+        name = s.name or "", time = hhmm(s.arrival), expected = expected, expected_color = expected ~= "" and INK[punctuality(late)] or nil,
+        state = state, tag = j == #served and tr("terminus") or "",
+      }
     end
-  end
-  if to < #served then
-    add({ type = "row", gap = 0, children = {
-      { type = "space", size = old and 0 or 19 },
-      { type = "text", size = 11.5, weight = "medium", color = FAINT, grow = true, text = tr("and %{n} more to %{terminus}", { n = #served - to, terminus = terminus_of(line, trip.terminus) }) },
-    } })
+    if #list > 0 then
+      if old then
+        local rows = {}
+        for _, s in ipairs(list) do rows[#rows + 1] = { (s.state == "now" and "▶ " or "") .. s.name, s.time, s.expected } end
+        add({ type = "table", columns = {}, widths = { 0.6, 0.2, 0.2 }, rows = rows, size = 13 })
+      else
+        add({ type = "stops", stops = list, color = ACCENT, size = 13 })
+      end
+    end
+    if to < #served then
+      add({ type = "row", gap = 0, children = {
+        { type = "space", size = old and 0 or 19 },
+        { type = "text", size = 11.5, weight = "medium", color = FAINT, grow = true, text = tr("and %{n} more to %{terminus}", { n = #served - to, terminus = terminus_of(line, trip.terminus) }) },
+      } })
+    end
   end
   local after = trips[d.trip + 1]
   if after then

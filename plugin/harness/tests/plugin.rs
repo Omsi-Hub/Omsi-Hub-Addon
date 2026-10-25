@@ -371,7 +371,7 @@ fn the_driver_sizes_and_moves_the_panels_and_they_stay_so() {
     assert_eq!(big["width"].as_f64().map(f64::round), Some(360.0));
     assert!(big.to_string().contains("120 %"), "{big}");
     // (its texts grow with it; the padding the game would give it, too)
-    assert_eq!(big["children"][1]["size"].as_f64().map(|s| (s * 10.0).round() / 10.0), Some(16.8));
+    assert_eq!(big["children"][0]["children"][1]["size"].as_f64().map(|s| (s * 10.0).round() / 10.0), Some(16.8));
     assert_eq!(big["padding"].as_f64().map(|s| (s * 10.0).round() / 10.0), Some(14.4));
 
     // dragged 40 to the left and 25 down (the panel sits on the right: x grows leftwards)
