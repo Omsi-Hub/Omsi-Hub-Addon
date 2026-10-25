@@ -67,7 +67,7 @@ itself still lets only the home network in and only paired devices on.
 
 | Request | Auth | Answer |
 | --- | --- | --- |
-| `GET /api/hello` | none | `{app: "omsi-hub", api: 1, version: "1.0.1", name: "Luc-PC", pairing: true}` |
+| `GET /api/hello` | none | `{app: "omsi-hub", api: 1, version: "1.1.0", name: "Luc-PC", pairing: true}` |
 | `POST /api/pair` `{code, device}` | none | `200 {key, name}`; `403 {error: "wrong_code"}`; `429 {error: "too_many"}` (ten tries a minute) |
 
 `device` is the phone's own name ("Luc's iPhone"), shown in the launcher's list of paired
