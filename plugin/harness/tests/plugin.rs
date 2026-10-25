@@ -463,3 +463,41 @@ fn in_an_openomsi_with_the_navigator_s_board_everything_is_in_the_navigator_and_
     h.frame().unwrap();
     assert!(ids(&panel(&h, "omsihub_board"), "ontime_close").is_empty());
 }
+
+/// The plugin's folder is an interface theme (Omsi-Hub's look for openOMSI's own screens), put
+/// in force once by an openOMSI that knows themes, and only over openOMSI's own look: a theme
+/// the player chose, and a second start, keep theirs; an older openOMSI is not asked.
+#[test]
+fn the_omsi_hub_look_is_put_in_force_once_in_an_openomsi_with_themes() {
+    let dir = installed("theme");
+    for file in ["theme.json", "theme-loading.svg", "theme-icon.svg"] {
+        assert!(dir.join(file).is_file(), "{file} installed");
+    }
+    let theme: serde_json::Value = serde_json::from_str(&std::fs::read_to_string(dir.join("theme.json")).unwrap()).unwrap();
+    assert_eq!((theme["loading"]["logo"].as_str(), theme["loading"]["progress"].as_str(), theme["logo"].as_str()), (Some("theme-loading.svg"), Some("stroke"), Some("theme-icon.svg")));
+    assert!(theme["glass"].is_object());
+    // (the loading logo is the brand's, its ring and line the path the progress is drawn along)
+    let loading = std::fs::read_to_string(dir.join("theme-loading.svg")).unwrap();
+    let brand = include_str!("../../../assets/brand/logo-light.svg");
+    assert_eq!(loading.replace(" id=\"progress\"", "").replace("\r\n", "\n"), brand.replace("\r\n", "\n"));
+    assert_eq!(loading.matches("id=\"progress\"").count(), 1);
+    let themes = |now: &str, offered: bool| {
+        format!(
+            "omsi.ui.version = 6; ASKED = {{}}; omsi.ui.theme = function() return \"{now}\" end; omsi.ui.set_theme = function(id) table.insert(ASKED, id); return true end; omsi.data.theme_offered = {}",
+            if offered { "true" } else { "nil" }
+        )
+    };
+    let asked = |h: &Harness| eval(h, "ASKED[1]");
+    // the first start with openOMSI's own look: Omsi-Hub's, by the plugin's folder name
+    let h = Harness::load_with(&dir, game(), &themes("", false)).unwrap();
+    assert_eq!((asked(&h), eval(&h, "#ASKED")), (json!(install::NAME), json!(1)));
+    assert_eq!(eval(&h, "omsi.data.theme_offered"), json!(true));
+    // a theme the player chose, or a start after the first: theirs stays
+    let h = Harness::load_with(&dir, game(), &themes("night", false)).unwrap();
+    assert_eq!(asked(&h), json!(null));
+    let h = Harness::load_with(&dir, game(), &themes("", true)).unwrap();
+    assert_eq!(asked(&h), json!(null));
+    // an openOMSI without themes: nothing asked, nothing remembered
+    let h = Harness::load(&dir, game()).unwrap();
+    assert_eq!(eval(&h, "omsi.data.theme_offered"), json!(null));
+}

@@ -14,6 +14,13 @@ Each version of the Omsi-Hub add-on, newest first. The release on GitHub links h
   the stops and trips, the control room's messages, the break, and the bus's IBIS and ticket
   printer drawn as in the cab. The QR code now opens this page (the Companion app's own
   scanner reads it too).
+- **openOMSI in Omsi-Hub's look**: with an openOMSI that knows interface themes, the game's own
+  screens look like Omsi-Hub. The loading screen is Omsi-Hub's logo on its dark blue, and the
+  logo is the loading bar: its blue ring is drawn round the bus and on along the line under
+  the name as the map loads. The pause menu, its settings and lists are panes of frosted glass
+  over the game's picture, in Omsi-Hub's blue, with Omsi-Hub's logo at the top. The plugin
+  puts the look in force once; Options › Interface › Interface theme in openOMSI switches back
+  to openOMSI's own look (or to another theme), and that choice stays. The plugin is 1.16.0.
 
 ### Changed
 

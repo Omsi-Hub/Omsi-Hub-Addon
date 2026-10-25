@@ -21,7 +21,7 @@
 --                         the game to Omsi-Hub's companion server by UDP)
 -- A game without the file functions gets the handshake and the reports in its log instead.
 
-local VERSION = "1.15.0"
+local VERSION = "1.16.0"
 local BRIDGE = 1
 local PANEL = "omsihub"
 
@@ -664,5 +664,19 @@ omsi.every(2, messages.read)
 omsi.every(0.2, navigator.flush)
 omsi.every(5, messages.status)
 
+-- Omsi-Hub's look for openOMSI's own screens (theme.json beside this file: the pause menu's
+-- panels of glass, the loading screen with the logo as its bar, Omsi-Hub's blue), put in force
+-- once - the first time an openOMSI that knows interface themes (`ui.set_theme`) runs the
+-- plugin, and only while the player has openOMSI's own look; what they choose in Options ›
+-- Interface after that stays
+local function offer_theme()
+  if omsi.data.theme_offered or not (fn("ui.set_theme") and fn("ui.theme")) then return end
+  omsi.data.theme_offered = true
+  if omsi.ui.theme() ~= "" then return end
+  local ok, why = omsi.ui.set_theme(PANEL)
+  if not ok then omsi.log("[omsihub] the Omsi-Hub look is not there: " .. tostring(why)) end
+end
+
 hello()
+offer_theme()
 panel()
