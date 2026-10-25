@@ -3,6 +3,9 @@
 /dist/
 /build/
 node_modules/
+# (but the Companion web app's fonts and icons, which its build keeps under that name:
+# tools/companion-web.mjs)
+!/assets/companion-web/assets/node_modules/
 
 # local settings and secrets
 .env
