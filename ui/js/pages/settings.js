@@ -3,7 +3,7 @@
 
 import { html, useState } from '../../vendor/preact-htm.js';
 import { useLang } from '../i18n.js';
-import { useStore } from '../store.js';
+import { S, useStore } from '../store.js';
 import { saveSettings } from '../hub/drive.js';
 import { Button, Seg, Slider, Switch, tr } from '../hub/bits.js';
 import { LANGUAGE_NAMES, SETTINGS_TABS } from '../hub/settings-extra.js';
@@ -37,7 +37,12 @@ function Row({ row, s }) {
 export function Settings() {
   useLang();
   const s = useStore();
-  const [tab, setTab] = useState(SETTINGS_TABS[0].id);
+  // (opened on a tab when asked: the start's "Install mods" opens the tab "Mods", `go('settings', null, 'mods')`)
+  const [tab, setTab] = useState(() => {
+    const asked = S.hub.settingsTab;
+    delete S.hub.settingsTab;
+    return asked || SETTINGS_TABS[0].id;
+  });
   const t = SETTINGS_TABS.find((x) => x.id === tab) || SETTINGS_TABS[0];
   return html`<div class="hub-settings" id="settings">
     <${Seg} value=${t.id} options=${SETTINGS_TABS.map((x) => [x.id, x.label])} onChange=${setTab} />

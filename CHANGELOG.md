@@ -18,6 +18,8 @@ Each version of the Omsi-Hub add-on, newest first. The release on GitHub links h
   now be asked for by its times - choose *From – to* in the shift step and set, say, 05:00 and
   12:00. The shifts that fill those hours come into the list at once, each beginning at or after
   the first time and ending by the second; a shift from 22:00 to 06:00 runs past midnight.
+- **The mod installer on the start page**: *Install mods* among the links under the ways to
+  drive opens Settings straight on its tab Mods, to install a mod file or folder into openOMSI.
 
 ### Changed
 
