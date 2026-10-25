@@ -2396,6 +2396,22 @@ _version: 2
   uk: "Тривалість зміни"
   pl: "Długość zmiany"
   es: "Duración del turno"
+"Shift times":
+  nl: "Diensttijden"
+  de: "Dienstzeiten"
+  fr: "Horaires du poste"
+  ru: "Время смены"
+  uk: "Час зміни"
+  pl: "Godziny zmiany"
+  es: "Horario del turno"
+"No shift fits between these times. Try other times or a longer stretch.":
+  nl: "Tussen deze tijden past geen dienst. Probeer andere tijden of een langer tijdvak."
+  de: "Zwischen diese Zeiten passt kein Dienst. Versuche andere Zeiten oder eine längere Spanne."
+  fr: "Aucun poste ne tient entre ces horaires. Essaie d'autres horaires ou une plage plus longue."
+  ru: "Между этими временами не помещается ни одна смена. Попробуйте другое время или более длинный промежуток."
+  uk: "Між цими часами не вміщується жодна зміна. Спробуйте інший час або довший проміжок."
+  pl: "Między tymi godzinami nie mieści się żadna zmiana. Spróbuj innych godzin lub dłuższego przedziału."
+  es: "Ningún turno cabe entre estas horas. Prueba otras horas o un tramo más largo."
 "Time of day":
   nl: "Dagdeel"
   fr: "Moment de la journée"

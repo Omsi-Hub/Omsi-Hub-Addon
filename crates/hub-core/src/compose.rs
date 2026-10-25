@@ -156,6 +156,9 @@ pub struct Wish {
     /// midnight, 30 h for the night).
     pub from: Option<f64>,
     pub to: Option<f64>,
+    /// The duty's last trip arrives by this (s; past midnight as `to`): a shift asked for by
+    /// its times, 05:00 to 12:00, ends in it.
+    pub until: Option<f64>,
     /// Only these lines (`.ttl` names); empty: every line the player may drive.
     pub lines: Vec<String>,
     pub seed: u64,
@@ -353,8 +356,9 @@ fn pick_next(net: &Net, options: &[usize], current: &str, driven: &HashSet<&str>
     chosen[rng.below(chosen.len())]
 }
 
-fn walk(net: &Net, start: usize, target: f64, tolerance: f64, allowed: &dyn Fn(usize) -> bool, rng: &mut Rng) -> Vec<usize> {
+fn walk(net: &Net, start: usize, target: f64, tolerance: f64, until: Option<f64>, allowed: &dyn Fn(usize) -> bool, rng: &mut Rng) -> Vec<usize> {
     let begin = net.runs[start].leg.departure;
+    let allowed = |n: usize| allowed(n) && until.is_none_or(|u| net.runs[n].leg.arrival <= u);
     let mut legs = vec![start];
     let mut driven: HashSet<&str> = HashSet::new();
     driven.insert(&net.runs[start].leg.shown);
@@ -388,6 +392,13 @@ fn in_window(departure: f64, from: Option<f64>, to: Option<f64>) -> bool {
     inside(departure) || inside(departure + 86400.0)
 }
 
+/// The wish's `until` on the clock of a duty leaving at `departure`: a night's 01:00 that is
+/// in the window as 25:00 ends by the window's end a day earlier.
+fn until_for(departure: f64, wish: &Wish) -> Option<f64> {
+    let next_day = wish.from.is_some_and(|f| departure < f);
+    wish.until.map(|u| if next_day { u - 86400.0 } else { u })
+}
+
 /// One duty of about the length wanted. A few are walked and one of them chosen, the more
 /// lines in it the likelier (by the square: two lines four times as likely as one), so a
 /// map's variety shows without every duty being the same.
@@ -406,7 +417,8 @@ fn compose_one(net: &Net, starts: &[usize], wish: &Wish, allowed: &dyn Fn(usize)
         if good.len() >= POOL {
             break;
         }
-        let legs = walk(net, starts[rng.below(starts.len())], target, tolerance, allowed, rng);
+        let start = starts[rng.below(starts.len())];
+        let legs = walk(net, start, target, tolerance, until_for(net.runs[start].leg.departure, wish), allowed, rng);
         if legs.len() < MIN_LEGS {
             continue;
         }
@@ -436,7 +448,9 @@ pub fn compose(lines: &[LineInfo], wish: &Wish, count: usize) -> Vec<ComposedDut
     let net = build(lines);
     let only: HashSet<String> = wish.lines.iter().map(|l| l.to_lowercase()).collect();
     let allowed = |r: usize| only.is_empty() || only.contains(&net.runs[r].leg.line.to_lowercase());
-    let starts: Vec<usize> = (0..net.runs.len()).filter(|&r| allowed(r) && in_window(net.runs[r].leg.departure, wish.from, wish.to)).collect();
+    // (a duty of its times leaves with room for one before their end)
+    let room = |d: f64| until_for(d, wish).is_none_or(|u| d + MIN_DUTY <= u);
+    let starts: Vec<usize> = (0..net.runs.len()).filter(|&r| allowed(r) && in_window(net.runs[r].leg.departure, wish.from, wish.to) && room(net.runs[r].leg.departure)).collect();
     let mut rng = Rng::new(wish.seed);
     let mut found: Vec<ComposedDuty> = Vec::new();
     for _ in 0..count * 12 {
@@ -506,7 +520,7 @@ mod tests {
     }
 
     fn wish(minutes: f64, seed: u64) -> Wish {
-        Wish { seconds: minutes * 60.0, from: None, to: None, lines: Vec::new(), seed }
+        Wish { seconds: minutes * 60.0, from: None, to: None, until: None, lines: Vec::new(), seed }
     }
 
     #[test]
@@ -557,6 +571,26 @@ mod tests {
         let duties = compose(&map(), &w, 6);
         assert!(!duties.is_empty());
         assert!(duties.iter().all(|d| (9.0 * 3600.0..=10.0 * 3600.0).contains(&d.start())));
+    }
+
+    #[test]
+    fn a_shift_of_its_times_begins_and_ends_in_them() {
+        // 07:00 to 10:00: the duties lie in it, and fill most of it
+        let (from, until) = (7.0 * 3600.0, 10.0 * 3600.0);
+        let w = Wish { from: Some(from), to: Some(until), until: Some(until), ..wish(180.0, 4) };
+        let duties = compose(&map(), &w, 8);
+        assert!(!duties.is_empty());
+        for d in &duties {
+            assert!(d.start() >= from && d.end() <= until, "{} - {}", d.start() / 60.0, d.end() / 60.0);
+        }
+        assert!(duties.iter().any(|d| d.seconds() >= 2.5 * 3600.0));
+        // (nothing leaves with half an hour to go before 06:20)
+        let w = Wish { from: Some(5.0 * 3600.0), to: Some(6.0 * 3600.0 + 20.0 * 60.0), until: Some(6.0 * 3600.0 + 20.0 * 60.0), ..wish(80.0, 4) };
+        assert!(compose(&map(), &w, 8).is_empty());
+        // a night's 01:00 ends by the window's 06:00 of that night
+        let w = Wish { from: Some(22.0 * 3600.0), to: Some(30.0 * 3600.0), until: Some(30.0 * 3600.0), ..wish(480.0, 1) };
+        assert_eq!(until_for(3600.0, &w), Some(6.0 * 3600.0));
+        assert_eq!(until_for(23.0 * 3600.0, &w), Some(30.0 * 3600.0));
     }
 
     #[test]

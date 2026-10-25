@@ -282,14 +282,17 @@ const answers = {
   hub_map_facts: () => ({}),
   hub_own_lines: () => [],
   hub_shifts: (a) => {
-    // (two shifts of line 1's tours: from the tour's first trip, as long as asked)
-    const want = (a.minutes || 120) * 60;
+    // (two shifts of line 1's tours: from the tour's first trip, as long as asked - or from its
+    // first trip in the times asked, until their end)
+    const times = a.from != null && a.until != null;
+    const want = (times ? ((((a.until - a.from - 1) % 1440) + 1440) % 1440) + 1 : a.minutes || 120) * 60;
     return LINES[0].tours.map((t) => {
       const trips = [];
-      for (const x of t.trips) if (!trips.length || x.arrival - t.trips[0].departure <= want) trips.push(x);
+      for (const x of t.trips.filter((x) => !times || x.departure >= a.from * 60)) if (!trips.length || x.arrival - trips[0].departure <= want) trips.push(x);
+      if (!trips.length) return null;
       const first = trips[0];
       return { key: [`1|${t.number}|${first.index}`], start: first.departure, end: trips[trips.length - 1].arrival, seconds: trips[trips.length - 1].arrival - first.departure, trips: trips.map((x) => ['1', t.number, { ...x, stops: x.stops.length }]), first: { line: '1', tour: t.number, index: first.index, departure: first.departure } };
-    });
+    }).filter(Boolean);
   },
   hub_weather_extras: () => ({ airport: 'EDDB', airports: [['EDDB', 'Berlin Brandenburg'], ['EDDH', 'Hamburg']], cycle: false }),
   hub_duty_extras: (a) => {

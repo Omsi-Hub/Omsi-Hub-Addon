@@ -1,7 +1,8 @@
 //! Work shifts and what a duty of ours adds to the drive.
 //!
-//! * `hub_shifts {map, date, minutes, daypart, seed, legs}` - work shifts put together from the
-//!   day's timetable (`hub_core::compose`), as the duty step lists them;
+//! * `hub_shifts {map, date, minutes, daypart, from?, until?, seed, legs}` - work shifts put
+//!   together from the day's timetable (`hub_core::compose`), as the duty step lists them: of a
+//!   length in a part of the day, or between two times (`from`, `until`: minutes of the day);
 //! * `hub_duty_extras {bus, date, minutes, free}` - the start moved `bus_lead` minutes (a
 //!   setting) ahead of the first departure, and the display font chosen for the bus.
 
@@ -22,18 +23,50 @@ pub fn shifts(args: &Value) -> Answer {
     let legs = arg::<Option<Vec<String>>>(args, "legs")?.unwrap_or_default();
     let minutes = arg::<Option<f64>>(args, "minutes")?.unwrap_or(120.0).round() as i64;
     let daypart = arg::<Option<f64>>(args, "daypart")?.unwrap_or(0.0).max(0.0) as usize;
+    let from = arg::<Option<f64>>(args, "from")?;
+    let until = arg::<Option<f64>>(args, "until")?;
     let seed = arg::<Option<f64>>(args, "seed")?.unwrap_or(0.0).max(0.0) as u64;
     let lines = hub_core::list_lines(&arg::<String>(args, "map")?, &super::date_arg(args)?)?;
-    Ok(shifts_of(&lines, minutes, daypart, seed, &legs))
+    let span = match (from, until) {
+        (Some(f), Some(u)) => Span::Times(f.round() as i64, u.round() as i64),
+        _ => Span::Length(minutes, daypart),
+    };
+    Ok(shifts_of(&lines, span, seed, &legs))
 }
 
-/// The shifts of `minutes` length beginning in the part of the day `daypart`, from the day's
-/// `lines`; `seed` draws another set ("Find other shifts"). The shift `legs` (the one chosen
-/// last) comes first when it still holds and the draw left it out, so the choice stays in the
-/// list.
-pub fn shifts_of(lines: &[LineInfo], minutes: i64, daypart: usize, seed: u64, legs: &[String]) -> Value {
-    let window = DAYPARTS.get(daypart).and_then(|d| d.1);
-    let wish = Wish { seconds: minutes.clamp(30, 480) as f64 * 60.0, from: window.map(|w| w.0 as f64 * 60.0), to: window.map(|w| w.1 as f64 * 60.0), lines: Vec::new(), seed };
+/// How the player asks for a shift.
+#[derive(Clone, Copy, Debug)]
+pub enum Span {
+    /// Its length in minutes and the part of the day (`DAYPARTS`) it begins in.
+    Length(i64, usize),
+    /// Its times, minutes of the day: it begins at the first and ends by the second (one not
+    /// after the first runs past midnight - 22:00 to 06:00).
+    Times(i64, i64),
+}
+
+impl Span {
+    fn wish(self, seed: u64) -> Wish {
+        match self {
+            Span::Length(minutes, daypart) => {
+                let window = DAYPARTS.get(daypart).and_then(|d| d.1);
+                Wish { seconds: minutes.clamp(30, 480) as f64 * 60.0, from: window.map(|w| w.0 as f64 * 60.0), to: window.map(|w| w.1 as f64 * 60.0), until: None, lines: Vec::new(), seed }
+            }
+            Span::Times(from, until) => {
+                let from = from.rem_euclid(1440);
+                // (the same time twice: the whole day from it)
+                let until = from + (until - from - 1).rem_euclid(1440) + 1;
+                let (from, until) = (from as f64 * 60.0, until as f64 * 60.0);
+                Wish { seconds: until - from, from: Some(from), to: Some(until), until: Some(until), lines: Vec::new(), seed }
+            }
+        }
+    }
+}
+
+/// The shifts asked for (`span`) from the day's `lines`; `seed` draws another set ("Find other
+/// shifts"). The shift `legs` (the one chosen last) comes first when it still holds and the
+/// draw left it out, so the choice stays in the list.
+pub fn shifts_of(lines: &[LineInfo], span: Span, seed: u64, legs: &[String]) -> Value {
+    let wish = span.wish(seed);
     let mut duties = hub_core::compose::compose(lines, &wish, SHIFTS);
     if !legs.is_empty() && !duties.iter().any(|d| d.blocks().iter().map(Block::arg).collect::<Vec<_>>() == legs) {
         if let Some(d) = shift_of_legs(legs, lines) {
@@ -126,9 +159,24 @@ fn extras(_bus: &str, date: &str, minutes: i32, lead: i64, font: Option<String>)
 #[cfg(test)]
 mod tests {
     use super::*;
-    use hub_core::{TourInfo, TripInfo};
+    use hub_core::{StopInfo, TourInfo, TripInfo};
 
     fn lines() -> Vec<LineInfo> {
+        // (three stops: a trip with fewer is no bus line to the composer)
+        let stops = |from: &str, to: &str, at: f64| {
+            [from, "Mitte", to]
+                .map(|n| StopInfo {
+                    name: n.into(),
+                    id: match n {
+                        "A" => 1,
+                        "B" => 2,
+                        _ => 3,
+                    },
+                    arr: at,
+                    dep: at,
+                })
+                .to_vec()
+        };
         let trip = |index: usize, dep: f64, arr: f64, from: &str, to: &str| TripInfo {
             name: format!("t{index}"),
             index,
@@ -137,7 +185,7 @@ mod tests {
             terminus: to.into(),
             departure: dep,
             arrival: arr,
-            stops: Vec::new(),
+            stops: stops(from, to, dep),
             km: 0.0,
         };
         let tour = TourInfo {
@@ -171,7 +219,7 @@ mod tests {
     #[test]
     fn the_shifts_of_a_day_keep_the_one_chosen() {
         let lines = lines();
-        let v = shifts_of(&lines, 120, 0, 7, &["Linie5|2|2|2".to_string()]);
+        let v = shifts_of(&lines, Span::Length(120, 0), 7, &["Linie5|2|2|2".to_string()]);
         let list = v.as_array().unwrap();
         assert!(!list.is_empty());
         assert!(list.iter().any(|s| s["key"] == json!(["Linie5|2|2|2"])), "{v}");
@@ -180,6 +228,23 @@ mod tests {
             assert!(s["start"].as_f64() <= s["end"].as_f64());
         }
         assert_eq!(DAYPARTS[4].1, Some((22 * 60, 30 * 60)));
+    }
+
+    #[test]
+    fn a_shift_of_its_times_lies_between_them() {
+        // the tour runs 01:00 - 02:30: a shift from 01:00 to 02:10 is its first two trips
+        let v = shifts_of(&lines(), Span::Times(60, 130), 7, &[]);
+        let list = v.as_array().unwrap();
+        assert!(!list.is_empty(), "{v}");
+        for s in list {
+            assert!(s["start"].as_f64().unwrap() >= 3600.0 && s["end"].as_f64().unwrap() <= 130.0 * 60.0, "{s}");
+        }
+        // the times as a wish: past midnight, and the same time twice the whole day
+        let w = Span::Times(22 * 60, 6 * 60).wish(0);
+        assert_eq!((w.from, w.until, w.seconds), (Some(22.0 * 3600.0), Some(30.0 * 3600.0), 8.0 * 3600.0));
+        let w = Span::Times(5 * 60, 12 * 60).wish(0);
+        assert_eq!((w.from, w.to, w.until), (Some(5.0 * 3600.0), Some(12.0 * 3600.0), Some(12.0 * 3600.0)));
+        assert_eq!(Span::Times(300, 300).wish(0).seconds, 86400.0);
     }
 
     #[test]
