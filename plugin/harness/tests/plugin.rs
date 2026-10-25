@@ -476,11 +476,22 @@ fn the_omsi_hub_look_is_put_in_force_once_in_an_openomsi_with_themes() {
     let theme: serde_json::Value = serde_json::from_str(&std::fs::read_to_string(dir.join("theme.json")).unwrap()).unwrap();
     assert_eq!((theme["loading"]["logo"].as_str(), theme["loading"]["progress"].as_str(), theme["logo"].as_str()), (Some("theme-loading.svg"), Some("stroke"), Some("theme-icon.svg")));
     assert!(theme["glass"].is_object());
-    // (the loading logo is the brand's, its ring and line the path the progress is drawn along)
+    // (the loading logo is the brand's, its ring and line the path the progress is drawn along;
+    // the bus pops up as the ring is nearly round it and flashes its headlights, the stops pop
+    // up as the line reaches them - in that order along the line)
     let loading = std::fs::read_to_string(dir.join("theme-loading.svg")).unwrap();
     let brand = include_str!("../../../assets/brand/logo-light.svg");
-    assert_eq!(loading.replace(" id=\"progress\"", "").replace("\r\n", "\n"), brand.replace("\r\n", "\n"));
+    let ring = brand.lines().find(|l| l.contains("stroke=\"#2a75f7\"")).unwrap();
+    assert!(loading.contains(&ring.replace("<path d=", "<path id=\"progress\" d=")));
     assert_eq!(loading.matches("id=\"progress\"").count(), 1);
+    let at = |id: &str| -> f32 {
+        let tag = &loading[loading.find(&format!("id=\"{id}\"")).unwrap_or_else(|| panic!("{id}"))..];
+        tag[tag.find("data-at=\"").unwrap() + 9..].split('"').next().unwrap().parse().unwrap()
+    };
+    let order = [at("bus"), at("stop-1"), at("stop-2"), at("stop-3")];
+    assert!(order.windows(2).all(|w| w[0] < w[1]) && order[3] <= 1.0, "{order:?}");
+    assert_eq!(at("lights"), at("bus"));
+    assert!(loading.contains("id=\"lights\" data-at=\"0.33\" data-delay=\"0.4\" data-blink=\"\""));
     let themes = |now: &str, offered: bool| {
         format!(
             "omsi.ui.version = 6; ASKED = {{}}; omsi.ui.theme = function() return \"{now}\" end; omsi.ui.set_theme = function(id) table.insert(ASKED, id); return true end; omsi.data.theme_offered = {}",
