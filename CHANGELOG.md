@@ -17,6 +17,17 @@ Each version of the Omsi-Hub add-on, newest first. The release on GitHub links h
 
 ### Changed
 
+- **Everything in the game is in the navigator, and notifications click away with the mouse**:
+  the company's notices, service control's and the control room's messages, the offences,
+  the reliefs and the on-time alerts are no longer cards at the top right that cannot be
+  clicked; they come into the navigator under its map, the newest on top, each with a close
+  button that works with the mouse as it is (no F10). An urgent message or an alert stays until
+  you close it, the others go by themselves after a while. The control room's inbox, the
+  company's panel and signing on, the duty board, the on-time card and the duty strip are in
+  the navigator too, one under the other, instead of panels of their own scattered over the
+  screen: move the navigator by dragging its map, size it at its corner (Settings › General ›
+  Navigator as a widget) and Shift+N shows and hides it. Only typing your personnel number
+  still asks for F10. An openOMSI without the navigator's board keeps the panels of their own.
 - **Buses for the AI traffic are no longer offered to drive**: a bus with "AI" or "KI" in its
   folder, its file name or its name (`MAN_SD202_AI`, `KI-Busse`, `Citaro KI`), or marked
   `[ai_veh_type]`, is left out of the bus list of a drive, the company's market and dealer,
