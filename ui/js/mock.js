@@ -285,6 +285,8 @@ const answers = {
     // (two shifts of line 1's tours: from the tour's first trip, as long as asked - or from its
     // first trip in the times asked, until their end)
     const times = a.from != null && a.until != null;
+    // (they drive line 1 alone: more lines asked for, none)
+    if (a.lines > 1) return [];
     const want = (times ? ((((a.until - a.from - 1) % 1440) + 1440) % 1440) + 1 : a.minutes || 120) * 60;
     return LINES[0].tours.map((t) => {
       const trips = [];

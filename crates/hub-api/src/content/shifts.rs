@@ -1,8 +1,9 @@
 //! Work shifts and what a duty of ours adds to the drive.
 //!
-//! * `hub_shifts {map, date, minutes, daypart, from?, until?, seed, legs}` - work shifts put
-//!   together from the day's timetable (`hub_core::compose`), as the duty step lists them: of a
-//!   length in a part of the day, or between two times (`from`, `until`: minutes of the day);
+//! * `hub_shifts {map, date, minutes, daypart, from?, until?, lines?, seed, legs}` - work shifts
+//!   put together from the day's timetable (`hub_core::compose`), as the duty step lists them: of
+//!   a length in a part of the day, or between two times (`from`, `until`: minutes of the day),
+//!   and of so many lines when `lines` says (811, 800, 820: 3);
 //! * `hub_duty_extras {bus, date, minutes, free}` - the start moved `bus_lead` minutes (a
 //!   setting) ahead of the first departure, and the display font chosen for the bus.
 
@@ -26,12 +27,13 @@ pub fn shifts(args: &Value) -> Answer {
     let from = arg::<Option<f64>>(args, "from")?;
     let until = arg::<Option<f64>>(args, "until")?;
     let seed = arg::<Option<f64>>(args, "seed")?.unwrap_or(0.0).max(0.0) as u64;
+    let line_count = arg::<Option<f64>>(args, "lines")?.map(|n| n.round() as i64).filter(|&n| n >= 1).map(|n| n as usize);
     let lines = hub_core::list_lines(&arg::<String>(args, "map")?, &super::date_arg(args)?)?;
     let span = match (from, until) {
         (Some(f), Some(u)) => Span::Times(f.round() as i64, u.round() as i64),
         _ => Span::Length(minutes, daypart),
     };
-    Ok(shifts_of(&lines, span, seed, &legs))
+    Ok(shifts_of(&lines, span, line_count, seed, &legs))
 }
 
 /// How the player asks for a shift.
@@ -49,27 +51,36 @@ impl Span {
         match self {
             Span::Length(minutes, daypart) => {
                 let window = DAYPARTS.get(daypart).and_then(|d| d.1);
-                Wish { seconds: minutes.clamp(30, 480) as f64 * 60.0, from: window.map(|w| w.0 as f64 * 60.0), to: window.map(|w| w.1 as f64 * 60.0), until: None, lines: Vec::new(), seed }
+                Wish {
+                    seconds: minutes.clamp(30, 480) as f64 * 60.0,
+                    from: window.map(|w| w.0 as f64 * 60.0),
+                    to: window.map(|w| w.1 as f64 * 60.0),
+                    until: None,
+                    lines: Vec::new(),
+                    line_count: None,
+                    seed,
+                }
             }
             Span::Times(from, until) => {
                 let from = from.rem_euclid(1440);
                 // (the same time twice: the whole day from it)
                 let until = from + (until - from - 1).rem_euclid(1440) + 1;
                 let (from, until) = (from as f64 * 60.0, until as f64 * 60.0);
-                Wish { seconds: until - from, from: Some(from), to: Some(until), until: Some(until), lines: Vec::new(), seed }
+                Wish { seconds: until - from, from: Some(from), to: Some(until), until: Some(until), lines: Vec::new(), line_count: None, seed }
             }
         }
     }
 }
 
-/// The shifts asked for (`span`) from the day's `lines`; `seed` draws another set ("Find other
-/// shifts"). The shift `legs` (the one chosen last) comes first when it still holds and the
-/// draw left it out, so the choice stays in the list.
-pub fn shifts_of(lines: &[LineInfo], span: Span, seed: u64, legs: &[String]) -> Value {
-    let wish = span.wish(seed);
+/// The shifts asked for (`span`, of `line_count` lines when it says) from the day's `lines`;
+/// `seed` draws another set ("Find other shifts"). The shift `legs` (the one chosen last) comes
+/// first when it still holds, is of the lines asked for and the draw left it out, so the choice
+/// stays in the list.
+pub fn shifts_of(lines: &[LineInfo], span: Span, line_count: Option<usize>, seed: u64, legs: &[String]) -> Value {
+    let wish = Wish { line_count, ..span.wish(seed) };
     let mut duties = hub_core::compose::compose(lines, &wish, SHIFTS);
     if !legs.is_empty() && !duties.iter().any(|d| d.blocks().iter().map(Block::arg).collect::<Vec<_>>() == legs) {
-        if let Some(d) = shift_of_legs(legs, lines) {
+        if let Some(d) = shift_of_legs(legs, lines).filter(|d| line_count.is_none_or(|n| d.lines().len() == n)) {
             duties.insert(0, d);
         }
     }
@@ -219,7 +230,7 @@ mod tests {
     #[test]
     fn the_shifts_of_a_day_keep_the_one_chosen() {
         let lines = lines();
-        let v = shifts_of(&lines, Span::Length(120, 0), 7, &["Linie5|2|2|2".to_string()]);
+        let v = shifts_of(&lines, Span::Length(120, 0), None, 7, &["Linie5|2|2|2".to_string()]);
         let list = v.as_array().unwrap();
         assert!(!list.is_empty());
         assert!(list.iter().any(|s| s["key"] == json!(["Linie5|2|2|2"])), "{v}");
@@ -228,12 +239,16 @@ mod tests {
             assert!(s["start"].as_f64() <= s["end"].as_f64());
         }
         assert_eq!(DAYPARTS[4].1, Some((22 * 60, 30 * 60)));
+        // one line asked for: the shift of line 5 stays; two the map has not: none, the chosen one neither
+        let one = shifts_of(&lines, Span::Length(120, 0), Some(1), 7, &["Linie5|2|2|2".to_string()]);
+        assert!(one.as_array().is_some_and(|l| !l.is_empty() && l.iter().all(|s| s["lines"] == json!(["5"]))), "{one}");
+        assert_eq!(shifts_of(&lines, Span::Length(120, 0), Some(2), 7, &["Linie5|2|2|2".to_string()]), json!([]));
     }
 
     #[test]
     fn a_shift_of_its_times_lies_between_them() {
         // the tour runs 01:00 - 02:30: a shift from 01:00 to 02:10 is its first two trips
-        let v = shifts_of(&lines(), Span::Times(60, 130), 7, &[]);
+        let v = shifts_of(&lines(), Span::Times(60, 130), None, 7, &[]);
         let list = v.as_array().unwrap();
         assert!(!list.is_empty(), "{v}");
         for s in list {

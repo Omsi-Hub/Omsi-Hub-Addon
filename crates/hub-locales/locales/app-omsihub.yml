@@ -2412,6 +2412,22 @@ _version: 2
   uk: "Між цими часами не вміщується жодна зміна. Спробуйте інший час або довший проміжок."
   pl: "Między tymi godzinami nie mieści się żadna zmiana. Spróbuj innych godzin lub dłuższego przedziału."
   es: "Ningún turno cabe entre estas horas. Prueba otras horas o un tramo más largo."
+"Lines in the shift":
+  nl: "Lijnen in de dienst"
+  de: "Linien im Dienst"
+  fr: "Lignes du poste"
+  ru: "Маршрутов в смене"
+  uk: "Маршрутів у зміні"
+  pl: "Linie w zmianie"
+  es: "Líneas del turno"
+"No shift drives this many lines here. Try fewer lines, a longer shift or other times.":
+  nl: "Geen dienst rijdt hier zoveel lijnen. Probeer minder lijnen, een langere dienst of andere tijden."
+  de: "Kein Dienst fährt hier so viele Linien. Versuche weniger Linien, einen längeren Dienst oder andere Zeiten."
+  fr: "Aucun poste ne fait autant de lignes ici. Essaie moins de lignes, un poste plus long ou d'autres horaires."
+  ru: "Ни одна смена здесь не проходит столько маршрутов. Попробуйте меньше маршрутов, более длинную смену или другое время."
+  uk: "Жодна зміна тут не проходить стільки маршрутів. Спробуйте менше маршрутів, довшу зміну або інший час."
+  pl: "Żadna zmiana nie obsługuje tu tylu linii. Spróbuj mniej linii, dłuższej zmiany lub innych godzin."
+  es: "Ningún turno recorre aquí tantas líneas. Prueba menos líneas, un turno más largo u otras horas."
 "Time of day":
   nl: "Dagdeel"
   fr: "Moment de la journée"

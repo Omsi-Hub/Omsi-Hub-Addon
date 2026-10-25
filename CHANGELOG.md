@@ -23,6 +23,10 @@ Each version of the Omsi-Hub add-on, newest first. The release on GitHub links h
   now be asked for by its times - choose *From – to* in the shift step and set, say, 05:00 and
   12:00. The shifts that fill those hours come into the list at once, each beginning at or after
   the first time and ending by the second; a shift from 22:00 to 06:00 runs past midnight.
+- **A shift of so many lines**: when the map's tours run more than one line, the shift step asks
+  how many lines the shift drives - *Any*, or 1 to 5. Ask for three and every shift in the list
+  changes lines at the termini to drive three, say 811, then 800, then 820, and no more; with a
+  length or times the map has no such shift for, the list says so.
 - **Sign in with Discord**: the account panel and the welcome have *Sign in with Discord* under
   *Sign in with Google*, through your browser as Google does. An account made with Discord on
   the website now signs in here too, without a password, and signing in with Discord links that
