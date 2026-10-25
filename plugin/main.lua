@@ -21,11 +21,15 @@
 --                         the game to Omsi-Hub's companion server by UDP)
 -- A game without the file functions gets the handshake and the reports in its log instead.
 
-local VERSION = "1.14.0"
+local VERSION = "1.16.0"
 local BRIDGE = 1
 local PANEL = "omsihub"
 
 local json = require("hubjson")
+-- (what the plugin shows while driving, in the navigator: navigator.lua; its notifications:
+-- notes.lua)
+local navigator = require("navigator")
+local notes = require("notes")
 
 -- The functions the add-on uses (src/compat.rs FEATURES; a test keeps the two lists the same),
 -- looked up in the `omsi` table itself so that this works in an openOMSI without game.has.
@@ -154,13 +158,8 @@ omsi.data.seen = omsi.data.seen or {}
 local function show_notice(n)
   if type(n) ~= "table" or not n.id or omsi.data.seen[n.id] then return end
   omsi.data.seen[n.id] = true
-  local text = n.text or ""
-  if has["ui.toast"] then
-    omsi.ui.toast(text, { title = n.title, icon = n.kind == "alert" and "warning" or "business", seconds = 12 })
-  else
-    local title = n.title and n.title ~= "" and (n.title .. ": ") or ""
-    omsi.message(title .. text, 10)
-  end
+  local alert = n.kind == "alert"
+  notes.say(n.text or "", { title = n.title, icon = alert and "warning" or "business", color = alert and "#FF5F57" or nil, seconds = 10, sticky = alert })
 end
 
 local function show_notices(list)
@@ -207,7 +206,7 @@ ontime.setup(tr, assignment, has)
 -- its notes and defects go to Omsi-Hub as reports, its notices as cards
 local strip = require("duty_strip")
 strip.setup(tr, company_duty() and assignment.crew or nil, function(kind, fields) report(kind, fields) end, function(icon, title, text)
-  if has["ui.toast"] then omsi.ui.toast(text, { title = title, icon = icon, seconds = 8 }) else omsi.message(title .. ": " .. text, 8) end
+  notes.say(text, { title = title, icon = icon, seconds = 8 })
 end)
 
 local function panel()
@@ -235,7 +234,17 @@ local function panel()
   else
     for _, c in ipairs(signon.children(assignment)) do children[#children + 1] = c end
   end
-  children[#children + 1] = { type = "text", text = tr("F10: use the panel with the mouse"), size = 12, color = "#9AA3AD", visible = can_start or not work }
+  -- (in the navigator its buttons take a click without the mouse: only a field asks for F10)
+  local docks = navigator.docks()
+  children[#children + 1] = { type = "text", text = tr("F10: use the panel with the mouse"), size = 12, color = "#9AA3AD", visible = not work or (can_start and not docks) }
+  -- (in the navigator while the duty runs: the company and the sign-off alone, the board under
+  -- it has the line, the tour and the trip)
+  if docks and work and d then
+    children = { { type = "row", children = {
+      children[1].children[1], children[1].children[2],
+      { type = "button", id = "signoff", icon = "logout", text = "", visible = signon.signed() },
+    } } }
+  end
   -- (while the panels have the mouse: the board's company parts, to switch on and off)
   if work and fn("ui.focused") and omsi.ui.focused() then
     local on = parts()
@@ -245,6 +254,7 @@ local function panel()
       children[#children + 1] = { type = "checkbox", id = "part_" .. p, text = tr(company.LABELS[p]), checked = on[p], color = "#F58620" }
     end
   end
+  if docks then return navigator.put("company", children) end
   layout.set(PANEL, { anchor = "right", x = 16, y = 0, width = 300, accent = "#F58620", draggable = true, children = children })
 end
 
@@ -256,11 +266,7 @@ local function ibis_rule()
 end
 
 local function say(text, title, icon, seconds)
-  if has["ui.toast"] then
-    omsi.ui.toast(text, { title = title, icon = icon, color = "#F58620", seconds = seconds or 10 })
-  else
-    omsi.message((title and title ~= "" and (title .. ": ") or "") .. text, seconds or 10)
-  end
+  notes.say(text, { title = title, icon = icon, color = "#F58620", seconds = seconds or 10 })
 end
 
 local function start_duty()
@@ -274,7 +280,7 @@ local function start_duty()
   start.duty(line, tour, trip, stop, function(ok, why)
     if not ok then
       local text = tr("The duty could not be started: %{reason}", { reason = why or "" })
-      if has["ui.toast"] then omsi.ui.toast(text, { icon = "warning" }) else omsi.message(text, 8) end
+      notes.say(text, { icon = "warning", color = "#FF5F57", seconds = 8 })
     end
     panel()
   end)
@@ -342,13 +348,9 @@ card.setup(tr)
 local dash = require("dash")
 dash.setup(trip, assignment, has)
 
--- the drive watch's notices: a card for a while, or a line of text in a game without panels
+-- the drive watch's notices: a notification for a while (notes.lua)
 watch.setup(tr, function(icon, title, text)
-  if has["ui.toast"] then
-    omsi.ui.toast(text, { title = title, icon = icon, seconds = 5, color = icon == "traffic" and "#D93A30" or "#E8AA46" })
-  else
-    omsi.message(title .. ": " .. text, 5)
-  end
+  notes.say(text, { title = title, icon = icon, seconds = 5, color = icon == "traffic" and "#D93A30" or "#E8AA46" })
 end)
 if fn("game.settings") then
   local s = omsi.game.settings()
@@ -557,32 +559,40 @@ accepted = function()
   if has["duty.type_ibis"] and assignment.ibis ~= false then omsi.duty.type_ibis() end
 end
 
+-- (the parts in the navigator share its panel: each one's own ids tell them apart)
+local function company_panel(p)
+  return p == PANEL or navigator.is(p)
+end
+
 omsi.on("ui_click", function(p, element)
+  if navigator.is(p) and notes.click(element) then return navigator.flush() end
   if layout.click(p, element) then return end
   if card.click(p, element) then return end
   if messages.click(p, element) then return end
   if strip.click(p, element) then return end
-  if p == PANEL and element == "signoff" and signon.signed() then strip.sign_off() end
-  if ontime.click(p, element) then return end
-  if p == PANEL and element == "start" then start_duty() end
-  if p == PANEL and signon.click(element, accepted) then
+  if company_panel(p) and element == "signoff" and signon.signed() then strip.sign_off() end
+  if ontime.click(p, element) then return navigator.flush() end
+  if company_panel(p) and element == "start" then start_duty() end
+  if company_panel(p) and signon.click(element, accepted) then
     ibis_rule()
     panel()
   end
+  navigator.flush()
 end)
 
 omsi.on("ui_change", function(p, element, value)
   if card.change(p, element, value) then return end
   if strip.change(p, element, value) then return end
-  local part = p == PANEL and type(element) == "string" and element:match("^part_(%w+)$")
+  local part = company_panel(p) and type(element) == "string" and element:match("^part_(%w+)$")
   if part and company.LABELS[part] then
     omsi.data.board_parts[part] = value == true
     -- (the duty strip is duty_strip.lua's, the only one: its switch is the board's "strip" part)
     if part == "strip" then strip.set_enabled(value == true) end
     panel()
-    return
+    return navigator.flush()
   end
-  if p == PANEL and signon.change(element, value) then panel() end
+  if company_panel(p) and signon.change(element, value) then panel() end
+  navigator.flush()
 end)
 
 -- (Ctrl, Alt and Shift held: a key with them is another one's - Ctrl+Enter the IBIS's)
@@ -595,6 +605,7 @@ omsi.on("key", function(key, down)
     omsi.ui.focus(not omsi.ui.focused())
     panel()
     layout.refresh()
+    navigator.flush()
   end
 end)
 
@@ -603,6 +614,7 @@ omsi.on("stop", function()
   if has["ui.remove"] then layout.remove(PANEL) end
   strip.stop()
   ontime.stop()
+  navigator.stop()
 end)
 
 -- service control's messages for the duty (`company.lua`), each once, when they are due
@@ -619,11 +631,7 @@ local function dispatch()
   end
   for _, m in ipairs(company.messages(assignment, math.floor(c / 60), seen)) do
     seen[m.id] = true
-    if has["ui.toast"] then
-      omsi.ui.toast(m.text, { title = m.title, icon = "campaign", color = "#F58620", seconds = 12 })
-    else
-      omsi.message(m.title .. ": " .. m.text, 10)
-    end
+    notes.say(m.text, { title = m.title, icon = "campaign", color = "#F58620", seconds = 10 })
   end
 end
 
@@ -637,6 +645,7 @@ omsi.every(1, function()
   if signon.at_work() then ontime.tick(1) end
   if not fn("has_vehicle") or omsi.has_vehicle() then dash.tick(1) end
   dispatch()
+  notes.tick(1)
 end)
 
 omsi.every(2, function()
@@ -651,7 +660,23 @@ omsi.every(5, live_notices)
 omsi.every(0.25, function() companion.tick(0.25) end)
 omsi.every(0.1, companion.screen)
 omsi.every(2, messages.read)
+-- (the navigator set again once for what its parts changed meanwhile)
+omsi.every(0.2, navigator.flush)
 omsi.every(5, messages.status)
 
+-- Omsi-Hub's look for openOMSI's own screens (theme.json beside this file: the pause menu's
+-- panels of glass, the loading screen with the logo as its bar, Omsi-Hub's blue), put in force
+-- once - the first time an openOMSI that knows interface themes (`ui.set_theme`) runs the
+-- plugin, and only while the player has openOMSI's own look; what they choose in Options ›
+-- Interface after that stays
+local function offer_theme()
+  if omsi.data.theme_offered or not (fn("ui.set_theme") and fn("ui.theme")) then return end
+  omsi.data.theme_offered = true
+  if omsi.ui.theme() ~= "" then return end
+  local ok, why = omsi.ui.set_theme(PANEL)
+  if not ok then omsi.log("[omsihub] the Omsi-Hub look is not there: " .. tostring(why)) end
+end
+
 hello()
+offer_theme()
 panel()

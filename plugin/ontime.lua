@@ -4,8 +4,9 @@
 -- bunch), the protected connections at the stops ahead, and the diversions and roadworks of
 -- the day - the closed stops struck through on the navigator, and a word before them.
 --
--- A card of its own beside the duty board, switched off by the assignment (`ontime = false`:
--- the launcher's setting) and by its own close button for the drive. It extends what the duty
+-- In the navigator under the duty board (navigator.lua; an older openOMSI: a card of its own
+-- beside it), switched off by the assignment (`ontime = false`: the launcher's setting) and by
+-- its own close button for the drive. It extends what the duty
 -- board and the trip's card say rather than repeating it: the board shows the game's delay
 -- chip, this the company's view of the same seconds (when the trip counts late, how far off
 -- that is).
@@ -16,6 +17,8 @@
 
 local json = require("hubjson")
 local layout = require("layout")
+local navigator = require("navigator")
+local notes = require("notes")
 
 local M = {}
 
@@ -96,19 +99,16 @@ end
 
 omsi.data.ontime_seen = omsi.data.ontime_seen or {}
 
--- The ONE way this card tells the driver something once: the game's toast for now. When the
--- company's messages come (r67-messages: `post(company, to, priority, template, args, action)`),
--- the launcher posts them (ontime.rs `notify`) and this stays the toast of a game that shows
--- what it is sent - switch here to showing the posted message instead.
+-- The ONE way this card tells the driver something once: a notification in the navigator
+-- (notes.lua). When the company's messages come (r67-messages: `post(company, to, priority,
+-- template, args, action)`), the launcher posts them (ontime.rs `notify`) and this stays the
+-- notification of a game that shows what it is sent - switch here to showing the posted message
+-- instead.
 local function alert(id, priority, template, args)
   if omsi.data.ontime_seen[id] then return end
   omsi.data.ontime_seen[id] = true
-  local text = tr(template, args)
-  if has["ui.toast"] then
-    omsi.ui.toast(text, { title = tr("On time"), icon = priority == "high" and "warning" or "schedule", seconds = priority == "high" and 10 or 6 })
-  else
-    omsi.message(text, 6)
-  end
+  local high = priority == "high"
+  notes.say(tr(template, args), { title = tr("On time"), icon = high and "warning" or "schedule", color = high and RED or NOW, seconds = high and 10 or 6, sticky = high })
 end
 M.alert = alert
 
@@ -172,7 +172,7 @@ function M.rows(d, b)
       { type = "icon", name = "schedule", color = NOW },
       { type = "text", text = tr("On time"), weight = "bold", grow = true, wrap = false },
       { type = "badge", text = offset(delay) .. " " .. tr(word), color = color },
-      { type = "button", id = "close", icon = "close", text = "" },
+      { type = "button", id = "ontime_close", icon = "close", text = "" },
     } },
   }
   local function add(x) children[#children + 1] = x end
@@ -234,6 +234,7 @@ function M.tick(dt)
   if not (M.on() and fn(omsi.duty, "get")) then return end
   local d = omsi.duty.get()
   if not d then
+    navigator.put("ontime", nil)
     if shown and has["ui.remove"] then layout.remove(PANEL) end
     if shown then to_navigator(nil) end
     shown, brief = false, nil
@@ -255,24 +256,27 @@ function M.tick(dt)
     end
   end
   if not has["ui.set"] then return end
-  layout.set(PANEL, { anchor = "top_left", x = 16, y = 330, width = 330, accent = NOW, draggable = true, children = M.rows(d, brief) })
   shown = true
+  if navigator.docks() then return navigator.put("ontime", M.rows(d, brief)) end
+  layout.set(PANEL, { anchor = "top_left", x = 16, y = 330, width = 330, accent = NOW, draggable = true, children = M.rows(d, brief) })
 end
 
 -- its close button: off for this drive
 function M.click(panel, element)
-  if panel ~= PANEL then return false end
-  if element == "close" then
+  if panel ~= PANEL and not (navigator.is(panel) and element == "ontime_close") then return false end
+  if element == "ontime_close" then
     off = true
+    navigator.put("ontime", nil)
+    if shown and has["ui.remove"] then layout.remove(PANEL) end
     shown = false
-    if has["ui.remove"] then layout.remove(PANEL) end
     to_navigator(nil)
   end
   return true
 end
 
 function M.stop()
-  if has["ui.remove"] then layout.remove(PANEL) end
+  if shown and has["ui.remove"] then layout.remove(PANEL) end
+  shown = false
 end
 
 return M

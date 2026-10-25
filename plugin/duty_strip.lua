@@ -6,13 +6,15 @@
 -- and the walk-around at sign-off whose defects go to the company's workshop. A collision the
 -- game sees is logged to the workshop by itself.
 --
--- Self-contained: a panel of its own (`omsihub_strip`), its data from the assignment's `crew`
+-- Self-contained: in the navigator under the duty board (navigator.lua; an older openOMSI: a
+-- panel of its own, `omsihub_strip`), its data from the assignment's `crew`
 -- (Omsi-Hub's `bridge::Crew`, made from the RosterFlow duty the company launched), and what it
 -- reports goes through the `report` main.lua hands it. Switched off by the assignment
 -- (`crew.strip = false`) or by another module that draws a strip of its own (`M.set_enabled`):
 -- there is only ever one duty strip on the screen.
 
 local layout = require("layout")
+local navigator = require("navigator")
 
 local M = {}
 
@@ -55,6 +57,7 @@ end
 
 function M.set_enabled(on)
   enabled = on and crew ~= nil
+  if not enabled then navigator.put("strip", nil) end
   if not enabled and shown and omsi.ui and omsi.ui.remove then
     layout.remove(PANEL)
     shown = false
@@ -271,12 +274,14 @@ end
 function M.update(on)
   if not (crew and omsi.ui and omsi.ui.set) then return end
   if not (enabled and on) then
+    navigator.put("strip", nil)
     if shown then
       layout.remove(PANEL)
       shown = false
     end
     return
   end
+  if navigator.docks() then return navigator.put("strip", M.rows(minute())) end
   layout.set(PANEL, { anchor = "bottom_left", x = 16, y = 16, width = 340, accent = ACCENT, draggable = true, children = M.rows(minute()) })
   shown = true
 end
@@ -325,8 +330,8 @@ end
 
 -- a click on the strip: whether it was the strip's
 function M.click(p, element)
-  if p ~= PANEL or not crew then return false end
   element = element or ""
+  if (p ~= PANEL and not (navigator.is(p) and element:sub(1, 6) == "strip_")) or not crew then return false end
   if element == "strip_note" then open = "note"
   elseif element == "strip_check" then open = "check"
   elseif element == "strip_close" then open = nil
@@ -346,8 +351,8 @@ end
 
 -- a checkbox ticked or a field typed into: whether it was the strip's
 function M.change(p, element, value)
-  if p ~= PANEL or not crew then return false end
   element = element or ""
+  if (p ~= PANEL and not (navigator.is(p) and element:sub(1, 6) == "strip_")) or not crew then return false end
   local tpl = element:match("^strip_tpl_(.+)$")
   local chk = element:match("^strip_chk_(.+)$")
   if tpl then

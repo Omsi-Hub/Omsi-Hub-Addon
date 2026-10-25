@@ -14,15 +14,39 @@ Each version of the Omsi-Hub add-on, newest first. The release on GitHub links h
   the stops and trips, the control room's messages, the break, and the bus's IBIS and ticket
   printer drawn as in the cab. The QR code now opens this page (the Companion app's own
   scanner reads it too).
+- **openOMSI in Omsi-Hub's look**: with an openOMSI that knows interface themes, the game's own
+  screens look like Omsi-Hub. The loading screen is Omsi-Hub's logo on its dark blue, and the
+  logo is the loading bar: its blue ring is drawn round the bus and on along the line under
+  the name as the map loads. When the ring is nearly round, the bus pops up and flashes its
+  headlights; the stops pop up on the line as it reaches them. The pause menu, its settings and lists are panes of frosted glass
+  over the game's picture, in Omsi-Hub's blue, with Omsi-Hub's logo at the top. The plugin
+  puts the look in force once; Options › Interface › Interface theme in openOMSI switches back
+  to openOMSI's own look (or to another theme), and that choice stays. The plugin is 1.16.0.
 
 ### Changed
 
+- **Everything in the game is in the navigator, and notifications click away with the mouse**:
+  the company's notices, service control's and the control room's messages, the offences,
+  the reliefs and the on-time alerts are no longer cards at the top right that cannot be
+  clicked; they come into the navigator under its map, the newest on top, each with a close
+  button that works with the mouse as it is (no F10). An urgent message or an alert stays until
+  you close it, the others go by themselves after a while. The control room's inbox, the
+  company's panel and signing on, the duty board, the on-time card and the duty strip are in
+  the navigator too, one under the other, instead of panels of their own scattered over the
+  screen: move the navigator by dragging its map, size it at its corner (Settings › General ›
+  Navigator as a widget) and Shift+N shows and hides it. Only typing your personnel number
+  still asks for F10. An openOMSI without the navigator's board keeps the panels of their own.
 - **Buses for the AI traffic are no longer offered to drive**: a bus with "AI" or "KI" in its
   folder, its file name or its name (`MAN_SD202_AI`, `KI-Busse`, `Citaro KI`), or marked
   `[ai_veh_type]`, is left out of the bus list of a drive, the company's market and dealer,
   the line editor's bus choice and the livery studio; a drive with such a bus, chosen before,
   is refused with a word why. Such a bus the company bought before stays in the fleet; give
   its tours another bus to drive them yourself.
+- **Signing on with your personnel number is back, and always asked for a company's duty**:
+  in the bus company mode you sign on in the game with your driver's pass (personnel number
+  and code, made for you the first time and shown on the company's panel and in the
+  Companion) before the duty order and the IBIS; there is no switch to leave it out. A drive
+  of your own (a free drive, a line and tour you chose) never asks for it.
 
 ## 1.0.1
 

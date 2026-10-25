@@ -225,7 +225,9 @@ pub fn leg_of(text: &str) -> Option<bridge::Leg> {
 pub fn assignment_for(d: &Duty, company: Option<&CompanyPart>, settings: &Settings, issued: u64) -> Assignment {
     let on = |k: &str, default: bool| settings.other.get(k).and_then(Value::as_bool).unwrap_or(default);
     let driver = d.profile.clone().map(|p| p.trim().to_string()).filter(|p| !p.is_empty()).unwrap_or_else(crate::launcher::driver);
-    let personnel = company.filter(|_| on("nav_signon", false)).and_then(|_| personnel_of(&driver, true));
+    // (a company's duty is always signed on for with the driver's pass - there is no switch for
+    // it; a drive of the player's own never is; a driver without a pass gets one)
+    let personnel = company.and_then(|_| personnel_of(&driver, true));
     let legs: Vec<bridge::Leg> = d.legs.iter().filter_map(|l| leg_of(l)).collect();
     let first = legs.first();
     let free = d.free_line.as_deref().map(str::trim).filter(|r| !r.is_empty()).map(str::to_string);
@@ -816,8 +818,21 @@ mod tests {
             parts: crate::company::plugin::Parts { sheet: vec![bridge::SheetRow { kind: "sign_on".into(), ..Default::default() }], ..Default::default() },
             ..Default::default()
         };
+        // (the driver's pass made in the tests' own data folder)
+        crate::online::test_data_dir();
         let a = assignment_for(&d, Some(&part), &s, 9);
         assert_eq!((a.company.as_str(), a.duty.as_str(), a.sheet.len()), ("Stadtbus", "5 2 1", 1));
+        // signed on for with the driver's pass, made the first time and the same after - also
+        // with the old setting `nav_signon` switched off: a company's duty always asks for it
+        let pass = a.personnel.clone().expect("the pass");
+        assert!(pass.number.len() == 6 && pass.code.len() == 4, "{pass:?}");
+        assert_eq!(assignment_for(&d, Some(&part), &s, 9).personnel, Some(pass.clone()));
+        assert_eq!(personnel_of("Luc", false), Some(pass.clone()));
+        let mut old = s.clone();
+        old.other.insert("nav_signon".into(), json!(false));
+        assert_eq!(assignment_for(&d, Some(&part), &old, 9).personnel, Some(pass));
+        assert!(assignment_for(&d, None, &s, 9).personnel.is_none(), "a drive of the player's own: no sign-on");
+        assert!(assignment_for(&free, None, &s, 9).personnel.is_none(), "a free drive: no sign-on");
         assert_eq!(a.crew.map(|c| (c.bus, c.strip)), Some((4, Some(true))));
     }
 
