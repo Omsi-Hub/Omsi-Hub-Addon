@@ -44,7 +44,7 @@ mod tests;
 pub use avatar::{picture_kind, MAX_BYTES as AVATAR_MAX_BYTES};
 pub use client::{Client, Friend, Invite, Profile, Stats};
 pub use codes::Error;
-pub use oauth::{Flow, Handoff};
+pub use oauth::{Flow, Handoff, Provider};
 pub use saves::{Cloud, SaveError, Slot};
 
 /// The Supabase project `omsi-hub-online` (public, as every client uses it; not a secret).
@@ -104,5 +104,9 @@ impl Endpoints {
 
     pub(crate) fn storage(&self, path: &str) -> String {
         format!("{}/storage/v1{path}", self.base)
+    }
+
+    pub(crate) fn functions(&self, path: &str) -> String {
+        format!("{}/functions/v1{path}", self.base)
     }
 }

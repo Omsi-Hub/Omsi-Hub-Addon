@@ -13,13 +13,15 @@
 //! access token is refused here with `privacy` and nothing is sent. Only those two functions and
 //! deleting the account go through.
 //!
-//! Google signs in through the browser (`oauth.rs`); what it hands back becomes a session here
-//! (`sign_in_with`) as a password's does. Such an account has no password: deleting it asks for
-//! none (`has_password`), as on the website.
+//! Google and Discord sign in through the browser (`oauth.rs`); what they hand back becomes a
+//! session here (`sign_in_with`) as a password's does. Such an account has no password: deleting it
+//! asks for none (`has_password`), as on the website. Signed in with Discord, the account is linked
+//! to that Discord account for the roles on the Omsi-Hub server, as the website does
+//! (`discord_claim`, the Edge Function `discord-bot`).
 
 use crate::codes::{self, Error};
 use crate::http::{encode, Body, Http, Reply};
-use crate::oauth::Handoff;
+use crate::oauth::{Handoff, Provider};
 use crate::store::SecretStore;
 use crate::{check, privacy, Endpoints};
 use serde_json::{json, Value};
@@ -237,14 +239,31 @@ impl Client {
 
     /// Signing in with what the browser handed back (`oauth::Flow::wait`): Supabase's PKCE code
     /// exchanged with its verifier (`POST /token?grant_type=pkce`). A code the auth does not take
-    /// is `oauth_failed`.
-    pub fn sign_in_with(&mut self, h: &Handoff) -> Result<(), Error> {
+    /// is `oauth_failed`. Answers the provider's own token of a Discord sign-in, once, for
+    /// `discord_claim` (kept nowhere).
+    pub fn sign_in_with(&mut self, h: &Handoff) -> Result<Option<String>, Error> {
         let s = self.auth("POST", "/token?grant_type=pkce", Some(json!({ "auth_code": h.code, "code_verifier": h.verifier })), None);
         let s = s.map_err(|e| match e {
             Error::Offline | Error::Code("too_many") => e,
             _ => Error::Code("oauth_failed"),
         })?;
-        if self.keep(&s) {
+        if !self.keep(&s) {
+            return Err(Error::Code("server"));
+        }
+        Ok((h.provider == Provider::Discord).then(|| s.get("provider_token").and_then(Value::as_str).unwrap_or("").to_string()))
+    }
+
+    /// The account linked to the Discord account it signed in with (the Edge Function
+    /// `discord-bot`, `{action: claim, provider_token}`, as the website does after a Discord
+    /// sign-in): the roles on the Omsi-Hub server, and with the sign-in's token (`guilds.join`) the
+    /// player brought into the server once. Only after the privacy statement is agreed to.
+    pub fn discord_claim(&mut self, provider_token: &str) -> Result<(), Error> {
+        let mut body = json!({ "action": "claim" });
+        if !provider_token.is_empty() {
+            body["provider_token"] = json!(provider_token);
+        }
+        let r = self.authed("POST", &self.ep.functions("/discord-bot"), Body::Json(&body), &[], false)?;
+        if r.ok() && r.body.get("ok").and_then(Value::as_bool) == Some(true) {
             Ok(())
         } else {
             Err(Error::Code("server"))

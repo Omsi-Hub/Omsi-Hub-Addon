@@ -14,6 +14,10 @@
 //   code good once, for five minutes). redirect_to must match STANDIN_REDIRECTS (Supabase's globs,
 //   comma-separated; default `http://127.0.0.1:*/callback*`), as Supabase's allow-list.
 //   `&standin_answer=deny` plays a player who says no (`?error=access_denied`).
+// - Discord (`provider=discord`) the same, as discord-player@discord.standin; its exchange also
+//   answers `provider_token`, which `POST /functions/v1/discord-bot {action: 'claim',
+//   provider_token}` (the website's Edge Function, only its claim) takes to link that Discord
+//   account; the links are read back by tests at `GET /__discord?user=<id>`.
 // - The database (`/rest/v1`): the functions of online/supabase/schema.sql with the same checks and
 //   answers (the privacy statement's `accept_privacy` and `my_privacy` among them), and the tables' reads with the same row-level rules (profiles, invites).
 // - Storage (`/storage/v1`): the private bucket `saves`, each player only in users/<own id>/, only
@@ -46,6 +50,7 @@ const friendships = []; // { requester, addressee, status, created_at }
 const invites = []; // { id, from_user, to_user, session_code, created_at, expires_at }
 const files = new Map(); // 'users/<id>/slotN/<name>' -> { bytes, type, id, at }
 const consents = []; // { user_id, version, accepted_at } (privacy_consents)
+const discords = new Map(); // user id -> { id, name, linked_at, joined } (discord-bot's claim)
 let inviteId = 0;
 
 const now = () => Date.now();
@@ -293,7 +298,7 @@ const FUNCTIONS = {
 };
 const ANON = new Set(['hub_leaderboard', 'hub_board_counts']);
 
-// --- Google ----------------------------------------------------------------------------------------
+// --- Google and Discord ----------------------------------------------------------------------------
 
 /** Supabase's redirect globs (separators `.` and `/`): `**` anything, `*` and `?` no separator,
  * `[0-9]` / `[!a-z]` one character of (not of) a class. */
@@ -314,7 +319,7 @@ function glob(g) {
 }
 const redirectAllowed = (url) => REDIRECTS.some((g) => glob(g).test(url));
 
-/** The user Google signs in (made the first time, confirmed, without a password). */
+/** The user a provider signs in (made the first time, confirmed, without a password). */
 function providerUser(email, app, meta = {}) {
   let u = userByEmail(email);
   if (!u) {
@@ -328,15 +333,19 @@ const withQuery = (url, q) => `${url}${url.includes('?') ? '&' : '?'}${q}`;
 
 function authorize(res, q) {
   const provider = q.get('provider');
-  if (provider !== 'google') return authError(res, 400, 'validation_failed', 'Unsupported provider: provider is not enabled');
+  if (provider !== 'google' && provider !== 'discord') return authError(res, 400, 'validation_failed', 'Unsupported provider: provider is not enabled');
   const to = q.get('redirect_to') || '';
   if (!redirectAllowed(to)) return authError(res, 400, 'validation_failed', `redirect_to is not on the allow-list: ${to}`);
   if (q.get('standin_answer') === 'deny') return go(res, withQuery(to, 'error=access_denied&error_code=provider_error&error_description=The+user+denied+access'));
   const challenge = q.get('code_challenge');
   if (!challenge || String(q.get('code_challenge_method')).toLowerCase() !== 's256') return authError(res, 400, 'validation_failed', 'the stand-in takes PKCE with S256 only');
-  const u = providerUser('google-player@google.standin', { provider: 'google', providers: ['google'] }, { full_name: 'Google Player' });
+  const u = provider === 'discord'
+    ? providerUser('discord-player@discord.standin', { provider: 'discord', providers: ['discord'] }, { full_name: 'discord_player', provider_id: '42' })
+    : providerUser('google-player@google.standin', { provider: 'google', providers: ['google'] }, { full_name: 'Google Player' });
   const code = crypto.randomUUID();
-  flows.set(code, { user: u.id, challenge, until: now() + 5 * 60e3 });
+  // (Discord's own token, with guilds.join when it was asked for)
+  const token = provider === 'discord' ? `discord.${String(q.get('scopes') || '').includes('guilds.join') ? 'join' : 'plain'}.${crypto.randomBytes(8).toString('hex')}` : '';
+  flows.set(code, { user: u.id, challenge, token, until: now() + 5 * 60e3 });
   return go(res, withQuery(to, `code=${code}`));
 }
 
@@ -367,7 +376,7 @@ async function auth(req, res, path, q, body) {
     if (crypto.createHash('sha256').update(String(body.code_verifier || '')).digest('base64url') !== f.challenge) return authError(res, 400, 'bad_code_verifier', 'code challenge does not match previously saved code verifier');
     flows.delete(body.auth_code);
     const u = users.get(f.user);
-    return u ? send(res, 200, session(u)) : authError(res, 404, 'user_not_found', 'User not found');
+    return u ? send(res, 200, { ...session(u), ...(f.token ? { provider_token: f.token } : {}) }) : authError(res, 404, 'user_not_found', 'User not found');
   }
   if (route === 'POST /token' && q.get('grant_type') === 'refresh_token') {
     const r = refreshes.get(body.refresh_token);
@@ -417,6 +426,19 @@ async function auth(req, res, path, q, body) {
     return send(res, 204);
   }
   return authError(res, 404, 'not_found', 'no such route');
+}
+
+/** The website's Edge Function discord-bot, its claim only: a player signed in with Discord linked
+ * to that Discord account (with the sign-in's token: brought into the server too). */
+function discordBot(req, res, body) {
+  const who = bearer(req);
+  if (!who) return send(res, 401, { ok: false, error: 'signed_out' });
+  if (body.action !== 'claim') return send(res, 400, { ok: false, error: 'bad_request' });
+  const u = who.user;
+  if (!appOf(u).providers.includes('discord')) return send(res, 400, { ok: false, error: 'link_failed' });
+  const d = { id: String(u.meta.provider_id || ''), name: String(u.meta.full_name || ''), linked_at: iso(), joined: String(body.provider_token || '').startsWith('discord.join.') };
+  discords.set(u.id, d);
+  return send(res, 200, { ok: true, discord: { id: d.id, name: d.name, linked_at: d.linked_at } });
 }
 
 function rest(req, res, path, q, body) {
@@ -502,6 +524,7 @@ http
     const path = url.pathname;
     try {
       if (path === '/__mail') return send(res, 200, codes.get(String(url.searchParams.get('email')).toLowerCase()) || {});
+      if (path === '/__discord') return send(res, 200, discords.get(String(url.searchParams.get('user'))) || null);
       // (the browser's: no apikey, as on Supabase)
       if (req.method === 'GET' && path === '/auth/v1/authorize') return authorize(res, url.searchParams);
       if (req.headers.apikey !== KEY) return send(res, 401, { message: 'No API key found in request', hint: 'No `apikey` request header or url param was found.' });
@@ -510,6 +533,7 @@ http
       if (path.startsWith('/auth/v1/')) return await auth(req, res, path.slice(8), url.searchParams, body);
       if (path.startsWith('/rest/v1/')) return rest(req, res, path.slice(8), url.searchParams, body);
       if (path.startsWith('/storage/v1/')) return storage(req, res, path.slice(11), body, raw);
+      if (req.method === 'POST' && path === '/functions/v1/discord-bot') return discordBot(req, res, body);
       send(res, 404, { message: 'not found' });
     } catch (e) {
       console.error(e);

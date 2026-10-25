@@ -5,8 +5,9 @@
 # Omsi-Hub online: accounts and friends
 
 An account is optional. Without one, Omsi-Hub plays fully local and only the online features are
-missing (friends, online state, invites). A player signs in with email and a password, or with a
-Google account. Nothing else (Luc, 2026-10-16: "we doen alleen google of email", website and app).
+missing (friends, online state, invites). A player signs in with email and a password, a Google
+account or a Discord account (Luc, 2026-10-16: "we doen alleen google of email"; Discord back on the
+website 2026-10-19, in the app 2026-10-25: "in de app mist ook de log in met discord optie").
 
 **One account, one driver** (Luc, 2026-10-18). The account on a computer belongs to one driver:
 the first sign-in makes or chooses the driver of the account's display name and keeps it as the
@@ -65,15 +66,15 @@ What changed for the app's client ("The app's side" below):
 - cloud saves: Storage objects under `saves/users/<user id>/slot1|slot2/` instead of the `saves`
   function; deleting the account removes them first, then calls `delete_my_account`.
 
-### Google
+### Google and Discord
 
 Besides email and a password, a player can sign in with Google (Luc, 2026-10-16). Discord and Steam
 were tried the same day and dropped. **Discord is back on the website** (Luc, 2026-10-19: "een
 functie om met discord in te loggen en om discord te koppelen aan je website account"): Supabase
 Auth's Discord provider on account.html, and any account can link a Discord account for the roles
-and the tickets on the Omsi-Hub Discord server (the website's `discord/README.md`). The app still
-signs in with Google or email only: an account made with Discord on the website gets a password
-for the app through "Forgot your password?" (Discord in the app is still to come).
+and the tickets on the Omsi-Hub Discord server (the website's `discord/README.md`). **The app signs
+in with Discord too** (Luc, 2026-10-25), the same way as with Google ("Google and Discord in the
+app" below).
 
 - Google is a Supabase Auth provider. The website sends the player to
   `/auth/v1/authorize?provider=google&redirect_to=<page>` and gets the session back in the address.
@@ -434,7 +435,7 @@ in the app, when the website has not made it yet.
 | `/verify` | `type: "email"` (else `"signup"`), `email`, `token` | the email confirmed by its code; it signs in |
 | `/recover` | `email` | "Forgot your password?" (the same answer whether the address has an account or not) |
 | `/verify` | `type: "recovery"`, `email`, `token` | the reset's code; it signs in, then `PUT /user` `{password}` sets the new password |
-| `/token?grant_type=pkce` | `auth_code`, `code_verifier` | Google: the browser's code exchanged ("Google in the app") |
+| `/token?grant_type=pkce` | `auth_code`, `code_verifier` | Google or Discord: the browser's code exchanged ("Google and Discord in the app") |
 | `GET /user` | - (bearer) | only before deleting the account: the address to check the password against (none for an account without a password) |
 | `/logout?scope=local` | - (bearer) | signing out (best effort: the token goes from the store whatever the answer) |
 
@@ -444,10 +445,11 @@ the player's cloud saves were deleted through Storage. Supabase Auth's errors (`
 msg}`, or an older `{error, error_description}`) are read for their code only. No cookie and no
 `Origin` header is sent.
 
-### Google in the app
+### Google and Discord in the app
 
 `crates/omsihub-online/src/oauth.rs`, the commands `ol_oauth`, `ol_oauth_wait`, `ol_oauth_cancel`.
-The button "Sign in with Google" (under the email sign-in, after "or") first pops up the Privacy
+The buttons "Sign in with Google" and "Sign in with Discord" (under the email sign-in, after "or";
+`ol_oauth {provider: google|discord}`, the flow the same for both) first pop up the Privacy
 Statement (`askPrivacy` in `privacy.js`: the whole text, the consent sentence, "Cancel" and "Accept
 and continue"); only once it is accepted does the browser open.
 
@@ -473,9 +475,19 @@ turned away), with no-store, no-referrer and a strict CSP; it stops at the first
 is logged. The codes: `oauth_cancelled` (the player said no, or cancelled), `oauth_timeout`,
 `oauth_failed`.
 
-An account made with Google has no password (`app_metadata.providers` without `email`): "Delete
-account" asks for a tick instead of the password, as the website does. A Google account joined to an
-email account keeps its password.
+An account made with Google or Discord has no password (`app_metadata.providers` without `email`):
+"Delete account" asks for a tick instead of the password, as the website does. A Google or
+Discord account joined to an email account keeps its password.
+
+**Discord** asks the website's scopes, `&scopes=identify%20email%20guilds.join`. Its PKCE exchange
+answers Discord's own token (`provider_token`), which the app keeps nowhere: once signed in and the
+Privacy Statement agreed to, it calls the website's Edge Function `discord-bot` with
+`{action: "claim", provider_token}` and the player's access token (`Client::discord_claim`), which
+links that Discord account to the Omsi-Hub account and brings the player into the Omsi-Hub server
+once, as the website does after its Discord sign-in. A claim that fails is not shown: the player
+links it on the website's account page. Nothing else is needed in Supabase: the Discord provider is
+on for the website, and the redirect URL `http://127.0.0.1:*/callback*` below is the provider's
+too.
 
 **To set in Supabase (Luc):**
 
@@ -494,9 +506,10 @@ email account keeps its password.
   could hand a session to such a name on the player's own network. Prefer the stricter form when
   Supabase accepts it.
 
-The stand-in (`online/standin/standin.mjs`) answers `authorize` (no Google page:
-`google-player@google.standin` signs in at once; `&standin_answer=deny` says no) and the `pkce`
-exchange, with the same redirect globs (`STANDIN_REDIRECTS`); the example
+The stand-in (`online/standin/standin.mjs`) answers `authorize` (no Google or Discord page:
+`google-player@google.standin` or `discord-player@discord.standin` signs in at once;
+`&standin_answer=deny` says no) and the `pkce` exchange (Discord's with a `provider_token`), with
+the same redirect globs (`STANDIN_REDIRECTS`), and `discord-bot`'s claim; the example
 `cargo run -p omsihub-online --example standin` runs it through a scripted browser.
 
 ### The refresh token, the access token
@@ -620,11 +633,12 @@ while the program is built; a test fails when the two disagree). The server keep
 which version (`privacy_consents`, `accept_privacy(p_version)`, `my_privacy()`; schema.sql).
 
 - Playing without an account asks nothing.
-- The statement pops up before an account is made and before Google signs in (Luc, Beta 67): "Create
-  an account" and "Sign in with Google" open it first, with the sentence "I have read the Privacy
-  Statement and agree to the processing of my personal data as described therein.", "Cancel" and
-  "Accept and continue". Cancelled, nothing happens; accepted, the website opens, or the browser goes
-  to Google and `accept_privacy` is sent once signed in (`agree: true`).
+- The statement pops up before an account is made and before Google or Discord signs in (Luc, Beta
+  67): "Create an account", "Sign in with Google" and "Sign in with Discord" open it first, with the
+  sentence "I have read the Privacy Statement and agree to the processing of my personal data as
+  described therein.", "Cancel" and "Accept and continue". Cancelled, nothing happens; accepted, the
+  website opens, or the browser goes to Google or Discord and `accept_privacy` is sent once signed
+  in (`agree: true`).
 - The email sign-in (and the email's code, and the password reset) has no tick: it sends
   `agree: false`, and an account that has not accepted the current version is asked right after
   signing in, as below.

@@ -23,13 +23,15 @@
 //! * `ol_invite {id}` - the company session hosted now, to a friend; `ol_dismiss {id}`;
 //! * `ol_presence {away}`, `ol_seen`, `ol_refresh`;
 //! * `ol_privacy` - the privacy statement (`privacy.rs`); `ol_privacy_accept` - agreed to;
-//! * `ol_oauth {agree}` - signing in with Google: the listener started (`hub_online::oauth`),
-//!   the address the page opens in the system's browser answered with a number;
-//!   `ol_oauth_wait {id, agree}` - waits for the browser (a few minutes at most), then signs in
-//!   as `ol_sign_in` does; `ol_oauth_cancel` - the wait given up.
+//! * `ol_oauth {agree, provider}` - signing in with Google or Discord (`provider`: `google`, the
+//!   default, or `discord`): the listener started (`hub_online::oauth`), the address the page
+//!   opens in the system's browser answered with a number; `ol_oauth_wait {id, agree}` - waits
+//!   for the browser (a few minutes at most), then signs in as `ol_sign_in` does, and a Discord
+//!   sign-in links the account to that Discord account as the website does (`discord_claim`);
+//!   `ol_oauth_cancel` - the wait given up.
 //!
 //! The privacy statement (docs/PRIVACY.md): the page asks it before "Create an account" and
-//! before Google (`agree`: accepted there), which is sent as `accept_privacy` once signed in; the
+//! before Google or Discord (`agree`: accepted there), which is sent as `accept_privacy` once signed in; the
 //! email sign-in sends no `agree`, and its account is asked afterwards. At every sign-in and every
 //! restored session `my_privacy` is asked; below the current version the state says
 //! `privacy.needed`, the page asks (agree, or sign out), and the account's features - the
@@ -46,7 +48,7 @@
 //! reads it.
 
 use crate::{Answer, Platform};
-use hub_online::oauth::{self, Texts};
+use hub_online::oauth::{self, Provider, Texts};
 use hub_online::{codes, privacy, store, Client, Endpoints, Error, Flow, Friend, Invite, Profile, Stats};
 use serde_json::{json, Value};
 use std::collections::{BTreeMap, HashMap, HashSet};
@@ -703,7 +705,7 @@ fn reset(args: &Value) -> Value {
     }
 }
 
-// --- Google ------------------------------------------------------------------------------------
+// --- Google and Discord --------------------------------------------------------------------------
 
 /// The sign-in waiting in the browser (one at a time): its number, the flow until `ol_oauth_wait`
 /// takes it, and its cancel.
@@ -740,7 +742,8 @@ fn oauth_start(args: &Value) -> Value {
     if !agree(args) {
         return fail(Error::Code("privacy"));
     }
-    let flow = match Flow::start(&endpoints(), oauth_texts()) {
+    let Some(provider) = Provider::of(args.get("provider").and_then(Value::as_str).unwrap_or("google")) else { return fail(Error::Code("oauth_failed")) };
+    let flow = match Flow::start(&endpoints(), provider, oauth_texts()) {
         Ok(f) => f,
         Err(e) => return fail(e),
     };
@@ -771,7 +774,15 @@ fn oauth_wait(args: &Value) -> Value {
         }
     }
     match got.and_then(|h| with(|c| c.sign_in_with(&h))) {
-        Ok(()) => after_sign_in(agree(args)),
+        Ok(discord) => {
+            let a = after_sign_in(agree(args));
+            // (signed in with Discord: that Discord account linked, as the website does - quietly:
+            // a link that fails is made on the website's account page)
+            if let Some(t) = discord.filter(|_| a.get("ok").is_some() && !view().need_privacy) {
+                let _ = with(|c| c.discord_claim(&t));
+            }
+            a
+        }
         Err(e) => fail(e),
     }
 }
@@ -1038,16 +1049,20 @@ mod tests {
         assert!(missing.is_empty(), "{} missing (crates/hub-locales/locales/online.yml):\n{}", missing.len(), missing.join("\n"));
     }
 
-    /// Google: only with the privacy statement accepted, the address for the browser answered, and
-    /// a cancel ends the wait at once.
+    /// Google and Discord: only with the privacy statement accepted, the address for the browser
+    /// answered, and a cancel ends the wait at once.
     #[test]
-    fn a_google_sign_in_starts_waits_and_cancels() {
+    fn a_browser_sign_in_starts_waits_and_cancels() {
         let v = run("ol_oauth", json!({ "lang": "de" }));
         assert_eq!(v["code"], "privacy");
         // (a second start gives the first one up)
         let first = run("ol_oauth", json!({ "agree": true }))["id"].as_u64().unwrap();
         let v = run("ol_oauth", json!({ "agree": true }));
         assert!(v["url"].as_str().unwrap().starts_with("https://127.0.0.1:9/auth/v1/authorize?provider=google&redirect_to="), "{v}");
+        let v = run("ol_oauth", json!({ "agree": true, "provider": "discord" }));
+        let url = v["url"].as_str().unwrap();
+        assert!(url.starts_with("https://127.0.0.1:9/auth/v1/authorize?provider=discord&redirect_to=") && url.ends_with("&scopes=identify%20email%20guilds.join"), "{v}");
+        assert_eq!(run("ol_oauth", json!({ "agree": true, "provider": "steam" }))["code"], "oauth_failed");
         let id = v["id"].as_u64().unwrap();
         run("ol_oauth_cancel", json!({}));
         let t = std::time::Instant::now();

@@ -9,13 +9,14 @@
 // signed in.
 //
 // The privacy statement (`../privacy.js`): it pops up before "Create an account" opens the
-// website and before Google signs in (accepted, or nothing happens), and is asked of a signed-in
+// website and before Google or Discord signs in (accepted, or nothing happens), and is asked of a signed-in
 // player who has not agreed to its current version - agree, or sign out and play on locally -,
 // the account's features waiting meanwhile. Playing without an account asks nothing.
 //
-// Google signs in through the system's browser (`ol_oauth`: Rust's listener on 127.0.0.1 takes
-// the answer back); the panel waits meanwhile, and the player may cancel. Such an account has no
-// password: deleting it asks for a tick instead.
+// Google and Discord sign in through the system's browser (`ol_oauth`: Rust's listener on
+// 127.0.0.1 takes the answer back); the panel waits meanwhile, and the player may cancel. Such an
+// account has no password: deleting it asks for a tick instead. Signed in with Discord, the account
+// is linked to that Discord account for the Omsi-Hub server's roles, as on the website.
 //
 // Ported from the old launcher/ui/js/omsihub/online.js onto the new frame (api.js, store.js,
 // i18n.js). Where it goes: see index.js.
@@ -152,25 +153,27 @@ function Note({ icon = 'info', text, kind = '' }) {
   return html`<p class=${'ol-note ' + kind}><${Icon} name=${icon} size=${14} /><span>${text}</span></p>`;
 }
 
-// --- Google ----------------------------------------------------------------------------------------
+// --- Google and Discord ----------------------------------------------------------------------------
 
-/** Google's mark, in the button's own colour. */
-const GoogleMark = () =>
-  html`<svg class="ol-oa-mark" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.6 10.2H12v3.9h5.5c-.5 2.5-2.7 4.3-5.5 4.3a6.4 6.4 0 1 1 4.2-11.2l2.8-2.8A10.3 10.3 0 0 0 12 1.7a10.3 10.3 0 1 0 0 20.6c5.6 0 10-3.9 10-10.3 0-.6-.1-1.2-.4-1.8z" /></svg>`;
+/** The providers' marks, in the button's own colour (Discord's from Simple Icons, CC0). */
+const MARKS = {
+  google: 'M21.6 10.2H12v3.9h5.5c-.5 2.5-2.7 4.3-5.5 4.3a6.4 6.4 0 1 1 4.2-11.2l2.8-2.8A10.3 10.3 0 0 0 12 1.7a10.3 10.3 0 1 0 0 20.6c5.6 0 10-3.9 10-10.3 0-.6-.1-1.2-.4-1.8z',
+  discord: 'M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z',
+};
+const PROVIDERS = [['google', 'Google'], ['discord', 'Discord']];
 
-/** The Google button, or, while the browser has the sign-in, the wait with a cancel. */
-function GoogleSignIn({ onDone, onError, disabled }) {
+/** The Google and Discord buttons, or, while the browser has the sign-in, the wait with a cancel. */
+function OAuthSignIn({ onDone, onError, disabled }) {
   const [wait, setWait] = useState(null);
-  const name = 'Google';
-  // (the Privacy Statement pops up first; accepted, the browser goes to Google)
-  const go = async () => {
+  // (the Privacy Statement pops up first; accepted, the browser goes to the provider)
+  const go = async (provider, name) => {
     if (!(await askPrivacy())) return;
     onError('');
-    const r = await act('ol_oauth', { agree: true }, true);
+    const r = await act('ol_oauth', { agree: true, provider }, true);
     if (r.error) return onError(r.error);
     // (no browser opened - on Linux, no xdg-open handler -: the wait offers the address to copy)
     openUrl(r.url).catch((e) => toast(String(e?.message || e), 'info'));
-    setWait({ url: r.url });
+    setWait({ url: r.url, name });
     const a = await act('ol_oauth_wait', { id: r.id, agree: true }, true);
     setWait(null);
     if (a.error) {
@@ -180,13 +183,15 @@ function GoogleSignIn({ onDone, onError, disabled }) {
   if (wait)
     return html`<div class="ol-oa-wait" role="status">
       <div class="ol-row"><${Icon} name="refresh" size=${16} class="ol-spin" /><b>${tr('Continue in your browser')}</b></div>
-      <p class="ol-text">${tr('Please sign in with %{name} in the browser window that has opened. Omsi-Hub continues automatically afterwards.', { name })}</p>
+      <p class="ol-text">${tr('Please sign in with %{name} in the browser window that has opened. Omsi-Hub continues automatically afterwards.', { name: wait.name })}</p>
       <p class="ol-text">${tr('No browser window? Copy the address and open it in your browser yourself.')}</p>
       <div class="ol-row"><${Btn} kind="ghost" icon="open_in_new" label=${tr('Open the page again')} onClick=${() => openUrl(wait.url).catch(() => {})} /><${Copy} text=${wait.url} /><span class="ol-fill"></span><${Btn} kind="ghost" icon="close" label=${tr('Cancel')} onClick=${() => act('ol_oauth_cancel', {}, true)} /></div>
     </div>`;
-  return html`<button type="button" id="ol-google" class="ol-btn-x ol-oa-btn" disabled=${disabled} onClick=${go}>
-    <${GoogleMark} /><span>${tr('Sign in with %{name}', { name })}</span>
-  </button>`;
+  return PROVIDERS.map(
+    ([provider, name]) => html`<button type="button" id=${'ol-' + provider} class=${'ol-btn-x ol-oa-btn ' + provider} disabled=${disabled} onClick=${() => go(provider, name)}>
+      <svg class="ol-oa-mark" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d=${MARKS[provider]} /></svg><span>${tr('Sign in with %{name}', { name })}</span>
+    </button>`,
+  );
 }
 
 // --- the account --------------------------------------------------------------------------------
@@ -289,7 +294,7 @@ export function SignedOut({ v, welcome }) {
       <${Field} id="ol-password" label=${tr('Password')} type="password" value=${f.password} onInput=${put('password')} max=${72} auto="current-password" onEnter=${signIn} />
       <div class="ol-row"><${Btn} kind="primary" icon="person" label=${tr('Sign in')} busy=${busy} onClick=${signIn} /><span class="ol-fill"></span><${Btn} kind="ghost" label=${tr('Forgot your password?')} onClick=${() => go('forgot')} /></div>
       <div class="ol-oa-or"><span>${tr('or')}</span></div>
-      <${GoogleSignIn} disabled=${busy} onError=${(e) => (setErr(e), setInfo(''))} onDone=${(r) => (setErr(''), setInfo(r.message || ''), r.message && toast(r.message, 'ok'))} />
+      <${OAuthSignIn} disabled=${busy} onError=${(e) => (setErr(e), setInfo(''))} onDone=${(r) => (setErr(''), setInfo(r.message || ''), r.message && toast(r.message, 'ok'))} />
       <div class="ol-oa-or"><span>${tr('or')}</span></div>
       <div class="ol-row"><span class="ol-text">${tr('New here?')}</span><${Btn} kind="ghost" icon="open_in_new" label=${tr('Create an account')} disabled=${!v?.sign_up_url} onClick=${create} /></div>`;
   }
@@ -345,7 +350,7 @@ export function Profile({ v }) {
   const [err, setErr] = useState('');
   const [del, setDel] = useState(false);
   const [password, setPassword] = useState('');
-  // (an account without a password - made with Google - is deleted after a tick)
+  // (an account without a password - made with Google or Discord - is deleted after a tick)
   const [sure, setSure] = useState(false);
   const [busy, setBusy] = useState(false);
   useEffect(() => setName(me.name || ''), [me.name]);

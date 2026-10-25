@@ -1,9 +1,9 @@
-//! Signing in with Google (`oauth.rs`): the listener driven as the browser would (plain requests on
+//! Signing in with Google or Discord (`oauth.rs`): the listener driven as the browser would (plain requests on
 //! 127.0.0.1, no browser), what it hands back exchanged with the tests' server.
 
 use crate::client::{test_jwt_with, test_now};
 use crate::mock::{Mock, Req};
-use crate::oauth::{challenge, Flow, Handoff, Texts, PATH};
+use crate::oauth::{challenge, Flow, Handoff, Provider, Texts, PATH};
 use crate::tests::{ok, Shared};
 use crate::{Client, Endpoints, Error};
 use serde_json::{json, Value};
@@ -49,7 +49,7 @@ fn endpoints(base: &str) -> Endpoints {
 }
 
 fn start(texts: Texts) -> Flow {
-    Flow::start(&endpoints("http://127.0.0.1:9"), texts).unwrap()
+    Flow::start(&endpoints("http://127.0.0.1:9"), Provider::Google, texts).unwrap()
 }
 
 /// The flow waiting on a thread, for the test to play the browser.
@@ -84,8 +84,25 @@ fn google_comes_back_with_a_code_for_this_flow_only() {
     assert!(!page.contains("<script"), "the page runs no script");
     let h = t.join().unwrap().unwrap();
     assert_eq!(h.code, "c0de");
+    assert_eq!(h.provider, Provider::Google);
     assert_eq!(challenge(&h.verifier), challenge_sent, "the verifier is the challenge's");
     assert_eq!(format!("{h:?}"), "Handoff", "no secret in a debug print");
+}
+
+#[test]
+fn discord_asks_the_websites_scopes_and_hands_back_its_own_flow() {
+    let flow = Flow::start(&endpoints("http://127.0.0.1:9"), Provider::Discord, Texts::default()).unwrap();
+    let (port, url) = (flow.port(), flow.url().to_string());
+    assert!(url.starts_with("http://127.0.0.1:9/auth/v1/authorize?provider=discord&"), "{url}");
+    assert_eq!(param(&url, "scopes"), "identify email guilds.join");
+    assert_eq!(flow.provider(), Provider::Discord);
+    let state = param(&param(&url, "redirect_to"), "state");
+    let t = waiting(flow);
+    browse(port, "GET", &format!("{PATH}?code=d1sc&state={state}"), None);
+    let h = t.join().unwrap().unwrap();
+    assert_eq!((h.code.as_str(), h.provider), ("d1sc", Provider::Discord));
+    assert_eq!(Provider::of("discord"), Some(Provider::Discord));
+    assert_eq!(Provider::of("steam"), None);
 }
 
 #[test]
@@ -96,7 +113,7 @@ fn the_player_saying_no_ends_the_flow_and_the_page_says_so_in_their_language() {
     let t = waiting(flow);
     let (_, page) = browse(port, "GET", &format!("{PATH}?error=access_denied&error_description=The+user+denied&state={state}"), None);
     assert!(page.contains(r#"lang="nl""#) && page.contains("Het aanmelden is geannuleerd."));
-    assert!(!page.contains("The user denied"), "Google's own words are not shown");
+    assert!(!page.contains("The user denied"), "the provider's own words are not shown");
     assert_eq!(t.join().unwrap(), Err(Error::Code("oauth_cancelled")));
 }
 
@@ -142,7 +159,7 @@ fn auth_server(r: &Req) -> (u16, Vec<(&'static str, String)>, Value) {
 }
 
 fn handoff(code: &str, verifier: &str) -> Handoff {
-    Handoff { code: code.into(), verifier: verifier.into() }
+    Handoff { code: code.into(), verifier: verifier.into(), provider: Provider::Google }
 }
 
 #[test]
@@ -152,7 +169,7 @@ fn the_code_is_exchanged_with_its_verifier_and_kept_as_a_passwords_session() {
     let mut c = Client::new(endpoints(&m.base), Box::new(store.clone()));
     assert_eq!(c.sign_in_with(&handoff("c0de", "wrong")), Err(Error::Code("oauth_failed")));
     assert!(!c.signed_in());
-    c.sign_in_with(&handoff("c0de", "v3rifier")).unwrap();
+    assert_eq!(c.sign_in_with(&handoff("c0de", "v3rifier")), Ok(None), "no provider token of Google's");
     assert!(c.signed_in() && c.user_id() == Some("me"));
     assert_eq!(crate::store::SecretStore::load(&store).as_deref(), Some("g1"));
     assert!(!c.has_password(), "a Google account has no password");
@@ -176,4 +193,31 @@ fn an_account_without_a_password_is_deleted_without_one() {
     assert!(!m.calls().iter().any(|p| p.contains("grant_type=password")), "no password asked of it");
     assert!(m.calls().iter().any(|p| p == "POST /rest/v1/rpc/delete_my_account"));
     assert!(!c.signed_in());
+}
+
+/// A Discord sign-in hands back Discord's token once, and links that Discord account with it as
+/// the website does (`discord-bot`'s `claim`, with the access token), after the privacy statement.
+#[test]
+fn a_discord_sign_in_links_the_discord_account() {
+    let m = Mock::start(|r| match r.path.as_str() {
+        "/auth/v1/token?grant_type=pkce" => {
+            let mut s = google_session("d1");
+            s["provider_token"] = json!("discord-tok");
+            s["user"]["app_metadata"] = json!({ "provider": "discord", "providers": ["discord"] });
+            ok(s)
+        }
+        "/rest/v1/rpc/my_privacy" => ok(json!(crate::privacy::VERSION)),
+        "/functions/v1/discord-bot" if r.body == json!({ "action": "claim", "provider_token": "discord-tok" }) => ok(json!({ "ok": true, "discord": { "id": "1", "name": "luc" } })),
+        _ => (404, vec![], Value::Null),
+    });
+    let mut c = Client::new(endpoints(&m.base), Box::new(Shared::default()));
+    let token = c.sign_in_with(&Handoff { provider: Provider::Discord, ..handoff("c", "v") }).unwrap();
+    assert_eq!(token.as_deref(), Some("discord-tok"));
+    assert_eq!(c.discord_claim("discord-tok"), Err(Error::Code("privacy")), "nothing before the privacy statement");
+    assert!(!m.calls().iter().any(|p| p.contains("discord-bot")));
+    c.check_privacy().unwrap();
+    c.discord_claim("discord-tok").unwrap();
+    let req = m.requests().into_iter().rfind(|r| r.path.contains("discord-bot")).unwrap();
+    assert!(req.bearer().is_some(), "as the player");
+    assert_eq!(c.discord_claim("other"), Err(Error::Code("server")), "a refusal is a failure");
 }
