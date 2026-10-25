@@ -655,13 +655,75 @@ function actionGroups(actions, d, names) {
   return [...GROUPS, ['Other', other]];
 }
 
-/** A dropdown of the actions, by group (`value` '' : none). */
-function ActionSelect({ value, groups, names, onChange, placeholder = 'Nothing' }) {
-  return html`<select class="select pads-action" value=${value} onChange=${(ev) => onChange(ev.currentTarget.value)}>
-    <option value="">${tr(placeholder)}</option>
-    ${value && !groups.some(([, l]) => l.includes(value)) && html`<option value=${value}>${actionText(value, names)}</option>`}
-    ${groups.map(([title, list]) => list.length > 0 && html`<optgroup label=${tr(title)}>${list.map((a) => html`<option value=${a}>${actionText(a, names)}</option>`)}</optgroup>`)}
-  </select>`;
+/** A text as the actions' search reads it: lower case, without its accents. */
+const fold = (s) => String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+
+/** The action chosen (`value` '' : none), and a list of the actions by group to search for one:
+ * every word typed is in its name as the page shows it, OMSI 2's own or its group's. The arrows
+ * and Enter pick, Escape or a click beside it closes it (`onClose`: closed with none picked);
+ * `open` opens it at once. */
+function ActionSelect({ value, groups, names, onChange, placeholder = 'Nothing', open: first = false, onClose }) {
+  const [open, setOpen] = useState(first);
+  const [q, setQ] = useState('');
+  const [hi, setHi] = useState(-1);
+  const box = useRef(null);
+  const field = useRef(null);
+  const list = useRef(null);
+  const words = fold(q).split(/\s+/).filter(Boolean);
+  const found = groups
+    .map(([title, l]) => [title, l.filter((a) => ((hay) => words.every((w) => hay.includes(w)))(fold(`${actionText(a, names)} ${a} ${tr(title)}`)))])
+    .filter(([, l]) => l.length > 0);
+  // (with no words typed, "Nothing" first: the action taken off)
+  const choices = [...(value && !words.length ? [''] : []), ...found.flatMap(([, l]) => l)];
+  const close = () => {
+    setOpen(false);
+    setQ('');
+    onClose?.();
+  };
+  const pick = (a) => {
+    setOpen(false);
+    setQ('');
+    if (a !== value) onChange(a);
+    else onClose?.();
+  };
+  useEffect(() => {
+    if (!open) return undefined;
+    field.current?.focus();
+    setHi(Math.max(0, choices.indexOf(value)));
+    const away = (ev) => box.current && !box.current.contains(ev.target) && close();
+    document.addEventListener('mousedown', away);
+    return () => document.removeEventListener('mousedown', away);
+  }, [open]);
+  useEffect(() => {
+    // (the first: from the top, its group's title in sight)
+    if (hi <= 0 && list.current) list.current.scrollTop = 0;
+    else list.current?.querySelector('.hi')?.scrollIntoView({ block: 'nearest' });
+  }, [hi, open]);
+  const key = (ev) => {
+    if (ev.key === 'Escape') {
+      ev.stopPropagation();
+      close();
+    } else if (ev.key === 'ArrowDown' || ev.key === 'ArrowUp') {
+      ev.preventDefault();
+      if (choices.length) setHi((h) => (h + (ev.key === 'ArrowDown' ? 1 : choices.length - 1)) % choices.length);
+    } else if (ev.key === 'Enter' && choices[hi] != null) {
+      ev.preventDefault();
+      pick(choices[hi]);
+    }
+  };
+  const option = (a, k, text) =>
+    html`<button type="button" class=${'pads-option' + (k === hi ? ' hi' : '') + (a === value ? ' on' : '')} onMouseMove=${() => k !== hi && setHi(k)} onClick=${() => pick(a)}>${text}</button>`;
+  let k = choices[0] === '' ? 1 : 0;
+  return html`<div class=${'pads-pick' + (open ? ' open' : '')} ref=${box}>
+    ${open
+      ? html`<label class="search"><${Icon} name="search" size=${16} /><input ref=${field} class="input" type="search" spellcheck="false" value=${q} placeholder=${tr('Search for an action…')} onInput=${(ev) => (setQ(ev.currentTarget.value), setHi(0))} onKeyDown=${key} /></label>
+          <div class="pads-found" ref=${list}>
+            ${choices[0] === '' && option('', 0, tr(placeholder))}
+            ${found.map(([title, l]) => html`<div class="pads-group">${tr(title)}</div>${l.map((a) => option(a, k++, actionText(a, names)))}`)}
+            ${!choices.length && html`<p class="muted small">${tr('No action has these words.')}</p>`}
+          </div>`
+      : html`<button type="button" class=${'select pads-action' + (value ? '' : ' none')} onClick=${() => setOpen(true)}>${value ? actionText(value, names) : tr(placeholder)}</button>`}
+  </div>`;
 }
 
 function ButtonsCard({ d, live, names, actions, lit, change }) {
@@ -744,7 +806,7 @@ function ButtonsCard({ d, live, names, actions, lit, change }) {
             <${ActionSelect} value=${acts[0] || ''} groups=${groups} names=${names} onChange=${(v) => bind(n, v)} />
             ${acts.slice(1).map((a) => html`<span class="pads-also">+ ${actionText(a, names)}<button type="button" title=${tr('Remove')} onClick=${() => unbind(n, a)}><${Icon} name="close" size=${14} /></button></span>`)}
             ${adding === n
-              ? html`<${ActionSelect} value="" groups=${groups} names=${names} placeholder="Another action…" onChange=${(v) => assign(n, v)} />`
+              ? html`<${ActionSelect} value="" groups=${groups} names=${names} placeholder="Another action…" open onChange=${(v) => assign(n, v)} onClose=${() => setAdding(null)} />`
               : acts.length > 0 && html`<button type="button" class="pads-more" title=${tr('This button does another action as well')} onClick=${() => setAdding(n)}><${Icon} name="add" size=${16} /></button>`}
           </div>
           <span class="flags">

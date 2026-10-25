@@ -25,6 +25,9 @@ Each version of the Omsi-Hub add-on, newest first. The release on GitHub links h
   the first time and ending by the second; a shift from 22:00 to 06:00 runs past midnight.
 - **The mod installer on the start page**: *Install mods* among the links under the ways to
   drive opens Settings straight on its tab Mods, to install a mod file or folder into openOMSI.
+- **Searching for a button's action**: on Settings › Controllers, giving a button of the wheel
+  or button box an action opens a search field over the actions, still by group - type *door*
+  or *indicator* and only those are left. The arrow keys and Enter pick one, Escape closes it.
 
 ### Changed
 
