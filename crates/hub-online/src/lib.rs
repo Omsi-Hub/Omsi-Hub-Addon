@@ -42,7 +42,7 @@ pub mod store;
 mod tests;
 
 pub use avatar::{picture_kind, MAX_BYTES as AVATAR_MAX_BYTES};
-pub use client::{Client, Friend, Invite, Profile, Stats};
+pub use client::{BoardCompany, Client, Friend, Invite, Profile, Stats};
 pub use codes::Error;
 pub use oauth::{Flow, Handoff};
 pub use saves::{Cloud, SaveError, Slot};

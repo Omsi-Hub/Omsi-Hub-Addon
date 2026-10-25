@@ -507,9 +507,9 @@ export function Chips({ value, options, onChange, h = 34 }) {
   return html`<div class="co-chips">${options.map(([v, l]) => html`<button type="button" style=${`height:${h}px;border-radius:${h / 2}px`} class=${v === value ? 'on' : ''} onClick=${() => v !== value && onChange(v)}>${l}</button>`)}</div>`;
 }
 
-/** A switch with its words on the left. */
-export function Switch({ checked, onChange, label, title, style }) {
-  return html`<label class="co-switch" title=${title} style=${style}><span>${label}</span><input type="checkbox" checked=${!!checked} onChange=${(e) => onChange(e.currentTarget.checked)} /><i></i></label>`;
+/** A switch with its words on the left (`disabled`: shown, not to be switched). */
+export function Switch({ checked, onChange, label, title, style, disabled }) {
+  return html`<label class=${'co-switch' + (disabled ? ' off' : '')} title=${title} style=${style}><span>${label}</span><input type="checkbox" checked=${!!checked} disabled=${!!disabled} onChange=${(e) => onChange(e.currentTarget.checked)} /><i></i></label>`;
 }
 
 /** A choice of options in a field (`Ui::select`). */

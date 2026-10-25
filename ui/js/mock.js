@@ -185,6 +185,12 @@ const companionState = () =>
     ? { on: true, wanted: true, host: '192.168.1.20', port: 47811, address: 'http://192.168.1.20:47811', code: companionCode, pair_url: `http://192.168.1.20:47811/pair?code=${companionCode}`, web: true, name: 'Omsi-Hub', devices: companionDevices, game: false, qr: companionQr() }
     : { on: false, wanted: false, port: 47811, error: '' };
 
+/** The mock's companies on the company board (`ol_companies`). */
+const mockBoard = [
+  { id: 'stadtbus-nord', label: 'Stadtbus Nord (SN) · Grundorf', on: true },
+  { id: 'regio-sued', label: 'Regio Süd (RS) · Spandau', on: false },
+];
+
 const answers = {
   hub_version: () => ({ app: '0.1.0', min_openomsi: '0.2.22', plugin: '1.8.0', bridge: 1 }),
   hub_boot: () => ({ version: answers.hub_version(), data_dir: '(mock)', settings, setup_needed: !settings.setup_done, languages: ['en', 'nl', 'de', 'fr', 'ru', 'uk', 'pl', 'es'], intro: params.get('intro') || '', page: params.get('page') || '' }),
@@ -217,13 +223,21 @@ const answers = {
   hub_log: () => null,
   // (the online account and the cloud saves, signed out: everything works offline)
   ol_avatar: () => ({ ok: true, message: 'Profile photo saved.' }),
-  ol_state: () => ({ mode: 'out', friends: [], invites: [], requests: [], badge: 0, online_count: 0, offline: false, together: false, hosting: false, privacy: { version: 2, needed: false } }),
+  ol_state: () => ({ mode: params.has('online') ? 'in' : 'out', me: params.has('online') ? { name: 'Luc', code: 'AB12CD34', board: false } : null, friends: [], invites: [], requests: [], badge: 0, online_count: 0, offline: false, together: false, hosting: false, privacy: { version: 2, needed: false } }),
   // (as Rust's: the state, refreshed)
   ol_refresh: () => answers.ol_state(),
   ol_seen: () => ({ ok: true }),
   ol_presence: () => ({ ok: true }),
-  cs_state: () => ({ companies: {}, slots: 2, used: 0, local_label: 'Local save', cloud_label: 'Cloud save' }),
+  cs_state: () => ({ companies: {}, slots: [{ slot: 1, empty: true }, { slot: 2, empty: true }], max_slots: 2, listed: true, local_label: 'Local save', cloud_label: 'Cloud save' }),
+  cs_companies: () => mockBoard.map((c) => ({ id: c.id, name: c.label, label: c.label })),
   cs_open: () => ({}),
+  // (the company board: `?online` signs in, so the account panel shows it beside the cloud saves)
+  ol_companies: () => ({ companies: mockBoard.map((c) => ({ ...c })), count: mockBoard.filter((c) => c.on).length, max: 5, url: 'https://omsihub.com/leaderboard.html', blocked: null }),
+  ol_company_board: (a) => {
+    const c = mockBoard.find((x) => x.id === a.id);
+    if (c) c.on = !!a.on;
+    return { ok: true, message: `${c?.label || ''} is ${a.on ? 'on' : 'off'} the company board now.` };
+  },
   // (`?followed`: openOMSI's own launcher plays another openOMSI than the chosen one)
   addon_state: () => ({ folder: settings.openomsi_folder, chosen: params.has('followed') ? 'C:/Downloads/openOMSI-0.3.39-windows-x64' : settings.openomsi_folder, followed: params.has('followed'), game: checkOpenomsi(settings.openomsi_folder), plugin: { state: addonPlugin }, plugin_version: '1.7.0', hello: null, checked: false, assigned: null }),
   // (the tab "Mods": an install runs for a few seconds, then the mod is in the list)

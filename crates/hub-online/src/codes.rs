@@ -76,6 +76,8 @@ pub const TEXTS: &[(&str, &str)] = &[
     ("bad_input", "Something in it is too long or not allowed."),
     ("not_allowed", "That is not allowed."),
     ("no_session", "Share your company first (Multiplayer): then there is a session to invite to."),
+    // (the company board's)
+    ("board_full", "At most 5 of your companies can be on the company board: take one off first."),
     // (the cloud saves': their texts are in cloud-saves.yml)
     ("limit", "Both cloud slots are taken: keep this company local, or replace one of your 2 cloud companies."),
     ("conflict", "This company changed on this PC and in the cloud since it was last synced."),
@@ -161,6 +163,8 @@ pub(crate) fn of_data(status: u16, body: &Value) -> Error {
         "23505" => "name_taken",
         "23514" | "22001" | "22023" | "22P02" | "23502" => "bad_input",
         "42501" => "not_allowed",
+        // (`publish_company`: the player's sixth company)
+        "54000" => "board_full",
         "PGRST202" | "42883" => "unavailable",
         _ if status == 429 => "too_many",
         _ if status == 404 => "unavailable",

@@ -6,6 +6,14 @@ Each version of the Omsi-Hub add-on, newest first. The release on GitHub links h
 
 ### New
 
+- **Your companies on the online leaderboard**: switch "Show this company on the online
+  leaderboard" on in the company's settings, or in the account panel's "Company leaderboard"
+  under the cloud saves, and the company stands on omsihub.com's company board - its name,
+  colour, map and figures (this month's profit and passengers, cash, buses, lines, staff, trips on
+  time and reputation), with your display name. Omsi-Hub keeps the figures up to date while you
+  play. Off until you switch it on; at most 5 of your companies at a time; switched off, or the
+  company deleted, it is taken off the board again. The website pointed to this switch before the
+  app had it.
 - **Phone & tablet in the browser, no app needed**: with Settings › General › Phone & tablet
   on, Omsi-Hub serves the Companion as a web app on its address (`http://<your computer>:47811`).
   Scan the QR code with the phone's camera, or open the address in the phone's browser and type

@@ -567,6 +567,34 @@ the client's lock), a company's archive `crates/omsi-launcher-core/src/company/c
   checked and before `delete_my_account()`; a failure stops it before the account is deleted.
   Every company here is local afterwards.
 
+### The company board
+
+The website's "Top companies" (`company_leaderboard`, public) shows the companies their players put
+on it; the app puts them there (`crates/hub-api/src/board.rs`, the client's `publish_company` and
+`unpublish_company`).
+
+- **The switch**: "Show this company on the online leaderboard", in the company's settings (Company
+  › Settings, the "Online leaderboard" part) and in the account panel's "Company leaderboard",
+  under the cloud saves: the driver's companies, each on or off. Off until the player switches it
+  on; signed out, or another driver than the account's driving, the switch says to sign in.
+- **The choice** is kept in the data folder (`omsihub-board.json`: the company's id and the user id
+  it was put on the board with), not in the company's file; signed in as another account a company
+  is off here. At most 5 companies of an account (`publish_company` raises `54000`: `board_full`).
+- **The key** of a company on the board is the first 32 hex digits of the sha256 of
+  `omsihub-board:<company id>`: the same company - a cloud save played on two PCs - is one row,
+  and nothing of its name is in the key.
+- **The figures** (`entry_of`): the name (40 characters at most), the short name, the main colour,
+  the country (two capital letters, none for `intl`), the map's name, the game mode, Career or
+  Sandbox, the currency, the company's days since it was founded, its cash, this (company) month's
+  result and passengers (the closed days of that month), the buses still the company's, the lines,
+  the staff employed, the trips on time and the reputation.
+- **Kept up to date**: switched on, the figures go at once; then the online worker sends them again
+  at its beat whenever the company's file changed and the figures with it, at most every five
+  minutes per company (at every start once). The board shows the companies told within 30 days.
+- Switched off, `unpublish_company` takes the row away; deleting the company does the same (in the
+  background); deleting the account removes the rows with it (`on delete cascade`) and the choices
+  here.
+
 ### Online state and invites
 
 - The launcher's worker calls `heartbeat` about once a minute while signed in, and within five

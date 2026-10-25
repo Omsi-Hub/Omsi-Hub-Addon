@@ -14,6 +14,8 @@
 //!   folder's `omsihub-online.json`);
 //! * `ol_profile {name}` - the display name chosen or changed;
 //! * `ol_leaderboard {on}` - standing on the public leaderboard, or not (off until chosen);
+//! * `ol_companies`, `ol_company_board {id, on}` - the driver's companies on the company board
+//!   (`board.rs`), each switched on or off;
 //! * `ol_report_stats {points, level, duties, minutes, km}` - the service record for the
 //!   leaderboard; the worker tells it itself, the account's driver's whenever it changed
 //!   (`report_due`, from `drivers::board_stats`);
@@ -167,6 +169,8 @@ struct View {
     refreshed_at: u64,
     /// The service record the leaderboard was last told (`report_due`).
     reported: Option<Stats>,
+    /// The account's user id, as the last fetch saw it (empty: signed out).
+    user: String,
 }
 
 static VIEW: LazyLock<Mutex<View>> = LazyLock::new(Default::default);
@@ -236,7 +240,7 @@ fn set_local(on: bool) {
 // --- the answers ------------------------------------------------------------------------------
 
 /// An error as the page shows it; signed out or offline, the view says so too.
-fn fail(e: Error) -> Value {
+pub(crate) fn fail(e: Error) -> Value {
     {
         let mut v = view();
         match e {
@@ -268,6 +272,7 @@ fn signed_out(v: &mut View) {
     v.invites.clear();
     v.told = None;
     v.reported = None;
+    v.user.clear();
 }
 
 fn str_arg<'a>(args: &'a Value, name: &str) -> &'a str {
@@ -326,6 +331,7 @@ fn refresh(beat: bool) -> Result<(), Error> {
         Ok(Some(((lasting, no_password), Err(agreed)))) => {
             // (the account waits for the player's agreement; asked again at the next beat)
             v.signed_in = true;
+            v.user = user.clone();
             v.lasting = lasting;
             v.no_password = no_password;
             v.offline = false;
@@ -345,6 +351,7 @@ fn refresh(beat: bool) -> Result<(), Error> {
         Ok(Some(((lasting, no_password), Ok((profile, friends, invites))))) => {
             let link = profile.as_ref().map(|p| p.display_name.clone());
             v.signed_in = true;
+            v.user = user.clone();
             v.lasting = lasting;
             v.no_password = no_password;
             v.offline = false;
@@ -405,6 +412,7 @@ fn worker() {
                 view().signed_in = true;
                 if refresh(true).is_ok() {
                     report_due();
+                    crate::board::report_due();
                 }
             }
             first = false;
@@ -419,11 +427,7 @@ fn worker() {
 /// statement or without a display name nothing is told, nor for another driver than the
 /// account's; the server keeps one report in 30 seconds ("too_soon": told at the next beat).
 fn report_due() {
-    let ready = {
-        let v = view();
-        v.signed_in && !v.need_privacy && v.profile.is_some()
-    };
-    if !ready || !crate::drivers::plays_online() {
+    if !account_ready() || !crate::drivers::plays_online() {
         return;
     }
     let Some(stats) = crate::drivers::account_driver().and_then(|d| crate::drivers::board_stats(&d)) else { return };
@@ -433,6 +437,19 @@ fn report_due() {
     if let Ok("ok") = report_stats(&stats) {
         view().reported = Some(stats);
     }
+}
+
+/// Signed in, the privacy statement agreed to and the display name chosen: the account's
+/// features may send what is theirs.
+pub(crate) fn account_ready() -> bool {
+    let v = view();
+    v.signed_in && !v.need_privacy && v.profile.is_some()
+}
+
+/// The account's user id as the worker last fetched it (empty: signed out, or not fetched yet);
+/// it never waits for a request that runs.
+pub(crate) fn account_user() -> String {
+    view().user.clone()
 }
 
 fn start_worker() {
@@ -802,6 +819,7 @@ fn delete(args: &Value) -> Value {
             crate::drivers::unlink_account();
             // (its cloud saves went with it: the companies here are local saves now)
             crate::cloud::forget_account(me.as_deref());
+            crate::board::forget_account(me.as_deref());
             done(&tr("Your account, your cloud saves and everything of it are deleted."))
         }
         Err(e) => fail(e),
@@ -915,6 +933,8 @@ pub fn call(cmd: &str, args: &Value, _p: &dyn Platform) -> Answer {
         "ol_profile" => profile(args),
         "ol_avatar" => avatar(args),
         "ol_leaderboard" => leaderboard(args),
+        "ol_companies" => crate::board::companies(),
+        "ol_company_board" => crate::board::set(str_arg(args, "id"), args.get("on").and_then(Value::as_bool).unwrap_or(false)),
         "ol_report_stats" => match report_stats(&stats_of(args)) {
             Ok(code) => json!({ "ok": true, "code": code }),
             Err(e) => fail(e),
@@ -1021,8 +1041,9 @@ mod tests {
         call(cmd, &args, &Quiet).unwrap()
     }
 
-    /// Every text of Omsi-Hub online - the codes, this file's, the page's (`online/*.js`, and the
-    /// privacy statement's `privacy.js`) - in the seven languages.
+    /// Every text of Omsi-Hub online - the codes, this file's, the company board's (`board.rs`),
+    /// the page's (`online/*.js`, and the privacy statement's `privacy.js`) - in the seven
+    /// languages.
     #[test]
     fn every_online_text_is_translated() {
         let mut texts: Vec<String> = codes::TEXTS.iter().map(|(_, t)| t.to_string()).collect();
@@ -1030,7 +1051,11 @@ mod tests {
         let own = own.split("#[cfg(test)]\npub(crate) fn texts_in").next().unwrap_or("");
         let js = include_str!("../../../ui/js/online/online.js");
         let pv = include_str!("../../../ui/js/privacy.js");
-        for (src, lead, end) in [(own, "tr(\"", '"'), (own, "trf(\"", '"'), (js, "tr('", '\''), (pv, "tr('", '\'')] {
+        // (the company board's)
+        let bd = include_str!("board.rs");
+        let bd = bd.split("#[cfg(test)]").next().unwrap_or("");
+        let bjs = include_str!("../../../ui/js/online/board.js");
+        for (src, lead, end) in [(own, "tr(\"", '"'), (own, "trf(\"", '"'), (js, "tr('", '\''), (pv, "tr('", '\''), (bd, "tr(\"", '"'), (bd, "trf(\"", '"'), (bjs, "tr('", '\'')] {
             texts.extend(texts_in(src, lead, end));
         }
         assert!(texts.len() > 80, "only {} texts found", texts.len());
