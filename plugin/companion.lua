@@ -55,7 +55,7 @@ local lists = {}
 local left_at = {}
 local left_trip = nil
 local probe = nil
-local wait = { live = 0, lists = 0, look = 0, keys = 0 }
+local wait = { live = 0, trips = 0, lines = 0, look = 0, keys = 0 }
 -- what the devices' screens show ({nums, strs}), and the devices' triggers that may be pressed
 local want = nil
 local press_allowed, press_for = {}, nil
@@ -94,28 +94,35 @@ local function send(t)
   return omsi.send(port, text) == true
 end
 
--- a list in pages of at most MAX characters each, under its own version
-local function send_list(kind, key, items)
-  local text = json.encode(items)
+-- a list in pages of at most MAX characters each, under its own version; each item encoded
+-- once (the screens' list goes ten times a second); `changed_only`: not sent while it is the
+-- same as last time
+local function send_list(kind, key, items, changed_only)
+  local parts = {}
+  for i, it in ipairs(items) do parts[i] = json.encode(it) end
+  local text = table.concat(parts, ",")
   local l = lists[kind] or { v = 0, text = nil }
+  if changed_only and l.text == text then return end
   if l.text ~= text then
     l.v, l.text = l.v + 1, text
     lists[kind] = l
   end
-  local pages, page, size = {}, {}, 0
-  for _, it in ipairs(items) do
-    local n = #json.encode(it) + 1
-    if #page > 0 and size + n > MAX then
-      pages[#pages + 1], page, size = page, {}, 0
+  if not (on and fn("send")) then return end
+  -- (each page the items from its first to its last)
+  local pages, first, size = {}, 1, 0
+  for i, p in ipairs(parts) do
+    local n = #p + 1
+    if i > first and size + n > MAX then
+      pages[#pages + 1], first, size = { first, i - 1 }, i, 0
     end
-    page[#page + 1] = it
     size = size + n
   end
-  if #page > 0 or #pages == 0 then pages[#pages + 1] = page end
+  if #parts >= first then pages[#pages + 1] = { first, #parts } end
+  if #pages == 0 then pages[1] = { 1, 0 } end
+  local head = '{"t":' .. json.encode(kind) .. ',"v":' .. l.v .. ',"pages":' .. #pages .. ',"page":'
   for i, p in ipairs(pages) do
-    local t = { t = kind, v = l.v, page = i, pages = #pages }
-    t[key] = p
-    send(t)
+    local t = head .. i .. "," .. json.encode(key) .. ":[" .. table.concat(parts, ",", p[1], p[2]) .. "]}"
+    if #t <= 8000 then omsi.send(port, t) end
   end
 end
 
@@ -153,12 +160,18 @@ local function tickets()
   return out
 end
 
-local function send_keys()
+-- the keys of the bus driven now (found again for another bus); its file
+local function bus_keys()
   local file = fn("bus.file") and omsi.bus.file() or ""
   if keys_for ~= file then
     keys_for = file
     find_keys()
   end
+  return file
+end
+
+local function send_keys()
+  local file = bus_keys()
   send({ t = "keys", bus = file, ibis = keys.ibis, printer = keys.printer, change = keys.change, tickets = tickets() })
 end
 
@@ -261,6 +274,9 @@ local function send_live()
   return stops
 end
 
+-- the bus's string variables of its IBIS (at most 16), found once for each bus
+local ibis_strs, ibis_strs_for = {}, nil
+
 local function send_dev()
   if fn("has_vehicle") and not omsi.has_vehicle() then return end
   local vars, strs = {}, {}
@@ -270,13 +286,16 @@ local function send_dev()
     for _, n in ipairs(IBIS_VARS) do vars[n] = num(omsi.var(n)) end
   end
   -- (the IBIS's strings: its display's lines, what is typed, where it goes)
-  local names = fn("vars") and omsi.vars("str") or {}
-  local n = 0
-  for _, name in ipairs(names) do
-    if n < 16 and type(name) == "string" and matches(name, IBIS) then
-      local s = fn("str") and omsi.str(name) or nil
-      if type(s) == "string" then strs[name], n = s:sub(1, 80), n + 1 end
+  local file = fn("bus.file") and omsi.bus.file() or ""
+  if ibis_strs_for ~= file then
+    ibis_strs, ibis_strs_for = {}, file
+    for _, name in ipairs(fn("vars") and omsi.vars("str") or {}) do
+      if #ibis_strs < 16 and type(name) == "string" and matches(name, IBIS) then ibis_strs[#ibis_strs + 1] = name end
     end
+  end
+  for _, name in ipairs(ibis_strs) do
+    local s = fn("str") and omsi.str(name) or nil
+    if type(s) == "string" then strs[name] = s:sub(1, 80) end
   end
   if not strs.IBIS_terminus_name and fn("str") then strs.IBIS_terminus_name = omsi.str("IBIS_terminus_name") end
   local dev = { t = "dev", ibis = vars, strs = strs }
@@ -432,11 +451,16 @@ local function carry_out(c)
 end
 
 -- the commands Omsi-Hub wrote, each new one done and acked
+local looked = nil
 local function look()
   if not (fn("files.read") and fn("json.decode")) then return end
   local text = omsi.files.read(M.FILE)
   on = text ~= nil and text ~= ""
   if not on then return end
+  -- (the same file for the same bus: nothing new in it)
+  local seen = text .. "\n" .. tostring(keys_for)
+  if seen == looked then return end
+  looked = seen
   local ok, q = pcall(omsi.json.decode, text)
   if not ok or type(q) ~= "table" then return end
   port = math.tointeger(tonumber(q.port)) or M.PORT
@@ -453,6 +477,8 @@ local function look()
     local seq = math.tointeger(tonumber(c.seq)) or 0
     if seq > done then
       done = seq
+      -- (the keys it may press, though the tick has not sent them yet)
+      bus_keys()
       local fine, result, why = pcall(carry_out, c)
       if not fine then result, why = false, "error" end
       if result ~= LATER then send({ t = "ack", seq = seq, ok = result == true, error = result == true and "" or (why or "refused") }) end
@@ -470,7 +496,7 @@ end
 
 -- the bus changed: its keys found again
 function M.vehicle()
-  keys_for = nil
+  keys_for, ibis_strs_for = nil, nil
 end
 
 -- ten times a second (main.lua): the devices' screens
@@ -478,7 +504,29 @@ function M.screen()
   send_screen()
 end
 
--- every quarter of a second (main.lua)
+-- the map's lines and their tours, read once for the game's date (the whole timetable: the
+-- longest read of the game here)
+local lines, lines_for = nil, nil
+
+local function map_lines()
+  local day = date()
+  if lines and lines_for == day then return lines end
+  local out = {}
+  for _, l in ipairs(fn("timetable.lines") and omsi.timetable.lines() or {}) do
+    if l.user_allowed ~= false then
+      local tours = {}
+      for _, t in ipairs(l.tours or {}) do tours[#tours + 1] = { number = tostring(t.number or ""), today = t.today ~= false } end
+      out[#out + 1] = { name = tostring(l.name or ""), tours = tours }
+    end
+  end
+  -- (a timetable not there yet, the game still loading: read again next time)
+  if #out > 0 then lines, lines_for = out, day end
+  return out
+end
+
+-- every quarter of a second (main.lua): one of its jobs in a call. openOMSI stops a plugin when
+-- one call into it runs longer than 50 ms, the game's time inside the API counted, and all of
+-- them at once - as on the first tick, while the game is still busy loading - came near that.
 function M.tick(dt)
   for k, v in pairs(wait) do wait[k] = v - (dt or 0.25) end
   if wait.look <= 0 then
@@ -490,31 +538,29 @@ function M.tick(dt)
     wait.live = 0.5
     local stops = send_live()
     send_dev()
-    -- (the trip's stops whenever they changed: they carry which ones were passed)
-    local text = json.encode(stops)
-    if not lists.trip or lists.trip.text ~= text or wait.lists <= 0 then send_list("trip", "stops", stops) end
+    -- (the trip's stops whenever they changed - they carry which ones were passed - and with
+    -- the lists now and then)
+    send_list("trip", "stops", stops, wait.trips > 0)
+    return
   end
   if wait.keys <= 0 then
     wait.keys = 5
     send_keys()
+    return
   end
   -- (the lists again now and then, for an Omsi-Hub started after the game)
-  if wait.lists <= 0 then
-    wait.lists = 10
+  if wait.trips <= 0 then
+    wait.trips = 10
     local trips = {}
     for i, t in ipairs(fn("duty.trips") and omsi.duty.trips() or {}) do
       trips[#trips + 1] = { n = i, name = t.name or "", line = t.line or "", terminus = t.terminus or "", departure = num(t.departure), arrival = num(t.arrival) }
     end
     send_list("trips", "trips", trips)
-    local lines = {}
-    for _, l in ipairs(fn("timetable.lines") and omsi.timetable.lines() or {}) do
-      if l.user_allowed ~= false then
-        local tours = {}
-        for _, t in ipairs(l.tours or {}) do tours[#tours + 1] = { number = tostring(t.number or ""), today = t.today ~= false } end
-        lines[#lines + 1] = { name = tostring(l.name or ""), tours = tours }
-      end
-    end
-    send_list("lines", "lines", lines)
+    return
+  end
+  if wait.lines <= 0 then
+    wait.lines = 10
+    send_list("lines", "lines", map_lines())
   end
 end
 

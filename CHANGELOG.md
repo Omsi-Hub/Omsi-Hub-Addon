@@ -2,6 +2,18 @@
 
 Each version of the Omsi-Hub add-on, newest first. The release on GitHub links here.
 
+## Unreleased
+
+### Fixed
+
+- **The plugin no longer stops with "ran longer than 50 ms" as the game loads**: with the
+  phone companion on, the plugin's first moment in the game read and sent everything for the
+  phone at once - the bus and its devices, its keys, the duty's trips and every line and tour
+  of the map's timetable - and while the game was still busy loading that one call ran over
+  openOMSI's 50 ms, so it switched the plugin off and nothing of the drive reached Omsi-Hub.
+  The plugin (1.16.2) now does one of those at a time, reads the map's lines once, and sends
+  the devices' screens with less work ten times a second.
+
 ## 1.1.1
 
 A patch on 1.1.0. It still needs **openOMSI 0.2.22 or newer** and an original **OMSI 2**.

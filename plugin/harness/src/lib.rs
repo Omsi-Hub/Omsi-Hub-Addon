@@ -82,7 +82,7 @@ pub struct GameState {
     pub language: String,
     /// The clock, seconds of the day; and the Unix time `omsi.util.now` says.
     pub clock: f64,
-    pub now: i64,
+    pub now: f64,
     /// The bus the player is in (its name), and its file.
     pub vehicle: Option<String>,
     pub bus_file: String,
@@ -137,7 +137,7 @@ pub struct GameState {
 
 impl Default for GameState {
     fn default() -> GameState {
-        let now = std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).map(|d| d.as_secs() as i64).unwrap_or(0);
+        let now = std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).map(|d| d.as_secs() as f64).unwrap_or(0.0);
         GameState {
             version: "0.2.1500".into(),
             api: 1,

@@ -21,7 +21,7 @@
 --                         the game to Omsi-Hub's companion server by UDP)
 -- A game without the file functions gets the handshake and the reports in its log instead.
 
-local VERSION = "1.16.1"
+local VERSION = "1.16.2"
 local BRIDGE = 1
 local PANEL = "omsihub"
 
@@ -484,7 +484,21 @@ omsi.on("red_light", function(kmh) watch.red_light(kmh) end)
 -- (the object editor once, as soon as the world is there: the frames come with it)
 local editor_opened = false
 
+-- the game busy - a frame long after the one before (the world just loaded, or the game
+-- hitched): what can wait (the phone companion, the fleet map's traffic) waits until the frames
+-- have come smoothly for a few seconds. openOMSI stops a plugin whose one call runs longer than
+-- 50 ms, and while the game still loads beside it every call of the plugin takes longer. (In
+-- real time: the game gives a frame at most a tenth of a second of its own.)
+local CALM = 3
+local last_frame, busy_at = now(), nil
+local function calm()
+  return not busy_at or now() - busy_at >= CALM
+end
+
 omsi.on("frame", function(dt)
+  local t = now()
+  if t - last_frame > 0.2 then busy_at = t end
+  last_frame = t
   if assignment and assignment.editor and not editor_opened then
     editor_opened = true
     if has["game.action"] then omsi.game.action("object_editor") end
@@ -658,10 +672,10 @@ end)
 -- (the game's traffic for the fleet map: whatever the player drives)
 local traffic = require("traffic")
 traffic.setup(has)
-omsi.every(1, function() traffic.tick(1, now(), clock()) end)
+omsi.every(1, function() if calm() then traffic.tick(1, now(), clock()) end end)
 omsi.every(5, live_notices)
-omsi.every(0.25, function() companion.tick(0.25) end)
-omsi.every(0.1, companion.screen)
+omsi.every(0.25, function() if calm() then companion.tick(0.25) end end)
+omsi.every(0.1, function() if calm() then companion.screen() end end)
 omsi.every(2, messages.read)
 -- (the navigator set again once for what its parts changed meanwhile)
 omsi.every(0.2, navigator.flush)
