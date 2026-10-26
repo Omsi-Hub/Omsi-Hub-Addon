@@ -277,6 +277,8 @@ fn start(s: &mut Session, args: &Value, p: &dyn crate::Platform) -> Result<Value
     // (the add-on's plugin told of the company's duty: `addon.rs`)
     let crew = crew_of(s, &c, &sheet);
     super::plugin::assign_duty(&d, Some((&c.name, &format!("{} {} {}", st.line, st.tour, sheet.duty.duty + 1), plugin_parts(&c, &sheet))), Some(crew), Some(&c.id));
+    // (the company's buses for the game's AI: only they are on the road, where the fleet map has them)
+    super::fleetgame::for_drive(s, &sheet.duty.date, (&st.line, &st.tour));
     #[cfg(feature = "native")]
     if place == Some(co::together::world::Place::Open) {
         std::thread::spawn(omsi_net::tunnel::ensure_cloudflared);

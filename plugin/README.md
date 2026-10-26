@@ -6,7 +6,7 @@ the plugin through plain files (`crates/hub-game/src/bridge.rs`).
 
 - `main.lua`: the entry point (the duty, the reports, the handshake); the other files are its
   modules (`board`, `card`, `career`, `company`, `companion`, `duty_strip`, `messages`, `ontime`, `signon`,
-  `start`, `traffic`, `trip`, `watch`, `hubjson`, `layout`, `navigator`, `notes`). `start` takes the duty (`duty.start`) in a
+  `start`, `traffic`, `fleet`, `trip`, `watch`, `hubjson`, `layout`, `navigator`, `notes`). `start` takes the duty (`duty.start`) in a
   call of its own: openOMSI stops a plugin when one call into it runs longer than 50 ms, the game's
   time inside the API counted, and taking a duty can take that long by itself. `navigator` puts
   everything the plugin shows while driving into openOMSI's navigator, one part under the other
@@ -15,7 +15,9 @@ the plugin through plain files (`crates/hub-game/src/bridge.rs`).
   moved and sized as it always is. In an openOMSI without the navigator's board each part is a
   panel of its own, and `layout` gives every draggable panel the
   driver's size and place (a size row under it with F10; kept in `omsi.data.layout`). `traffic` writes what is on the road (`data/traffic.json`)
-  for the company's fleet map; it only reads the game. `companion` talks to Omsi-Hub's phone and
+  for the company's fleet map; it only reads the game. `fleet` gives the game the trips the
+  company's own buses run in a company's duty (`data/fleet.json`, `omsi.timetable.set_ai_trips`),
+  so its AI runs those alone, each as late as the fleet map has it. `companion` talks to Omsi-Hub's phone and
   tablet companion while it is on (`data/companion.json`, datagrams by UDP; docs/COMPANION.md):
   it presses only the keys of the bus's IBIS, ticket printer and change dispenser.
 - `theme.json`, `theme-loading.svg`, `theme-logo.svg`: Omsi-Hub's look for openOMSI's own screens,

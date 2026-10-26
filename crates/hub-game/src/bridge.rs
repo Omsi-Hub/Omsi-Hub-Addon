@@ -16,6 +16,12 @@
 //!   `messages` feature, `lua/messages.lua`; docs/omsihub/MESSAGES.md).
 //! * `data/ontime.json`: the on-time card's brief - headway, connections, diversions and the
 //!   alerts to show once - written while the game runs (hub-api's on-time view).
+//! * `data/fleet.json`: the company's buses for the game's AI ([`Fleet`]) - the trips of the
+//!   map's timetable its own buses run today, each with how late the company's day has it -
+//!   written for a company's duty before the game starts and again while it runs
+//!   (hub-api's `company::fleetgame`), gone in a drive of the player's own. The plugin gives
+//!   them to the game (`lua/fleet.lua`, `omsi.timetable.set_ai_trips`): no other timetable
+//!   bus is on the road, and the company's are where its fleet map has them.
 //!
 //! The plugin to Omsi-Hub:
 //!
@@ -64,6 +70,7 @@ pub const MESSAGES_FILE: &str = "messages.json";
 pub const REPLIES_FILE: &str = "replies.jsonl";
 pub const STATUS_FILE: &str = "status.json";
 pub const TRAFFIC_FILE: &str = "traffic.json";
+pub const FLEET_FILE: &str = "fleet.json";
 pub const DASH_FILE: &str = "dash.json";
 pub const POS_FILE: &str = "pos.json";
 /// What the plugin's log lines start with when it cannot write files.
@@ -688,6 +695,58 @@ pub fn read_traffic(plugin_dir: &Path) -> Option<Traffic> {
     serde_json::from_str(&text).ok()
 }
 
+/// The company's buses for the game's AI (`data/fleet.json`): the trips of the map's timetable
+/// the company runs on `date` with its own buses. The game runs only these (the player's own
+/// duty apart), each bus `delay` seconds late as it comes on the road.
+#[derive(Debug, Clone, Default, PartialEq, Serialize, Deserialize)]
+#[serde(default)]
+pub struct Fleet {
+    /// The real time it was worked out (Unix seconds).
+    pub at: f64,
+    /// The company (its id), its map (global.cfg, as the company names it) and the day.
+    pub company: String,
+    pub map: String,
+    pub date: String,
+    pub trips: Vec<FleetTrip>,
+}
+
+/// A trip of the timetable a bus of the company runs: the timetable's line and tour, the time
+/// it leaves (seconds of the day; None: every trip of the tour) and how many seconds late its
+/// bus is (early negative).
+#[derive(Debug, Clone, Default, PartialEq, Serialize, Deserialize)]
+#[serde(default)]
+pub struct FleetTrip {
+    pub line: String,
+    pub tour: String,
+    pub departure: Option<f64>,
+    pub delay: f64,
+}
+
+/// The company's buses for the game (written only when they changed, the time it was worked
+/// out aside: whether it was).
+pub fn write_fleet(plugin_dir: &Path, fleet: &Fleet) -> std::io::Result<bool> {
+    if read_fleet(plugin_dir).is_some_and(|f| Fleet { at: fleet.at, ..f } == *fleet) {
+        return Ok(false);
+    }
+    let text = serde_json::to_string(fleet).unwrap_or_else(|_| "{}".into());
+    write_atomic(&plugin_dir.join(DATA_DIR).join(FLEET_FILE), &text)?;
+    Ok(true)
+}
+
+/// The company's buses as last written.
+pub fn read_fleet(plugin_dir: &Path) -> Option<Fleet> {
+    let text = std::fs::read_to_string(plugin_dir.join(DATA_DIR).join(FLEET_FILE)).ok()?;
+    serde_json::from_str(&text).ok()
+}
+
+/// No company's buses: the game runs the map's whole timetable (a drive of the player's own).
+pub fn clear_fleet(plugin_dir: &Path) -> std::io::Result<()> {
+    match std::fs::remove_file(plugin_dir.join(DATA_DIR).join(FLEET_FILE)) {
+        Err(e) if e.kind() != std::io::ErrorKind::NotFound => Err(e),
+        _ => Ok(()),
+    }
+}
+
 /// Where the bus is (`data/dash.json`'s bus alone, `data/pos.json`), written by the plugin thirty
 /// times a second for the navigator: the how-manyeth place it is, the seconds of game the frames
 /// came to (how far apart two places are), where (the map's metres), the way it faces (degrees
@@ -919,6 +978,22 @@ mod tests {
         assert!(lua.contains(r#"["tour"] = "a\\b\nc\0012""#), "{lua}");
         assert!(lua.contains("Straße"));
         assert!(lua.starts_with("-- Written by Omsi-Hub") && lua.contains("\nreturn {"));
+    }
+
+    #[test]
+    fn the_fleet_is_written_when_it_changed_and_cleared() {
+        let d = dir("fleet");
+        let mut f = Fleet { at: 1.0, company: "c1".into(), map: "maps/Grundorf/global.cfg".into(), date: "2026-10-26".into(), trips: vec![FleetTrip { line: "1".into(), tour: "2".into(), departure: Some(36_000.0), delay: 120.0 }] };
+        assert!(write_fleet(&d, &f).unwrap());
+        assert_eq!(read_fleet(&d), Some(f.clone()));
+        // (worked out again a moment later, the same: not written again)
+        f.at = 2.0;
+        assert!(!write_fleet(&d, &f).unwrap());
+        f.trips[0].delay = 180.0;
+        assert!(write_fleet(&d, &f).unwrap());
+        clear_fleet(&d).unwrap();
+        clear_fleet(&d).unwrap();
+        assert_eq!(read_fleet(&d), None);
     }
 
     #[test]

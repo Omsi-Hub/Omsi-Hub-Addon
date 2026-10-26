@@ -9,6 +9,7 @@
 --   data/notices.json     Omsi-Hub -> plugin: notices that come while the game runs
 --   data/messages.json    Omsi-Hub -> plugin: the control room's messages (messages.lua)
 --   data/ontime.json      Omsi-Hub -> plugin: the on-time card's brief (ontime.lua)
+--   data/fleet.json       Omsi-Hub -> plugin: the company's buses for the game's AI (fleet.lua)
 --   data/hello.json       plugin -> Omsi-Hub: the handshake (what this openOMSI offers)
 --   data/reports.jsonl    plugin -> Omsi-Hub: the duty taken, each trip done, the duty ended
 --   data/replies.jsonl    plugin -> Omsi-Hub: the driver's answers and quick buttons
@@ -21,7 +22,7 @@
 --                         the game to Omsi-Hub's companion server by UDP)
 -- A game without the file functions gets the handshake and the reports in its log instead.
 
-local VERSION = "1.16.2"
+local VERSION = "1.17.0"
 local BRIDGE = 1
 local PANEL = "omsihub"
 
@@ -203,6 +204,7 @@ local SIGN_ON = false
 if SIGN_ON and company_duty() then signon.setup(tr, assignment) end
 -- (the on-time card: punctuality, headway, connections, diversions - `ontime.lua`, its own)
 local ontime = require("ontime")
+local fleet = require("fleet")
 ontime.setup(tr, assignment, has)
 
 -- the duty strip, the handover notes and the walk-around of a company's duty (duty_strip.lua):
@@ -632,6 +634,7 @@ omsi.on("stop", function()
   strip.stop()
   ontime.stop()
   navigator.stop()
+  fleet.stop()
 end)
 
 -- service control's messages for the duty (`company.lua`), each once, when they are due
@@ -669,6 +672,10 @@ omsi.every(2, function()
   watch_trips()
   panel()
 end)
+-- (in a company's duty only the company's own buses on the road, where its fleet map has them;
+-- not held back while the game loads: the other buses are kept off before they are seen)
+fleet.setup(has)
+omsi.every(1, function() fleet.tick(1, company_duty()) end)
 -- (the game's traffic for the fleet map: whatever the player drives)
 local traffic = require("traffic")
 traffic.setup(has)
