@@ -19,6 +19,7 @@ use hub_core::company::duty_launch::DutyRef;
 use hub_core::company::dutycard::{self as dc, Card, CardStop, Driver, Ibis, Item, Lookups};
 use hub_core::company::network::PlannedTrip;
 use hub_core::company::plan::{DayPlan, Who};
+use hub_core::company::rosterflow::Board;
 use hub_core::company::together::Perm;
 use hub_core::company::{self as co, Company};
 use hub_core::linehof::Depot;
@@ -148,7 +149,38 @@ fn card_of(s: &mut Session, c: &Company, r: &DutyRef) -> Option<(Card, DayPlan)>
     let p = plan_of(s, &r.date)?.ok()?;
     let lines = lines_of(s, &r.date);
     let board = lines.as_ref().map(|l| co::rosterflow::board(&co::rosterflow::view(c), l, &r.date));
-    let tt = timetable(&c.map, &r.date);
+    let player = core::load_config().profile;
+    let card = looked_up(c, &p, &r.date, |look| dc::card(c, &p, board.as_ref(), r, co::clock::now(c), &player, look))?;
+    Some((card, p))
+}
+
+/// The cards of every duty of RosterFlow's `board` of `date`, in its order (RosterFlow's
+/// duty cards print); None: the day's plan is still being read.
+pub(crate) fn cards_of_day(s: &mut Session, c: &Company, board: &Board, date: &str) -> Option<Vec<Card>> {
+    week_work(s);
+    let p = plan_of(s, date)?.ok()?;
+    let player = core::load_config().profile;
+    let now = co::clock::now(c);
+    Some(looked_up(c, &p, date, |look| {
+        board
+            .shaped
+            .iter()
+            .filter_map(|sh| {
+                // (a duty's card from its first piece: the card finds the others)
+                let first = board.duties.get(sh.duty?)?.pieces.first()?;
+                let t = board.tours.get(first.tour)?;
+                let pt = p.tours.iter().position(|x| x.tour.line.eq_ignore_ascii_case(&t.line) && x.tour.tour.trim() == t.tour.trim())?;
+                dc::card(c, &p, Some(board), &DutyRef::of(&p, pt, first.duty)?, now, &player, look)
+            })
+            .collect()
+    }))
+}
+
+/// What the cards of the plan `p` of `date` look up - a trip's stops and their times, its IBIS
+/// codes, a line's timing points - handed to `f`: the timetable, the line editor's lines and the
+/// depot files read once for all of them.
+fn looked_up<T>(c: &Company, p: &DayPlan, date: &str, f: impl FnOnce(&Lookups) -> T) -> T {
+    let tt = timetable(&c.map, date);
     let registry = reg::load_registry(&reg::registry_path(&reg::map_folder(&c.map)));
     // (the depot files read once, by the line's: the bus of the duty's tour carries it)
     let bus_of = |line: &str| {
@@ -169,14 +201,11 @@ fn card_of(s: &mut Session, c: &Company, r: &DutyRef) -> Option<(Card, DayPlan)>
         hofs.borrow().get(&key).and_then(|h| h.as_ref()).zip(tt.as_deref()).and_then(|(h, tt)| ibis_of(h, tt, x, kurs))
     };
     let design = |line: &str| design_of(c, &registry, line);
-    let look = Lookups { stops: &stops, ibis: &ibis, design: &design };
-    let player = core::load_config().profile;
-    let card = dc::card(c, &p, board.as_ref(), r, co::clock::now(c), &player, &look)?;
-    Some((card, p))
+    f(&Lookups { stops: &stops, ibis: &ibis, design: &design })
 }
 
 /// The words of a day group (`lines::DAY_GROUPS`).
-fn day_type(k: usize) -> String {
+pub(crate) fn day_type(k: usize) -> String {
     tr(["Mon - Fri", "Saturday", "Sunday"][k.min(2)])
 }
 

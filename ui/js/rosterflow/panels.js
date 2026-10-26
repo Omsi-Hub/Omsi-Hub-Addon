@@ -837,18 +837,19 @@ function ZoomMenu() {
   </div>`;
 }
 
-/** Print: the bus graph or the duty graph as a PDF file, kept and opened. */
+/** Print: the bus graph, the duty graph or the duty cards as a PDF file, kept and opened. */
 function PrintMenu() {
   // (saved where the player chooses; its folder shown then, as the game-drawn launcher shows it)
-  const print = async (bus) => {
+  const print = async (what) => {
     setRf({ panel: null });
-    const r = await rfCmd('rf_print', { day: S.rf.day, bus }).catch((e) => ({ say: { text: e.message, error: true } }));
+    const r = await rfCmd('rf_print', { day: S.rf.day, ...what }).catch((e) => ({ say: { text: e.message, error: true } }));
     after(r);
     if (r?.printed && r.reveal) call('open_path', { path: r.folder }).catch(() => {});
   };
-  return html`<div class="rf-over rf-menu" style="left:280px;top:4px;width:260px;height:74px">
-    <${MenuItem} label="Bus graph (PDF)" title="Every vehicle's day on the hours, as Optibus prints it" onClick=${() => print(true)} />
-    <${MenuItem} label="Duty graph (PDF)" title="Every driver's duty on the hours" onClick=${() => print(false)} />
+  return html`<div class="rf-over rf-menu" style="left:280px;top:4px;width:260px;height:108px">
+    <${MenuItem} label="Bus graph (PDF)" title="Every vehicle's day on the hours, as Optibus prints it" onClick=${() => print({ bus: true })} />
+    <${MenuItem} label="Duty graph (PDF)" title="Every driver's duty on the hours" onClick=${() => print({ bus: false })} />
+    <${MenuItem} label="Duty cards (PDF)" title="Every driver's duty card, in the company's colours: every stop with its time, the timing points marked" onClick=${() => print({ cards: true })} />
   </div>`;
 }
 

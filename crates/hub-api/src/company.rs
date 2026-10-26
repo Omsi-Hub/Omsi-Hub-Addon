@@ -36,7 +36,7 @@ pub mod crew;
 mod currency;
 mod dealer;
 mod dialogs;
-mod dutycard;
+pub(crate) mod dutycard;
 // (an own line's change taking effect on its day, Trello "Tauri 6/6")
 mod due;
 mod fleet;

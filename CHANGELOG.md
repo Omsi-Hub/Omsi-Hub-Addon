@@ -2,6 +2,17 @@
 
 Each version of the Omsi-Hub add-on, newest first. The release on GitHub links here.
 
+## Unreleased
+
+### Added
+
+- **RosterFlow prints duty cards**: the print menu has **Duty cards (PDF)**, every duty of the
+  day as a depot prints them, two to an A4 sheet across to cut in two. Each card has the depot,
+  the day, the duty number, signing on and off, the longest break, the driving time and the
+  paid time, and then every piece: its running number and bus, every trip with each stop and
+  its time, the timing points marked, the reliefs (from which duty, to which) and the breaks.
+  The cards carry the company's logo picture (or its monogram and name) and its colour.
+
 ## 1.1.1
 
 A patch on 1.1.0. It still needs **openOMSI 0.2.22 or newer** and an original **OMSI 2**.
