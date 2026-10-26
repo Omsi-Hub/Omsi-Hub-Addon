@@ -1,8 +1,8 @@
-<!-- privacy-version: 4 -->
+<!-- privacy-version: 5 -->
 <!-- Maintainer: written to match what the code does; have it checked by someone who knows the GDPR. -->
 # Privacy Statement
 
-**Omsi-Hub. Version 4, effective 24 October 2026.**
+**Omsi-Hub. Version 5, effective 27 October 2026.**
 
 ## 1. Introduction
 
@@ -95,6 +95,7 @@ Omsi-Hub engages the following parties in the processing of personal data.
 | Cloudflare, Inc. | Independent controller for its STUN servers and its quick tunnels when the user hosts or joins a multiplayer session (section 3.2); Cloudflare's own privacy policy applies | United States |
 | ntfy.sh | Independent controller for the public message relay on which the network addresses of a multiplayer session are posted (section 3.2); its operator's own privacy policy applies | As stated by its operator |
 | Discord Inc. | Independent controller for the Discord server and, where the user chooses, for signing in with a Discord account; Discord's own privacy policy applies. Answers to tickets from the Discord server are passed to Discord to be posted in their thread | United States |
+| Google Ireland Limited (Google Analytics) | Processor, only for visitors of the Website who consent to it (section 10): measuring how the Website is used, with the pages visited, the referring page, the type of device, browser and screen, the approximate location derived from the IP address (the IP address itself is not stored) and the identifier in its cookies; no advertising features are used | European Union; Google LLC in the United States as sub-processor |
 | GitHub, Inc. | Independent controller for the Software's update checks, for the download of cloudflared (section 3.2) and for downloads the user starts | United States |
 
 Where personal data is transferred to a country outside the European Economic Area, this takes place on the basis of an adequacy decision of the European Commission, including the EU–U.S. Data Privacy Framework, or the Standard Contractual Clauses adopted by the European Commission.
@@ -110,6 +111,7 @@ Where personal data is transferred to a country outside the European Economic Ar
 - **Company leaderboard entries** are removed as soon as the user disables publication, when the company is deleted, or together with the account; entries not updated for 30 days are no longer shown.
 - **Deleting the account.** The user may delete the account at any time, in the Software (Account → Delete account) or on the Website. All associated personal data is then erased without delay: the profile and its photo, friends, invitations, statistics, leaderboard entries, bug reports and their Discord threads, the Discord link, and cloud saves with the files sent with them.
 - **Proof of consent** to this Privacy Statement is erased together with the account.
+- **Website analytics** collected with the visitor's consent (section 10) is retained by Google Analytics for two months and then deleted; its cookies expire after at most two years, or earlier when the visitor withdraws consent or clears them.
 
 ## 7. Security
 
@@ -143,7 +145,9 @@ An account may be created only by persons aged 16 or over, or with the consent o
 
 ## 10. Cookies and local storage
 
-The Website does not use cookies. In the user's own browser it stores only what is strictly necessary for the Website and the Services: in local storage, the session token that keeps the user signed in (removed when the user signs out) and the chosen theme and language; in session storage, which is cleared when the browser tab is closed, a cache of release information and short-lived sign-in state (the email address awaiting a verification code and the acceptance of this Privacy Statement during sign-up).
+Without the visitor's consent, the Website uses no cookies. In the visitor's own browser it stores only what is strictly necessary for the Website and the Services: in local storage, the session token that keeps the user signed in (removed when the user signs out), the chosen theme and language, and the visitor's choice about analytics cookies; in session storage, which is cleared when the browser tab is closed, a cache of release information and short-lived sign-in state (the email address awaiting a verification code and the acceptance of this Privacy Statement during sign-up).
+
+**Analytics cookies, only with consent.** On a first visit the Website asks whether it may measure the visit with Google Analytics. Only if the visitor chooses "Accept" does the Website load Google Analytics, which places the cookies `_ga` and `_ga_<id>` (each kept for at most two years) to count visits and see how the Website is used; the data concerned and its retention are set out in sections 5 and 6. The legal basis is consent (Art. 6(1)(a) GDPR, and Article 11.7a of the Dutch Telecommunications Act). If the visitor chooses "Decline", or makes no choice, no cookies are placed and nothing is loaded from Google. The visitor can change the choice at any time under "Cookie settings" at the foot of every page of the Website; withdrawing consent removes Google Analytics' cookies. The Software and the Companion app do not use Google Analytics.
 
 ## 11. Amendments
 
