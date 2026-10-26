@@ -244,6 +244,8 @@ pub fn found(s: &mut Session, args: &Value) -> Result<Value, String> {
     };
     let mut c = co::found(&f, &core::load_config().profile);
     c.id = co::store::unused_id(&data(), &c.name);
+    // (a new company's drivers work shorter days: the player sets it on the planning)
+    co::plan::set_duty_max(&mut c, Some(co::staff::DUTY_STANDARD));
     let id = c.id.clone();
     switch_company(s, Some(c));
     super::changed(s);

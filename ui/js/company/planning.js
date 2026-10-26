@@ -297,6 +297,11 @@ function Tools({ v, st, W }) {
   const rw = bw(t.repeat.label);
   x -= rw + 6;
   const repeatR = { x, y: DAY_H + 4, w: rw, h: TOOL_H - 8 };
+  // (the longest duty, as the player sets it: the tours are cut by it)
+  const lw = t.longest ? bw(t.longest.label + '  10:00') + 10 : 0;
+  if (t.longest) x -= lw + 6;
+  const longR = { x, y: DAY_H + 4, w: lw, h: TOOL_H - 8 };
+  const grey = q.light ? [196, 204, 214] : [104, 116, 132];
   const colour = ink(q, t.tone);
   const clear = () => {
     if (st.clear_armed) {
@@ -307,6 +312,10 @@ function Tools({ v, st, W }) {
   return html`<div style=${box(0, DAY_H, W, TOOL_H) + `;background:${rgba(q.tool)}`}></div>
     <span class="cm-icon" style=${`left:10px;top:${DAY_H + 12}px;color:${colour}`}><${Icon} name=${t.icon} size=${16} /></span>
     <${TextIn} x=${34} y=${DAY_H} w=${Math.max(0, x - 46)} h=${TOOL_H} px=${13} weight=${500} color=${colour} title=${t.text}>${t.text}</${TextIn}>
+    ${t.longest && html`<select class="pl-sel" title=${t.longest.tip} style=${box(longR.x, longR.y, longR.w, longR.h) + `;--b:${rgba(grey)};--h:${rgba(mix(grey, [255, 255, 255], 0.08))};color:${q.light ? rgba(q.text) : '#fff'}`}
+      value=${String(t.longest.value)} onChange=${(e) => actMore('plan_duty_max', { minutes: Number(e.currentTarget.value) })}>
+      ${t.longest.choices.map((c) => html`<option value=${String(c.value)}>${t.longest.label}  ${c.label}</option>`)}
+    </select>`}
     <${RfButton} r=${repeatR} label=${t.repeat.label} title=${t.repeat.tip} onClick=${() => actMore('plan_repeat', { date: v.date })} />
     <${RfButton} r=${clearR} label=${t.clear.label} title=${t.clear.tip} armed=${t.clear.armed} onClick=${clear} />
     <${RfButton} r=${fillR} label=${t.fill.label} solid title=${t.fill.tip} onClick=${() => actMore('plan_fill', { date: v.date })} />`;
@@ -678,6 +687,9 @@ function DutyPanel({ s, v, inner }) {
     <div style="flex:none"><${Facts} s=${s} v=${v} w=${w} /></div>
     <div class="pl-scroll" style=${`flex:1;min-height:0;margin-bottom:${footH}px`}>
       <div style=${`width:${lw}px;padding-bottom:8px`}>
+        ${s.split &&
+        html`<div class="pl-slot" title=${s.split.tip}><${PickRow} r=${{ x: 0, y: 0, w: lw, h: 30 }} swatch="accent" text=${s.split.label} right=${s.split.note} rightTone="dim" onClick=${() => actMore('plan_split', { date: v.date, ti: s.ti, k: s.k })} /></div>
+          <div style="height:10px"></div>`}
         ${s.options.length > 0 &&
         html`<div class="pl-caps" style=${`color:${rgba(q.dim)}`}>${s.options_title}</div>
           ${s.options.map((o) => html`<div class="pl-slot"><${PickRow} r=${{ x: 0, y: 0, w: lw, h: 30 }} on=${o.on} text=${o.label} right=${o.note} rightTone="dim" onClick=${() => actMore('plan_set_fill', { key: o.key, fill: o.fill })} /></div>`)}

@@ -62,6 +62,7 @@ fn setup() -> (Company, Vec<TourOfDay>) {
         ],
         unplanned: false,
         cuts: None,
+        duty_max: None,
     }];
     let wd = super::super::plan::weekday_of(&c.date);
     let id = c.fleet[0].id;
@@ -537,7 +538,8 @@ fn what_a_player_drives_is_the_bosss_companys_his_duty_alone_with_its_fines() {
     let mut b = two_duties();
     let v = ask(&mut b, "jan", "hello", |_| {});
     let s = snap(&v);
-    assert_eq!(s.duties.iter().map(|d| (d.from, d.to, d.state)).collect::<Vec<_>>(), vec![(350, 430, DutyState::Open), (440, 480, DutyState::Company)]);
+    // (the agency driver's is open too: a player may take it over)
+    assert_eq!(s.duties.iter().map(|d| (d.from, d.to, d.state, d.who.as_str())).collect::<Vec<_>>(), vec![(350, 430, DutyState::Open, ""), (440, 480, DutyState::Open, "Agency driver")]);
     let duty = s.duties[0].duty.clone();
     assert_eq!(ask(&mut b, "jan", "take", |r| r.duty = Some(duty.clone()))["ok"], true);
     assert_eq!(ask(&mut b, "jan", "start", |r| r.duty = Some(duty.clone()))["ok"], true);
@@ -955,7 +957,7 @@ fn a_duty_driven_together_joins_the_company_s_world_on_its_clock() {
     let t = now();
     let date = b.c.date.clone();
     // (the boss's own duty's game starts at 05:40: it opens the world)
-    assert_eq!(b.st.place(0, "Luc", &date, 340, t), Ok(Place::Open));
+    assert_eq!(b.st.place(0, "Luc", &date, 340, 480, t), Ok(Place::Open));
     let together = |r: &mut Request| {
         r.duty = Some(duty.clone());
         r.world = true;
@@ -1006,9 +1008,7 @@ fn a_co_owner_gives_himself_a_duty_the_company_drives_and_starts_it() {
     let jan = guest_no(&b, "jan");
     assert!(b.st.set_role(&mut b.c, now(), jan, Role::CoOwner, Role::CoOwner.preset()));
     let duty = snap(&v).duties[0].duty.clone();
-    assert_eq!(snap(&v).duties[0].state, DutyState::Company);
-    // (taking it is refused: somebody drives it)
-    assert_eq!(ask(&mut b, "jan", "take", |r| r.duty = Some(duty.clone()))["ok"], false);
+    assert_eq!(snap(&v).duties[0].state, DutyState::Open);
     let v = ask(&mut b, "jan", "assign", |r| {
         r.duty = Some(duty.clone());
         r.target = jan;
@@ -1019,4 +1019,80 @@ fn a_co_owner_gives_himself_a_duty_the_company_drives_and_starts_it() {
     assert_eq!(v["ok"], true, "{v}");
     assert!(serde_json::from_value::<DriveStart>(v["start"].clone()).is_ok());
     assert_eq!(b.c.together.claim_of(&duty).map(|x| x.state), Some(ClaimState::Driving));
+}
+
+/// Complaints, 2026-10-26 ("duties are not given right"): a duty the company's own driver or the
+/// agency's would drive is open to the players - its driver gives it up -, the boss's own is not.
+#[test]
+fn a_player_takes_over_a_duty_of_the_companys_own_driver_but_not_the_bosss() {
+    let mut b = two_duties();
+    let v = ask(&mut b, "jan", "hello", |_| {});
+    let agency = snap(&v).duties[1].duty.clone();
+    let v = ask(&mut b, "jan", "take", |r| r.duty = Some(agency.clone()));
+    assert_eq!(v["ok"], true, "{v}");
+    let jan = guest_no(&b, "jan");
+    assert_eq!(b.plan().tours[0].duties[1].who, Some(Who::Guest(jan)));
+    // (the boss's own duty: his)
+    let wd = super::super::plan::weekday_of(&b.c.date);
+    super::super::plan::set_driver(&mut b.c, wd, "Linie5", "2", 0, Some(Who::Player));
+    let v = ask(&mut b, "piet", "hello", |_| {});
+    let s = snap(&v);
+    assert_eq!((s.duties[0].state, s.duties[0].who.as_str()), (DutyState::Company, "Luc"));
+    let own = s.duties[0].duty.clone();
+    assert_eq!(ask(&mut b, "piet", "take", |r| r.duty = Some(own.clone()))["error"].as_str(), Some(book::NOT_OPEN));
+}
+
+/// A tour cut anew by the boss (`studio::split_duty`, RosterFlow): the duty a player has moves
+/// with its first trip, not with its place in the tour.
+#[test]
+fn a_players_duty_follows_its_trips_when_the_tour_is_cut_anew() {
+    let mut b = two_duties();
+    let v = ask(&mut b, "jan", "hello", |_| {});
+    let second = snap(&v).duties[1].duty.clone();
+    assert_eq!(ask(&mut b, "jan", "take", |r| r.duty = Some(second.clone()))["ok"], true);
+    let jan = guest_no(&b, "jan");
+    // (the first duty split in two: Jan's is the third now)
+    b.tours[0].cuts = Some(vec![2, 3]);
+    let s = snap(&ask(&mut b, "jan", "snapshot", |_| {}));
+    let x = b.c.together.claims.iter().find(|x| x.guest == jan).unwrap();
+    assert_eq!((x.duty.duty, x.from, x.to), (2, 440, 480));
+    assert_eq!(b.plan().tours[0].duties[2].who, Some(Who::Guest(jan)));
+    assert!(b.plan().tours[0].duties[1].who != Some(Who::Guest(jan)));
+    let mine = s.duties.iter().find(|d| d.state == DutyState::Mine).unwrap();
+    assert_eq!((mine.duty.duty, mine.from), (2, 440));
+}
+
+/// Complaints, 2026-10-26 ("the players don't see each other"): a player whose duty began in the
+/// company's world joins it all the same, from his duty's next trip on its clock - the AI drove
+/// the trips before.
+#[test]
+fn a_player_joins_the_company_s_world_past_his_duty_s_start_from_its_next_trip() {
+    use super::super::clock;
+    use super::world;
+    let mut b = boss();
+    let v = ask(&mut b, "jan", "hello", |_| {});
+    let duty = snap(&v).duties[0].duty.clone();
+    assert_eq!(ask(&mut b, "jan", "take", |r| r.duty = Some(duty.clone()))["ok"], true);
+    let (t, date) = (now(), b.c.date.clone());
+    assert_eq!(b.st.place(0, "Luc", &date, 300, 600, t), Ok(world::Place::Open));
+    assert_eq!(world::opened(&mut b.st.world, 0, "OMSI-LUC1"), Ok(true));
+    // (the world's clock at 06:35: Jan's duty began at 05:50)
+    b.st.world.as_mut().unwrap().at = clock::moment(&date, 395);
+    let v = ask(&mut b, "jan", "start", |r| {
+        r.duty = Some(duty.clone());
+        r.world = true;
+    });
+    assert_eq!(v["ok"], true, "{v}");
+    let start: DriveStart = serde_json::from_value(v["start"].clone()).unwrap();
+    assert_eq!((start.lan.as_str(), start.time), ("join:OMSI-LUC1", 395));
+    // (from the 07:20, the first trip the bus's lead leaves him time for: the AI drove those before)
+    let x = b.c.together.claim_of(&duty).cloned().unwrap();
+    assert_eq!((x.state, x.ai.len()), (ClaimState::Driving, 1));
+    assert_eq!((x.ai[0].from, x.ai[0].until, x.ai[0].why), (0, Some(3), book::LeftWhy::Late));
+    assert!(b.st.notices.iter().any(|n| n.text == world::JOINED_LATE));
+    let v = ask(&mut b, "jan", "report", |r| {
+        r.duty = Some(duty.clone());
+        r.trips = vec![run(360, 20, 0), run(440, 30, 0)];
+    });
+    assert_eq!((v["taken"].as_u64(), v["refused"].as_u64()), (Some(1), Some(1)), "{v}");
 }

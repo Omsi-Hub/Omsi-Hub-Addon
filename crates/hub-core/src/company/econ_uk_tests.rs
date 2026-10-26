@@ -48,7 +48,7 @@ pub(crate) fn tour_on(line: &str, number: &str, no: String, from: i32) -> TourOf
     for t in trips.iter_mut() {
         t.line = number.into();
     }
-    TourOfDay { line: line.into(), number: number.into(), tour: no, ai_group: String::new(), trips, unplanned: false, cuts: None }
+    TourOfDay { line: line.into(), number: number.into(), tour: no, ai_group: String::new(), trips, unplanned: false, cuts: None, duty_max: None }
 }
 
 /// The day's tours: an early and a late tour for each bus out - 22 on a weekday, 18 on a

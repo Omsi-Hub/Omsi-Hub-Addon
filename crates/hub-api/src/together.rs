@@ -33,7 +33,7 @@ use crate::launcher::company::together::{Perm, Role};
 use crate::{Answer, Platform};
 use serde_json::{json, Value};
 
-pub use host::{boss_along, boss_out_of_world, boss_place, boss_world_code, closing_company, give_to_guest, online_guests, quit, rail_badge, tile_line};
+pub use host::{boss_along, boss_out_of_world, boss_place, boss_world_code, closing_company, give_to_guest, guest_buses, online_guests, quit, rail_badge, tile_line};
 
 /// The code of the company session hosted now (None: none, or "Play together" switched off).
 pub fn session_code() -> Option<String> {

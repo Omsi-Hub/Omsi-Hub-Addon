@@ -64,6 +64,30 @@ pub struct Request {
     pub msg: u64,
     /// `start`: drive the duty together, in the company's world (`world.rs`), not alone.
     pub world: bool,
+    /// Where the bus his game drives is now (complaints, 2026-10-26: "the players don't see each
+    /// other on the map"): the boss's fleet map shows it on its block, for everyone who looks.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub pos: Option<BusAt>,
+}
+
+/// Where a player's bus is in his game, as his plugin wrote it for the fleet map (the player of
+/// `hub_game::bridge::Traffic`): the map, the game's coordinates with one place of them given by
+/// its tile (`reference`: x, y, tile x, tile y, metres in it x and y), the way it faces
+/// (degrees), its speed (km/h), its delay (s) and passengers, and its line and tour as the game
+/// has them.
+#[derive(Serialize, Deserialize, Clone, Debug, Default, PartialEq)]
+#[serde(default)]
+pub struct BusAt {
+    pub map: String,
+    pub x: f64,
+    pub y: f64,
+    pub heading: f64,
+    pub speed: f64,
+    pub delay: Option<f64>,
+    pub passengers: Option<f64>,
+    pub line: String,
+    pub tour: String,
+    pub reference: Option<[f64; 6]>,
 }
 
 /// The company as the friend's page shows it.

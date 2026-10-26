@@ -19,7 +19,7 @@ use crate::launcher::company::together::book::{self, ClaimState};
 use crate::launcher::company::together::code::{self, CompanyCode};
 use crate::launcher::company::together::host::{self as th, Here, HostState};
 use crate::launcher::company::together::server::{Server, TunnelState};
-use crate::launcher::company::together::wire::{DutyState, Request, SnapWorld};
+use crate::launcher::company::together::wire::{BusAt, DutyState, Request, SnapWorld};
 use crate::launcher::company::together::world::{self, Place};
 use crate::launcher::company::together::{Perm, Role};
 use crate::launcher::company::{self as co, Company};
@@ -122,7 +122,17 @@ pub fn boss_place(date: &str, minute: i32) -> Result<Place, String> {
     let mut g = hosting();
     let h = g.as_mut().ok_or_else(|| tr("Share the company first: driving together needs its session."))?;
     let boss = h.st.boss.clone();
-    h.st.place(0, &boss, date, minute, unix_now()).map_err(|v| super::refusal_text(&v))
+    // (the boss's own duty joins it from its start, as long as he has his bus's lead: `world::LATE`)
+    let start = co::clock::moment(date, minute as i64);
+    let place = h.st.place(0, &boss, date, minute, minute + world::LATE as i32 + 1, unix_now()).map_err(|v| super::refusal_text(&v))?;
+    if let Place::Join { minute: at, .. } = &place {
+        if world::late(date, start, *at) {
+            world::leave(&mut h.st.world, 0);
+            let hm = |m: i64| co::clock::hhmm(m);
+            return Err(trf(world::TOO_LATE, &[("now", &hm(co::clock::moment(date, *at as i64))), ("start", &hm(start))]));
+        }
+    }
+    Ok(place)
 }
 
 /// The game code of the company's world the boss's game opened (`together::watch_world`).
@@ -295,6 +305,14 @@ pub fn online_guests(c: &Company) -> Vec<(u32, String, Option<DutyRef>)> {
     let g = hosting();
     let Some(h) = g.as_ref().filter(|h| h.company == c.id) else { return Vec::new() };
     h.st.online_now(unix_now()).map(|o| (o.guest, o.name.clone(), o.driving.clone())).collect()
+}
+
+/// Where the buses of the players online in the open company's session are, as their games say
+/// (`Request::pos`): (name, the duty he drives, where) - the fleet map puts each on its block.
+pub fn guest_buses(c: &Company) -> Vec<(String, Option<DutyRef>, BusAt)> {
+    let g = hosting();
+    let Some(h) = g.as_ref().filter(|h| h.company == c.id) else { return Vec::new() };
+    h.st.buses(unix_now()).map(|(o, at)| (o.name.clone(), o.driving.clone(), at.clone())).collect()
 }
 
 /// The Multiplayer page's badge in the strip: the duties asked for, else the players online.

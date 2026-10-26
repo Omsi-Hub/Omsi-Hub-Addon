@@ -1123,6 +1123,7 @@ mod tests {
                     trips: (0..10).map(|n| trip(6 * 60 + k * 30 + n * 60, 6 * 60 + k * 30 + n * 60 + 50, 12)).collect(),
                     unplanned: false,
                     cuts: None,
+                    duty_max: None,
                 })
                 .collect::<Vec<_>>()
         };

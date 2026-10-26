@@ -20,6 +20,10 @@ pub fn online_guests(_: &Company) -> Vec<(u32, String, Option<DutyRef>)> {
     Vec::new()
 }
 
+pub fn guest_buses(_: &Company) -> Vec<(String, Option<DutyRef>, crate::launcher::company::together::wire::BusAt)> {
+    Vec::new()
+}
+
 pub fn rail_badge(_: &Company) -> (Value, String) {
     (Value::Null, tr("Multiplayer"))
 }

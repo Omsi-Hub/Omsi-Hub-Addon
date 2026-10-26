@@ -181,6 +181,8 @@ fn more_act_need(act: &str) -> Need {
         "contract_vary" | "contract_offer" => SPEND,
         "map_play" | "map_speed" | "map_now" | "map_pick" => Member,
         "plan_give_driver" | "plan_give_bus" | "plan_set_fill" | "plan_fill" | "plan_clear" | "plan_repeat" | "plan_fold" | "plan_fold_all" | "plan_stop" | "plan_start" => PLANS,
+        // (a duty split, the longest duty set: the planners')
+        "plan_split" | "plan_duty_max" => PLANS,
         // (a line's trips and timetable: the planning's sheet of the player's own, or RosterFlow's
         // Timeplan with the add-on on - its changes are checked as they are made)
         "plan_timetable" => RF_VIEW,

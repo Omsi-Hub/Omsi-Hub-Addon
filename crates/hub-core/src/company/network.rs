@@ -127,6 +127,10 @@ pub struct TourOfDay {
     /// new duty begins with. None: cut automatically (`split_tour`).
     #[serde(default)]
     pub cuts: Option<Vec<usize>>,
+    /// The longest duty it is cut into automatically (minutes: the company's `plan::duty_max`,
+    /// given by `tours_of_day`; None: `DUTY_MAX`).
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub duty_max: Option<i32>,
 }
 
 impl TourOfDay {
@@ -366,7 +370,9 @@ fn finish_tours(c: &Company, mut out: Vec<TourOfDay>, date: &str, cuts: Vec<(usi
     // (the own lines' tours with their depot runs: their timetable has none)
     super::ownline::add_depot_runs(c, &mut out);
     super::studio::resolve_cuts(&mut out, &cuts);
+    let duty_max = super::plan::duty_max(c);
     for t in out.iter_mut() {
+        t.duty_max = Some(duty_max);
         let begins = super::clock::moment(date, t.from() as i64);
         t.unplanned = !c.lines.iter().find(|l| l.name.eq_ignore_ascii_case(&t.line)).is_some_and(|l| in_service(l, begins));
     }
@@ -401,7 +407,7 @@ pub(crate) fn timetable_tours(c: &Company, lines: &[LineInfo]) -> Vec<TourOfDay>
                 .collect();
             trips.sort_by_key(|x| x.dep);
             if trips.iter().any(PlannedTrip::counts) {
-                out.push(TourOfDay { line: cl.name.clone(), number: cl.number.clone(), tour: t.number.clone(), ai_group: t.ai_group.clone(), trips, unplanned: false, cuts: None });
+                out.push(TourOfDay { line: cl.name.clone(), number: cl.number.clone(), tour: t.number.clone(), ai_group: t.ai_group.clone(), trips, unplanned: false, cuts: None, duty_max: None });
             }
         }
     }
@@ -557,7 +563,7 @@ pub fn split_tour(trips: &[PlannedTrip], max: i32) -> Vec<std::ops::Range<usize>
 }
 
 /// The duties of a tour: where the player cut it in the scheduling studio, else cut
-/// automatically (`DUTY_MAX`).
+/// automatically into duties no longer than the company's longest (`TourOfDay::duty_max`).
 pub fn duties_of(t: &TourOfDay) -> Vec<std::ops::Range<usize>> {
     match &t.cuts {
         Some(cuts) if !t.trips.is_empty() => {
@@ -572,7 +578,7 @@ pub fn duties_of(t: &TourOfDay) -> Vec<std::ops::Range<usize>> {
             }
             out
         }
-        _ => split_tour(&t.trips, DUTY_MAX),
+        _ => split_tour(&t.trips, t.duty_max.unwrap_or(DUTY_MAX)),
     }
 }
 

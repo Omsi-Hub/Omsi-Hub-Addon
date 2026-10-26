@@ -4,8 +4,36 @@ Each version of the Omsi-Hub add-on, newest first. The release on GitHub links h
 
 ## Unreleased
 
+### Added
+
+- **RosterFlow prints duty cards**: the print menu has **Duty cards (PDF)**, every duty of the
+  day as a depot prints them, two to an A4 sheet across to cut in two. Each card has the depot,
+  the day, the duty number, signing on and off, the longest break, the driving time and the
+  paid time, and then every piece: its running number and bus, every trip with each stop and
+  its time, the timing points marked, the reliefs (from which duty, to which) and the breaks.
+  The cards carry the company's logo picture (or its monogram and name) and its colour.
+
+### Changed
+
+- **Your drivers work days as long as you want**: the planning has a **Longest duty** in its
+  toolbar (2:00 to 10:00). A tour longer than that is split into duties no longer than it, and
+  the dispatcher gives no driver more work in a day. A new company starts at 7:30; a company of
+  before keeps its planning until you set one.
+- **Split a duty with one click, as often as you want**: a duty chosen on the planning has
+  **Split this duty**, which starts a new duty at the relief point nearest its middle (it says
+  where); each half can be split again.
+
 ### Fixed
 
+- **Play together: duties for the players**: in a company with its own drivers no duty was
+  ever open to the players. A duty the company's own driver or the agency would drive can now
+  be taken (or asked for) by a player, who takes it over; the boss's own duty stays his. A
+  player's duty also stays his when the boss cuts its tour anew.
+- **Play together: the players see each other**: each player's bus is on the fleet map where
+  his own game says it is, on the block of the duty he drives - for the boss and for every
+  player who looks at the map. And the company's world can be joined for the whole of a duty:
+  from three hours before it begins, and after it began from its next trip (the AI drove the
+  trips before), instead of only in the 25 minutes around its start.
 - **The plugin no longer stops with "ran longer than 50 ms" as the game loads**: with the
   phone companion on, the plugin's first moment in the game read and sent everything for the
   phone at once - the bus and its devices, its keys, the duty's trips and every line and tour

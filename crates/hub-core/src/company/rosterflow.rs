@@ -2778,9 +2778,10 @@ fn change_points(c: &Company, tours: &[TourOfDay], i: usize) -> Vec<usize> {
     (1..t.trips.len()).filter(|&k| t.trips[k].counts() && t.trips[..k].iter().any(|x| x.counts()) && st::may_change(c, tours, &t.line, &t.trips[k - 1], &t.trips[k])).collect()
 }
 
-/// The longest piece Optimise cuts: as long as a driver may work without a break.
-fn longest_piece(p: &Prefs) -> i32 {
-    if p.continuous.on { p.continuous.value } else { staff::DUTY_MAX }.min(staff::DAY_MAX)
+/// The longest piece Optimise cuts: as long as a driver may work without a break, and never
+/// longer than the company's longest duty (`plan::duty_max`).
+fn longest_piece(c: &Company, p: &Prefs) -> i32 {
+    if p.continuous.on { p.continuous.value } else { staff::DUTY_MAX }.min(super::plan::day_max(c).unwrap_or(staff::DAY_MAX))
 }
 
 /// Where block `t` can be cut (`change_points`), and the pieces Optimise cuts it into: as long as
@@ -2791,7 +2792,7 @@ fn cut_block(c: &Company, tours: &[TourOfDay], i: usize, p: &Prefs) -> Vec<Range
     if n == 0 {
         return Vec::new();
     }
-    let longest = longest_piece(p);
+    let longest = longest_piece(c, p);
     let can = change_points(c, tours, i);
     let span = |a: usize, b: usize| t.trips[a..b].iter().map(|x| x.arr).max().unwrap_or(0) - t.trips[a].dep;
     // (the trips of a piece from `a` to `b` may run as long as the driver's work then stays within

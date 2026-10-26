@@ -408,8 +408,12 @@ fn tools(s: &Session, c: &Company, date: &str, clear_armed: bool) -> Value {
         ),
         None => (trf("%{day}: the roster of this weekday repeats every week.", &[("day", &day_label(date))]), "text86", "event"),
     };
+    // (the longest duty, as the player sets it: complaints, 2026-10-26)
+    let longest = pl::duty_max(c);
+    let choices: Vec<Value> = (co::staff::DUTY_SHORTEST..=co::staff::DAY_MAX).step_by(30).map(|m| json!({ "value": m, "label": format!("{}:{:02}", m / 60, m % 60) })).collect();
     json!({
         "text": text, "tone": tone, "icon": icon,
+        "longest": { "label": tr("Longest duty").to_uppercase(), "value": longest, "choices": choices, "tip": tr("A driver works at most this long a day: longer tours are split into duties no longer than this, and the dispatcher gives nobody more.") },
         "fill": { "label": tr("Fill the roster").to_uppercase(), "tip": tr("Fix in the roster what the dispatcher would take: free buses, and free drivers by the working-time rules. Only what is planned runs.") },
         "clear": { "label": tr(if clear_armed { "Press again" } else { "Clear the day" }).to_uppercase(), "widest": [tr("Clear the day").to_uppercase(), tr("Press again").to_uppercase()], "armed": clear_armed, "tip": tr("Take every bus and driver of this weekday out of the roster") },
         "repeat": { "label": tr(repeat).to_uppercase(), "tip": tr("This weekday's roster on the other days too (theirs is replaced)") },
@@ -767,8 +771,16 @@ fn duty_panel(c: &Company, p: &DayPlan, ti: usize, k: usize) -> Value {
         cands.push(json!({ "who": who_key(Who::Staff(x.id)), "name": name, "state": s, "tone": tone, "swatch": driver_colour(c, x.id), "on": current == Some(Who::Staff(x.id)) }));
     }
     cands.push(json!({ "who": null, "name": tr("Nobody"), "state": "", "tone": "dim", "swatch": null, "on": false }));
+    // (split in two at the relief point nearest its middle, as often as wanted: complaints,
+    // 2026-10-26 - not in Casual, whose planning runs by itself)
+    let blocks: Vec<co::network::TourOfDay> = p.tours.iter().map(|x| x.tour.clone()).collect();
+    let split = (!t.by_player && !co::autopilot::on(c)).then(|| co::studio::halfway(c, &blocks, ti, k)).flatten().map(|at| {
+        let x = &t.tour.trips[at];
+        json!({ "label": tr("Split this duty"), "note": trf("At %{time}, %{stop}", &[("time", &hhmm(x.dep)), ("stop", x.from.trim())]), "tip": tr("A new duty begins at the relief point nearest its middle: each half can be split again.") })
+    });
     json!({
         "kind": "duty", "title": tr("Duty").to_uppercase(), "close": tr("Back to the day"),
+        "split": split,
         "ti": ti, "k": k, "line": t.tour.line, "tour": t.tour.tour, "by_player": t.by_player,
         "head": line_title(t, Some(k)), "colour": line_colour(c, &t.tour.line), "tt": tt_button(),
         "facts": facts,
@@ -1154,6 +1166,54 @@ pub fn act(s: &mut Session, what: &str, args: &Value) -> Option<Answer> {
                     }
                     Err(p) => popup_answer(p),
                 }
+            }
+        }
+        // the longest duty (`pl::duty_max`): the tours cut automatically are cut anew by it
+        "plan_duty_max" => {
+            let minutes = args.get("minutes").and_then(Value::as_i64).map(|m| m as i32);
+            Ok(apply(s, |c| {
+                pl::set_duty_max(c, minutes);
+                Ok(())
+            })
+            .err()
+            .map(|p| json!({ "popup": p }))
+            .unwrap_or(json!({})))
+        }
+        // a duty split in two at the relief point nearest its middle (`studio::split_duty`)
+        "plan_split" => {
+            let (Some(k), Some(p)) = (k, plan_for(s, args)) else { return Some(Ok(json!({}))) };
+            let Some(t) = p.tours.get(ti).filter(|t| !t.by_player) else { return Some(Ok(json!({}))) };
+            let (line, tour, number) = (t.tour.line.clone(), t.tour.tour.clone(), t.tour.number.clone());
+            // (a player of "Play together" driving a duty of this bus now: its duties stay as they
+            // are until he is done - his game drives them as they were given)
+            let driving = p.today
+                && c.together
+                    .claims
+                    .iter()
+                    .any(|x| x.duty.date == p.date && x.duty.line.eq_ignore_ascii_case(&line) && x.duty.tour.trim() == tour.trim() && x.state == co::together::book::ClaimState::Driving);
+            if driving {
+                return Some(popup(s, "call_split", "Not now", tr("A player of the company's session drives a duty of this bus now: split it once he is done."), String::new(), None));
+            }
+            let blocks: Vec<co::network::TourOfDay> = p.tours.iter().map(|x| x.tour.clone()).collect();
+            let slot = co::plandays::slot_of(&c, &date);
+            let d = date.clone();
+            let lines = lines_of(s, &date);
+            match apply(s, |c| {
+                let at = co::studio::split_duty(c, slot, &blocks, ti, k)?;
+                // (the players' duties of the day found again where the tour is cut now)
+                if let Some(lines) = lines.as_ref().filter(|_| d == c.date) {
+                    let tours = co::network::tours_of_day(c, lines, &d);
+                    let now = pl::day_plan(c, &d, tours, &[], &[], false);
+                    co::together::book::rekey(c, &now);
+                }
+                Ok(at)
+            }) {
+                Ok(at) => {
+                    let time = blocks[ti].trips.get(at).map(|x| hhmm(x.dep)).unwrap_or_default();
+                    s.say(trf("Duty cut on %{v} at %{time}", &[("v", &format!("{number}/{tour}")), ("time", &time)]), false);
+                    Ok(json!({}))
+                }
+                Err(p) => popup_answer(p),
             }
         }
         // "Drive this duty": the company's duty launcher with exactly this duty (`planning::drive`)

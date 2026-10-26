@@ -1984,6 +1984,7 @@ version = "1.1.1"
 dependencies = [
  "anyhow",
  "chrono",
+ "flate2",
  "glam",
  "hashbrown 0.17.1",
  "hub-companion",

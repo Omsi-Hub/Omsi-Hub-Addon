@@ -18,7 +18,7 @@ use super::super::plan::{BusOf, DayPlan, Who};
 use super::book::{self, ClaimState, Handed, LeftWhy};
 use super::code;
 use super::roles::{Perm, Role};
-use super::wire::{Card, DriveStart, DutyState, Notice, Request, SnapAsk, SnapDuty, SnapLine, SnapMember, SnapPlayer, SnapResult, SnapWorld, SnapYou, Snapshot};
+use super::wire::{BusAt, Card, DriveStart, DutyState, Notice, Request, SnapAsk, SnapDuty, SnapLine, SnapMember, SnapPlayer, SnapResult, SnapWorld, SnapYou, Snapshot};
 use super::world::{self, Place, World};
 use serde_json::{json, Value};
 
@@ -135,6 +135,8 @@ pub struct Online {
     pub seen: u64,
     pub driving: Option<DutyRef>,
     pub in_game: bool,
+    /// Where his game's bus is (`Request::pos`; None: not driving, or his game says nothing).
+    pub pos: Option<BusAt>,
 }
 
 /// The session's own: its secret, the company, the players heard from, those sent away from it
@@ -257,6 +259,11 @@ impl HostState {
         self.online.iter().filter(move |o| now.saturating_sub(o.seen) <= ONLINE_FOR)
     }
 
+    /// The buses of the players online whose games say where they are (the fleet map).
+    pub fn buses(&self, now: u64) -> impl Iterator<Item = (&Online, &BusAt)> {
+        self.online_now(now).filter_map(|o| o.pos.as_ref().map(|p| (o, p)))
+    }
+
     pub fn is_online(&self, guest: u32, now: u64) -> bool {
         self.online_now(now).any(|o| o.guest == guest)
     }
@@ -309,8 +316,9 @@ impl HostState {
                 o.name = name.clone();
                 o.driving = req.driving.clone();
                 o.in_game = req.in_game;
+                o.pos = req.pos.clone().filter(|_| req.in_game);
             }
-            None => self.online.push(Online { guest, name: name.clone(), seen: now, driving: req.driving.clone(), in_game: req.in_game }),
+            None => self.online.push(Online { guest, name: name.clone(), seen: now, driving: req.driving.clone(), in_game: req.in_game, pos: req.pos.clone().filter(|_| req.in_game) }),
         }
         if came && !leaving {
             self.gone.retain(|g| g.0 != guest);
@@ -349,6 +357,10 @@ impl HostState {
         let name = c.together.name_of(guest);
         let can = |p: Perm| perms.contains(&p);
         let p = here.plan;
+        // (the players' duties where the planning cut their tours anew since: `book::rekey`)
+        if let Some(p) = p {
+            book::rekey(c, p);
+        }
         let clock_now = clock::now(c);
         let mut extra = json!({});
         // (a duty whose day closed: no plan needed)
@@ -632,15 +644,43 @@ impl HostState {
         };
         // (together: in the company's world, from his duty's start; alone: out of it)
         let place = if together {
-            Some(self.place(guest, name, &st.date, st.time, here.now)?)
+            Some(self.place(guest, name, &st.date, st.time, x.to, here.now)?)
         } else {
             self.out_of_world(guest, here.now);
             None
         };
+        // (joined past his duty's start: from its next trip the world's clock leaves him time for,
+        // the AI drove those before - complaints, 2026-10-26)
+        let mut joined_late = None;
+        if let Some(Place::Join { minute, .. }) = &place {
+            if world::late(&st.date, clock::moment(&st.date, st.time as i64), *minute) {
+                let Some(p) = here.plan.filter(|p| !x.late && p.date == r.date) else {
+                    world::leave(&mut self.world, guest);
+                    return Err(refusal_with(world::PAST, vec![("now".into(), format!("{:02}:{:02}", minute / 60 % 24, minute % 60))]));
+                };
+                let Some(from) = Self::late_from(here, p, r, *minute) else {
+                    world::leave(&mut self.world, guest);
+                    return Err(refusal_with(world::PAST, vec![("now".into(), format!("{:02}:{:02}", minute / 60 % 24, minute % 60))]));
+                };
+                st = match start_from(c, here, p, r, from) {
+                    Ok(st) => st,
+                    Err(e) => {
+                        world::leave(&mut self.world, guest);
+                        return Err(refusal(e));
+                    }
+                };
+                joined_late = Some((from, *minute));
+            }
+        }
         book::keep_start(c, r, &st);
         book::set_state(c, r, guest, ClaimState::Driving).map_err(refusal)?;
+        if let Some((from, minute)) = joined_late {
+            book::ai_before(c, r, from, here.now, minute);
+            let at = format!("{:02}:{:02}", minute / 60 % 24, minute % 60);
+            self.tell(here.now, world::JOINED_LATE, vec![("name".into(), name.to_string()), ("time".into(), at)]);
+        }
         if let Some(pl) = &place {
-            if matches!(pl, Place::Join { .. }) {
+            if matches!(pl, Place::Join { .. }) && joined_late.is_none() {
                 self.tell(here.now, world::DRIVES_ALONG, vec![("name".into(), name.to_string())]);
             }
             world::apply(&mut st, pl);
@@ -674,11 +714,22 @@ impl HostState {
         Ok((st, back))
     }
 
-    /// Where player `who` (0: the boss) drives a duty whose game starts on `date` at `minute`
-    /// together (`world::place`): he opens the company's world, or joins it on its clock - or why
-    /// not.
-    pub fn place(&mut self, who: u32, name: &str, date: &str, minute: i32, now: u64) -> Result<Place, Value> {
-        world::place(&mut self.world, who, name, date, clock::moment(date, minute as i64), now).map_err(|(t, a)| refusal_with(t, a))
+    /// Where player `who` (0: the boss) drives a duty whose game starts on `date` at `minute` and
+    /// that ends at `end` (minutes of that day) together (`world::place`): he opens the company's
+    /// world, or joins it on its clock - or why not.
+    pub fn place(&mut self, who: u32, name: &str, date: &str, minute: i32, end: i32, now: u64) -> Result<Place, Value> {
+        world::place(&mut self.world, who, name, date, clock::moment(date, minute as i64), clock::moment(date, end as i64), now).map_err(|(t, a)| refusal_with(t, a))
+    }
+
+    /// The trip of duty `r` a player joining the company's world on its clock `minute` past his
+    /// duty's start drives on from (an index into its trips): its first with passengers that
+    /// leaves after the bus's lead from then. None: none is left.
+    fn late_from(here: &Here, p: &DayPlan, r: &DutyRef, minute: i32) -> Option<usize> {
+        let (ti, k) = r.find(p)?;
+        let d = &p.tours[ti].duties[k];
+        let trips = &p.tours[ti].tour.trips[d.start..d.end];
+        let from = clock::moment(&r.date, minute as i64) + here.lead;
+        (0..trips.len()).find(|&i| trips[i].counts() && !trips[i].is_second() && clock::moment(&r.date, trips[i].dep as i64) >= from)
     }
 
     /// Player `who` (0: the boss) drives in the company's world no longer (his game ended, he
@@ -744,6 +795,9 @@ impl HostState {
             return false;
         }
         let before = c.together.clone();
+        if let Some(p) = here.plan {
+            book::rekey(c, p);
+        }
         let silent: Vec<(u32, LeftWhy)> = self.online.iter().filter(|o| here.now.saturating_sub(o.seen) > LEFT_AFTER).map(|o| (o.guest, LeftWhy::Silent)).collect();
         let away: Vec<(u32, LeftWhy)> = self.gone.iter().copied().chain(silent).collect();
         for (guest, why) in away {
@@ -987,9 +1041,10 @@ pub fn snapshot(c: &Company, here: &Here, st: &HostState, guest: Option<u32>, si
                     Some(x) => (DutyState::Player, c.together.name_of(x.guest), String::new()),
                     None if t.by_player => (DutyState::Closed, String::new(), book::DRIVEN.into()),
                     None if !matches!(t.bus, Some(BusOf::Own(_))) => (DutyState::Closed, String::new(), book::NO_BUS.into()),
-                    None if d.who.is_some() => (DutyState::Company, who_of(c, d.who, &st.boss), String::new()),
+                    None if !book::takeable(d.who) || (begun && d.who.is_some()) => (DutyState::Company, who_of(c, d.who, &st.boss), String::new()),
                     None if begun => (DutyState::Closed, String::new(), book::BEGUN.into()),
-                    None => (DutyState::Open, String::new(), String::new()),
+                    // (open: nobody's yet, or the company's own driver's until a player takes it)
+                    None => (DutyState::Open, who_of(c, d.who, &st.boss), String::new()),
                 };
                 s.duties.push(sd);
             }

@@ -301,7 +301,7 @@ function TitleBar() {
     <i class="sep"></i>
     <span class="rf-icons" data-rf="rf-menu">
       <${IconBtn} icon="tune" title="Preferences: the rules the duties are checked against and Optimise works to" onClick=${() => setRf({ prefs: r.prefs ? null : { item: 'signing', search: '', inUse: false } })} />
-      <${IconBtn} icon="description" title="Print the bus graph or the duty graph as a PDF file" onClick=${() => toggle('print')} />
+      <${IconBtn} icon="description" title="Print the bus graph, the duty graph or the duty cards as a PDF file" onClick=${() => toggle('print')} />
       <${IconBtn} icon="search" title="Go to a vehicle or a duty by its ID (G)" onClick=${() => toggle({ kind: 'goto', text: '' })} />
       <${IconBtn} icon="settings" title="Optimisation settings" onClick=${() => toggle('optimise')} />
       <${IconBtn} icon="groups" disabled=${!togetherOn() || !!remote} title=${remote ? 'Only the boss can do this, on his own launcher.' : togetherOn() ? 'Play together: friends drive duties of your company in your world' : blockedLabel()} onClick=${() => setCo({ dialog: { kind: 'together' } })} />
