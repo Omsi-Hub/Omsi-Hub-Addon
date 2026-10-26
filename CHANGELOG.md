@@ -20,7 +20,7 @@ Each version of the Omsi-Hub add-on, newest first. The release on GitHub links h
   the name as the map loads. When the ring is nearly round, the bus pops up and flashes its
   headlights; the stops pop up on the line as it reaches them. The pause menu, its settings and lists are panes of frosted glass
   over the game's picture, in Omsi-Hub's blue, with Omsi-Hub's logo at the top. The plugin
-  puts the look in force once; Options › Interface › Interface theme in openOMSI switches back
+  puts the look in force once; Options › Interface › Theme pack in openOMSI switches back
   to openOMSI's own look (or to another theme), and that choice stays. The plugin is 1.16.0.
 
 ### Changed
