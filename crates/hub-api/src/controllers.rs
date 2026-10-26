@@ -167,7 +167,7 @@ pub(crate) mod tests {
     fn every_controllers_text_is_translated() {
         let js = include_str!("../../../ui/js/hub/controllers.js").replace("\r\n", "\n");
         let addon = include_str!("../../../ui/js/hub/addon.js").replace("\r\n", "\n");
-        let mut texts: Vec<String> = page_texts(&js).into_iter().chain(page_texts(&addon)).filter(|t| t != "Escape").collect();
+        let mut texts: Vec<String> = page_texts(&js).into_iter().chain(page_texts(&addon)).filter(|t| !["Escape", "Enter", "ArrowDown", "ArrowUp"].contains(&t.as_str())).collect();
         // (a hat's directions, in "Hat 1 up")
         texts.extend(["up", "right", "down", "left"].map(String::from));
         for f in hub_game::gamesettings::FIELDS.iter().filter(|f| hub_game::gamesettings::CONTROLLER_GROUPS.contains(&f.group)) {

@@ -390,6 +390,7 @@ mod tests {
             trips: (0..n).map(|k| trip(from + k * 60, from + 50 + k * 60, 12)).collect(),
             unplanned: false,
             cuts: None,
+            duty_max: None,
         }
     }
 

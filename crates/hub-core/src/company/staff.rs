@@ -39,6 +39,13 @@ use std::collections::HashSet;
 
 /// A duty lasts at most this long (minutes); a longer tour is split.
 pub const DUTY_MAX: i32 = 570;
+/// The longest duty a new company's planning starts with (`plan::Planning::duty_max`, which the
+/// player sets): a tour longer than this is split, and the dispatcher gives no driver more work
+/// in a day (complaints, 2026-10-26: staff "drove 8 hours a day"). A company of before keeps
+/// `DUTY_MAX` until its player sets one.
+pub const DUTY_STANDARD: i32 = 450;
+/// The shortest the player may set it to.
+pub const DUTY_SHORTEST: i32 = 120;
 /// A tour is split only where the bus stands at least this long.
 pub const SPLIT_PAUSE: i32 = 3;
 /// Rest between two pieces of work, overnight rest, time for a transfer between stops.

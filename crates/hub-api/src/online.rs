@@ -13,7 +13,12 @@
 //! * `ol_local {on}` - "Play without an account" (only that choice is kept, in the data
 //!   folder's `omsihub-online.json`);
 //! * `ol_profile {name}` - the display name chosen or changed;
+//! * the account's personnel pass (`my_personnel`, the state's `me.personnel`) is fetched once a
+//!   session and written into the account's driver's pass (`addon::set_personnel`): the
+//!   number and the code they sign on with are the account's, the same on every computer;
 //! * `ol_leaderboard {on}` - standing on the public leaderboard, or not (off until chosen);
+//! * `ol_companies`, `ol_company_board {id, on}` - the driver's companies on the company board
+//!   (`board.rs`), each switched on or off;
 //! * `ol_report_stats {points, level, duties, minutes, km}` - the service record for the
 //!   leaderboard; the worker tells it itself, the account's driver's whenever it changed
 //!   (`report_due`, from `drivers::board_stats`);
@@ -23,13 +28,15 @@
 //! * `ol_invite {id}` - the company session hosted now, to a friend; `ol_dismiss {id}`;
 //! * `ol_presence {away}`, `ol_seen`, `ol_refresh`;
 //! * `ol_privacy` - the privacy statement (`privacy.rs`); `ol_privacy_accept` - agreed to;
-//! * `ol_oauth {agree}` - signing in with Google: the listener started (`hub_online::oauth`),
-//!   the address the page opens in the system's browser answered with a number;
-//!   `ol_oauth_wait {id, agree}` - waits for the browser (a few minutes at most), then signs in
-//!   as `ol_sign_in` does; `ol_oauth_cancel` - the wait given up.
+//! * `ol_oauth {agree, provider}` - signing in with Google or Discord (`provider`: `google`, the
+//!   default, or `discord`): the listener started (`hub_online::oauth`), the address the page
+//!   opens in the system's browser answered with a number; `ol_oauth_wait {id, agree}` - waits
+//!   for the browser (a few minutes at most), then signs in as `ol_sign_in` does, and a Discord
+//!   sign-in links the account to that Discord account as the website does (`discord_claim`);
+//!   `ol_oauth_cancel` - the wait given up.
 //!
 //! The privacy statement (docs/PRIVACY.md): the page asks it before "Create an account" and
-//! before Google (`agree`: accepted there), which is sent as `accept_privacy` once signed in; the
+//! before Google or Discord (`agree`: accepted there), which is sent as `accept_privacy` once signed in; the
 //! email sign-in sends no `agree`, and its account is asked afterwards. At every sign-in and every
 //! restored session `my_privacy` is asked; below the current version the state says
 //! `privacy.needed`, the page asks (agree, or sign out), and the account's features - the
@@ -46,8 +53,8 @@
 //! reads it.
 
 use crate::{Answer, Platform};
-use hub_online::oauth::{self, Texts};
-use hub_online::{codes, privacy, store, Client, Endpoints, Error, Flow, Friend, Invite, Profile, Stats};
+use hub_online::oauth::{self, Provider, Texts};
+use hub_online::{codes, privacy, store, Client, Endpoints, Error, Flow, Friend, Invite, Personnel, Profile, Stats};
 use serde_json::{json, Value};
 use std::collections::{BTreeMap, HashMap, HashSet};
 use std::sync::atomic::{AtomicBool, AtomicU64, Ordering};
@@ -155,6 +162,9 @@ struct View {
     /// accepted yet.
     privacy_before: u32,
     profile: Option<Profile>,
+    /// The account's personnel pass, fetched once a session (`my_personnel`): the account's
+    /// driver signs on with it (`addon::set_personnel`).
+    personnel: Option<Personnel>,
     friends: Vec<Friend>,
     invites: Vec<Invite>,
     /// The requests and invites the page has shown (the badge counts the others).
@@ -167,6 +177,8 @@ struct View {
     refreshed_at: u64,
     /// The service record the leaderboard was last told (`report_due`).
     reported: Option<Stats>,
+    /// The account's user id, as the last fetch saw it (empty: signed out).
+    user: String,
 }
 
 static VIEW: LazyLock<Mutex<View>> = LazyLock::new(Default::default);
@@ -236,7 +248,7 @@ fn set_local(on: bool) {
 // --- the answers ------------------------------------------------------------------------------
 
 /// An error as the page shows it; signed out or offline, the view says so too.
-fn fail(e: Error) -> Value {
+pub(crate) fn fail(e: Error) -> Value {
     {
         let mut v = view();
         match e {
@@ -264,10 +276,12 @@ fn signed_out(v: &mut View) {
     v.need_privacy = false;
     v.privacy_before = 0;
     v.profile = None;
+    v.personnel = None;
     v.friends.clear();
     v.invites.clear();
     v.told = None;
     v.reported = None;
+    v.user.clear();
 }
 
 fn str_arg<'a>(args: &'a Value, name: &str) -> &'a str {
@@ -293,12 +307,15 @@ fn presence_of(hosted: Option<Hosted>, away: bool) -> (&'static str, Option<Stri
 
 /// What a refresh fetched: (lasting, no password), then the account, or the version accepted
 /// before while the privacy statement waits.
-type Fetched = ((bool, bool), Result<(Option<Profile>, Vec<Friend>, Vec<Invite>), u32>);
+type Fetched = ((bool, bool), Result<(Option<Profile>, Option<Personnel>, Vec<Friend>, Vec<Invite>), u32>);
 
-/// The heartbeat, then the profile, the friends and the invites, into the view; first, while the
-/// privacy statement is not agreed to, `my_privacy` (and nothing else).
+/// The heartbeat, then the profile, the personnel pass (once), the friends and the invites, into
+/// the view; first, while the privacy statement is not agreed to, `my_privacy` (and nothing else).
 fn refresh(beat: bool) -> Result<(), Error> {
-    let away = view().away;
+    let (away, has_pass) = {
+        let v = view();
+        (v.away, v.personnel.is_some())
+    };
     let now_state = presence(away);
     // (the account's user id beside what was fetched: the driver linked is this account's)
     let mut user = String::new();
@@ -318,14 +335,18 @@ fn refresh(beat: bool) -> Result<(), Error> {
             }
         }
         let profile = c.profile()?;
+        // (a server without `my_personnel` yet, or a pass not fetched now: the driver keeps the
+        // one of this computer, and it is asked again at the next beat)
+        let personnel = if profile.is_some() && !has_pass { c.personnel().ok() } else { None };
         let (friends, invites) = if profile.is_some() { (c.friends()?, c.invites()?) } else { (Vec::new(), Vec::new()) };
-        Ok(Some(((c.lasting(), !c.has_password()), Ok((profile, friends, invites)))))
+        Ok(Some(((c.lasting(), !c.has_password()), Ok((profile, personnel, friends, invites)))))
     });
     let mut v = view();
     match got {
         Ok(Some(((lasting, no_password), Err(agreed)))) => {
             // (the account waits for the player's agreement; asked again at the next beat)
             v.signed_in = true;
+            v.user = user.clone();
             v.lasting = lasting;
             v.no_password = no_password;
             v.offline = false;
@@ -342,9 +363,14 @@ fn refresh(beat: bool) -> Result<(), Error> {
             }
             Ok(())
         }
-        Ok(Some(((lasting, no_password), Ok((profile, friends, invites))))) => {
+        Ok(Some(((lasting, no_password), Ok((profile, personnel, friends, invites))))) => {
             let link = profile.as_ref().map(|p| p.display_name.clone());
+            if personnel.is_some() {
+                v.personnel = personnel;
+            }
+            let pass = v.personnel.clone();
             v.signed_in = true;
+            v.user = user.clone();
             v.lasting = lasting;
             v.no_password = no_password;
             v.offline = false;
@@ -363,6 +389,11 @@ fn refresh(beat: bool) -> Result<(), Error> {
             drop(v);
             if let Some(name) = link {
                 crate::drivers::link_account(&name, &user);
+                // (the account's pass is its driver's: the plugin's sign-on, the Companion and
+                // the welcome's pass read it there)
+                if let (Some(p), Some(driver)) = (pass, crate::drivers::account_driver()) {
+                    crate::addon::set_personnel(&driver, &hub_game::bridge::Personnel { number: p.number, code: p.code });
+                }
             }
             Ok(())
         }
@@ -405,6 +436,7 @@ fn worker() {
                 view().signed_in = true;
                 if refresh(true).is_ok() {
                     report_due();
+                    crate::board::report_due();
                 }
             }
             first = false;
@@ -419,11 +451,7 @@ fn worker() {
 /// statement or without a display name nothing is told, nor for another driver than the
 /// account's; the server keeps one report in 30 seconds ("too_soon": told at the next beat).
 fn report_due() {
-    let ready = {
-        let v = view();
-        v.signed_in && !v.need_privacy && v.profile.is_some()
-    };
-    if !ready || !crate::drivers::plays_online() {
+    if !account_ready() || !crate::drivers::plays_online() {
         return;
     }
     let Some(stats) = crate::drivers::account_driver().and_then(|d| crate::drivers::board_stats(&d)) else { return };
@@ -433,6 +461,19 @@ fn report_due() {
     if let Ok("ok") = report_stats(&stats) {
         view().reported = Some(stats);
     }
+}
+
+/// Signed in, the privacy statement agreed to and the display name chosen: the account's
+/// features may send what is theirs.
+pub(crate) fn account_ready() -> bool {
+    let v = view();
+    v.signed_in && !v.need_privacy && v.profile.is_some()
+}
+
+/// The account's user id as the worker last fetched it (empty: signed out, or not fetched yet);
+/// it never waits for a request that runs.
+pub(crate) fn account_user() -> String {
+    view().user.clone()
 }
 
 fn start_worker() {
@@ -563,7 +604,8 @@ fn state() -> Value {
         "lasting": v.lasting,
         "need_profile": v.need_profile,
         "no_password": v.signed_in && v.no_password,
-        "me": v.profile.as_ref().map(|p| json!({ "name": p.display_name, "code": p.friend_code, "board": p.on_board, "avatar": avatar_of(p.avatar.as_ref()) })),
+        "me": v.profile.as_ref().map(|p| json!({ "name": p.display_name, "code": p.friend_code, "board": p.on_board, "avatar": avatar_of(p.avatar.as_ref()),
+            "personnel": v.personnel.as_ref().map(|p| json!({ "number": p.number, "code": p.code })) })),
         "friends": order.iter().map(|f| friend_json(f)).collect::<Vec<_>>(),
         "online_count": friends.iter().filter(|f| state_of(f) != "offline").count(),
         "requests": requests.iter().map(|f| json!({ "id": f.user_id, "name": f.display_name, "incoming": f.incoming, "new": f.incoming && !v.seen.contains(&format!("r:{}", f.user_id)), "avatar": avatar_of(f.avatar.as_ref()) })).collect::<Vec<_>>(),
@@ -596,6 +638,8 @@ fn after_sign_in(agree: bool) -> Value {
         let mut v = view();
         v.signed_in = true;
         v.seen.clear();
+        // (another account's pass is not this one's)
+        v.personnel = None;
     }
     // (Ok(None): accepted; Ok(Some(n)): held, version n accepted before)
     let agreed = with(|c| -> Result<Option<u32>, Error> {
@@ -703,7 +747,7 @@ fn reset(args: &Value) -> Value {
     }
 }
 
-// --- Google ------------------------------------------------------------------------------------
+// --- Google and Discord --------------------------------------------------------------------------
 
 /// The sign-in waiting in the browser (one at a time): its number, the flow until `ol_oauth_wait`
 /// takes it, and its cancel.
@@ -740,7 +784,8 @@ fn oauth_start(args: &Value) -> Value {
     if !agree(args) {
         return fail(Error::Code("privacy"));
     }
-    let flow = match Flow::start(&endpoints(), oauth_texts()) {
+    let Some(provider) = Provider::of(args.get("provider").and_then(Value::as_str).unwrap_or("google")) else { return fail(Error::Code("oauth_failed")) };
+    let flow = match Flow::start(&endpoints(), provider, oauth_texts()) {
         Ok(f) => f,
         Err(e) => return fail(e),
     };
@@ -771,7 +816,15 @@ fn oauth_wait(args: &Value) -> Value {
         }
     }
     match got.and_then(|h| with(|c| c.sign_in_with(&h))) {
-        Ok(()) => after_sign_in(agree(args)),
+        Ok(discord) => {
+            let a = after_sign_in(agree(args));
+            // (signed in with Discord: that Discord account linked, as the website does - quietly:
+            // a link that fails is made on the website's account page)
+            if let Some(t) = discord.filter(|_| a.get("ok").is_some() && !view().need_privacy) {
+                let _ = with(|c| c.discord_claim(&t));
+            }
+            a
+        }
         Err(e) => fail(e),
     }
 }
@@ -802,6 +855,7 @@ fn delete(args: &Value) -> Value {
             crate::drivers::unlink_account();
             // (its cloud saves went with it: the companies here are local saves now)
             crate::cloud::forget_account(me.as_deref());
+            crate::board::forget_account(me.as_deref());
             done(&tr("Your account, your cloud saves and everything of it are deleted."))
         }
         Err(e) => fail(e),
@@ -915,6 +969,8 @@ pub fn call(cmd: &str, args: &Value, _p: &dyn Platform) -> Answer {
         "ol_profile" => profile(args),
         "ol_avatar" => avatar(args),
         "ol_leaderboard" => leaderboard(args),
+        "ol_companies" => crate::board::companies(),
+        "ol_company_board" => crate::board::set(str_arg(args, "id"), args.get("on").and_then(Value::as_bool).unwrap_or(false)),
         "ol_report_stats" => match report_stats(&stats_of(args)) {
             Ok(code) => json!({ "ok": true, "code": code }),
             Err(e) => fail(e),
@@ -1021,8 +1077,9 @@ mod tests {
         call(cmd, &args, &Quiet).unwrap()
     }
 
-    /// Every text of Omsi-Hub online - the codes, this file's, the page's (`online/*.js`, and the
-    /// privacy statement's `privacy.js`) - in the seven languages.
+    /// Every text of Omsi-Hub online - the codes, this file's, the company board's (`board.rs`),
+    /// the page's (`online/*.js`, and the privacy statement's `privacy.js`) - in the seven
+    /// languages.
     #[test]
     fn every_online_text_is_translated() {
         let mut texts: Vec<String> = codes::TEXTS.iter().map(|(_, t)| t.to_string()).collect();
@@ -1030,7 +1087,11 @@ mod tests {
         let own = own.split("#[cfg(test)]\npub(crate) fn texts_in").next().unwrap_or("");
         let js = include_str!("../../../ui/js/online/online.js");
         let pv = include_str!("../../../ui/js/privacy.js");
-        for (src, lead, end) in [(own, "tr(\"", '"'), (own, "trf(\"", '"'), (js, "tr('", '\''), (pv, "tr('", '\'')] {
+        // (the company board's)
+        let bd = include_str!("board.rs");
+        let bd = bd.split("#[cfg(test)]").next().unwrap_or("");
+        let bjs = include_str!("../../../ui/js/online/board.js");
+        for (src, lead, end) in [(own, "tr(\"", '"'), (own, "trf(\"", '"'), (js, "tr('", '\''), (pv, "tr('", '\''), (bd, "tr(\"", '"'), (bd, "trf(\"", '"'), (bjs, "tr('", '\'')] {
             texts.extend(texts_in(src, lead, end));
         }
         assert!(texts.len() > 80, "only {} texts found", texts.len());
@@ -1038,16 +1099,20 @@ mod tests {
         assert!(missing.is_empty(), "{} missing (crates/hub-locales/locales/online.yml):\n{}", missing.len(), missing.join("\n"));
     }
 
-    /// Google: only with the privacy statement accepted, the address for the browser answered, and
-    /// a cancel ends the wait at once.
+    /// Google and Discord: only with the privacy statement accepted, the address for the browser
+    /// answered, and a cancel ends the wait at once.
     #[test]
-    fn a_google_sign_in_starts_waits_and_cancels() {
+    fn a_browser_sign_in_starts_waits_and_cancels() {
         let v = run("ol_oauth", json!({ "lang": "de" }));
         assert_eq!(v["code"], "privacy");
         // (a second start gives the first one up)
         let first = run("ol_oauth", json!({ "agree": true }))["id"].as_u64().unwrap();
         let v = run("ol_oauth", json!({ "agree": true }));
         assert!(v["url"].as_str().unwrap().starts_with("https://127.0.0.1:9/auth/v1/authorize?provider=google&redirect_to="), "{v}");
+        let v = run("ol_oauth", json!({ "agree": true, "provider": "discord" }));
+        let url = v["url"].as_str().unwrap();
+        assert!(url.starts_with("https://127.0.0.1:9/auth/v1/authorize?provider=discord&redirect_to=") && url.ends_with("&scopes=identify%20email%20guilds.join"), "{v}");
+        assert_eq!(run("ol_oauth", json!({ "agree": true, "provider": "steam" }))["code"], "oauth_failed");
         let id = v["id"].as_u64().unwrap();
         run("ol_oauth_cancel", json!({}));
         let t = std::time::Instant::now();

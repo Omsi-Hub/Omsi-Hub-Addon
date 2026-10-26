@@ -131,10 +131,11 @@ export async function applyShot(name) {
     }
     case 'proposal':
       return rfAct('optimise');
-    // (both graphs printed: into OMSI_ROSTERFLOW_PDF's folder, no dialog)
+    // (both graphs and the duty cards printed: into OMSI_ROSTERFLOW_PDF's folder, no dialog)
     case 'printpdf':
       after(await rfCmd('rf_print', { day: S.rf.day, bus: true }));
-      return after(await rfCmd('rf_print', { day: S.rf.day, bus: false }));
+      after(await rfCmd('rf_print', { day: S.rf.day, bus: false }));
+      return after(await rfCmd('rf_print', { day: S.rf.day, cards: true }));
     case 'tutmenu':
       return setPart('tut', { menu: true, seen: { seen: true, at: 0, done: false, lessons: [] } });
     case 'help':

@@ -1370,7 +1370,7 @@ pub fn design_tours(c: &Company, cl: &CompanyLine, l: &LineDesign, stem: &str, d
             })
             .collect();
         if trips.iter().any(PlannedTrip::counts) {
-            out.push(TourOfDay { line: cl.name.clone(), number: cl.number.clone(), tour: t.number.clone(), ai_group: l.ai_group.clone(), trips, unplanned: false, cuts: None });
+            out.push(TourOfDay { line: cl.name.clone(), number: cl.number.clone(), tour: t.number.clone(), ai_group: l.ai_group.clone(), trips, unplanned: false, cuts: None, duty_max: None });
         }
     }
     add_depot_runs(c, &mut out);
@@ -1732,6 +1732,7 @@ mod tests {
             trips: vec![super::super::network::PlannedTrip { dep: 360, arr: 400, stops: 12, ..Default::default() }],
             unplanned: false,
             cuts: None,
+            duty_max: None,
         };
         assert_eq!(wanted(&c, &t), Some(BusSize::Articulated));
         let lack = shortfall(&c, &[t.clone(), TourOfDay { tour: "2".into(), ..t.clone() }]);

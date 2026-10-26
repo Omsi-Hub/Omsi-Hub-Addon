@@ -19,7 +19,7 @@ use std::path::{Path, PathBuf};
 /// The plugin's name: its folder in the plugins folder.
 pub const NAME: &str = "omsihub";
 /// The plugin's version; `plugin/main.lua` says the same (a test keeps the two the same).
-pub const VERSION: &str = "1.16.0";
+pub const VERSION: &str = "1.16.2";
 /// The plugin's files.
 pub const FILES: &[(&str, &str)] = &[
     ("main.lua", include_str!("../../../plugin/main.lua")),
@@ -52,7 +52,6 @@ pub const FILES: &[(&str, &str)] = &[
 pub const TEXTS: &[&str] = &[
     "On duty: trip %{trip} of %{trips}",
     "Not started yet",
-    "Duty %{duty}: line %{line}, tour %{tour}",
     "Start duty",
     "F10: use the panel with the mouse",
     "The duty could not be started: %{reason}",
@@ -170,10 +169,10 @@ pub const TEXTS: &[&str] = &[
     "Sign on",
     "Your pass",
     "Personnel no. %{number} · code %{code}",
+    "Tour %{tour}",
     "Duty assignment",
-    "Line",
-    "Tour",
-    "Departure",
+    "%{n} trips",
+    "and %{n} more trips until %{time}",
     "The duty's codes go to the IBIS as soon as you accept it.",
     "Accept duty",
     "Sign off",

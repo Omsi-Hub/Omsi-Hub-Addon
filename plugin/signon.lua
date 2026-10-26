@@ -10,6 +10,12 @@
 
 local M = {}
 
+-- the trips the duty order lists; the rest are counted under them
+local LISTED = 6
+-- Omsi-Hub's colours (the launcher's dark theme), as the board has them
+local PLATE, ON_PLATE = "#FFD23F", "#1A1400"
+local TEXT, DIM, FAINT = "#E8EBF2", "#959DB0", "#6E7688"
+
 local tr = function(t) return t end
 local pass = nil
 local typed = { number = "", code = "" }
@@ -31,6 +37,52 @@ local function hhmm(t)
   return string.format("%02d:%02d", (m // 60) % 24, m % 60)
 end
 
+local function trips_of()
+  return (omsi.duty and omsi.duty.trips) and omsi.duty.trips() or {}
+end
+
+-- (the line as the trip's displays show it; "5 Rathaus" is the line's terminus Rathaus)
+local function terminus_of(line, terminus)
+  terminus = terminus or ""
+  if line ~= "" and terminus:sub(1, #line + 1) == line .. " " then terminus = terminus:sub(#line + 2) end
+  return terminus
+end
+
+-- the lines the duty's trips show on their displays, each once, in the order they come
+local function shown_lines(trips)
+  local out, seen = {}, {}
+  for _, t in ipairs(trips) do
+    local l = t.line or ""
+    if l ~= "" and not seen[l] then
+      seen[l] = true
+      out[#out + 1] = l
+    end
+  end
+  return out
+end
+
+local function plate(line)
+  return { type = "badge", text = line, color = PLATE, text_color = ON_PLATE, weight = "bold" }
+end
+
+-- the duty as the company's panel heads it: the plates of its lines, its tour, from when to when
+-- (`duty` the assignment; without its trips the line as Omsi-Hub named it)
+function M.heading(duty)
+  local trips = trips_of()
+  local lines = shown_lines(trips)
+  if #lines == 0 and (duty.line or "") ~= "" then lines = { duty.line } end
+  local row = { type = "row", gap = 6, children = {} }
+  for k, l in ipairs(lines) do
+    if k > 3 then break end
+    row.children[#row.children + 1] = plate(l)
+  end
+  row.children[#row.children + 1] = { type = "text", text = tr("Tour %{tour}", { tour = duty.tour or "" }), size = 13, weight = "bold", color = TEXT, grow = true, wrap = false }
+  if #trips > 0 then
+    row.children[#row.children + 1] = { type = "text", text = hhmm(trips[1].departure) .. " – " .. hhmm(trips[#trips].arrival), size = 12, weight = "medium", color = DIM, wrap = false }
+  end
+  return row
+end
+
 -- the elements of the stage, for the company's panel; `duty` the assignment
 function M.children(duty)
   if M.stage == "signon" then
@@ -44,16 +96,25 @@ function M.children(duty)
     }
   end
   if M.stage == "order" then
+    -- (the first trips, each when it leaves and where it goes - the line's plate too when the
+    -- duty drives more than one; the others counted under them)
+    local trips = trips_of()
+    local several = #shown_lines(trips) > 1
     local rows = {}
-    local trips = (omsi.duty and omsi.duty.trips) and omsi.duty.trips() or {}
-    for _, t in ipairs(trips) do
-      rows[#rows + 1] = { t.line or "", hhmm(t.departure), t.terminus or "" }
+    for k, t in ipairs(trips) do
+      if k > LISTED then break end
+      local line = t.line or ""
+      rows[#rows + 1] = several and { hhmm(t.departure), line, terminus_of(line, t.terminus) } or { hhmm(t.departure), terminus_of(line, t.terminus) }
     end
     return {
-      { type = "text", text = tr("Duty assignment"), weight = "bold" },
-      { type = "text", text = tr("Line") .. " " .. (duty.line or "") .. "  ·  " .. tr("Tour") .. " " .. (duty.tour or ""), size = 13 },
-      { type = "table", columns = { tr("Line"), tr("Departure"), "" }, widths = { 0.2, 0.25, 0.55 }, rows = rows, size = 12, visible = #rows > 0 },
-      { type = "text", text = tr("The duty's codes go to the IBIS as soon as you accept it."), size = 12, color = "#9AA3AD" },
+      { type = "row", gap = 6, children = {
+        { type = "text", text = tr("Duty assignment"), size = 11, weight = "bold", color = DIM, grow = true, wrap = false },
+        { type = "text", text = tr("%{n} trips", { n = #trips }), size = 11, weight = "medium", color = FAINT, wrap = false, visible = #trips > 0 },
+      } },
+      { type = "table", columns = {}, widths = several and { 0.2, 0.18, 0.62 } or { 0.2, 0.8 }, rows = rows, size = 12.5, visible = #rows > 0 },
+      { type = "text", size = 11.5, weight = "medium", color = FAINT, visible = #trips > LISTED,
+        text = tr("and %{n} more trips until %{time}", { n = #trips - LISTED, time = hhmm(#trips > 0 and trips[#trips].arrival or 0) }) },
+      { type = "text", text = tr("The duty's codes go to the IBIS as soon as you accept it."), size = 11.5, color = DIM },
       { type = "button", id = "accept", text = tr("Accept duty"), icon = "task_alt" },
     }
   end

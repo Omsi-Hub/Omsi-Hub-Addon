@@ -50,9 +50,24 @@ storage. Its files are embedded in the add-on gzipped (`assets/companion-web`, m
 `node tools/companion-web.mjs` from the app's repository: run it when the app changes), sent
 with `Content-Encoding: gzip`; the hashed ones are cached for good, the page never.
 
+### Windows' firewall
+
+A player never deals with it. Windows lets nothing reach a program it has no rule for; the
+first time a program listens it asks - for private networks only, while a home network is often
+called public - and a question clicked away leaves a rule that blocks the program for good. So
+on Windows the add-on looks, while the server runs, whether the phones get in (`hub-api`'s
+`companion::firewall`, PowerShell's `Get-NetFirewall*`, whatever language Windows speaks): its
+own rule *Omsi-Hub Phone & tablet* letting the port in, and no rule blocking the program. When
+the player turns Phone & tablet on and they would not get in, it sets that right once - the
+rules blocking the program removed, its own rule for the port on every kind of network - and
+Windows asks whether Omsi-Hub may (UAC). Clicked away, or found shut as the app starts, the
+settings say so beside the pairing code with a button (`hub_companion_firewall`); the state's
+`firewall` is `checking`, `open`, `shut`, `asking` or `declined` (none off Windows). The server
+itself still lets only the home network in and only paired devices on.
+
 | Request | Auth | Answer |
 | --- | --- | --- |
-| `GET /api/hello` | none | `{app: "omsi-hub", api: 1, version: "1.0.1", name: "Luc-PC", pairing: true}` |
+| `GET /api/hello` | none | `{app: "omsi-hub", api: 1, version: "1.1.1", name: "Luc-PC", pairing: true}` |
 | `POST /api/pair` `{code, device}` | none | `200 {key, name}`; `403 {error: "wrong_code"}`; `429 {error: "too_many"}` (ten tries a minute) |
 
 `device` is the phone's own name ("Luc's iPhone"), shown in the launcher's list of paired

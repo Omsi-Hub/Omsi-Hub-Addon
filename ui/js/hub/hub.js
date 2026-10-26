@@ -49,9 +49,10 @@ export const ABOUT = {
   online: ['public', 'Online', 'Friends, the leaderboard and cloud saves. Optional: everything works offline.'],
 };
 
-/** Go to a page (`drive` is the drive's steps, at `step` when given). */
-export function go(page, step) {
-  set({ page, hub: { ...S.hub, palette: false, ...(step ? { step } : {}) } });
+/** Go to a page (`drive` is the drive's steps, at `step` when given; Settings on its tab
+ * `settingsTab` when given). */
+export function go(page, step, settingsTab) {
+  set({ page, hub: { ...S.hub, palette: false, ...(step ? { step } : {}), ...(settingsTab ? { settingsTab } : {}) } });
 }
 
 /** The page `OMSI_LAUNCHER_PAGE` names (as our game-drawn launcher once read it): a page

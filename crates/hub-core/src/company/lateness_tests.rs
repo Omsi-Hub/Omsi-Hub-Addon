@@ -30,7 +30,7 @@ pub(crate) fn company() -> (Company, u32, u32) {
 pub(crate) fn plan(from: i32, n: i32, layover: i32, bus: u32, driver: u32) -> Plan {
     let trips: Vec<_> = (0..n).map(|k| trip(from + k * (50 + layover), from + 50 + k * (50 + layover), 12)).collect();
     let to = trips.last().map_or(from, |t| t.arr);
-    let tour = TourOfDay { line: "Linie5".into(), number: "5".into(), tour: "1".into(), ai_group: String::new(), trips, unplanned: false, cuts: None };
+    let tour = TourOfDay { line: "Linie5".into(), number: "5".into(), tour: "1".into(), ai_group: String::new(), trips, unplanned: false, cuts: None, duty_max: None };
     let duty = DutyPlan { start: 0, end: n as usize, from, to, driver: Some(driver), dropped_before: None, problem: None };
     Plan { tours: vec![TourPlan { tour, bus: Some(bus), duties: vec![duty], ..Default::default() }] }
 }
@@ -130,7 +130,7 @@ fn tour(name: &str, trips: &[(i32, i32)], bus: u32, driver: u32) -> TourPlan {
     let trips: Vec<_> = trips.iter().map(|&(a, z)| trip(a, z, 12)).collect();
     let (from, to) = (trips[0].dep, trips.last().unwrap().arr);
     let n = trips.len();
-    let tour = TourOfDay { line: "Linie5".into(), number: "5".into(), tour: name.into(), ai_group: String::new(), trips, unplanned: false, cuts: None };
+    let tour = TourOfDay { line: "Linie5".into(), number: "5".into(), tour: name.into(), ai_group: String::new(), trips, unplanned: false, cuts: None, duty_max: None };
     TourPlan { tour, bus: Some(bus), duties: vec![DutyPlan { start: 0, end: n, from, to, driver: Some(driver), dropped_before: None, problem: None }], ..Default::default() }
 }
 
@@ -243,7 +243,7 @@ fn the_second_part_of_a_trip_cut_at_a_relief_point_is_the_same_trip() {
     let part = |second: bool| Some(crate::company::network::Part { second, stop: 5, at: "Mitte".into(), dep: 600, arr: 650, km: 15.0, stops: 12 });
     let (mut a, mut b) = (trip(600, 625, 6), trip(625, 650, 6));
     (a.part, b.part) = (part(false), part(true));
-    let tour = TourOfDay { line: "Linie5".into(), number: "5".into(), tour: "1".into(), ai_group: String::new(), trips: vec![a, b], unplanned: false, cuts: None };
+    let tour = TourOfDay { line: "Linie5".into(), number: "5".into(), tour: "1".into(), ai_group: String::new(), trips: vec![a, b], unplanned: false, cuts: None, duty_max: None };
     let duties = vec![
         DutyPlan { start: 0, end: 1, from: 600, to: 625, driver: Some(driver), dropped_before: None, problem: None },
         DutyPlan { start: 1, end: 2, from: 625, to: 650, driver: Some(crate::company::plan::AGENCY), dropped_before: None, problem: None },

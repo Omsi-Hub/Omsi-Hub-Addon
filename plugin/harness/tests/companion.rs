@@ -76,12 +76,36 @@ fn without_omsi_hubs_companion_nothing_is_sent() {
 }
 
 #[test]
+fn after_a_long_frame_the_companion_waits_until_the_game_runs_smoothly_again() {
+    let dir = installed("calm");
+    queue(&dir, 5, json!([]));
+    let mut h = Harness::load(&dir, game()).unwrap();
+    h.frame().unwrap();
+    assert!(!sent(&h, "live").is_empty(), "a game that runs smoothly: at once");
+    // (the world loading: a frame two seconds after the one before)
+    h.state.borrow_mut().now += 2.0;
+    h.frame().unwrap();
+    let before = h.state.borrow().sent.len();
+    let smooth = |h: &mut Harness, frames: usize| {
+        for _ in 0..frames {
+            h.state.borrow_mut().now += 0.1;
+            h.frame().unwrap();
+        }
+    };
+    smooth(&mut h, 25);
+    assert_eq!(h.state.borrow().sent.len(), before, "nothing to the phone in the first seconds after it");
+    smooth(&mut h, 10);
+    assert!(sent(&h, "live").len() > 1, "and again once the frames came smoothly for three seconds");
+}
+
+#[test]
 fn the_game_goes_to_the_companion_and_only_the_devices_keys_are_pressed() {
     let dir = installed("keys");
     queue(&dir, 5, json!([]));
     let mut h = Harness::load(&dir, game()).unwrap();
     h.state.borrow_mut().duty = Some(hub_plugin_harness::Duty { line: "29".into(), tour: "1".into(), trip: 1, trips: 2, delay: 60.0 });
-    for _ in 0..2 {
+    // (one job a tick: the game and the devices, the keys, the duty's trips, the map's lines)
+    for _ in 0..6 {
         h.frame().unwrap();
     }
     let live = sent(&h, "live");
@@ -146,6 +170,7 @@ fn commands_in_the_file_when_the_game_starts_are_old_and_a_new_session_starts_ag
 }
 
 #[test]
+#[ignore = "signing on is out for now (main.lua's SIGN_ON)"]
 fn the_driver_signs_on_and_accepts_the_duty_on_the_phone() {
     let dir = installed("signon");
     let a = Assignment {

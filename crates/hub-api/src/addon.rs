@@ -268,15 +268,11 @@ pub fn assignment_for(d: &Duty, company: Option<&CompanyPart>, settings: &Settin
 /// The driver's personnel number and code for signing on (`personnel.json` of the data folder,
 /// `{ "drivers": { "<driver in lower case>": { "number", "code" } } }`): made and written down
 /// the first time (`make`), as the old launcher's welcome did. A file that is not one of these
-/// is left alone (no sign-on then).
+/// is left alone (no sign-on then). The account's driver gets the account's pass instead
+/// (`set_personnel`, as the account is fetched): the same on every computer.
 pub fn personnel_of(driver: &str, make: bool) -> Option<bridge::Personnel> {
-    let path = hub_core::data_dir().join("personnel.json");
-    let key = Some(driver.trim().to_lowercase()).filter(|k| !k.is_empty()).unwrap_or_else(|| "driver".into());
-    let text = std::fs::read_to_string(&path).ok();
-    let mut file: serde_json::Map<String, Value> = match text.as_deref().map(str::trim) {
-        None | Some("") => serde_json::Map::new(),
-        Some(t) => serde_json::from_str::<Value>(t).ok()?.get("drivers")?.as_object()?.clone(),
-    };
+    let key = personnel_key(driver);
+    let mut file = personnel_file()?;
     let digits = |s: &str, n: std::ops::RangeInclusive<usize>| n.contains(&s.len()) && s.bytes().all(|b| b.is_ascii_digit());
     if let Some(e) = file.get(&key) {
         let (number, code) = (e.get("number")?.as_str()?, e.get("code")?.as_str()?);
@@ -296,10 +292,41 @@ pub fn personnel_of(driver: &str, make: bool) -> Option<bridge::Personnel> {
     let mut make = |n: usize| -> String { (0..n).map(|i| char::from(b'0' + if i == 0 { 1 + next() % 9 } else { next() % 10 } as u8)).collect() };
     let p = bridge::Personnel { number: make(6), code: make(4) };
     file.insert(key, json!({ "number": p.number, "code": p.code }));
-    let tmp = path.with_extension("json.tmp");
-    let body = serde_json::to_string_pretty(&json!({ "drivers": file })).ok()?;
-    std::fs::write(&tmp, body).and_then(|_| std::fs::rename(&tmp, &path)).ok()?;
+    write_personnel(file)?;
     Some(p)
+}
+
+/// The account's pass (`hub_online`'s `my_personnel`) is the driver's: written over the one they
+/// had. Answers whether it changed; a file that is not one of ours is left alone.
+pub fn set_personnel(driver: &str, p: &bridge::Personnel) -> bool {
+    let key = personnel_key(driver);
+    let Some(mut file) = personnel_file() else { return false };
+    let entry = json!({ "number": p.number, "code": p.code });
+    if file.get(&key) == Some(&entry) {
+        return false;
+    }
+    file.insert(key, entry);
+    write_personnel(file).is_some()
+}
+
+fn personnel_key(driver: &str) -> String {
+    Some(driver.trim().to_lowercase()).filter(|k| !k.is_empty()).unwrap_or_else(|| "driver".into())
+}
+
+/// `personnel.json`'s drivers (none yet: empty); None when the file is not one of ours.
+fn personnel_file() -> Option<serde_json::Map<String, Value>> {
+    let text = std::fs::read_to_string(hub_core::data_dir().join("personnel.json")).ok();
+    match text.as_deref().map(str::trim) {
+        None | Some("") => Some(serde_json::Map::new()),
+        Some(t) => Some(serde_json::from_str::<Value>(t).ok()?.get("drivers")?.as_object()?.clone()),
+    }
+}
+
+fn write_personnel(drivers: serde_json::Map<String, Value>) -> Option<()> {
+    let path = hub_core::data_dir().join("personnel.json");
+    let tmp = path.with_extension("json.tmp");
+    let body = serde_json::to_string_pretty(&json!({ "drivers": drivers })).ok()?;
+    std::fs::write(&tmp, body).and_then(|_| std::fs::rename(&tmp, &path)).ok()
 }
 
 /// Give the plugin in `plugin_dir` the drive `d` (with the company's part waiting for it), and
@@ -833,6 +860,13 @@ mod tests {
         assert_eq!(assignment_for(&d, Some(&part), &old, 9).personnel, Some(pass));
         assert!(assignment_for(&d, None, &s, 9).personnel.is_none(), "a drive of the player's own: no sign-on");
         assert!(assignment_for(&free, None, &s, 9).personnel.is_none(), "a free drive: no sign-on");
+        // (the account's pass is its driver's, over the one made here - in this test, which has
+        // the data folder's personnel.json to itself; another driver's stays theirs)
+        let account = bridge::Personnel { number: "731904".into(), code: "2468".into() };
+        assert!(set_personnel("luc", &account));
+        assert!(!set_personnel("Luc", &account), "the same again: nothing written");
+        assert_eq!(assignment_for(&d, Some(&part), &s, 9).personnel, Some(account.clone()));
+        assert_ne!(personnel_of("Someone else", true), Some(account));
         assert_eq!(a.crew.map(|c| (c.bus, c.strip)), Some((4, Some(true))));
     }
 

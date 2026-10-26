@@ -12,7 +12,8 @@
 //! A duty is a walk through that: from a first trip, at each terminus one of what leaves
 //! there next, until the length asked for is reached. The walk is random (the same wish
 //! gives another duty the next time) and it prefers another line to the one driven: three
-//! hours of the same loop is not much of a shift.
+//! hours of the same loop is not much of a shift. How many lines may be asked for too (811,
+//! then 800, then 820: three), and the walk takes no new line once it has them.
 
 use crate::LineInfo;
 use std::collections::{HashMap, HashSet};
@@ -156,8 +157,14 @@ pub struct Wish {
     /// midnight, 30 h for the night).
     pub from: Option<f64>,
     pub to: Option<f64>,
+    /// The duty's last trip arrives by this (s; past midnight as `to`): a shift asked for by
+    /// its times, 05:00 to 12:00, ends in it.
+    pub until: Option<f64>,
     /// Only these lines (`.ttl` names); empty: every line the player may drive.
     pub lines: Vec<String>,
+    /// How many lines the duty drives, each counted once as its displays show it (811, 800,
+    /// 820: three); None: as the walk finds them. A duty of another count is none of the wish.
+    pub line_count: Option<usize>,
     pub seed: u64,
 }
 
@@ -353,17 +360,23 @@ fn pick_next(net: &Net, options: &[usize], current: &str, driven: &HashSet<&str>
     chosen[rng.below(chosen.len())]
 }
 
-fn walk(net: &Net, start: usize, target: f64, tolerance: f64, allowed: &dyn Fn(usize) -> bool, rng: &mut Rng) -> Vec<usize> {
+#[allow(clippy::too_many_arguments)]
+fn walk(net: &Net, start: usize, target: f64, tolerance: f64, until: Option<f64>, count: Option<usize>, allowed: &dyn Fn(usize) -> bool, rng: &mut Rng) -> Vec<usize> {
     let begin = net.runs[start].leg.departure;
+    let allowed = |n: usize| allowed(n) && until.is_none_or(|u| net.runs[n].leg.arrival <= u);
     let mut legs = vec![start];
     let mut driven: HashSet<&str> = HashSet::new();
     driven.insert(&net.runs[start].leg.shown);
     loop {
         let last = *legs.last().unwrap();
-        if legs.len() >= MIN_LEGS && net.runs[last].leg.arrival - begin >= target - tolerance {
+        // (the lines asked for not all driven yet: on, as long as the length leaves room)
+        let enough = count.is_none_or(|c| driven.len() >= c);
+        if legs.len() >= MIN_LEGS && enough && net.runs[last].leg.arrival - begin >= target - tolerance {
             break;
         }
-        let options: Vec<usize> = next_of(net, last).filter(|&n| net.runs[n].leg.arrival - begin <= target + tolerance && allowed(n)).collect();
+        // (the lines asked for all driven: no new one)
+        let fits = |n: usize| count.is_none_or(|c| driven.len() < c || driven.contains(net.runs[n].leg.shown.as_str()));
+        let options: Vec<usize> = next_of(net, last).filter(|&n| net.runs[n].leg.arrival - begin <= target + tolerance && allowed(n) && fits(n)).collect();
         if options.is_empty() {
             break;
         }
@@ -388,9 +401,17 @@ fn in_window(departure: f64, from: Option<f64>, to: Option<f64>) -> bool {
     inside(departure) || inside(departure + 86400.0)
 }
 
+/// The wish's `until` on the clock of a duty leaving at `departure`: a night's 01:00 that is
+/// in the window as 25:00 ends by the window's end a day earlier.
+fn until_for(departure: f64, wish: &Wish) -> Option<f64> {
+    let next_day = wish.from.is_some_and(|f| departure < f);
+    wish.until.map(|u| if next_day { u - 86400.0 } else { u })
+}
+
 /// One duty of about the length wanted. A few are walked and one of them chosen, the more
 /// lines in it the likelier (by the square: two lines four times as likely as one), so a
-/// map's variety shows without every duty being the same.
+/// map's variety shows without every duty being the same. A wish of so many lines takes only a
+/// duty of that many.
 fn compose_one(net: &Net, starts: &[usize], wish: &Wish, allowed: &dyn Fn(usize) -> bool, rng: &mut Rng) -> Option<ComposedDuty> {
     if starts.is_empty() {
         return None;
@@ -402,12 +423,14 @@ fn compose_one(net: &Net, starts: &[usize], wish: &Wish, allowed: &dyn Fn(usize)
     let mut good: Vec<Vec<usize>> = Vec::new();
     let mut best: Option<Vec<usize>> = None;
     let length = |legs: &[usize]| net.runs[*legs.last().unwrap()].leg.arrival - net.runs[legs[0]].leg.departure;
+    let counted = |legs: &[usize]| wish.line_count.is_none_or(|c| line_count(net, legs) == c);
     for _ in 0..ATTEMPTS {
         if good.len() >= POOL {
             break;
         }
-        let legs = walk(net, starts[rng.below(starts.len())], target, tolerance, allowed, rng);
-        if legs.len() < MIN_LEGS {
+        let start = starts[rng.below(starts.len())];
+        let legs = walk(net, start, target, tolerance, until_for(net.runs[start].leg.departure, wish), wish.line_count, allowed, rng);
+        if legs.len() < MIN_LEGS || !counted(&legs) {
             continue;
         }
         if length(&legs) >= floor {
@@ -436,7 +459,9 @@ pub fn compose(lines: &[LineInfo], wish: &Wish, count: usize) -> Vec<ComposedDut
     let net = build(lines);
     let only: HashSet<String> = wish.lines.iter().map(|l| l.to_lowercase()).collect();
     let allowed = |r: usize| only.is_empty() || only.contains(&net.runs[r].leg.line.to_lowercase());
-    let starts: Vec<usize> = (0..net.runs.len()).filter(|&r| allowed(r) && in_window(net.runs[r].leg.departure, wish.from, wish.to)).collect();
+    // (a duty of its times leaves with room for one before their end)
+    let room = |d: f64| until_for(d, wish).is_none_or(|u| d + MIN_DUTY <= u);
+    let starts: Vec<usize> = (0..net.runs.len()).filter(|&r| allowed(r) && in_window(net.runs[r].leg.departure, wish.from, wish.to) && room(net.runs[r].leg.departure)).collect();
     let mut rng = Rng::new(wish.seed);
     let mut found: Vec<ComposedDuty> = Vec::new();
     for _ in 0..count * 12 {
@@ -506,7 +531,7 @@ mod tests {
     }
 
     fn wish(minutes: f64, seed: u64) -> Wish {
-        Wish { seconds: minutes * 60.0, from: None, to: None, lines: Vec::new(), seed }
+        Wish { seconds: minutes * 60.0, from: None, to: None, until: None, lines: Vec::new(), line_count: None, seed }
     }
 
     #[test]
@@ -557,6 +582,26 @@ mod tests {
         let duties = compose(&map(), &w, 6);
         assert!(!duties.is_empty());
         assert!(duties.iter().all(|d| (9.0 * 3600.0..=10.0 * 3600.0).contains(&d.start())));
+    }
+
+    #[test]
+    fn a_shift_of_its_times_begins_and_ends_in_them() {
+        // 07:00 to 10:00: the duties lie in it, and fill most of it
+        let (from, until) = (7.0 * 3600.0, 10.0 * 3600.0);
+        let w = Wish { from: Some(from), to: Some(until), until: Some(until), ..wish(180.0, 4) };
+        let duties = compose(&map(), &w, 8);
+        assert!(!duties.is_empty());
+        for d in &duties {
+            assert!(d.start() >= from && d.end() <= until, "{} - {}", d.start() / 60.0, d.end() / 60.0);
+        }
+        assert!(duties.iter().any(|d| d.seconds() >= 2.5 * 3600.0));
+        // (nothing leaves with half an hour to go before 06:20)
+        let w = Wish { from: Some(5.0 * 3600.0), to: Some(6.0 * 3600.0 + 20.0 * 60.0), until: Some(6.0 * 3600.0 + 20.0 * 60.0), ..wish(80.0, 4) };
+        assert!(compose(&map(), &w, 8).is_empty());
+        // a night's 01:00 ends by the window's 06:00 of that night
+        let w = Wish { from: Some(22.0 * 3600.0), to: Some(30.0 * 3600.0), until: Some(30.0 * 3600.0), ..wish(480.0, 1) };
+        assert_eq!(until_for(3600.0, &w), Some(6.0 * 3600.0));
+        assert_eq!(until_for(23.0 * 3600.0, &w), Some(30.0 * 3600.0));
     }
 
     #[test]
@@ -620,6 +665,26 @@ mod tests {
                 println!("  {}-{} lines {:?}, {} trips, {} changes", hm(d.start()), hm(d.end()), d.lines(), d.legs.len(), d.changes());
             }
         }
+    }
+
+    #[test]
+    fn as_many_lines_as_asked_for() {
+        // line 3 leaves the West where line 2 ends, for the North where line 1 begins
+        let mut lines = map();
+        let mut three = Vec::new();
+        for k in 0..5 {
+            let at = 7.0 * 60.0 + k as f64 * 60.0;
+            three.push(trip("3 West-North", 2 * k + 1, "3", &[WEST, MIDDLE, NORTH], at, 25.0));
+            three.push(trip("3 North-West", 2 * k + 2, "3", &[NORTH, MIDDLE, WEST], at + 30.0, 25.0));
+        }
+        lines.push(line("Line 3", vec![tour("1", true, three)]));
+        for n in 1..=3 {
+            let duties: Vec<_> = (0..10).flat_map(|s| compose(&lines, &Wish { line_count: Some(n), ..wish(240.0, s) }, 8)).collect();
+            assert!(!duties.is_empty(), "{n} lines");
+            assert!(duties.iter().all(|d| d.lines().len() == n), "{n} lines: {:?}", duties.iter().map(|d| d.lines()).collect::<Vec<_>>());
+        }
+        // (four lines the map has not)
+        assert!((0..5).all(|s| compose(&lines, &Wish { line_count: Some(4), ..wish(240.0, s) }, 8).is_empty()));
     }
 
     #[test]

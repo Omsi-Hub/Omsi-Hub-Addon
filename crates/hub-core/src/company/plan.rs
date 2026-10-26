@@ -236,6 +236,12 @@ pub struct Planning {
     /// The last agency booking's number given (`agency::book`): never given twice.
     #[serde(default)]
     pub agency_last: u32,
+    /// The longest a driver works in a day, as the player set it (minutes; a new company starts
+    /// with `staff::DUTY_STANDARD`; None, a company of before: tours cut at `staff::DUTY_MAX` and
+    /// a working day's hard limit): a tour cut automatically is cut into duties no longer than
+    /// this, and the dispatcher gives nobody more (`duty_max`, `day_max`).
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub duty_max: Option<i32>,
 }
 
 impl Default for Planning {
@@ -254,8 +260,26 @@ impl Default for Planning {
             arrivals: Vec::new(),
             agency: Vec::new(),
             agency_last: 0,
+            duty_max: None,
         }
     }
+}
+
+/// The longest duty a tour of the company is cut into automatically (minutes): the player's own
+/// setting (`Planning::duty_max`), else `staff::DUTY_MAX`.
+pub fn duty_max(c: &Company) -> i32 {
+    day_max(c).unwrap_or(staff::DUTY_MAX)
+}
+
+/// The longest the dispatcher has a driver of the company work in a day, as the player set it
+/// (None: a working day's own limits, `staff::check`).
+pub fn day_max(c: &Company) -> Option<i32> {
+    c.planning.duty_max.map(|m| m.clamp(staff::DUTY_SHORTEST, staff::DAY_MAX))
+}
+
+/// The player sets the longest a driver works in a day (`duty_max`; None: as before).
+pub fn set_duty_max(c: &mut Company, minutes: Option<i32>) {
+    c.planning.duty_max = minutes.map(|m| m.clamp(staff::DUTY_SHORTEST, staff::DAY_MAX));
 }
 
 /// When a driver who comes late (`Disruption::Late`) arrives on a day: the sign-on of the first
@@ -1807,11 +1831,16 @@ pub fn day_plan(c: &Company, date: &str, tours: Vec<TourOfDay>, player: &[(Strin
     // agency drivers booked for the day first (they are paid for the day all the same), within
     // the hours they come for
     let people: Vec<&Employee> = c.staff.iter().filter(|e| unavailable(e, date, today).is_none()).chain(booked.iter().copied()).collect();
+    // (nobody is given more work in a day than the player's longest duty: `day_max`)
+    let day_max = day_max(c).unwrap_or(staff::DAY_MAX);
     let pick = |work: &Work, bus: &(BusKind, Option<String>), block: &Block| -> Option<(u32, Vec<Warn>)> {
         let mut best: Option<((bool, bool, bool, i32, u32, i64), u32, Vec<Warn>)> = None;
         for e in &people {
             let is_booked = super::agency::is_booked(e.id);
             if is_booked && !super::agency::within(c, e.id, block) {
+                continue;
+            }
+            if staff::work_minutes(work.of(e.id)) + (block.to - block.from) > day_max {
                 continue;
             }
             let Ok(w) = fits_bus(e, bus, work.of(e.id), block, today) else { continue };
@@ -2327,6 +2356,7 @@ mod tests {
             trips: (0..n).map(|k| trip(from + k * 60, from + 50 + k * 60, 12)).collect(),
             unplanned: false,
             cuts: None,
+            duty_max: None,
         }
     }
 
@@ -2374,6 +2404,27 @@ mod tests {
             }
         }
         unreachable!()
+    }
+
+    /// Complaints, 2026-10-26 (staff "drove 8 hours a day"): the dispatcher gives no driver more
+    /// work in a day than the longest duty the player set.
+    #[test]
+    fn the_dispatcher_gives_nobody_more_than_the_longest_duty() {
+        let mut c = quiet(2, 1);
+        let tours = vec![tour("1", 360, 3), tour("2", 600, 3)];
+        let p = day_plan(&c, &c.date.clone(), tours.clone(), &[], &[], false);
+        let driver = |p: &DayPlan, i: usize| p.tours.iter().find(|t| t.tour.tour == ["1", "2"][i]).unwrap().duties[0].who;
+        // (as before: one driver for both, 5 h 40 of work)
+        assert!(driver(&p, 0).is_some() && driver(&p, 0) == driver(&p, 1));
+        set_duty_max(&mut c, Some(240));
+        let p = day_plan(&c, &c.date.clone(), tours, &[], &[], false);
+        assert!(driver(&p, 0).is_some());
+        assert_eq!(driver(&p, 1), None, "4 h at most");
+        // (kept within its bounds)
+        set_duty_max(&mut c, Some(30));
+        assert_eq!(duty_max(&c), staff::DUTY_SHORTEST);
+        set_duty_max(&mut c, None);
+        assert_eq!((duty_max(&c), day_max(&c)), (staff::DUTY_MAX, None));
     }
 
     #[test]

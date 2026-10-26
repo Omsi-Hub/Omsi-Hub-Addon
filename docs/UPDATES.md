@@ -21,7 +21,8 @@ There are two halves.
 - The page shows the offer in a dialog (`ui/js/update.js`): Update now, Not now, What's new, and
   "Install updates without asking".
 - Settings has "Check now", "Look for updates" (`update_check`) and "Install updates without
-  asking" (`update_auto`), kept in `settings.json`.
+  asking" (`update_auto`), kept in `settings.json`. It is on unless the player switched it off:
+  a new version downloads and installs itself, without a click, while no game runs.
 - `OMSIHUB_NO_UPDATE=1` switches the looks off.
 
 **The installation** (`app/src/main.rs`, Tauri's `tauri-plugin-updater`):

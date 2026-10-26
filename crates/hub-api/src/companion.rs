@@ -9,7 +9,8 @@
 //! * `hub_companion_set {on, port?}` - switched on or off (kept in the settings: `companion`,
 //!   `companion_port`), answered with the state;
 //! * `hub_companion_code` - another pairing code;
-//! * `hub_companion_forget {id}` - a paired device removed.
+//! * `hub_companion_forget {id}` - a paired device removed;
+//! * `hub_companion_firewall` - Windows' firewall set to let the phones in (see [`firewall`]).
 //!
 //! [`start_if_on`] starts it with the app.
 
@@ -24,6 +25,201 @@ use std::sync::{Arc, Mutex};
 /// The settings' keys.
 const ON: &str = "companion";
 const PORT: &str = "companion_port";
+
+/// Windows' firewall and the phones: a player should never have to deal with it. Windows lets
+/// nothing reach a program it has no rule for, asks once when it first listens - for private
+/// networks only, while a home network is often called public - and a question clicked away
+/// leaves a rule that blocks it for good. So while the server runs, the add-on looks whether
+/// Windows lets the phones in (its own rule for the port, no rule that blocks the program), and
+/// when it does not, sets that right once: the rules blocking the program removed, one rule
+/// letting the port in on every kind of network - Windows asks whether Omsi-Hub may (UAC), the
+/// only thing the player sees of it. The server itself still lets only the home network in
+/// (`hub_companion::server::lan_peer`) and only paired devices on.
+pub mod firewall {
+    use std::sync::Mutex;
+
+    /// The rule's name in Windows' firewall.
+    pub const RULE: &str = "Omsi-Hub Phone & tablet";
+
+    /// How Windows stands to the phones (`state()`'s `firewall`).
+    #[derive(Debug, Clone, Copy, PartialEq, Eq)]
+    pub enum Gate {
+        /// Not looked at yet (or not Windows).
+        Unknown,
+        Checking,
+        /// The phones get in.
+        Open,
+        /// They do not; the button sets it right.
+        Shut,
+        /// Windows asks the player whether Omsi-Hub may.
+        Asking,
+        /// The player said no to Windows' question.
+        Declined,
+    }
+
+    impl Gate {
+        pub fn word(self) -> Option<&'static str> {
+            Some(match self {
+                Gate::Unknown => return None,
+                Gate::Checking => "checking",
+                Gate::Open => "open",
+                Gate::Shut => "shut",
+                Gate::Asking => "asking",
+                Gate::Declined => "declined",
+            })
+        }
+    }
+
+    static GATE: Mutex<Gate> = Mutex::new(Gate::Unknown);
+
+    pub fn gate() -> Gate {
+        *GATE.lock().unwrap_or_else(|e| e.into_inner())
+    }
+
+    fn set(g: Gate) {
+        *GATE.lock().unwrap_or_else(|e| e.into_inner()) = g;
+    }
+
+    /// A text in a PowerShell script, quoted.
+    fn quoted(s: &str) -> String {
+        format!("'{}'", s.replace('\'', "''"))
+    }
+
+    /// The program's rules, whatever language Windows speaks: how many firewall profiles are on,
+    /// how many inbound rules block the program, and the ports the add-on's own rule lets in -
+    /// `on=3 block=0 ours=47811`.
+    pub fn check_script(exe: &str) -> String {
+        let (exe, rule) = (quoted(exe), quoted(RULE));
+        [
+            "$ErrorActionPreference='SilentlyContinue'".to_string(),
+            format!("$p=[IO.Path]::GetFullPath({exe})"),
+            "$on=@(Get-NetFirewallProfile | Where-Object { $_.Enabled -eq 'True' }).Count".to_string(),
+            "$f=@(Get-NetFirewallApplicationFilter | Where-Object { $_.Program -and ([Environment]::ExpandEnvironmentVariables($_.Program) -ieq $p) })".to_string(),
+            "$block=@($f | Get-NetFirewallRule | Where-Object { $_.Direction -eq 'Inbound' -and $_.Enabled -eq 'True' -and $_.Action -eq 'Block' }).Count".to_string(),
+            format!("$ours=@(Get-NetFirewallRule -DisplayName {rule} | Where-Object {{ $_.Enabled -eq 'True' -and $_.Action -eq 'Allow' -and $_.Direction -eq 'Inbound' }} | Get-NetFirewallPortFilter | ForEach-Object {{ $_.LocalPort }})"),
+            "\"on=$on block=$block ours=$($ours -join ',')\"".to_string(),
+        ]
+        .join("\n")
+    }
+
+    /// What the check said: whether the phones get in on `port` (None: it could not tell).
+    pub fn open(out: &str, port: u16) -> Option<bool> {
+        let line = out.lines().rev().find(|l| l.trim_start().starts_with("on="))?;
+        let field = |k: &str| line.split_whitespace().find_map(|w| w.strip_prefix(k)).map(str::to_string);
+        let on: u32 = field("on=")?.parse().ok()?;
+        let block: u32 = field("block=")?.parse().ok()?;
+        let ours = field("ours=").unwrap_or_default();
+        let has_port = ours.split(',').any(|p| p.trim() == port.to_string() || p.trim().eq_ignore_ascii_case("any"));
+        Some(on == 0 || (block == 0 && has_port))
+    }
+
+    /// Setting it right (run with the administrator's rights): the program's blocking rules
+    /// removed, and the one rule letting the port in on every kind of network.
+    pub fn fix_script(exe: &str, port: u16) -> String {
+        let (exe, rule) = (quoted(exe), quoted(RULE));
+        let about = quoted("Lets phones and tablets in the home network reach Omsi-Hub (Settings > General > Phone & tablet).");
+        [
+            "$ErrorActionPreference='Stop'".to_string(),
+            format!("$p=[IO.Path]::GetFullPath({exe})"),
+            "Get-NetFirewallApplicationFilter | Where-Object { $_.Program -and ([Environment]::ExpandEnvironmentVariables($_.Program) -ieq $p) } | Get-NetFirewallRule | Where-Object { $_.Direction -eq 'Inbound' -and $_.Action -eq 'Block' } | Remove-NetFirewallRule".to_string(),
+            format!("Get-NetFirewallRule -DisplayName {rule} -ErrorAction SilentlyContinue | Remove-NetFirewallRule"),
+            format!("New-NetFirewallRule -DisplayName {rule} -Description {about} -Direction Inbound -Action Allow -Program $p -Protocol TCP -LocalPort {port} -Profile Any | Out-Null"),
+        ]
+        .join("\n")
+    }
+
+    /// A script as PowerShell's -EncodedCommand takes it: UTF-16LE in base64.
+    pub fn encoded(script: &str) -> String {
+        const B64: &[u8; 64] = b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+        let bytes: Vec<u8> = script.encode_utf16().flat_map(u16::to_le_bytes).collect();
+        let mut out = String::with_capacity(bytes.len() * 4 / 3 + 4);
+        for c in bytes.chunks(3) {
+            let n = (c[0] as u32) << 16 | (*c.get(1).unwrap_or(&0) as u32) << 8 | *c.get(2).unwrap_or(&0) as u32;
+            for i in 0..4 {
+                out.push(if i <= c.len() { B64[(n >> (18 - 6 * i) & 63) as usize] as char } else { '=' });
+            }
+        }
+        out
+    }
+
+    #[cfg(windows)]
+    fn powershell(args: &[&str]) -> std::io::Result<std::process::Output> {
+        use std::os::windows::process::CommandExt;
+        // (no console window flashing up)
+        std::process::Command::new("powershell.exe").args(["-NoProfile", "-NonInteractive", "-ExecutionPolicy", "Bypass"]).args(args).creation_flags(0x0800_0000).output()
+    }
+
+    /// Whether the phones get in on `port` (None: not Windows, or it could not tell).
+    pub fn check(exe: &str, port: u16) -> Option<bool> {
+        #[cfg(windows)]
+        {
+            let out = powershell(&["-EncodedCommand", &encoded(&check_script(exe))]).ok()?;
+            open(&String::from_utf8_lossy(&out.stdout), port)
+        }
+        #[cfg(not(windows))]
+        {
+            let _ = (exe, port);
+            None
+        }
+    }
+
+    /// Set it right, asking Windows for the rights (UAC): Err(true) when the player said no,
+    /// Err(false) when it failed.
+    pub fn fix(exe: &str, port: u16) -> Result<(), bool> {
+        #[cfg(windows)]
+        {
+            // (an elevated PowerShell of its own, waited for; 1223 is Windows' "cancelled")
+            let inner = encoded(&fix_script(exe, port));
+            let outer = format!(
+                "try {{ $p = Start-Process powershell.exe -Verb RunAs -WindowStyle Hidden -Wait -PassThru -ArgumentList '-NoProfile','-NonInteractive','-ExecutionPolicy','Bypass','-EncodedCommand','{inner}'; exit $p.ExitCode }} catch {{ exit 1223 }}"
+            );
+            match powershell(&["-Command", &outer]).map(|o| o.status.code()) {
+                Ok(Some(0)) => Ok(()),
+                Ok(Some(1223)) => Err(true),
+                _ => Err(false),
+            }
+        }
+        #[cfg(not(windows))]
+        {
+            let _ = (exe, port);
+            Err(false)
+        }
+    }
+
+    /// Look (and with `fix_it`, set it right when it is shut), on a thread of its own: the check
+    /// takes a few seconds, Windows' question as long as the player takes.
+    pub fn watch(port: u16, fix_it: bool) {
+        if !cfg!(windows) {
+            return;
+        }
+        let Ok(exe) = std::env::current_exe() else { return };
+        let exe = exe.to_string_lossy().to_string();
+        set(Gate::Checking);
+        let _ = std::thread::Builder::new().name("companion firewall".into()).spawn(move || {
+            let open = check(&exe, port);
+            if open != Some(false) {
+                set(if open == Some(true) { Gate::Open } else { Gate::Unknown });
+                return;
+            }
+            if !fix_it {
+                set(Gate::Shut);
+                return;
+            }
+            set(Gate::Asking);
+            let done = fix(&exe, port);
+            hub_core::log_line(match done {
+                Ok(()) => "companion: the firewall set to let the phones in",
+                Err(true) => "companion: the firewall left as it was (declined)",
+                Err(false) => "companion: the firewall could not be set",
+            });
+            set(match done {
+                Ok(()) if check(&exe, port) != Some(false) => Gate::Open,
+                Err(true) => Gate::Declined,
+                _ => Gate::Shut,
+            });
+        });
+    }
+}
 
 /// The server while it runs, and the last error starting it.
 static RUNNING: Mutex<Option<Companion>> = Mutex::new(None);
@@ -127,7 +323,12 @@ fn start(port: u16) -> Result<(), String> {
 pub fn start_if_on() {
     let s = Settings::load();
     if setting_on(&s) {
-        let _ = start(setting_port(&s));
+        let port = setting_port(&s);
+        if start(port).is_ok() {
+            // (looked at; set right only when the player turns it on or asks - Windows' question
+            // should not come out of the blue as the app starts)
+            firewall::watch(port, false);
+        }
     }
 }
 
@@ -141,6 +342,7 @@ fn state() -> Value {
     let url = v["pair_url"].as_str().unwrap_or("").to_string();
     v["qr"] = hub_core::qr::encode(&url, hub_core::qr::Ecc::M).or_else(|| hub_core::qr::encode(&url, hub_core::qr::Ecc::L)).map(|q| json!({ "size": q.size, "bits": q.bits() })).unwrap_or(Value::Null);
     v["wanted"] = json!(true);
+    v["firewall"] = json!(firewall::gate().word());
     v
 }
 
@@ -156,7 +358,9 @@ pub fn call(cmd: &str, args: &Value, _p: &dyn Platform) -> Answer {
             s.save().map_err(|e| e.to_string())?;
             if on {
                 // (a port that will not open says so in the state)
-                let _ = start(port);
+                if start(port).is_ok() {
+                    firewall::watch(port, true);
+                }
             } else {
                 *RUNNING.lock().unwrap_or_else(|e| e.into_inner()) = None;
             }
@@ -165,6 +369,13 @@ pub fn call(cmd: &str, args: &Value, _p: &dyn Platform) -> Answer {
         "hub_companion_code" => {
             if let Some(c) = RUNNING.lock().unwrap_or_else(|e| e.into_inner()).as_ref() {
                 c.new_code();
+            }
+            Ok(state())
+        }
+        "hub_companion_firewall" => {
+            let port = RUNNING.lock().unwrap_or_else(|e| e.into_inner()).as_ref().map(Companion::port);
+            if let Some(port) = port {
+                firewall::watch(port, true);
             }
             Ok(state())
         }
@@ -188,6 +399,27 @@ mod tests {
         assert_eq!(map_name("C:\\OMSI 2\\maps\\Grundorf\\global.cfg"), "maps/Grundorf/global.cfg");
         assert_eq!(map_name("maps/Grundorf/global.cfg"), "maps/Grundorf/global.cfg");
         assert_eq!(map_name("/home/luc/.steam/steamapps/common/OMSI 2/Maps/Ruhrau/global.cfg"), "Maps/Ruhrau/global.cfg");
+    }
+
+    #[test]
+    fn the_firewall_is_read_whatever_windows_says_and_set_right_for_the_port() {
+        use firewall::*;
+        assert_eq!(open("on=3 block=2 ours=", 47811), Some(false));
+        assert_eq!(open("on=3 block=0 ours=", 47811), Some(false));
+        assert_eq!(open("on=3 block=0 ours=47811", 47811), Some(true));
+        assert_eq!(open("on=3 block=0 ours=50000", 47811), Some(false));
+        assert_eq!(open("on=3 block=1 ours=47811", 47811), Some(false));
+        // the firewall switched off: nothing to set right
+        assert_eq!(open("on=0 block=2 ours=", 47811), Some(true));
+        assert_eq!(open("something else", 47811), None);
+        let exe = r"C:\Users\O'Brien\AppData\Local\Omsi-Hub\omsi-hub.exe";
+        let fix = fix_script(exe, 47811);
+        assert!(fix.contains(r"'C:\Users\O''Brien\AppData\Local\Omsi-Hub\omsi-hub.exe'"), "{fix}");
+        assert!(fix.contains("-LocalPort 47811 -Profile Any") && fix.contains("Remove-NetFirewallRule"));
+        assert!(check_script(exe).contains("Get-NetFirewallApplicationFilter"));
+        // -EncodedCommand's base64 of UTF-16LE
+        assert_eq!(encoded("a"), "YQA=");
+        assert_eq!(encoded("Hi!"), "SABpACEA");
     }
 
     #[test]

@@ -4,7 +4,7 @@
 //!   node online/standin/standin.mjs                      (STANDIN_TTL=62 tries the renewal too)
 //!   cargo run -p hub-online --example standin [http://127.0.0.1:54321]
 
-use hub_online::oauth::Texts;
+use hub_online::oauth::{Provider, Texts};
 use hub_online::store::{MemoryStore, SecretStore};
 use hub_online::{Client, Endpoints, Error, Flow, SaveError, Stats};
 use serde_json::{json, Value};
@@ -107,6 +107,11 @@ fn main() {
     assert_eq!((a.display_name.as_str(), a.friend_code.len(), a.on_board), (ana_name.as_str(), 8, false));
     assert_eq!(bo.set_display_name(&ana_name.to_uppercase()), Err(Error::Code("name_taken")));
     step("profiles made with a friend code; a name taken is said so");
+    let (pa, pb) = (ana.personnel().unwrap(), bo.personnel().unwrap());
+    assert!(pa.number.len() == 6 && pa.code.len() == 4, "{pa:?}");
+    assert_eq!(ana.personnel().unwrap(), pa);
+    assert_ne!(pa.number, pb.number);
+    step("every account has a personnel pass of its own, the same at every ask");
 
     // --- friends, online state, invites --------------------------------------------------------------
     assert_eq!(ana.send_friend_request(&a.friend_code), Err(Error::Code("self")));
@@ -200,7 +205,7 @@ fn main() {
 
     // --- Google, through "the browser" ----------------------------------------------------------------------
     let mut c = Client::new(ep.clone(), Box::new(Shared::default()));
-    let flow = Flow::start(&ep, Texts::default()).unwrap();
+    let flow = Flow::start(&ep, Provider::Google, Texts::default()).unwrap();
     let url = flow.url().to_string();
     let waiting = std::thread::spawn(move || flow.wait(Duration::from_secs(30), &AtomicBool::new(false)));
     browser(&url);
@@ -218,12 +223,31 @@ fn main() {
     assert!(!c.signed_in());
     step("signed in with Google through the browser, the profile made, deleted without a password");
     // (a player who says no at Google)
-    let flow = Flow::start(&ep, Texts::default()).unwrap();
+    let flow = Flow::start(&ep, Provider::Google, Texts::default()).unwrap();
     let url = format!("{}&standin_answer=deny", flow.url());
     let waiting = std::thread::spawn(move || flow.wait(Duration::from_secs(30), &AtomicBool::new(false)));
     browser(&url);
     assert_eq!(waiting.join().unwrap(), Err(Error::Code("oauth_cancelled")));
     step("a player who says no at Google: cancelled");
+
+    // --- Discord, through "the browser" ---------------------------------------------------------------------
+    let mut c = Client::new(ep.clone(), Box::new(Shared::default()));
+    let flow = Flow::start(&ep, Provider::Discord, Texts::default()).unwrap();
+    let url = flow.url().to_string();
+    let waiting = std::thread::spawn(move || flow.wait(Duration::from_secs(30), &AtomicBool::new(false)));
+    browser(&url);
+    let handoff = waiting.join().unwrap().expect("the browser handed the sign-in back");
+    let token = c.sign_in_with(&handoff).unwrap().expect("Discord's token");
+    assert!(c.signed_in() && !c.has_password());
+    if c.check_privacy().unwrap() < v {
+        c.accept_privacy().unwrap();
+    }
+    c.discord_claim(&token).unwrap();
+    let me = c.user_id().unwrap().to_string();
+    let linked: Value = serde_json::from_reader(ureq::get(&format!("{base}/__discord?user={me}")).call().expect("the link").into_reader()).unwrap();
+    assert_eq!(linked["joined"], true, "guilds.join asked, the player brought into the server: {linked}");
+    c.delete_account("").unwrap();
+    step("signed in with Discord through the browser, that Discord account linked, deleted without a password");
     println!("All flows work against the stand-in.");
 }
 

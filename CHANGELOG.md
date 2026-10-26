@@ -4,8 +4,71 @@ Each version of the Omsi-Hub add-on, newest first. The release on GitHub links h
 
 ## Unreleased
 
+### Added
+
+- **RosterFlow prints duty cards**: the print menu has **Duty cards (PDF)**, every duty of the
+  day as a depot prints them, two to an A4 sheet across to cut in two. Each card has the depot,
+  the day, the duty number, signing on and off, the longest break, the driving time and the
+  paid time, and then every piece: its running number and bus, every trip with each stop and
+  its time, the timing points marked, the reliefs (from which duty, to which) and the breaks.
+  The cards carry the company's logo picture (or its monogram and name) and its colour.
+
+### Changed
+
+- **Your drivers work days as long as you want**: the planning has a **Longest duty** in its
+  toolbar (2:00 to 10:00). A tour longer than that is split into duties no longer than it, and
+  the dispatcher gives no driver more work in a day. A new company starts at 7:30; a company of
+  before keeps its planning until you set one.
+- **Split a duty with one click, as often as you want**: a duty chosen on the planning has
+  **Split this duty**, which starts a new duty at the relief point nearest its middle (it says
+  where); each half can be split again.
+
+### Fixed
+
+- **Play together: duties for the players**: in a company with its own drivers no duty was
+  ever open to the players. A duty the company's own driver or the agency would drive can now
+  be taken (or asked for) by a player, who takes it over; the boss's own duty stays his. A
+  player's duty also stays his when the boss cuts its tour anew.
+- **Play together: the players see each other**: each player's bus is on the fleet map where
+  his own game says it is, on the block of the duty he drives - for the boss and for every
+  player who looks at the map. And the company's world can be joined for the whole of a duty:
+  from three hours before it begins, and after it began from its next trip (the AI drove the
+  trips before), instead of only in the 25 minutes around its start.
+- **The plugin no longer stops with "ran longer than 50 ms" as the game loads**: with the
+  phone companion on, the plugin's first moment in the game read and sent everything for the
+  phone at once - the bus and its devices, its keys, the duty's trips and every line and tour
+  of the map's timetable - and while the game was still busy loading that one call ran over
+  openOMSI's 50 ms, so it switched the plugin off and nothing of the drive reached Omsi-Hub.
+  The plugin (1.16.2) now does one of those at a time, reads the map's lines once, and sends
+  the devices' screens with less work ten times a second.
+
+## 1.1.1
+
+A patch on 1.1.0. It still needs **openOMSI 0.2.22 or newer** and an original **OMSI 2**.
+
+### Changed
+
+- **Updates install themselves**: a new version of Omsi-Hub now downloads, installs and starts
+  by itself, without a click, while no game runs (on Windows the installer shows its progress
+  and asks nothing). "Install updates without asking" in Settings is on unless you switch it
+  off. Coming from 1.1.0, install this version by hand once: from then on every update
+  installs itself.
+
+## 1.1.0
+
+It still needs **openOMSI 0.2.22 or newer** and an original **OMSI 2**. Omsi-Hub's look in the
+game's own screens needs an openOMSI with interface themes.
+
 ### New
 
+- **Your companies on the online leaderboard**: switch "Show this company on the online
+  leaderboard" on in the company's settings, or in the account panel's "Company leaderboard"
+  under the cloud saves, and the company stands on omsihub.com's company board - its name,
+  colour, map and figures (this month's profit and passengers, cash, buses, lines, staff, trips on
+  time and reputation), with your display name. Omsi-Hub keeps the figures up to date while you
+  play. Off until you switch it on; at most 5 of your companies at a time; switched off, or the
+  company deleted, it is taken off the board again. The website pointed to this switch before the
+  app had it.
 - **Phone & tablet in the browser, no app needed**: with Settings › General › Phone & tablet
   on, Omsi-Hub serves the Companion as a web app on its address (`http://<your computer>:47811`).
   Scan the QR code with the phone's camera, or open the address in the phone's browser and type
@@ -14,6 +77,32 @@ Each version of the Omsi-Hub add-on, newest first. The release on GitHub links h
   the stops and trips, the control room's messages, the break, and the bus's IBIS and ticket
   printer drawn as in the cab. The QR code now opens this page (the Companion app's own
   scanner reads it too).
+- **Phones get in, whatever Windows' firewall said**: on Windows, turning Phone & tablet on
+  sees to it that the firewall lets phones and tablets in - on a network Windows calls public
+  too, and after its question was once clicked away. Windows asks once whether Omsi-Hub may;
+  if that is clicked away, Settings says so beside the pairing code with a button *Let phones
+  in*.
+- **A shift between two times**: besides its length and the part of the day, a work shift can
+  now be asked for by its times - choose *From – to* in the shift step and set, say, 05:00 and
+  12:00. The shifts that fill those hours come into the list at once, each beginning at or after
+  the first time and ending by the second; a shift from 22:00 to 06:00 runs past midnight.
+- **A shift of so many lines**: when the map's tours run more than one line, the shift step asks
+  how many lines the shift drives - *Any*, or 1 to 5. Ask for three and every shift in the list
+  changes lines at the termini to drive three, say 811, then 800, then 820, and no more; with a
+  length or times the map has no such shift for, the list says so.
+- **Sign in with Discord**: the account panel and the welcome have *Sign in with Discord* under
+  *Sign in with Google*, through your browser as Google does. An account made with Discord on
+  the website now signs in here too, without a password, and signing in with Discord links that
+  Discord account to yours for the roles on the Omsi-Hub Discord server, as on the website.
+- **A personnel pass of your account**: every Omsi-Hub account now has its own personnel
+  number and code, the same on every computer you sign in on, for signing on in the game when
+  that comes back; the account panel shows them under *Personnel pass*, beside your
+  friend code. Your friends never see them.
+- **The mod installer on the start page**: *Install mods* among the links under the ways to
+  drive opens Settings straight on its tab Mods, to install a mod file or folder into openOMSI.
+- **Searching for a button's action**: on Settings › Controllers, giving a button of the wheel
+  or button box an action opens a search field over the actions, still by group - type *door*
+  or *indicator* and only those are left. The arrow keys and Enter pick one, Escape closes it.
 - **openOMSI in Omsi-Hub's look**: with an openOMSI that knows interface themes, the game's own
   screens look like Omsi-Hub. The loading screen is Omsi-Hub's logo on its dark blue, and the
   logo is the loading bar: its blue ring is drawn round the bus and on along the line under
@@ -21,7 +110,7 @@ Each version of the Omsi-Hub add-on, newest first. The release on GitHub links h
   headlights; the stops pop up on the line as it reaches them. The pause menu, its settings and lists are panes of frosted glass
   over the game's picture, in Omsi-Hub's blue, with Omsi-Hub's logo at the top. The plugin
   puts the look in force once; Options › Interface › Theme pack in openOMSI switches back
-  to openOMSI's own look (or to another theme), and that choice stays. The plugin is 1.16.0.
+  to openOMSI's own look (or to another theme), and that choice stays. The plugin is 1.16.1.
 
 ### Changed
 
@@ -36,17 +125,23 @@ Each version of the Omsi-Hub add-on, newest first. The release on GitHub links h
   screen: move the navigator by dragging its map, size it at its corner (Settings › General ›
   Navigator as a widget) and Shift+N shows and hides it. Only typing your personnel number
   still asks for F10. An openOMSI without the navigator's board keeps the panels of their own.
+- **The duty order in Omsi-Hub's look**: the company's panel heads the duty with
+  its lines' plates, its tour and from when to when it runs, instead of the timetable's names
+  (`oo_879 9 1`). The duty order lists the first six trips - when each leaves and where it
+  goes - and counts the others (*and 25 more trips until 23:30*), on Omsi-Hub's dark sheet.
+  In an openOMSI with the navigator's board it is in the navigator, under its map.
 - **Buses for the AI traffic are no longer offered to drive**: a bus with "AI" or "KI" in its
   folder, its file name or its name (`MAN_SD202_AI`, `KI-Busse`, `Citaro KI`), or marked
   `[ai_veh_type]`, is left out of the bus list of a drive, the company's market and dealer,
   the line editor's bus choice and the livery studio; a drive with such a bus, chosen before,
   is refused with a word why. Such a bus the company bought before stays in the fleet; give
   its tours another bus to drive them yourself.
-- **Signing on with your personnel number is back, and always asked for a company's duty**:
-  in the bus company mode you sign on in the game with your driver's pass (personnel number
-  and code, made for you the first time and shown on the company's panel and in the
-  Companion) before the duty order and the IBIS; there is no switch to leave it out. A drive
-  of your own (a free drive, a line and tour you chose) never asks for it.
+- **No signing on in the game for now**: a company's duty starts without the personnel
+  number and code and without the duty order to accept; the duty's codes go to the IBIS at
+  once. Your pass stays on your account and in Omsi-Hub, for when signing on comes back.
+- **No duty board in the game for now**: the card beside the navigator with the trip, the stops
+  ahead and what comes next is gone. The navigator's own bar shows the line, the next stop and
+  the delay, and the Companion on your phone the whole duty.
 
 ## 1.0.1
 

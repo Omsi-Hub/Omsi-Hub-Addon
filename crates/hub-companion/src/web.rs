@@ -95,6 +95,12 @@ mod tests {
         assert!(plain.encoding.is_none() && String::from_utf8(plain.body).unwrap().contains("<div id=\"root\">"));
         let wasm = answer("/canvaskit.wasm", true).unwrap();
         assert_eq!(wasm.ctype, "application/wasm");
+        // the fonts the page waits for before it shows anything, at the addresses the build
+        // asks for them (deep under /assets/node_modules/)
+        let fonts: Vec<&str> = FILES.iter().map(|(p, _)| *p).filter(|p| p.starts_with("/assets/node_modules/@expo-google-fonts/hanken-grotesk/") && p.ends_with(".ttf")).collect();
+        assert!(fonts.len() >= 5, "{fonts:?}");
+        assert_eq!(answer(fonts[0], true).unwrap().ctype, "font/ttf");
+        assert!(FILES.iter().any(|(p, _)| p.contains("/MaterialCommunityIcons.") && p.ends_with(".ttf")));
         assert!(answer("/settings.json", true).is_none());
         assert!(answer("/nothing.js", true).is_none());
     }

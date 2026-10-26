@@ -428,6 +428,7 @@ mod tests {
             ],
             unplanned: false,
             cuts: None,
+            duty_max: None,
         }];
         let wd = weekday_of(&c.date);
         let id = c.fleet[0].id;

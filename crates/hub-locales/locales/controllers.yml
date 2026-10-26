@@ -1176,6 +1176,22 @@ _version: 2
   uk: "Поки жодна кнопка нічого не робить. Під'єднайте пристрій і натисніть кнопку, щоб призначити їй дію."
   pl: "Żaden przycisk jeszcze nic nie robi. Podłącz urządzenie i naciśnij przycisk, aby przypisać mu działanie."
   es: "Ningún botón hace nada todavía. Enchufa el dispositivo y pulsa un botón para asignarle una acción."
+"Search for an action…":
+  nl: "Zoek een actie…"
+  de: "Aktion suchen…"
+  fr: "Rechercher une action…"
+  ru: "Найти действие…"
+  uk: "Знайти дію…"
+  pl: "Szukaj działania…"
+  es: "Buscar una acción…"
+"No action has these words.":
+  nl: "Geen actie bevat deze woorden."
+  de: "Keine Aktion enthält diese Wörter."
+  fr: "Aucune action ne contient ces mots."
+  ru: "Ни одно действие не содержит этих слов."
+  uk: "Жодна дія не містить цих слів."
+  pl: "Żadne działanie nie zawiera tych słów."
+  es: "Ninguna acción contiene estas palabras."
 "Another action…":
   nl: "Nog een actie…"
   de: "Weitere Aktion…"

@@ -2,7 +2,8 @@
 // departures, arrivals and lengths, and the chosen one opened into its trips - when each
 // leaves, the line's plate, where it goes and for how long, the break before it, and where the
 // bus goes on with another tour. A work shift is asked for by its length and its part of the
-// day; a tour - one bus's trips on one line, OMSI's own duty - by its line, and its opened row
+// day, or by its times (05:00 to 12:00: the shifts that fill them), and by how many lines it drives
+// when the map has more than one (811, 800, 820: three); a tour - one bus's trips on one line, OMSI's own duty - by its line, and its opened row
 // is where the trip it starts with is picked. The chosen duty's route lies on the map beside.
 
 import { html, useEffect, useRef, useState } from '../../vendor/preact-htm.js';
@@ -22,19 +23,29 @@ import { useOwnLines } from './start.js';
 
 const DAYPARTS = ['All day', 'Morning', 'Midday', 'Evening', 'Night'];
 const hhmm = (sec) => hms(sec);
+/** A shift asked for by its times: from - until, minutes of the day (05:00 to 12:00 at first). */
+const shiftTimes = (c) => (c.shift_by === 'times' ? [c.shift_from ?? 300, c.shift_until ?? 720] : null);
+/** The most lines a shift may be asked to drive. */
+const MOST_LINES = 5;
+/** The lines the day's tours show on their displays, each once: how many a shift can drive. */
+const shownLines = (list) => new Set((list || []).filter((l) => l.user_allowed).flatMap((l) => l.tours.filter((t) => t.runs).flatMap((t) => t.trips.map((x) => x.line?.trim() || l.name)))).size;
+/** The lines a shift is asked to drive (null: any), as long as the day has them. */
+const shiftLines = (c, list) => (c.shift_lines && c.shift_lines <= Math.min(MOST_LINES, shownLines(list)) ? c.shift_lines : null);
 /** Natural order of tour numbers ("2" before "10"). */
 const natural = (a, b) => String(a).localeCompare(String(b), undefined, { numeric: true });
 
-/** The shifts for the length and part of the day chosen (`hub_shifts`): made again when one
- * of them, the map, the date or the seed changes. */
+/** The shifts for the length and part of the day chosen, or for the times (`hub_shifts`): made
+ * again when one of them, the map, the date or the seed changes. */
 function useShifts(c) {
   const s = useStore();
-  const key = `${c.map}|${c.date}|${c.duty_minutes}|${c.daypart}|${S.hubSeed}`;
+  const times = shiftTimes(c);
+  const lines = shiftLines(c, s.lines.list);
+  const key = `${c.map}|${c.date}|${times ? times.join('-') : `${c.duty_minutes}|${c.daypart}`}|${lines ?? ''}|${S.hubSeed}`;
   useEffect(() => {
     if (!c.composed || !c.map) return;
     if (s.hubShifts?.key === key) return;
     set({ hubShifts: { key, list: null } });
-    call('hub_shifts', { map: c.map, date: c.date, minutes: c.duty_minutes ?? 120, daypart: c.daypart ?? 0, seed: S.hubSeed, legs: c.legs || [] })
+    call('hub_shifts', { map: c.map, date: c.date, minutes: c.duty_minutes ?? 120, daypart: c.daypart ?? 0, from: times?.[0], until: times?.[1], lines, seed: S.hubSeed, legs: c.legs || [] })
       .then((list) => S.hubShifts?.key === key && set({ hubShifts: { key, list } }))
       .catch((e) => S.hubShifts?.key === key && set({ hubShifts: { key, list: [], error: e.message } }));
   }, [key, c.composed]);
@@ -105,7 +116,11 @@ function List({ heads, cards, chosen, first, onPick, onTrip, empty }) {
 }
 
 function Shifts({ c }) {
+  const s = useStore();
   const sh = useShifts(c);
+  // (how many lines: only when the day's tours show more than one)
+  const most = Math.min(MOST_LINES, shownLines(s.lines.list));
+  const lines = shiftLines(c, s.lines.list);
   const list = sh.list || [];
   const chosen = list.findIndex((d) => (c.legs || []).length && d.key.join('|') === c.legs.join('|'));
   useEffect(() => set({ hubShift: list[chosen] || null }), [chosen, sh.list]);
@@ -118,16 +133,32 @@ function Shifts({ c }) {
     choose({ line: f.line, tour: f.tour, time, start_trip: [f.line, f.tour, f.index, time], legs: d.key });
   };
   const minutes = Math.max(30, Math.min(480, c.duty_minutes ?? 120));
+  const times = shiftTimes(c);
+  // (the times' stretch: 22:00 to 06:00 runs past midnight, the same time twice the whole day)
+  const span = times && ((((times[1] - times[0] - 1) % 1440) + 1440) % 1440) + 1;
+  const clock = (m) => `${String(Math.floor(m / 60)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`;
+  const timeField = (m, key) => html`<input type="time" class="hub-input" step="900" value=${clock(m)} style="flex:1;min-width:0;text-align:center;font-size:12px;font-weight:700"
+    onChange=${(e) => {
+      const [h, mm] = e.currentTarget.value.split(':').map(Number);
+      if (!isNaN(h)) choose({ [key]: h * 60 + (mm || 0) });
+    }} />`;
   return html`
     <div class="hub-pad" style="padding-bottom:12px">
-      <div class="hub-caps"><b>${tr('Shift length')}</b><span style="font-weight:700;font-size:11.1px">${length(minutes * 60)}</span></div>
-      <input type="range" class="hub-range-input" min="30" max="480" step="15" value=${minutes} style=${`width:100%;--fill:${((minutes - 30) / 450) * 100}%`} onInput=${(e) => choose({ duty_minutes: Number(e.currentTarget.value) })} />
-      <div style="height:14px"></div>
-      <${Caps} title="Time of day" />
-      <${Chips} value=${DAYPARTS[c.daypart ?? 0] || 'All day'} options=${DAYPARTS.map((d) => [d, d])} onChange=${(d) => choose({ daypart: DAYPARTS.indexOf(d) })} />
+      <div style="margin-bottom:12px"><${Seg} full value=${times ? 'times' : 'length'} options=${[['length', 'Length'], ['times', 'From – to']]} onChange=${(v) => choose({ shift_by: v })} /></div>
+      ${times
+        ? html`<div class="hub-caps"><b>${tr('Shift times')}</b><span style="font-weight:700;font-size:11.1px">${length(span * 60)}</span></div>
+            <div style="display:flex;align-items:center;gap:8px">${timeField(times[0], 'shift_from')}<span style="color:var(--hub-text-dim)">–</span>${timeField(times[1], 'shift_until')}</div>`
+        : html`<div class="hub-caps"><b>${tr('Shift length')}</b><span style="font-weight:700;font-size:11.1px">${length(minutes * 60)}</span></div>
+            <input type="range" class="hub-range-input" min="30" max="480" step="15" value=${minutes} style=${`width:100%;--fill:${((minutes - 30) / 450) * 100}%`} onInput=${(e) => choose({ duty_minutes: Number(e.currentTarget.value) })} />
+            <div style="height:14px"></div>
+            <${Caps} title="Time of day" />
+            <${Chips} value=${DAYPARTS[c.daypart ?? 0] || 'All day'} options=${DAYPARTS.map((d) => [d, d])} onChange=${(d) => choose({ daypart: DAYPARTS.indexOf(d) })} />`}
+      ${most > 1 && html`<div style="height:14px"></div>
+        <${Caps} title="Lines in the shift" />
+        <${Chips} raw value=${lines ?? 0} options=${[[0, tr('Any')], ...Array.from({ length: most }, (_, k) => [k + 1, String(k + 1)])]} onChange=${(n) => choose({ shift_lines: n || null })} />`}
     </div>
     <${List} heads=${['Departure', 'Arrival', 'Duration']} cards=${cards} chosen=${chosen >= 0 ? chosen : null} first=${null} onPick=${pick}
-      empty=${sh.list == null ? 'Reading the timetable…' : sh.error || 'No shift of this length begins at this time of day. Try another length or part of the day.'} />`;
+      empty=${sh.list == null ? 'Reading the timetable…' : sh.error || (lines ? 'No shift drives this many lines here. Try fewer lines, a longer shift or other times.' : times ? 'No shift fits between these times. Try other times or a longer stretch.' : 'No shift of this length begins at this time of day. Try another length or part of the day.')} />`;
 }
 
 function Tours({ c }) {

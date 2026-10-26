@@ -1,1 +1,1 @@
-The Companion app's web build (tools/companion-web.mjs), from its commit f7e5015.
+The Companion app's web build (tools/companion-web.mjs), from its commit 27c76a2.

@@ -36,7 +36,7 @@ pub mod crew;
 mod currency;
 mod dealer;
 mod dialogs;
-mod dutycard;
+pub(crate) mod dutycard;
 // (an own line's change taking effect on its day, Trello "Tauri 6/6")
 mod due;
 mod fleet;
@@ -1637,6 +1637,9 @@ fn delete(s: &mut Session, id: &str) -> Answer {
     if let Some(list) = s.companies.as_mut() {
         list.retain(|x| x.id != id);
     }
+    // (off the company board with it)
+    #[cfg(feature = "native")]
+    crate::board::deleted(id);
     if open {
         switch_company(s, None);
     }

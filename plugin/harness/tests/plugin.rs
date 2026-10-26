@@ -371,7 +371,7 @@ fn the_driver_sizes_and_moves_the_panels_and_they_stay_so() {
     assert_eq!(big["width"].as_f64().map(f64::round), Some(360.0));
     assert!(big.to_string().contains("120 %"), "{big}");
     // (its texts grow with it; the padding the game would give it, too)
-    assert_eq!(big["children"][1]["size"].as_f64().map(|s| (s * 10.0).round() / 10.0), Some(16.8));
+    assert_eq!(big["children"][0]["children"][1]["size"].as_f64().map(|s| (s * 10.0).round() / 10.0), Some(16.8));
     assert_eq!(big["padding"].as_f64().map(|s| (s * 10.0).round() / 10.0), Some(14.4));
 
     // dragged 40 to the left and 25 down (the panel sits on the right: x grows leftwards)
@@ -433,12 +433,14 @@ fn in_an_openomsi_with_the_navigator_s_board_everything_is_in_the_navigator_and_
         assert!(!h.state.borrow().panels.contains_key(own), "{own} is a panel of its own");
     }
     let text = nav.to_string();
-    for part in ["Bus 4711 is in the workshop", "Stadtbus Berlin", "trip 1 of 2", "On time"] {
+    for part in ["Bus 4711 is in the workshop", "Stadtbus Berlin", "On time"] {
         assert!(text.contains(part), "{part} in {text}");
     }
     // (the notification first, under the navigator's map)
     let at = |part: &str| text.find(part).unwrap_or_else(|| panic!("{part} in {text}"));
-    assert!(at("Bus 4711 is in the workshop") < at("Stadtbus Berlin") && at("Stadtbus Berlin") < at("trip 1 of 2"));
+    assert!(at("Bus 4711 is in the workshop") < at("Stadtbus Berlin"));
+    // (the duty board is out for now: board.lua's SHOWN)
+    assert!(!text.contains("trip 1 of 2"), "{text}");
 
     // the notice clicked away with the mouse, as it is
     let close = ids(&nav, "note_close_");

@@ -6,7 +6,7 @@ use crate::client::{test_jwt, test_now};
 use crate::mock::{Answer, Mock, Req};
 use crate::saves_tests::{raw_of, storage, Files};
 use crate::store::{MemoryStore, SecretStore};
-use crate::{check, codes, Client, Endpoints, Error, Stats};
+use crate::{check, codes, BoardCompany, Client, Endpoints, Error, Personnel, Stats};
 use serde_json::{json, Value};
 
 use std::sync::atomic::{AtomicUsize, Ordering};
@@ -332,6 +332,52 @@ fn the_leaderboard_is_switched_and_the_record_reported() {
     assert_eq!(m.requests().last().unwrap().body["p_level"], 1, "the lowest level is 1");
 }
 
+/// A company put on the company board with its figures, a sixth one refused, and one taken off.
+#[test]
+fn a_company_goes_on_the_company_board_and_off() {
+    let m = Mock::start(|r| {
+        if let Some(a) = refresh_route(r) {
+            return a;
+        }
+        match r.path.as_str() {
+            "/rest/v1/rpc/publish_company" if r.body["p_name"] == "Sixth" => (400, vec![], json!({ "code": "54000", "message": "too many companies shown", "details": null })),
+            "/rest/v1/rpc/publish_company" => ok(json!(true)),
+            "/rest/v1/rpc/unpublish_company" => ok(json!(false)),
+            _ => (404, vec![], Value::Null),
+        }
+    });
+    let mut c = client(&m, &signed_in("r1"));
+    let b = BoardCompany {
+        key: "0123456789abcdef".into(),
+        name: "Stadtbus Nord".into(),
+        short: Some("SN".into()),
+        colour: Some("#f28c28".into()),
+        country: Some("DE".into()),
+        mode: "normal".into(),
+        currency: Some("EUR".into()),
+        days: 40,
+        cash: 12_345_600,
+        profit_month: -50_000,
+        buses: 6,
+        lines: 3,
+        staff: 11,
+        passengers_month: 4_200,
+        on_time: Some(91.5),
+        reputation: Some(64.0),
+        ..Default::default()
+    };
+    c.publish_company(&b).unwrap();
+    let body = m.requests().last().unwrap().body.clone();
+    assert_eq!(body["p_key"], "0123456789abcdef");
+    assert_eq!(body["p_profit_month"], -50_000);
+    assert_eq!(body["p_map"], Value::Null);
+    assert_eq!(body["p_on_time"], 91.5);
+    assert_eq!(c.publish_company(&BoardCompany { name: "Sixth".into(), ..b.clone() }), Err(Error::Code("board_full")));
+    // (one that was not on it is taken off as well)
+    c.unpublish_company("0123456789abcdef").unwrap();
+    assert_eq!(m.requests().last().unwrap().body, json!({ "p_key": "0123456789abcdef" }));
+}
+
 /// Until the player agreed to the current privacy statement nothing of the account's goes out:
 /// only `my_privacy` and `accept_privacy` (and deleting the account) do.
 #[test]
@@ -376,6 +422,35 @@ fn the_account_waits_for_the_privacy_statement() {
     c.forget();
     assert!(!c.privacy_needed());
     assert_eq!(c.privacy, None);
+}
+
+#[test]
+fn the_accounts_personnel_pass_is_read() {
+    let answer = Arc::new(std::sync::Mutex::new(json!([{ "number": "482913", "code": "5821" }])));
+    let a = answer.clone();
+    let m = Mock::start(move |r| {
+        if let Some(x) = refresh_route(r) {
+            return x;
+        }
+        match r.path.as_str() {
+            "/rest/v1/rpc/my_personnel" => ok(a.lock().unwrap().clone()),
+            _ => (404, vec![], Value::Null),
+        }
+    });
+    let mut c = client(&m, &signed_in("r1"));
+    assert_eq!(c.personnel(), Ok(Personnel { number: "482913".into(), code: "5821".into() }));
+    assert_eq!(m.requests().last().unwrap().body, json!({}));
+    // (one row as an object too, as PostgREST may hand it)
+    *answer.lock().unwrap() = json!({ "number": "100200", "code": "1234" });
+    assert_eq!(c.personnel().map(|p| p.number), Ok("100200".into()));
+    // (what is no pass is not taken)
+    for bad in [json!([]), json!([{ "number": "12a456", "code": "1234" }]), json!([{ "number": "123456", "code": "12" }]), json!(null)] {
+        *answer.lock().unwrap() = bad.clone();
+        assert_eq!(c.personnel(), Err(Error::Code("server")), "{bad}");
+    }
+    // (a server without the function yet)
+    let old = Mock::start(|r| refresh_route(r).unwrap_or((404, vec![], json!({ "code": "PGRST202", "message": "Could not find the function public.my_personnel" }))));
+    assert_eq!(client(&old, &signed_in("r1")).personnel(), Err(Error::Code("unavailable")));
 }
 
 #[test]

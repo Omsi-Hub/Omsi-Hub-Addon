@@ -31,7 +31,7 @@ use crate::launcher::company::duty_launch::DutyRef;
 use crate::launcher::company::together::client::{self, Ended, Link};
 use crate::launcher::company::together::code::{self, CompanyCode};
 use crate::launcher::company::together::host as th;
-use crate::launcher::company::together::wire::{DriveStart, DutyState, Notice, Request, SnapDuty, SnapResult, SnapWorld, Snapshot};
+use crate::launcher::company::together::wire::{BusAt, DriveStart, DutyState, Notice, Request, SnapDuty, SnapResult, SnapWorld, Snapshot};
 use crate::launcher::company::together::{Perm, Role};
 use crate::{Answer, Platform};
 use hub_game::bridge;
@@ -162,9 +162,37 @@ fn request(j: &Joined, what: &str) -> Request {
         in_game: j.drive.is_some(),
         since: j.since,
         logo: !j.logo_asked,
+        pos: j.drive.as_ref().and_then(|_| bus_at()),
         ..Default::default()
     }
 }
+
+/// Where his game's bus is, as his plugin last wrote it for the fleet map (`bridge::Traffic`):
+/// for the boss's map, where the others see him. None when it is old (the game paused, ended, or
+/// writes nothing).
+fn bus_at() -> Option<BusAt> {
+    let t = bridge::read_traffic(&super::super::addon::game_plugin_dir()?)?;
+    let now = std::time::SystemTime::now().duration_since(std::time::UNIX_EPOCH).map(|d| d.as_secs_f64()).unwrap_or(0.0);
+    if (now - t.at).abs() > POS_FRESH {
+        return None;
+    }
+    let p = t.player?;
+    Some(BusAt {
+        map: t.map,
+        x: p.x,
+        y: p.y,
+        heading: p.heading,
+        speed: p.speed,
+        delay: p.delay,
+        passengers: p.passengers,
+        line: p.line,
+        tour: p.tour,
+        reference: t.reference.map(|r| [r.x, r.y, r.tile_x as f64, r.tile_y as f64, r.local_x, r.local_y]),
+    })
+}
+
+/// How old what the plugin wrote of the bus may be to be sent (s; it writes every two).
+const POS_FRESH: f64 = 10.0;
 
 /// An answer of the boss's launcher taken in: the day, the notices.
 fn take_answer(j: &mut Joined, v: &Value) {
@@ -754,9 +782,11 @@ fn duty_row(d: &SnapDuty, open_claims: bool, ask: bool, world: Option<&SnapWorld
     let mut yours = Vec::new();
     drive(&mut yours);
     yours.push(json!({ "label": tr("Give back"), "act": "release", "kind": "" }));
+    // (open: nobody's yet, or the company's own driver's until a player takes it)
+    let open = if d.who.is_empty() { tr("Open") } else { trf("Open: %{name} drives it unless a player takes it", &[("name", &tr(&d.who))]) };
     let (state, tone, acts): (String, &str, Vec<Value>) = match d.state {
-        DutyState::Open if ask => (tr("Open"), "accent", vec![json!({ "label": take, "act": "take", "kind": "primary" })]),
-        DutyState::Open => (tr("Open"), "accent", Vec::new()),
+        DutyState::Open if ask => (open, "accent", vec![json!({ "label": take, "act": "take", "kind": "primary" })]),
+        DutyState::Open => (open, "accent", Vec::new()),
         DutyState::Mine => (tr("Yours"), "ok", yours),
         DutyState::Late => (tr("Yours: the company's day closed, drive it when you can"), "warn", yours),
         DutyState::Asked => (tr("Asked for: waiting for a yes"), "warn", vec![json!({ "label": tr("Withdraw"), "act": "release", "kind": "" })]),

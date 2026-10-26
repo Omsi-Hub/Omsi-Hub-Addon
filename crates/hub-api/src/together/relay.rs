@@ -181,6 +181,8 @@ fn more_act_need(act: &str) -> Need {
         "contract_vary" | "contract_offer" => SPEND,
         "map_play" | "map_speed" | "map_now" | "map_pick" => Member,
         "plan_give_driver" | "plan_give_bus" | "plan_set_fill" | "plan_fill" | "plan_clear" | "plan_repeat" | "plan_fold" | "plan_fold_all" | "plan_stop" | "plan_start" => PLANS,
+        // (a duty split, the longest duty set: the planners')
+        "plan_split" | "plan_duty_max" => PLANS,
         // (a line's trips and timetable: the planning's sheet of the player's own, or RosterFlow's
         // Timeplan with the add-on on - its changes are checked as they are made)
         "plan_timetable" => RF_VIEW,
@@ -369,9 +371,9 @@ mod tests {
             ("ops", include_str!("../company/ops.rs")),
             ("sandbox", include_str!("../company/sandbox.rs")),
         ];
-        // (the boss's own: never from afar - friends joining his company without an invite is his
-        // online profile's)
-        let own = ["logo", "move_date", "design_livery", "friends_join"];
+        // (the boss's own: never from afar - friends joining his company without an invite, and the
+        // company on the online leaderboard, are his online profile's)
+        let own = ["logo", "move_date", "design_livery", "friends_join", "board"];
         let mut missing = Vec::new();
         for (page, src) in pages {
             for a in acts_in(src) {

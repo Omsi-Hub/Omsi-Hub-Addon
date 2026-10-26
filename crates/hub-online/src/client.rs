@@ -13,13 +13,15 @@
 //! access token is refused here with `privacy` and nothing is sent. Only those two functions and
 //! deleting the account go through.
 //!
-//! Google signs in through the browser (`oauth.rs`); what it hands back becomes a session here
-//! (`sign_in_with`) as a password's does. Such an account has no password: deleting it asks for
-//! none (`has_password`), as on the website.
+//! Google and Discord sign in through the browser (`oauth.rs`); what they hand back becomes a
+//! session here (`sign_in_with`) as a password's does. Such an account has no password: deleting it
+//! asks for none (`has_password`), as on the website. Signed in with Discord, the account is linked
+//! to that Discord account for the roles on the Omsi-Hub server, as the website does
+//! (`discord_claim`, the Edge Function `discord-bot`).
 
 use crate::codes::{self, Error};
 use crate::http::{encode, Body, Http, Reply};
-use crate::oauth::Handoff;
+use crate::oauth::{Handoff, Provider};
 use crate::store::SecretStore;
 use crate::{check, privacy, Endpoints};
 use serde_json::{json, Value};
@@ -34,6 +36,16 @@ pub struct Profile {
     pub on_board: bool,
     /// The photo's name in the bucket `avatars` (`avatar_url`), None without one.
     pub avatar: Option<String>,
+}
+
+/// The account's personnel pass (`my_personnel()`): the number and the code its driver signs on
+/// with before a duty, the same on every computer the player signs in on.
+#[derive(Debug, Clone, Default, PartialEq, Eq)]
+pub struct Personnel {
+    /// Six digits, the account's own.
+    pub number: String,
+    /// Four digits.
+    pub code: String,
 }
 
 /// A row of `my_friends()`: a friend, or a request either way.
@@ -86,6 +98,35 @@ pub struct Stats {
     pub duties: u32,
     pub minutes_driven: u32,
     pub km: u32,
+}
+
+/// A company on the company board (`publish_company`): what the website's "Top companies" shows
+/// of it. The key stands for the company (8 to 64 letters, digits, `_` and `-`); the database
+/// keeps the figures in their ranges and the texts in their lengths.
+#[derive(Debug, Clone, Default, PartialEq)]
+pub struct BoardCompany {
+    pub key: String,
+    pub name: String,
+    pub short: Option<String>,
+    /// `#rrggbb`.
+    pub colour: Option<String>,
+    /// Two capital letters (`DE`).
+    pub country: Option<String>,
+    pub map_name: Option<String>,
+    /// `casual`, `normal` or `realistic`.
+    pub mode: String,
+    pub sandbox: bool,
+    /// Three capital letters (`EUR`).
+    pub currency: Option<String>,
+    pub days: u32,
+    pub cash: i64,
+    pub profit_month: i64,
+    pub buses: u32,
+    pub lines: u32,
+    pub staff: u32,
+    pub passengers_month: u64,
+    pub on_time: Option<f32>,
+    pub reputation: Option<f32>,
 }
 
 /// The access token and what it says.
@@ -237,14 +278,31 @@ impl Client {
 
     /// Signing in with what the browser handed back (`oauth::Flow::wait`): Supabase's PKCE code
     /// exchanged with its verifier (`POST /token?grant_type=pkce`). A code the auth does not take
-    /// is `oauth_failed`.
-    pub fn sign_in_with(&mut self, h: &Handoff) -> Result<(), Error> {
+    /// is `oauth_failed`. Answers the provider's own token of a Discord sign-in, once, for
+    /// `discord_claim` (kept nowhere).
+    pub fn sign_in_with(&mut self, h: &Handoff) -> Result<Option<String>, Error> {
         let s = self.auth("POST", "/token?grant_type=pkce", Some(json!({ "auth_code": h.code, "code_verifier": h.verifier })), None);
         let s = s.map_err(|e| match e {
             Error::Offline | Error::Code("too_many") => e,
             _ => Error::Code("oauth_failed"),
         })?;
-        if self.keep(&s) {
+        if !self.keep(&s) {
+            return Err(Error::Code("server"));
+        }
+        Ok((h.provider == Provider::Discord).then(|| s.get("provider_token").and_then(Value::as_str).unwrap_or("").to_string()))
+    }
+
+    /// The account linked to the Discord account it signed in with (the Edge Function
+    /// `discord-bot`, `{action: claim, provider_token}`, as the website does after a Discord
+    /// sign-in): the roles on the Omsi-Hub server, and with the sign-in's token (`guilds.join`) the
+    /// player brought into the server once. Only after the privacy statement is agreed to.
+    pub fn discord_claim(&mut self, provider_token: &str) -> Result<(), Error> {
+        let mut body = json!({ "action": "claim" });
+        if !provider_token.is_empty() {
+            body["provider_token"] = json!(provider_token);
+        }
+        let r = self.authed("POST", &self.ep.functions("/discord-bot"), Body::Json(&body), &[], false)?;
+        if r.ok() && r.body.get("ok").and_then(Value::as_bool) == Some(true) {
             Ok(())
         } else {
             Err(Error::Code("server"))
@@ -478,6 +536,18 @@ impl Client {
         }))
     }
 
+    /// The account's personnel pass (`my_personnel()`, made by the server when there is none);
+    /// an answer that is not one (not digits, too short or long) is `server`.
+    pub fn personnel(&mut self) -> Result<Personnel, Error> {
+        let v = self.rpc("my_personnel", json!({}))?;
+        let row = v.as_array().and_then(|a| a.first()).unwrap_or(&v);
+        let digits = |s: &str, n: std::ops::RangeInclusive<usize>| n.contains(&s.len()) && s.bytes().all(|b| b.is_ascii_digit());
+        match (text(row, &["number"]), text(row, &["code"])) {
+            (Some(number), Some(code)) if digits(&number, 3..=10) && digits(&code, 3..=8) => Ok(Personnel { number, code }),
+            _ => Err(Error::Code("server")),
+        }
+    }
+
     /// The online state and the company session hosted now (None: none).
     pub fn heartbeat(&mut self, status: &str, session: Option<&str>) -> Result<(), Error> {
         let session = session.map(check::session_code).transpose()?;
@@ -567,6 +637,25 @@ impl Client {
             Some("bad") => Err(Error::Code("bad_input")),
             _ => Err(Error::Code("server")),
         }
+    }
+
+    // --- the company board ------------------------------------------------------------------------
+
+    /// A company on the company board, or its figures brought up to date (`publish_company`);
+    /// a sixth company of the player's is `board_full`.
+    pub fn publish_company(&mut self, b: &BoardCompany) -> Result<(), Error> {
+        let args = json!({
+            "p_key": b.key, "p_name": b.name, "p_short": b.short, "p_colour": b.colour, "p_country": b.country,
+            "p_map": b.map_name, "p_mode": b.mode, "p_sandbox": b.sandbox, "p_currency": b.currency, "p_days": b.days,
+            "p_cash": b.cash, "p_profit_month": b.profit_month, "p_buses": b.buses, "p_lines": b.lines, "p_staff": b.staff,
+            "p_passengers_month": b.passengers_month, "p_on_time": b.on_time, "p_reputation": b.reputation,
+        });
+        self.rpc("publish_company", args).map(|_| ())
+    }
+
+    /// A company taken off the company board (`unpublish_company`; one that was not on it too).
+    pub fn unpublish_company(&mut self, key: &str) -> Result<(), Error> {
+        self.rpc("unpublish_company", json!({ "p_key": key })).map(|_| ())
     }
 }
 

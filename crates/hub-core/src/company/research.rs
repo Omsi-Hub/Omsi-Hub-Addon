@@ -940,6 +940,7 @@ mod tests {
             trips: (0..8).map(|k| super::super::network::tests::trip(from + k * 60, from + 50 + k * 60, 12)).collect(),
             unplanned: false,
             cuts: None,
+            duty_max: None,
         };
         vec![tour("1", 6 * 60), tour("2", 6 * 60 + 30)]
     }

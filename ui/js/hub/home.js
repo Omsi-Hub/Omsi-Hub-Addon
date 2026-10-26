@@ -53,6 +53,8 @@ export function Home() {
   const links = [
     [tr('Driver: %{name}', { name }), 'person', () => goStep('profile')],
     [tr('Settings'), 'settings', () => go('settings')],
+    // (the mod installer: Settings on its tab "Mods", `mods.js`)
+    [tr('Install mods'), 'extension', () => go('settings', null, 'mods')],
     [tr('Timetable'), 'schedule', openTimetable],
     [tr('Multiplayer'), 'groups', () => go('multiplayer')],
     [tr('Depot editor'), 'departure_board', () => openDepotEditor()],

@@ -231,7 +231,7 @@ fn build(l: &LineLayout, tours: &[&TourOfDay], pool: &mut Pool, info: &[LineInfo
         // (its depot group: the timetable tour's of its name, else the one its first trip
         // comes from)
         let group = tours.iter().find(|t| same(&t.tour, &b.tour)).or_else(|| tours.iter().find(|t| same(&t.tour, &trips[0].origin))).map(|t| t.ai_group.clone()).unwrap_or_default();
-        let t = TourOfDay { line: template.line.clone(), number: template.number.clone(), tour: b.tour.clone(), ai_group: group, trips, unplanned: false, cuts: None };
+        let t = TourOfDay { line: template.line.clone(), number: template.number.clone(), tour: b.tour.clone(), ai_group: group, trips, unplanned: false, cuts: None, duty_max: None };
         out.push((t, cuts));
     }
     Some(out)
@@ -403,6 +403,7 @@ pub fn texts() -> Vec<&'static str> {
     let mut out = vec![STALE.0, STALE.1];
     out.extend(REFUSALS);
     out.extend(Rule::LABELS);
+    out.push(NO_SPLIT);
     out
 }
 
@@ -1509,6 +1510,29 @@ pub fn cut(c: &mut Company, weekday: u8, tours: &[TourOfDay], i: usize, at: usiz
     Ok(())
 }
 
+/// Why a duty is not split in two (`split_duty`).
+pub const NO_SPLIT: &str = "This duty has no place where another driver can take over: no relief point between two of its trips with passengers.";
+
+/// Where duty `k` of block `i` is split in two (`split_duty`): before the trip nearest the middle
+/// of its time where a driver may take over (`can_cut`). None: nowhere.
+pub fn halfway(c: &Company, tours: &[TourOfDay], i: usize, k: usize) -> Option<usize> {
+    let t = tours.get(i)?;
+    let r = network::duties_of(t).into_iter().nth(k)?;
+    let from = t.trips[r.start].dep;
+    let to = t.trips[r.clone()].iter().map(|x| x.arr).max().unwrap_or(from);
+    let middle = (from + to) / 2;
+    (r.start + 1..r.end).filter(|&at| can_cut(c, tours, i, at).is_ok()).min_by_key(|&at| ((t.trips[at].dep - middle).abs(), at))
+}
+
+/// Split duty `k` of block `i` in two (complaints, 2026-10-26: "a duty must split as often as you
+/// want"): a new duty begins at its relief point nearest its middle (`halfway`); each half can be
+/// split again. The trip the second half begins with.
+pub fn split_duty(c: &mut Company, weekday: u8, tours: &[TourOfDay], i: usize, k: usize) -> Result<usize, &'static str> {
+    let at = halfway(c, tours, i, k).ok_or(NO_SPLIT)?;
+    cut(c, weekday, tours, i, at)?;
+    Ok(at)
+}
+
 // --- reliefs on the way (RosterFlow's mid-trip relief) ------------------------------------------
 //
 // Luc (2026-10-14): drivers may change halfway along a trip too, at a relief point that allows it
@@ -2142,6 +2166,50 @@ mod tests {
         assert_eq!(fits_into(open, &at("x", "A", "B", 415, 460, false), &line), Err(NO_TIME));
         assert_eq!(fits_into(open, &at("x", "A", "B", 460, 510, false), &line), Ok(()));
         assert_eq!(fits_into(open, &at("x", "B", "A", 415, 465, false), &line), Ok(()));
+    }
+
+    /// Complaints, 2026-10-26: "a duty must split as often as you want" - in two at its relief
+    /// point nearest its middle, each half again; and the longest duty the player sets cuts the
+    /// tours nobody cut by hand.
+    #[test]
+    fn a_duty_splits_in_two_as_often_as_wanted_and_the_longest_duty_cuts_the_rest() {
+        let mut c = company();
+        let l = line5();
+        let wd = super::super::plan::weekday_of(&c.date);
+        let tours = day(&c, &l);
+        let (one, t1) = block(&tours, "1");
+        assert_eq!(network::duties_of(t1), vec![0..8]);
+        // (06:00 to 13:50: in two at its middle, at A at 10:00)
+        assert_eq!(halfway(&c, &tours, one, 0), Some(4));
+        assert_eq!(split_duty(&mut c, wd, &tours, one, 0), Ok(4));
+        let tours = day(&c, &l);
+        let (one, t1) = block(&tours, "1");
+        assert_eq!(network::duties_of(t1), vec![0..4, 4..8]);
+        // (each half again)
+        split_duty(&mut c, wd, &tours, one, 1).unwrap();
+        let tours = day(&c, &l);
+        let (one, _) = block(&tours, "1");
+        split_duty(&mut c, wd, &tours, one, 0).unwrap();
+        let tours = day(&c, &l);
+        let (one, t1) = block(&tours, "1");
+        assert_eq!(network::duties_of(t1), vec![0..2, 2..4, 4..6, 6..8]);
+        split_duty(&mut c, wd, &tours, one, 0).unwrap();
+        let tours = day(&c, &l);
+        let (one, t1) = block(&tours, "1");
+        assert_eq!(network::duties_of(t1)[0], 0..1);
+        // (a duty of one trip: nowhere to split)
+        assert_eq!(split_duty(&mut c, wd, &tours, one, 0), Err(NO_SPLIT));
+        // the longest duty set: tour 2, nobody cut it, in duties no longer than it
+        let mut d = company();
+        assert_eq!(network::duties_of(block(&day(&d, &l), "2").1).len(), 1);
+        super::super::plan::set_duty_max(&mut d, Some(240));
+        let tours = day(&d, &l);
+        let t2 = block(&tours, "2").1;
+        let pieces = network::duties_of(t2);
+        assert_eq!(pieces.len(), 2);
+        assert!(pieces.iter().all(|r| t2.trips[r.clone()].iter().map(|x| x.arr).max().unwrap() - t2.trips[r.start].dep <= 240), "{pieces:?}");
+        super::super::plan::set_duty_max(&mut d, Some(120));
+        assert_eq!(network::duties_of(block(&day(&d, &l), "2").1).len(), 4);
     }
 
     #[test]

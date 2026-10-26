@@ -26,7 +26,7 @@ export const CHOICE_DEFAULTS = {
 export const SETTINGS_DEFAULTS = {
   dark_mode: true, accent: '#2a75f7', animations: true, stop_style: 'de', launcher_scale: 1,
   // (`bus_lead`: hub-core's `BUS_LEAD_DEFAULT`, what `hub_duty_extras` takes while it is not set)
-  company_layout: 'sidebar', units: 'metric', bus_lead: 5, update_auto: false,
+  company_layout: 'sidebar', units: 'metric', bus_lead: 5, update_auto: true,
 };
 
 const KEPT_SETTINGS = 'omsihub.settings';

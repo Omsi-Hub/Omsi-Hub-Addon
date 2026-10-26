@@ -21,7 +21,7 @@
 --                         the game to Omsi-Hub's companion server by UDP)
 -- A game without the file functions gets the handshake and the reports in its log instead.
 
-local VERSION = "1.16.0"
+local VERSION = "1.16.2"
 local BRIDGE = 1
 local PANEL = "omsihub"
 
@@ -197,7 +197,10 @@ omsi.data.board_parts = omsi.data.board_parts or {}
 local function parts()
   return company.parts(omsi.data.board_parts)
 end
-if company_duty() then signon.setup(tr, assignment) end
+-- (signing on is out for now (Luc, 2026-10-25: "Het aanmelden ... mogen er voor nu wel even
+-- uit"): the driver is at work at once, the duty's codes in the IBIS as without a pass)
+local SIGN_ON = false
+if SIGN_ON and company_duty() then signon.setup(tr, assignment) end
 -- (the on-time card: punctuality, headway, connections, diversions - `ontime.lua`, its own)
 local ontime = require("ontime")
 ontime.setup(tr, assignment, has)
@@ -225,7 +228,7 @@ local function panel()
       { type = "icon", name = "business", color = "#F58620" },
       { type = "text", text = assignment.company ~= "" and assignment.company or "Omsi-Hub", weight = "bold", grow = true, wrap = false },
     } },
-    { type = "text", text = tr("Duty %{duty}: line %{line}, tour %{tour}", { duty = assignment.duty, line = assignment.line, tour = assignment.tour }) },
+    signon.heading(assignment),
   }
   if work then
     children[#children + 1] = { type = "text", id = "status", text = status, size = 13 }
@@ -236,7 +239,7 @@ local function panel()
   end
   -- (in the navigator its buttons take a click without the mouse: only a field asks for F10)
   local docks = navigator.docks()
-  children[#children + 1] = { type = "text", text = tr("F10: use the panel with the mouse"), size = 12, color = "#9AA3AD", visible = not work or (can_start and not docks) }
+  children[#children + 1] = { type = "text", text = tr("F10: use the panel with the mouse"), size = 11.5, color = "#959DB0", visible = signon.stage == "signon" or (not docks and (not work or can_start)) }
   -- (in the navigator while the duty runs: the company and the sign-off alone, the board under
   -- it has the line, the tour and the trip)
   if docks and work and d then
@@ -255,7 +258,7 @@ local function panel()
     end
   end
   if docks then return navigator.put("company", children) end
-  layout.set(PANEL, { anchor = "right", x = 16, y = 0, width = 300, accent = "#F58620", draggable = true, children = children })
+  layout.set(PANEL, { anchor = "right", x = 16, y = 0, width = 300, background = "#141A26F2", accent = "#F58620", draggable = true, children = children })
 end
 
 -- the IBIS: typed by the game as each trip begins, unless Omsi-Hub says the driver types it -
@@ -481,7 +484,21 @@ omsi.on("red_light", function(kmh) watch.red_light(kmh) end)
 -- (the object editor once, as soon as the world is there: the frames come with it)
 local editor_opened = false
 
+-- the game busy - a frame long after the one before (the world just loaded, or the game
+-- hitched): what can wait (the phone companion, the fleet map's traffic) waits until the frames
+-- have come smoothly for a few seconds. openOMSI stops a plugin whose one call runs longer than
+-- 50 ms, and while the game still loads beside it every call of the plugin takes longer. (In
+-- real time: the game gives a frame at most a tenth of a second of its own.)
+local CALM = 3
+local last_frame, busy_at = now(), nil
+local function calm()
+  return not busy_at or now() - busy_at >= CALM
+end
+
 omsi.on("frame", function(dt)
+  local t = now()
+  if t - last_frame > 0.2 then busy_at = t end
+  last_frame = t
   if assignment and assignment.editor and not editor_opened then
     editor_opened = true
     if has["game.action"] then omsi.game.action("object_editor") end
@@ -655,10 +672,10 @@ end)
 -- (the game's traffic for the fleet map: whatever the player drives)
 local traffic = require("traffic")
 traffic.setup(has)
-omsi.every(1, function() traffic.tick(1, now(), clock()) end)
+omsi.every(1, function() if calm() then traffic.tick(1, now(), clock()) end end)
 omsi.every(5, live_notices)
-omsi.every(0.25, function() companion.tick(0.25) end)
-omsi.every(0.1, companion.screen)
+omsi.every(0.25, function() if calm() then companion.tick(0.25) end end)
+omsi.every(0.1, function() if calm() then companion.screen() end end)
 omsi.every(2, messages.read)
 -- (the navigator set again once for what its parts changed meanwhile)
 omsi.every(0.2, navigator.flush)

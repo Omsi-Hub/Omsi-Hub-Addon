@@ -13,7 +13,7 @@ use super::super::dates;
 use super::super::duty_launch::DutyRef;
 use super::super::model::{Cents, Company};
 use super::super::network::PlannedTrip;
-use super::super::plan::{BusOf, DayPlan, DayTour};
+use super::super::plan::{BusOf, DayPlan, DayTour, Who};
 use super::roles::{self, Perm, Role};
 use super::wire::DriveStart;
 use crate::TripRun;
@@ -188,6 +188,8 @@ pub enum LeftWhy {
     Removed,
     /// The boss's session ended.
     Closed,
+    /// He joined the company's world after his duty began (`ai_before`).
+    Late,
 }
 
 /// A part of a player's duty the AI drives: its trips from `from` (an index into the duty's
@@ -385,6 +387,12 @@ fn claim_of_plan(c: &Company, t: &DayTour, k: usize, r: &DutyRef, guest: u32, st
     }
 }
 
+/// Whether a player may take a duty the plan has `who` on (`take`): nobody, the company's own
+/// driver or the agency's - not the boss himself, not another player.
+pub fn takeable(who: Option<Who>) -> bool {
+    !matches!(who, Some(Who::Player | Who::Guest(_)))
+}
+
 /// A player takes duty `r` of the company's day (`p`, at `now` on the company's clock): his at
 /// once when the boss lets players take open duties or he may approve requests himself
 /// (`direct`), else asked for. What it is now.
@@ -402,7 +410,10 @@ pub fn take(c: &mut Company, p: &DayPlan, r: &DutyRef, guest: u32, now: i64, dir
     if !matches!(t.bus, Some(BusOf::Own(_))) {
         return Err(NO_BUS);
     }
-    if t.duties[k].who.is_some() {
+    // (one the company's own driver or the agency's would drive is his to take: they give it up -
+    // complaints, 2026-10-26: in a company with its drivers no duty was ever open; the boss's
+    // own and another player's are not)
+    if !takeable(t.duties[k].who) {
         return Err(NOT_OPEN);
     }
     if begun(p, t, k, now) {
@@ -447,6 +458,41 @@ pub fn give(c: &mut Company, p: &DayPlan, r: &DutyRef, guest: u32, now: i64) -> 
     c.together.claims.retain(|x| !same_duty(&x.duty, r));
     c.together.claims.push(claim);
     Ok(())
+}
+
+/// The duties of the day `p` the players have (asked for or planned, not begun) found again
+/// where the planning cut their tours anew: a duty is known by its place in its tour
+/// (`DutyRef::duty`), so a tour split or joined since moves it - the player keeps the duty that
+/// begins with his first trip (or, joined, the one that has it), its times and trips as they
+/// are now. A duty his game drives, or that he drove, stays as it is. Whether any moved.
+pub fn rekey(c: &mut Company, p: &DayPlan) -> bool {
+    let mut moved = false;
+    let mut taken: Vec<DutyRef> = c.together.claims.iter().map(|x| x.duty.clone()).collect();
+    for i in 0..c.together.claims.len() {
+        let x = &c.together.claims[i];
+        if x.duty.date != p.date || x.late || !matches!(x.state, ClaimState::Planned | ClaimState::Asked) {
+            continue;
+        }
+        let Some(first) = x.sheet.iter().find(|y| y.counts()).cloned() else { continue };
+        let Some(ti) = p.tours.iter().position(|t| t.tour.line.eq_ignore_ascii_case(&x.duty.line) && t.tour.tour.trim() == x.duty.tour.trim()) else { continue };
+        let t = &p.tours[ti];
+        let has = |k: usize| t.duties.get(k).is_some_and(|d| t.tour.trips[d.start..d.end].iter().any(|y| y.dep == first.dep && y.name == first.name));
+        if has(x.duty.duty) && x.from == t.duties[x.duty.duty].from && x.to == t.duties[x.duty.duty].to {
+            continue;
+        }
+        let Some(k) = (0..t.duties.len()).find(|&k| has(k)) else { continue };
+        let mut r = x.duty.clone();
+        r.duty = k;
+        // (another player's duty there now: his stays, this one waits for the next look)
+        if taken.iter().enumerate().any(|(j, d)| j != i && same_duty(d, &r)) {
+            continue;
+        }
+        let (guest, state, given) = (x.guest, x.state, x.given);
+        c.together.claims[i] = claim_of_plan(c, t, k, &r, guest, state, given);
+        taken[i] = r;
+        moved = true;
+    }
+    moved
 }
 
 /// The boss says yes (or no) to a duty a player asked for: whether there was such a request.
@@ -769,6 +815,18 @@ pub fn hand_to_ai(c: &mut Company, p: Option<&DayPlan>, r: &DutyRef, guest: u32,
         x.ai.push(AiPart { from, until: None, why, at: now_unix, minute });
     }
     Ok(Handed::Ai(from))
+}
+
+/// Player `guest` joined the company's world past the start of his duty `r` (`host`): the AI
+/// drives its trips before `from` (an index into its trips), with the same model as the company's
+/// own drivers; `now_unix` and `minute` (the world's clock) say when.
+pub fn ai_before(c: &mut Company, r: &DutyRef, from: usize, now_unix: u64, minute: i32) {
+    if from == 0 {
+        return;
+    }
+    if let Some(x) = c.together.claim_mut(r) {
+        x.ai.push(AiPart { from: 0, until: Some(from), why: LeftWhy::Late, at: now_unix, minute });
+    }
 }
 
 /// Player `guest` takes his duty `r` back from the AI, at a trip's end: from its next trip with

@@ -45,6 +45,9 @@ hub-livery = { workspace = true, optional = true }
 hub-companion = { workspace = true, optional = true }
 glam.workspace = true
 sha2.workspace = true
+# (RosterFlow's duty cards: the company's logo picture read and packed into the PDF, `rosterflow/print.rs`)
+image.workspace = true
+flate2 = "1"
 
 # A fake openOMSI for the drive's end-to-end test (`tests/drive.rs`): it writes the plugin's
 # files as the plugin in a real openOMSI would, then ends. Never shipped: the app links the library.
@@ -64,5 +67,3 @@ native = ["hub-core/native", "dep:hub-online", "dep:ureq", "dep:omsi-cfg", "dep:
 [dev-dependencies]
 # (the mods' tests: a mod packed as a .zip, as the installer reads it)
 zip = { version = "8.6", default-features = false, features = ["deflate"] }
-# (the livery studio's tests: a picture written and brought in)
-image.workspace = true

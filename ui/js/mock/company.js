@@ -24,7 +24,7 @@ const companies = [
   { id: 'grundorf-linien', name: 'Grundorf Linien', short: 'GL', colours: ['#1e88e5', '#f5f5f5'], map: MAP, map_name: 'Grundorf', depot: 'Betriebshof Grundorf', mode: 'realistic', cash: 26450000, trophies: 21, reputation: 71.2, date: '2026-10-19', minute: 6 * 60 + 15, played: 60 * 3, rosterflow: true },
 ];
 
-const st = { open: null, gen: 1, speed: 0, until: 16 * 60, dispatcher: true, minor: false, launch: null, notices: [], weather: 'clear', realtime: false, friendsJoin: false, read: new Set([3, 4, 5]), gone: new Set(), feeds: [] };
+const st = { open: null, gen: 1, speed: 0, until: 16 * 60, dispatcher: true, minor: false, launch: null, notices: [], weather: 'clear', realtime: false, friendsJoin: false, board: false, read: new Set([3, 4, 5]), gone: new Set(), feeds: [] };
 const co = () => companies.find((c) => c.id === st.open) || null;
 /** Whether the company open has the RosterFlow add-on on (each company its own, as the game's). */
 const rosterflowOn = () => !!co()?.rosterflow;
@@ -794,6 +794,7 @@ function settings(a) {
     currency: { caps: 'CURRENCY', value: 0, codes: ['EUR', 'GBP', 'PLN'], options: ['Euro (€)', 'Pound (£)', 'Złoty (zł)'], say: 'Money is shown in this currency.' },
     vehicles: null,
     friends: { caps: 'MULTIPLAYER', on: st.friendsJoin, label: 'Friends can join without an invite', say: st.friendsJoin ? 'While you share the company, your Omsi-Hub friends see a Join button in their friends list: no session code needed.' : 'Off: friends join when you invite them from your friends list, or with the session code.' },
+    board: { caps: 'ONLINE LEADERBOARD', on: st.board, disabled: false, label: 'Show this company on the online leaderboard', say: st.board ? 'Its name, colour, map and figures (this month\'s profit and passengers, cash, buses, lines, staff, trips on time and reputation) are on omsihub.com, with your display name.' : 'Off: nothing of this company leaves this PC. At most 5 of your companies can be on the board.', url: 'https://omsihub.com/leaderboard.html', open: 'Open the leaderboard' },
     date_caps: "THE COMPANY'S DATE", now: `${dayLabel(c.date)}  ·  ${hm()}`,
     realtime: { on: st.realtime, label: 'In step with the real clock', say: "The company's time goes on while Omsi-Hub is closed." },
     date: a.date || c.date, earliest: null, warn: 'Moving the date does not simulate the days between.',
@@ -862,6 +863,9 @@ function career() {
 
 // --- the more pages (`co_more_view`) -----------------------------------------------------------
 
+/** The longest duty the player set (`planning::tools`). */
+let longest = 450;
+
 function planning(a) {
   if (rosterflowOn()) return { rosterflow: true };
   const c = co();
@@ -895,6 +899,7 @@ function planning(a) {
       fill: { label: 'FILL THE ROSTER', tip: 'Fix in the roster what the dispatcher would take: free buses, and free drivers by the working-time rules. Only what is planned runs.' },
       clear: { label: a.clear_armed ? 'PRESS AGAIN' : 'CLEAR THE DAY', widest: ['CLEAR THE DAY', 'PRESS AGAIN'], armed: !!a.clear_armed, tip: 'Take every bus and driver of this weekday out of the roster' },
       repeat: { label: 'REPEAT MON–FRI', tip: "This weekday's roster on the other days too (theirs is replaced)" },
+      longest: { label: 'LONGEST DUTY', value: longest, choices: Array.from({ length: 17 }, (_, k) => ({ value: 120 + k * 30, label: `${Math.floor((120 + k * 30) / 60)}:${String((120 + k * 30) % 60).padStart(2, '0')}` })), tip: 'A driver works at most this long a day: longer tours are split into duties no longer than this, and the dispatcher gives nobody more.' },
     },
     gantt: { t0: 5 * 60, t1: 23 * 60, head: { fold: { label: 'COLLAPSE ALL', icon: 'unfold_less', tip: 'Fold every line to its heading: what it has planned, and what is open', all: false } }, groups, names: LINES.map((l) => l.name) },
     side: sidePanel(sel, a.arm, day === 0),
@@ -920,6 +925,8 @@ function sidePanel(sel, arm, today) {
       cands_title: 'WHO COULD DRIVE IT',
       cands: [{ who: 'player', name: 'You', state: 'Drive it yourself', tone: 'dim', swatch: 'accent', on: who === 'you' }, ...drivers().map((e) => ({ who: `staff:${e.id}`, name: e.name, state: e.id === 2 ? 'On holiday from tomorrow' : 'Free then', tone: e.id === 2 ? 'warn' : 'ok', swatch: e.colour, on: who === e.id })), { who: null, name: 'Nobody', state: '', tone: 'dim', swatch: null, on: false }],
       drive: today ? 'DRIVE THIS DUTY' : null,
+      // (split in two at its middle, as often as wanted: `planning::duty_panel`)
+      split: to - from >= 120 ? { label: 'Split this duty', note: `At ${hhmm(Math.round((from + to) / 2 / 10) * 10)}, ${l.caption.split(' – ')[0]}`, tip: 'A new duty begins at the relief point nearest its middle: each half can be split again.' } : null,
     };
   }
   return {
@@ -947,6 +954,17 @@ function moreAct(a) {
       break;
     case 'plan_give_bus':
       if (t) t.bus = a.bus == null ? null : Number(a.bus);
+      break;
+    case 'plan_split':
+      if (t && t.duties[a.k]) {
+        const [from, to, who] = t.duties[a.k];
+        const at = Math.round((from + to) / 2 / 10) * 10;
+        t.duties.splice(a.k, 1, [from, at, who], [at, to, null]);
+        say(`Duty cut on ${t.line}/${t.tour} at ${hhmm(at)}`);
+      }
+      break;
+    case 'plan_duty_max':
+      longest = Number(a.minutes) || longest;
       break;
     case 'plan_drive':
       st.launch = { duty: `${st.open}|${co().date}|${t?.line}|${t?.tour}|${a.k}` };
@@ -1787,6 +1805,10 @@ function doAct(a) {
       return {};
     case 'friends_join':
       st.friendsJoin = !!a.on;
+      bump();
+      return {};
+    case 'board':
+      st.board = !!a.on;
       bump();
       return {};
     case 'rosterflow':
