@@ -6,6 +6,14 @@ Each version of the Omsi-Hub add-on, newest first. The release on GitHub links h
 
 ### Added
 
+- **Only your own buses in the game, where the fleet map has them**: when you drive a duty of
+  your company, the game's AI runs only the trips your company runs that day, with your buses.
+  Buses of lines you do not run stay off the road, and so do tours you dropped. Each of your
+  buses comes onto the road as late as the fleet map has it, so what you meet on the street is
+  what the fleet map shows. The stops' departure boards and the people waiting at them only
+  count those buses too. In a drive of your own the game runs the map's whole timetable as
+  before. This needs an openOMSI that has `timetable.set_ai_trips`. With an older one the
+  other buses are taken off the road as they come, and yours run on time. (The plugin is 1.17.0.)
 - **RosterFlow prints duty cards**: the print menu has **Duty cards (PDF)**, every duty of the
   day as a depot prints them, two to an A4 sheet across to cut in two. Each card has the depot,
   the day, the duty number, signing on and off, the longest break, the driving time and the

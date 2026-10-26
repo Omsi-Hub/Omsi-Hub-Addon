@@ -264,6 +264,65 @@ fn the_game_s_traffic_reaches_the_fleet_map() {
     assert!(t.player.is_none() && t.vehicles.is_empty() && t.buses.is_empty() && t.reference.is_none(), "{t:?}");
 }
 
+/// The company's buses Omsi-Hub wrote for a company's duty (`data/fleet.json`).
+fn fleet(dir: &std::path::Path, map: &str) {
+    let trip = |tour: &str, departure: Option<f64>, delay: f64| bridge::FleetTrip { line: "5".into(), tour: tour.into(), departure, delay };
+    let f = bridge::Fleet { at: 1.0, company: "c1".into(), map: map.into(), date: "2026-10-26".into(), trips: vec![trip("1", Some(28_800.0), 120.0), trip("2", None, 0.0)] };
+    bridge::write_fleet(dir, &f).unwrap();
+}
+
+#[test]
+fn a_company_s_duty_has_only_the_company_s_buses_on_the_road() {
+    let dir = installed("fleet");
+    bridge::write_assignment(&dir, &assignment()).unwrap();
+    // (the company names the map with backslashes, the game with slashes: the same map)
+    fleet(&dir, r"maps\Grundorf\global.cfg");
+    let mut h = Harness::load(&dir, game()).unwrap();
+    h.frame().unwrap();
+    // the trips go to the game as they are, each with its delay
+    let given = h.state.borrow().ai_trips.clone();
+    assert_eq!(given, [json!([{ "line": "5", "tour": "1", "departure": 28_800.0, "delay": 120.0 }, { "line": "5", "tour": "2", "delay": 0.0 }])]);
+    // (looked at again: the same, not given again)
+    for _ in 0..6 {
+        h.frame().unwrap();
+    }
+    assert_eq!(h.state.borrow().ai_trips.len(), 1);
+    // the file gone (Omsi-Hub took it away): the whole timetable again
+    std::fs::remove_file(dir.join("data").join("fleet.json")).unwrap();
+    for _ in 0..6 {
+        h.frame().unwrap();
+    }
+    assert_eq!(h.state.borrow().ai_trips.last(), Some(&serde_json::Value::Null));
+
+    // a drive of the player's own, or another map: the game's timetable as ever
+    let own = installed("fleet-own");
+    fleet(&own, "maps/Grundorf/global.cfg");
+    let mut h = Harness::load(&own, game()).unwrap();
+    h.frame().unwrap();
+    assert!(h.state.borrow().ai_trips.is_empty());
+    let other = installed("fleet-other");
+    bridge::write_assignment(&other, &assignment()).unwrap();
+    fleet(&other, "maps/Spandau/global.cfg");
+    let mut h = Harness::load(&other, game()).unwrap();
+    h.frame().unwrap();
+    assert!(h.state.borrow().ai_trips.is_empty());
+}
+
+#[test]
+fn an_openomsi_without_set_ai_trips_takes_the_other_buses_off_the_road() {
+    let dir = installed("fleet-old");
+    bridge::write_assignment(&dir, &assignment()).unwrap();
+    fleet(&dir, "maps/Grundorf/global.cfg");
+    let mut g = game();
+    let bus = |id: i64, tour: &str, departure: f64| json!({ "id": id, "line": "5", "tour": tour, "departure": departure, "x": 0.0, "y": 0.0 });
+    // tour 1's 8:00 trip (and its 9:00 one, not the company's), tour 2, tour 3, another line
+    g.timetable_buses = vec![bus(1, "1", 28_830.0), bus(2, "1", 32_400.0), bus(3, " 2 ", 40_000.0), bus(4, "3", 28_800.0), json!({ "id": 5, "line": "7", "tour": "1", "departure": 28_800.0 })];
+    let mut h = Harness::load_with(&dir, g, "omsi.timetable.set_ai_trips = nil").unwrap();
+    h.frame().unwrap();
+    assert_eq!(h.state.borrow().removed, [2, 4, 5]);
+    assert!(h.state.borrow().ai_trips.is_empty());
+}
+
 #[test]
 fn an_openomsi_without_the_traffic_functions_writes_none() {
     let dir = installed("no-traffic");
