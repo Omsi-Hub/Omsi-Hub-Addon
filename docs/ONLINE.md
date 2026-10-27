@@ -320,14 +320,15 @@ key belongs in the app or in this repository.
 |---|---|
 | `create_profile(p_name)` | the player's profile, with a fresh friend code (idempotent) |
 | `set_display_name(p_name)` | rename |
-| `heartbeat(p_status, p_session)` | online state (`online`/`away`/`busy`/`offline`) and the current session code; the app calls it about once a minute |
+| `heartbeat(p_status, p_session)` | online state (`online`/`away`/`busy`/`offline`) and the current session code; the apps without `hub_poll` call it about once a minute |
+| `hub_poll(p_seen, p_status, p_session)` | the app's one poll (the website's migration `…_hub_poll.sql`): the heartbeat when `p_status` is given, then `{v, me, friends, invites}` - the profile, `my_friends`, the open invites sent to the player - or `{v}` alone while `v` (their md5) is still `p_seen` |
 | `find_player(p_code)` | `user_id`, `display_name` of the friend code |
 | `send_friend_request(p_code)` | returns `sent` / `accepted` (they had asked you) / `already` / `self` / `not_found` / `no_profile` / `too_many` / `full` |
 | `respond_friend_request(p_from, p_accept)` | accept or decline |
 | `remove_friend(p_other)` / `block_player(p_other)` | unfriend; block (also removes invites) |
 | `send_invite(p_to, p_session)` / `dismiss_invite(p_id)` | invite a friend to your company session |
 | `my_personnel()` | the account's personnel pass: `number` (six digits), `code` (four), made when there is none |
-| `my_friends()` | friends and requests: name, status, `online` (seen in the last 2 minutes), session code (friends only), `relation`, `incoming` |
+| `my_friends()` | friends and requests: name, status, `online` (seen in the last 5 minutes; 2 before `hub_poll`), session code (friends only), `relation`, `incoming` |
 | `delete_my_data()` | everything of the player's in these tables |
 
 ## Cloud saves
@@ -585,6 +586,10 @@ the client's lock), a company's archive `crates/omsi-launcher-core/src/company/c
   are asked with both dates and computers - keep the cloud's, keep this PC's (uploaded on top;
   the cloud keeps the older versions), or keep both (this PC's as "<name> (this PC)", a local
   save). A slot emptied or taken by another company elsewhere leaves the company here local.
+- **The slots are read** (`meta.json` of both, two Storage requests) only while a page shows the
+  cloud saves' state (a company's badge, the account panel: `cs_state` asked in the last 30 s),
+  then every five minutes, and again after an upload of this computer's. Opening a company and
+  an upload read them themselves.
 - **Uploading**: a changed cloud company goes up when its pages are left, every ten minutes
   while it changes, and after a start; always on top of the version last synced, so another
   computer's newer version is a conflict, never overwritten.
@@ -625,14 +630,23 @@ on it; the app puts them there (`crates/hub-api/src/board.rs`, the client's `pub
 
 ### Online state and invites
 
-- The launcher's worker calls `heartbeat` about once a minute while signed in, and within five
-  seconds of a change: `busy` with the session's code while the player hosts a company session
-  ("Play together"), `away` after five minutes with the window in the background, else `online`.
-  As the launcher closes it sends `offline` (best effort, three seconds at most).
-- `my_friends()` and the `invites` table (`GET /invites?select=*`, newest first; only those sent to
-  the player, at most 15 minutes old) are fetched with each beat, and when the panel opens (at
-  most every ten seconds). The page asks Rust every five seconds, and Rust answers from what it
-  fetched: the page never waits on the network.
+- The launcher's worker beats once a minute while the window is looked at, every three minutes
+  while it is in the background (the game driven: `ol_presence {hidden}` on the window's blur),
+  and within five seconds of a change: `busy` with the session's code while the player hosts a
+  company session ("Play together"), `away` after five minutes with the window in the
+  background, else `online`. As the launcher closes it sends `offline` (best effort, three
+  seconds at most).
+- The beat is one request, `hub_poll` (Omsi-Hub 1.1 sent four a minute: `heartbeat`, its own
+  `profiles` row, `my_friends()` and `invites?select=*` - about 70% of the project's requests and
+  most of its egress, 2026-10-26). It carries the digest it last got (`p_seen`), and the answer
+  is that digest alone while the profile, the friends and the open invites are as they were; else
+  all three and the new digest. A friend's `last_seen` is in it only while they are offline, so
+  the friends' own beats change nothing. When the panel opens it polls too (without a heartbeat,
+  at most every ten seconds). A server without `hub_poll` yet gets the four requests of before
+  (asked again an hour later). The page asks Rust every five seconds, and Rust answers from what
+  it fetched: the page never waits on the network.
+- A friend is online while seen in the last 5 minutes (the server's `my_friends`, the
+  leaderboard and its counts; it was 2 minutes before the background beat went to 3).
 - "Invite to my company" sends the session hosted now (`send_invite`); a friend's "Join" (on the
   invite's notice, or on a friend in a session) joins with that code through "Play together"'s own
   join (`tg_join`), as a typed code would.

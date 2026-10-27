@@ -62,7 +62,9 @@ fn split_url(url: &str) -> (String, String) {
 /// A company founded here (as the company port writes one: these fields and more).
 fn company(data: &Path, name: &str) -> String {
     let id = hub_api::cloud::files::unused_id(data, name);
-    hub_api::cloud::files::save(data, &json!({ "id": id, "name": name, "short": "", "profile": "", "cash": 10_000, "map": "maps/Grundorf/global.cfg" })).unwrap();
+    // (the account's driver's: signed in, the companies listed are the driver's chosen)
+    let driver = hub_core::settings::Settings::load().other.get("driver").and_then(Value::as_str).unwrap_or("").to_string();
+    hub_api::cloud::files::save(data, &json!({ "id": id, "name": name, "short": "", "profile": driver, "cash": 10_000, "map": "maps/Grundorf/global.cfg" })).unwrap();
     id
 }
 

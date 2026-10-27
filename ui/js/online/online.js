@@ -56,16 +56,18 @@ export async function poll() {
   } catch (e) {}
 }
 
-/** Away after five minutes with the window in the background; back at once. */
+/** Away after five minutes with the window in the background; back at once. In the background at
+ * all (`hidden`: the game driven), the heartbeat comes every three minutes instead of every one. */
 function installPresence() {
   let away = null;
   addEventListener('blur', () => {
     clearTimeout(away);
-    away = setTimeout(() => ask('ol_presence', { away: true }).catch(() => {}), 5 * 60 * 1000);
+    ask('ol_presence', { away: false, hidden: true }).catch(() => {});
+    away = setTimeout(() => ask('ol_presence', { away: true, hidden: true }).catch(() => {}), 5 * 60 * 1000);
   });
   addEventListener('focus', () => {
     clearTimeout(away);
-    ask('ol_presence', { away: false }).catch(() => {});
+    ask('ol_presence', { away: false, hidden: false }).catch(() => {});
   });
 }
 

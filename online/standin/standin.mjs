@@ -248,8 +248,24 @@ const FUNCTIONS = {
       .map((f) => {
         const p = profiles.get(f.requester === me ? f.addressee : f.requester);
         const ok = f.status === 'accepted';
-        return { user_id: p.user_id, display_name: p.display_name, status: ok ? p.status : null, online: ok && Date.parse(p.last_seen) > now() - 120e3 && p.status !== 'offline', session_code: ok ? p.session_code : null, last_seen: ok ? p.last_seen : null, relation: f.status, incoming: f.addressee === me };
+        return { user_id: p.user_id, display_name: p.display_name, status: ok ? p.status : null, online: ok && Date.parse(p.last_seen) > now() - 300e3 && p.status !== 'offline', session_code: ok ? p.session_code : null, last_seen: ok ? p.last_seen : null, relation: f.status, incoming: f.addressee === me, avatar: p.avatar ?? null };
       });
+  },
+  // (the website's migration …_hub_poll.sql: the heartbeat, then the account and its digest, or
+  // the digest alone while it is `p_seen`)
+  hub_poll(me, { p_seen, p_status, p_session }) {
+    if (p_status != null) FUNCTIONS.heartbeat(me, { p_status, p_session });
+    const p = profiles.get(me);
+    const body = {
+      me: p ? { display_name: p.display_name, friend_code: p.friend_code, on_board: !!p.on_board, avatar: p.avatar ?? null } : null,
+      friends: FUNCTIONS.my_friends(me).map((f) => ({ ...f, last_seen: f.online ? null : f.last_seen })).sort((a, b) => (a.user_id < b.user_id ? -1 : 1)),
+      invites: invites
+        .filter((v) => v.to_user === me && Date.parse(v.expires_at) > now())
+        .sort((a, b) => b.created_at.localeCompare(a.created_at) || b.id - a.id)
+        .map((v) => ({ id: v.id, from_user: v.from_user, session_code: v.session_code, created_at: v.created_at })),
+    };
+    const v = crypto.createHash('md5').update(JSON.stringify(body)).digest('hex');
+    return v === (p_seen ?? '') ? { v } : { ...body, v };
   },
   my_personnel(me) {
     if (!personnel.has(me)) {
@@ -301,11 +317,11 @@ const FUNCTIONS = {
       .filter((p) => p.on_board)
       .sort((a, b) => b.points - a.points || String(a.stats_at).localeCompare(String(b.stats_at)) || a.display_name.toLowerCase().localeCompare(b.display_name.toLowerCase()))
       .slice(0, lim)
-      .map((p, i) => ({ place: i + 1, display_name: p.display_name, level: p.level, points: p.points, duties: p.duties, minutes_driven: p.minutes_driven, km: p.km, online: p.status !== 'offline' && Date.parse(p.last_seen) > now() - 120e3 }));
+      .map((p, i) => ({ place: i + 1, display_name: p.display_name, level: p.level, points: p.points, duties: p.duties, minutes_driven: p.minutes_driven, km: p.km, online: p.status !== 'offline' && Date.parse(p.last_seen) > now() - 300e3 }));
   },
   hub_board_counts() {
     const all = [...profiles.values()];
-    return [{ players: all.length, online: all.filter((p) => p.status !== 'offline' && Date.parse(p.last_seen) > now() - 120e3).length, on_board: all.filter((p) => p.on_board).length }];
+    return [{ players: all.length, online: all.filter((p) => p.status !== 'offline' && Date.parse(p.last_seen) > now() - 300e3).length, on_board: all.filter((p) => p.on_board).length }];
   },
 };
 const ANON = new Set(['hub_leaderboard', 'hub_board_counts']);

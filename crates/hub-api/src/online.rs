@@ -4,8 +4,10 @@
 //! blocks it, and the page is told "offline" quietly. Ported from the old `omsihub/online.rs`.
 //!
 //! * `ol_state` - what the page shows, at once from what the worker last fetched (no network);
-//!   the first call starts the worker: the heartbeat about once a minute and whenever the state
-//!   changes (online, away, hosting a session), the friends and the invites with it;
+//!   the first call starts the worker: the heartbeat once a minute while the window is looked at,
+//!   every three minutes while it is in the background, and whenever the state changes (online,
+//!   away, hosting a session), the profile, the friends and the invites with it in one request
+//!   (`hub_poll`, which sends them only when they changed);
 //! * `ol_sign_in {email, password}`, `ol_verify {email, code, password}`, `ol_resend {email}`,
 //!   `ol_sign_out`; an account is made on the website (`sign_up_url` in the state, which the page
 //!   opens), and its display name becomes the profile at the first sign-in here;
@@ -26,7 +28,8 @@
 //!   (`cloud.rs` then makes every company here local);
 //! * `ol_add {code}`, `ol_respond {id, accept}`, `ol_remove {id}`, `ol_block {id}`;
 //! * `ol_invite {id}` - the company session hosted now, to a friend; `ol_dismiss {id}`;
-//! * `ol_presence {away}`, `ol_seen`, `ol_refresh`;
+//! * `ol_presence {away, hidden}` (`hidden`: the window in the background, the beat slower;
+//!   `away` implies it), `ol_seen`, `ol_refresh`;
 //! * `ol_privacy` - the privacy statement (`privacy.rs`); `ol_privacy_accept` - agreed to;
 //! * `ol_oauth {agree, provider}` - signing in with Google or Discord (`provider`: `google`, the
 //!   default, or `discord`): the listener started (`hub_online::oauth`), the address the page
@@ -171,6 +174,12 @@ struct View {
     seen: HashSet<String>,
     /// The window in the background a while (the page says so).
     away: bool,
+    /// The window in the background at all (the game driven): the heartbeat comes less often.
+    hidden: bool,
+    /// The digest `hub_poll` last answered (empty: none, everything is sent again).
+    poll_v: String,
+    /// When the server last said it has no `hub_poll` (asked again an hour later).
+    no_poll_at: u64,
     /// The state and the session last told the server, and when.
     told: Option<(&'static str, Option<String>)>,
     beat_at: u64,
@@ -279,6 +288,7 @@ fn signed_out(v: &mut View) {
     v.personnel = None;
     v.friends.clear();
     v.invites.clear();
+    v.poll_v.clear();
     v.told = None;
     v.reported = None;
     v.user.clear();
@@ -305,20 +315,36 @@ fn presence_of(hosted: Option<Hosted>, away: bool) -> (&'static str, Option<Stri
     }
 }
 
+/// What a refresh fetched of the account: the profile, the friends and the invites (None: the
+/// same as the view has, by `hub_poll`'s digest), the personnel pass (once), the poll's digest.
+struct Got {
+    account: Option<(Option<Profile>, Vec<Friend>, Vec<Invite>)>,
+    personnel: Option<Personnel>,
+    poll_v: String,
+}
+
 /// What a refresh fetched: (lasting, no password), then the account, or the version accepted
 /// before while the privacy statement waits.
-type Fetched = ((bool, bool), Result<(Option<Profile>, Option<Personnel>, Vec<Friend>, Vec<Invite>), u32>);
+type Fetched = ((bool, bool), Result<Got, u32>);
 
-/// The heartbeat, then the profile, the personnel pass (once), the friends and the invites, into
-/// the view; first, while the privacy statement is not agreed to, `my_privacy` (and nothing else).
+/// How often the heartbeat goes while the window is looked at, and while it is in the background
+/// (the game driven): the server counts a friend online for 5 minutes after their last one.
+const BEAT_SHOWN: u64 = 60;
+const BEAT_HIDDEN: u64 = 3 * 60;
+
+/// The heartbeat with the profile, the friends and the invites (`hub_poll`: one request, which
+/// answers only its digest while nothing changed), then the personnel pass (once), into the view;
+/// first, while the privacy statement is not agreed to, `my_privacy` (and nothing else). A server
+/// without `hub_poll` yet gets the four requests of before.
 fn refresh(beat: bool) -> Result<(), Error> {
-    let (away, has_pass) = {
+    let (away, has_pass, has_profile, seen, poll_ok) = {
         let v = view();
-        (v.away, v.personnel.is_some())
+        (v.away, v.personnel.is_some(), v.profile.is_some(), v.poll_v.clone(), v.no_poll_at == 0 || unix_now().saturating_sub(v.no_poll_at) >= 3600)
     };
     let now_state = presence(away);
     // (the account's user id beside what was fetched: the driver linked is this account's)
     let mut user = String::new();
+    let mut no_poll = false;
     let got = with(|c| -> Result<Option<Fetched>, Error> {
         user = c.user_id().unwrap_or("").to_string();
         if !c.signed_in() {
@@ -328,20 +354,33 @@ fn refresh(beat: bool) -> Result<(), Error> {
             // (held: the version accepted before, if any)
             return Ok(Some(((c.lasting(), !c.has_password()), Err(c.privacy_agreed().unwrap_or(0)))));
         }
-        if beat {
-            // (no profile yet: the heartbeat has nothing to tell)
-            if let Err(e @ (Error::Offline | Error::SignedOut)) = c.heartbeat(now_state.0, now_state.1.as_deref()) {
-                return Err(e);
+        let polled = if poll_ok { c.poll(&seen, beat.then(|| (now_state.0, now_state.1.as_deref()))) } else { Err(Error::Code("unavailable")) };
+        let (account, poll_v) = match polled {
+            Ok(p) => (p.fresh.map(|f| (f.profile, f.friends, f.invites)), p.v),
+            Err(Error::Code("unavailable")) => {
+                no_poll = poll_ok;
+                if beat {
+                    // (no profile yet: the heartbeat has nothing to tell)
+                    if let Err(e @ (Error::Offline | Error::SignedOut)) = c.heartbeat(now_state.0, now_state.1.as_deref()) {
+                        return Err(e);
+                    }
+                }
+                let profile = c.profile()?;
+                let (friends, invites) = if profile.is_some() { (c.friends()?, c.invites()?) } else { (Vec::new(), Vec::new()) };
+                (Some((profile, friends, invites)), String::new())
             }
-        }
-        let profile = c.profile()?;
+            Err(e) => return Err(e),
+        };
         // (a server without `my_personnel` yet, or a pass not fetched now: the driver keeps the
         // one of this computer, and it is asked again at the next beat)
-        let personnel = if profile.is_some() && !has_pass { c.personnel().ok() } else { None };
-        let (friends, invites) = if profile.is_some() { (c.friends()?, c.invites()?) } else { (Vec::new(), Vec::new()) };
-        Ok(Some(((c.lasting(), !c.has_password()), Ok((profile, personnel, friends, invites)))))
+        let profiled = account.as_ref().map_or(has_profile, |a| a.0.is_some());
+        let personnel = if profiled && !has_pass { c.personnel().ok() } else { None };
+        Ok(Some(((c.lasting(), !c.has_password()), Ok(Got { account, personnel, poll_v }))))
     });
     let mut v = view();
+    if no_poll {
+        v.no_poll_at = unix_now();
+    }
     match got {
         Ok(Some(((lasting, no_password), Err(agreed)))) => {
             // (the account waits for the player's agreement; asked again at the next beat)
@@ -356,6 +395,7 @@ fn refresh(beat: bool) -> Result<(), Error> {
             v.profile = None;
             v.friends.clear();
             v.invites.clear();
+            v.poll_v.clear();
             v.refreshed_at = unix_now();
             if beat {
                 v.told = Some(now_state);
@@ -363,11 +403,19 @@ fn refresh(beat: bool) -> Result<(), Error> {
             }
             Ok(())
         }
-        Ok(Some(((lasting, no_password), Ok((profile, personnel, friends, invites))))) => {
-            let link = profile.as_ref().map(|p| p.display_name.clone());
-            if personnel.is_some() {
-                v.personnel = personnel;
+        Ok(Some(((lasting, no_password), Ok(got)))) => {
+            if got.personnel.is_some() {
+                v.personnel = got.personnel;
             }
+            // (None: nothing changed since the poll's digest, the view has it all)
+            if let Some((profile, friends, invites)) = got.account {
+                v.need_profile = profile.is_none();
+                v.profile = profile;
+                v.friends = friends;
+                v.invites = invites;
+            }
+            v.poll_v = got.poll_v;
+            let link = v.profile.as_ref().map(|p| p.display_name.clone());
             let pass = v.personnel.clone();
             v.signed_in = true;
             v.user = user.clone();
@@ -375,10 +423,6 @@ fn refresh(beat: bool) -> Result<(), Error> {
             v.no_password = no_password;
             v.offline = false;
             v.need_privacy = false;
-            v.need_profile = profile.is_none();
-            v.profile = profile;
-            v.friends = friends;
-            v.invites = invites;
             v.refreshed_at = unix_now();
             if beat {
                 v.told = Some(now_state);
@@ -417,15 +461,17 @@ fn refresh(beat: bool) -> Result<(), Error> {
     }
 }
 
-/// The worker: a look every few seconds, the heartbeat once a minute or when the state to tell
-/// changed. It runs while the app does; it never holds the view during a request.
+/// The worker: a look every few seconds, the heartbeat once a minute while the window is looked
+/// at, every three minutes while it is in the background, and when the state to tell changed. It
+/// runs while the app does; it never holds the view during a request.
 fn worker() {
     let mut first = true;
     loop {
         let due = {
             let v = view();
             let state = presence(v.away);
-            first || (v.signed_in && (unix_now().saturating_sub(v.beat_at) >= 60 || v.told.as_ref() != Some(&state)))
+            let every = if v.away || v.hidden { BEAT_HIDDEN } else { BEAT_SHOWN };
+            first || (v.signed_in && (unix_now().saturating_sub(v.beat_at) >= every || v.told.as_ref() != Some(&state)))
         };
         // (another driver than the account's drives: they play locally, nobody is told)
         let due = due && (first || crate::drivers::plays_online());
@@ -638,6 +684,7 @@ fn after_sign_in(agree: bool) -> Value {
         let mut v = view();
         v.signed_in = true;
         v.seen.clear();
+        v.poll_v.clear();
         // (another account's pass is not this one's)
         v.personnel = None;
     }
@@ -992,7 +1039,9 @@ pub fn call(cmd: &str, args: &Value, _p: &dyn Platform) -> Answer {
         "ol_invite" => invite(args),
         "ol_dismiss" => dismiss(args),
         "ol_presence" => {
-            view().away = args.get("away").and_then(Value::as_bool).unwrap_or(false);
+            let mut v = view();
+            v.away = args.get("away").and_then(Value::as_bool).unwrap_or(false);
+            v.hidden = args.get("hidden").and_then(Value::as_bool).unwrap_or(v.away);
             json!({})
         }
         "ol_seen" => {
