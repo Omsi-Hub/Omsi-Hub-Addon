@@ -20,6 +20,8 @@ Each version of the Omsi-Hub add-on, newest first. The release on GitHub links h
   paid time, and then every piece: its running number and bus, every trip with each stop and
   its time, the timing points marked, the reliefs (from which duty, to which) and the breaks.
   The cards carry the company's logo picture (or its monogram and name) and its colour.
+- **RosterFlow's complete handbook**: the "?" in RosterFlow's title bar has **The complete
+  handbook (English)**, which opens the whole handbook (PDF) in your browser.
 
 ### Changed
 
@@ -30,6 +32,12 @@ Each version of the Omsi-Hub add-on, newest first. The release on GitHub links h
 - **Split a duty with one click, as often as you want**: a duty chosen on the planning has
   **Split this duty**, which starts a new duty at the relief point nearest its middle (it says
   where); each half can be split again.
+- **The online account asks the server far less**: your online state, your profile, your
+  friends and your invites now come in one small request, which sends the lists only when
+  something in them changed. While Omsi-Hub's window is in the background (you are driving) it
+  asks every three minutes instead of every minute, and a friend counts as online for five
+  minutes after Omsi-Hub last said so. Your cloud saves' slots are only read while a page shows
+  them.
 
 ### Fixed
 

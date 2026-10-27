@@ -90,6 +90,23 @@ impl Invite {
     }
 }
 
+/// What `hub_poll` answered: its digest, and what the app shows of the account when that changed
+/// since the digest sent (None: nothing changed).
+#[derive(Debug, Clone, PartialEq)]
+pub struct Poll {
+    pub v: String,
+    pub fresh: Option<Polled>,
+}
+
+/// The account as `hub_poll` sends it: the profile (None before `create_profile`), the friends
+/// and requests, the open invites sent to the player (newest first).
+#[derive(Debug, Clone, PartialEq)]
+pub struct Polled {
+    pub profile: Option<Profile>,
+    pub friends: Vec<Friend>,
+    pub invites: Vec<Invite>,
+}
+
 /// The player's service record for the leaderboard (`report_stats`).
 #[derive(Debug, Clone, Copy, Default, PartialEq, Eq)]
 pub struct Stats {
@@ -602,6 +619,35 @@ impl Client {
     pub fn friends(&mut self) -> Result<Vec<Friend>, Error> {
         let v = self.rpc("my_friends", json!({}))?;
         Ok(v.as_array().map(|rows| rows.iter().filter_map(friend_of).collect()).unwrap_or_default())
+    }
+
+    /// The heartbeat (`beat`: the state and the session, None: none) and the account in one request
+    /// (`hub_poll`): only its digest when it is still `seen`, the one the last poll answered, else
+    /// the profile, the friends and the invites with the new one. A server without `hub_poll` yet
+    /// is `unavailable` (the four requests of before do it then: `heartbeat`, `profile`, `friends`,
+    /// `invites`).
+    pub fn poll(&mut self, seen: &str, beat: Option<(&str, Option<&str>)>) -> Result<Poll, Error> {
+        let (status, session) = match beat {
+            Some((s, session)) => (Some(check::status(s)?), session.map(check::session_code).transpose()?),
+            None => (None, None),
+        };
+        let v = self.rpc("hub_poll", json!({ "p_seen": seen, "p_status": status, "p_session": session }))?;
+        let digest = text(&v, &["v"]).filter(|d| !d.is_empty()).ok_or(Error::Code("server"))?;
+        if digest == seen || v.get("friends").is_none() {
+            return Ok(Poll { v: digest, fresh: None });
+        }
+        let me = self.user_id().unwrap_or_default().to_string();
+        let profile = v.get("me").filter(|m| m.is_object()).map(|row| Profile {
+            user_id: me.clone(),
+            display_name: text(row, &["display_name"]).unwrap_or_default(),
+            friend_code: text(row, &["friend_code"]).unwrap_or_default(),
+            on_board: field(row, &["on_board"]).and_then(Value::as_bool).unwrap_or(false),
+            avatar: text(row, &["avatar"]).filter(|a| !a.is_empty()),
+        });
+        let rows = |k: &str| v.get(k).and_then(Value::as_array).cloned().unwrap_or_default();
+        let friends = rows("friends").iter().filter_map(friend_of).collect();
+        let invites = rows("invites").iter().filter_map(invite_of).map(|i| Invite { to: me.clone(), ..i }).collect();
+        Ok(Poll { v: digest, fresh: Some(Polled { profile, friends, invites }) })
     }
 
     /// The invites the player was sent, newest first (the table: its rows are the player's own).

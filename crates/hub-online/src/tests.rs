@@ -555,6 +555,46 @@ fn the_invites_are_the_ones_sent_to_the_player() {
     assert!(m.calls().iter().any(|c| c == "GET /rest/v1/profiles?select=user_id,display_name,friend_code,on_board,avatar&user_id=eq.me&limit=1"));
 }
 
+/// One poll for the heartbeat, the profile, the friends and the invites: everything with its
+/// digest, then the digest alone while nothing changed; a server without it is `unavailable`.
+#[test]
+fn one_poll_answers_the_account_or_only_that_nothing_changed() {
+    let m = Mock::start(|r| {
+        if let Some(a) = refresh_route(r) {
+            return a;
+        }
+        match r.path.as_str() {
+            "/rest/v1/rpc/hub_poll" if r.body["p_seen"] == "d1" => ok(json!({ "v": "d1" })),
+            "/rest/v1/rpc/hub_poll" => ok(json!({
+                "v": "d1",
+                "me": { "display_name": "Luc", "friend_code": "AB12CD34", "on_board": true, "avatar": null },
+                "friends": [{ "user_id": "u2", "display_name": "Ana", "status": "busy", "online": true, "session_code": "HUB-ABCD", "last_seen": null, "relation": "accepted", "incoming": false, "avatar": "k/a.webp" }],
+                "invites": [{ "id": 3, "from_user": "u2", "session_code": "HUB-ABCD", "created_at": "2026-10-16T10:00:00+00:00" }]
+            })),
+            _ => (404, vec![], Value::Null),
+        }
+    });
+    let mut c = client(&m, &signed_in("r1"));
+    let p = c.poll("", Some(("online", None))).unwrap();
+    assert_eq!(p.v, "d1");
+    let f = p.fresh.unwrap();
+    let me = f.profile.unwrap();
+    assert_eq!((me.user_id.as_str(), me.display_name.as_str(), me.friend_code.as_str(), me.on_board, me.avatar), ("me", "Luc", "AB12CD34", true, None));
+    assert_eq!((f.friends[0].display_name.as_str(), f.friends[0].online, f.friends[0].session_code.as_deref(), f.friends[0].avatar.as_deref()), ("Ana", true, Some("HUB-ABCD"), Some("k/a.webp")));
+    assert_eq!((f.invites[0].key(), f.invites[0].from.as_str(), f.invites[0].to.as_str()), ("3".to_string(), "u2", "me"));
+    assert_eq!(m.requests().last().unwrap().body, json!({ "p_seen": "", "p_status": "online", "p_session": null }));
+    // (nothing changed: the digest alone, and no heartbeat asked)
+    assert_eq!(c.poll("d1", None).unwrap(), crate::Poll { v: "d1".into(), fresh: None });
+    assert_eq!(m.requests().last().unwrap().body, json!({ "p_seen": "d1", "p_status": null, "p_session": null }));
+    assert_eq!(c.poll("", Some(("dancing", None))), Err(Error::Code("bad_input")));
+    // (no profile yet)
+    let none = Mock::start(|r| refresh_route(r).unwrap_or_else(|| ok(json!({ "v": "d0", "me": null, "friends": [], "invites": [] }))));
+    assert_eq!(client(&none, &signed_in("r1")).poll("", None).unwrap().fresh.unwrap().profile, None);
+    // (a server without the function yet)
+    let old = Mock::start(|r| refresh_route(r).unwrap_or((404, vec![], json!({ "code": "PGRST202", "message": "Could not find the function public.hub_poll" }))));
+    assert_eq!(client(&old, &signed_in("r1")).poll("", None), Err(Error::Code("unavailable")));
+}
+
 #[test]
 fn signing_out_tells_the_auth_and_forgets_the_session_whatever_it_says() {
     let m = Mock::start(|r| refresh_route(r).unwrap_or_else(|| if r.path == "/auth/v1/logout?scope=local" { (500, vec![], Value::Null) } else { (404, vec![], Value::Null) }));

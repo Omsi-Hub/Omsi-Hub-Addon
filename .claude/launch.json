@@ -20,6 +20,24 @@
       "port": 5182
     },
     {
+      "name": "website-docs",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["C:/Omsi-hub/Omsi-Hub-Website-docs/node_modules/next/dist/bin/next", "dev", "C:/Omsi-hub/Omsi-Hub-Website-docs", "-p", "5183"],
+      "port": 5183
+    },
+    {
+      "name": "website-admin",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["C:/Omsi-hub/Omsi-Hub-Website-admin/node_modules/next/dist/bin/next", "dev", "C:/Omsi-hub/Omsi-Hub-Website-admin", "-p", "5184"],
+      "port": 5184
+    },
+    {
+      "name": "admin-standin",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["C:/Omsi-hub/Omsi-Hub-Website-admin/tools/admin-standin.mjs", "C:/Omsi-hub/Omsi-Hub-Website-admin", "54329"],
+      "port": 54329
+    },
+    {
       "name": "fakegame-web",
       "runtimeExecutable": "cargo",
       "runtimeArgs": ["run", "-p", "hub-plugin-harness", "--example", "fakegame"],

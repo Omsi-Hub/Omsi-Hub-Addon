@@ -708,6 +708,8 @@ struct State {
     /// The cloud as `list` last said it, and when.
     cloud: Option<Cloud>,
     listed_at: u64,
+    /// When the page last asked the state (`cs_state`): the cloud is listed only while it shows it.
+    asked_at: u64,
     user: String,
     offline: bool,
     signed_in: bool,
@@ -749,9 +751,11 @@ fn profile() -> String {
     hub_core::settings::Settings::load().other.get("driver").and_then(Value::as_str).unwrap_or("").to_string()
 }
 
-/// How often a changed cloud company goes up, and the cloud is listed again.
+/// How often a changed cloud company goes up, and the cloud is listed again while the page shows
+/// it (a page that asked the state within `LOOKED`).
 const UPLOAD_EVERY: u64 = 10 * 60;
 const LIST_EVERY: u64 = 5 * 60;
+const LOOKED: u64 = 30;
 
 /// The company's sha256 as packed now (read again only when its file changed).
 fn local_sha(id: &str) -> Option<String> {
@@ -850,18 +854,30 @@ fn name_of(id: &str) -> String {
     files::load(&data(), id).map(|c| files::text(&c, "name")).filter(|n| !n.is_empty()).unwrap_or_else(|| id.to_string())
 }
 
-/// The worker: the cloud listed every few minutes, a changed cloud company uploaded when its
-/// pages were left and every ten minutes, never under the view's lock during a request.
+/// The worker: the cloud listed every few minutes while the page shows it (the slots' `meta.json`,
+/// two Storage requests, kept until a save of this computer's or the page asks again), a changed
+/// cloud company uploaded when its pages were left and every ten minutes, never under the view's
+/// lock during a request.
 fn worker() {
     loop {
         // (signed in with the privacy statement agreed to: before, the cloud is not asked)
         // (another driver than the account's plays locally: `drivers::plays_online`)
         let signed = online::with(|c| c.signed_in() && !c.privacy_needed()) && crate::drivers::plays_online();
         if signed {
-            let stale = { now().saturating_sub(state().listed_at) >= LIST_EVERY };
-            if stale {
+            let (stale, looked, known) = {
+                let st = state();
+                (now().saturating_sub(st.listed_at) >= LIST_EVERY, now().saturating_sub(st.asked_at) < LOOKED, !st.user.is_empty())
+            };
+            if stale && looked {
                 let _w = work();
                 let _ = relist(&mut Online);
+            } else if !known {
+                // (nobody looks: the account's user id only, for the uploads - no Storage request)
+                let r = Online.user();
+                note(&r);
+                if let Ok(u) = r {
+                    state().user = u;
+                }
             }
             let (user, queued, tried) = {
                 let mut st = state();
@@ -937,7 +953,8 @@ fn view() -> Value {
     let book = read_book(&d);
     let mut companies = serde_json::Map::new();
     let (user, cloud, offline, signed_in) = {
-        let st = state();
+        let mut st = state();
+        st.asked_at = now();
         (st.user.clone(), st.cloud.clone(), st.offline, st.signed_in)
     };
     for (id, s) in &book.companies {
