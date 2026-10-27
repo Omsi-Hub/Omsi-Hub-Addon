@@ -1328,7 +1328,11 @@ function depotDash() {
 
 function depot() {
   const c = co();
-  const busAt = (b) => ({ id: b.id, number: b.number, size: b.kind.startsWith('Articulated') ? 'articulated' : 'solo', file: b.file, paint: b.livery, tip: `${b.number} ${b.name}  ·  condition ${Math.round(b.cond * 100)} %` });
+  // (out on their tours by the clock, as `company_more::depot` has it: the 3D yard has them
+  // drive out and back)
+  const TOURS = { 1: [7 * 60, 13 * 60], 2: [8 * 60, 18 * 60], 3: [6 * 60, 7 * 60 + 50] };
+  const out = (b) => !!TOURS[b.id] && c.minute >= TOURS[b.id][0] && c.minute < TOURS[b.id][1];
+  const busAt = (b) => ({ id: b.id, number: b.number, size: b.kind.startsWith('Articulated') ? 'articulated' : 'solo', file: b.file, paint: b.livery, tip: `${b.number} ${b.name}  ·  condition ${Math.round(b.cond * 100)} %`, out: out(b) });
   const bld = (head, works = null) => ({ built: true, head, works });
   // (`?mock&buses=120`: a full yard, for the 3D depot's speed)
   const many = Number(new URLSearchParams(location.search).get('buses')) || 0;

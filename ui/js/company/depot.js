@@ -206,7 +206,7 @@ function Plan({ p, w, h, selected }) {
         // (a charger at the head of every space it serves)
         if (n < pk.chargers) svg.push(html`<circle cx=${sr.x + sr.w / 2} cy=${sr.y + 3} r="2.2" fill=${`rgb(${OK})`} />`);
         const bus = p.parked[n];
-        if (bus) {
+        if (bus && !bus.out) {
           const bw = Math.min(slotW * 0.66, 22);
           const bh = Math.min(sr.h - 10, bw * 3.6);
           buses.push(busTop({ x: sr.x + sr.w / 2 - bw / 2, y: sr.y + 6, w: bw, h: bh }, bus, colour, selected === bus.id, pick));
@@ -216,7 +216,7 @@ function Plan({ p, w, h, selected }) {
     } else svg.push(dashed(br, buildingNow ? `rgba(${WARN}, 0.8)` : faint(0.3)));
   }
   // the buses the yard has no space for: in the street
-  p.parked.slice(n, n + 12).forEach((bus, k) => {
+  p.parked.slice(n).filter((bus) => bus && !bus.out).slice(0, 12).forEach((bus, k) => {
     const r = { x: street.x + 10 + k * 40, y: street.y + 7, w: 34, h: street.h - 14 };
     const rgb = rgbOf(colour);
     buses.push(html`<g class="cm-bus" onClick=${() => pick(bus.id)}><title>${bus.tip}</title>${rr(inset(r, -1.5), 3, `rgb(${WARN})`)}${rr(r, 3, `rgb(${rgb.join(',')})`)}</g>`);

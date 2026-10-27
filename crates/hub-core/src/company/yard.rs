@@ -227,6 +227,8 @@ pub fn needs_place(s: &Site, a: Area) -> bool {
 pub fn finish(s: &mut Site, w: &Works) {
     s.set_level(w.area, w.level);
     if let Some(at) = w.at {
+        // (its id taken: the modules `reconcile` puts down get the next ones)
+        s.placed_counter = s.placed_counter.max(at.id);
         if count(s, w.area) < wanted(s, w.area) && fits(s, at.area, at.x, at.y, at.rot, None).is_ok() {
             s.layout.push(at);
         }
@@ -234,8 +236,8 @@ pub fn finish(s: &mut Site, w: &Works) {
     reconcile(s);
 }
 
-/// Build the next level of an area as a module put down at (x, y) turned `rot`: paid now,
-/// there once the work is done (`depot::build` for one built where it stands).
+/// Build the next level of an area as a module put down at (x, y) turned `rot`: paid, and
+/// there at once (`depot::build` for one built where it stands).
 pub fn build_at(c: &mut Company, area: Area, x: i32, y: i32, rot: u8) -> Result<(), &'static str> {
     reconcile(&mut c.site);
     if !needs_place(&c.site, area) {
@@ -306,7 +308,6 @@ pub fn buy_land(c: &mut Company) -> Result<(), &'static str> {
 
 #[cfg(test)]
 mod tests {
-    use super::super::dates;
     use super::super::model::GameMode;
     use super::super::{found, Founding};
     use super::*;
@@ -316,14 +317,6 @@ mod tests {
         c.cash += 10_000_000_00;
         c.progress.xp = super::super::levels::LEVEL_XP[1];
         c
-    }
-
-    fn nights(c: &mut Company, n: usize) {
-        for _ in 0..n {
-            let date = c.date.clone();
-            c.date = dates::add(&date, 1);
-            depot::after_day(c, &date);
-        }
     }
 
     fn clear(s: &Site) {
@@ -366,7 +359,7 @@ mod tests {
     }
 
     #[test]
-    fn a_module_is_put_down_where_the_player_wants_it_and_stands_there_once_built() {
+    fn a_module_is_put_down_where_the_player_wants_it_and_stands_there_at_once() {
         let mut c = company();
         reconcile(&mut c.site);
         let free = spot(&c.site, Area::Parking).unwrap();
@@ -378,11 +371,8 @@ mod tests {
         let cash = c.cash;
         build_at(&mut c, Area::Parking, free.0, free.1, free.2).unwrap();
         assert!(c.cash < cash);
-        assert_eq!(c.site.parking, 1, "not before the work is done");
-        // (what is being built takes its place already)
+        assert_eq!(c.site.parking, 2, "built at once");
         assert_eq!(fits(&c.site, Area::Parking, free.0, free.1, free.2, None), Err("Something stands there already."));
-        nights(&mut c, 14);
-        assert_eq!(c.site.parking, 2);
         assert!(c.site.layout.iter().any(|p| p.area == Area::Parking && (p.x, p.y, p.rot) == free));
         clear(&c.site);
         // a wash lane is a module of its own, the next one too; the diesel station is put down
@@ -390,15 +380,12 @@ mod tests {
         assert!(needs_place(&c.site, Area::Wash));
         let (x, y, rot) = spot(&c.site, Area::Wash).unwrap();
         build_at(&mut c, Area::Wash, x, y, rot).unwrap();
-        nights(&mut c, 21);
         assert_eq!(c.site.wash, 1);
         assert!(needs_place(&c.site, Area::Wash));
         depot::build(&mut c, Area::Wash).unwrap();
-        nights(&mut c, 21);
         assert_eq!((c.site.wash, c.site.layout.iter().filter(|p| p.area == Area::Wash).count()), (2, 2));
         assert!(!needs_place(&c.site, Area::Fuel));
         depot::build(&mut c, Area::Fuel).unwrap();
-        nights(&mut c, 7);
         assert_eq!((c.site.fuel, c.site.layout.iter().filter(|p| p.area == Area::Fuel).count()), (2, 1));
     }
 
@@ -406,8 +393,7 @@ mod tests {
     fn a_level_built_without_a_place_finds_one() {
         let mut c = company();
         depot::build(&mut c, Area::Parking).unwrap();
-        assert!(c.site.works[0].at.is_some());
-        nights(&mut c, 14);
+        assert!(c.site.works.is_empty());
         assert_eq!(c.site.layout.iter().filter(|p| p.area == Area::Parking).count(), 2);
         clear(&c.site);
     }

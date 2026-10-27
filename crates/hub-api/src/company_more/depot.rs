@@ -142,7 +142,8 @@ fn building(c: &Company, area: Area, title: &str) -> Value {
 }
 
 /// A bus where it stands: its number, its size (the 3D yard draws it as long), its bus file and
-/// livery (its depot model), and its card in the tooltip.
+/// livery (its depot model), its card in the tooltip, and whether it is out on its tours now
+/// (`out`: its space kept, the 3D yard has it drive out and back).
 fn bus_at(c: &Company, v: &co::Vehicle) -> Value {
     let mut tip = format!("{} {}  ·  {} {:.0} %", v.number, v.name, tr("condition"), v.condition);
     if v.in_workshop(&c.date) {
@@ -150,7 +151,46 @@ fn bus_at(c: &Company, v: &co::Vehicle) -> Value {
     }
     // (the livery it wears: the house livery once the studio made one, as the game gets it)
     let paint = v.house_livery.clone().filter(|h| !h.trim().is_empty()).unwrap_or_else(|| v.livery.clone());
-    json!({ "id": v.id, "number": v.number, "size": v.kind.size, "file": v.bus, "paint": paint, "tip": tip })
+    let out = c.clock.today.as_ref().filter(|s| s.date == c.date).is_some_and(|s| {
+        let now = c.clock.minute as i32;
+        co::control::busy(s).iter().any(|&(id, from, to)| id == v.id && from <= now && now < to)
+    });
+    json!({ "id": v.id, "number": v.number, "size": v.kind.size, "file": v.bus, "paint": paint, "tip": tip, "out": out })
+}
+
+/// The parking's spaces, a bus each (null: free), then the buses in the street. Each bus keeps
+/// its own space - the fleet's order -, out on its tours or not: one going to the workshop
+/// leaves its space free for a bus of the street meanwhile, and the others stay where they are
+/// (the 3D yard has a bus drive where it goes, not the whole yard move up).
+fn spaces(c: &Company, held: &[&co::Vehicle]) -> Vec<Value> {
+    let today = &c.date;
+    let n = c.site.spaces();
+    let mut slots: Vec<Option<&co::Vehicle>> = vec![None; n.min(held.len())];
+    let mut over = Vec::new();
+    for (k, v) in held.iter().enumerate() {
+        if v.in_workshop(today) {
+            continue;
+        }
+        if k < n {
+            slots[k] = Some(v);
+        } else {
+            over.push(*v);
+        }
+    }
+    let mut street = Vec::new();
+    for v in over {
+        match slots.iter().position(Option::is_none) {
+            Some(k) => slots[k] = Some(v),
+            None => street.push(v),
+        }
+    }
+    let mut out: Vec<Value> = slots.iter().map(|v| v.map_or(Value::Null, |v| bus_at(c, v))).collect();
+    // (the street after every space the yard draws)
+    if !street.is_empty() {
+        out.resize(n, Value::Null);
+    }
+    out.extend(street.iter().map(|v| bus_at(c, v)));
+    out
 }
 
 /// The yard from above (`depot::plan`): what is built, being built, where the buses stand, and
@@ -160,8 +200,8 @@ fn plan(c: &Company) -> Value {
     let held: Vec<&co::Vehicle> = c.fleet.iter().filter(|v| v.held_on(&today)).collect();
     let mut in_ws: Vec<&co::Vehicle> = held.iter().copied().filter(|v| v.in_workshop(&today)).collect();
     in_ws.sort_by(|a, b| a.number.cmp(&b.number));
-    let mut parked: Vec<&co::Vehicle> = held.iter().copied().filter(|v| !v.in_workshop(&today)).collect();
-    parked.sort_by_key(|v| (v.number.len(), v.number.clone()));
+    let mut fleet = held.clone();
+    fleet.sort_by_key(|v| (v.number.len(), v.number.clone()));
     let mut offices = building(c, Area::Offices, "Offices");
     offices["floors"] = json!((c.site.offices as usize).min(3));
     offices["room"] = json!(trf("room for %{n}", &[("n", &c.site.staff_room().to_string())]));
@@ -187,7 +227,7 @@ fn plan(c: &Company) -> Value {
         "colour": c.colours[0],
         "offices": offices, "hall": hall, "wash": wash, "fuel": fuel, "parking": parking,
         "in_ws": in_ws.iter().map(|v| bus_at(c, v)).collect::<Vec<_>>(),
-        "parked": parked.iter().map(|v| bus_at(c, v)).collect::<Vec<_>>(),
+        "parked": spaces(c, &fleet),
         "layout": layout(c),
         "upgrades": c.site.upgrades.iter().map(|u| u.key()).collect::<Vec<_>>(),
         "look": look(&c.site.look),
@@ -287,13 +327,13 @@ fn buildings(c: &Company) -> Value {
             row["upgrades"] = json!(upgrades(c, *a));
             if let Some(w) = c.site.works_on(*a).filter(|w| w.upgrade.is_none()) {
                 row["works"] = json!(trf("Building until %{date}", &[("date", &day_label(&w.until))]));
-            } else if let Some((cost, days)) = dp::next_cost(c, *a) {
+            } else if let Some((cost, _)) = dp::next_cost(c, *a) {
                 let up = dp::step(*a, lv + 1).upkeep as f64 * c.price_index;
                 row["cost"] = json!(eur(cost));
                 row["locked"] = json!(!dp::area_allowed(c, *a));
                 // (a module more, put down where the player wants it: the build mode)
                 row["place"] = json!(yard::needs_place(&site, *a));
-                row["tip"] = json!(trf("Build the next level: %{days} days of work, then %{amount} a month", &[("days", &days.to_string()), ("amount", &eur(up.round() as i64))]));
+                row["tip"] = json!(trf("Build the next level: ready at once, then %{amount} a month", &[("amount", &eur(up.round() as i64))]));
             } else {
                 row["complete"] = json!(tr("Complete"));
             }
@@ -319,10 +359,10 @@ fn upgrades(c: &Company, a: Area) -> Vec<Value> {
                 row["works"] = json!(trf("Building until %{date}", &[("date", &day_label(&w.until))]));
             } else if c.site.level(a) == 0 && !c.site.has(*u) {
                 row["needs"] = json!(trf("Build the %{area} first", &[("area", &tr(a.label()).to_lowercase())]));
-            } else if let Some((cost, days)) = dp::upgrade_cost(c, *u) {
+            } else if let Some((cost, _)) = dp::upgrade_cost(c, *u) {
                 row["cost"] = json!(eur(cost));
                 row["busy"] = json!(c.site.works_on(a).is_some());
-                row["tip"] = json!(trf("%{days} days of work", &[("days", &days.to_string())]));
+                row["tip"] = json!(tr("Ready at once"));
             }
             row
         })

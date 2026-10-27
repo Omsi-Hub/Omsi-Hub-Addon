@@ -325,7 +325,7 @@ export function buildScene(p, pal, level = { trees: true, town: 2 }) {
   });
   // the buses the yard has no space for: along the street, a warning ring round each
   const streetFrame = frame(0, 0, 0, 0, 0);
-  p.parked.slice(n, n + 10).forEach((bus, k) => buses.push(place(bus, streetFrame, bx0 + 12 + k * 14, street.z0 + 3, 'street', Math.PI / 2)));
+  p.parked.slice(n).filter(Boolean).slice(0, 10).forEach((bus, k) => buses.push(place(bus, streetFrame, bx0 + 12 + k * 14, street.z0 + 3, 'street', Math.PI / 2)));
 
   // trees on the verge, round the land but not on the street
   if (level.trees) {
@@ -352,13 +352,16 @@ function mark(x, z, w, l, turn, mat, s) {
 function place(bus, f, lx, lz, at, heading = 0) {
   const [x, , z] = f.pt([lx, 0, lz]);
   const len = LENGTH[bus.size] || LENGTH.solo;
-  return { id: bus.id, number: bus.number, tip: bus.tip, file: bus.file || '', paint: bus.paint || '', x, z, heading: f.heading(heading), len, height: bus.size === 'double' ? 4.3 : 3.1, articulated: bus.size === 'articulated', at };
+  return { id: bus.id, number: bus.number, tip: bus.tip, file: bus.file || '', paint: bus.paint || '', out: !!bus.out, x, z, heading: f.heading(heading), len, height: bus.size === 'double' ? 4.3 : 3.1, articulated: bus.size === 'articulated', at };
 }
 
 /** The module of the yard under a point of the ground (metres), if any. */
 export function moduleUnder(picks, x, z) {
   return picks.find((o) => x >= o.x0 && x <= o.x1 && z >= o.z0 && z <= o.z1) || null;
 }
+
+/** How high the ghost of a module of `area` stands (metres). */
+export const ghostHeight = (area) => ({ parking: 0.6, workshop: 8.5, wash: 6, fuel: 6.5, offices: 8 })[area] || 3;
 
 /** The ghost of a module being put down: a block of its shape (the renderer tints it) with a
  * band at its front, and its aprons on the ground. */
@@ -371,7 +374,7 @@ export function ghostMesh(L, area, x, y, rot, pal) {
   const ld = s.h * cell;
   const f = frame(rot, x * cell, y * cell, lw, ld);
   const lm = new Mesh();
-  const h = { parking: 0.6, workshop: 8.5, wash: 6, fuel: 6.5, offices: 8 }[area] || 3;
+  const h = ghostHeight(area);
   lm.box(0.2, 0.06, 0.2, lw - 0.2, h, ld - 0.2, pal.wall);
   lm.box(0.2, 0.06, ld - 0.6, lw - 0.2, Math.min(h, 1.2) + 0.05, ld - 0.2, pal.paint);
   if (s.front) lm.flat(0, ld, lw, ld + s.front * cell, 0.08, pal.paint);

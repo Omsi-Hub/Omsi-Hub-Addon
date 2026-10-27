@@ -610,6 +610,22 @@ pub fn migrate(s: &mut Site) {
         }
     }
     s.generation = GENERATION;
+    // (building is done at once now: work a file of before still had under way is done)
+    for w in std::mem::take(&mut s.works) {
+        complete(s, &w);
+    }
+}
+
+/// Building work done: what was added to the area, or its level and the module put down.
+pub(super) fn complete(s: &mut Site, w: &Works) {
+    match w.upgrade {
+        Some(u) => {
+            if !s.has(u) {
+                s.upgrades.push(u);
+            }
+        }
+        None => super::yard::finish(s, w),
+    }
 }
 
 impl Site {
@@ -794,7 +810,7 @@ pub fn cash_needed(c: &Company, cost: Cents) -> Cents {
     (cost - c.site.credit.max(0)).max(0)
 }
 
-/// Add `u` to its area: paid now, there once the work is done.
+/// Add `u` to its area: paid, and there at once.
 pub fn build_upgrade(c: &mut Company, u: Upgrade) -> Result<(), &'static str> {
     migrate(&mut c.site);
     if c.site.has(u) {
@@ -809,11 +825,10 @@ pub fn build_upgrade(c: &mut Company, u: Upgrade) -> Result<(), &'static str> {
     if c.site.works_on(u.area()).is_some() {
         return Err("This is being built already.");
     }
-    let Some((cost, days)) = upgrade_cost(c, u) else { return Err("This is there already.") };
+    let Some((cost, _)) = upgrade_cost(c, u) else { return Err("This is there already.") };
     pay_building(c, cost, u.label().to_string())?;
-    let until = dates::add(&c.date, days - 1);
     let level = c.site.level(u.area());
-    c.site.works.push(Works { area: u.area(), level, until, at: None, upgrade: Some(u) });
+    complete(&mut c.site, &Works { area: u.area(), level, until: c.date.clone(), at: None, upgrade: Some(u) });
     Ok(())
 }
 
@@ -825,7 +840,7 @@ pub fn start_empty(c: &mut Company) {
     c.site.credit = [Area::Parking, Area::Workshop, Area::Fuel, Area::Offices].iter().filter_map(|a| next_cost(c, *a)).map(|(cost, _)| cost).sum();
 }
 
-/// Build the next level of an area: paid now, in use once the work is done. A module more of
+/// Build the next level of an area: paid, and in use at once. A module more of
 /// the yard goes on its first free spot (`yard::build_at` puts it where the player wants it).
 pub fn build(c: &mut Company, area: Area) -> Result<(), &'static str> {
     super::yard::reconcile(&mut c.site);
@@ -847,11 +862,10 @@ pub(super) fn build_placed(c: &mut Company, area: Area, at: Option<super::yard::
     if c.site.works_on(area).is_some() {
         return Err("This is being built already.");
     }
-    let Some((cost, days)) = next_cost(c, area) else { return Err("This is as big as it gets.") };
+    let Some((cost, _)) = next_cost(c, area) else { return Err("This is as big as it gets.") };
     let level = c.site.level(area) + 1;
     pay_building(c, cost, format!("{} {}", area.label(), level))?;
-    let until = dates::add(&c.date, days - 1);
-    c.site.works.push(Works { area, level, until, at, upgrade: None });
+    complete(&mut c.site, &Works { area, level, until: c.date.clone(), at, upgrade: None });
     Ok(())
 }
 
@@ -1398,13 +1412,13 @@ mod tests {
     }
 
     #[test]
-    fn what_is_added_to_an_area_costs_its_days_and_does_what_it_says() {
+    fn what_is_added_to_an_area_is_there_at_once_and_does_what_it_says() {
         let mut c = company(GameMode::Normal, 10);
         // (nothing before its area: the wash lanes first)
         assert_eq!(build_upgrade(&mut c, Upgrade::Gantry), Err("Build the area first."));
         assert_eq!(upgrade_cost(&c, Upgrade::Gantry), None);
         c.site.wash = 2;
-        let (cost, days) = upgrade_cost(&c, Upgrade::Gantry).unwrap();
+        let (cost, _) = upgrade_cost(&c, Upgrade::Gantry).unwrap();
         // (priced a lane: two lanes cost twice one)
         c.site.wash = 1;
         assert_eq!(upgrade_cost(&c, Upgrade::Gantry).unwrap().0 * 2, cost);
@@ -1413,11 +1427,8 @@ mod tests {
         let cash = c.cash;
         build_upgrade(&mut c, Upgrade::Gantry).unwrap();
         assert_eq!(c.cash, cash - cost);
-        assert_eq!(build_upgrade(&mut c, Upgrade::Interior), Err("This is being built already."));
-        nights(&mut c, days as usize - 1);
-        assert!(!c.site.has(Upgrade::Gantry));
-        nights(&mut c, 1);
-        assert!(c.site.has(Upgrade::Gantry) && c.site.level(Area::Wash) == 2);
+        // (no waiting: there at once, and the next one may follow straight away)
+        assert!(c.site.has(Upgrade::Gantry) && c.site.level(Area::Wash) == 2 && c.site.works.is_empty());
         assert_eq!(c.site.washes(), 2 * WASHES_GANTRY);
         assert_eq!(build_upgrade(&mut c, Upgrade::Gantry), Err("This is there already."));
         // a lane built since comes with its gantry, paid for with it
@@ -1473,7 +1484,7 @@ mod tests {
     }
 
     #[test]
-    fn building_costs_by_difficulty_takes_its_days_and_then_costs_upkeep() {
+    fn building_costs_by_difficulty_is_done_at_once_and_then_costs_upkeep() {
         let easy = company(GameMode::Casual, 0);
         let hard = company(GameMode::Realistic, 0);
         let mut c = company(GameMode::Normal, 0);
@@ -1487,12 +1498,9 @@ mod tests {
         let cash = c.cash;
         build(&mut c, Area::Wash).unwrap();
         assert_eq!(c.cash, cash - at(0.9));
-        assert_eq!(build(&mut c, Area::Wash), Err("This is being built already."));
         assert!(c.ledger.last().is_some_and(|b| b.kind == BookingKind::Construction && b.kind.is_capital()));
-        nights(&mut c, 20);
-        assert_eq!(c.site.wash, 0, "not done before its 21st day");
-        nights(&mut c, 1);
-        assert_eq!(c.site.wash, 1);
+        assert_eq!(c.site.wash, 1, "built at once");
+        assert!(c.site.works.is_empty());
         let upkeep = step(Area::Wash, 1).upkeep;
         assert!(upkeep > 0);
         assert_eq!(upkeep_month(&c), upkeep);

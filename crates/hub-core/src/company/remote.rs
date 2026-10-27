@@ -490,18 +490,19 @@ mod tests {
         assert_eq!(latest(&data).map(|x| x.id), Some(c.id.clone()));
         let wash = Order::Build { area: Area::Wash };
         assert!(check(&c, &[], &wash).is_ok());
-        // (a second order of the same build waits behind the first and would be refused)
-        assert_eq!(check(&c, std::slice::from_ref(&wash), &wash), Err("This is being built already."));
+        // (a second order of the same build is checked behind the first: built at once, a lane more)
+        assert!(check(&c, std::slice::from_ref(&wash), &wash).is_ok());
         queue(&data, &c.id, &wash).unwrap();
         queue(&data, &c.id, &Order::Job { bus: id, job: JobKind::Service }).unwrap();
         assert_eq!(pending(&data, &c.id).len(), 2);
         let s = summary(&c, None, &pending(&data, &c.id));
         assert_eq!(s["pending"].as_array().map(|a| a.len()), Some(2));
         assert_eq!(s["areas"][2]["key"], "wash");
-        assert_eq!(s["areas"][2]["can"], false);
+        // (built at once: another lane may be ordered behind it)
+        assert_eq!(s["areas"][2]["can"], true);
         let done = take(&data, &mut c);
         assert!(done.iter().all(|x| x.1.is_ok()));
-        assert!(c.site.works_on(Area::Wash).is_some() && c.site.job_of(id).is_some());
+        assert!(c.site.wash == 1 && c.site.job_of(id).is_some());
         assert!(pending(&data, &c.id).is_empty() && take(&data, &mut c).is_empty());
         // the phone answers the control room's message to the duty driven, and tells it
         let tell = Order::Tell { what: messages::Quick::DelayTraffic };

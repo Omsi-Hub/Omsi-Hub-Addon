@@ -8,14 +8,17 @@
 // scroll to zoom; the camera is kept for when the page comes back. Each bus is drawn as its own
 // model in its livery once that is there (`skins.js`), until then as the plain one. The staff at
 // work walk about the yard (`people.js`, their figures `figures.js`); with the animations off
-// they stand still. How finely it is drawn is chosen in its menu (`quality.js`). Without WebGL2
+// they stand still. A bus that goes out on its tours drives out of the gate, one back from them
+// drives in through the wash lane to its space, one going to the workshop drives there
+// (`drive.js`: each change of where a bus is, once the page saw it before). How finely it is
+// drawn is chosen in its menu (`quality.js`). Without WebGL2
 // the page draws its plan from above instead (`onFail`).
 
 import { html, useEffect, useRef, useState, tr, Icon, IconBtn, Btn, ui, setUi } from '../kit.js';
 import { actMore } from '../more.js';
 import { project } from '../../hub/bus3d/math.js';
-import { buildScene, AREAS, moduleUnder, ghostMesh, gridMesh } from './scene.js';
-import { rectOf, whyNot } from './yard.js';
+import { buildScene, AREAS, moduleUnder, ghostMesh, ghostHeight, gridMesh } from './scene.js';
+import { rectOf, apronsOf, whyNot } from './yard.js';
 import { busMesh, instances, pickBus, skinned } from './bus.js';
 import { skin, skinKey } from './skins.js';
 import { personMesh, people, rolesOf, rounds } from './people.js';
@@ -23,6 +26,7 @@ import { DepotRenderer, VIEW, ZOOM } from './renderer.js';
 import { palette, rgb01 } from './palette.js';
 import { LEVELS, chooseQuality, chosenQuality, levelOf, stepDown } from './quality.js';
 import { figure } from './figures.js';
+import { grid, route, at as along, length } from './drive.js';
 
 /** The menu's levels: what is chosen, its name, and what it gives up. */
 const QUALITY = [
@@ -64,6 +68,14 @@ export function Depot3D({ p, names, w, h, selected, hover, onPick, onFail, placi
   const [sel, setSel] = useState(null);
   const [sure, setSure] = useState(false);
   const pointer = useRef(null);
+  // the buses driving (id -> { moments, t0, kind }), where each was last to stand (id -> its
+  // place, null: out on its tours), the yard's modules they last stood among, the buses drawn
+  const drives = useRef(new Map());
+  const where = useRef(null);
+  const yardKey = useRef('');
+  const shown = useRef([]);
+  const loop = useRef(0);
+  const latest = useRef(null);
   const [skins, setSkins] = useState(0);
   const crowd = useRef(0);
   const auto = useRef(quality === 'auto');
@@ -116,9 +128,76 @@ export function Depot3D({ p, names, w, h, selected, hover, onPick, onFail, placi
     scene.current = s;
     view.setYard(s.mesh, s.bounds, pal, s.world);
     view.setDecals(s.decals);
+    drive(s);
     buses(true);
     setBuilt((n) => n + 1);
   }, [key, level]);
+
+  useEffect(() => () => cancelAnimationFrame(loop.current), []);
+
+  /** Each bus that is to stand somewhere else than it did (or is out on its tours now, or back
+   * from them) sent on its way there: a few seconds after each other, at most a dozen at once
+   * (the others there at once). Not when the page first shows the yard, its modules moved, or
+   * the animations off. */
+  function drive(s) {
+    const L = p.layout;
+    const lay = JSON.stringify(L.modules.map((o) => [o.id, o.x, o.y, o.rot, o.building]));
+    const snap = where.current === null || lay !== yardKey.current || still();
+    yardKey.current = lay;
+    const now = performance.now() / 1000;
+    const before = where.current || new Map();
+    const next = new Map();
+    const g = snap ? null : grid(L);
+    const same = (a, b) => (a === null || b === null ? a === b : Math.hypot(a.x - b.x, a.z - b.z) < 0.5 && Math.abs(Math.sin((a.heading - b.heading) / 2)) < 0.05);
+    let started = 0;
+    for (const b of s.buses) {
+      const to = b.out ? null : { x: b.x, z: b.z, heading: b.heading };
+      next.set(b.id, to);
+      const had = before.get(b.id);
+      if (snap) {
+        drives.current.delete(b.id);
+        continue;
+      }
+      if (had !== undefined && same(had, to)) continue;
+      // (from where it is: on its way, or where it stood)
+      const d = drives.current.get(b.id);
+      const on = d ? poseOf(d, now) : undefined;
+      const from = on !== undefined ? on : had === undefined ? null : had;
+      drives.current.delete(b.id);
+      if (!from && !to) continue;
+      if (started >= 12) continue;
+      const kind = !to ? 'leave' : !from ? 'arrive' : 'move';
+      const moments = route(g, from || to, to, kind);
+      if (moments.length < 2) continue;
+      drives.current.set(b.id, { moments, t0: now + started * 2.5, kind });
+      started++;
+    }
+    for (const id of [...drives.current.keys()]) if (!next.has(id)) drives.current.delete(id);
+    where.current = next;
+    if (drives.current.size) run();
+  }
+
+  /** Where a bus on its drive is now (null: not on the yard yet; undefined: the drive done). */
+  function poseOf(d, now) {
+    const t = now - d.t0;
+    if (t < 0 && d.kind === 'arrive') return null;
+    if (t >= length(d.moments)) return undefined;
+    return along(d.moments, Math.max(0, t));
+  }
+
+  /** The drives shown, a picture each, while there are any; the shadows now and then. */
+  function run() {
+    if (loop.current) return;
+    let shadow = 0;
+    const tick = (ms) => {
+      const more = drives.current.size > 0;
+      const moved = !more || ms - shadow > 150;
+      if (moved) shadow = ms;
+      latest.current?.(moved);
+      loop.current = more ? requestAnimationFrame(tick) : 0;
+    };
+    loop.current = requestAnimationFrame(tick);
+  }
 
   // the people at work: their rounds from the yard and the staff, walked about some thirty
   // times a second while the page shows (standing still when the animations are off)
@@ -188,10 +267,23 @@ export function Depot3D({ p, names, w, h, selected, hover, onPick, onFail, placi
       b.height = k.model.height;
       own.set(b.id, key);
     }
+    // (each where it is now: on its way, in its place, or not on the yard - out on its tours)
+    const now = performance.now() / 1000;
+    const list = [];
+    for (const b of s.buses) {
+      const d = drives.current.get(b.id);
+      const pose = d ? poseOf(d, now) : undefined;
+      // (its drive done: where it stands, or gone out on its tours)
+      if (d && pose === undefined) drives.current.delete(b.id);
+      if (pose) list.push({ ...b, ...pose });
+      else if (pose === undefined && !b.out) list.push(b);
+    }
+    shown.current = list;
     const states = { picked: selected, hover: under };
-    view.setBuses(instances(s.buses, rgb01(p.colour), { ...states, own: (b) => own.has(b.id) }), moved);
-    view.setSkinned(skinned(s.buses, (b) => own.get(b.id), states), moved);
+    view.setBuses(instances(list, rgb01(p.colour), { ...states, own: (b) => own.has(b.id) }), moved);
+    view.setSkinned(skinned(list, (b) => own.get(b.id), states), moved);
   }
+  latest.current = buses;
 
   // (and again on a new renderer: another graphics level starts unlit)
   useEffect(() => r.current?.highlight(AREAS[hover] || 0), [hover, level]);
@@ -215,6 +307,8 @@ export function Depot3D({ p, names, w, h, selected, hover, onPick, onFail, placi
     }
     setRot(placing.rot || 0);
     view.setOverlay('grid', gridMesh(p.layout, pal), [1, 1, 1, 0.3], 0.35);
+    // (the ghost at once where the pointer is, if it is over the yard)
+    if (pointer.current) aimGhost(pointer.current);
     // (before the page's own keys: Escape here stops the build mode, it does not go back)
     const onKey = (e) => {
       if (e.target?.closest?.('input, textarea, [contenteditable]')) return;
@@ -232,21 +326,27 @@ export function Depot3D({ p, names, w, h, selected, hover, onPick, onFail, placi
     if (placing && pointer.current) aimGhost(pointer.current);
   }, [rot]);
 
-  /** The ghost where the pointer is: its cells on the grid, whether it fits. */
+  /** The ghost where the pointer is: its cells on the grid, whether it fits. The pointer holds
+   * it by its middle - the module with its lanes, halfway up it (a tall hall seen from the
+   * corner stands over the ground the pointer is on, not beside it). */
   function aimGhost(e) {
     const view = r.current;
     const sc = scene.current;
     const L = p.layout;
     if (!view || !sc || !placing) return;
     const [px, py] = at(e);
-    const hit = view.ground(px, py);
+    const hit = view.ground(px, py, ghostHeight(placing.area) / 2) || view.ground(px, py);
     if (!hit) return;
     const b = sc.bounds;
     const gx0 = hit[0] + (b.x0 + b.x1) / 2;
     const gz0 = hit[1] + (b.z0 + b.z1) / 2;
-    const rr = rectOf(L, placing.area, 0, 0, rot);
-    const x = Math.round(gx0 / L.cell - rr.w / 2);
-    const y = Math.round(gz0 / L.cell - rr.h / 2);
+    const all = [rectOf(L, placing.area, 0, 0, rot), ...apronsOf(L, placing.area, 0, 0, rot)];
+    const x0 = Math.min(...all.map((a) => a.x));
+    const y0 = Math.min(...all.map((a) => a.y));
+    const cx = (x0 + Math.max(...all.map((a) => a.x + a.w))) / 2;
+    const cy = (y0 + Math.max(...all.map((a) => a.y + a.h))) / 2;
+    const x = Math.round(gx0 / L.cell - cx);
+    const y = Math.round(gz0 / L.cell - cy);
     if (ghost && ghost.x === x && ghost.y === y && ghost.rot === rot) return;
     const why = whyNot(L, placing.area, x, y, rot, placing.move ?? null);
     setGhost({ x, y, rot, why });
@@ -308,8 +408,9 @@ export function Depot3D({ p, names, w, h, selected, hover, onPick, onFail, placi
     if (!view || !s) return null;
     const [x, y] = at(e);
     const { o, d } = view.ray(x, y);
-    const k = pickBus(s.buses, o, d);
-    return k < 0 ? null : s.buses[k];
+    const list = shown.current;
+    const k = pickBus(list, o, d);
+    return k < 0 ? null : list[k];
   };
 
   const down = (e) => {
@@ -320,9 +421,11 @@ export function Depot3D({ p, names, w, h, selected, hover, onPick, onFail, placi
   const move = (e) => {
     const view = r.current;
     if (!view) return;
+    // (no button held, no drag: one let go where the canvas did not hear it is over)
+    if (drag.current && e.buttons === 0) drag.current = null;
     const g = drag.current;
+    pointer.current = { clientX: e.clientX, clientY: e.clientY };
     if (!g && placing) {
-      pointer.current = { clientX: e.clientX, clientY: e.clientY };
       aimGhost(e);
       return;
     }
@@ -384,7 +487,10 @@ export function Depot3D({ p, names, w, h, selected, hover, onPick, onFail, placi
   const card = sel && s?.picks.find((o) => o.id === sel);
   const hint = placing ? tr('Click to put it down, R to turn it, Esc to stop') : flat ? tr('Drag to move, scroll to zoom') : tr('Drag to turn, right-drag to move, scroll to zoom');
   return html`<div class="cm-plan cm-plan3d" data-buses=${s ? s.buses.length : 0} data-people=${crowd.current} style=${`width:${w}px;height:${h}px`}>
-    <canvas key=${level} ref=${canvas} class=${under ? 'on-bus' : ''} style=${`width:${w}px;height:${h}px`} onPointerDown=${down} onPointerMove=${move} onPointerUp=${up} onPointerLeave=${() => !drag.current && under !== null && setUnder(null)} onContextMenu=${(e) => e.preventDefault()}></canvas>
+    <canvas key=${level} ref=${canvas} class=${under ? 'on-bus' : ''} style=${`width:${w}px;height:${h}px`} onPointerDown=${down} onPointerMove=${move} onPointerUp=${up} onPointerLeave=${() => {
+      pointer.current = null;
+      if (!drag.current && under !== null) setUnder(null);
+    }} onContextMenu=${(e) => e.preventDefault()}></canvas>
     <div class="dp-tags" ref=${tags}>${s?.labels.map(tagFor)}</div>
     ${tip && !placing && html`<div class="dp-tip">${tip.tip}</div>`}
     ${placing && html`<div class="dp-place">

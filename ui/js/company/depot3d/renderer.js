@@ -863,12 +863,12 @@ export class DepotRenderer {
     return { o: a.slice(0, 3), d: unit([b[0] - a[0], b[1] - a[1], b[2] - a[2]]) };
   }
 
-  /** Where the ground is under a point of the canvas, as the camera's (tx, tz); null above
-   * the horizon. */
-  ground(x, y) {
+  /** Where the ground (or the level `h` metres over it) is under a point of the canvas, as the
+   * camera's (tx, tz); null above the horizon. */
+  ground(x, y, h = 0) {
     const { o, d } = this.ray(x, y);
-    if (d[1] > -1e-4) return null;
-    const t = -o[1] / d[1];
+    if (d[1] > -1e-4 || o[1] <= h) return null;
+    const t = (h - o[1]) / d[1];
     const b = this.bounds || { x0: 0, x1: 0, z0: 0, z1: 0 };
     return [o[0] + d[0] * t - (b.x0 + b.x1) / 2, o[2] + d[2] * t - (b.z0 + b.z1) / 2];
   }

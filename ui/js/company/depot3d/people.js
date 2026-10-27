@@ -169,7 +169,7 @@ export function rounds(scene, staff, colour) {
   }
 
   // the drivers: from the offices to a bus in the spaces and back
-  const parked = scene.buses.filter((b) => b.at === 'parked');
+  const parked = scene.buses.filter((b) => b.at === 'parked' && !b.out);
   const drivers = Math.min(staff.drivers || 0, MOST.drivers, parked.length + 4);
   for (let k = 0; k < drivers; k++) {
     const b = parked[Math.floor(rnd() * parked.length)];
