@@ -20,6 +20,8 @@ Each version of the Omsi-Hub add-on, newest first. The release on GitHub links h
   paid time, and then every piece: its running number and bus, every trip with each stop and
   its time, the timing points marked, the reliefs (from which duty, to which) and the breaks.
   The cards carry the company's logo picture (or its monogram and name) and its colour.
+- **RosterFlow's complete handbook**: the "?" in RosterFlow's title bar has **The complete
+  handbook (English)**, which opens the whole handbook (PDF) in your browser.
 
 ### Changed
 

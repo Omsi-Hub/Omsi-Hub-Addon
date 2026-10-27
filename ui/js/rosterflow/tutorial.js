@@ -1,6 +1,6 @@
 // RosterFlow's tutorial (`crates/omsi-launcher-ui/src/company/planning/rf_tutorial.rs` and
 // RosterFlow's part of `tour.rs`; Luc: "build a tutorial for the new RosterFlow: I no longer
-// understand how it works, let alone other players"). Three parts, all from the "?" in
+// understand how it works, let alone other players"). Four parts, all from the "?" in
 // RosterFlow's title bar:
 //
 // * The guided tour: a spotlight and a bubble over RosterFlow - what it is for (the chain from
@@ -14,6 +14,8 @@
 //   changes or undoes the lesson.
 // * The help sheet ("RosterFlow in 2 minutes"): the chain, the words with a small drawing of each
 //   chip and symbol, the shortcuts, and what to do when something is red.
+// * The complete handbook: RosterFlow's PDF in English on omsihub.com's Docs page, opened in the
+//   player's browser.
 //
 // What a driver has seen is kept in `~/.openomsi/rosterflow-tour.json` (`rf_tut`), the file our
 // game-drawn launcher keeps it in.
@@ -26,10 +28,14 @@ import * as D from './draw.js';
 import { CHIP } from './draw.js';
 import { setRf, setPart, rfCmd, after, bump, say, ROSTER, VEHICLES, DRIVERS, TIMEPLAN } from './state.js';
 import { Icon } from './ui.js';
+import { openUrl } from '../api.js';
 import { anchored } from './anchors.js';
 import { drawMark } from './brand.js';
 
 const tutSet = (patch) => setPart('tut', patch);
+
+/** The complete handbook, in English (the website's `public/docs/`, its Docs page). */
+const HANDBOOK = 'https://omsihub.com/docs/rosterflow-handbook-en.pdf';
 
 // --- the guided tour's stops -------------------------------------------------------------------------
 
@@ -379,6 +385,7 @@ function Menu() {
     ${LESSONS.map(([id, title]) => html`<button type="button" onClick=${() => beginLesson(id)}><${Icon} name="school" size=${17} /><span class="cut">${tr(title)}</span>${(seen.lessons || []).includes(id) && html`<${Icon} name="check_circle" size=${17} class="ok" />`}</button>`)}
     <span class="head">${tr('Help').toUpperCase()}</span>
     <button type="button" onClick=${() => tutSet({ menu: false, sheet: true })}><${Icon} name="description" size=${17} /><span class="cut">${tr('RosterFlow in 2 minutes')}</span></button>
+    <button type="button" title=${tr('The complete RosterFlow handbook in English (PDF, 73 pages): it opens in your browser')} onClick=${() => (tutSet({ menu: false }), openUrl(HANDBOOK).catch(() => {}))}><${Icon} name="open_in_new" size=${17} /><span class="cut">${tr('The complete handbook (English)')}</span></button>
   </div>`;
 }
 
