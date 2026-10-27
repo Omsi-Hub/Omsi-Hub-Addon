@@ -2,7 +2,11 @@
 
 Each version of the Omsi-Hub add-on, newest first. The release on GitHub links here.
 
-## Unreleased
+## 1.2.0-beta.1
+
+A test build for the beta testers. It needs **openOMSI 0.2.22 or newer** and an original
+**OMSI 2**; only your own buses in the game needs an openOMSI with `timetable.set_ai_trips`.
+The app does not update a test build: install the next version yourself.
 
 ### Added
 
