@@ -544,15 +544,25 @@ impl Marker {
     }
 }
 
-/// How each trip of a block runs: the lateness model's, the player's tours by the delay the game
-/// reported (on time when it did not).
+/// How each trip of a block runs: the lateness model's, the player's tours and the player's own
+/// duty by the delay the game reported (on time when it did not).
 fn runs_of(m: &MapState, day: &Day, tp: &co::day::TourPlan, b: &Block) -> Vec<Run> {
+    let d = m.delays.get(&(b.number.to_lowercase(), b.tour.trim().to_string())).copied().unwrap_or(0.0);
     if tp.by_player {
-        let d = m.delays.get(&(b.number.to_lowercase(), b.tour.trim().to_string())).copied().unwrap_or(0.0);
         return vec![Run::late(d, d); b.trips.len()];
     }
+    // (the model leaves out the player's duty - nobody's employee drives it -: its trips ran as
+    // not run, and the bus stood at the terminus for the next duty of the company's driver while
+    // the player drove it - a beta tester's)
+    let players = |j: usize| tp.duties.iter().any(|x| x.driver == Some(PLAYER) && x.start <= j && j < x.end);
     let row = day.model.get(b.ti);
-    (0..b.trips.len()).map(|j| row.and_then(|r| r.get(j)).and_then(|x| x.as_ref()).map_or(Run::default(), |t| Run::late(t.dep * 60.0, t.arr * 60.0))).collect()
+    (0..b.trips.len())
+        .map(|j| match row.and_then(|r| r.get(j)).and_then(|x| x.as_ref()) {
+            Some(t) => Run::late(t.dep * 60.0, t.arr * 60.0),
+            None if players(j) => Run::late(d, d),
+            None => Run::default(),
+        })
+        .collect()
 }
 
 /// The fleet map's view at its clock (asked for a few times a second): the clock, the lines

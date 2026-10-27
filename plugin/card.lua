@@ -8,6 +8,7 @@
 -- close button (or Enter, or Escape) puts it away.
 
 local career = require("career")
+local layout = require("layout")
 
 local M = {}
 
@@ -113,6 +114,18 @@ local function stars(n)
   return row
 end
 
+-- the size the card is shown at, so that it covers at most a fifth of the screen (`high`: about
+-- how high it is at its own size): openOMSI gives a card over a quarter no click without F10,
+-- and a large interface size on a small window made the card that large (a beta tester could
+-- neither keep it, nor close it, nor open its stops)
+local function fit(high)
+  local w, h = 0, 0
+  if omsi.ui.screen then w, h = omsi.ui.screen() end
+  w, h = tonumber(w) or 0, tonumber(h) or 0
+  if w <= 0 or h <= 0 then return 1 end
+  return math.max(math.min(math.sqrt(0.2 * w * h / (400 * high)), 1), 0.6)
+end
+
 local function panel(s)
   local run, e = s.run, s.judged
   local timed = not run.free and run.stops > 0
@@ -197,7 +210,9 @@ local function panel(s)
   add({ type = "text", size = 11, color = FAINT, text = (s.saved and tr("Saved to your service record") or tr("The trip could not be saved")) .. "  ·  " .. (s.pinned and tr("Enter or × to close") or tr("Click to keep it open")) })
   -- (the time it has left, as a line along its foot)
   if not s.pinned then add({ type = "bar", id = "left", height = 2, value = math.max(s.left / SHOW_FOR, 0), color = ink, background = "#00000000" }) end
-  omsi.ui.set(PANEL, { anchor = "top", x = 0, y = 70, width = 400, padding = 18, gap = 7, radius = 12, background = SHEET, font = "launcher", clickable = not s.pinned, grab = true, children = children })
+  local t = { anchor = "top", x = 0, y = 70, width = 400, padding = 18, gap = 7, radius = 12, background = SHEET, font = "launcher", clickable = not s.pinned, grab = true, children = children }
+  local k = fit(s.tab == 2 and timed and 240 + 18 * #(run.visits or {}) or (timed and 480 or 340))
+  omsi.ui.set(PANEL, k < 1 and layout.sized(t, k, 0, 0) or t)
 end
 
 local function show(run, saved)

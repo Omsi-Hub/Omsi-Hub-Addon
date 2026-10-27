@@ -201,7 +201,8 @@ end
 -- (signing on is out for now (Luc, 2026-10-25: "Het aanmelden ... mogen er voor nu wel even
 -- uit"): the driver is at work at once, the duty's codes in the IBIS as without a pass)
 local SIGN_ON = false
-if SIGN_ON and company_duty() then signon.setup(tr, assignment) end
+-- (its translator always: the panel's heading is its too; the pass only with signing on)
+signon.setup(tr, SIGN_ON and company_duty() and assignment or nil)
 -- (the on-time card: punctuality, headway, connections, diversions - `ontime.lua`, its own)
 local ontime = require("ontime")
 local fleet = require("fleet")
