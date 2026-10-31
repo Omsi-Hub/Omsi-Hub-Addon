@@ -88,7 +88,9 @@ impl Session {
 /// A request of the page (`le`): `op` and what it takes; the answer is the view, or - for
 /// `map_data` - the map's roads and stops.
 pub(crate) fn serve(req: &Value) -> Value {
+    let t0 = std::time::Instant::now();
     let mut guard = SESSION.lock().unwrap_or_else(|e| e.into_inner());
+    let waited = t0.elapsed();
     let s = guard.get_or_insert_with(Session::new);
     // (the page's language: the texts answered are in it)
     if let Some(lang) = req.get("lang").and_then(Value::as_str) {
@@ -101,12 +103,25 @@ pub(crate) fn serve(req: &Value) -> Value {
         frame(s);
         return map_data(s);
     }
+    let t1 = std::time::Instant::now();
     if let Err(e) = ops::apply(s, op, req) {
         s.say(e, true);
     }
+    let t2 = std::time::Instant::now();
     frame(s);
-    view::view(s)
+    let t3 = std::time::Instant::now();
+    let answer = view::view(s);
+    // (a slow one in the log with where its time went: waiting for the one before, the change,
+    // the frame's work, the view)
+    if t0.elapsed() >= SLOW {
+        let ms = |d: std::time::Duration| d.as_millis();
+        core::log_to_file(&format!("slow: hub_le {op}: waited {} ms, change {} ms, frame {} ms, view {} ms", ms(waited), ms(t2 - t1), ms(t3 - t2), ms(t3.elapsed())));
+    }
+    answer
 }
+
+/// A request of the page slower than this is written in the log with its parts.
+const SLOW: std::time::Duration = std::time::Duration::from_millis(250);
 
 // --- the map ---------------------------------------------------------------------------------
 

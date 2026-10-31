@@ -11,6 +11,7 @@ use crate::{arg, Answer};
 use hub_omsi::Vfs;
 use serde_json::{json, Value};
 use std::collections::{HashMap, HashSet};
+use std::sync::Arc;
 
 /// A depot file as the fit sees it: its name, the routes its IBIS knows, the destinations it
 /// shows.
@@ -127,12 +128,14 @@ fn best_of(vfs: &Vfs, map: &str, date: &str, free: bool, trips: &[(String, Strin
     let chrono = day.map(|d| hub_omsi::map::active_chrono_dirs(&map_dir, d)).unwrap_or_default();
     let ai = hub_omsi::map::AiLists::with_chrono(&map_dir, &chrono);
     let fleet = fleet_of(&ai, day.map(hub_omsi::map::code_of));
-    let mut read: HashMap<String, Vec<Depot>> = HashMap::new();
+    // (each depot file read once: the buses of a folder share them; and kept for the next duty)
+    static DEPOTS: hub_omsi::vfs::Kept<Arc<Depot>> = hub_omsi::vfs::Kept::new();
+    let mut read: HashMap<String, Vec<Arc<Depot>>> = HashMap::new();
     let mut weigh = |(file, name): &(String, String)| -> Candidate {
         let wagons = fleet.get(&key(file)).copied().unwrap_or(0.0);
         let mut c = Candidate { file: file.clone(), name: name.clone(), fit: 0.0, depot: String::new(), wagons };
         if !free {
-            let depots = read.entry(key(file)).or_insert_with(|| bus_depot_files(vfs, file, false).iter().filter_map(|f| hub_omsi::hof::Hof::load(f).ok()).map(|h| depot_of(&h)).collect());
+            let depots = read.entry(key(file)).or_insert_with(|| bus_depot_files(vfs, file, false).iter().filter_map(|f| DEPOTS.get(f, |f| hub_omsi::hof::Hof::load(f).ok().map(|h| Arc::new(depot_of(&h))))).collect());
             for d in depots.iter() {
                 let fit = knows(d, trips) as f32 / trips.len().max(1) as f32;
                 if fit > c.fit {

@@ -341,8 +341,8 @@ impl Comments {
 
 /// The `.hof` files of a folder, sorted by name.
 pub fn depot_files(dir: &Path) -> Vec<PathBuf> {
-    let mut out: Vec<PathBuf> =
-        std::fs::read_dir(dir).map(|r| r.flatten().map(|e| e.path()).filter(|p| p.is_file() && p.extension().is_some_and(|x| x.eq_ignore_ascii_case("hof"))).collect()).unwrap_or_default();
+    let entries = crate::vfs::listing(dir);
+    let mut out: Vec<PathBuf> = entries.iter().flat_map(|l| &l.entries).filter(|e| !e.is_dir && e.path.extension().is_some_and(|x| x.eq_ignore_ascii_case("hof"))).map(|e| e.path.clone()).collect();
     out.sort();
     out
 }

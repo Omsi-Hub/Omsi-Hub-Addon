@@ -5,7 +5,10 @@
 
 use crate::text::CfgFile;
 use crate::ReadError;
+use std::collections::HashMap;
 use std::path::{Path, PathBuf};
+use std::sync::{Arc, Mutex};
+use std::time::{Duration, SystemTime};
 
 /// Two file names are the same name but for case (any letters, not only ASCII: `Grünau` is
 /// `GRÜNAU`), as Windows takes them.
@@ -22,12 +25,193 @@ pub fn normalize(rel: &str) -> String {
 /// A file or folder of `dir` by its name, in any case: the exact name first, else the first
 /// one equal but for case. The name comes back as it is on disk.
 pub fn find_child(dir: &Path, name: &str) -> Option<PathBuf> {
-    let exact = dir.join(name);
-    let entries: Vec<PathBuf> = std::fs::read_dir(dir).ok()?.flatten().map(|e| e.path()).collect();
-    if let Some(p) = entries.iter().find(|p| p.file_name().is_some_and(|n| n.to_string_lossy() == name)) {
-        return Some(p.clone());
+    let listing = listing(dir)?;
+    if let Some(&i) = listing.exact.get(name) {
+        return Some(listing.entries[i].path.clone());
     }
-    entries.into_iter().find(|p| p.file_name().is_some_and(|n| same_name(&n.to_string_lossy(), name))).or_else(|| exact.exists().then_some(exact))
+    let alike = listing.folded.get(&name.to_lowercase()).into_iter().flatten();
+    alike.map(|&i| &listing.entries[i]).find(|e| same_name(&e.name, name)).map(|e| e.path.clone()).or_else(|| {
+        // (a name the listing cannot have but the system finds: Windows's short names, `PROGRA~1`,
+        // and a name it ends with a dot or a blank, which it drops)
+        let exact = dir.join(name);
+        (name.contains('~') || name.ends_with(['.', ' '])).then_some(exact).filter(|p| p.exists())
+    })
+}
+
+/// One name of a folder as [`listing`] read it.
+#[derive(Debug)]
+pub struct Entry {
+    /// As it is on disk.
+    pub name: String,
+    pub path: PathBuf,
+    pub is_dir: bool,
+}
+
+/// A folder's names, in the order the system gave them, with their indexes by the exact name and
+/// by the name in lower case (every one of that name, in their order).
+#[derive(Debug)]
+pub struct Listing {
+    pub entries: Vec<Entry>,
+    exact: HashMap<String, usize>,
+    folded: HashMap<String, Vec<usize>>,
+}
+
+/// A folder's names, kept while the folder is unchanged (its time of change the same): every
+/// part of every path looked up in any case is its folder read, and one look at the buses or a
+/// bus's textures reads `Vehicles` or a texture folder thousands of times over. A folder changed
+/// in the last seconds is read again each time (a coarse clock, as FAT's, may not show the next
+/// change). In a [`Pass`], a folder checked once is not checked again. None: `dir` is no folder.
+pub fn listing(dir: &Path) -> Option<Arc<Listing>> {
+    static KEPT: Mutex<Option<HashMap<PathBuf, (SystemTime, Arc<Listing>)>>> = Mutex::new(None);
+    if checked_in_pass(dir) {
+        let kept = KEPT.lock().unwrap_or_else(|e| e.into_inner());
+        if let Some((_, l)) = kept.as_ref().and_then(|k| k.get(dir)) {
+            return Some(l.clone());
+        }
+    }
+    let changed = std::fs::metadata(dir).ok()?.modified().ok();
+    if let Some(changed) = changed {
+        let kept = KEPT.lock().unwrap_or_else(|e| e.into_inner());
+        if let Some((at, l)) = kept.as_ref().and_then(|k| k.get(dir)) {
+            if *at == changed {
+                return Some(l.clone());
+            }
+        }
+    }
+    let mut entries = Vec::new();
+    for e in std::fs::read_dir(dir).ok()?.flatten() {
+        let path = e.path();
+        // (the kind from the folder's own listing; a link followed to what it points at)
+        let is_dir = match e.file_type() {
+            Ok(t) if !t.is_symlink() => t.is_dir(),
+            _ => path.is_dir(),
+        };
+        entries.push(Entry { name: e.file_name().to_string_lossy().into_owned(), path, is_dir });
+    }
+    let (mut exact, mut folded) = (HashMap::new(), HashMap::<String, Vec<usize>>::new());
+    for (i, e) in entries.iter().enumerate() {
+        exact.entry(e.name.clone()).or_insert(i);
+        folded.entry(e.name.to_lowercase()).or_default().push(i);
+    }
+    let l = Arc::new(Listing { entries, exact, folded });
+    let settled = changed.filter(|c| SystemTime::now().duration_since(*c).is_ok_and(|d| d >= SETTLED));
+    let mut kept = KEPT.lock().unwrap_or_else(|e| e.into_inner());
+    let kept = kept.get_or_insert_with(HashMap::new);
+    match settled {
+        Some(changed) => {
+            if kept.len() >= KEPT_MAX {
+                kept.clear();
+            }
+            kept.insert(dir.to_path_buf(), (changed, l.clone()));
+        }
+        // (nor an older listing of it left for a pass to take)
+        None => {
+            kept.remove(dir);
+        }
+    }
+    Some(l)
+}
+
+/// A folder changed longer ago than this is kept by [`listing`].
+const SETTLED: Duration = Duration::from_secs(3);
+/// The folders [`listing`] keeps at most, and the files a [`Kept`] (past it, it starts again).
+const KEPT_MAX: usize = 10_000;
+
+thread_local! {
+    /// The folders and files checked in this thread's [`Pass`] (None: none is on).
+    static PASS: std::cell::RefCell<Option<std::collections::HashSet<PathBuf>>> = const { std::cell::RefCell::new(None) };
+}
+
+/// A look at the content that only reads (the buses listed, a bus opened in 3D, a map's lines):
+/// while it lasts, a folder or file whose time of change was checked once on this thread is
+/// taken as unchanged after, and not checked again. Each check is the system opening the file;
+/// on a computer whose virus scanner looks at every one that is a tenth of a millisecond, and
+/// one look at the buses checks the same folders tens of thousands of times. Nothing that writes
+/// may run in one: what it wrote would not be seen. A pass begun inside another is part of it.
+#[must_use]
+pub struct Pass {
+    outer: bool,
+}
+
+impl Pass {
+    pub fn begin() -> Pass {
+        PASS.with(|p| {
+            let mut p = p.borrow_mut();
+            let outer = p.is_none();
+            if outer {
+                *p = Some(Default::default());
+            }
+            Pass { outer }
+        })
+    }
+}
+
+impl Drop for Pass {
+    fn drop(&mut self) {
+        if self.outer {
+            PASS.with(|p| *p.borrow_mut() = None);
+        }
+    }
+}
+
+/// `path` was checked before in this thread's [`Pass`]; it is marked checked from now on (false:
+/// no pass is on, or this is its first check).
+pub fn checked_in_pass(path: &Path) -> bool {
+    PASS.with(|p| p.borrow_mut().as_mut().is_some_and(|set| !set.insert(path.to_path_buf())))
+}
+
+/// What was read of files, each kept while the file is unchanged (its time of change and size
+/// the same as when it was read; in a [`Pass`], checked once): a `static` of a reader that reads
+/// the same files over and over (a bus's paints, the depot files a bus folder shares).
+pub struct Kept<T> {
+    files: Mutex<Option<HashMap<PathBuf, (SystemTime, u64, T)>>>,
+}
+
+impl<T: Clone> Kept<T> {
+    pub const fn new() -> Kept<T> {
+        Kept { files: Mutex::new(None) }
+    }
+
+    /// What `read` makes of the file `path`: kept, or read now (None: not read).
+    pub fn get(&self, path: &Path, read: impl FnOnce(&Path) -> Option<T>) -> Option<T> {
+        let lock = || self.files.lock().unwrap_or_else(|e| e.into_inner());
+        let found = |stamp: Option<(SystemTime, u64)>| -> Option<T> {
+            let k = lock();
+            let (at, len, v) = k.as_ref()?.get(path)?;
+            stamp.is_none_or(|s| s == (*at, *len)).then(|| v.clone())
+        };
+        if checked_in_pass(path) {
+            if let Some(v) = found(None) {
+                return Some(v);
+            }
+        }
+        let stamp = std::fs::metadata(path).ok().and_then(|m| Some((m.modified().ok()?, m.len())));
+        if let Some(v) = stamp.and_then(|s| found(Some(s))) {
+            return Some(v);
+        }
+        let v = read(path);
+        let mut k = lock();
+        let k = k.get_or_insert_with(HashMap::new);
+        match (stamp, &v) {
+            (Some((at, len)), Some(v)) => {
+                if k.len() >= KEPT_MAX {
+                    k.clear();
+                }
+                k.insert(path.to_path_buf(), (at, len, v.clone()));
+            }
+            // (nor what was read before left for a pass to take)
+            _ => {
+                k.remove(path);
+            }
+        }
+        v
+    }
+}
+
+impl<T: Clone> Default for Kept<T> {
+    fn default() -> Self {
+        Kept::new()
+    }
 }
 
 /// `rel` under `base` (`/` or `\`), each part found in any case.
@@ -118,12 +302,10 @@ impl Vfs {
     pub fn list_dir(&self, rel: &str) -> Vec<(String, bool)> {
         let mut out: Vec<(String, bool)> = Vec::new();
         for b in &self.bases {
-            let Some(dir) = resolve_in(b, rel).filter(|d| d.is_dir()) else { continue };
-            let Ok(entries) = std::fs::read_dir(dir) else { continue };
-            for e in entries.flatten() {
-                let name = e.file_name().to_string_lossy().into_owned();
-                if !out.iter().any(|(n, _)| same_name(n, &name)) {
-                    out.push((name, e.path().is_dir()));
+            let Some(entries) = resolve_in(b, rel).and_then(|d| listing(&d)) else { continue };
+            for e in &entries.entries {
+                if !out.iter().any(|(n, _)| same_name(n, &e.name)) {
+                    out.push((e.name.clone(), e.is_dir));
                 }
             }
         }
@@ -184,6 +366,41 @@ mod tests {
         assert_eq!(vfs.read("Vehicles/Bus/bus.bus").unwrap(), b"archive");
         assert_eq!(vfs.list_dir("Vehicles").into_iter().map(|(n, _)| n).collect::<Vec<_>>(), ["Big", "Bus"]);
         assert_eq!(vfs.root(), root.as_path());
+    }
+
+    #[test]
+    fn what_is_kept_of_a_file_is_read_again_once_it_changed_but_not_in_a_pass() {
+        let d = dir("kept");
+        let f = d.join("paint.cti");
+        std::fs::write(&f, "a").unwrap();
+        let kept: Kept<String> = Kept::new();
+        let reads = std::cell::Cell::new(0);
+        let get = || kept.get(&f, |p| (reads.set(reads.get() + 1), std::fs::read_to_string(p).ok()).1);
+        assert_eq!((get().as_deref(), get().as_deref(), reads.get()), (Some("a"), Some("a"), 1));
+        std::fs::write(&f, "bb").unwrap();
+        assert_eq!((get().as_deref(), reads.get()), (Some("bb"), 2));
+        // (in a pass, checked once: a change after it is not seen until the pass is over)
+        {
+            let _pass = Pass::begin();
+            assert_eq!(get().as_deref(), Some("bb"));
+            std::fs::write(&f, "ccc").unwrap();
+            assert_eq!((get().as_deref(), reads.get()), (Some("bb"), 2));
+        }
+        assert_eq!((get().as_deref(), reads.get()), (Some("ccc"), 3));
+        // a file gone is no longer kept
+        std::fs::remove_file(&f).unwrap();
+        assert_eq!(get(), None);
+    }
+
+    #[test]
+    fn a_name_is_found_in_any_case_in_a_folder_just_changed() {
+        let d = dir("listing");
+        std::fs::write(d.join("Model.CFG"), "").unwrap();
+        assert_eq!(find_child(&d, "model.cfg"), Some(d.join("Model.CFG")));
+        std::fs::write(d.join("new.cti"), "").unwrap();
+        assert_eq!(find_child(&d, "NEW.cti"), Some(d.join("new.cti")));
+        assert!(find_child(&d, "none.cti").is_none());
+        assert_eq!(listing(&d).unwrap().entries.len(), 2);
     }
 
     #[test]

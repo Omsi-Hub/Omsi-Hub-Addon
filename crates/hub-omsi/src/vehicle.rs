@@ -22,7 +22,7 @@
 //! folder) and its numbers with their plates.
 
 use crate::text::{parse_f32, parse_i32, CfgFile, Reader};
-use crate::vfs::resolve_in;
+use crate::vfs::{resolve_in, Kept};
 use crate::ReadError;
 use std::path::{Path, PathBuf};
 
@@ -192,7 +192,7 @@ impl Bus {
         let mut b = Bus::parse(&CfgFile::read(path)?);
         b.path = path.to_path_buf();
         let dir = b.dir().to_path_buf();
-        b.ctc_dirs = b.model.as_deref().and_then(|m| resolve_in(&dir, m)).and_then(|m| CfgFile::read(m).ok()).map(|m| ctc_dirs_of(&m)).unwrap_or_default();
+        b.ctc_dirs = b.model.as_deref().and_then(|m| resolve_in(&dir, m)).and_then(|m| model_ctc_dirs(&m)).unwrap_or_default();
         b.ctc_dir = b.ctc_dirs.first().cloned();
         b.paints = paints_in_dirs(&b.ctc_dirs.iter().filter_map(|c| resolve_in(&dir, c)).collect::<Vec<_>>());
         b.numbers = b.read_numbers();
@@ -285,6 +285,13 @@ impl Bus {
     }
 }
 
+/// The `[CTC]` paint folders of the `model.cfg` at `path` ([`ctc_dirs_of`]; None: not read).
+/// (Kept: the variants of a bus share one `model.cfg`.)
+fn model_ctc_dirs(path: &Path) -> Option<Vec<String>> {
+    static CTC: Kept<Vec<String>> = Kept::new();
+    CTC.get(path, |p| CfgFile::read(p).ok().map(|m| ctc_dirs_of(&m)))
+}
+
 /// Every `[CTC]` paint folder of a `model.cfg` (relative to the bus's folder), each once.
 fn ctc_dirs_of(model: &CfgFile) -> Vec<String> {
     let mut out: Vec<String> = Vec::new();
@@ -320,8 +327,8 @@ impl Bus {
     /// the model found in any of them too. [`Bus::load`] reads only the bus's own folder.
     pub fn paints_in_vfs(&self, vfs: &crate::Vfs) -> Vec<String> {
         let Some(dir) = vfs.relative(self.dir()) else { return self.paints.clone() };
-        let model = self.model.as_deref().and_then(|m| join_rel(&dir, m)).and_then(|m| vfs.read_cfg(&m).ok());
-        let ctc = model.map(|m| ctc_dirs_of(&m)).unwrap_or_else(|| self.ctc_dirs.clone());
+        let model = self.model.as_deref().and_then(|m| join_rel(&dir, m)).and_then(|m| vfs.resolve(&m));
+        let ctc = model.and_then(|m| model_ctc_dirs(&m)).unwrap_or_else(|| self.ctc_dirs.clone());
         let mut dirs: Vec<PathBuf> = Vec::new();
         for c in ctc.iter().filter_map(|c| join_rel(&dir, c)) {
             dirs.extend(vfs.bases().iter().filter_map(|b| resolve_in(b, &c)).filter(|d| d.is_dir()));
@@ -341,20 +348,21 @@ pub fn paints_in(dir: &Path) -> Vec<String> {
 pub fn paints_in_dirs(dirs: &[PathBuf]) -> Vec<String> {
     let mut files: Vec<PathBuf> = Vec::new();
     for dir in dirs {
-        let Ok(entries) = std::fs::read_dir(dir) else { continue };
-        let mut here: Vec<PathBuf> = entries.flatten().map(|e| e.path()).filter(|p| p.is_file() && p.extension().is_some_and(|x| x.eq_ignore_ascii_case("cti"))).collect();
-        here.sort_by_key(|p| p.file_name().map(|n| n.to_string_lossy().to_lowercase()));
+        let Some(entries) = crate::vfs::listing(dir) else { continue };
+        let mut here: Vec<&crate::vfs::Entry> = entries.entries.iter().filter(|e| !e.is_dir && e.path.extension().is_some_and(|x| x.eq_ignore_ascii_case("cti"))).collect();
+        here.sort_by_key(|e| e.name.to_lowercase());
         for f in here {
-            let name = f.file_name().map(|n| n.to_string_lossy().into_owned()).unwrap_or_default();
-            if !files.iter().any(|o| o.file_name().is_some_and(|n| crate::vfs::same_name(&n.to_string_lossy(), &name))) {
-                files.push(f);
+            if !files.iter().any(|o| o.file_name().is_some_and(|n| crate::vfs::same_name(&n.to_string_lossy(), &f.name))) {
+                files.push(f.path.clone());
             }
         }
     }
     let mut out: Vec<String> = Vec::new();
     for f in files {
         // (a .cti may hold several liveries, an [item] each: the game offers every one)
-        let mut items: Vec<String> = CfgFile::read(&f).map(|c| c.blocks("item").iter().filter_map(|b| b.first()).map(|s| s.trim().to_string()).filter(|s| !s.is_empty()).collect()).unwrap_or_default();
+        static ITEMS: Kept<Vec<String>> = Kept::new();
+        let read = |f: &Path| CfgFile::read(f).ok().map(|c| c.blocks("item").iter().filter_map(|b| b.first()).map(|s| s.trim().to_string()).filter(|s| !s.is_empty()).collect());
+        let mut items: Vec<String> = ITEMS.get(&f, read).unwrap_or_default();
         if items.is_empty() {
             items.push(f.file_stem().map(|s| s.to_string_lossy().into_owned()).unwrap_or_default());
         }

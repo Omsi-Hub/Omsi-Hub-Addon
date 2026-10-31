@@ -134,8 +134,29 @@ pub fn to_json<T: serde::Serialize>(v: T) -> Answer {
     serde_json::to_value(v).map_err(|e| e.to_string())
 }
 
+/// The commands that only read the OMSI 2 content (nothing they do writes a file): each runs in a
+/// [`hub_omsi::vfs::Pass`], its folders and files checked for changes once rather than at every
+/// look - on a computer whose virus scanner looks at every file opened, most of their time.
+const READ_ONLY: &[&str] = &[
+    "hub_maps",
+    "hub_buses",
+    "hub_weather",
+    "hub_lines",
+    "hub_default_hof",
+    "hub_ibis",
+    "hub_route_map",
+    "hub_map_facts",
+    "hub_weather_extras",
+    "hub_own_lines",
+    "hub_depots",
+    "hub_shifts",
+    "hub_duty_extras",
+    "hub_more_bus_best",
+];
+
 /// A command of the page.
 pub fn call(cmd: &str, args: &Value, p: &dyn Platform) -> Answer {
+    let _pass = READ_ONLY.contains(&cmd).then(hub_omsi::vfs::Pass::begin);
     match cmd {
         #[cfg(feature = "native")]
         c if c.starts_with("hub_update") => update::call(c, args, p),
