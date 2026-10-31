@@ -705,7 +705,8 @@ function toRf(o) {
 
 /** A way on from the card: RosterFlow, a page of the company, the bus's own. */
 function go(l) {
-  if (l.rf) toRf(l.rf);
+  if (l.take) actMore('map_take', { duty: l.take, back: !!l.back });
+  else if (l.rf) toRf(l.rf);
   else if (l.bus != null) setCo({ dialog: { kind: 'vehicle', id: l.bus } });
   else if (l.tab != null) goTab(l.tab);
 }
@@ -713,7 +714,7 @@ function go(l) {
 /** The card of the bus picked (`fleetmap::bus_card`): its head, the bus, what it does and its
  * delay, its day, what happened to it, and the ways on. */
 function Card({ c, tip, onClose }) {
-  const links = (c.links || []).filter((l) => !(l.rf && S.co?.remote));
+  const links = (c.links || []).filter((l) => !((l.rf || l.take) && S.co?.remote));
   return html`<div class="fm-head">
       <${Plate} p=${c.head.plate} h=${22} />
       <span class="fm-title cut">${c.head.title}</span>
@@ -747,7 +748,7 @@ function Card({ c, tip, onClose }) {
         </div>
         ${c.notes?.length > 0 &&
         html`<div class="fm-notes">${c.notes.map((n) => html`<p class=${'fm-note fm-note-' + n.tone}><${Icon} name=${n.icon} size=${15} /><span>${n.text}</span></p>`)}</div>`}
-        ${links.length > 0 && html`<div class="fm-links">${links.map((l) => html`<${Btn} icon=${l.icon} label=${l.label} small onClick=${() => go(l)} />`)}</div>`}`}
+        ${links.length > 0 && html`<div class="fm-links">${links.map((l) => html`<${Btn} kind=${l.main ? 'primary' : undefined} icon=${l.icon} label=${l.label} small onClick=${() => go(l)} />`)}</div>`}`}
     </div>`;
 }
 

@@ -86,8 +86,10 @@ pub enum Hitch {
     NoDriver,
     /// Someone else is planned on the duty (their name).
     NotYours(String),
-    /// The player drove it already.
+    /// The player drove it already: every trip of it the game reported.
     Driven,
+    /// His game ended before the duty did, and the AI drove the rest of it (`own`).
+    AiDone,
     /// Its day or its time is over on the company's clock.
     Over,
     /// The day's timetable no longer has its trips as the plan has them.
@@ -107,6 +109,9 @@ impl Hitch {
             Hitch::NoDriver => ("Nobody is planned on this duty", "Plan yourself on it in RosterFlow (\"You\") to drive it."),
             Hitch::NotYours(_) => ("Another driver is planned on this duty", "Plan yourself on it in RosterFlow (\"You\") to drive it."),
             Hitch::Driven => ("You drove this duty already", "Its trips are reported to the company. Choose another duty of yours in RosterFlow."),
+            Hitch::AiDone => {
+                ("The AI drove the rest of this duty", "Your game ended before the duty did: the trips you drove are yours, the AI drove the others. Choose another duty of yours in RosterFlow.")
+            }
             Hitch::Over => ("The time of this duty has passed", "The company's clock is past its end. Choose a later duty in RosterFlow."),
             Hitch::Timetable => ("The timetable changed", "The day's timetable no longer has this duty's trips as planned. Plan the day again in RosterFlow."),
         }
@@ -142,6 +147,22 @@ pub struct Sheet {
     pub hitches: Vec<Hitch>,
     /// The duty's planned trips (for the game's legs, `start`).
     pub planned: Vec<PlannedTrip>,
+    /// Part of it is driven already (his game ended before the duty did, the AI drives it
+    /// since; or he takes over a bus its driver drives): where the start goes on from.
+    pub resume: Option<Resume>,
+}
+
+/// Where a duty driven in part goes on from: its trip (an index into `Sheet::planned`), whether
+/// that trip is under way at the company's minute `now` (the game starts then, and takes the
+/// bus over where it is: `Start::take_over`), the trips with passengers the player drove of it,
+/// and since when the AI drives it (the company's minute; None: its driver as planned).
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Default)]
+pub struct Resume {
+    pub from: usize,
+    pub under_way: bool,
+    pub now: i32,
+    pub driven: usize,
+    pub ai_since: Option<i32>,
 }
 
 impl Sheet {
@@ -250,9 +271,17 @@ pub fn sheet(c: &Company, p: &DayPlan, r: &DutyRef, now: i64, trips: &[TripRun])
         Some(Who::Agency) => s.hitches.push(Hitch::NotYours("Agency driver".into())),
         Some(Who::Guest(g)) => s.hitches.push(Hitch::NotYours(super::together::guest_name(c, g))),
     }
-    // driven already, or over
-    if t.by_player || (p.today && driven(c, t, planned, trips)) {
+    // driven already (every trip of it, as the game reported them), driven in part, or over
+    let minute = (now - super::clock::moment(&p.date, 0)) as i32;
+    if t.by_player {
         s.hitches.push(Hitch::Driven);
+    } else if p.today {
+        match progress(c, r, t, planned, trips, minute) {
+            Progress::Fresh => {}
+            Progress::All => s.hitches.push(Hitch::Driven),
+            Progress::AiDone => s.hitches.push(Hitch::AiDone),
+            Progress::From(x) => s.resume = Some(x),
+        }
     }
     let end = super::clock::moment(&p.date, s.to as i64);
     if dates::between(&c.date, &p.date) < 0 || now >= end {
@@ -261,13 +290,68 @@ pub fn sheet(c: &Company, p: &DayPlan, r: &DutyRef, now: i64, trips: &[TripRun])
     s
 }
 
-/// The player reported trips of the duty since the company's last close (`trips_seen`): a trip
-/// of its line and the game's tour leaving at the minute one of its trips leaves.
-fn driven(c: &Company, t: &DayTour, planned: &[PlannedTrip], trips: &[TripRun]) -> bool {
-    trips.iter().filter(|r| r.time > c.trips_seen && !r.free && same_map(&r.map, &c.map) && r.line.trim().eq_ignore_ascii_case(t.tour.number.trim())).any(|r| {
-        let dep = (r.departure / 60.0).round() as i32;
-        planned.iter().any(|x| x.counts() && x.whole_dep() == dep && (if x.origin.trim().is_empty() { &t.tour.tour } else { &x.origin }).trim() == r.tour.trim())
-    })
+/// How much of a duty is driven.
+enum Progress {
+    /// None of it.
+    Fresh,
+    /// Every trip with passengers of it, by the player.
+    All,
+    /// What he left of it the AI drove to its end.
+    AiDone,
+    /// Part of it: the start goes on from there.
+    From(Resume),
+}
+
+/// How much of duty `r` (`t`'s trips `planned`) is driven at the company's `minute`: the trips
+/// with passengers the player reported since the company's last close (`trips_seen`: a trip of
+/// its line and the game's tour leaving at the minute one of its trips leaves), and what the AI
+/// drives of it since his game ended before it (`own`). One trip reported no longer makes all of
+/// it driven (Luc, 2026-10-31: a game that crashed halfway had it "driven").
+fn progress(c: &Company, r: &DutyRef, t: &DayTour, planned: &[PlannedTrip], trips: &[TripRun], minute: i32) -> Progress {
+    let own = super::own::find(c, r);
+    let reported = |x: &PlannedTrip| {
+        trips
+            .iter()
+            .filter(|r| {
+                r.time > c.trips_seen
+                    && !r.free
+                    && same_map(&r.map, &c.map)
+                    && (r.line.trim().eq_ignore_ascii_case(t.tour.number.trim()) || (!x.line.trim().is_empty() && r.line.trim().eq_ignore_ascii_case(x.line.trim())))
+            })
+            .any(|r| (r.departure / 60.0).round() as i32 == x.whole_dep() && (if x.origin.trim().is_empty() { &t.tour.tour } else { &x.origin }).trim() == r.tour.trim())
+    };
+    let counted = |i: usize| planned[i].counts() && !planned[i].is_second();
+    let drove = |i: usize| own.is_some_and(|o| o.drove(i)) || reported(&planned[i]);
+    let all: Vec<usize> = (0..planned.len()).filter(|&i| counted(i)).collect();
+    let driven = all.iter().filter(|&&i| drove(i)).count();
+    if !all.is_empty() && driven == all.len() {
+        return Progress::All;
+    }
+    if let Some(a) = own.and_then(|o| o.ai_now()) {
+        return match super::own::back_at(c, r, minute) {
+            Some((from, under_way)) => Progress::From(Resume { from, under_way, now: minute, driven, ai_since: Some(a.minute) }),
+            None => Progress::AiDone,
+        };
+    }
+    if driven == 0 {
+        return Progress::Fresh;
+    }
+    // (driven in part, the AI not on it: from his first trip not driven that is still to come)
+    match all.iter().copied().find(|&i| !drove(i) && planned[i].arr > minute) {
+        Some(from) => Progress::From(Resume { from, under_way: planned[from].dep <= minute, now: minute, driven, ai_since: None }),
+        None => Progress::Fresh,
+    }
+}
+
+/// A sheet of a duty another drives now (one of the company's drivers, the agency's, the AI),
+/// for the player to take its bus over where it is at the company's `minute`: from its trip
+/// with passengers that has not arrived yet (None: none is left). Nobody's to drive besides.
+pub fn take_over(mut s: Sheet, minute: i32) -> Option<Sheet> {
+    s.hitches.retain(|h| !matches!(h, Hitch::NotYours(_) | Hitch::NoDriver));
+    let from = (0..s.planned.len()).find(|&i| s.planned[i].counts() && !s.planned[i].is_second() && s.planned[i].arr > minute)?;
+    let under_way = s.planned[from].dep <= minute;
+    s.resume = Some(Resume { from, under_way, now: minute, driven: 0, ai_since: None });
+    Some(s)
 }
 
 fn same_map(a: &str, b: &str) -> bool {
@@ -342,6 +426,11 @@ pub struct Start {
     pub number: String,
     pub plate: String,
     pub hof: String,
+    /// A duty taken up halfway along a trip (`Resume::under_way`): the trip (its place in the
+    /// tour, from 1) and the stop it is taken from (from 1 among those it calls at). The game's
+    /// plugin takes over the AI's bus of the tour where it is then (`plugin/takeover.lua`), or
+    /// puts the bus at that stop.
+    pub take_over: Option<(usize, usize)>,
 }
 
 /// The start of a sheet's duty, with the day's timetable `lines` and the bus's `lead` before
@@ -352,11 +441,32 @@ pub fn start(s: &Sheet, lines: &[crate::LineInfo], lead: i64) -> Result<Start, H
     }
     let Some(bus) = s.bus.as_ref() else { return Err(Hitch::NoBus(None)) };
     let line = s.duty.line.clone();
-    let legs =
-        lines.iter().find(|x| x.name.eq_ignore_ascii_case(&line)).and_then(|l| l.tours.iter().find(|t| t.number.trim() == s.game_tour.trim())).and_then(|t| timetable_part(&s.planned, &t.trips));
-    let Some(part) = legs else { return Err(Hitch::Timetable) };
+    // (driven in part: from the trip it goes on from)
+    let planned = match s.resume {
+        Some(x) => &s.planned[x.from.min(s.planned.len())..],
+        None => &s.planned[..],
+    };
+    let tour = lines.iter().find(|x| x.name.eq_ignore_ascii_case(&line)).and_then(|l| l.tours.iter().find(|t| t.number.trim() == s.game_tour.trim()));
+    let Some(part) = tour.and_then(|t| timetable_part(planned, &t.trips)) else { return Err(Hitch::Timetable) };
     let (first, dep, count) = (part.first, part.time, part.trips);
-    let (date, time) = crate::lead_start(&s.duty.date, dep, lead);
+    let (mut date, mut time) = crate::lead_start(&s.duty.date, dep, lead);
+    let mut from_stop = part.from_stop;
+    let mut take_over = None;
+    if let Some(x) = s.resume {
+        let started = super::clock::moment(&date, time as i64) - super::clock::moment(&s.duty.date, 0);
+        if x.under_way {
+            // (under way: now, from the trip's next stop by the timetable - the plugin takes
+            // the AI's bus over where it really is)
+            (date, time) = crate::lead_start(&s.duty.date, x.now, 0);
+            let trip = tour.and_then(|t| t.trips.iter().find(|y| y.index == first));
+            let next = trip.and_then(|y| y.stops.iter().position(|st| st.dep > x.now as f64 * 60.0)).unwrap_or(0);
+            from_stop = from_stop.max(Some(next)).filter(|&k| k > 0);
+            take_over = Some((first, from_stop.map_or(1, |k| k + 1)));
+        } else if started < x.now as i64 {
+            // (not before the company's clock)
+            (date, time) = crate::lead_start(&s.duty.date, x.now, 0);
+        }
+    }
     let leg = crate::compose::Block { line: line.clone(), tour: s.game_tour.clone(), first, trips: count, departure: 0.0 };
     Ok(Start {
         company: s.company.clone(),
@@ -367,14 +477,15 @@ pub fn start(s: &Sheet, lines: &[crate::LineInfo], lead: i64) -> Result<Start, H
         tour: s.game_tour.clone(),
         first,
         // (`line|tour|first|trips`, a relief on the way after an `@`)
-        legs: vec![leg.arg_between(part.from_stop, part.to_stop)],
-        from_stop: part.from_stop,
+        legs: vec![leg.arg_between(from_stop, part.to_stop)],
+        from_stop,
         to_stop: part.to_stop,
         bus: bus.file.clone(),
         paint: bus.paint.clone(),
         number: bus.number.clone(),
         plate: bus.plate.clone(),
         hof: s.hof.clone(),
+        take_over,
     })
 }
 
@@ -574,9 +685,14 @@ mod tests {
         let r = DutyRef::of(&p, 0, 0).unwrap();
         let s = sheet(&c, &p, &r, super::super::clock::moment(&c.date, 481), &[]);
         assert_eq!(start(&s, &lines, 10), Err(Hitch::Over));
-        // driven already: a trip report of its trip
-        let run = TripRun { time: c.trips_seen + 1, map: c.map.clone(), line: "5".into(), tour: "2".into(), departure: 400.0 * 60.0, ..Default::default() };
-        let s = sheet(&c, &p, &r, now, &[run]);
+        // driven in part (a trip report of one of its trips, the game ended): not driven - it
+        // goes on from its first trip not driven
+        let run = |dep: f64| TripRun { time: c.trips_seen + 1, map: c.map.clone(), line: "5".into(), tour: "2".into(), departure: dep * 60.0, ..Default::default() };
+        let s = sheet(&c, &p, &r, now, &[run(400.0)]);
+        assert!(s.hitches.is_empty(), "{:?}", s.hitches);
+        assert_eq!(s.resume, Some(Resume { from: 1, under_way: false, now: 300, driven: 1, ai_since: None }));
+        // driven already: every trip of it reported
+        let s = sheet(&c, &p, &r, now, &[run(360.0), run(400.0), run(440.0)]);
         assert_eq!(s.hitches, vec![Hitch::Driven]);
         // the timetable changed: a trip of the duty is no longer in it
         let s = sheet(&c, &p, &r, now, &[]);
@@ -643,6 +759,45 @@ mod tests {
         // a trip report of the whole trip says the duty was driven
         let run = TripRun { time: c.trips_seen + 1, map: c.map.clone(), line: "5".into(), tour: "2".into(), departure: 360.0 * 60.0, ..Default::default() };
         assert_eq!(sheet(&c, &p, &DutyRef::of(&p, 0, 0).unwrap(), now, &[run]).hitches, vec![Hitch::Driven]);
+    }
+
+    /// His game crashed after the first trip of three (Luc, 2026-10-31): the duty is not
+    /// driven; the AI drives it from its second trip on; the launcher takes it back from the AI
+    /// halfway along the trip it drives then; and the close books his trip as measured and the
+    /// AI's as run - none dropped, none his that he did not drive.
+    #[test]
+    fn a_duty_whose_game_crashed_halfway_is_the_ai_s_from_there() {
+        use super::super::own::{self, Ended};
+        use super::super::together::book::LeftWhy;
+        let (mut c, tours) = setup();
+        let p = day_plan(&c, &c.date, tours.clone(), &[], &[], false);
+        let r = DutyRef::of(&p, 0, 0).unwrap();
+        let s = sheet(&c, &p, &r, super::super::clock::moment(&c.date, 300), &[]);
+        let since = c.trips_seen + 1;
+        own::begin(&mut c, &r, &s.planned, &s.game_tour, 0, since);
+        let run = TripRun {
+            time: c.trips_seen + 2,
+            map: c.map.clone(),
+            line: "5".into(),
+            tour: "2".into(),
+            departure: 360.0 * 60.0,
+            metres: 8000.0,
+            seconds: 1800.0,
+            stops: 10,
+            completed: true,
+            ..Default::default()
+        };
+        assert!(own::note_trips(&mut c, std::slice::from_ref(&run)));
+        assert_eq!(own::ended(&mut c, &r, LeftWhy::Crashed, 0, 395), Some(Ended::Ai { from: 2, driven: 1 }));
+        // the launcher: not driven - taken back where the AI's bus is, on its trip of 06:40
+        let s = sheet(&c, &p, &r, super::super::clock::moment(&c.date, 410), std::slice::from_ref(&run));
+        assert!(s.hitches.is_empty(), "{:?}", s.hitches);
+        assert_eq!(s.resume.map(|x| (x.from, x.under_way, x.ai_since)), Some((2, true, Some(395))));
+        let st = start(&s, &timetable(), 10).unwrap();
+        assert_eq!((st.first, st.time, st.take_over), (2, 410, Some((2, 1))));
+        // the close: his trip measured, the AI's two run
+        let report = super::super::day::close_day(&mut c, tours, &[run]);
+        assert_eq!((report.measured, report.dropped, report.by_player), (1, 0, 0), "{report:?}");
     }
 
     #[test]

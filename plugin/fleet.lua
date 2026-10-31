@@ -25,6 +25,8 @@ local given = false
 -- (an openOMSI without set_ai_trips) the trips the company runs: "line|tour" -> departures
 -- (true: every trip of the tour)
 local allowed
+-- the tour whose bus the player took over ("line|tour"): the AI no longer runs it
+local off_key
 
 M.NEEDS = { "files.read", "json.decode", "timetable.set_ai_trips", "timetable.buses", "traffic.remove", "map.info" }
 
@@ -77,7 +79,7 @@ local function read(text)
   end
   local trips = {}
   for _, t in ipairs(f.trips) do
-    if type(t) == "table" and t.line and t.tour then
+    if type(t) == "table" and t.line and t.tour and key(t.line, t.tour) ~= off_key then
       trips[#trips + 1] = {
         line = tostring(t.line), tour = tostring(t.tour),
         departure = type(t.departure) == "number" and t.departure or nil,
@@ -145,10 +147,18 @@ function M.tick(seconds, company)
   if allowed then sweep() end
 end
 
+-- the player took over the bus of `line`, `tour` (takeover.lua): the AI keeps off that tour from
+-- now on (the list given again at the next look)
+function M.keep_off(line, tour)
+  local k = key(line, tour)
+  if off_key == k then return end
+  off_key, seen, wait = k, nil, 0
+end
+
 -- the plugin stops: the game runs its whole timetable again
 function M.stop()
   if given and has["timetable.set_ai_trips"] then omsi.timetable.set_ai_trips(nil) end
-  given, allowed, seen = false, nil, nil
+  given, allowed, seen, off_key = false, nil, nil, nil
 end
 
 return M

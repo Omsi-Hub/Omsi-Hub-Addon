@@ -190,6 +190,8 @@ pub enum LeftWhy {
     Closed,
     /// He joined the company's world after his duty began (`ai_before`).
     Late,
+    /// His game stopped without being closed (it crashed: `own::ended`).
+    Crashed,
 }
 
 /// A part of a player's duty the AI drives: its trips from `from` (an index into the duty's

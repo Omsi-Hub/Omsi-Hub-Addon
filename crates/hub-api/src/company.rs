@@ -660,6 +660,7 @@ fn work(s: &mut Session) {
         s.plan = None;
         s.generation += 1;
     }
+    settle_stale(s);
     let Some(c) = s.company.as_ref() else { return };
     let key = (c.map.clone(), c.date.clone());
     if s.today_asked.as_ref() != Some(&key) {
@@ -1218,7 +1219,79 @@ pub fn after_booking(b: &crate::addon::Booked) {
             depot_tick(s);
             s.generation += 1;
         }
+        own_look(s, b.trips > 0);
     });
+}
+
+/// The player's own drive as the game reports it (`co::own`): the company's minute it was seen
+/// at, and - `trips` came in - the trips of his duty he drove.
+fn own_look(s: &mut Session, trips: bool) {
+    let Some(c) = s.company.as_mut() else { return };
+    let running: Vec<co::duty_launch::DutyRef> = c.own.iter().filter(|x| x.running).map(|x| x.duty.clone()).collect();
+    if running.is_empty() {
+        return;
+    }
+    let minute = c.clock.minute as i32;
+    for r in &running {
+        co::own::live(c, r, minute);
+    }
+    if trips {
+        let runs = core::trips_of(&data(), &c.profile);
+        if co::own::note_trips(c, &runs) {
+            changed(s);
+        }
+    }
+}
+
+/// The game of a company's duty ended (`drive::watch`; `code` its exit code, anything but 0 a
+/// crash): a duty is driven only as far as the game reported it - what the player left of it the
+/// AI drives from there (`co::own::ended`), and he is told so.
+pub fn game_ended(code: Option<i32>) {
+    with(|s| ended_in(s, code));
+}
+
+/// A drive that began a while ago still running while no game runs: Omsi-Hub was closed while
+/// the game ran, and the game is gone - as if it crashed (`game_ended`).
+const STALE_AFTER: u64 = 120;
+
+fn settle_stale(s: &mut Session) {
+    let now = real_now().max(0) as u64;
+    let stale = s.company.as_ref().is_some_and(|c| c.own.iter().any(|x| x.running && now > x.began + STALE_AFTER));
+    if stale && !crate::drive::watching() && !s.in_game() {
+        ended_in(s, None);
+    }
+}
+
+fn ended_in(s: &mut Session, code: Option<i32>) {
+    {
+        let Some(c) = s.company.as_mut() else { return };
+        let running: Vec<co::duty_launch::DutyRef> = c.own.iter().filter(|x| x.running).map(|x| x.duty.clone()).collect();
+        if running.is_empty() {
+            return;
+        }
+        let runs = core::trips_of(&data(), &c.profile);
+        co::own::note_trips(c, &runs);
+        let why = if code == Some(0) { co::together::book::LeftWhy::Quit } else { co::together::book::LeftWhy::Crashed };
+        let minute = c.clock.minute as i32;
+        let mut said = Vec::new();
+        for r in &running {
+            let left = co::own::ended(c, r, why, real_now().max(0) as u64, minute);
+            log_warn(&format!("company: the game of duty {} {} {} ended ({code:?}): {left:?}", r.line, r.tour, r.duty + 1));
+            if let Some(co::own::Ended::Ai { driven, .. }) = left {
+                let at = co::own::find(c, r).and_then(|x| x.ai_now()).map_or(minute, |a| a.minute);
+                let text = if why == co::together::book::LeftWhy::Crashed {
+                    "The game stopped at %{time} before your duty was done: the %{n} trips you drove count, the AI drives the rest from there. Start the duty again to take it back where its bus is."
+                } else {
+                    "Your game ended at %{time} before your duty was done: the %{n} trips you drove count, the AI drives the rest from there. Start the duty again to take it back where its bus is."
+                };
+                said.push(trf(text, &[("time", &co::clock::hhmm(at as i64)), ("n", &driven.to_string())]));
+            }
+        }
+        for t in said {
+            s.say(t, false);
+        }
+        changed(s);
+    }
 }
 
 /// The game's minute taken over, and what it reported told.

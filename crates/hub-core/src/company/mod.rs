@@ -70,6 +70,7 @@ pub mod model;
 pub mod names;
 pub mod network;
 pub mod ontime;
+pub mod own;
 pub mod ownline;
 pub mod parts;
 // (drivers paid by the hour of duty)
@@ -220,6 +221,7 @@ pub fn found(f: &Founding, profile: &str) -> Company {
         autopilot: Default::default(),
         vehicles: f.vehicles.clone(),
         together: Default::default(),
+        own: Vec::new(),
         reputation_log: Default::default(),
         complaints: Default::default(),
         lateness: Default::default(),

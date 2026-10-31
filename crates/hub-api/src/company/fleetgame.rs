@@ -63,7 +63,9 @@ fn same(a: &str, b: &str) -> bool {
 /// timetable line and tour), each of its trips the timetable has, by the tour the game knows it
 /// by and the time it leaves, `model`'s minutes late as it leaves (on time where the model has
 /// none). A depot run the company added itself is not the timetable's: the game has no bus for it.
-pub fn trips_of(plan: &Plan, lines: &[core::LineInfo], model: &Model, skip: Option<(&str, &str)>) -> Vec<FleetTrip> {
+/// `keep`: the drive takes `skip`'s bus over halfway along its trip (`bridge::TakeOver`) - the
+/// game's AI drives it until the plugin took it, the player's own block too.
+pub fn trips_of(plan: &Plan, lines: &[core::LineInfo], model: &Model, skip: Option<(&str, &str)>, keep: bool) -> Vec<FleetTrip> {
     let mut runs: Runs = HashMap::new();
     for l in lines {
         for t in l.tours.iter().filter(|t| t.runs) {
@@ -75,11 +77,13 @@ pub fn trips_of(plan: &Plan, lines: &[core::LineInfo], model: &Model, skip: Opti
     let mut out = Vec::new();
     let mut seen: HashSet<(String, String, i64)> = HashSet::new();
     for (ti, tp) in plan.tours.iter().enumerate() {
-        // (a block dropped today has no bus; the player's own the player drives)
-        if tp.tour.unplanned || tp.bus.is_none() || tp.by_player || tp.duties.iter().any(|d| d.driver == Some(PLAYER)) {
+        // (a block dropped today has no bus; the player's own the player drives - but the one
+        // he takes over the AI's bus of)
+        let taken = skip.is_some_and(|(l, t)| same(l, &tp.tour.line) && same(t, &tp.tour.tour));
+        if tp.tour.unplanned || tp.bus.is_none() || tp.by_player || (tp.duties.iter().any(|d| d.driver == Some(PLAYER)) && !(keep && taken)) {
             continue;
         }
-        if skip.is_some_and(|(l, t)| same(l, &tp.tour.line) && same(t, &tp.tour.tour)) {
+        if taken && !keep {
             continue;
         }
         for (j, x) in tp.tour.trips.iter().enumerate() {
@@ -111,25 +115,26 @@ fn model_of<'a>(s: &Session, c: &Company, plan: &Plan, model: &'a mut Kept) -> &
 }
 
 /// The company's buses today, as the game is to run them (`skip`: the duty's block).
-fn today(s: &Session, model: &mut Kept, skip: Option<(&str, &str)>) -> Option<Fleet> {
+fn today(s: &Session, model: &mut Kept, skip: Option<(&str, &str)>, keep: bool) -> Option<Fleet> {
     let c = s.company.as_ref()?;
     let (plan, lines) = (s.plan.as_ref()?, s.map_lines()?);
-    let trips = trips_of(plan, lines, model_of(s, c, plan, model), skip);
+    let trips = trips_of(plan, lines, model_of(s, c, plan, model), skip, keep);
     Some(Fleet { at: real_now(), company: c.id.clone(), map: c.map.clone(), date: c.date.clone(), trips })
 }
 
 /// The company's buses for the game of a company's duty about to start (`date` the duty's day,
 /// `skip` its block: its timetable line and tour), written for the plugin before the game reads
 /// its timetable. A later day's duty: that day's plan, its tours as the game knows them, on time.
-pub fn for_drive(s: &mut Session, date: &str, skip: (&str, &str)) {
+/// `keep`: the drive takes the bus of `skip` over from the game's AI.
+pub fn for_drive(s: &mut Session, date: &str, skip: (&str, &str), keep: bool) {
     let Some(dir) = crate::addon::game_plugin_dir() else { return };
     let fleet = match s.company.as_ref() {
         Some(c) if c.date == date => {
             let mut st = state().lock().unwrap_or_else(|e| e.into_inner());
             st.last = Some(Instant::now());
-            today(s, &mut st.model, Some(skip))
+            today(s, &mut st.model, Some(skip), keep)
         }
-        Some(_) => later(s, date, skip),
+        Some(_) => later(s, date, skip, keep),
         None => None,
     };
     // (written afresh: the drive's own, however like the last)
@@ -144,7 +149,7 @@ pub fn for_drive(s: &mut Session, date: &str, skip: (&str, &str)) {
 
 /// A later day's plan as the game is to run it: the tours of its blocks with a bus, whole and on
 /// time (the day has no delays yet).
-fn later(s: &mut Session, date: &str, skip: (&str, &str)) -> Option<Fleet> {
+fn later(s: &mut Session, date: &str, skip: (&str, &str), keep: bool) -> Option<Fleet> {
     let dp = match super::plan_of(s, date)? {
         Ok(dp) => dp,
         Err(_) => return None,
@@ -154,7 +159,7 @@ fn later(s: &mut Session, date: &str, skip: (&str, &str)) -> Option<Fleet> {
     let trips = live
         .tours
         .iter()
-        .filter(|t| !t.dropped && !(same(&t.line, skip.0) && same(&t.tour, skip.1)))
+        .filter(|t| !t.dropped && (keep || !(same(&t.line, skip.0) && same(&t.tour, skip.1))))
         .map(|t| FleetTrip { line: t.line.clone(), tour: t.tour.clone(), departure: None, delay: 0.0 })
         .collect();
     Some(Fleet { at: real_now(), company: c.id.clone(), map: c.map.clone(), date: date.to_string(), trips })
@@ -181,7 +186,7 @@ pub fn refresh() {
         (Some((_, a)), Some(was)) => with(|s| {
             let c = s.company.as_ref()?;
             (c.id == was.company && c.id == a.company_id && c.date == was.date).then_some(())?;
-            today(s, &mut model, Some((&a.line, &a.tour)))
+            today(s, &mut model, Some((&a.line, &a.tour)), a.take_over)
         }),
         _ => None,
     };
@@ -240,10 +245,10 @@ mod tests {
         };
         let late = |m: f64| Some(Timed { dep: m, arr: m, bus: 1, causes: vec![], earlier: vec![], known: false, lost: 0.0, recovered: 0, swapped: None, roots: vec![] });
         let model: Model = vec![vec![late(2.0), late(3.5), None], vec![None], vec![]];
-        let trips = trips_of(&plan, &lines(), &model, None);
+        let trips = trips_of(&plan, &lines(), &model, None, false);
         let got: Vec<(&str, &str, Option<f64>, f64)> = trips.iter().map(|t| (t.line.as_str(), t.tour.as_str(), t.departure, t.delay)).collect();
         assert_eq!(got, [("5", "1", Some(21_600.0), 120.0), ("5", "2", Some(22_500.0), 210.0)]);
         // (the block of the duty driven is the player's)
-        assert!(trips_of(&plan, &lines(), &model, Some(("5", "1"))).is_empty());
+        assert!(trips_of(&plan, &lines(), &model, Some(("5", "1")), false).is_empty());
     }
 }

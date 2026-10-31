@@ -22,7 +22,7 @@
 --                         the game to Omsi-Hub's companion server by UDP)
 -- A game without the file functions gets the handshake and the reports in its log instead.
 
-local VERSION = "1.17.0"
+local VERSION = "1.18.0"
 local BRIDGE = 1
 local PANEL = "omsihub"
 
@@ -275,6 +275,11 @@ local function say(text, title, icon, seconds)
   notes.say(text, { title = title, icon = icon, color = "#F58620", seconds = seconds or 10 })
 end
 
+-- a bus taken over halfway along its trip (the assignment's `take_over`: takeover.lua) - the
+-- AI's bus of the tour, where it is
+local takeover = require("takeover")
+takeover.setup(assignment, function(text, title, icon) say(tr(text), tr(title), icon, 8) end)
+
 local function start_duty()
   if not (assignment and has["duty.start"]) or duty_now() or start.busy() then return end
   local line, tour, trip, stop
@@ -507,6 +512,7 @@ omsi.on("frame", function(dt)
     if has["game.action"] then omsi.game.action("object_editor") end
   end
   if fn("has_vehicle") and not omsi.has_vehicle() then return end
+  takeover.frame(dt)
   trip.frame(dt)
   watch.frame(dt)
   strip.frame(dt)
@@ -676,7 +682,12 @@ end)
 -- (in a company's duty only the company's own buses on the road, where its fleet map has them;
 -- not held back while the game loads: the other buses are kept off before they are seen)
 fleet.setup(has)
-omsi.every(1, function() fleet.tick(1, company_duty()) end)
+omsi.every(1, function()
+  -- (the tour whose bus the player took over: the AI's no more)
+  local line, tour = takeover.taken()
+  if line then fleet.keep_off(line, tour) end
+  fleet.tick(1, company_duty())
+end)
 -- (the game's traffic for the fleet map: whatever the player drives)
 local traffic = require("traffic")
 traffic.setup(has)

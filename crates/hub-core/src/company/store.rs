@@ -236,6 +236,7 @@ pub fn close_day(data: &Path, c: &mut Company) -> Result<DayReport> {
     trips.extend(super::together::book::trips_for_close(c));
     let report = day::close_day_with(c, tours, &unassigned, &trips);
     super::together::book::after_close(c, &date);
+    super::own::after_close(c, &date);
     let report = super::depot::after_close(c, report, &lines);
     // (the plans of single dates that are past now go)
     super::plandays::tidy(c);
@@ -302,6 +303,7 @@ impl super::clock::World for Disk<'_> {
         trips.extend(super::together::book::trips_for_close(c));
         let report = day::close_day_with(c, tours, &unassigned, &trips);
         super::together::book::after_close(c, &date);
+        super::own::after_close(c, &date);
         let report = super::depot::after_close(c, report, lines);
         super::plandays::tidy(c);
         Ok(report)

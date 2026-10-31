@@ -1795,9 +1795,11 @@ pub fn day_plan(c: &Company, date: &str, tours: Vec<TourOfDay>, player: &[(Strin
         let bus = out[i].bus_of(c);
         let t = &out[i];
         let block = block_of(&t.tour, &t.duties[k], duty_key(&t.tour.line, &t.tour.tour, k));
+        // (one whose drive the game followed is his and the AI's, `own`: the close books it)
+        let followed = super::own::of(c, date, &t.tour.line, &t.tour.tour, k).is_some();
         let d = &mut out[i].duties[k];
         match who {
-            Who::Player if closing => d.problem = Some(Problem::Player),
+            Who::Player if closing && !followed => d.problem = Some(Problem::Player),
             // (the player called in sick or is on holiday: open for the dispatcher, `crew`)
             Who::Player if super::crew::player_off(c, date).is_some() => d.problem = super::crew::player_off(c, date),
             // (a player of "Play together" is never in the roster: only his claim of the day puts

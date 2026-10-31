@@ -573,3 +573,51 @@ fn the_omsi_hub_look_is_put_in_force_once_in_an_openomsi_with_themes() {
     let h = Harness::load(&dir, game()).unwrap();
     assert_eq!(eval(&h, "omsi.data.theme_offered"), json!(null));
 }
+
+/// A bus taken over halfway along its trip (`takeover.lua`): the AI's bus of the tour off the
+/// road and the player's bus put exactly where it was, its next stop the duty's next; with no
+/// such bus on the road, where Omsi-Hub's fleet map has it.
+#[test]
+fn a_bus_is_taken_over_where_the_ai_drives_it() {
+    let take = |at: Option<[f64; 3]>| Assignment { take_over: Some(bridge::TakeOver { line: "10".into(), tour: "2".into(), trip: 1, stop: 2, at }), ..assignment() };
+    let stop = |id: i64| hub_plugin_harness::Stop { id, ..Default::default() };
+    let game = || {
+        let mut g = game();
+        g.trips[0].stops = vec![stop(31), stop(32), stop(33)];
+        g
+    };
+
+    // the AI's bus of tour 2 on the road: taken off it, the player's bus where it was
+    let dir = installed("takeover-bus");
+    bridge::write_assignment(&dir, &take(Some([500.0, 600.0, 90.0]))).unwrap();
+    let mut g = game();
+    g.timetable_buses = vec![
+        json!({ "id": 4, "line": "10", "tour": "3", "trip": 1, "x": 1.0, "y": 1.0 }),
+        json!({ "id": 7, "line": "10", "tour": "2", "trip": 1, "x": 100.0, "y": 200.0, "heading": 45.0, "next_stop_id": 33 }),
+    ];
+    let mut h = Harness::load(&dir, g).unwrap();
+    for _ in 0..5 {
+        h.frame().unwrap();
+    }
+    let st = h.state.borrow();
+    assert_eq!(st.removed, [7], "only the bus of the tour taken over");
+    assert_eq!(st.teleported, [(100.0, 200.0, 45.0)]);
+    assert_eq!(st.skipped_to.last(), Some(&3), "its next stop the duty's next");
+    drop(st);
+
+    // none on the road: where the fleet map has it, its next stop the one Omsi-Hub said
+    let dir = installed("takeover-place");
+    bridge::write_assignment(&dir, &take(Some([500.0, 600.0, 90.0]))).unwrap();
+    let mut h = Harness::load(&dir, game()).unwrap();
+    for _ in 0..4 {
+        h.frame().unwrap();
+    }
+    assert!(h.state.borrow().teleported.is_empty(), "the AI's bus is looked for a while first");
+    for _ in 0..10 {
+        h.frame().unwrap();
+    }
+    let st = h.state.borrow();
+    assert_eq!(st.teleported, [(500.0, 600.0, 90.0)]);
+    assert_eq!(st.skipped_to.last(), Some(&2));
+    assert!(st.removed.is_empty());
+}

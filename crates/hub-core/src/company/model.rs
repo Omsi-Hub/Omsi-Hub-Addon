@@ -971,6 +971,10 @@ pub struct Company {
     /// drove for the company (`together`).
     #[serde(default)]
     pub together: super::together::Together,
+    /// The player's own drives of its duties of the day, as the game said: the trips he drove,
+    /// where the AI took over when his game ended before the duty (`own`).
+    #[serde(default, skip_serializing_if = "Vec::is_empty")]
+    pub own: Vec<super::own::OwnDrive>,
     /// What raised or lowered the reputation lately (`reputation`).
     #[serde(default)]
     pub reputation_log: super::reputation::Log,

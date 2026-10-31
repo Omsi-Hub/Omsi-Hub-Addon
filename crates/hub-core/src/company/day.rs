@@ -614,8 +614,15 @@ pub(super) fn why_not(c: &Company, tp: &TourPlan, k: usize, j: usize, broken_at:
     let d = tp.duties.get(k)?;
     let (trip, rest) = whole_trip(tp, j)?;
     let has_bus = tp.bus.and_then(|b| c.vehicle(b)).is_some();
-    // (Beta 63: the AI drives what a player of "Play together" left of his duty)
-    let has_driver = d.driver.is_some_and(|id| id == super::plan::AGENCY || c.employee(id).is_some()) || super::together::book::ai_on(c, &c.date, &tp.tour.line, &tp.tour.tour, k);
+    // (Beta 63: the AI drives what a player of "Play together" left of his duty; and what the
+    // player left of his own when his game ended before it, `own` - his trips are his while his
+    // game runs, and driven when it reported them)
+    let i = j.saturating_sub(d.start);
+    let has_driver = match super::own::of(c, &c.date, &tp.tour.line, &tp.tour.tour, k) {
+        Some(o) if o.ai_drives(i) => true,
+        Some(o) if o.his(i) => o.drove(i) || o.running,
+        _ => d.driver.is_some_and(|id| id == super::plan::AGENCY || c.employee(id).is_some()) || super::together::book::ai_on(c, &c.date, &tp.tour.line, &tp.tour.tour, k),
+    };
     let broke = broken_at.is_some_and(|x| x.lost(trip.dep));
     let late = d.dropped_before.is_some_and(|t| trip.dep < t);
     let rest_runs = rest.is_none_or(|(d2, at)| d2.driver.is_some() && d2.dropped_before.is_none_or(|t| at >= t));
@@ -740,8 +747,10 @@ pub fn close_day_with(c: &mut Company, tours: Vec<TourOfDay>, unassigned: &[(Str
         report.measured_revenue += book_measured(c, l, &rates[li], kinds[li], per_km[li], t.passengers.max(0) as f64, km, " (own trip)");
         // (its fines, its quality bonus and its experience: `levels`)
         super::levels::book_trip(c, t, &l.number);
-        // (a player of "Play together" drove his duty alone, not the whole tour: Beta 61)
-        if !t.tour.trim().is_empty() && !super::together::book::is_guest_trip(c, t) {
+        // (a player of "Play together" drove his duty alone, not the whole tour: Beta 61; and so
+        // did the player of a duty whose drive the game followed, `own`: of what it did not
+        // report the AI or its driver drives the rest)
+        if !t.tour.trim().is_empty() && !super::together::book::is_guest_trip(c, t) && !super::own::claims_trip(c, t) {
             player.push((t.line.clone(), t.tour.clone()));
         }
     }
@@ -847,6 +856,10 @@ pub fn close_day_with(c: &mut Company, tours: Vec<TourOfDay>, unassigned: &[(Str
             if !ai && super::together::book::drove(c, &date, &tp.tour.line, &tp.tour.tour, k) {
                 continue;
             }
+            // (the player's own drive of it, as the game followed it: his trips booked as
+            // measured, the AI's from where his game ended - `own`)
+            let own = super::own::of(c, &date, &tp.tour.line, &tp.tour.tour, k).cloned();
+            let own_ai = Some(super::together::book::ai_driver());
             let driver = if ai {
                 Some(super::together::book::ai_driver())
             } else {
@@ -870,6 +883,10 @@ pub fn close_day_with(c: &mut Company, tours: Vec<TourOfDay>, unassigned: &[(Str
                 if ai && !super::together::book::ai_runs(c, &date, &tp.tour.line, &tp.tour.tour, k, j - d.start, tp.tour.trips[j].whole_dep()) {
                     continue;
                 }
+                if own.as_ref().is_some_and(|o| o.drove(j - d.start)) {
+                    continue;
+                }
+                let by_ai = own.as_ref().is_some_and(|o| o.ai_drives(j - d.start));
                 // (a trip two duties share, cut at a relief point on the way: one trip, booked
                 // with its first part, run only when the duties of both parts are)
                 let Some((trip, rest)) = whole_trip(tp, j) else { continue };
@@ -931,7 +948,7 @@ pub fn close_day_with(c: &mut Company, tours: Vec<TourOfDay>, unassigned: &[(Str
                     } else {
                         &v
                     },
-                    &driver,
+                    if by_ai { &own_ai } else { &driver },
                 ) else {
                     continue;
                 };

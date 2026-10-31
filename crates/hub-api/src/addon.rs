@@ -90,6 +90,9 @@ pub struct Assigned {
     pub company_id: String,
     /// The plugin's folder it was written to.
     pub plugin_dir: String,
+    /// The duty begins with a bus the game's AI drives taken over (`bridge::TakeOver`): the
+    /// game's AI keeps that tour until the plugin took it.
+    pub take_over: bool,
 }
 
 /// The company's side of a duty about to be driven (`company::plugin::assign_duty`).
@@ -259,6 +262,7 @@ pub fn assignment_for(d: &Duty, company: Option<&CompanyPart>, settings: &Settin
         controls: parts.controls,
         fare: parts.fare,
         contract: parts.contract,
+        take_over: parts.take_over,
         legs: if free.is_some() { Vec::new() } else { legs },
         free_line: free.unwrap_or_default(),
         ..Assignment::default()
@@ -349,6 +353,7 @@ pub fn give(plugin_dir: &Path, d: &Duty, data: &Path) -> Result<Assignment, Stri
         tour: a.tour.clone(),
         company_id: company.map(|c| c.company_id).unwrap_or_default(),
         plugin_dir: plugin_dir.to_string_lossy().into_owned(),
+        take_over: a.take_over.is_some(),
     });
     // (the reports from here on: a folder seen the first time is read from its end)
     reader_of(&mut k, plugin_dir);

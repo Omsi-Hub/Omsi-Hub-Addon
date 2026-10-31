@@ -344,6 +344,7 @@ impl DriveStart {
             number: self.number.clone(),
             plate: self.plate.clone(),
             hof: self.hof.clone(),
+            take_over: None,
         };
         let mut d = st.duty(base, "");
         // (alone, or in the company's world; the friend has no company of his own to run: his

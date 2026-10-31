@@ -28,6 +28,8 @@ mod fleetmap;
 mod planning;
 // (what "Fill the roster" left open, also said when an own line's change took effect: `due`)
 pub(super) use planning::open_text;
+// (where a bus of the plan is now in the game's coordinates: a bus taken over, `launch`)
+pub(super) use fleetmap::game_place;
 // (Trello "Tauri 6/6": the planning's sheet of a line's trips and timetable)
 #[path = "company_more/plan_edit.rs"]
 mod plan_edit;

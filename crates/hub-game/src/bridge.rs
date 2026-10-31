@@ -211,9 +211,32 @@ pub struct Assignment {
     /// plugin takes each with `duty.start` when the part before it is done, and ends the duty
     /// after the last (`legs.lua`): what the old game's `--duty-leg` did.
     pub legs: Vec<Leg>,
+    /// A duty taken up halfway along a trip (a bus taken over from the AI, or the player's own
+    /// duty taken back from the AI after his game ended): the bus the game's AI drives on that
+    /// tour taken over where it is (`lua/takeover.lua`). None: the duty begins as ever.
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub take_over: Option<TakeOver>,
     /// A free drive along one route of `line`: the route (its trip's name). The game keeps no
     /// time on it; the plugin shows the route (what the old game's `--free-line` did).
     pub free_line: String,
+}
+
+/// A bus of the timetable the player takes over halfway along its trip: its line and tour (as
+/// the timetable names them), its trip (from 1) and the stop the duty goes on from by the
+/// timetable (from 1 among those it calls at) - where the plugin puts the bus when the game's AI
+/// has none of that tour on the road to take over.
+#[derive(Debug, Clone, Default, PartialEq, Serialize, Deserialize)]
+#[serde(default)]
+pub struct TakeOver {
+    pub line: String,
+    pub tour: String,
+    pub trip: u32,
+    pub stop: u32,
+    /// Where Omsi-Hub's fleet map has the bus now, in the game's coordinates, and its heading:
+    /// where the plugin puts the player's bus when the game's AI has none of the tour on the
+    /// road (None: not known - at the stop then).
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub at: Option<[f64; 3]>,
 }
 
 /// A part of a duty: trips `first` to `first + trips - 1` of a tour (from 1), the first of them

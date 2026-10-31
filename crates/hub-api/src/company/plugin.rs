@@ -19,6 +19,8 @@ pub struct Parts {
     pub controls: Vec<bridge::ControlNote>,
     pub fare: Option<bridge::Fare>,
     pub contract: Option<bridge::ContractNote>,
+    /// The bus taken over halfway along its trip (`bridge::TakeOver`).
+    pub take_over: Option<bridge::TakeOver>,
 }
 
 /// Give the plugin the duty of a drive about to start: `company` names the company's duty (its

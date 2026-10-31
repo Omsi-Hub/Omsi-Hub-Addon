@@ -120,6 +120,10 @@ pub struct GameState {
     /// the whole timetable again) and the AI vehicles taken off the road (`omsi.traffic.remove`).
     pub ai_trips: Vec<Value>,
     pub removed: Vec<i64>,
+    /// Where the plugin put the player's bus (`omsi.map.teleport`: x, y and heading) and the
+    /// stops it made the next (`omsi.duty.skip_to`).
+    pub teleported: Vec<(f64, f64, f64)>,
+    pub skipped_to: Vec<i64>,
     /// The bus's script triggers (`omsi.bus.triggers`) and the ones fired (`omsi.trigger`),
     /// its key actions done (`omsi.bus.action`) and the lines typed (`omsi.bus.set_line`).
     pub triggers: Vec<String>,
@@ -175,6 +179,8 @@ impl Default for GameState {
             tile: 300.0,
             ai_trips: Vec::new(),
             removed: Vec::new(),
+            teleported: Vec::new(),
+            skipped_to: Vec::new(),
             triggers: Vec::new(),
             pressed: Vec::new(),
             held: Vec::new(),
@@ -235,6 +241,7 @@ pub const FUNCTIONS: &[&str] = &[
     "game.has",
     "map.info",
     "map.tile_at",
+    "map.teleport",
     "audio.play",
     "position",
     "others",
@@ -583,7 +590,9 @@ fn api(lua: &Lua, state: &Rc<RefCell<GameState>>, plugin_dir: &Path) -> mlua::Re
         Ok(true)
     });
     f!(duty, "skip_to", |_l, s, n: i64| {
-        if let Some(d) = s.borrow_mut().duty.as_mut() {
+        let mut g = s.borrow_mut();
+        g.skipped_to.push(n);
+        if let Some(d) = g.duty.as_mut() {
             d.trip = n;
         }
         Ok(true)
@@ -671,6 +680,10 @@ fn api(lua: &Lua, state: &Rc<RefCell<GameState>>, plugin_dir: &Path) -> mlua::Re
 
     let map = lua.create_table()?;
     f!(map, "info", |l, s, _a: ()| to_lua(l, &json!({ "path": s.borrow().map })));
+    f!(map, "teleport", |_l, s, a: (f64, f64, Option<f64>, Option<f64>)| {
+        s.borrow_mut().teleported.push((a.0, a.1, a.3.unwrap_or(0.0)));
+        Ok(true)
+    });
     f!(map, "lane", |l, s, _a: (f64, f64)| to_lua(l, &json!({ "index": 1, "distance": 0.5, "name": s.borrow().lane })));
     f!(map, "tile_at", |_l, s, a: (f64, f64)| {
         let t = s.borrow().tile;

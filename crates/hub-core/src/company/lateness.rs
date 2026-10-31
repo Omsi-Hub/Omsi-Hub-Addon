@@ -267,7 +267,7 @@ pub fn model_with(c: &Company, plan: &Plan, date: &str, cut: &[Cut], controls: &
         let Some(id) = d.driver else { continue };
         // (Beta 63: the AI on what a player of "Play together" left of his duty)
         // (each duty afresh, as an agency driver's: the AI is nobody's employee)
-        let ai = id == PLAYER && super::together::book::ai_on(c, date, &tp.tour.line, &tp.tour.tour, k);
+        let ai = id == PLAYER && (super::together::book::ai_on(c, date, &tp.tour.line, &tp.tour.tour, k) || super::own::of(c, date, &tp.tour.line, &tp.tour.tour, k).is_some_and(|x| !x.ai.is_empty()));
         let id = if ai { AGENCY } else { id };
         let Some(e) = (if ai {
             Some(super::together::book::ai_driver())

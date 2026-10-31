@@ -22,13 +22,21 @@ pub struct DutyLaunch {
     pub duty: DutyRef,
     pub from_tab: usize,
     pub weather: String,
+    /// The bus another drives on it taken over where it is (the fleet map's "Take over":
+    /// `duty_launch::take_over`).
+    pub take: bool,
     trips: Vec<core::TripRun>,
     trips_read: Option<Instant>,
 }
 
 impl DutyLaunch {
     pub fn new(duty: DutyRef, from_tab: usize) -> DutyLaunch {
-        DutyLaunch { duty, from_tab, weather: "cycle".into(), trips: Vec::new(), trips_read: None }
+        DutyLaunch { duty, from_tab, weather: "cycle".into(), take: false, trips: Vec::new(), trips_read: None }
+    }
+
+    /// The launcher of a bus to take over from whoever drives duty `duty` now.
+    pub fn taking(duty: DutyRef, from_tab: usize) -> DutyLaunch {
+        DutyLaunch { take: true, ..DutyLaunch::new(duty, from_tab) }
     }
 }
 
@@ -82,7 +90,14 @@ fn sheet_now(s: &mut Session, c: &Company) -> Option<Sheet> {
         match plan_of(s, &r.date)? {
             Ok(p) => {
                 let trips = s.launch.as_ref().map(|x| x.trips.clone()).unwrap_or_default();
-                dl::sheet(c, &p, &r, now, &trips)
+                let sh = dl::sheet(c, &p, &r, now, &trips);
+                // (a bus taken over: from its trip under way on the company's clock)
+                if s.launch.as_ref().is_some_and(|x| x.take) {
+                    let over = Sheet { hitches: vec![Hitch::Over], ..sh.clone() };
+                    dl::take_over(sh, (now - co::clock::moment(&r.date, 0)) as i32).unwrap_or(over)
+                } else {
+                    sh
+                }
             }
             Err(_) => Sheet { duty: r.clone(), company: c.id.clone(), company_name: c.name.clone(), map: c.map.clone(), hitches: vec![Hitch::Timetable], ..Default::default() },
         }
@@ -176,17 +191,30 @@ pub fn view(s: &mut Session, _args: &Value) -> Value {
         None => {
             let settings = core::get_settings().unwrap_or_else(|_| core::settings_from_text(None));
             let lead = core::bus_lead(settings.get("bus_lead").and_then(|x| x.as_i64()));
-            let first = sheet.planned.iter().find(|x| !x.empty).map(|x| x.dep).unwrap_or(sheet.from);
+            let first = sheet.planned.iter().skip(sheet.resume.map_or(0, |x| x.from)).find(|x| !x.empty).map(|x| x.dep).unwrap_or(sheet.from);
             let (date, time) = core::lead_start(&sheet.duty.date, first, lead);
+            let when = trf(
+                "The game starts on %{date} at %{time}, %{lead} min before the first departure: the company's clock, not the computer's.",
+                &[("date", &day_label(&date)), ("time", &hhmm(time)), ("lead", &lead.to_string())],
+            );
+            let when = match sheet.resume {
+                Some(x) => format!("{}  {}", resume_words(&sheet, &x, s.launch.as_ref().is_some_and(|l| l.take)), if x.under_way { String::new() } else { when }).trim().to_string(),
+                None => when,
+            };
             // (the current weather at the map's airport, METAR: not in the add-on)
             let mut weathers = vec![json!(["cycle", tr("As forecast (weather cycle)")]), json!(["", tr("Map default")])];
             weathers.extend(core::list_weather().unwrap_or_default().into_iter().map(|w| json!([w.file, w.name])));
             json!({
                 "blocked": false, "caps": tr("Before you start").to_uppercase(), "weather_label": tr("Weather"), "weathers": weathers,
                 "weather": s.launch.as_ref().map(|x| x.weather.clone()).unwrap_or_else(|| "cycle".into()),
-                "when": trf("The game starts on %{date} at %{time}, %{lead} min before the first departure: the company's clock, not the computer's.", &[("date", &day_label(&date)), ("time", &hhmm(time)), ("lead", &lead.to_string())]),
+                "when": when,
                 "fixed": tr("Nothing of the duty can be changed here: the planning fixes it. Only the weather is yours to choose; sound, camera and traffic are as in the Settings."),
-                "go": tr("Start duty"),
+                "go": tr(match (sheet.resume, s.launch.as_ref().is_some_and(|l| l.take)) {
+                    (_, true) => "Take the bus over",
+                    (Some(x), _) if x.ai_since.is_some() => "Take it back from the AI",
+                    (Some(_), _) => "Go on with the duty",
+                    (None, _) => "Start duty",
+                }),
                 // (alone or together with the players driving at the same time)
                 "together": together_card(s, &sheet),
             })
@@ -204,6 +232,39 @@ pub fn view(s: &mut Session, _args: &Value) -> Value {
         "map_caps": tr("Route of the duty").to_uppercase(), "map": c.map, "date": sheet.duty.date, "trips": sheet.trip_names(),
         "start": start,
     })
+}
+
+/// The trip a duty driven in part goes on from, as an index into its tour's trips in today's
+/// plan (the fleet map's blocks are the plan's tours).
+fn p_trip(s: &mut Session, sheet: &Sheet) -> Option<usize> {
+    let x = sheet.resume?;
+    let p = plan_of(s, &sheet.duty.date)?.ok()?;
+    let (ti, k) = sheet.duty.find(&p)?;
+    Some(p.tours[ti].duties[k].start + x.from)
+}
+
+/// What a duty driven in part goes on from, for the start card: who drives it now, and where the
+/// game takes it up (`take`: a bus another drives, taken over).
+fn resume_words(sheet: &Sheet, x: &dl::Resume, take: bool) -> String {
+    let trip = sheet.planned.get(x.from);
+    let dep = trip.map(|t| hhmm(t.dep)).unwrap_or_default();
+    let n = sheet.planned.iter().take(x.from + 1).filter(|t| t.counts() && !t.is_second()).count().to_string();
+    let whose = match (x.ai_since, take) {
+        (Some(at), _) => {
+            trf("Your game ended at %{time} before the duty did: the trips you drove (%{driven}) are yours, the AI drives the rest since.", &[("time", &hhmm(at)), ("driven", &x.driven.to_string())])
+        }
+        (None, true) => tr("Its driver drives the bus now: you take it over from them."),
+        (None, false) => trf("You drove %{driven} trips of it: it goes on from the first you did not.", &[("driven", &x.driven.to_string())]),
+    };
+    let place = if x.under_way {
+        trf(
+            "The game starts at %{time}, the company's clock, on trip %{n} (the %{dep}), with the bus where it is on its way: everything typed in, you drive on.",
+            &[("time", &hhmm(x.now)), ("n", &n), ("dep", &dep)],
+        )
+    } else {
+        trf("You take it up with trip %{n} (the %{dep}).", &[("n", &n), ("dep", &dep)])
+    };
+    format!("{whose} {place}")
 }
 
 /// "Start duty" (`duty_launch::start`): the game started with exactly the duty - the page's
@@ -276,9 +337,18 @@ fn start(s: &mut Session, args: &Value, p: &dyn crate::Platform) -> Result<Value
     core::log_to_file(&format!("company duty launcher: {} {} duty {} on {} with {}", st.line, st.tour, sheet.duty.duty + 1, st.date, st.bus));
     // (the add-on's plugin told of the company's duty: `addon.rs`)
     let crew = crew_of(s, &c, &sheet);
-    super::plugin::assign_duty(&d, Some((&c.name, &format!("{} {} {}", st.line, st.tour, sheet.duty.duty + 1), plugin_parts(&c, &sheet))), Some(crew), Some(&c.id));
+    // (taken up halfway along a trip: the AI's bus of the tour taken over where it is)
+    let take_over = st.take_over.map(|(trip, stop)| {
+        // (where the fleet map has the bus on that trip now: the game puts the player's there)
+        let block_trip = p_trip(s, &sheet);
+        let place = block_trip.and_then(|j| super::more::game_place(s, &sheet.duty.line, &sheet.duty.tour, j));
+        let stop = place.and_then(|x| x.next_stop).map_or(stop, |k| k + 1);
+        hub_game::bridge::TakeOver { line: st.line.clone(), tour: st.tour.clone(), trip: trip as u32, stop: stop as u32, at: place.map(|x| [x.x, x.y, x.heading]) }
+    });
+    let parts = super::plugin::Parts { take_over: take_over.clone(), ..plugin_parts(&c, &sheet) };
+    super::plugin::assign_duty(&d, Some((&c.name, &format!("{} {} {}", st.line, st.tour, sheet.duty.duty + 1), parts)), Some(crew), Some(&c.id));
     // (the company's buses for the game's AI: only they are on the road, where the fleet map has them)
-    super::fleetgame::for_drive(s, &sheet.duty.date, (&st.line, &st.tour));
+    super::fleetgame::for_drive(s, &sheet.duty.date, (&st.line, &st.tour), take_over.is_some());
     #[cfg(feature = "native")]
     if place == Some(co::together::world::Place::Open) {
         std::thread::spawn(omsi_net::tunnel::ensure_cloudflared);
@@ -293,6 +363,13 @@ fn start(s: &mut Session, args: &Value, p: &dyn crate::Platform) -> Result<Value
         }
     };
     core::log_to_file(&format!("game {}: {}", launched.pid, launched.command));
+    // (the drive followed by what the game reports: the trips he drives of it are his, what he
+    // leaves of it when his game ends before the duty the AI's - `own`)
+    let from = sheet.resume.map_or(0, |x| x.from);
+    if let Some(c) = s.company.as_mut() {
+        co::own::begin(c, &sheet.duty, &sheet.planned, &sheet.game_tour, from, super::real_now().max(0) as u64);
+    }
+    super::changed(s);
     // (the world his game opens: its code for the players as it comes; out of it when the game ends)
     #[cfg(feature = "native")]
     if let Some(pl) = &place {
@@ -421,7 +498,7 @@ pub(crate) fn plugin_parts(c: &Company, sheet: &Sheet) -> super::plugin::Parts {
         early: co::econ_uk::ON_TIME_EARLY,
         late: co::econ_uk::ON_TIME_LATE,
     });
-    super::plugin::Parts { sheet: rows, controls, fare, contract }
+    super::plugin::Parts { sheet: rows, controls, fare, contract, take_over: None }
 }
 
 /// What the duty launcher does.

@@ -565,6 +565,49 @@ fn runs_of(m: &MapState, day: &Day, tp: &co::day::TourPlan, b: &Block) -> Vec<Ru
         .collect()
 }
 
+/// Where the bus of a block is on its way now, in the game's own coordinates (`game_place`).
+#[derive(Clone, Copy, Debug, PartialEq)]
+pub struct GamePlace {
+    pub x: f64,
+    pub y: f64,
+    pub heading: f64,
+    /// The trip's next stop (0 the first of those it calls at).
+    pub next_stop: Option<usize>,
+}
+
+/// Where the bus of `line`/`tour` (a block of today's plan) is at the company's clock as the map
+/// moves it - in the game's coordinates, for the game to put the player's bus there when he takes
+/// it over (`bridge::TakeOver`) -, while it drives block trip `trip` (an index into the tour's
+/// trips). None: the map was not built (never opened), or the bus is not on that trip now.
+pub fn game_place(s: &mut Session, line: &str, tour: &str, trip: usize) -> Option<GamePlace> {
+    let c = s.company.clone()?;
+    let plan = s.plan.clone()?;
+    let (now, _) = time_of_day(s);
+    let mut mm = more(s);
+    let m = &mut mm.map;
+    let origin = m.origin?;
+    let bi = m.blocks.iter().position(|b| same(&b.line, line) && b.tour.trim() == tour.trim())?;
+    let mut day = m.day.take();
+    let d = day_of(&mut day, s, &c, &plan);
+    let b = &m.blocks[bi];
+    let tp = plan.tours.get(b.ti)?;
+    let runs = runs_of(m, d, tp, b);
+    let refs: Vec<&TripShape> = b.trips.iter().collect();
+    let cut = tp.bus.and_then(|v| d.cut.iter().find(|x| x.vehicle == v));
+    let (live, _) = fm::block_at(&refs, &runs, now, cut.map(|x| x.at as f64 * 60.0));
+    m.day = day;
+    let at = live.at.filter(|_| live.trip == trip && matches!(live.doing, Doing::Service | Doing::Deadhead))?;
+    // (the map's metres from its middle; the game's coordinates are its world metres, where the
+    // place the plugin last gave by its tile does not say otherwise: `traffic_of`)
+    #[cfg(feature = "native")]
+    let edge = omsi_map::tile_size();
+    #[cfg(not(feature = "native"))]
+    let edge = 300.0;
+    let traffic = crate::addon::plugins_dir().ok().map(|d| hub_game::install::plugin_dir(&d)).and_then(|d| hub_game::bridge::read_traffic(&d));
+    let off = traffic.filter(|t| same_map(&t.map, &c.map)).and_then(|t| t.reference).map_or([0.0, 0.0], |r| [r.x - (r.tile_x as f64 * edge + r.local_x), r.y - (r.tile_y as f64 * edge + r.local_y)]);
+    Some(GamePlace { x: at[0] + origin[0] + off[0], y: at[1] + origin[1] + off[1], heading: live.heading, next_stop: live.next_stop })
+}
+
 /// The fleet map's view at its clock (asked for a few times a second): the clock, the lines
 /// with their buses on the road, the buses, and the card of the bus picked.
 pub fn view(s: &mut Session, _args: &Value) -> Value {
@@ -849,8 +892,12 @@ fn bus_card(c: &Company, plan: &Plan, d: &Day, m: &MapState, mk: &Marker, clock:
     let driver = duty.and_then(|k| tp.duties.get(k)).and_then(|x| x.driver);
     // (Beta 63: a player of "Play together" on it, or the AI for one who left it)
     let guest = duty.and_then(|k| co::together::guest_on(c, &c.date, &tp.tour.line, &tp.tour.tour, k));
+    // (the player's own duty his game left before it was done: the AI drives it since, `own`)
+    let own = duty.and_then(|k| co::own::of(c, &c.date, &tp.tour.line, &tp.tour.tour, k));
+    let own_ai = duty.zip(own).is_some_and(|(k, o)| o.ai_drives(j.saturating_sub(tp.duties[k].start)));
     let driver_text = match driver {
         Some(PLAYER) if guest.is_some() => guest.map(|g| crate::together::guest_label(c, g)).unwrap_or_default(),
+        Some(PLAYER) if own_ai => tr("AI driver"),
         Some(PLAYER) => tr("You"),
         Some(AGENCY) => tr("Agency driver"),
         Some(id) => c.employee(id).map(|e| e.name.clone()).unwrap_or_else(|| "—".into()),
@@ -897,6 +944,17 @@ fn bus_card(c: &Company, plan: &Plan, d: &Day, m: &MapState, mk: &Marker, clock:
         "rf": match duty { Some(k) => json!({ "view": 0, "day": 0, "sel": { "duty": [b.line, b.tour, k] } }), None => json!({ "view": 1, "day": 0, "reveal": format!("B|{}|{}", b.line, b.tour) }) },
     })];
     links.push(json!({ "label": tr("Service control"), "icon": "support_agent", "tab": OPS_TAB }));
+    // (on the road today: the player takes its bus over where it is - from its driver, or his own
+    // duty back from the AI - with everything of the duty typed in, `launch::DutyLaunch::taking`)
+    let on_road = matches!(mk.live.doing, Doing::Service | Doing::Deadhead | Doing::Layover | Doing::Depot) && bus.is_some();
+    if let Some(k) = duty.filter(|_| on_road && guest.is_none() && !mk.player) {
+        let duty = json!({ "date": c.date, "line": tp.tour.line, "tour": tp.tour.tour, "duty": k });
+        match driver {
+            Some(PLAYER) if own_ai => links.insert(0, json!({ "label": tr("Take it back from the AI"), "icon": "sports_esports", "take": duty, "back": true, "main": true })),
+            Some(PLAYER) => {}
+            _ => links.insert(0, json!({ "label": tr("Take over this bus"), "icon": "sports_esports", "take": duty, "main": true })),
+        }
+    }
     if let Some(v) = bus {
         links.push(json!({ "label": tr("The bus's page"), "icon": "directions_bus", "bus": v.id }));
     }
@@ -994,6 +1052,18 @@ fn notes_of(c: &Company, tp: &co::day::TourPlan, mk: &Marker, clock: f64) -> Vec
 }
 
 pub fn act(s: &mut Session, what: &str, args: &Value) -> Option<Answer> {
+    // the bus picked taken over by the player in his game (`launch::DutyLaunch::taking`; `back`:
+    // his own duty taken back from the AI)
+    if what == "map_take" {
+        let r: co::duty_launch::DutyRef = match serde_json::from_value(args.get("duty").cloned().unwrap_or(Value::Null)) {
+            Ok(r) => r,
+            Err(e) => return Some(Err(format!("duty: {e}"))),
+        };
+        let back = args.get("back").and_then(Value::as_bool).unwrap_or(false);
+        s.launch = Some(if back { super::super::launch::DutyLaunch::new(r, super::super::MAP_TAB) } else { super::super::launch::DutyLaunch::taking(r, super::super::MAP_TAB) });
+        s.generation += 1;
+        return Some(Ok(json!({ "launch": true })));
+    }
     let mut m = more(s);
     let m = &mut m.map;
     match what {
