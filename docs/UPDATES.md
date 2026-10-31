@@ -131,7 +131,7 @@ matches the processor in the name: `x64`, `amd64` or `x86_64`; `aarch64` or `arm
    Run it on `windows-latest`, `macos-latest` and `ubuntu-22.04`:
    - On macOS, use `--target aarch64-apple-darwin` and `--target x86_64-apple-darwin`, or
      `universal-apple-darwin`.
-   - On Linux, the bundle targets are `appimage`, `deb` and `rpm` (`app/tauri.linux.conf.json`). The runner needs
+   - On Linux, the bundle targets are `appimage`, `deb` and `rpm` (`app/tauri.linux.conf.json`); a version with a `-` (`1.2.0-beta.2`) has no `.rpm`, which takes no `-` in its version. The runner needs
      Tauri's packages first: `sudo apt-get install -y libwebkit2gtk-4.1-dev
      libayatana-appindicator3-dev librsvg2-dev patchelf`. Build on the oldest Ubuntu you
      support: an AppImage runs on the same or newer glibc only.

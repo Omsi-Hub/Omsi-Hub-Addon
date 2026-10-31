@@ -119,6 +119,11 @@ jobs:
           if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ]; then pre="$ASKED"; else case "$app" in *-*) pre=true ;; *) pre=false ;; esac; fi
           echo "prerelease=$pre" >> "$GITHUB_OUTPUT"
           echo "::notice::Omsi-Hub $app, pre-release: $pre"
+          # (an .rpm takes no `-` in its version: a version like 1.2.0-beta.2 gets the AppImage and the .deb only)
+          case "$RUNNER_OS:$app" in
+            Linux:*-*) echo "bundles=--bundles appimage,deb" >> "$GITHUB_OUTPUT"; echo "::notice::$app has a '-': no .rpm" ;;
+            *) echo "bundles=" >> "$GITHUB_OUTPUT" ;;
+          esac
 
       # (the updater files signed and latest.json attached only when the key is set up)
       - name: Updater signing set up?
@@ -162,4 +167,4 @@ jobs:
           releaseDraft: true
           prerelease: ${{ steps.kind.outputs.prerelease == 'true' }}
           includeUpdaterJson: ${{ steps.signing.outputs.json == 'true' }}
-          args: ${{ matrix.args }} ${{ steps.signing.outputs.config }}
+          args: ${{ matrix.args }} ${{ steps.kind.outputs.bundles }} ${{ steps.signing.outputs.config }}
