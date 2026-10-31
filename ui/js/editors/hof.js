@@ -16,8 +16,15 @@ import { choose, curMap, curBus } from '../hub/drive.js';
 import { Icon, tr, keep, status, mapLabel, Btn } from './kit.js';
 
 /** What the depot files keep: the menu of the bus, map and depot file asked for, the dialog,
- * the dialogs answered (map|bus|depot file: not asked again this session), what adding came to. */
-const V = keep('hof', { menu: null, asked: '', dialog: null, answered: new Set(), note: null, busy: false });
+ * the dialogs answered (map|bus|depot file: not asked again this session), the bus the player
+ * picked (map|bus), what adding came to. */
+const V = keep('hof', { menu: null, asked: '', dialog: null, answered: new Set(), picked: '', note: null, busy: false });
+
+/** The player picked the bus `file` on the bus step: only then is a bus that lacks the map's
+ * depot file asked about, not the bus chosen already when the step opens. */
+export function busPicked(file) {
+  V.picked = `${S.choice?.map}|${file}`;
+}
 
 const redraw = () => set({});
 
@@ -58,12 +65,13 @@ function current() {
   return m && bus && map && m.bus === bus.file && m.key.split('|')[1] === map.file ? m : null;
 }
 
-/** Once the menu is there: the dialog for a bus that lacks the map's depot file, asked once. */
+/** Once the menu is there: the dialog for a bus the player picked that lacks the map's depot
+ * file, asked once. */
 function frame() {
   const m = current();
   if (!m || S.page !== 'drive' || S.hub.step !== 'bus' || S.boot?.selftest) return;
   const about = `${S.choice.map}|${m.bus}|${m.want.trim().toLowerCase()}`;
-  const lacks = m.lacks && !m.own_in_use;
+  const lacks = m.lacks && !m.own_in_use && V.picked === `${S.choice.map}|${m.bus}`;
   if (!V.dialog && lacks && !V.answered.has(about)) V.dialog = { mode: 'missing', at: Date.now(), about };
   else if (V.dialog && (V.dialog.about !== about || (V.dialog.mode === 'missing' && !m.lacks))) V.dialog = null;
 }

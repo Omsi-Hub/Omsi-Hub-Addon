@@ -13,7 +13,7 @@ import { Bus3D } from '../hub/bus3d/viewer.js';
 import { Search, Select, Input } from '../ui.js';
 import { Actions, Foot, Head, Icon, Switch, tr, Button } from '../hub/bits.js';
 import { goStep, previousOf, hubStart } from '../hub/flow.js';
-import { DepotField, DepotTiles, DepotDialog, depotHeading, depotFoot, mapLine } from '../editors/hof.js';
+import { DepotField, DepotTiles, DepotDialog, depotHeading, depotFoot, mapLine, busPicked } from '../editors/hof.js';
 // (a livery of one's own: the studio on this bus, from the livery shown - `buspick::draw`)
 import { IconBtn } from '../editors/kit.js';
 import { openLivery } from '../editors/index.js';
@@ -240,7 +240,7 @@ export function BusStep() {
       ? html`<${Depots} onBack=${(level) => (level === 'bus' ? show('bus') : show('tiles', level))} />`
       : showing
       ? html`<${Chosen} onBack=${(level) => show('tiles', level || undefined)} onDepots=${() => show('depots')} />`
-      : html`<${Picker} onBus=${(b) => (b.v.file !== s.choice.bus && choose({ bus: b.v.file, paint: '', number: '', hof_manual: false }), show('bus'))} />`}
+      : html`<${Picker} onBus=${(b) => (busPicked(b.v.file), b.v.file !== s.choice.bus && choose({ bus: b.v.file, paint: '', number: '', hof_manual: false }), show('bus'))} />`}
     <${DepotDialog} onOpen=${() => show('depots')} />
     <${Actions} back onBack=${() => (depots ? show('bus') : showing ? show('tiles') : goStep(previousOf('bus')))} from=${showing ? 'calc(var(--hub-edge-in) + clamp(288px, 27.4cqw, 420px) + 14px)' : null}
       extra=${[...(last ? [{ label: 'Continue last game', icon: 'history', onClick: () => go({ situation: last.file, lan: 'off' }), disabled: busy }] : []), ...(!showing && !depots && curBus() ? [{ label: 'View in 3D', icon: '360', onClick: () => show('bus') }] : [])]}
